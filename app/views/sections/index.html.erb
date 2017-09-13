@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sections</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Owner</th>
+      <th>Term</th>
+      <th>Section</th>
+      <th>Department</th>
+      <th>Cross list group</th>
+      <th>Course description</th>
+      <th>Section number</th>
+      <th>Title</th>
+      <th>Credits</th>
+      <th>Level</th>
+      <th>Status</th>
+      <th>Enrollment limit</th>
+      <th>Actual enrollment</th>
+      <th>Cross list enrollment</th>
+      <th>Waitlist</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sections.each do |section| %>
+      <tr>
+        <td><%= section.owner %></td>
+        <td><%= section.term %></td>
+        <td><%= section.section_id %></td>
+        <td><%= section.department %></td>
+        <td><%= section.cross_list_group %></td>
+        <td><%= section.course_description %></td>
+        <td><%= section.section_number %></td>
+        <td><%= section.title %></td>
+        <td><%= section.credits %></td>
+        <td><%= section.level %></td>
+        <td><%= section.status %></td>
+        <td><%= section.enrollment_limit %></td>
+        <td><%= section.actual_enrollment %></td>
+        <td><%= section.cross_list_enrollment %></td>
+        <td><%= section.waitlist %></td>
+        <td><%= link_to 'Show', section %></td>
+        <td><%= link_to 'Edit', edit_section_path(section) %></td>
+        <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Section', new_section_path %>

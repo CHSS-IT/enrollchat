@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner: MyString
+  term: 1
+  section_id: 1
+  department: MyString
+  cross_list_group: MyString
+  course_description: MyString
+  section_number: 1
+  title: MyString
+  credits: 1
+  level: MyString
+  status: MyString
+  enrollment_limit: 1
+  actual_enrollment: 1
+  cross_list_enrollment: 1
+  waitlist: 1
+
+two:
+  owner: MyString
+  term: 1
+  section_id: 1
+  department: MyString
+  cross_list_group: MyString
+  course_description: MyString
+  section_number: 1
+  title: MyString
+  credits: 1
+  level: MyString
+  status: MyString
+  enrollment_limit: 1
+  actual_enrollment: 1
+  cross_list_enrollment: 1
+  waitlist: 1

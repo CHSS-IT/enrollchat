@@ -1,0 +1,92 @@
+<%= form_with(model: section, local: true) do |form| %>
+  <% if section.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(section.errors.count, "error") %> prohibited this section from being saved:</h2>
+
+      <ul>
+      <% section.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :owner %>
+    <%= form.text_field :owner, id: :section_owner %>
+  </div>
+
+  <div class="field">
+    <%= form.label :term %>
+    <%= form.number_field :term, id: :section_term %>
+  </div>
+
+  <div class="field">
+    <%= form.label :section_id %>
+    <%= form.number_field :section_id, id: :section_section_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :department %>
+    <%= form.text_field :department, id: :section_department %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cross_list_group %>
+    <%= form.text_field :cross_list_group, id: :section_cross_list_group %>
+  </div>
+
+  <div class="field">
+    <%= form.label :course_description %>
+    <%= form.text_field :course_description, id: :section_course_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :section_number %>
+    <%= form.number_field :section_number, id: :section_section_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :section_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :credits %>
+    <%= form.number_field :credits, id: :section_credits %>
+  </div>
+
+  <div class="field">
+    <%= form.label :level %>
+    <%= form.text_field :level, id: :section_level %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :section_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :enrollment_limit %>
+    <%= form.number_field :enrollment_limit, id: :section_enrollment_limit %>
+  </div>
+
+  <div class="field">
+    <%= form.label :actual_enrollment %>
+    <%= form.number_field :actual_enrollment, id: :section_actual_enrollment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cross_list_enrollment %>
+    <%= form.number_field :cross_list_enrollment, id: :section_cross_list_enrollment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :waitlist %>
+    <%= form.number_field :waitlist, id: :section_waitlist %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

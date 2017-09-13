@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @section.owner %>
+</p>
+
+<p>
+  <strong>Term:</strong>
+  <%= @section.term %>
+</p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @section.section_id %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @section.department %>
+</p>
+
+<p>
+  <strong>Cross list group:</strong>
+  <%= @section.cross_list_group %>
+</p>
+
+<p>
+  <strong>Course description:</strong>
+  <%= @section.course_description %>
+</p>
+
+<p>
+  <strong>Section number:</strong>
+  <%= @section.section_number %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @section.title %>
+</p>
+
+<p>
+  <strong>Credits:</strong>
+  <%= @section.credits %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @section.level %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @section.status %>
+</p>
+
+<p>
+  <strong>Enrollment limit:</strong>
+  <%= @section.enrollment_limit %>
+</p>
+
+<p>
+  <strong>Actual enrollment:</strong>
+  <%= @section.actual_enrollment %>
+</p>
+
+<p>
+  <strong>Cross list enrollment:</strong>
+  <%= @section.cross_list_enrollment %>
+</p>
+
+<p>
+  <strong>Waitlist:</strong>
+  <%= @section.waitlist %>
+</p>
+
+<%= link_to 'Edit', edit_section_path(@section) %> |
+<%= link_to 'Back', sections_path %>
