@@ -2,10 +2,9 @@
 
 <h1>Sections</h1>
 
-<table>
+<table id="class-sections" class="table table-striped table-bordered table-responsive" cellspacing="0" width="100%">
   <thead>
-    <tr>
-      <th>Owner</th>
+    <tr class="bg-info">
       <th>Term</th>
       <th>Section</th>
       <th>Department</th>
@@ -27,7 +26,6 @@
   <tbody>
     <% @sections.each do |section| %>
       <tr>
-        <td><%= section.owner %></td>
         <td><%= section.term %></td>
         <td><%= section.section_id %></td>
         <td><%= section.department %></td>
@@ -48,3 +46,8 @@
   </tbody>
 </table>
 
+<script type="application/javascript">
+  $(document).ready(function() {
+    $('#class-sections').DataTable();
+  } );
+</script>

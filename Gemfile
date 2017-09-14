@@ -39,6 +39,8 @@ gem 'jbuilder', '~> 2.5'
 # Devise for authentication
 gem 'devise'
 
+gem 'font-awesome-sass'
+
 
 
 group :development, :test do
