@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @comment.user %>
+</p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @comment.section %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @comment.body %>
+</p>
+
+<p>
+  <strong>Ancestry:</strong>
+  <%= @comment.ancestry %>
+</p>
+
+<p>
+  <strong>Ancestry depth:</strong>
+  <%= @comment.ancestry_depth %>
+</p>
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>

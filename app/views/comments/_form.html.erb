@@ -1,0 +1,30 @@
+<%= form_with(model: comment, local: true) do |form| %>
+  <% if comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= form.hidden_field :section_id, value: comment.section.id %>
+    <%= form.hidden_field :user_id, value: comment.user.id %>
+
+    <p id="contextText" class="form-text text-muted">
+      Adding a comment to <%= comment.section.section_and_number %> by <%= comment.user.email %>
+    </p>
+
+
+  <div class="form-group">
+    <%= form.label :body %>
+    <%= form.text_area :body, id: :comment_body, class:"form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

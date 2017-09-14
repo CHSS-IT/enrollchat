@@ -36,6 +36,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Ancestry for comment threading
+gem 'ancestry'
 # Devise for authentication
 gem 'devise'
 

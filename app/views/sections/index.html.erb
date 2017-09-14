@@ -24,30 +24,14 @@
   </thead>
 
   <tbody>
-    <% @sections.each do |section| %>
-      <tr>
-        <td><%= section.term %></td>
-        <td><%= section.section_id %></td>
-        <td><%= section.department %></td>
-        <td><%= section.cross_list_group %></td>
-        <td><%= section.course_description %></td>
-        <td><%= section.section_number %></td>
-        <td><%= section.title %></td>
-        <td><%= section.credits %></td>
-        <td><%= section.level %></td>
-        <td><%= section.status %></td>
-        <td><%= section.enrollment_limit %></td>
-        <td><%= section.actual_enrollment %></td>
-        <td><%= section.cross_list_enrollment %></td>
-        <td><%= section.waitlist %></td>
-        <td>COMMENTS</td>
-      </tr>
-    <% end %>
+    <%= render @sections %>
   </tbody>
 </table>
 
 <script type="application/javascript">
   $(document).ready(function() {
-    $('#class-sections').DataTable();
+    $('#class-sections').DataTable( {
+      stateSave: true
+    } );
   } );
 </script>
