@@ -20,7 +20,7 @@
       <th>Actual enrollment</th>
       <th>Cross list enrollment</th>
       <th>Waitlist</th>
-      <th colspan="3"></th>
+      <th>Comments</th>
     </tr>
   </thead>
 
@@ -42,14 +42,9 @@
         <td><%= section.actual_enrollment %></td>
         <td><%= section.cross_list_enrollment %></td>
         <td><%= section.waitlist %></td>
-        <td><%= link_to 'Show', section %></td>
-        <td><%= link_to 'Edit', edit_section_path(section) %></td>
-        <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>COMMENTS</td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Section', new_section_path %>
