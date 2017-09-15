@@ -1,3 +1,10 @@
 $('#comments-list').append("<%= j (render @comment) %>");
 $('#comment_body').val('');
+$("#notice").html("<%= flash[:notice] %>");
 $('#<%= dom_id(@section)%> td a span.comment-count').html('<%= @section.comments.size %>');
+$('#alert-wrapper').html("<%= escape_javascript(render 'layouts/alert') %>");
+
+
+$(".alert").fadeTo(2000, 500).slideUp(500, function(){
+  $(".alert").slideUp(500);
+});

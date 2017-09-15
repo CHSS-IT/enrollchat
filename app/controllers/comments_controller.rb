@@ -36,7 +36,7 @@ class CommentsController < ApplicationController
       if @comment.save
         format.html { redirect_to sections_url, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
-        format.js
+        format.js { flash.now[:notice] = 'Comment was successfully created.' }
       else
         format.html { render :new }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
