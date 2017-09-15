@@ -6,13 +6,17 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    @comments = @section.comments
+    respond_to do |format|
+      format.html
+      format.js { render layout: false }
+    end
   end
 
   # GET /comments/1
   # GET /comments/1.json
-  def show
-  end
+  # def show
+  # end
 
   # GET /comments/new
   def new
@@ -58,7 +62,11 @@ class CommentsController < ApplicationController
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
-    @comment.destroy
+    if @comment.children.size
+      @comment.update_attribute(:body, 'This comment was deleted.')
+    else
+      @comment.destroy
+    end
     respond_to do |format|
       format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }

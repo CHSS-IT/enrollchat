@@ -1,0 +1,3 @@
+$('#comments-list').append("<%= j (render @comment) %>");
+$('#comment_body').val('');
+$('#<%= dom_id(@section)%> td a span.comment-count').html('<%= @section.comments.size %>');

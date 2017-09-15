@@ -1,0 +1,6 @@
+<li>
+  <%= comment.body %><br />
+  <%= comment.created_at %><br />
+  <%= link_to 'Edit', edit_section_comment_path(@section, comment) %><br />
+  <%= link_to 'Destroy', section_comment_path(@section, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+</li>

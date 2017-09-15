@@ -1,4 +1,4 @@
-<tr>
+<tr id="<%= dom_id(section) %>">
   <td><%= section.term %></td>
   <td><%= section.section_id %></td>
   <td><%= section.department %></td>
@@ -13,5 +13,5 @@
   <td><%= section.actual_enrollment %></td>
   <td><%= section.cross_list_enrollment %></td>
   <td><%= section.waitlist %></td>
-  <td><%= pluralize(section.comments.size, "comment") %> <%= link_to 'Comment', new_section_comment_path(section) %></td>
+  <td><%= link_to "<i class='fa fa-comment' aria-hidden='true'></i> <span class='comment-count'>#{section.comments.size}".html_safe, section_comments_path(section), remote: true %></td>
 </tr>
