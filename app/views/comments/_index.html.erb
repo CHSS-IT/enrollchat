@@ -1,8 +1,6 @@
-<h1>Comments</h1>
+<h3>Comments</h3>
 
-<ul id="comments-list" class="list-group">
-  <%= render @comments %>
-</ul>
+<%= render @comments %>
 
 
 <%= render '/comments/form', comment: Comment.new(section_id: @section.id, user_id: current_user.id) %>

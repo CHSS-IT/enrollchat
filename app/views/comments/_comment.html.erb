@@ -1,6 +1,15 @@
-<li>
-  <%= comment.body %><br />
-  <%= comment.created_at %><br />
-  <%= link_to 'Edit', edit_section_comment_path(@section, comment) %><br />
-  <%= link_to 'Destroy', section_comment_path(@section, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
-</li>
+
+    <div class="card mb-3 ">
+      <div class="card-header bg-primary text-white text-right py-1">
+        <%= comment.user.email %>
+      </div>
+      <div class="card-block py-1">
+        <%= comment.body %>
+        <%#= link_to 'Edit', edit_section_comment_path(@section, comment) %><br />
+        <%#= link_to 'Destroy', section_comment_path(@section, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+      </div>
+      <div class="card-footer text-muted text-right py-1">
+        <%= time_ago_in_words(comment.created_at) %> ago
+      </div>
+    </div>
