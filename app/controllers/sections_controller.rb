@@ -1,10 +1,11 @@
 class SectionsController < ApplicationController
+  before_action :set_term, only: :index
   before_action :set_section, only: :show
 
   # GET /sections
   # GET /sections.json
   def index
-    @sections = Section.all
+    @sections = Section.where(term: @term)
   end
 
   # GET /sections/1
@@ -18,6 +19,10 @@ class SectionsController < ApplicationController
     def set_section
       @section = Section.find(params[:id])
     end
+
+  def set_term
+    @term = Section.maximum(:term)
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def section_params

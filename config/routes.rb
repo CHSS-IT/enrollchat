@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :comments
   devise_for :users
-  resources :sections, only: [:index, :show]
+  resources :sections, only: [:index, :show] do
+    resources :comments
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.htm
   root to: 'sections#index'
 

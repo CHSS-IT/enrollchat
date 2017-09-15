@@ -13,5 +13,5 @@
   <td><%= section.actual_enrollment %></td>
   <td><%= section.cross_list_enrollment %></td>
   <td><%= section.waitlist %></td>
-  <td><%= pluralize(section.comments.size, "comment") %> <%= link_to 'Comment', new_comment_path(section_id: section.id) %></td>
+  <td><%= pluralize(section.comments.size, "comment") %> <%= link_to 'Comment', new_section_comment_path(section) %></td>
 </tr>
