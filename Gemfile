@@ -40,6 +40,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'ancestry'
 # Devise for authentication
 gem 'devise'
+# For using CAS authentication with Devise
+gem 'devise_cas_authenticatable', '~> 1.10.2'
 
 gem 'font-awesome-sass'
 

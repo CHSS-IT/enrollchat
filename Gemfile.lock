@@ -70,6 +70,9 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    devise_cas_authenticatable (1.10.2)
+      devise (>= 1.2.0)
+      rubycas-client (>= 2.2.1)
     erubi (1.6.1)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -140,6 +143,8 @@ GEM
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
     ruby_dep (1.5.0)
+    rubycas-client (2.3.9)
+      activesupport
     rubyzip (1.2.1)
     sass (3.5.1)
       sass-listen (~> 4.0.0)
@@ -203,6 +208,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   devise
+  devise_cas_authenticatable (~> 1.10.2)
   font-awesome-sass
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
