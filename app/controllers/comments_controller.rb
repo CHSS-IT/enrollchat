@@ -62,11 +62,7 @@ class CommentsController < ApplicationController
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
-    if @comment.children.size
-      @comment.update_attribute(:body, 'This comment was deleted.')
-    else
-      @comment.destroy
-    end
+    @comment.destroy
     respond_to do |format|
       format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
