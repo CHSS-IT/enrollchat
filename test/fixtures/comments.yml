@@ -4,12 +4,8 @@ one:
   user: one
   section: one
   body: MyText
-  ancestry: MyString
-  ancestry_depth: 1
 
 two:
   user: two
   section: two
   body: MyText
-  ancestry: MyString
-  ancestry_depth: 1
