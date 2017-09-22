@@ -15,15 +15,5 @@
   <%= @comment.body %>
 </p>
 
-<p>
-  <strong>Ancestry:</strong>
-  <%= @comment.ancestry %>
-</p>
-
-<p>
-  <strong>Ancestry depth:</strong>
-  <%= @comment.ancestry_depth %>
-</p>
-
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
 <%= link_to 'Back', comments_path %>
