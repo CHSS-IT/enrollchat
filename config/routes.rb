@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :path_prefix => 'app'
+  resources :users
   resources :sections, only: [:index, :show] do
     resources :comments
   end
