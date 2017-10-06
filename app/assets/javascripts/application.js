@@ -16,4 +16,3 @@
 //= require datatables.net/js/jquery.dataTables
 //= require datatables.bootstrap4.min
 //= require turbolinks
-//= require_tree .
