@@ -43,6 +43,11 @@ gem 'devise'
 # For using CAS authentication with Devise
 gem 'devise_cas_authenticatable', '~> 1.10.2'
 
+gem 'bootstrap', '~> 4.0.0.alpha6'
+
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
 gem 'airbrake', '~> 7.0'
 # gem 'rails_12factor'
 gem 'font-awesome-sass'
