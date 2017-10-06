@@ -41,6 +41,8 @@ gem 'devise'
 # For using CAS authentication with Devise
 gem 'devise_cas_authenticatable', '~> 1.10.2'
 
+gem 'airbrake', '~> 7.0'
+
 gem 'font-awesome-sass'
 
 
