@@ -1,10 +1,10 @@
-development:
-  adapter: async
+development: &development
+  adapter: redis
+  url: redis://localhost:6379
 
 test:
   adapter: async
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
-  channel_prefix: enrollchat_production
+  url: redis://redistogo:4c233f55d0e2ee1cee5118664bb1ea42@cowfish.redistogo.com:9060/
