@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require tether
 //= require bootstrap/dist/js/bootstrap
 //= require datatables.net/js/jquery.dataTables
 //= require datatables.bootstrap4.min
