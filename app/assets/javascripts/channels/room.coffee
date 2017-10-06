@@ -7,6 +7,5 @@ App.room = App.cable.subscriptions.create "RoomChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    $('#notifications').prepend '<div class="message">' +
-        'New comment on ' + data.section_name + ' by ' + data.user + '. [link to load those comments]' +
-        '<div class="message-body">' + data.body + '</div>' + '</div>'
+    $('#notifications').prepend '<div class="card"><div class="card-header">' +
+        'New comment on ' + data.section_name + ' by ' + data.user + '.</div><div class="card-body">' + data.body + '</div>' + '</div>'
