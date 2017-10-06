@@ -11,8 +11,8 @@
 // about supported directives.
 //
 //= require jquery
-//= require datatables.net/js/jquery.dataTables
-//= require rails-ujs
 //= require bootstrap/dist/js/bootstrap
+//= require datatables.net/js/jquery.dataTables
 //= require datatables.bootstrap4.min
+//= require rails-ujs
 //= require turbolinks
