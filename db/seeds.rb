@@ -13,3 +13,4 @@ end
 
 admin = User.create!(email: 'dcollie2@gmu.edu', username: 'dcollie2')
 admin = User.create!(email: 'czaccaro@gmu.edu', username: 'czaccaro')
+admin = User.create!(email: 'mwhiteo@gmu.edu', username: 'mwhiteo')
