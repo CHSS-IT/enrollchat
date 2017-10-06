@@ -43,6 +43,8 @@ gem 'devise_cas_authenticatable', '~> 1.10.2'
 
 gem 'airbrake', '~> 7.0'
 
+gem 'rails_12factor', group: :production
+
 gem 'font-awesome-sass'
 
 
