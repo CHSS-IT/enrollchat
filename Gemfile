@@ -44,7 +44,7 @@ gem 'devise'
 gem 'devise_cas_authenticatable', '~> 1.10.2'
 
 gem 'airbrake', '~> 7.0'
-gem 'rails_12factor'
+# gem 'rails_12factor'
 gem 'font-awesome-sass'
 
 
