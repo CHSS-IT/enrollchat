@@ -35,23 +35,30 @@ gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+
+# Alphabetize non-core gems
+
+gem 'airbrake', '~> 7.0'
+
+# Responsive layout with bootstrap 4
+gem 'bootstrap', '~> 4.0.0.alpha6'
 
 # Devise for authentication
 gem 'devise'
+
 # For using CAS authentication with Devise
 gem 'devise_cas_authenticatable', '~> 1.10.2'
 
-gem 'bootstrap', '~> 4.0.0.alpha6'
+# font-awesome for iconography
+gem 'font-awesome-sass'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
-gem 'airbrake', '~> 7.0'
-# gem 'rails_12factor'
-gem 'font-awesome-sass'
+# For processing excel files
+gem "roo", "~> 2.7.0"
 
+gem 'sidekiq'
 
 
 group :development, :test do
