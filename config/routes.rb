@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :sections, only: [:index, :show] do
     resources :comments
   end
+  post '/sections/import' => 'section#import'
 
   mount ActionCable.server, at: '/cable'
 
