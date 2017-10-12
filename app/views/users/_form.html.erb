@@ -21,7 +21,8 @@
     <%= f.check_box :admin %>
   </div>
   <div class="form-group">
-    <%= f.button :submit %>
+    <%= submit_tag 'Save', class: 'btn btn-large btn-primary' %>
+    <%= link_to 'Cancel', users_path, class: 'btn btn-large btn-warning' %>
   </div>
 
 <% end %>

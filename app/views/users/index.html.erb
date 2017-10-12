@@ -1,4 +1,4 @@
-<span id="alert-wrapper"></span>
+<span id="notice"></span>
 <div class="row">
   <div class="col-sm-8">
     <h1>Users</h1>
@@ -10,7 +10,10 @@
         <th>Last Name</th>
         <th>Email</th>
         <th>User Name</th>
-        <th>Admin</th>
+        <% if current_user.is_admin? %>
+          <th>Admin</th>
+          <th>Edit</th>
+        <% end %>
       </tr>
       </thead>
 
@@ -21,10 +24,14 @@
           <td><%= user.last_name %></td>
           <td><%= user.email %></td>
           <td><%= user.username %></td>
-          <td><%= user.admin %></td>
+          <% if current_user.is_admin? %>
+            <td><%= user.admin %></td>
+            <td><%= link_to 'Edit', edit_user_path(user) %></td>
+          <% end %>
         </tr>
       <% end %>
       </tbody>
     </table>
+    <%= link_to 'Create New User', new_user_path, class: 'btn btn-large btn-primary' %>
   </div>
 </div>

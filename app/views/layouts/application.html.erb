@@ -6,7 +6,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= action_cable_meta_tag %>
-
+    <meta name="turbolinks-cache-control" content="no-cache">
     <link type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= favicon_link_tag(source="Favicon.ico") %>
   </head>
@@ -24,9 +24,11 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/users">Users</a>
-      </li>
+      <% if current_user.is_admin? %>
+        <li class="nav-item">
+          <%= link_to 'Users', users_url, class: 'nav-link' %>
+        </li>
+      <% end %>
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
@@ -38,6 +40,7 @@
 </nav>
 
   <div class="container-fluid">
+    <%= render partial: "/layouts/alert", flash: flash %>
     <%= yield %>
   </div>
 

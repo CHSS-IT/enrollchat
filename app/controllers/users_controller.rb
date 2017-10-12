@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       if @user.save
         format.html { redirect_to users_url, notice: 'User was succesfully created' }
       else
-        format.html { render :new, notice: 'Error: Could Not Create User' }
+        format.html { redirect_to new_user_url, notice: 'Error: Could not create user' }
       end
     end
   end
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
       if @user.update(user_params)
         format.html { redirect_to users_url, notice: 'User was succesfully updated' }
       else
-        format.html { render :edit, notice: 'Error: Could Not Update User' }
+        format.html { redirect_to edit_user_url(@user), notice: 'Error: Could not update user' }
       end
     end
   end
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
 
   def ensure_admin!
     unless current_user.admin?
-      redirect_to root_path
+      redirect_to root_path, notice: 'You do not have access to this page'
       return false
     end
   end
