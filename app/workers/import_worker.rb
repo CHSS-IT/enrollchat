@@ -7,13 +7,10 @@ class ImportWorker
     ActionCable.server.broadcast 'room_channel',
                                  body:  "Registration data import in process.",
                                  section_name: "Alert",
-                                 user: user.username
+                                 user: "System"
     Section.import(filepath)
     puts @report
-    ActionCable.server.broadcast 'room_channel',
-                                 body:  "Registration data import complete.",
-                                 section_name: "Alert",
-                                 user: user.username
+
 
   end
 end

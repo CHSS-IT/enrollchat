@@ -25,7 +25,7 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <%= form_tag sections_import_path, multipart: true, class: 'form-inline', remote: true do %>
+        <%= form_tag sections_import_path, multipart: true, class: 'form-inline', id: 'update-form', remote: true do %>
             <%= file_field_tag :file, :accept => 'application/xslt+xml' %>
             <%= submit_tag "Update Sections", :class => "btn btn-white" %>
         <% end %>
