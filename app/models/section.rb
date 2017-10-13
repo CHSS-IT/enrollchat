@@ -11,13 +11,11 @@ class Section < ApplicationRecord
     "#{course_description}-#{section_number_zeroed}"
   end
 
-  def self.import #(file)
-    # File is hard-coded for now.
-    path = 'doc/SemesterEnrollments.xlsx'
+  def self.import(filepath)
     # Grab most recent update time
     last_touched_at = Section.maximum(:updated_at)
     # Open file using Roo
-    spreadsheet = Roo::Spreadsheet.open(path)
+    spreadsheet = Roo::Spreadsheet.open(filepath, extension: :xlsx)
     # Use local names instead of names from file header
     header = %w[section_id term department cross_list_group course_description section_number title credits level status enrollment_limit actual_enrollment cross_list_enrollment waitlist]
     # Parse spreadsheet.
@@ -53,7 +51,8 @@ class Section < ApplicationRecord
     else
       report_action('Updated Sections', 'All sections were touched by the import process.')
     end
-    puts @report
+    # puts @report
+    File.delete(filepath)
   end
 
   def self.report_action(subject, message)

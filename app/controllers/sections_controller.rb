@@ -8,6 +8,22 @@ class SectionsController < ApplicationController
     @sections = Section.where(term: @term)
   end
 
+  def import
+    if params[:file].nil?
+      flash[:alert] = "Upload attempted but no file was attached!"
+    else
+      File.delete(Rails.root.join('doc', params[:file].original_filename)) if File.exists?(Rails.root.join('doc', params[:file].original_filename))
+      File.open(Rails.root.join('doc', params[:file].original_filename), 'wb') do |file|
+        file.write(params[:file].read)
+      end
+
+      filepath = Rails.root.join('doc', params[:file].original_filename)
+
+      ImportWorker.perform_async("doc/#{params[:file].original_filename}", current_user.id)
+
+    end
+  end
+
   # GET /sections/1
   # GET /sections/1.json
   def show
