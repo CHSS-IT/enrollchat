@@ -5,6 +5,11 @@ development: &development
 test:
   adapter: async
 
-production:
+production: &production
   adapter: redis
   url: ENV["REDIS_URL"]
+  host: ec2-34-235-35-224.compute-1.amazonaws.com
+  port: 24269
+  password: pa9b8d5ac29253e0bba8b6f03c42e64eaee2e623a95db29f3fcce2f986cf1527c
+  inline: true
+  timeout: 1
