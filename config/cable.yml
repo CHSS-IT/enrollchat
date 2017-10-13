@@ -7,4 +7,4 @@ test:
 
 production: &production
   adapter: redis
-
+  url: redis://redistogo:b717514d3e646dd310c3dd1232af7c82@tarpon.redistogo.com:11467/
