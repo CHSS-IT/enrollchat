@@ -7698,6 +7698,9 @@ star {
   position: relative;
   border-radius: 3px 3px 0 0;
   z-index: 3;
+  /*added */
+  background: none;
+  border: 0;
 }
 .card .card-header.header-with-icon {
   height: 150px;
