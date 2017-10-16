@@ -24,7 +24,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
-      <% if current_user.is_admin? %>
+      <% if current_user.try(:admin?) %>
         <li class="nav-item">
           <%= link_to 'Users', users_url, class: 'nav-link' %>
         </li>
