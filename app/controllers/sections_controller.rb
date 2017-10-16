@@ -12,6 +12,10 @@ class SectionsController < ApplicationController
     if params[:file].nil?
       flash[:alert] = "Upload attempted but no file was attached!"
     else
+      ActionCable.server.broadcast 'room_channel',
+                                   body:  "Registration data import in process.",
+                                   section_name: "Alert",
+                                   user: "System"
 
       feed = params[:file]
 

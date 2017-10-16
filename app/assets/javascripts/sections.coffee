@@ -1,3 +1,8 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).ready ->
+  $(".spinner").hide()
+
+$(document).ready ->
+  $("#update-form").on("ajax:beforeSend", (e, data, status, xhr) ->
+    $('.spinner').show())
+  $("#update-form").on("ajax:complete", (e, data, status, xhr) ->
+    $('.spinner').hide())

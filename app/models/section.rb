@@ -61,8 +61,8 @@ class Section < ApplicationRecord
     end
     # puts @report
     ActionCable.server.broadcast 'room_channel',
-                                 body:  "Registration data import complete. #{@new_sections} added. #{@updated_sections} updated.",
-                                 section_name: "Alert",
+                                 body:  "Registration data import complete. #{@new_sections} added. #{@updated_sections} updated. Refreshing browser to show changes.",
+                                 section_name: "Data Updated",
                                  user: "System"
   end
 
