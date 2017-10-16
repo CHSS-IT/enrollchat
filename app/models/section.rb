@@ -60,7 +60,6 @@ class Section < ApplicationRecord
       report_action('Updated Sections', 'All sections were touched by the import process.')
     end
     # puts @report
-    File.delete(filepath)
     ActionCable.server.broadcast 'room_channel',
                                  body:  "Registration data import complete. #{@new_sections} added. #{@updated_sections} updated.",
                                  section_name: "Alert",

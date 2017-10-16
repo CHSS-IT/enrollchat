@@ -40,16 +40,23 @@ gem 'redis', '~> 3.0'
 
 gem 'airbrake', '~> 7.0'
 
+# For file storage on S3
 gem 'aws-sdk', '~> 2'
 
 # Responsive layout with bootstrap 4
 gem 'bootstrap', '~> 4.0.0.alpha6'
+
+# File uploads
+gem 'carrierwave', '~> 1.0'
 
 # Devise for authentication
 gem 'devise'
 
 # For using CAS authentication with Devise
 gem 'devise_cas_authenticatable', '~> 1.10.2'
+
+# carrierwave support for S3
+gem "fog-aws"
 
 # font-awesome for iconography
 gem 'font-awesome-sass'

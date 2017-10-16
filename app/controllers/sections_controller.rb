@@ -12,14 +12,21 @@ class SectionsController < ApplicationController
     if params[:file].nil?
       flash[:alert] = "Upload attempted but no file was attached!"
     else
-      File.delete(Rails.root.join('tmp', params[:file].original_filename)) if File.exists?(Rails.root.join('tmp', params[:file].original_filename))
-      File.open(Rails.root.join('tmp', params[:file].original_filename), 'wb') do |file|
-        file.write(params[:file].read)
-      end
 
-      filepath = Rails.root.join('tmp', params[:file].original_filename)
+      feed = params[:file]
 
-      ImportWorker.perform_async("tmp/#{params[:file].original_filename}", current_user.id)
+      uploader = FeedUploader.new
+      uploader.store!(feed)
+
+
+      # File.delete(Rails.root.join('tmp', params[:file].original_filename)) if File.exists?(Rails.root.join('tmp', params[:file].original_filename))
+      # File.open(Rails.root.join('tmp', params[:file].original_filename), 'wb') do |file|
+      #   file.write(params[:file].read)
+      # end
+      #
+      # filepath = Rails.root.join('tmp', params[:file].original_filename)
+      #
+      ImportWorker.perform_async("#{uploader.url}", current_user.id)
 
     end
   end
