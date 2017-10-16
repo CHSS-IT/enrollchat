@@ -30,7 +30,14 @@
         </li>
       <% end %>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <%= form_tag sections_import_path, multipart: true, class: 'form-inline', id: 'update-form', remote: true do %>
+            <%= file_field_tag :file, :accept => 'application/xslt+xml' %>
+            <%= submit_tag "Update Sections", :class => "btn btn-white" %>
+        <% end %>
+        <span class="spinner"><i class="fa fa-spinner fa-pulse"></i></span>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Disabled</a>
       </li>
     </ul>
     <div class="my-2 my-lg-0">

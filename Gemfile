@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby "2.4.1"
+ruby "2.4.2"
 
 gem "rake"
 
@@ -35,23 +35,39 @@ gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+
+# Alphabetize non-core gems
+
+gem 'airbrake', '~> 7.0'
+
+# For file storage on S3
+gem 'aws-sdk', '~> 2'
+
+# Responsive layout with bootstrap 4
+gem 'bootstrap', '~> 4.0.0.alpha6'
+
+# File uploads
+gem 'carrierwave', '~> 1.0'
 
 # Devise for authentication
 gem 'devise'
+
 # For using CAS authentication with Devise
 gem 'devise_cas_authenticatable', '~> 1.10.2'
 
-gem 'bootstrap', '~> 4.0.0.alpha6'
+# carrierwave support for S3
+gem "fog-aws"
+
+# font-awesome for iconography
+gem 'font-awesome-sass'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
-gem 'airbrake', '~> 7.0'
-# gem 'rails_12factor'
-gem 'font-awesome-sass'
+# For processing excel files
+gem "roo", "~> 2.7.0"
 
+gem 'sidekiq'
 
 
 group :development, :test do

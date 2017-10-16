@@ -16,5 +16,6 @@
 //= require datatables.net/js/jquery.dataTables
 //= require datatables.bootstrap4.min
 //= require rails-ujs
+//= require sections.coffee
 //= require cable
 //= require turbolinks
