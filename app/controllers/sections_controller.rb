@@ -2,6 +2,7 @@ class SectionsController < ApplicationController
   before_action :set_term, only: :index
   before_action :set_section, only: :show
   before_action :ensure_admin!, only: :import
+  before_action :authenticate_user!
 
   # GET /sections
   # GET /sections.json
@@ -54,7 +55,7 @@ class SectionsController < ApplicationController
 
   def ensure_admin!
     unless current_user.admin?
-      redirect_to root_path, notice: 'You do not have access to this page'
+      redirect_to sections_path, notice: 'You do not have access to this page'
       return false
     end
   end

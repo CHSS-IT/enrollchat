@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EnrollChat</title>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= action_cable_meta_tag %>
+    <meta name="turbolinks-cache-control" content="no-cache">
+    <link type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <%= favicon_link_tag(source="Favicon.ico") %>
+  </head>
+<body>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <a class="navbar-brand" href="#">EnrollChat</a>
+</nav>
+  <div class="container-fluid">
+    <%= render partial: "/layouts/alert", flash: flash %>
+    <%= yield %>
+  </div>
+  </body>
+</html>

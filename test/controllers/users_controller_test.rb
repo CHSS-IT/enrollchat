@@ -14,7 +14,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test "should not GET index for a non-admin user" do
     login_as users(:two)
     get users_url
-    assert_redirected_to root_url
+    assert_redirected_to sections_url
     assert_equal 'You do not have access to this page', flash[:notice]
   end
 
@@ -27,7 +27,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test "should not GET new user for a non-admin user" do
     login_as users(:two)
     get new_user_url
-    assert_redirected_to root_url
+    assert_redirected_to sections_url
     assert_equal 'You do not have access to this page', flash[:notice]
   end
 
@@ -45,7 +45,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_no_difference('User.count') do
       post users_path, params: { user: { first_name: 'Timothy', last_name: "McGee", email: "tmcgee@test.com", username: 'tmcgee', admin: false } }
     end
-    assert_redirected_to root_url
+    assert_redirected_to sections_url
     assert_equal 'You do not have access to this page', flash[:notice]
   end
 
@@ -58,7 +58,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test "should not GET show with a non-admin user" do
     login_as users(:two)
     get user_url(@user)
-    assert_redirected_to root_url
+    assert_redirected_to sections_url
     assert_equal 'You do not have access to this page', flash[:notice]
   end
 
@@ -71,7 +71,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test "should not GET edit user with a non-admin user" do
     login_as users(:two)
     get edit_user_url(@user)
-    assert_redirected_to root_url
+    assert_redirected_to sections_url
     assert_equal 'You do not have access to this page', flash[:notice]
   end
 
@@ -86,7 +86,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test "should not update user with a non-admin user" do
     login_as users(:two)
     patch user_url(@user), params: { user: { first_name: 'New', last_name: 'Name' } }
-    assert_redirected_to root_url
+    assert_redirected_to sections_url
     assert @user.first_name = 'Timothy'
     assert_equal 'You do not have access to this page', flash[:notice]
   end
