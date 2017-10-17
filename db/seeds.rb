@@ -11,6 +11,7 @@ CSV.foreach(Rails.root.join('lib', 'seeds', 'sections.csv'), :headers => true) d
     Section.create!(row.to_hash)
 end
 
-admin = User.create!(email: 'dcollie2@gmu.edu', username: 'dcollie2')
-admin = User.create!(email: 'czaccaro@gmu.edu', username: 'czaccaro')
-admin = User.create!(email: 'mwhiteo@gmu.edu', username: 'mwhiteo')
+admin = User.create!(email: 'dcollie2@gmu.edu', username: 'dcollie2', first_name: 'Daniel', last_name: 'Collier', admin: true)
+admin = User.create!(email: 'czaccaro@gmu.edu', username: 'czaccaro', first_name: 'Craig', last_name: 'Zaccaro', admin: true)
+admin = User.create!(email: 'mwhiteo@gmu.edu', username: 'mwhiteo', first_name: 'Melanie', last_name: 'White', admin: true)
+user = User.create!(email: 'chssweb@gmu.edu', username: 'chssweb', first_name: 'Limited', last_name: 'User', admin: false)

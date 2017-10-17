@@ -6,7 +6,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= action_cable_meta_tag %>
-
+    <meta name="turbolinks-cache-control" content="no-cache">
     <link type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= favicon_link_tag(source="Favicon.ico") %>
   </head>
@@ -22,15 +22,20 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <%= link_to 'Home', root_url, class: 'nav-link' %>
       </li>
-      <li class="nav-item">
-        <%= form_tag sections_import_path, multipart: true, class: 'form-inline', id: 'update-form', remote: true do %>
-            <%= file_field_tag :file, :accept => 'application/xslt+xml' %>
-            <%= submit_tag "Update Sections", :class => "btn btn-white" %>
-        <% end %>
-        <span class="spinner"><i class="fa fa-spinner fa-pulse"></i></span>
-      </li>
+      <% if current_user.try(:admin?) %>
+        <li class="nav-item">
+          <%= link_to 'Users', users_url, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= form_tag sections_import_path, multipart: true, class: 'form-inline', id: 'update-form', remote: true do %>
+              <%= file_field_tag :file, :accept => 'application/xslt+xml' %>
+              <%= submit_tag "Update Sections", :class => "btn btn-white" %>
+          <% end %>
+          <span class="spinner"><i class="fa fa-spinner fa-pulse"></i></span>
+        </li>
+      <% end %>
       <li class="nav-item">
         <a class="nav-link" href="#">Disabled</a>
       </li>
@@ -42,6 +47,7 @@
 </nav>
 
   <div class="container-fluid">
+    <%= render partial: "/layouts/alert", flash: flash %>
     <%= yield %>
   </div>
 

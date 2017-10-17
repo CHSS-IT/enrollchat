@@ -7,3 +7,20 @@
 one:
   email: 'chssadmin@email.com'
   username: 'chssadmin'
+  first_name: 'Jethro'
+  last_name: 'Gibbs'
+  admin: true
+
+two:
+  email: 'chssuser@email.com'
+  username: 'chssuser'
+  first_name: 'Anthony'
+  last_name: 'DiNozzo'
+  admin: false
+
+three:
+  email: 'testuser@email.com'
+  username: 'testuser'
+  first_name: 'Timothy'
+  last_name: 'McGee'
+  admin: false
