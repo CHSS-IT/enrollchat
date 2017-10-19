@@ -50,7 +50,7 @@ class SectionsControllerTest < ActionDispatch::IntegrationTest
   test "should not perform import for a non-admin user" do
     login_as users(:two)
     post sections_import_path
-    assert_redirected_to root_url
+    assert_redirected_to sections_url
     assert_equal 'You do not have access to this page', flash[:notice]
   end
 

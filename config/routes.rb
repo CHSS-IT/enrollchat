@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'static_pages/home'
+
   devise_for :users, :path_prefix => 'app'
   resources :users
   resources :sections, only: [:index, :show] do
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
   mount ActionCable.server, at: '/cable'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.htm
-  root to: 'sections#index'
+  root to: 'static_pages#home'
 
 
 end
