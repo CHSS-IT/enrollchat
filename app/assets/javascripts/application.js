@@ -20,3 +20,4 @@
 //= require cable
 //= require turbolinks
 //= require jquery-ui.min
+//= require material

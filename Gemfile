@@ -64,6 +64,9 @@ gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
+#material design
+gem 'material-sass', '~> 4.0.0.beta'
+
 # For processing excel files
 gem "roo", "~> 2.7.0"
 
