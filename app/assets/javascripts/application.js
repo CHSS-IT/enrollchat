@@ -19,4 +19,3 @@
 //= require sections.coffee
 //= require cable
 //= require turbolinks
-//= require material
