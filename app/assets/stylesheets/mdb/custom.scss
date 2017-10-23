@@ -1,0 +1,12 @@
+//custom use of MDB styles 
+
+html, body {height: 100%;}
+
+body {
+    background: $default-color-dark; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient(left top, $default-color, $default-color-dark); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, $default-color, $default-color-dark); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, $default-color, $default-color-dark); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, $default-color, $default-color-dark); /* Standard syntax (must be last) */
+    background: #004d40;
+}
