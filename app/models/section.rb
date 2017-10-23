@@ -29,6 +29,13 @@ class Section < ApplicationRecord
       report_action('New Sections', section.section_and_number) if section.new_record?
 
       # TODO: do we have a flag for cancellation?
+      if section.status == 'C'
+        if section.status_changed? || section.canceled_at.blank?
+          puts "NEW CANCEL! - #{section.status_changed?} - #{section.canceled_at.blank?}"
+          section.canceled_at = DateTime.now()
+          report_action('Canceled Sections', section.section_and_number)
+        end
+      end
 
       # Save if changed, touch if unchanged
       if section.changed?
@@ -39,6 +46,7 @@ class Section < ApplicationRecord
       end
       puts row
     end
+
 
     # Used last_touched_at to determine which terms were updated
     touched = Section.where('updated_at > ?', last_touched_at)
