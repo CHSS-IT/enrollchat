@@ -3,11 +3,20 @@ class SectionsController < ApplicationController
   before_action :set_section, only: :show
   before_action :ensure_admin!, only: :import
   before_action :authenticate_user!
+  before_action :set_department, only: :index
 
   # GET /sections
   # GET /sections.json
+  # def index
+  #   @sections = Section.where(term: @term)
+  # end
+
   def index
-    @sections = Section.where(term: @term)
+    if params[:section]
+      @sections = Section.filter(params[:section][:department]).where(term: @term).sort_by &:section_and_number
+    else
+      @sections = Section.where(term: @term).sort_by &:section_and_number
+    end
   end
 
   def import
@@ -67,6 +76,16 @@ class SectionsController < ApplicationController
       @term = Section.maximum(:term)
     end
     cookies[:term] = @term unless cookies[:term] == @term
+  end
+
+  def set_department
+    if params[:section].present?
+      logger.debug("Department param present.")
+      @department = params[:section][:department]
+    else
+      logger.debug("Setting department to ALL")
+      @department = 'ALL'
+    end
   end
 
   def ensure_admin!

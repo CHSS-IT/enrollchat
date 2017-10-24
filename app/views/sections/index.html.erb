@@ -2,6 +2,9 @@
 <div class="row">
   <div class="col-sm-8">
     <h1><%= term_in_words(@term) %> Sections</h1>
+    <%= form_tag sections_path, method: "get", id: "filter", class: "filter" do %>
+    <%= select "section", "department", options_for_select(Section.department_list, selected: @department), { prompt: 'ALL' }, { id: 'filter-department' } %>
+  <% end %>
     <span id="section-table">
       <%= render 'section_table' %>
     </span>
@@ -20,4 +23,10 @@
       stateSave: true,
     } );
   } );
+</script>
+
+<script type="text/javascript">
+  $('#filter-department').change(function() {
+    this.form.submit();
+  });
 </script>
