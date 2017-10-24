@@ -1,14 +1,14 @@
-<div class="jumbotron">
-  <div class="container">
-    <h1 class="display-1 font-weight-bold text-center">EnrollChat</h1>
-    <p>Welcome to EnrollChat, an application for discussing course section enrollment. Click the button below to sign in using your Mason NetID. To request access, please <%= link_to 'contact', 'mailto:chssweb@gmu.edu' %> the CHSS Dean's Office.</p>
-    <div class="text-center">
-      <%= link_to 'Login', sections_url, class: "btn btn-success btn-lg" %>
+<div class="loginContainer">
+  <h1 class="display-4 font-weight-bold text-center">EnrollChat</h1>
+  <div class="card">
+    <div class="card-body">
+      <span>Welcome to EnrollChat, an application for discussing course section enrollment. Click the button below to sign in using your Mason NetID. To request access, please <%= link_to 'contact', 'mailto:chssweb@gmu.edu' %> the CHSS Dean's Office.</span>
     </div>
   </div>
+
+  <%= link_to 'Login', sections_url, class: "btn deep-orange btn-block btn-lg" %>
+
+  <footer class="footer">
+    <p class="white-text text-right">A product of the CHSSWeb team</p>
+  </footer>
 </div>
-<footer class="footer">
-  <div class="container">
-    <p class="text-muted text-right">A product of the CHSSWeb team</p>
-  </div>
-</footer>
