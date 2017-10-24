@@ -1,0 +1,34 @@
+<table id="class-sections" class="table table-striped table-bordered table-responsive table-sm table-hover" cellspacing="0" width="100%">
+  <thead>
+    <tr class="bg-info">
+      <th>Department</th>
+      <th>Not Canceled</th>
+      <th>Canceled</th>
+      <th>Under-Enrolled</th>
+      <th>Full</th>
+      <th>Over-Enrolled</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sections.each do |department, sections| %>
+    <tr>
+      <td><%= department %></td>
+      <td><%= Section.by_department(department).not_canceled.size %></td>
+      <td><%= Section.by_department(department).canceled.size %></td>
+      <td><%= Section.by_department(department).full.size %></td>
+      <td><%= Section.by_department(department).under_enrolled.size %></td>
+      <td><%= Section.by_department(department).over_enrolled.size %></td>
+    </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr class="table-info">
+      <td>TOTAL</td>
+      <td><%= @not_canceled %></td>
+      <td><%= @canceled %></td>
+      <td><%= @full %></td>
+      <td><%= @under_enrolled %></td>
+      <td><%= @over_enrolled %></td>
+    </tr>
+  </tfoot>
+</table>

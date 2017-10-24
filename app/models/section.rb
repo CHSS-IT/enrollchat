@@ -3,6 +3,15 @@ class Section < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
+  scope :canceled, -> { where(status: 'CL') }
+  scope :not_canceled, -> { where("status <> 'CL'") }
+  scope :by_term, ->(term) { where(term: term) }
+  scope :by_department, ->(department) { where(department: department) }
+  scope :full_or_over_enrolled, -> { where('actual_enrollment >= enrollment_limit') }
+  scope :full, -> { where('actual_enrollment = enrollment_limit') }
+  scope :over_enrolled, -> { where('actual_enrollment > enrollment_limit') }
+  scope :under_enrolled, -> { where('actual_enrollment < enrollment_limit') }
+
   def section_number_zeroed
     section_number.to_s.rjust(3, "0")
   end
