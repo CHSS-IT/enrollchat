@@ -19,6 +19,7 @@ body {
 	    background: #004d40;
 	    background-image: radial-gradient(farthest-corner at 40px 60px, #84ffff 0%, #004d40 70%);
 	    //? filter: blur(40px) grayscale(80%);
+	    z-index: -1;
 	}
 }
 

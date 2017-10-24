@@ -1,13 +1,29 @@
 <span id="alert-wrapper"></span>
 <div class="row">
   <div class="col-sm-8">
-    <div class="card">
-      <div class="card-header">
-        <h1 class="card-title"><%= term_in_words(@term) %> Sections</h1>
-      </div>
-      <div id="section-table" class="card-content table-full-width">
-        <%= render 'section_table' %>
-      </div>
+    <h1 class="card-title"><%= term_in_words(@term) %> Sections</h1>
+    <button class="navbar-toggler navbar-toggler-right float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <% if current_user.try(:admin?) %>
+        <li class="nav-item">
+          <%= form_tag sections_import_path, multipart: true, class: 'form-inline', id: 'update-form', remote: true do %>
+              <%= file_field_tag :file, :accept => 'application/xslt+xml' %>
+              <%= submit_tag "Update Sections", :class => "btn btn-white" %>
+          <% end %>
+          <span class="spinner"><i class="fa fa-spinner fa-pulse"></i></span>
+        </li>
+      <% end %>
+      <% @terms.each do |term| %>
+        <li class="nav-item">
+          <%= link_to term_in_words(term.term), sections_url(term: term.term), class: 'nav-link' %>
+        </li>
+      <% end %>  
+    </div>
+
+    <div id="section-table" class="table-full-width">
+      <%= render 'section_table' %>
     </div>
   </div>
 

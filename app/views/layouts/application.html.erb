@@ -17,40 +17,30 @@
   <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
     <a class="navbar-brand" href="#">
       <img src="assets/images/EnrollChatLogo.jpg" width="30" height="30" class="d-inline-block align-top"/> 
+      EnrollChat
     </a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  </nav>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+  <nav class="navbar navbar-light bg-faded white navbar-expand-lg">
+    <ul class="navbar-nav mr-auto text-center">
       <li class="nav-item active">
+        <i class="fa fa-list-ul" aria-hidden="true"></i>
         <%= link_to 'Home', sections_path, class: 'nav-link' %>
       </li>
       <% if current_user.try(:admin?) %>
         <li class="nav-item">
+          <i class="fa fa-user" aria-hidden="true"></i>
           <%= link_to 'Users', users_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= form_tag sections_import_path, multipart: true, class: 'form-inline', id: 'update-form', remote: true do %>
-              <%= file_field_tag :file, :accept => 'application/xslt+xml' %>
-              <%= submit_tag "Update Sections", :class => "btn btn-white" %>
-          <% end %>
-          <span class="spinner"><i class="fa fa-spinner fa-pulse"></i></span>
-        </li>
-      <% end %>
-      <% @terms.each do |term| %>
-        <li class="nav-item">
-          <%= link_to term_in_words(term.term), sections_url(term: term.term), class: 'nav-link' %>
         </li>
       <% end %>
     </ul>
+
     <div class="my-2 my-lg-0">
       <%= render 'devise/menu/login_items' %>
     </div>
   </nav>
 
-  <div class="container-fluid">
+  <div class="container-fluid white">
     <%= render partial: "/layouts/alert", flash: flash %>
     <%= yield %>
   </div>
@@ -58,3 +48,5 @@
 
 </body>
 </html>
+
+
