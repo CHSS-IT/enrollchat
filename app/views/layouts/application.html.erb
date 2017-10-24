@@ -8,7 +8,6 @@
     <%= action_cable_meta_tag %>
     <meta name="turbolinks-cache-control" content="no-cache">
     <link type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= favicon_link_tag(source="Favicon.ico") %>
   </head>
 
@@ -22,7 +21,6 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <!--<a class="navbar-brand" href="#">EnrollChat</a>-->
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -41,10 +39,7 @@
           <span class="spinner"><i class="fa fa-spinner fa-pulse"></i></span>
         </li>
       <% end %>
-<<<<<<< HEAD
       <% @terms.each do |term| %>
-=======
->>>>>>> Add end tag
         <li class="nav-item">
           <%= link_to term_in_words(term.term), sections_url(term: term.term), class: 'nav-link' %>
         </li>
