@@ -41,6 +41,7 @@
           <span class="spinner"><i class="fa fa-spinner fa-pulse"></i></span>
         </li>
       <% end %>
+<<<<<<< HEAD
         <li class="nav-item">
           <a class="nav-link" href="#">Disabled</a>
         </li>
@@ -48,6 +49,16 @@
       <div class="my-2 my-lg-0">
         <%= render 'devise/menu/login_items' %>
       </div>
+=======
+      <% @terms.each do |term| %>
+        <li class="nav-item">
+          <%= link_to term_in_words(term.term), sections_url(term: term.term), class: 'nav-link' %>
+        </li>
+      <% end %>
+    </ul>
+    <div class="my-2 my-lg-0">
+      <%= render 'devise/menu/login_items' %>
+>>>>>>> d5daabd820f0cc45ac706570842e3a64e81d1120
     </div>
   </nav>
 
