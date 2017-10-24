@@ -3,5 +3,10 @@ class ApplicationController < ActionController::Base
 
   require 'csv'
 
+  before_action :set_terms
+
+  def set_terms
+    @terms = Section.select(:term).distinct(:term).order(term: :desc)
+  end
 
 end
