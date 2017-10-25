@@ -2,8 +2,9 @@
 <div class="row">
   <div class="col-sm-8">
     <h1><%= term_in_words(@term) %> Sections</h1>
-    <%= form_tag sections_path, method: "get", id: "filter", class: "filter" do %>
-    <%= select "section", "department", options_for_select(Section.department_list, selected: @department), { prompt: 'ALL' }, { id: 'filter-department' } %>
+    <%= label_tag 'department', 'Select Department' %>
+    <%= form_tag sections_path, method: "get", id: "filter", class: "col-sm-3 control-label" do %>
+    <%= select "section", "department", options_for_select(Section.department_list, selected: @department), { prompt: 'ALL' }, { id: 'filter-department', class: 'form-control' } %><br />
   <% end %>
     <span id="section-table">
       <%= render 'section_table' %>
