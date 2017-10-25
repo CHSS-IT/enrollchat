@@ -2,8 +2,8 @@
 <div class="row">
   <div class="col-sm-8">
     <h1 class="card-title"><%= term_in_words(@term) %> Sections</h1>
-    <button class="navbar-toggler navbar-toggler-right float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="fa fa-bars"></i>
+    <button class="btn btn-outline-default float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      Upload <i class="fa fa-upload m1-1" aria-hidden="true"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <% if current_user.try(:admin?) %>
