@@ -22,31 +22,35 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to 'Home', sections_path, class: 'nav-link' %>
-      </li>
-      <% if current_user.try(:admin?) %>
-        <li class="nav-item">
-          <%= link_to 'Users', users_path, class: 'nav-link' %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to 'Home', sections_path, class: 'nav-link' %>
         </li>
         <li class="nav-item">
-          <%= form_tag sections_import_path, multipart: true, class: 'form-inline', id: 'update-form', remote: true do %>
-              <%= file_field_tag :file, :accept => 'application/xslt+xml' %>
-              <%= submit_tag "Update Sections", :class => "btn btn-white" %>
-          <% end %>
-          <span class="spinner"><i class="fa fa-spinner fa-pulse"></i></span>
+          <%= link_to 'Reports', reports_path, class: 'nav-link' %>
         </li>
-      <% end %>
-      <% @terms.each do |term| %>
-        <li class="nav-item">
-          <%= link_to term_in_words(term.term), sections_url(term: term.term), class: 'nav-link' %>
-        </li>
-      <% end %>
-    </ul>
-    <div class="my-2 my-lg-0">
-      <%= render 'devise/menu/login_items' %>
+        <% if current_user.try(:admin?) %>
+          <li class="nav-item">
+            <%= link_to 'Users', users_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= form_tag sections_import_path, multipart: true, class: 'form-inline', id: 'update-form', remote: true do %>
+                <%= file_field_tag :file, :accept => 'application/xslt+xml' %>
+                <%= submit_tag "Update Sections", :class => "btn btn-white" %>
+            <% end %>
+            <span class="spinner"><i class="fa fa-spinner fa-pulse"></i></span>
+          </li>
+        <% end %>
+        <% @terms.each do |term| %>
+          <li class="nav-item">
+            <%= link_to term_in_words(term.term), sections_url(term: term.term), class: 'nav-link' %>
+          </li>
+        <% end %>
+      </ul>
+      <div class="my-2 my-lg-0">
+        <%= render 'devise/menu/login_items' %>
+      </div>
     </div>
   </nav>
 
