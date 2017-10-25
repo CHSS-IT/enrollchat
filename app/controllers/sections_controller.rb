@@ -7,9 +7,6 @@ class SectionsController < ApplicationController
 
   # GET /sections
   # GET /sections.json
-  # def index
-  #   @sections = Section.where(term: @term)
-  # end
 
   def index
     if params[:section] && @department.present?
