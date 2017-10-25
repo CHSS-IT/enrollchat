@@ -12,8 +12,8 @@ class SectionsController < ApplicationController
   # end
 
   def index
-    if params[:section]
-      @sections = Section.filter(params[:section][:department]).where(term: @term).sort_by &:section_and_number
+    if params[:section] && @department.present?
+      @sections = Section.where(term: @term).where(department: @department).sort_by &:section_and_number
     else
       @sections = Section.where(term: @term).sort_by &:section_and_number
     end

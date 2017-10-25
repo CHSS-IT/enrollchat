@@ -4,7 +4,7 @@ one:
   owner: MyString
   term: 1
   section_id: 1
-  department: MyString
+  department: BIS
   cross_list_group: MyString
   course_description: MyString
   section_number: 1
@@ -21,7 +21,7 @@ two:
   owner: MyString
   term: 1
   section_id: 1
-  department: MyString
+  department: CLS
   cross_list_group: MyString
   course_description: MyString
   section_number: 1

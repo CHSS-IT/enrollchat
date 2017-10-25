@@ -15,12 +15,6 @@ class Section < ApplicationRecord
      self.all.map{|s| s.department}.uniq
   end
 
-  def self.filter(filter)
-    if filter
-      where(department: filter)
-    end
-  end
-
   def self.import(filepath)
     # Grab most recent update time
     last_touched_at = Section.maximum(:updated_at)
