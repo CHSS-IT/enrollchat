@@ -21,7 +21,7 @@ class Section < ApplicationRecord
   end
 
   def self.department_list
-     self.all.map{|s| s.department}.uniq
+     self.all.map{|s| s.department}.sort.uniq
   end
 
   def self.import(filepath)
