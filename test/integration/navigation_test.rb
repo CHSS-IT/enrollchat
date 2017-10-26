@@ -21,12 +21,12 @@ class NavigationTest < ActionDispatch::IntegrationTest
   test "File upload interface should be available for admins" do
     login_as @admin
     get sections_url
-    assert_select 'form', id: 'update-form', count: 1
+    assert_select 'form', count: 2
   end
 
   test "File upload interface should not be available for non-admins" do
     login_as @user
     get sections_url
-    assert_select 'form', id: 'update-form', count: 0
+    assert_select 'form', count: 1
   end
 end

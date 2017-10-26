@@ -11,6 +11,14 @@ class SectionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get index with full collection of sections" do
+    skip
+  end
+
+  test "should get index with sections filtered by proper department" do
+    skip
+  end
+
   # test "should get new" do
   #   get new_section_url
   #   assert_response :success

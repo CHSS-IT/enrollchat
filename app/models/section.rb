@@ -20,6 +20,10 @@ class Section < ApplicationRecord
     "#{course_description}-#{section_number_zeroed}"
   end
 
+  def self.department_list
+     self.all.map{|s| s.department}.uniq
+  end
+
   def self.import(filepath)
     # Grab most recent update time
     last_touched_at = Section.maximum(:updated_at)
