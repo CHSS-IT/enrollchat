@@ -7,6 +7,7 @@ class SectionsController < ApplicationController
   # GET /sections.json
   def index
     @sections = Section.by_term(@term)
+    @updated_at = @sections.maximum(:updated_at)
   end
 
   def import

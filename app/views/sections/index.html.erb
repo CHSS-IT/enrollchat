@@ -4,6 +4,7 @@
     <div class="card">
       <div class="card-header">
         <h1 class="card-title"><%= term_in_words(@term) %> Sections</h1>
+        <h2>Updated <%= basic_date(@updated_at) %></h2>
       </div>
       <div id="section-table" class="card-content table-full-width">
         <%= render 'section_table' %>

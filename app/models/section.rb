@@ -90,4 +90,27 @@ class Section < ApplicationRecord
     puts message
   end
 
+  def graduate?
+    level[0..7] == 'Graduate'
+  end
+
+  def undergraduate?
+    level[0..12] == 'Undergraduate'
+  end
+
+  def flagged_as
+    # It would be nice to add highlights to low enrolled courses.  The rules for this are a bit complicated.  An undergraduate course would get a highlight if its actual enrolled were under 15 and its crosslist enrolled were also under 15 (e.g. a course with 7 actual enrolled and 16 crosslist enrolled should not be highlighted).  A graduate course would be highlighted if its actual enrolled were under 10 and its cross list enrolled were under 10.  One more wrinkle, that we could ignore.  An undergraduate course should be treated as if it were a graduate course viz. these minimums if it is linked to a grad course with a cross list code.  Again, this last rule could be disregarded if that kind of check is hard to program and/or would slow down the program considerably. (The logic here is that if a course is cross listed as a grad/undergrad course, I’ve given the benefit of the doubt at treated it as a grad course with the min. enrollment at 10--probably an overly generous policy.)
+    # The might also be a different highlight color for any course with a WL above 5.
+
+    if waitlist > 5
+      "Waitlisted"
+    elsif graduate? # or state for undergraduate cross-listed with grad if possible
+      if actual_enrollment < 10 and cross_list_enrollment < 10
+        "Under-enrolled Graduate"
+      end
+    elsif actual_enrollment < 15 and cross_list_enrollment < 15
+      "Under-enrolled Undergraduate"
+    end
+  end
+
 end
