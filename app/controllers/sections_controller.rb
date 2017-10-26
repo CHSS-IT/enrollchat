@@ -1,5 +1,4 @@
 class SectionsController < ApplicationController
-  before_action :set_term, only: :index
   before_action :set_section, only: :show
   before_action :ensure_admin!, only: :import
   before_action :authenticate_user!
@@ -9,11 +8,16 @@ class SectionsController < ApplicationController
   # GET /sections.json
 
   def index
+<<<<<<< HEAD
     if params[:section] && @department.present?
       @sections = Section.where(term: @term).where(department: @department).sort_by &:section_and_number
     else
       @sections = Section.where(term: @term).sort_by &:section_and_number
     end
+=======
+    @sections = Section.by_term(@term)
+    @updated_at = @sections.maximum(:updated_at)
+>>>>>>> master
   end
 
   def import
@@ -55,25 +59,6 @@ class SectionsController < ApplicationController
       @section = Section.find(params[:id])
     end
 
-  def set_term
-    logger.debug('Set Term!')
-    # Only allow six digit terms
-    unless /\Ad{6}/.match(params[:term])
-      logger.debug("Improper term.")
-      params[:term] == nil
-    end
-    if params[:term].present?
-      logger.debug("Term param present.")
-      @term = params[:term]
-    elsif cookies[:term].present?
-      logger.debug("Term cookie present.")
-      @term = cookies[:term]
-    else
-      logger.debug("Setting to maximum term.")
-      @term = Section.maximum(:term)
-    end
-    cookies[:term] = @term unless cookies[:term] == @term
-  end
 
   def set_department
     if params[:section].present?

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reports
   get 'static_pages/home'
 
   devise_for :users, :path_prefix => 'app'
