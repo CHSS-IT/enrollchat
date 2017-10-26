@@ -1,26 +1,19 @@
 <span id="alert-wrapper"></span>
 <div class="row">
   <div class="col-sm-8">
-<<<<<<< HEAD
-    <h1><%= term_in_words(@term) %> Sections</h1>
-    <%= label_tag 'department', 'Select Department' %>
-    <%= form_tag sections_path, method: "get", id: "filter", class: "col-sm-3 control-label" do %>
-    <%= select "section", "department", options_for_select(Section.department_list, selected: @department), { prompt: 'ALL' }, { id: 'filter-department', class: 'form-control' } %><br />
-  <% end %>
-    <span id="section-table">
-      <%= render 'section_table' %>
-    </span>
-=======
     <div class="card">
       <div class="card-header">
         <h1 class="card-title"><%= term_in_words(@term) %> Sections</h1>
         <h2>Updated <%= basic_date(@updated_at) %></h2>
+        <%= label_tag 'department', 'Select Department' %>
+        <%= form_tag sections_path, method: "get", id: "filter", class: "col-sm-3 control-label" do %>
+          <%= select "section", "department", options_for_select(Section.department_list, selected: @department), { prompt: 'ALL' }, { id: 'filter-department', class: 'form-control' } %>
+        <% end %>
       </div>
       <div id="section-table" class="card-content table-full-width">
         <%= render 'section_table' %>
       </div>
     </div>
->>>>>>> master
   </div>
 
   <div class="col-sm-2 bg-faded" id="comments-column">

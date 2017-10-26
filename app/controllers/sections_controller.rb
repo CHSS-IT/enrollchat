@@ -8,16 +8,12 @@ class SectionsController < ApplicationController
   # GET /sections.json
 
   def index
-<<<<<<< HEAD
     if params[:section] && @department.present?
-      @sections = Section.where(term: @term).where(department: @department).sort_by &:section_and_number
+      @sections = Section.by_term(@term).by_department(@department)
     else
-      @sections = Section.where(term: @term).sort_by &:section_and_number
+      @sections = Section.by_term(@term)
     end
-=======
-    @sections = Section.by_term(@term)
     @updated_at = @sections.maximum(:updated_at)
->>>>>>> master
   end
 
   def import
@@ -59,23 +55,22 @@ class SectionsController < ApplicationController
       @section = Section.find(params[:id])
     end
 
-
-  def set_department
-    if params[:section].present?
-      logger.debug("Department param present.")
-      @department = params[:section][:department]
-    else
-      logger.debug("Setting department to ALL")
-      @department = 'ALL'
+    def set_department
+      if params[:section].present?
+        logger.debug("Department param present.")
+        @department = params[:section][:department]
+      else
+        logger.debug("Setting department to ALL")
+        @department = 'ALL'
+      end
     end
-  end
 
-  def ensure_admin!
-    unless current_user.admin?
-      redirect_to sections_path, notice: 'You do not have access to this page'
-      return false
+    def ensure_admin!
+      unless current_user.admin?
+        redirect_to sections_path, notice: 'You do not have access to this page'
+        return false
+      end
     end
-  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def section_params
