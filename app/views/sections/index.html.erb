@@ -21,9 +21,18 @@
         </li>
       <% end %>  
     </div>
-
-    <div id="section-table" class="card table-full-width">
-      <%= render 'section_table' %>
+    <div class="card">
+      <div class="card-header">
+        <h1 class="card-title"><%= term_in_words(@term) %> Sections</h1>
+        <h2>Updated <%= basic_date(@updated_at) %></h2>
+        <%= label_tag 'department', 'Select Department' %>
+        <%= form_tag sections_path, method: "get", id: "filter", class: "col-sm-3 control-label" do %>
+          <%= select "section", "department", options_for_select(Section.department_list, selected: @department), { prompt: 'ALL' }, { id: 'filter-department', class: 'form-control' } %>
+        <% end %>
+      </div>
+      <div id="section-table" class="card-content table-full-width">
+        <%= render 'section_table' %>
+      </div>
     </div>
   </div>
 
@@ -41,4 +50,10 @@
       stateSave: true,
     } );
   } );
+</script>
+
+<script type="text/javascript">
+  $('#filter-department').change(function() {
+    this.form.submit();
+  });
 </script>

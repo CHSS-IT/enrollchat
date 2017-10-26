@@ -1,13 +1,19 @@
 class SectionsController < ApplicationController
-  before_action :set_term, only: :index
   before_action :set_section, only: :show
   before_action :ensure_admin!, only: :import
   before_action :authenticate_user!
+  before_action :set_department, only: :index
 
   # GET /sections
   # GET /sections.json
+
   def index
-    @sections = Section.where(term: @term)
+    if params[:section] && @department.present?
+      @sections = Section.by_term(@term).by_department(@department)
+    else
+      @sections = Section.by_term(@term)
+    end
+    @updated_at = @sections.maximum(:updated_at)
   end
 
   def import
@@ -49,32 +55,22 @@ class SectionsController < ApplicationController
       @section = Section.find(params[:id])
     end
 
-  def set_term
-    logger.debug('Set Term!')
-    # Only allow six digit terms
-    unless /\Ad{6}/.match(params[:term])
-      logger.debug("Improper term.")
-      params[:term] == nil
+    def set_department
+      if params[:section].present?
+        logger.debug("Department param present.")
+        @department = params[:section][:department]
+      else
+        logger.debug("Setting department to ALL")
+        @department = 'ALL'
+      end
     end
-    if params[:term].present?
-      logger.debug("Term param present.")
-      @term = params[:term]
-    elsif cookies[:term].present?
-      logger.debug("Term cookie present.")
-      @term = cookies[:term]
-    else
-      logger.debug("Setting to maximum term.")
-      @term = Section.maximum(:term)
-    end
-    cookies[:term] = @term unless cookies[:term] == @term
-  end
 
-  def ensure_admin!
-    unless current_user.admin?
-      redirect_to sections_path, notice: 'You do not have access to this page'
-      return false
+    def ensure_admin!
+      unless current_user.admin?
+        redirect_to sections_path, notice: 'You do not have access to this page'
+        return false
+      end
     end
-  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def section_params

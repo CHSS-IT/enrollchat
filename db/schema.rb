@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171023042733) do
+ActiveRecord::Schema.define(version: 20171026072119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,10 +37,10 @@ ActiveRecord::Schema.define(version: 20171023042733) do
     t.integer "credits"
     t.string "level"
     t.string "status"
-    t.integer "enrollment_limit"
-    t.integer "actual_enrollment"
-    t.integer "cross_list_enrollment"
-    t.integer "waitlist"
+    t.integer "enrollment_limit", default: 0
+    t.integer "actual_enrollment", default: 0
+    t.integer "cross_list_enrollment", default: 0
+    t.integer "waitlist", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "canceled_at"
