@@ -17,13 +17,13 @@ module SectionsHelper
     if section.flagged_as.present?
       icon_class =     case section.flagged_as
                          when "canceled"
-                           'fa fa-ban fa-pull-left'
+                           'fa fa-ban'
                          when "waitlisted"
-                           'fa fa-list-ol fa-pull-left'
+                           'fa fa-list-ol'
                          when "under-enrolled"
-                           'fa fa-level-down fa-pull-left'
+                           'fa fa-level-down'
                        end
-      text = tag.i({class: icon_class, title: section.flagged_as.capitalize, alt: section.flagged_as.capitalize}) + section.flagged_as.capitalize
+      text = tag.i({class: icon_class, title: section.flagged_as.capitalize, alt: section.flagged_as.capitalize}) #+ section.flagged_as.capitalize
     end
     return text.html_safe if text.present?
   end
