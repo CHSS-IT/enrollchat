@@ -1,5 +1,5 @@
-<tr id="<%= dom_id(section) %>">
-  <td><%= section.flagged_as %></td>
+<tr id="<%= dom_id(section) %>" class="<%= section.flagged_as %>">
+  <td><%= flagged_icon(section) %></td>
   <td><%= section.department %></td>
   <td><%= section.cross_list_group %></td>
   <td><%= section.section_and_number %></td>
