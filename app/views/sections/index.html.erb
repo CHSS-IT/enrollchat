@@ -27,7 +27,13 @@
 <script type="application/javascript">
   $(document).ready(function() {
     $('#class-sections').DataTable( {
-      stateSave: true,
+      responsive: true,
+      columnDefs: [
+        { responsivePriority: 1, targets: [4] },
+        { responsivePriority: 2, targets: [0,13] },
+        { responsivePriority: 3, targets: [9,10,11,12] }
+      ],
+      stateSave: true
     } );
   } );
 </script>
