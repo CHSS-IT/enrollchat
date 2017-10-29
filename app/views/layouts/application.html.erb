@@ -26,7 +26,7 @@
         Activity <!--<span class="badge badge-light">4</span>-->
       </button>
       <div class="dropdown-menu dropdown-menu-right" id="notifications" aria-labelledby="alerts-button">
-        <h2 class="dropdown-header">Recent Activity</h2>
+        <%= render partial: 'comments/recent_comment', collection: @recent_comments %>
       </div>
     </div>
 
