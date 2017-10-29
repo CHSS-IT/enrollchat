@@ -38,7 +38,8 @@ class CommentsController < ApplicationController
         ActionCable.server.broadcast 'room_channel',
                                     body:  @comment.body,
                                     section_name: @comment.section.section_and_number,
-                                    user: @comment.user.username
+                                    user: @comment.user.username,
+                                    section_id: @comment.section.id
         format.html { redirect_to sections_url, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
         format.js { flash.now[:notice] = 'Comment was successfully created.' }

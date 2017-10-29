@@ -7,7 +7,6 @@ App.room = App.cable.subscriptions.create "RoomChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    $('#notifications').prepend '<div class="card"><div class="card-header">' +
-      'New comment on ' + data.section_name + ' by ' + data.user + '.</div><div class="card-body">' + data.body + '</div>' + '</div>'
+    $('#notifications').prepend '<a class="dropdown-item" data-toggle="modal" data-target="#comments" data-remote="true" href="/sections/' + data.section_id + '/comments">New comment on ' + data.section_name + ' by ' + data.user + '.</a>'
     if data.section_name == 'Data Updated'
       location.reload()
