@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = @section.comments
+    @comments = @section.comments.order(created_at: :desc)
     respond_to do |format|
       format.html
       format.js { render layout: false }
