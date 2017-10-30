@@ -1,5 +1,7 @@
 @import 'bootstrap';
-@import 'dataTables.fontawesome';
+@import 'DataTables/dataTables.bootstrap4.min';
+@import 'DataTables/buttons.bootstrap4.min';
+@import 'DataTables/responsive.bootstrap4.min';
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "comments";

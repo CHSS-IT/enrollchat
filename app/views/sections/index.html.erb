@@ -1,26 +1,6 @@
 <span id="alert-wrapper"></span>
 <div class="row">
-  <div class="col-sm-8">
-    <h1 class="card-title"><%= term_in_words(@term) %> Sections</h1>
-    <button class="btn btn-outline-default float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      Upload <i class="fa fa-upload m1-1" aria-hidden="true"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <% if current_user.try(:admin?) %>
-        <li class="nav-item">
-          <%= form_tag sections_import_path, multipart: true, class: 'form-inline', id: 'update-form', remote: true do %>
-              <%= file_field_tag :file, :accept => 'application/xslt+xml' %>
-              <%= submit_tag "Update Sections", :class => "btn btn-white" %>
-          <% end %>
-          <span class="spinner"><i class="fa fa-spinner fa-pulse"></i></span>
-        </li>
-      <% end %>
-      <% @terms.each do |term| %>
-        <li class="nav-item">
-          <%= link_to term_in_words(term.term), sections_url(term: term.term), class: 'nav-link' %>
-        </li>
-      <% end %>  
-    </div>
+  <div class="col-sm-12">
     <div class="card">
       <div class="card-header">
         <h1 class="card-title"><%= term_in_words(@term) %> Sections</h1>
@@ -30,24 +10,44 @@
           <%= select "section", "department", options_for_select(Section.department_list, selected: @department), { prompt: 'ALL' }, { id: 'filter-department', class: 'form-control' } %>
         <% end %>
       </div>
+
+      <button class="btn btn-outline-default float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        Upload <i class="fa fa-upload m1-1" aria-hidden="true"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <% if current_user.try(:admin?) %>
+          <li class="nav-item">
+            <%= form_tag sections_import_path, multipart: true, class: 'form-inline', id: 'update-form', remote: true do %>
+                <%= file_field_tag :file, :accept => 'application/xslt+xml' %>
+                <%= submit_tag "Update Sections", :class => "btn btn-white" %>
+            <% end %>
+            <span class="spinner"><i class="fa fa-spinner fa-pulse"></i></span>
+          </li>
+        <% end %>
+        <% @terms.each do |term| %>
+          <li class="nav-item">
+            <%= link_to term_in_words(term.term), sections_url(term: term.term), class: 'nav-link' %>
+          </li>
+        <% end %>  
+      </div>  
+
       <div id="section-table" class="card-content table-full-width">
         <%= render 'section_table' %>
       </div>
     </div>
-  </div>
-
-  <div class="col-sm-2 bg-faded" id="comments-column">
-    <h1>Placeholder for comments</h1>
-  </div>
-
-  <div class="col-sm-2 bg-yellow" id="notifications">
   </div>
 </div>
 
 <script type="application/javascript">
   $(document).ready(function() {
     $('#class-sections').DataTable( {
-      stateSave: true,
+      responsive: true,
+      columnDefs: [
+        { responsivePriority: 1, targets: [4] },
+        { responsivePriority: 2, targets: [0,13] },
+        { responsivePriority: 3, targets: [9,10,11,12] }
+      ],
+      stateSave: true
     } );
   } );
 </script>

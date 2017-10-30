@@ -1,4 +1,4 @@
-$('#comments-holder').append("<%= j (render @comment) %>");
+$('#comments-holder').prepend("<%= j (render @comment) %>");
 $('#comment_body').val('');
 $("#notice").html("<%= flash[:notice] %>");
 $('#<%= dom_id(@section)%> td a span.comment-count').html('<%= @section.comments.size %>');

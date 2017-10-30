@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   require 'csv'
 
-  before_action :set_terms, :set_term
+  before_action :set_terms, :set_term, :get_recent_comments
 
   def set_terms
     @terms = Section.select(:term).distinct(:term).order(term: :desc)
@@ -27,6 +27,10 @@ class ApplicationController < ActionController::Base
       @term = Section.maximum(:term)
     end
     cookies[:term] = @term unless cookies[:term] == @term
+  end
+
+  def get_recent_comments
+    @recent_comments = Comment.recent
   end
 
 end

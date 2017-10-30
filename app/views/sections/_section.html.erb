@@ -1,4 +1,5 @@
-<tr id="<%= dom_id(section) %>">
+<tr id="<%= dom_id(section) %>" class="<%= section.flagged_as %>">
+  <td><%= flagged_icon(section) %></td>
   <td><%= section.flagged_as %></td>
   <td><%= section.department %></td>
   <td><%= section.cross_list_group %></td>
@@ -11,5 +12,5 @@
   <td><%= section.actual_enrollment %></td>
   <td><%= section.cross_list_enrollment %></td>
   <td><%= section.waitlist %></td>
-  <td><%= link_to "<i class='fa fa-comment' aria-hidden='true'></i> <span class='comment-count'>#{section.comments.size}".html_safe, section_comments_path(section), remote: true %></td>
+  <td><%= link_to "<i class='fa fa-comment' aria-hidden='true'></i> <span class='comment-count'>#{section.comments.size}".html_safe, section_comments_path(section), remote: true, data: { toggle: 'modal', target: '#comments' } %></td>
 </tr>

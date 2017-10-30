@@ -26,3 +26,27 @@
   border-right-color:#ddd;
   border-width:8px;
 }
+
+.canceled {
+  border-left: solid 1px;
+  border-left-color: red;
+  .fa-ban {
+    color: red;
+  }
+}
+
+.waitlisted {
+  border-left: solid 1px;
+  border-left-color: purple;
+  .fa-list-ol {
+    color: purple;
+  }
+}
+
+.under-enrolled {
+  border-left: solid 1px;
+  border-left-color: DarkGoldenRod;
+  .fa-level-down {
+    color: DarkGoldenRod;
+  }
+}

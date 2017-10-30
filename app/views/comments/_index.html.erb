@@ -1,8 +1,6 @@
-<h3>Comments</h3>
-
+<%= render '/comments/form', comment: Comment.new(section_id: @section.id, user_id: current_user.id) %>
 <div id="comments-holder">
   <%= render @comments %>
 </div>
 
 
-<%= render '/comments/form', comment: Comment.new(section_id: @section.id, user_id: current_user.id) %>
