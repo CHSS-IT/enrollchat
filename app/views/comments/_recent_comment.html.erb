@@ -1,1 +1,1 @@
-<%= link_to "#{recent_comment.section.section_and_number}: #{recent_comment.user.full_name} on #{basic_datetime(recent_comment.created_at)}", section_comments_path(recent_comment.section), class: 'dropdown-item', data: {toggle: 'modal', target: '#comments', remote: true} %>
+<%= link_to "#{recent_comment.section.section_and_number}: #{recent_comment.user.full_name} #{time_ago_in_words(recent_comment.created_at)} ago", section_comments_path(recent_comment.section), class: 'dropdown-item', data: {toggle: 'modal', target: '#comments', remote: true} %>

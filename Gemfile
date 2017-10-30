@@ -16,7 +16,7 @@ gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -44,7 +44,7 @@ gem 'airbrake', '~> 7.0'
 gem 'aws-sdk', '~> 2'
 
 # Responsive layout with bootstrap 4
-gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'bootstrap', '~> 4.0.0.beta2.1'
 
 # File uploads
 gem 'carrierwave', '~> 1.0'
