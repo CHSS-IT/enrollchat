@@ -44,6 +44,21 @@
 // Code
 
 
+//mixin 
+
+$baseFontSize : 14;
+@function rem($pixels, $context: $baseFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
+
 //
 // Color system
 //
@@ -175,10 +190,10 @@ $link-hover-decoration: underline !default;
 
 $grid-breakpoints: (
   xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
+  sm: rem(576),
+  md: rem(768),
+  lg: rem(992),
+  xl: rem(1200)
 ) !default;
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 @include _assert-starts-at-zero($grid-breakpoints);
@@ -189,10 +204,10 @@ $grid-breakpoints: (
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px
+  sm: rem(540),
+  md: rem(720),
+  lg: rem(960),
+  xl: rem(1140)
 ) !default;
 @include _assert-ascending($container-max-widths, "$container-max-widths");
 
@@ -202,7 +217,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns: 12 !default;
-$grid-gutter-width: 30px !default;
+$grid-gutter-width: rem(30) !default;
 
 // Components
 //
@@ -211,7 +226,7 @@ $grid-gutter-width: 30px !default;
 $line-height-lg:         1.5 !default;
 $line-height-sm:         1.5 !default;
 
-$border-width: 1px !default;
+$border-width: rem(1) !default;
 
 $border-radius:          .25rem !default;
 $border-radius-lg:       .3rem !default;
@@ -289,7 +304,7 @@ $dt-font-weight: $font-weight-bold !default;
 $kbd-box-shadow:         inset 0 -.1rem 0 rgba($black,.25) !default;
 $nested-kbd-font-weight: $font-weight-bold !default;
 
-$list-inline-padding: 5px !default;
+$list-inline-padding: rem(5) !default;
 
 $mark-bg: #fcf8e3 !default;
 
@@ -336,9 +351,9 @@ $input-btn-padding-x-lg:    1rem !default;
 $input-btn-line-height-lg:  1.5 !default;
 
 $btn-font-weight:                $font-weight-normal !default;
-$btn-box-shadow:                 inset 0 1px 0 rgba($white,.15), 0 1px 1px rgba($black,.075) !default;
-$btn-focus-box-shadow:           0 0 0 3px rgba(theme-color("primary"), .25) !default;
-$btn-active-box-shadow:          inset 0 3px 5px rgba($black,.125) !default;
+$btn-box-shadow:                 inset 0 rem(1) 0 rgba($white,.15), 0 rem(1) rem(1) rgba($black,.075) !default;
+$btn-focus-box-shadow:           0 0 0 rem(3) rgba(theme-color("primary"), .25) !default;
+$btn-active-box-shadow:          inset 0 rem(3) rem(5) rgba($black,.125) !default;
 
 $btn-link-disabled-color:        $gray-600 !default;
 
@@ -360,7 +375,7 @@ $input-disabled-bg:              $gray-200 !default;
 $input-color:                    $gray-700 !default;
 $input-border-color:             rgba($black,.15) !default;
 $input-btn-border-width:         $border-width !default; // For form controls and buttons
-$input-box-shadow:               inset 0 1px 1px rgba($black,.075) !default;
+$input-box-shadow:               inset 0 rem(1) rem(1) rgba($black,.075) !default;
 
 $input-border-radius:            $border-radius !default;
 $input-border-radius-lg:         $border-radius-lg !default;
@@ -416,7 +431,7 @@ $custom-control-indicator-checked-color:      $white !default;
 $custom-control-indicator-checked-bg:         theme-color("primary") !default;
 $custom-control-indicator-checked-box-shadow: none !default;
 
-$custom-control-indicator-focus-box-shadow: 0 0 0 1px $body-bg, 0 0 0 3px theme-color("primary") !default;
+$custom-control-indicator-focus-box-shadow: 0 0 0 rem(1) $body-bg, 0 0 0 rem(3) theme-color("primary") !default;
 
 $custom-control-indicator-active-color:      $white !default;
 $custom-control-indicator-active-bg:         lighten(theme-color("primary"), 35%) !default;
@@ -442,7 +457,7 @@ $custom-select-color:               $input-color !default;
 $custom-select-disabled-color:      $gray-600 !default;
 $custom-select-bg:            $white !default;
 $custom-select-disabled-bg:   $gray-200 !default;
-$custom-select-bg-size:       8px 10px !default; // In pixels because image dimensions
+$custom-select-bg-size:       rem(8) rem(10) !default; // In pixels because image dimensions
 $custom-select-indicator-color: #333 !default;
 $custom-select-indicator:     str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E"), "#", "%23") !default;
 $custom-select-border-width:  $input-btn-border-width !default;
@@ -450,7 +465,7 @@ $custom-select-border-color:  $input-border-color !default;
 $custom-select-border-radius: $border-radius !default;
 
 $custom-select-focus-border-color: lighten(theme-color("primary"), 25%) !default;
-$custom-select-focus-box-shadow:   inset 0 1px 2px rgba($black, .075), 0 0 5px rgba($custom-select-focus-border-color, .5) !default;
+$custom-select-focus-box-shadow:   inset 0 rem(1) rem(2) rgba($black, .075), 0 0 rem(5) rgba($custom-select-focus-border-color, .5) !default;
 
 $custom-select-font-size-sm:  75% !default;
 $custom-select-height-sm: $input-height-sm !default;
@@ -612,7 +627,7 @@ $jumbotron-bg:                   $gray-200 !default;
 
 $card-spacer-y:            .75rem !default;
 $card-spacer-x:            1.25rem !default;
-$card-border-width:        1px !default;
+$card-border-width:        rem(1) !default;
 $card-border-radius:       $border-radius !default;
 $card-border-color:        rgba($black,.125) !default;
 $card-inner-border-radius: calc(#{$card-border-radius} - #{$card-border-width}) !default;
@@ -630,43 +645,43 @@ $card-columns-margin:       $card-spacer-y !default;
 
 // Tooltips
 
-$tooltip-max-width:           200px !default;
+$tooltip-max-width:           rem(200) !default;
 $tooltip-color:               $white !default;
 $tooltip-bg:                  $black !default;
 $tooltip-opacity:             .9 !default;
-$tooltip-padding-y:           3px !default;
-$tooltip-padding-x:           8px !default;
+$tooltip-padding-y:           rem(3) !default;
+$tooltip-padding-x:           rem(8) !default;
 $tooltip-margin:              0 !default;
 
 
-$tooltip-arrow-width:         5px !default;
-$tooltip-arrow-height:        5px !default;
+$tooltip-arrow-width:         rem(5) !default;
+$tooltip-arrow-height:        rem(5) !default;
 $tooltip-arrow-color:         $tooltip-bg !default;
 
 
 // Popovers
 
-$popover-inner-padding:               1px !default;
+$popover-inner-padding:               rem(1) !default;
 $popover-bg:                          $white !default;
-$popover-max-width:                   276px !default;
+$popover-max-width:                   rem(276) !default;
 $popover-border-width:                $border-width !default;
 $popover-border-color:                rgba($black,.2) !default;
-$popover-box-shadow:                  0 5px 10px rgba($black,.2) !default;
+$popover-box-shadow:                  0 rem(5) rem(10) rgba($black,.2) !default;
 
 $popover-header-bg:                    darken($popover-bg, 3%) !default;
 $popover-header-color:                 $headings-color !default;
-$popover-header-padding-y:             8px !default;
-$popover-header-padding-x:             14px !default;
+$popover-header-padding-y:             rem(8) !default;
+$popover-header-padding-x:             rem(14) !default;
 
 $popover-body-color:               $body-color !default;
-$popover-body-padding-y:           9px !default;
-$popover-body-padding-x:           14px !default;
+$popover-body-padding-y:           rem(9) !default;
+$popover-body-padding-x:           rem(14) !default;
 
-$popover-arrow-width:                 10px !default;
-$popover-arrow-height:                5px !default;
+$popover-arrow-width:                 rem(10) !default;
+$popover-arrow-height:                rem(5) !default;
 $popover-arrow-color:                 $popover-bg !default;
 
-$popover-arrow-outer-width:           ($popover-arrow-width + 1px) !default;
+$popover-arrow-outer-width:           ($popover-arrow-width + rem(1) !default;
 $popover-arrow-outer-color:           fade-in($popover-border-color, .05) !default;
 
 
@@ -687,18 +702,18 @@ $badge-pill-border-radius:    10rem !default;
 // Modals
 
 // Padding applied to the modal body
-$modal-inner-padding:         15px !default;
+$modal-inner-padding:         rem(15) !default;
 
-$modal-dialog-margin:         10px !default;
-$modal-dialog-margin-y-sm-up: 30px !default;
+$modal-dialog-margin:         rem(10) !default;
+$modal-dialog-margin-y-sm-up: rem(30) !default;
 
 $modal-title-line-height:     $line-height-base !default;
 
 $modal-content-bg:               $white !default;
 $modal-content-border-color:     rgba($black,.2) !default;
 $modal-content-border-width:     $border-width !default;
-$modal-content-box-shadow-xs:    0 3px 9px rgba($black,.5) !default;
-$modal-content-box-shadow-sm-up: 0 5px 15px rgba($black,.5) !default;
+$modal-content-box-shadow-xs:    0 rem(3) rem(9) rgba($black,.5) !default;
+$modal-content-box-shadow-sm-up: 0 rem(5) rem(15) rgba($black,.5) !default;
 
 $modal-backdrop-bg:           $black !default;
 $modal-backdrop-opacity:      .5 !default;
@@ -706,11 +721,11 @@ $modal-header-border-color:   $gray-200 !default;
 $modal-footer-border-color:   $modal-header-border-color !default;
 $modal-header-border-width:   $modal-content-border-width !default;
 $modal-footer-border-width:   $modal-header-border-width !default;
-$modal-header-padding:        15px !default;
+$modal-header-padding:        rem(15) !default;
 
-$modal-lg:                    800px !default;
-$modal-md:                    500px !default;
-$modal-sm:                    300px !default;
+$modal-lg:                    rem(800) !default;
+$modal-md:                    rem(500) !default;
+$modal-sm:                    rem(300) !default;
 
 $modal-transition:            transform .3s ease-out !default;
 
@@ -771,7 +786,7 @@ $thumbnail-bg:                $body-bg !default;
 $thumbnail-border-width:      $border-width !default;
 $thumbnail-border-color:      #ddd !default;
 $thumbnail-border-radius:     $border-radius !default;
-$thumbnail-box-shadow:        0 1px 2px rgba($black,.075) !default;
+$thumbnail-box-shadow:        0 rem(1) rem(2) rgba($black,.075) !default;
 $thumbnail-transition:        all .2s ease-in-out !default;
 
 
@@ -799,15 +814,15 @@ $carousel-control-color:                      $white !default;
 $carousel-control-width:                      15% !default;
 $carousel-control-opacity:                    .5 !default;
 
-$carousel-indicator-width:                    30px !default;
-$carousel-indicator-height:                   3px !default;
-$carousel-indicator-spacer:                   3px !default;
+$carousel-indicator-width:                    rem(30) !default;
+$carousel-indicator-height:                   rem(3) !default;
+$carousel-indicator-spacer:                   rem(3) !default;
 $carousel-indicator-active-bg:                $white !default;
 
 $carousel-caption-width:                      70% !default;
 $carousel-caption-color:                      $white !default;
 
-$carousel-control-icon-width:                 20px !default;
+$carousel-control-icon-width:                 rem(20) !default;
 
 $carousel-control-prev-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E"), "#", "%23") !default;
 $carousel-control-next-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E"), "#", "%23") !default;
@@ -820,7 +835,7 @@ $carousel-transition:           transform .6s ease !default;
 $close-font-size:             $font-size-base * 1.5 !default;
 $close-font-weight:           $font-weight-bold !default;
 $close-color:                 $black !default;
-$close-text-shadow:           0 1px 0 $white !default;
+$close-text-shadow:           0 rem(1) 0 $white !default;
 
 // Code
 
@@ -834,4 +849,4 @@ $kbd-color:                   $white !default;
 $kbd-bg:                      $gray-900 !default;
 
 $pre-color:                   $gray-900 !default;
-$pre-scrollable-max-height:   340px !default;
+$pre-scrollable-max-height:   rem(340) !default;
