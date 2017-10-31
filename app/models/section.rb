@@ -27,18 +27,33 @@ class Section < ApplicationRecord
   def self.import(filepath)
     # Grab most recent update time
     last_touched_at = Section.maximum(:updated_at)
-    # Open file using Roo
-    spreadsheet = Roo::Spreadsheet.open(filepath, extension: :xlsx)
+    puts filepath
+    # Open file using Roo.
+    spreadsheet = Roo::Spreadsheet.open(filepath)
+    if filepath.to_s.include?('.xlsx')
+      last_real_row = spreadsheet.last_row - 2
+      first_row = 4
+    elsif filepath.to_s.include?('.csv')
+      last_real_row = spreadsheet.last_row
+      first_row = 2
+      # puts spreadsheet.inspect
+    end
     # Use local names instead of names from file header
     header = %w[section_id term department cross_list_group course_description section_number title credits level status enrollment_limit actual_enrollment cross_list_enrollment waitlist]
     # Parse spreadsheet.
     @updated_sections = 0
     # We will skip the first three rows (non-spreadsheet message and headers) and the last two (blank line and disclaimer).
-    last_real_row = spreadsheet.last_row - 2
-    (4..last_real_row).each do |i|
+    (first_row..last_real_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
       section = Section.find_or_initialize_by(term: row["term"], section_id: row["section_id"])
       section.attributes = row.to_hash.slice(*header)
+
+      #bulletproof numericals; this should be in the model
+      section.enrollment_limit = 0 if section.enrollment_limit.nil?
+      section.actual_enrollment = 0 if section.actual_enrollment.nil?
+      section.cross_list_enrollment = 0 if section.cross_list_enrollment.nil?
+      section.waitlist = 0 if section.waitlist.nil?
+
       report_action('New Sections', section.section_and_number) if section.new_record?
 
       # TODO: do we have a flag for cancellation?
@@ -67,24 +82,23 @@ class Section < ApplicationRecord
     @touched_sections = touched.size - created.size
     @new_sections = created.size
     if touched.size > 0
-      report_action('Updated Sections', "#{@updated_sections} sections were updated during the import process. #{@new_sections} sections were created.")
+      report_action('Updated Sections', "<a href='/sections' class='dropdown-item'>#{@updated_sections} sections were updated during the import process. #{@new_sections} sections were created.</a>")
     else
-      report_action('Updated Sections', 'The import file was empty.')
+      report_action('Updated Sections', "<a href='/sections' class='dropdown-item'>The import file was empty.</a>")
     end
     # From those, gather the terms
     touched_terms = touched.collect { |touched| touched.term }.uniq
     # Then find any untouched sections from those terms
     untouched = Section.where('updated_at <= ? and term in (?)', last_touched_at, touched_terms)
     if untouched.size > 0
-      report_action('Updated Sections', "#{untouched.size} sections from terms contained in feed were not touched by import. It is possible that these were cancelled.")
+      report_action('Updated Sections', "<a href='/sections' class='dropdown-item'>#{untouched.size} sections from terms contained in feed were not touched by import. It is possible that these were cancelled.</a>")
     else
-      report_action('Updated Sections', 'All sections were touched by the import process.')
+      report_action('Updated Sections', "<a href='/sections' class='dropdown-item'>All sections were touched by the import process.</a>")
     end
     # puts @report
     ActionCable.server.broadcast 'room_channel',
-                                 body:  "Registration data import complete. #{@new_sections} added. #{@updated_sections} updated. Refreshing browser to show changes.",
-                                 section_name: "Data Updated",
-                                 user: "System"
+                                 message:  "<a href='/sections' class='dropdown-item'>Registration data import complete. #{@new_sections} added. #{@updated_sections} updated. Refreshing browser to show changes.</a>",
+                                 trigger: 'Updated'
   end
 
   def self.report_action(subject, message)

@@ -21,24 +21,17 @@ class SectionsController < ApplicationController
       flash[:alert] = "Upload attempted but no file was attached!"
     else
       ActionCable.server.broadcast 'room_channel',
-                                   body:  "Registration data import in process.",
-                                   section_name: "Alert",
+                                   message:  "Registration data import in process.",
                                    user: "System"
 
       feed = params[:file]
 
       uploader = FeedUploader.new
       uploader.store!(feed)
+      puts "NEW URL:"
+      puts uploader.url
 
-
-      # File.delete(Rails.root.join('tmp', params[:file].original_filename)) if File.exists?(Rails.root.join('tmp', params[:file].original_filename))
-      # File.open(Rails.root.join('tmp', params[:file].original_filename), 'wb') do |file|
-      #   file.write(params[:file].read)
-      # end
-      #
-      # filepath = Rails.root.join('tmp', params[:file].original_filename)
-      #
-      ImportWorker.perform_async("#{uploader.url}", current_user.id)
+      ImportWorker.perform_async("#{uploader.url}")
 
     end
   end
