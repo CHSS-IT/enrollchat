@@ -77,7 +77,11 @@ class SectionsController < ApplicationController
 
         unless params[:section][:status].blank?
           @status = params[:section][:status]
-          @sections = @sections.by_status(@status)
+          if @status == 'ACTIVE'
+            @sections = @sections.by_not_canceled(@status)
+          else
+            @sections = @sections.by_status(@status)
+          end
         end
 
       end

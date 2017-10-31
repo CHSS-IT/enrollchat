@@ -8,6 +8,7 @@ class Section < ApplicationRecord
   scope :by_term, ->(term) { where(term: term) }
   scope :by_department, ->(department) { where(department: department) }
   scope :by_status, ->(status) { where(status: status) }
+  scope :by_not_canceled, ->(status) { where("status <> 'CL'") }
   scope :full_or_over_enrolled, -> { where('actual_enrollment >= enrollment_limit') }
   scope :full, -> { where('actual_enrollment = enrollment_limit') }
   scope :over_enrolled, -> { where('actual_enrollment > enrollment_limit') }
@@ -26,7 +27,10 @@ class Section < ApplicationRecord
   end
 
   def self.status_list
-    self.all.map{|s| s.status}.sort.uniq
+    list = self.all.map{|s| s.status}
+    # adds an option to list all sections that aren't canceled.
+    list << 'ACTIVE'
+    list.sort.uniq
   end
 
   def self.import(filepath)
