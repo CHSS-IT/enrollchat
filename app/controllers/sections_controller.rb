@@ -78,9 +78,20 @@ class SectionsController < ApplicationController
         unless params[:section][:status].blank?
           @status = params[:section][:status]
           if @status == 'ACTIVE'
-            @sections = @sections.by_not_canceled(@status)
+            @sections = @sections.not_canceled
           else
             @sections = @sections.by_status(@status)
+          end
+        end
+
+        unless params[:section][:level].blank?
+          @section_level = params[:section][:level]
+          if @section_level == "Graduate"
+            @sections = @sections.graduate_level
+          elsif @section_level == "Undergraduate"
+            @sections = @sections.undergraduate_level
+          else
+            @sections
           end
         end
 
