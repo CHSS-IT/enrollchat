@@ -17,7 +17,19 @@ class SectionTest < ActiveSupport::TestCase
     assert_equal @section.section_and_number, 'ABC 123-001'
   end
 
-  test 'department list shoud create an array of all departments' do
-    assert_equal Section.department_list, ['BIS', 'CLS']
+  test 'should create a list of all departments' do
+    assert_equal Section.department_list, ["BIS", "CLS", "SINT"]
+  end
+
+  test 'should create a list of all available statuses including the manually added ACTIVE status' do
+    assert_equal Section.status_list, ['ACTIVE', 'CN', 'O', 'WL']
+  end
+
+  test 'should create a list of levels available for selection' do
+    assert_equal Section.level_list, ['Graduate', 'Undergraduate']
+  end
+
+  test 'should create a list of registrations statuses' do
+    skip
   end
 end
