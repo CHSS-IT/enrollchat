@@ -7,6 +7,7 @@ class Section < ApplicationRecord
   scope :not_canceled, -> { where("status <> 'CL'") }
   scope :by_term, ->(term) { where(term: term) }
   scope :by_department, ->(department) { where(department: department) }
+  scope :by_status, ->(status) { where(status: status) }
   scope :full_or_over_enrolled, -> { where('actual_enrollment >= enrollment_limit') }
   scope :full, -> { where('actual_enrollment = enrollment_limit') }
   scope :over_enrolled, -> { where('actual_enrollment > enrollment_limit') }
@@ -22,6 +23,10 @@ class Section < ApplicationRecord
 
   def self.department_list
      self.all.map{|s| s.department}.sort.uniq
+  end
+
+  def self.status_list
+    self.all.map{|s| s.status}.sort.uniq
   end
 
   def self.import(filepath)
