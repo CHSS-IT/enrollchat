@@ -3,8 +3,8 @@ class Section < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
-  scope :canceled, -> { where(status: 'CL') }
-  scope :not_canceled, -> { where("status <> 'CL'") }
+  scope :canceled, -> { where(status: 'C') }
+  scope :not_canceled, -> { where("status <> 'C'") }
   scope :by_term, ->(term) { where(term: term) }
   scope :by_department, ->(department) { where(department: department) }
   scope :by_status, ->(status) { where(status: status) }
