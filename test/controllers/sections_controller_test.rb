@@ -2,20 +2,38 @@ require 'test_helper'
 
 class SectionsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @section = sections(:one)
+    @section_one = sections(:one)
+    @section_two = sections(:two)
+    @section_three = sections(:three)
+    @sections = Section.all
     login_as users(:one)
   end
 
-  test "should get index" do
+  test "should GET index" do
     get sections_url
     assert_response :success
   end
 
-  test "should get index with full collection of sections" do
+  test "should GET index with full collection of sections" do
+    assert_equal @sections, [@section_one, @section_two, @section_three]
+  end
+
+  test "should GET index with sections filtered by proper department" do
+    get sections_url params: { section: { department: 'CLS' } }
+    assert_response :success
+    @sections = @sections.by_department('CLS')
+    assert_equal @sections, [@section_two]
+  end
+
+  test "should GET index with sections filtered by proper status" do
     skip
   end
 
-  test "should get index with sections filtered by proper department" do
+  test "should GET index with sections filtered by proper level" do
+    skip
+  end
+
+  test "should GET index with sections filtered by proper registration status" do
     skip
   end
 
@@ -33,7 +51,7 @@ class SectionsControllerTest < ActionDispatch::IntegrationTest
   # end
 
   test "should show section" do
-    get section_url(@section)
+    get section_url(@section_one)
     assert_response :success
   end
 

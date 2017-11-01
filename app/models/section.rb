@@ -3,14 +3,18 @@ class Section < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
-  scope :canceled, -> { where(status: 'CL') }
-  scope :not_canceled, -> { where("status <> 'CL'") }
+  scope :canceled, -> { where(status: 'C') }
+  scope :not_canceled, -> { where("status <> 'C'") }
   scope :by_term, ->(term) { where(term: term) }
   scope :by_department, ->(department) { where(department: department) }
+  scope :by_status, ->(status) { where(status: status) }
   scope :full_or_over_enrolled, -> { where('actual_enrollment >= enrollment_limit') }
   scope :full, -> { where('actual_enrollment = enrollment_limit') }
   scope :over_enrolled, -> { where('actual_enrollment > enrollment_limit') }
   scope :under_enrolled, -> { where('actual_enrollment < enrollment_limit') }
+  scope :waitlisted, -> { where(status: 'WL') }
+  scope :graduate_level, -> { where("level = 'Graduate - First' or level = 'Graduate - Advanced'") }
+  scope :undergraduate_level, -> { where("level = 'Undergraduate - Upper Division' or level = 'Undergraduate - Lower Division'") }
 
   def section_number_zeroed
     section_number.to_s.rjust(3, "0")
@@ -22,6 +26,17 @@ class Section < ApplicationRecord
 
   def self.department_list
      self.all.map{|s| s.department}.sort.uniq
+  end
+
+  def self.status_list
+    list = self.all.map{|s| s.status}
+    # adds an option to list all sections that aren't canceled.
+    list << 'ACTIVE'
+    list.sort.uniq
+  end
+
+  def self.level_list
+    ['Graduate', 'Undergraduate']
   end
 
   def self.import(filepath)
