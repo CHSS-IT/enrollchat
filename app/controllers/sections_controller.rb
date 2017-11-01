@@ -2,18 +2,12 @@ class SectionsController < ApplicationController
   before_action :set_section, only: :show
   before_action :ensure_admin!, only: :import
   before_action :authenticate_user!
-  #before_action :set_department, only: :index
   before_action :filter, only: :index
 
   # GET /sections
   # GET /sections.json
 
   def index
-    # if params[:section] && @department.present?
-    #   @sections = Section.by_term(@term).by_department(@department)
-    # else
-    #   @sections = Section.by_term(@term)
-    # end
     @sections = @sections.by_term(@term)
     @updated_at = Section.maximum(:updated_at)
   end
@@ -56,16 +50,6 @@ class SectionsController < ApplicationController
     def set_section
       @section = Section.find(params[:id])
     end
-
-    # def set_department
-    #   if params[:section].present?
-    #     logger.debug("Department param present.")
-    #     @department = params[:section][:department]
-    #   else
-    #     logger.debug("Setting department to ALL")
-    #     @department = 'ALL'
-    #   end
-    # end
 
     def filter
       @sections = Section.all
