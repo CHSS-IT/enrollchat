@@ -17,8 +17,9 @@ body {
 		left: 0;
 		opacity: 0.9;
 	    background: #004d40;
-	    background-image: radial-gradient(farthest-corner at 40px 60px, #84ffff 0%, #004d40 70%);
-	    //? filter: blur(40px) grayscale(80%);
+	    background-image: radial-gradient(farthest-corner at 200px 100px, #84ffff 20%, #004d40 100%);
+	    filter: blur(70px) grayscale(78%);
+	    -webkit-filter: blur(70px) grayscale(78%);
 	    z-index: -1;
 	}
 }
