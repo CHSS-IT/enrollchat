@@ -5,9 +5,26 @@
       <div class="card-header">
         <h1 class="card-title"><%= term_in_words(@term) %> Sections</h1>
         <h2>Updated <%= basic_date(@updated_at) %></h2>
-        <%= label_tag 'department', 'Select Department' %>
-        <%= form_tag sections_path, method: "get", id: "filter", class: "col-sm-3 control-label" do %>
-          <%= select "section", "department", options_for_select(Section.department_list, selected: @department), { prompt: 'ALL' }, { id: 'filter-department', class: 'form-control' } %>
+        <%= form_tag sections_path, method: "get", id: "filter-form", class: "col-sm-12 control label" do %>
+        <div class="row">
+            <div class="col-sm-4">
+              <%= label_tag 'department', 'Department' %>
+              <%= select "section", "department", options_for_select(Section.department_list, selected: @department), { prompt: 'ALL' }, { class: 'form-control' } %>
+            </div>
+            <div class="col-sm-4">
+              <%= label_tag 'status', 'Status' %>
+              <%= select "section", "status", options_for_select(Section.status_list, selected: @status), { prompt: 'ALL' }, { id: 'filter-status', class: 'form-control' } %>
+            </div>
+            <div class="col-sm-4">
+              <%= label_tag 'Level', 'Level' %>
+              <%= select "section", "level", options_for_select(Section.level_list, selected: @section_level), { prompt: 'ALL' }, { id: 'filter-status', class: 'form-control' } %>
+            </div>
+
+        </div>
+        <div class="button-group pull-right">
+          <a href="#" id="filter-submit" class="btn btn-sm btn-primary">Filter</a>
+          <%= link_to 'Clear Filters', sections_path, class: 'btn btn-sm btn-warning' %>
+        </div>
         <% end %>
       </div>
 
@@ -51,9 +68,23 @@
     } );
   } );
 </script>
-
+<!--
 <script type="text/javascript">
   $('#filter-department').change(function() {
     this.form.submit();
   });
+</script>
+<script type="text/javascript">
+  $('#filter-status').change(function() {
+    this.form.submit();
+  });
+</script> -->
+
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+
+    $('#filter-submit').click(function () {
+      $(this).parents('form').submit();
+    })
+  })
 </script>
