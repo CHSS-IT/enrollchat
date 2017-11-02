@@ -37,7 +37,7 @@ class FeedUploader < CarrierWave::Uploader::Base
   # Add a white list of extensions which are allowed to be uploaded.
   # Allow only Excel files:
   def extension_whitelist
-    %w(xlsx)
+    %w(xlsx csv)
   end
 
   # Override the filename of the uploaded files:

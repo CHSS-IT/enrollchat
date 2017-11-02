@@ -15,6 +15,7 @@ class Section < ApplicationRecord
   scope :waitlisted, -> { where(status: 'WL') }
   scope :graduate_level, -> { where("level = 'Graduate - First' or level = 'Graduate - Advanced'") }
   scope :undergraduate_level, -> { where("level = 'Undergraduate - Upper Division' or level = 'Undergraduate - Lower Division'") }
+  scope :with_status, -> { where("status is not null and status <> ' '") }
 
   def section_number_zeroed
     section_number.to_s.rjust(3, "0")
@@ -29,7 +30,7 @@ class Section < ApplicationRecord
   end
 
   def self.status_list
-    list = self.all.map{|s| s.status}
+    list = self.with_status.map{|s| s.status}
     # adds an option to list all sections that aren't canceled.
     list << 'ACTIVE'
     list.sort.uniq
