@@ -1,6 +1,6 @@
 class SectionsController < ApplicationController
   before_action :set_section, only: :show
-  before_action :ensure_admin!, only: :import
+  before_action :ensure_admin!, only: [:import, :delete_term]
   before_action :authenticate_user!
   before_action :filter, only: :index
 
@@ -35,6 +35,11 @@ class SectionsController < ApplicationController
   # GET /sections/1
   # GET /sections/1.json
   def show
+  end
+
+  def delete_term
+    @sections = Section.by_term(params[:term]).destroy_all
+    redirect_to sections_path, notice: "All sections and comments from term #{params[:term]} destroyed."
   end
 
 
