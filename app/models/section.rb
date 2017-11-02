@@ -12,7 +12,8 @@ class Section < ApplicationRecord
   scope :full, -> { where('actual_enrollment = enrollment_limit') }
   scope :over_enrolled, -> { where('actual_enrollment > enrollment_limit') }
   scope :under_enrolled, -> { where('actual_enrollment < enrollment_limit') }
-  scope :waitlisted, -> { where(status: 'WL') }
+  scope :graduate_under_enrolled, -> { where('actual_enrollment < 10 and cross_list_enrollment < 10') }
+  scope :undergraduate_under_enrolled, -> { where('actual_enrollment < 15 and cross_list_enrollment < 15')}
   scope :graduate_level, -> { where("level = 'Graduate - First' or level = 'Graduate - Advanced'") }
   scope :undergraduate_level, -> { where("level = 'Undergraduate - Upper Division' or level = 'Undergraduate - Lower Division'") }
   scope :with_status, -> { where("status is not null and status <> ' '") }
@@ -38,6 +39,10 @@ class Section < ApplicationRecord
 
   def self.level_list
     ['Graduate', 'Undergraduate']
+  end
+
+  def self.enrollment_status_list
+    ['Graduate under-enrolled','Undergraudate under-enrolled', 'All over-enrolled']
   end
 
   def self.import(filepath)

@@ -10,10 +10,10 @@ one:
   section_number: 1
   title: MyString
   credits: 1
-  level: MyString
+  level: Undergraduate - Lower Division
   status: CN
-  enrollment_limit: 1
-  actual_enrollment: 1
+  enrollment_limit: 20
+  actual_enrollment: 22
   cross_list_enrollment: 1
   waitlist: 1
 
@@ -27,10 +27,10 @@ two:
   section_number: 1
   title: MyString
   credits: 1
-  level: MyString
+  level: Graduate - First
   status: WL
-  enrollment_limit: 1
-  actual_enrollment: 1
+  enrollment_limit: 20
+  actual_enrollment: 20
   cross_list_enrollment: 1
   waitlist: 1
 
@@ -44,9 +44,26 @@ three:
   section_number: 1
   title: MyString
   credits: 1
-  level: MyString
+  level: Graduate - Advanced
   status: O
-  enrollment_limit: 1
-  actual_enrollment: 1
-  cross_list_enrollment: 1
+  enrollment_limit: 20
+  actual_enrollment: 6
+  cross_list_enrollment: 5
+  waitlist: 1
+
+four:
+  owner: MyString
+  term: 1
+  section_id: 1
+  department: ENGL
+  cross_list_group: MyString
+  course_description: MyString
+  section_number: 1
+  title: MyString
+  credits: 1
+  level: Undergraduate - Upper Division
+  status: CL
+  enrollment_limit: 20
+  actual_enrollment: 13
+  cross_list_enrollment: 6
   waitlist: 1
