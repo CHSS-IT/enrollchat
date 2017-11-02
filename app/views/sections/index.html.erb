@@ -28,26 +28,6 @@
         <% end %>
       </div>
 
-      <button class="btn btn-outline-default float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        Upload <i class="fa fa-upload m1-1" aria-hidden="true"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <% if current_user.try(:admin?) %>
-          <li class="nav-item">
-            <%= form_tag sections_import_path, multipart: true, class: 'form-inline', id: 'update-form', remote: true do %>
-                <%= file_field_tag :file, :accept => 'application/xslt+xml' %>
-                <%= submit_tag "Update Sections", :class => "btn btn-white" %>
-            <% end %>
-            <span class="spinner"><i class="fa fa-spinner fa-pulse"></i></span>
-          </li>
-        <% end %>
-        <% @terms.each do |term| %>
-          <li class="nav-item">
-            <%= link_to term_in_words(term.term), sections_url(term: term.term), class: 'nav-link' %>
-          </li>
-        <% end %>  
-      </div>  
-
       <div id="section-table" class="card-content table-full-width">
         <%= render 'section_table' %>
       </div>
