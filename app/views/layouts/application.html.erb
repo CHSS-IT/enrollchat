@@ -32,24 +32,25 @@
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <i class="fa fa-list-ul" aria-hidden="true"></i>
+          <i class="fa fa-home" aria-hidden="true"></i>
           <%= link_to 'Home', sections_path, class: 'nav-link' %>
         </li>
         <li class="nav-item">
+          <i class="fa fa-file" aria-hidden="true"></i>
           <%= link_to 'Reports', reports_path, class: 'nav-link' %>
         </li>
         <% if current_user.try(:admin?) %>
           <li class="nav-item">
-            <i class="fa fa-list-ul" aria-hidden="true"></i>
+            <i class="fa fa-user" aria-hidden="true"></i>
             <%= link_to 'Users', users_path, class: 'nav-link' %>
           </li>
-          <li class="nav-item">
+<!--           <li class="nav-item">
             <%= form_tag sections_import_path, multipart: true, class: 'form-inline', id: 'update-form', remote: true do %>
                 <%= file_field_tag :file, :accept => 'application/xslt+xml' %>
                 <%= submit_tag "Update Sections", :class => "btn btn-white" %>
             <% end %>
             <span class="spinner"><i class="fa fa-spinner fa-pulse"></i></span>
-          </li>
+          </li> -->
         <% end %>
         <% @terms.each do |term| %>
           <li class="nav-item">
@@ -62,7 +63,7 @@
         <button class="btn btn-primary dropdown-toggle" type="button" id="alerts-button" data-toggle="collapse" href="#notifications" aria-expanded="false" aria-haspopup="true" aria-controls="notifications">
           Activity <!--<span class="badge badge-light">4</span>-->
         </button>
-        <div class="dropdown-menu dropdown-menu-right" id="notifications" aria-labelledby="alerts-button">
+        <div class="dropdown-menu dropdown-menu-right animated fadeInUp" id="notifications" aria-labelledby="alerts-button">
           <%= render partial: 'comments/recent_comment', collection: @recent_comments %>
         </div>
       </div>
