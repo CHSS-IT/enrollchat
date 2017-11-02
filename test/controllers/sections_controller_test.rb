@@ -5,6 +5,7 @@ class SectionsControllerTest < ActionDispatch::IntegrationTest
     @section_one = sections(:one)
     @section_two = sections(:two)
     @section_three = sections(:three)
+    @section_four = sections(:four)
     @sections = Section.all
     login_as users(:one)
   end
@@ -15,26 +16,14 @@ class SectionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should GET index with full collection of sections" do
-    assert_equal @sections, [@section_one, @section_two, @section_three]
-  end
-
-  test "should GET index with sections filtered by proper department" do
-    get sections_url params: { section: { department: 'CLS' } }
+    get sections_url
     assert_response :success
-    @sections = @sections.by_department('CLS')
-    assert_equal @sections, [@section_two]
+    assert_equal @sections, [@section_one, @section_two, @section_three, @section_four]
   end
 
-  test "should GET index with sections filtered by proper status" do
+  test "should GET index with proper filter parameters applied" do
     skip
-  end
-
-  test "should GET index with sections filtered by proper level" do
-    skip
-  end
-
-  test "should GET index with sections filtered by proper registration status" do
-    skip
+    # Need to figure out how best to do this. May be better as an integration level test.
   end
 
   # test "should get new" do
