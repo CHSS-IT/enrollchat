@@ -12,5 +12,7 @@
   <td><%= section.actual_enrollment %></td>
   <td><%= section.cross_list_enrollment %></td>
   <td><%= section.waitlist %></td>
+  <td><%= basic_date(section.created_at) %></td>
+  <td><%= basic_date(section.canceled_at) unless section.canceled_at.blank? %></td>
   <td><%= link_to "<i class='fa fa-comment' aria-hidden='true'></i> <span class='comment-count'>#{section.comments.size}".html_safe, section_comments_path(section), remote: true, data: { toggle: 'modal', target: '#comments' } %></td>
 </tr>
