@@ -8,7 +8,7 @@
         <% else %>
           <h1 class="card-title"><%= term_in_words(@term) %> Sections</h1>
           <h2>Updated <%= basic_date(@updated_at)  %></h2>
-          <%= form_tag sections_path, method: "get", id: "filter-form", class: "col-sm-12 control label" do %>
+          <%= form_tag sections_path, method: "get", id: "filter-form", class: "col-sm-12 control label", remote: true do %>
           <div class="row">
               <div class="col-sm-3">
                 <%= label_tag 'department', 'Department' %>
