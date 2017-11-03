@@ -74,6 +74,7 @@ class Section < ApplicationRecord
 
       # TODO: do we have a flag for cancellation?
       if section.status == 'C'
+        puts "YESSSSS CANCEL ME IF NOT ALREADY"
         if section.status_changed? || section.canceled_at.blank?
           puts "NEW CANCEL! - #{section.status_changed?} - #{section.canceled_at.blank?}"
           section.canceled_at = DateTime.now()
