@@ -3,16 +3,16 @@
   <div class="col-sm-12">
     <div class="row">
       <div class="col-sm-6">
-        <h1 class="card-title mr-2 d-inline-block"><%= term_in_words(@term) %> Sections</h1>
-        <small>Updated <%= basic_date(@updated_at) %></small>    
+        <h1 class="card-title mr-2 mb-0 d-inline-block"><%= term_in_words(@term) %> Sections</h1>
+        <small class="d-inline-block">Updated <%= basic_date(@updated_at) %></small>    
       </div>
 
       <div class="col-sm-6 justify-content-end d-flex"> 
         <div class="dropdown">
-          <button class="btn btn-default float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="btn unique-color" type="button" data-toggle="collapse" data-target="#uploadSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             Upload <i class="fa fa-upload m1-1" aria-hidden="true"></i>
           </button>
-          <div class="dropdown-menu dropdown-menu-right collapse" id="navbarSupportedContent">
+          <div class="dropdown-menu dropdown-menu-right collapse" id="uploadSupportedContent">
             <% if current_user.try(:admin?) %>
               <li class="nav-item">
                 <%= form_tag sections_import_path, multipart: true, class: 'form-inline', id: 'update-form', remote: true do %>
@@ -31,7 +31,7 @@
         </div>
 
         <div class="dropdown">
-          <button class="btn btn-primary dropdown-toggle" type="button" id="alerts-button" data-toggle="collapse" href="#notifications" aria-expanded="false" aria-haspopup="true" aria-controls="notifications">
+          <button class="btn unique-color-dark dropdown-toggle" type="button" id="alerts-button" data-toggle="collapse" href="#notifications" aria-expanded="false" aria-haspopup="true" aria-controls="notifications">
             Activity <!--<span class="badge badge-light">4</span>-->
           </button>
           <div class="dropdown-menu dropdown-menu-right animated fadeInUp" id="notifications" aria-labelledby="alerts-button">
@@ -42,7 +42,7 @@
     </div><!-- end 2nd row -->
 
     <div class="card mt-3">  
-      <div class="card-header white">
+      <div class="card-header white py-4">
         <%= form_tag sections_path, method: "get", id: "filter-form", class: "control label" do %>
         <div class="row">
             <div class="col-sm-3">
@@ -60,7 +60,7 @@
             <div class="col-sm-3 button-group pull-right">
               <%= link_to 'Clear Filters', sections_path, style: 'text-decoration: underline;' %><i class="fa fa-times pl-1" aria-hidden="true"></i>
               <br>
-              <a href="#" id="filter-submit" class="btn btn-sm btn-block btn-primary mt-2">Filter</a>
+              <a href="#" id="filter-submit" class="btn btn-sm btn-block deep-orange darken-2 mt-2">Filter</a>
             </div>
         </div>
         <% end %>

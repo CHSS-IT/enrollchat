@@ -9,6 +9,7 @@ body {
 	background: url("https://hawkeyecollege.augusoft.net/Customers/HawkeyeCollege/images/classes/class_32063.jpg") center no-repeat;
 	background-size: cover;
 	background: #f2f6f9;
+	background: #efebe9;
 	// &:before {
 	// 	content: "";
 	// 	position: absolute;
@@ -49,6 +50,21 @@ body {
     .btn {margin: 0.8em 0 0.5em 0;}
 }
 
-.container-fluid {background: #f2f6f9;}
-
 #class-sections_wrapper.container-fluid {background: white;}
+
+label {font-weight: bold;}
+
+.card.mt-3 {border-top: 5px solid #1C2331;}
+ 
+ h1.card-title {
+ 	color: #616161;
+ 	~ small {color: #616161;}
+ }
+
+ .page-item.active .page-link {
+ 	background: #ff5722 !important;
+ 	a {}
+ }
+
+ .page-item .page-link {color: #ff5722;}
+ 
