@@ -3,6 +3,8 @@ class Section < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
+  default_scope  { where("delete_at is null") }
+
   scope :canceled, -> { where(status: 'C') }
   scope :not_canceled, -> { where("status <> 'C'") }
   scope :by_term, ->(term) { where(term: term) }
@@ -18,6 +20,9 @@ class Section < ApplicationRecord
   scope :undergraduate_level, -> { where("level = 'Undergraduate - Upper Division' or level = 'Undergraduate - Lower Division'") }
   scope :with_status, -> { where("status is not null and status <> ' '") }
 
+  scope :marked_for_deletion, -> { unscoped.where("delete_at is not null") }
+  scope :delete_now, -> { unscoped.where("delete_at is not null AND delete_at < ?", DateTime.now()) }
+
   def section_number_zeroed
     section_number.to_s.rjust(3, "0")
   end
@@ -28,6 +33,10 @@ class Section < ApplicationRecord
 
   def self.department_list
      self.all.map{|s| s.department}.sort.uniq
+  end
+
+  def self.delete_marked
+    self.delete_now.destroy_all
   end
 
   def self.status_list
