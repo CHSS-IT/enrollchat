@@ -1,15 +1,15 @@
 
     <div class="card mb-3 ">
-      <div class="card-header bg-primary text-white text-right py-1">
-        <%= comment.user.full_name %>
-      </div>
-      <div class="card-block py-1">
-        <%= comment.body %>
-        <%#= link_to 'Edit', edit_section_comment_path(@section, comment) %><br />
+      <div class="card-body py-2">
+        <span style="font-weight: 700; color: steelblue;">
+          <%= comment.user.email %>
+        </span>
+        <small class="text-muted" style="display: block;">
+          <%= time_ago_in_words(comment.created_at) %> ago
+        </small>
+        <hr>
+        <p style="line-height: 1.3em"><%= comment.body %></p>
+        <%#= link_to 'Edit', edit_section_comment_path(@section, comment) %>
         <%#= link_to 'Destroy', section_comment_path(@section, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
-
-      </div>
-      <div class="card-footer text-muted text-right py-1">
-        <%= time_ago_in_words(comment.created_at) %> ago
       </div>
     </div>
