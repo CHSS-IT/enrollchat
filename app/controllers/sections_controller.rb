@@ -38,8 +38,8 @@ class SectionsController < ApplicationController
   end
 
   def delete_term
-    @sections = Section.by_term(params[:term]).destroy_all
-    redirect_to sections_path, notice: "All sections and comments from term #{params[:term]} destroyed."
+    @sections = Section.by_term(params[:term]).update_all(delete_at: DateTime.now().next_month)
+    redirect_to sections_path, notice: "All sections and comments from term #{params[:term]} are marked for deletion."
   end
 
 
