@@ -21,15 +21,16 @@
       EnrollChat
     </a>
 
-    <div class="btn-group dropdown">
-      <button class="btn btn-primary dropdown-toggle" type="button" id="alerts-button" data-toggle="collapse" href="#notifications" aria-expanded="false" aria-haspopup="true" aria-controls="notifications">
-        Activity <!--<span class="badge badge-light">4</span>-->
-      </button>
-      <div class="dropdown-menu dropdown-menu-right" id="notifications" aria-labelledby="alerts-button">
-        <%= render partial: 'comments/recent_comment', collection: @recent_comments %>
+    <% if @recent_comments.size > 0 %>
+      <div class="btn-group dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="alerts-button" data-toggle="collapse" href="#notifications" aria-expanded="false" aria-haspopup="true" aria-controls="notifications">
+          Activity <!--<span class="badge badge-light">4</span>-->
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" id="notifications" aria-labelledby="alerts-button">
+          <%= render partial: 'comments/recent_comment', collection: @recent_comments %>
+        </div>
       </div>
-    </div>
-
+    <% end %>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
