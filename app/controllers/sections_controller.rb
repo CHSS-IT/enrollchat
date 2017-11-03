@@ -1,6 +1,6 @@
 class SectionsController < ApplicationController
   before_action :set_section, only: :show
-  before_action :ensure_admin!, only: :import
+  before_action :ensure_admin!, only: [:import, :delete_term]
   before_action :authenticate_user!
   before_action :filter, only: :index
 
@@ -37,6 +37,11 @@ class SectionsController < ApplicationController
   def show
   end
 
+  def delete_term
+    @sections = Section.by_term(params[:term]).destroy_all
+    redirect_to sections_path, notice: "All sections and comments from term #{params[:term]} destroyed."
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -67,6 +72,19 @@ class SectionsController < ApplicationController
             @sections = @sections.graduate_level
           elsif @section_level == "Undergraduate"
             @sections = @sections.undergraduate_level
+          else
+            @sections
+          end
+        end
+
+        unless params[:section][:enrollment_status].blank?
+          @enrollment_status = params[:section][:enrollment_status]
+          if @enrollment_status == 'All over-enrolled'
+            @sections = @sections.over_enrolled
+          elsif @enrollment_status == 'Graduate under-enrolled'
+            @sections = @sections.graduate_level.graduate_under_enrolled
+          elsif @enrollment_status == 'Undergraudate under-enrolled'
+            @sections = @sections.undergraduate_level.undergraduate_under_enrolled
           else
             @sections
           end

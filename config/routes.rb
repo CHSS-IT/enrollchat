@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :reports
   get 'static_pages/home'
+  get 'delete_term/:term', to: 'sections#delete_term'
 
   devise_for :users, :path_prefix => 'app'
   resources :users

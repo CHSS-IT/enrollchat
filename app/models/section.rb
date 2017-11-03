@@ -12,9 +12,11 @@ class Section < ApplicationRecord
   scope :full, -> { where('actual_enrollment = enrollment_limit') }
   scope :over_enrolled, -> { where('actual_enrollment > enrollment_limit') }
   scope :under_enrolled, -> { where('actual_enrollment < enrollment_limit') }
-  scope :waitlisted, -> { where(status: 'WL') }
+  scope :graduate_under_enrolled, -> { where('actual_enrollment < 10 and cross_list_enrollment < 10') }
+  scope :undergraduate_under_enrolled, -> { where('actual_enrollment < 15 and cross_list_enrollment < 15')}
   scope :graduate_level, -> { where("level = 'Graduate - First' or level = 'Graduate - Advanced'") }
   scope :undergraduate_level, -> { where("level = 'Undergraduate - Upper Division' or level = 'Undergraduate - Lower Division'") }
+  scope :with_status, -> { where("status is not null and status <> ' '") }
 
   def section_number_zeroed
     section_number.to_s.rjust(3, "0")
@@ -29,7 +31,7 @@ class Section < ApplicationRecord
   end
 
   def self.status_list
-    list = self.all.map{|s| s.status}
+    list = self.with_status.map{|s| s.status}
     # adds an option to list all sections that aren't canceled.
     list << 'ACTIVE'
     list.sort.uniq
@@ -37,6 +39,10 @@ class Section < ApplicationRecord
 
   def self.level_list
     ['Graduate', 'Undergraduate']
+  end
+
+  def self.enrollment_status_list
+    ['Graduate under-enrolled','Undergraudate under-enrolled', 'All over-enrolled']
   end
 
   def self.import(filepath)
@@ -73,6 +79,7 @@ class Section < ApplicationRecord
 
       # TODO: do we have a flag for cancellation?
       if section.status == 'C'
+        puts "YESSSSS CANCEL ME IF NOT ALREADY"
         if section.status_changed? || section.canceled_at.blank?
           puts "NEW CANCEL! - #{section.status_changed?} - #{section.canceled_at.blank?}"
           section.canceled_at = DateTime.now()

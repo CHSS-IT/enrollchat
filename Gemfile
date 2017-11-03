@@ -66,7 +66,7 @@ gem 'jquery-ui-rails'
 
 
 # For processing excel files
-gem "roo", "~> 2.7.0"
+gem "roo", "2.6.0"
 
 gem 'sidekiq'
 

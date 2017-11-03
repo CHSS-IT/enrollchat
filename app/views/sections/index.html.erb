@@ -3,8 +3,12 @@
   <div class="col-sm-12">
     <div class="row">
       <div class="col-sm-6">
-        <h1 class="card-title mr-2 mb-0 d-inline-block"><%= term_in_words(@term) %> Sections</h1>
-        <small class="d-inline-block">Updated <%= basic_date(@updated_at) %></small>    
+        <% if @sections.blank? %>
+          <h1 class="card-title">No data</h1>
+        <% else %>      
+          <h1 class="card-title mr-2 mb-0 d-inline-block"><%= term_in_words(@term) %> Sections</h1>
+          <small class="d-inline-block">Updated <%= basic_date(@updated_at) %></small> 
+        <% end %>   
       </div>
 
       <div class="col-sm-6 justify-content-end d-flex"> 
@@ -36,6 +40,7 @@
           </button>
           <div class="dropdown-menu dropdown-menu-right animated fadeInUp" id="notifications" aria-labelledby="alerts-button">
             <%= render partial: 'comments/recent_comment', collection: @recent_comments %>
+            <%= link_to "Enrollchat Is Ready", '/sections', class: 'dropdown-item', remote: true if @recent_comments.empty? %>
           </div>
         </div>
       </div>       
@@ -45,18 +50,22 @@
       <div class="card-header white py-4">
         <%= form_tag sections_path, method: "get", id: "filter-form", class: "control label" do %>
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-2">
               <%= label_tag 'department', 'Department' %>
               <%= select "section", "department", options_for_select(Section.department_list, selected: @department), { prompt: 'ALL' }, { class: 'form-control' } %>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-2">
               <%= label_tag 'status', 'Status' %>
               <%= select "section", "status", options_for_select(Section.status_list, selected: @status), { prompt: 'ALL' }, { id: 'filter-status', class: 'form-control' } %>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-2">
               <%= label_tag 'Level', 'Level' %>
               <%= select "section", "level", options_for_select(Section.level_list, selected: @section_level), { prompt: 'ALL' }, { id: 'filter-status', class: 'form-control' } %>
             </div>
+            <div class="col-sm-3">
+              <%= label_tag 'enrollment_status', 'Enrollment Status' %>
+              <%= select "section", "enrollment_status", options_for_select(Section.enrollment_status_list, selected: @enrollment_status), { prompt: 'ALL' }, { id: 'filter-status', class: 'form-control' } %>
+            </div>            
             <div class="col-sm-3 button-group pull-right">
               <%= link_to 'Clear Filters', sections_path, style: 'text-decoration: underline;' %><i class="fa fa-times pl-1" aria-hidden="true"></i>
               <br>
