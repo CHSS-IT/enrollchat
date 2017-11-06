@@ -50,14 +50,18 @@
           <span class="spinner"><i class="fa fa-spinner fa-pulse"></i></span>
         </li> -->
       <% end %>
-      <% @terms.each do |term| %>
-        <li class="nav-item">
-          <%= link_to term_in_words(term.term), sections_url(term: term.term), class: 'nav-link' %>
-        </li>
-      <% end %>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="termDropdownLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Terms</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledy="termDropdownLink">
+          <a class="dropdown-item" href="#">Test Action</a>
+          <% @terms.each do |term| %>
+            <%= link_to term_in_words(term.term), sections_url(term: term.term), class: 'dropdown-item' %>
+          <% end %>
+        </div>
+      </li>
       <li class="nav-item my-lg-0">
         <%= render 'devise/menu/login_items' %>
-      </div>
+      </div>  
     </ul>
     </div>
   </nav>

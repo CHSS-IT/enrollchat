@@ -67,4 +67,9 @@ label {font-weight: bold;}
  }
 
  .page-item .page-link {color: #ff5722;}
+
+ table#class-sections td a[data-target="#comments"] {
+ 	color: steelblue;
+ 	i:before {color: steelblue;}
+ }
  
