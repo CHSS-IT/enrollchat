@@ -13,6 +13,11 @@ Rails.application.routes.draw do
   mount ActionCable.server, at: '/cable'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.htm
+
+  authenticated :user do
+    root 'sections#index', as: :authenticated_root
+  end
+  
   root to: 'static_pages#home'
 
 
