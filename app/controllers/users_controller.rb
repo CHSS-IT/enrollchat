@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @users = User.all.sort_by &:last_name
+    @users = User.all.order(last_name: :asc)
   end
 
   def new
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   private
 
   def ensure_admin!
-    unless current_user.admin?
+    unless current_user.try(:admin?)
       redirect_to sections_path, notice: 'You do not have access to this page'
       return false
     end
