@@ -52,16 +52,23 @@
       <% end %>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="termDropdownLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Terms</a>
-        <div class="dropdown-menu dropdown-primary" aria-labelledy="termDropdownLink">
+        <div class="dropdown-menu dropdown-primary dropdown-menu-right animated fadeInUp" aria-labelledy="termDropdownLink">
           <a class="dropdown-item" href="#">Test Action</a>
           <% @terms.each do |term| %>
             <%= link_to term_in_words(term.term), sections_url(term: term.term), class: 'dropdown-item' %>
           <% end %>
         </div>
       </li>
+      <li class="nav-item dropdown">
+        <button class="btn unique-color-dark dropdown-toggle btn-sm" type="button" id="alerts-button" data-toggle="dropdown" href="#notifications" aria-expanded="false" aria-haspopup="true" aria-controls="notifications">Activity</button>        
+        <div class="dropdown-menu dropdown-menu-right animated fadeInUp" aria-labelledy="alerts-button">
+          <%= render partial: 'comments/recent_comment', collection: @recent_comments %>
+          <%= link_to "Enrollchat Is Ready", '/sections', class: 'dropdown-item', remote: true if @recent_comments.empty? %>
+        </div>
+      </li>      
       <li class="nav-item my-lg-0">
         <%= render 'devise/menu/login_items' %>
-      </div>  
+      </li>  
     </ul>
     </div>
   </nav>

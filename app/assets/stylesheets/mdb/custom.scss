@@ -73,6 +73,11 @@ label {font-weight: bold;}
  	i:before {color: steelblue;}
  }
 
+.btn-outline-unique-color-dark {
+	border: 2px solid $unique-color-dark;
+	color: $unique-color-dark !important;
+} 
+
 @media (min-width: 992px) {
   .navbar-expand-lg {
     -webkit-box-orient: horizontal;
