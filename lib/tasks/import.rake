@@ -30,7 +30,9 @@ namespace :import do
           sftp.dir.glob(remote,"*.csv") do |file|
             if file.name.include?(".csv")
               new_name = "#{file.name}"
-              sftp.download!("#{remote}/#{file.name}", "#{Rails.root}/doc/#{new_name}")
+
+              uploader = FeedUploader.new
+              uploader.store!(sftp.download!("#{remote}/#{file.name}", "#{Rails.root}/doc/#{new_name}"))
               sftp.rename("#{remote}/#{file.name}", "#{remote}/backup/#{file.name}") if Rails.env == 'production' && 1 == 2 #back up today's files # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
             end
           end
