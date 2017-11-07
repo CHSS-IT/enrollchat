@@ -28,11 +28,13 @@ namespace :import do
             puts "There were no old files to remove"
           end
           sftp.dir.glob(remote,"*.csv") do |file|
+            puts "Looking at #{file.name}"
             if file.name.include?(".csv")
+              puts "Grabbing."
               new_name = "#{file.name}"
-
-              uploader = FeedUploader.new
-              uploader.store!(sftp.download!("#{remote}/#{file.name}", "#{Rails.root}/doc/#{new_name}"))
+              sftp.download!("#{remote}/#{file.name}", "#{Rails.root}/tmp/#{new_name}")
+              # @uploader = FeedUploader.new
+              # @uploader.store!()
               sftp.rename("#{remote}/#{file.name}", "#{remote}/backup/#{file.name}") if Rails.env == 'production' && 1 == 2 #back up today's files # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
             end
           end
@@ -40,8 +42,8 @@ namespace :import do
           puts "Moved files to the backup directory." if Rails.env == 'production'
           ActionCable.server.broadcast 'room_channel',
                                        message:  "<a href='/sections' class='dropdown-item'>Registration data import in process.</a>"
-          path = "#{Rails.root}/doc/SemesterEnrollments.csv"
-          ImportWorker.perform_async("#{path}")
+          path = "#{Rails.root}/tmp/SemesterEnrollments.csv"
+          ImportWorker.perform_async(path)
         else
           puts "No files present."
         end
