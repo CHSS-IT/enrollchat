@@ -72,7 +72,10 @@ gem 'sidekiq'
 
 gem 'smarter_csv'
 
-
+gem 'net-sftp'
+# SFTP for banner import
+gem 'net-ssh'
+# SSH for banner import
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

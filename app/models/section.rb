@@ -65,7 +65,7 @@ class Section < ApplicationRecord
       first_row = 4
     elsif filepath.to_s.include?('.csv')
       last_real_row = spreadsheet.last_row
-      first_row = 2
+      first_row = 4
       # puts spreadsheet.inspect
     end
     # Use local names instead of names from file header
@@ -75,33 +75,37 @@ class Section < ApplicationRecord
     # We will skip the first three rows (non-spreadsheet message and headers) and the last two (blank line and disclaimer).
     (first_row..last_real_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
-      section = Section.find_or_initialize_by(term: row["term"], section_id: row["section_id"])
-      section.attributes = row.to_hash.slice(*header)
-
-      #bulletproof numericals; this should be in the model
-      section.enrollment_limit = 0 if section.enrollment_limit.nil?
-      section.actual_enrollment = 0 if section.actual_enrollment.nil?
-      section.cross_list_enrollment = 0 if section.cross_list_enrollment.nil?
-      section.waitlist = 0 if section.waitlist.nil?
-
-      report_action('New Sections', section.section_and_number) if section.new_record?
-
-      # TODO: do we have a flag for cancellation?
-      if section.status == 'C'
-        puts "YESSSSS CANCEL ME IF NOT ALREADY"
-        if section.status_changed? || section.canceled_at.blank?
-          puts "NEW CANCEL! - #{section.status_changed?} - #{section.canceled_at.blank?}"
-          section.canceled_at = DateTime.now()
-          report_action('Canceled Sections', section.section_and_number)
-        end
-      end
-
-      # Save if changed, touch if unchanged
-      if section.changed?
-        section.save!
-        @updated_sections += 1
+      if row["term"].blank? or row["term"].to_i.to_s != row["term"]
+        # Hack to avoid blanks and headers when dealing with generated csv or xslt with dislaimer rows
+        puts "Skipping this row:"
       else
-        (section.touch unless section.new_record?)
+        section = Section.find_or_initialize_by(term: row["term"], section_id: row["section_id"])
+        section.attributes = row.to_hash.slice(*header)
+
+        #bulletproof numericals; this should be in the model
+        section.enrollment_limit = 0 if section.enrollment_limit.nil?
+        section.actual_enrollment = 0 if section.actual_enrollment.nil?
+        section.cross_list_enrollment = 0 if section.cross_list_enrollment.nil?
+        section.waitlist = 0 if section.waitlist.nil?
+
+        report_action('New Sections', section.section_and_number) if section.new_record?
+
+        # TODO: do we have a flag for cancellation?
+        if section.status == 'C'
+          if section.status_changed? || section.canceled_at.blank?
+            puts "NEW CANCEL! - #{section.status_changed?} - #{section.canceled_at.blank?}"
+            section.canceled_at = DateTime.now()
+            report_action('Canceled Sections', section.section_and_number)
+          end
+        end
+
+        # Save if changed, touch if unchanged
+        if section.changed?
+          section.save!
+          @updated_sections += 1
+        else
+          (section.touch unless section.new_record?)
+        end
       end
       puts row
     end
