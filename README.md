@@ -16,3 +16,19 @@ For the rake-based feed, you will need to have a CSV file delivered to a directo
 * ENROLLCHAT_REMOTE_DIR: The directory on that server. That directory should also contain a subdirectory named "backup."
 * ENROLLCHAT_REMOTE_USER: Username.
 * ENROLLCHAT_REMOTE_PASS: Password.
+
+Heroku will need these add-ons:
+* Herokupostgres
+* Redis To Go
+* Heroku Scheduler (to schedule feed ingestion and removal of deleted terms)
+*
+
+## Scheduled Tasks
+
+Administrators may mark all sections and comments in a term for deletion. Deleted sections and comments are immediately removed from consideration but are held in the database. The "purge_deleted" rake task deletes comments and sections one month after they are marked for deletion.
+
+If you wish to ingest a feed automatically, you will need to set the ENROLLCHAT_ variables described above and you will need to run "import:retrieve_files" nightly.
+
+## Feed Format
+
+[details on feed format go here]
