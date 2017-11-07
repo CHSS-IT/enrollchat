@@ -33,8 +33,9 @@ namespace :import do
               puts "Grabbing."
               new_name = "#{file.name}"
               sftp.download!("#{remote}/#{file.name}", "#{Rails.root}/tmp/#{new_name}")
-              # @uploader = FeedUploader.new
-              # @uploader.store!()
+              @uploader = FeedUploader.new
+              file = File.open("#{Rails.root}/tmp/#{new_name}", 'rb')
+              @uploader.store!(file)
               sftp.rename("#{remote}/#{file.name}", "#{remote}/backup/#{file.name}") if Rails.env == 'production' && 1 == 2 #back up today's files # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
             end
           end
@@ -43,7 +44,11 @@ namespace :import do
           ActionCable.server.broadcast 'room_channel',
                                        message:  "<a href='/sections' class='dropdown-item'>Registration data import in process.</a>"
           path = "#{Rails.root}/tmp/SemesterEnrollments.csv"
-          ImportWorker.perform_async(path)
+
+          puts @uploader.url
+
+          ImportWorker.perform_async("#{@uploader.url}")
+
         else
           puts "No files present."
         end
