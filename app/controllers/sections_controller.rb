@@ -79,8 +79,10 @@ class SectionsController < ApplicationController
 
         unless params[:section][:enrollment_status].blank?
           @enrollment_status = params[:section][:enrollment_status]
-          if @enrollment_status == 'All over-enrolled'
-            @sections = @sections.over_enrolled
+          if @enrollment_status == 'Undergraduate over-enrolled'
+            @sections = @sections.undergraduate_level.over_enrolled
+          elsif @enrollment_status == 'Graduate over-enrolled'
+            @sections = @sections.graduate_level.over_enrolled
           elsif @enrollment_status == 'Graduate under-enrolled'
             @sections = @sections.graduate_level.graduate_under_enrolled
           elsif @enrollment_status == 'Undergraudate under-enrolled'
