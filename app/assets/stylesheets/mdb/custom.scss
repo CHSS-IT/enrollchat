@@ -83,6 +83,8 @@ label {font-weight: bold;}
 	color: #e64a19 !important;	
 }
 
+table.table-hover tbody tr:hover {background: #c4e3f3;}
+
 @media (min-width: 992px) {
   .navbar-expand-lg {
     -webkit-box-orient: horizontal;
