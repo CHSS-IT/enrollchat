@@ -1,13 +1,17 @@
 <span id="alert-wrapper"></span>
+
 <div class="row">
   <div class="col-sm-8">
-    <h1><%= term_in_words(@term) %> Report as of <%= @max_date.strftime('%B %-d, %Y') %></h1>
-    <span id="report-table">
-      <%= render 'report_table' %>
-    </span>
-  </div>
-  <div class="col-sm-2 bg-yellow" id="notifications">
+    <h1 class="card-title mr-2 mb-0 d-inline-block"><%= term_in_words(@term) %> Report</h1>
+    <small class="d-inline-block"> as of <%= @max_date.strftime('%B %-d, %Y') %></small>
 
+    <div class="card mt-3">
+      <div class="card-body">
+	    <div id="report-table" class="table-responsive">
+	      <%= render 'report_table' %>
+	    </div>
+	  </div>
+	</div>
   </div>
 </div>
 
