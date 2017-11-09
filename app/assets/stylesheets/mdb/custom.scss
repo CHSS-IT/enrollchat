@@ -78,6 +78,11 @@ label {font-weight: bold;}
 	color: $unique-color-dark !important;
 } 
 
+.btn-outline-deep-orange-darken-2 {
+	border: 2px solid #e64a19;
+	color: #e64a19 !important;	
+}
+
 @media (min-width: 992px) {
   .navbar-expand-lg {
     -webkit-box-orient: horizontal;

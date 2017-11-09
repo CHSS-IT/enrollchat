@@ -1,39 +1,47 @@
 <span id="notice"></span>
 <div class="row">
-  <div class="col-sm-8">
-    <h1>Users</h1>
+  <div class="col-sm-6">
+    <h1 class="card-title mr-2 mb-0 d-inline-block">Users</h1>
 
-    <table class="table table-striped table-bordered table-responsive table-sm table-hover" cellspacing="0" width="100%">
-      <thead>
-      <tr class="bg-info">
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-        <th>User Name</th>
-        <% if current_user.is_admin? %>
-          <th>Admin</th>
-          <th>Edit</th>
-        <% end %>
-      </tr>
-      </thead>
-
-      <tbody>
-        <% @users.each do |user| %>
-        <tr>
-          <td><%= user.first_name %></td>
-          <td><%= user.last_name %></td>
-          <td><%= user.email %></td>
-          <td><%= user.username %></td>
-          <% if current_user.is_admin? %>
-            <td><%= user.admin %></td>
-            <td><%= link_to 'Edit', edit_user_path(user), class: 'btn btn-sm btn-warning' %></td>
-          <% end %>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
     <% if current_user.is_admin? %>
-      <%= link_to 'Create New User', new_user_path, class: 'btn btn-large btn-primary' %>
-    <% end %>
+      <%= link_to 'Create New User', new_user_path, class: 'btn unique-color d-inline-block float-right' %>
+    <% end %>  
+
+    <div class="card mt-3">  
+      <div class="card-content table-full-width">
+        <div class="card-body table-responsive">
+          <table class="table table-striped table-sm table-hover dtr-inline" cellspacing="0" width="100%">
+            <thead>
+            <tr class="stylish-color-dark text-white">
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>User Name</th>
+              <% if current_user.is_admin? %>
+                <th>Admin</th>
+                <th>Edit</th>
+              <% end %>
+            </tr>
+            </thead>
+
+            <tbody>
+              <% @users.each do |user| %>
+              <tr>
+                <td><%= user.first_name %></td>
+                <td><%= user.last_name %></td>
+                <td><%= user.email %></td>
+                <td><%= user.username %></td>
+                <% if current_user.is_admin? %>
+                  <td><%= user.admin %></td>
+                  <td><%= link_to 'Edit', edit_user_path(user), class: 'btn btn-sm btn-outline-deep-orange-darken-2' %></td>
+                <% end %>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div><!-- end card -->
+
   </div>
 </div>
