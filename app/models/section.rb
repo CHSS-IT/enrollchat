@@ -47,11 +47,11 @@ class Section < ApplicationRecord
   end
 
   def self.level_list
-    ['Graduate', 'Undergraduate']
+    ['Undergraduate','Graduate',]
   end
 
   def self.enrollment_status_list
-    ['Graduate under-enrolled','Undergraudate under-enrolled', 'All over-enrolled']
+    ['Undergraudate under-enrolled','Graduate under-enrolled','Undergraduate over-enrolled','Graduate over-enrolled']
   end
 
   def self.import(filepath)
