@@ -5,13 +5,13 @@
       <div class="col-sm-6">
         <% if @sections.blank? %>
           <h1 class="card-title">No data</h1>
-        <% else %>      
+        <% else %>
           <h1 class="card-title mr-2 mb-0 d-inline-block"><%= term_in_words(@term) %> Sections</h1>
-          <small class="d-inline-block">Updated <%= basic_date(@updated_at) %></small> 
-        <% end %>   
+          <small class="d-inline-block">Updated <%= basic_date(@updated_at) %></small>
+        <% end %>
       </div>
 
-      <div class="col-sm-6 justify-content-end d-flex"> 
+      <div class="col-sm-6 justify-content-end d-flex">
         <div class="dropdown">
           <button class="btn unique-color" type="button" data-toggle="collapse" data-target="#uploadSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             Upload <i class="fa fa-upload m1-1" aria-hidden="true"></i>
@@ -30,8 +30,8 @@
               <li class="nav-item">
                 <%= link_to term_in_words(term.term), sections_url(term: term.term), class: 'nav-link' %>
               </li>
-            <% end %>  
-          </div>  
+            <% end %>
+          </div>
         </div>
 
         <div class="dropdown">
@@ -43,10 +43,10 @@
             <%= link_to "Enrollchat Is Ready", '/sections', class: 'dropdown-item', remote: true if @recent_comments.empty? %>
           </div>
         </div>
-      </div>       
+      </div>
     </div><!-- end 2nd row -->
 
-    <div class="card mt-3">  
+    <div class="card mt-3">
       <div class="card-header white py-4">
         <%= form_tag sections_path, method: "get", id: "filter-form", class: "control label" do %>
         <div class="row">
@@ -65,9 +65,11 @@
             <div class="col-sm-3">
               <%= label_tag 'enrollment_status', 'Enrollment Status' %>
               <%= select "section", "enrollment_status", options_for_select(Section.enrollment_status_list, selected: @enrollment_status), { prompt: 'ALL' }, { id: 'filter-status', class: 'form-control' } %>
-            </div>            
+            </div>
             <div class="col-sm-3 button-group pull-right">
-              <%= link_to 'Clear Filters', sections_path, style: 'text-decoration: underline;' %><i class="fa fa-times pl-1" aria-hidden="true"></i>
+              <% unless params[:section].blank? %>
+                <%= link_to 'Clear Filters', sections_path, style: 'text-decoration: underline;' %><i class="fa fa-times pl-1" aria-hidden="true"></i>
+              <% end %>
               <br>
               <a href="#" id="filter-submit" class="btn btn-sm btn-block deep-orange darken-2 mt-2">Filter</a>
             </div>
