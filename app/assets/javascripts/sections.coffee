@@ -7,6 +7,6 @@ $(document).ready ->
   $("#update-form").on("ajax:complete", (e, data, status, xhr) ->
     $('.spinner').hide())
 
-$(document).ready ->
+$(document).on 'turbolinks:load', ->
   $('#filter-submit').click ->
     $(this).parents('form').submit()
