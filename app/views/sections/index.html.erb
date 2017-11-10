@@ -13,22 +13,22 @@
 
       <div class="col-sm-6 justify-content-end d-flex">
         <div class="dropdown">
-          <button class="btn unique-color" type="button" data-toggle="collapse" data-target="#uploadSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button id="upload-sections" class="btn unique-color" type="button" data-toggle="collapse" data-target="#uploadSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             Upload <i class="fa fa-upload m1-1" aria-hidden="true"></i>
           </button>
           <div class="dropdown-menu dropdown-menu-right collapse" id="uploadSupportedContent">
             <% if current_user.try(:admin?) %>
-              <li class="nav-item">
-                <%= form_tag sections_import_path, multipart: true, class: 'form-inline', id: 'update-form', remote: true do %>
-                    <%= file_field_tag :file, :accept => 'application/xslt+xml' %>
-                    <%= submit_tag "Update Sections", :class => "btn btn-sm btn-outline-default btn-block" %>
+              <li class="nav-item p-2">
+                <%= form_tag sections_import_path, multipart: true, id: 'update-form', remote: true do %>
+                    <div class="form-group">
+                      <%= file_field_tag :file, accept: 'application/xslt+xml', class: 'form-control-file' %>
+                      <small id="fileHelp" class="form-text text-muted">Upload a CSV or XSLT (Excel) file. The system will refresh this page once it has processed the file.</small>
+                    </div>
+                    <%= button_tag type: 'submit',  class: "btn btn-sm btn-block unique-color", disabled: true do %>
+                        Update Sections <i class='fa fa-upload m1-1' aria-hidden='true'></i>
+                    <% end %>
                 <% end %>
                 <span class="spinner"><i class="fa fa-spinner fa-pulse"></i></span>
-              </li>
-            <% end %>
-            <% @terms.each do |term| %>
-              <li class="nav-item">
-                <%= link_to term_in_words(term.term), sections_url(term: term.term), class: 'nav-link' %>
               </li>
             <% end %>
           </div>
@@ -85,19 +85,27 @@
       ],
       stateSave: true
     } );
+
+    $("#upload-sections").on("click", function() {
+      $(this).toggleClass("unique-color grey");
+    });
+
+    $("#update-form").on("submit", function() {
+      $("#upload-sections").attr("class", 'btn unique-color');
+      $("#uploadSupportedContent").addClass('collapse');
+    });
+
+    $('input:file').change(
+        function(){
+          if ($(this).val()) {
+             $('button:submit').removeAttr('disabled');
+          }
+        }
+    );
+
   } );
 </script>
-<!--
-<script type="text/javascript">
-  $('#filter-department').change(function() {
-    this.form.submit();
-  });
-</script>
-<script type="text/javascript">
-  $('#filter-status').change(function() {
-    this.form.submit();
-  });
-</script> -->
+
 
 <script type="text/javascript" charset="utf-8">
   $(function () {
