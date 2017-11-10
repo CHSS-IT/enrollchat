@@ -10,3 +10,6 @@ App.room = App.cable.subscriptions.create "RoomChannel",
     $('#notifications').prepend data.message
     if data.trigger == 'Updated'
       location.reload()
+    if $('#alerts-button').hasClass('unique-color-dark')
+      $('#alerts-button').removeClass('unique-color-dark').addClass('rgba-lime-strong')
+    $('button#alerts-button').effect("pulsate", {times:2}, 1000)
