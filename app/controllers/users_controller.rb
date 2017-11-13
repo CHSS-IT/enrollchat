@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :ensure_admin!
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :checked_activities]
   before_action :authenticate_user!
 
   def index
@@ -38,6 +38,11 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def checked_activities
+    @user.checked_activities!
+    head :ok, content_type: "text/html"
   end
 
   private
