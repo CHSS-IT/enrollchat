@@ -40,7 +40,7 @@
         <% end %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="termDropdownLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Terms</a>
-          <div class="dropdown-menu dropdown-primary dropdown-menu-right animated fadeInUp" aria-labelledy="termDropdownLink">
+          <div class="dropdown-menu dropdown-primary dropdown-menu-right animated fadeInUp" id="termDropdown" aria-labelledy="termDropdownLink">
             <% @terms.each do |term| %>
               <%= link_to term_in_words(term.term), sections_url(term: term.term), class: 'dropdown-item' %>
             <% end %>
@@ -92,6 +92,12 @@
           $('#alerts-button').toggleClass('rgba-lime-strong unique-color-dark')
         };
       });
+      $('#alerts-button').on('hidden.bs.dropdown', function () {
+        alert('Lana Turner has collapsed!');
+      })
+      $('#alerts-button').on('show.bs.dropdown', function () {
+        alert('Lana Turner has collapsed!');
+      })
     } );
   </script>
 </html>
