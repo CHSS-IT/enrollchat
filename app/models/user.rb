@@ -13,4 +13,8 @@ class User < ApplicationRecord
     self.admin?
   end
 
+  def checked_activities!
+    update_column(:last_activity_check, DateTime.now())
+  end
+
 end

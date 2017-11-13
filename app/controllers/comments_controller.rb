@@ -36,7 +36,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         ActionCable.server.broadcast 'room_channel',
-                                     message: "<a class='dropdown-item' data-toggle='modal' data-target='#comments' data-remote='true' href='/sections/'" + @comment.section.id.to_s + "/comments'><i class='fa fa-circle text-info' aria-hidden='true'></i>" + @comment.section.section_and_number + ": " + @comment.user.full_name + " at " + @comment.created_at.strftime('%l:%M %P') + ".</a>",
+                                     message: "<a class='dropdown-item' data-toggle='modal' data-target='#comments' data-remote='true' href='/sections/'" + @comment.section.id.to_s + "/comments'><i class='fa fa-circle text-info new-message-marker' aria-hidden='true'></i>" + @comment.section.section_and_number + ": " + @comment.user.full_name + " at " + @comment.created_at.strftime('%l:%M %P') + ".</a>",
                                     body:  @comment.body,
                                     section_name: @comment.section.section_and_number,
                                     user: @comment.user.full_name,
