@@ -16,7 +16,7 @@
           <button id="upload-sections" class="btn unique-color" type="button" data-toggle="collapse" data-target="#uploadSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             Upload <i class="fa fa-upload m1-1" aria-hidden="true"></i>
           </button>
-          <div class="dropdown-menu dropdown-menu-right collapse" id="uploadSupportedContent">
+          <div class="dropdown-menu dropdown-menu-right collapse animated fadeInUp" id="uploadSupportedContent">
             <% if current_user.try(:admin?) %>
               <li class="nav-item p-2">
                 <%= form_tag sections_import_path, multipart: true, id: 'update-form', remote: true do %>
