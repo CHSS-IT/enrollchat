@@ -14,6 +14,7 @@ $(document).on 'turbolinks:load', ->
 $(document).ready ->
   $('#class-sections').DataTable
     responsive: true
+    fixedHeader: true
     columnDefs: [
       {
         responsivePriority: 1
