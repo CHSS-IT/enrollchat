@@ -5,11 +5,13 @@ class Section < ApplicationRecord
 
   default_scope  { where("delete_at is null") }
 
+  scope :by_department, -> { order(:department) }
+  scope :by_section_and_number, -> { order(:course_description, :section_number) }
   scope :canceled, -> { where(status: 'C') }
   scope :not_canceled, -> { where("status <> 'C'") }
-  scope :by_term, ->(term) { where(term: term) }
-  scope :by_department, ->(department) { where(department: department) }
-  scope :by_status, ->(status) { where(status: status) }
+  scope :in_term, ->(term) { where(term: term) }
+  scope :in_department, ->(department) { where(department: department) }
+  scope :in_status, ->(status) { where(status: status) }
   scope :full_or_over_enrolled, -> { where('actual_enrollment >= enrollment_limit') }
   scope :full, -> { where('actual_enrollment = enrollment_limit') }
   scope :over_enrolled, -> { where('actual_enrollment > enrollment_limit') }
