@@ -16,8 +16,12 @@ class Section < ApplicationRecord
   scope :under_enrolled, -> { where('actual_enrollment < enrollment_limit') }
   scope :graduate_under_enrolled, -> { where('actual_enrollment < 10 and cross_list_enrollment < 10') }
   scope :undergraduate_under_enrolled, -> { where('actual_enrollment < 15 and cross_list_enrollment < 15')}
-  scope :graduate_level, -> { where("level = 'Graduate - First' or level = 'Graduate - Advanced'") }
-  scope :undergraduate_level, -> { where("level = 'Undergraduate - Upper Division' or level = 'Undergraduate - Lower Division'") }
+  scope :graduate_level, -> { where("level like 'Graduate -%'") }
+  scope :undergraduate_level, -> { where("level like 'Undergraduate -%'") }
+  scope :undergraduate_upper, -> { undergraduate_level.where("level like '%- Upper%'") }
+  scope :undergraduate_lower, -> { undergraduate_level.where("level like '%- Lower%'") }
+  scope :graduate_first, -> { graduate_level.where("level like '%- First%'") }
+  scope :graduate_advanced, -> { graduate_level.where("level like '%- Advanced%'") }
   scope :with_status, -> { where("status is not null and status <> ' '") }
 
   scope :marked_for_deletion, -> { unscoped.where("delete_at is not null") }
@@ -47,7 +51,7 @@ class Section < ApplicationRecord
   end
 
   def self.level_list
-    ['Undergraduate','Graduate',]
+    ['Undergraduate - Lower Division','Undergraduate - Upper Division','Graduate - First','Graduate - Advanced']
   end
 
   def self.enrollment_status_list

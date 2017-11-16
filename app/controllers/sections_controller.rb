@@ -68,12 +68,14 @@ class SectionsController < ApplicationController
 
         unless params[:section][:level].blank?
           @section_level = params[:section][:level]
-          if @section_level == "Graduate"
-            @sections = @sections.graduate_level
-          elsif @section_level == "Undergraduate"
-            @sections = @sections.undergraduate_level
-          else
-            @sections
+          if @section_level == "Graduate - First"
+            @sections = @sections.graduate_first
+          elsif @section_level == "Graduate - Advanced"
+            @sections = @sections.graduate_advanced
+          elsif @section_level == ("Undergraduate - Lower Division")
+            @sections = @sections.undergraduate_lower
+          elsif @section_level == ("Undergraduate - Upper Division")
+            @sections = @sections.undergraduate_upper
           end
         end
 
