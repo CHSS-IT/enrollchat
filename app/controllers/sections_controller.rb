@@ -8,7 +8,7 @@ class SectionsController < ApplicationController
   # GET /sections.json
 
   def index
-    @sections = @sections.by_term(@term)
+    @sections = @sections.in_term(@term).by_department.by_section_and_number
     @updated_at = Section.maximum(:updated_at)
   end
 
@@ -38,7 +38,7 @@ class SectionsController < ApplicationController
   end
 
   def delete_term
-    @sections = Section.by_term(params[:term]).update_all(delete_at: DateTime.now().next_month)
+    @sections = Section.in_term(params[:term]).update_all(delete_at: DateTime.now().next_month)
     redirect_to sections_path, notice: "All sections and comments from term #{params[:term]} are marked for deletion."
   end
 
@@ -52,9 +52,10 @@ class SectionsController < ApplicationController
     def filter
       @sections = Section.all
       unless params[:section].blank?
+        logger.debug('FILTERING')
         unless params[:section][:department].blank?
           @department = params[:section][:department]
-          @sections = @sections.by_department(@department)
+          @sections = @sections.in_department(@department)
         end
 
         unless params[:section][:status].blank?
@@ -62,7 +63,7 @@ class SectionsController < ApplicationController
           if @status == 'ACTIVE'
             @sections = @sections.not_canceled
           else
-            @sections = @sections.by_status(@status)
+            @sections = @sections.in_status(@status)
           end
         end
 
@@ -82,12 +83,16 @@ class SectionsController < ApplicationController
         unless params[:section][:enrollment_status].blank?
           @enrollment_status = params[:section][:enrollment_status]
           if @enrollment_status == 'Undergraduate over-enrolled'
+            logger.debug("case 1")
             @sections = @sections.undergraduate_level.over_enrolled
-          elsif @enrollment_status == 'Undergraudate under-enrolled'
+          elsif @enrollment_status == 'Undergraduate under-enrolled'
+            logger.debug("case 2")
             @sections = @sections.undergraduate_level.undergraduate_under_enrolled
           elsif @enrollment_status == 'Graduate over-enrolled'
+            logger.debug("case 3")
             @sections = @sections.graduate_level.over_enrolled
           elsif @enrollment_status == 'Graduate under-enrolled'
+            logger.debug("case 4")
             @sections = @sections.graduate_level.graduate_under_enrolled
           end
         end
