@@ -162,7 +162,7 @@ class Section < ApplicationRecord
     if status == 'C'
       "canceled"
     elsif waitlist > 5
-      "waitlisted"
+      "long-waitlist"
     elsif graduate? # or state for undergraduate cross-listed with grad if possible
       if actual_enrollment < 10 and cross_list_enrollment < 10
         "under-enrolled"

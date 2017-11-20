@@ -11,7 +11,7 @@ $(document).on 'turbolinks:load', ->
   $('#filter-submit').click ->
     $(this).parents('form').submit()
 
-$(document).ready ->
+$(document).on 'turbolinks:load', ->
   $('#class-sections').DataTable
     responsive: true
     fixedHeader: true

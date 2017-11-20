@@ -18,7 +18,7 @@ module SectionsHelper
       icon_class =     case section.flagged_as
                          when "canceled"
                            'fa fa-ban'
-                         when "waitlisted"
+                         when "long-waitlist"
                            'fa fa-list-ol'
                          when "under-enrolled"
                            'fa fa-level-down'
