@@ -65,8 +65,6 @@ class SectionsController < ApplicationController
           else
             @sections = @sections.in_status(@status)
           end
-        else
-          @sections = @sections.not_canceled
         end
 
         unless params[:section][:level].blank?
