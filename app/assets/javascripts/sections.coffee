@@ -15,6 +15,7 @@ $(document).ready ->
   $('#class-sections').DataTable
     responsive: true
     fixedHeader: true
+    order: [[ 3, "asc" ]]
     columnDefs: [
       {
         responsivePriority: 1

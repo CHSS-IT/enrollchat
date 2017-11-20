@@ -52,6 +52,7 @@ class SectionsController < ApplicationController
     def filter
       @sections = Section.all
       unless params[:section].blank?
+        logger.debug('FILTERING')
         unless params[:section][:department].blank?
           @department = params[:section][:department]
           @sections = @sections.in_department(@department)
@@ -64,6 +65,8 @@ class SectionsController < ApplicationController
           else
             @sections = @sections.in_status(@status)
           end
+        else
+          @sections = @sections.not_canceled
         end
 
         unless params[:section][:level].blank?
@@ -82,12 +85,16 @@ class SectionsController < ApplicationController
         unless params[:section][:enrollment_status].blank?
           @enrollment_status = params[:section][:enrollment_status]
           if @enrollment_status == 'Undergraduate over-enrolled'
+            logger.debug("case 1")
             @sections = @sections.undergraduate_level.over_enrolled
           elsif @enrollment_status == 'Undergraduate under-enrolled'
+            logger.debug("case 2")
             @sections = @sections.undergraduate_level.undergraduate_under_enrolled
           elsif @enrollment_status == 'Graduate over-enrolled'
+            logger.debug("case 3")
             @sections = @sections.graduate_level.over_enrolled
           elsif @enrollment_status == 'Graduate under-enrolled'
+            logger.debug("case 4")
             @sections = @sections.graduate_level.graduate_under_enrolled
           end
         end
