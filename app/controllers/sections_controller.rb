@@ -50,9 +50,11 @@ class SectionsController < ApplicationController
     end
 
     def filter
-      @sections = Section.all
+      @sections = Section.not_canceled
       unless params[:section].blank?
         logger.debug('FILTERING')
+        @sections = Section.all
+
         unless params[:section][:department].blank?
           @department = params[:section][:department]
           @sections = @sections.in_department(@department)
@@ -62,6 +64,8 @@ class SectionsController < ApplicationController
           @status = params[:section][:status]
           if @status == 'ACTIVE'
             @sections = @sections.not_canceled
+          elsif @status == 'ALL'
+            @sections
           else
             @sections = @sections.in_status(@status)
           end
@@ -69,31 +73,14 @@ class SectionsController < ApplicationController
 
         unless params[:section][:level].blank?
           @section_level = params[:section][:level]
-          if @section_level == "Graduate - First"
+          if @section_level == 'Graduate - First'
             @sections = @sections.graduate_first
-          elsif @section_level == "Graduate - Advanced"
+          elsif @section_level == 'Graduate - Advanced'
             @sections = @sections.graduate_advanced
-          elsif @section_level == ("Undergraduate - Lower Division")
+          elsif @section_level == ('Undergraduate - Lower Division')
             @sections = @sections.undergraduate_lower
-          elsif @section_level == ("Undergraduate - Upper Division")
+          elsif @section_level == ('Undergraduate - Upper Division')
             @sections = @sections.undergraduate_upper
-          end
-        end
-
-        unless params[:section][:enrollment_status].blank?
-          @enrollment_status = params[:section][:enrollment_status]
-          if @enrollment_status == 'Undergraduate over-enrolled'
-            logger.debug("case 1")
-            @sections = @sections.undergraduate_level.over_enrolled
-          elsif @enrollment_status == 'Undergraduate under-enrolled'
-            logger.debug("case 2")
-            @sections = @sections.undergraduate_level.undergraduate_under_enrolled
-          elsif @enrollment_status == 'Graduate over-enrolled'
-            logger.debug("case 3")
-            @sections = @sections.graduate_level.over_enrolled
-          elsif @enrollment_status == 'Graduate under-enrolled'
-            logger.debug("case 4")
-            @sections = @sections.graduate_level.graduate_under_enrolled
           end
         end
 

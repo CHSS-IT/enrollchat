@@ -21,15 +21,15 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'should create a list of all departments' do
-    assert_equal Section.department_list, ["BIS", "CLS", "ENGL", "SINT"]
+    assert_equal @sections.department_list, ["BIS", "CLS", "ENGL", "SINT"]
   end
 
-  test 'should create a list of all available statuses including the manually added ACTIVE status' do
-    assert_equal Section.status_list, ["ACTIVE", "CL", "CN", "O", "WL"]
+  test 'should create a list of all available statuses including the manually added ALL and ACTIVE statuses' do
+    assert_equal @sections.status_list, ["ACTIVE", "ALL", "CL", "CN", "O", "WL"]
   end
 
   test 'should create a list of levels available for selection' do
-    assert_equal Section.level_list, ["Undergraduate - Lower Division", "Undergraduate - Upper Division", "Graduate - First", "Graduate - Advanced"]
+    assert_equal @sections.level_list, ["Undergraduate - Lower Division", "Undergraduate - Upper Division", "Graduate - First", "Graduate - Advanced"]
   end
 
   test 'should create a list of enrollment statuses' do

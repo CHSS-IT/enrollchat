@@ -47,7 +47,7 @@ class Section < ApplicationRecord
 
   def self.status_list
     list = self.with_status.map{|s| s.status}
-    # adds an option to list all sections that aren't canceled.
+    list << 'ALL'
     list << 'ACTIVE'
     list.sort.uniq
   end

@@ -40,21 +40,17 @@
       <div class="card-header white py-4">
         <%= form_tag sections_path, method: "get", id: "filter-form", class: "control label" do %>
         <div class="row">
-            <div class="col-sm-2">
+            <div class="col-sm-3">
               <%= label_tag 'department', 'Department' %>
               <%= select "section", "department", options_for_select(Section.department_list, selected: @department), { prompt: 'ALL' }, { class: 'form-control' } %>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
               <%= label_tag 'status', 'Status' %>
-              <%= select "section", "status", options_for_select(Section.status_list, selected: @status), { prompt: 'ALL' }, { id: 'filter-status', class: 'form-control' } %>
-            </div>
-            <div class="col-sm-2">
-              <%= label_tag 'Level', 'Level' %>
-              <%= select "section", "level", options_for_select(Section.level_list, selected: @section_level), { prompt: 'ALL' }, { id: 'filter-status', class: 'form-control' } %>
+              <%= select "section", "status", options_for_select(Section.status_list, selected: @status), { default: 'ACTIVE' }, { id: 'filter-status', class: 'form-control' } %>
             </div>
             <div class="col-sm-3">
-              <%= label_tag 'enrollment_status', 'Enrollment Status' %>
-              <%= select "section", "enrollment_status", options_for_select(Section.enrollment_status_list, selected: @enrollment_status), { prompt: 'ALL' }, { id: 'filter-status', class: 'form-control' } %>
+              <%= label_tag 'Level', 'Level' %>
+              <%= select "section", "level", options_for_select(Section.level_list, selected: @section_level), { prompt: 'ALL' }, { id: 'filter-status', class: 'form-control' } %>
             </div>
             <div class="col-sm-3 button-group pull-right">
               <% unless params[:section].blank? %>
