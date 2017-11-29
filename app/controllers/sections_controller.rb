@@ -50,9 +50,11 @@ class SectionsController < ApplicationController
     end
 
     def filter
-      @sections = Section.all
+      @sections = Section.not_canceled
       unless params[:section].blank?
         logger.debug('FILTERING')
+        @sections = Section.all
+
         unless params[:section][:department].blank?
           @department = params[:section][:department]
           @sections = @sections.in_department(@department)
@@ -62,6 +64,8 @@ class SectionsController < ApplicationController
           @status = params[:section][:status]
           if @status == 'ACTIVE'
             @sections = @sections.not_canceled
+          elsif @status == "ALL"
+            @sections
           else
             @sections = @sections.in_status(@status)
           end

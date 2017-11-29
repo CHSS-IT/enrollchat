@@ -46,7 +46,7 @@
             </div>
             <div class="col-sm-3">
               <%= label_tag 'status', 'Status' %>
-              <%= select "section", "status", options_for_select(Section.status_list, selected: @status), { prompt: 'ALL' }, { id: 'filter-status', class: 'form-control' } %>
+              <%= select "section", "status", options_for_select(Section.status_list, selected: @status), { default: 'ACTIVE' }, { id: 'filter-status', class: 'form-control' } %>
             </div>
             <div class="col-sm-3">
               <%= label_tag 'Level', 'Level' %>
