@@ -29,29 +29,37 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'should create a list of levels available for selection' do
-    assert_equal Section.level_list, ['Undergraduate','Graduate',]
+    assert_equal Section.level_list, ["Undergraduate - Lower Division", "Undergraduate - Upper Division", "Graduate - First", "Graduate - Advanced"]
   end
 
   test 'should create a list of enrollment statuses' do
-    assert_equal Section.enrollment_status_list, ['Undergraudate under-enrolled','Graduate under-enrolled','Undergraduate over-enrolled','Graduate over-enrolled']
+    assert_equal Section.enrollment_status_list, ["Undergraduate under-enrolled", "Undergraduate over-enrolled", "Graduate under-enrolled", "Graduate over-enrolled"]
   end
 
   # test scopes used in filter
 
   test 'by_department scope should properly filter sections by department' do
-    assert_equal @sections.by_department('CLS'), [@section_two]
+    assert_equal @sections.in_department('CLS'), [@section_two]
   end
 
   test 'by_status scope should properly filter sections by section status' do
-    assert_equal @sections.by_status('CN'), [@section]
+    assert_equal @sections.in_status('CN'), [@section]
   end
 
-  test 'graduate_level scope should properly filter sections by level' do
-    assert_equal @sections.graduate_level, [@section_two, @section_three]
+  test 'graduate_advanced scope should properly filter sections by level' do
+    assert_equal @sections.graduate_advanced, [@section_three]
   end
 
-  test 'undergraduate_level scope should properly filter sections by level' do
-    assert_equal @sections.undergraduate_level, [@section, @section_four]
+  test 'graduate_first scope should properly filter sections by level' do
+    assert_equal @sections.graduate_first, [@section_two]
+  end
+
+  test 'undergraduate_upper scope should properly filter sections by level' do
+    assert_equal @sections.undergraduate_upper, [@section_four]
+  end
+
+  test 'undergraduate_lower scope should properly filter sections by level' do
+    assert_equal @sections.undergraduate_lower, [@section]
   end
 
   test 'graduate_under_enrolled and graduate_level scopes should return graduate sections where actual enrollment and cross list enrollment is less than 10' do
@@ -61,11 +69,11 @@ class SectionTest < ActiveSupport::TestCase
   test 'undergraduate_under_enrolled and undergraduate_level scopes should return undergraduate sections where actual and cross list enrollment is less than 15' do
     assert_equal @sections.undergraduate_level.undergraduate_under_enrolled, [@section_four]
   end
-  
+
   test 'undergraduate_level and over_enrolled scopes should return undergraduate sections where actual enrollment is greater than the enrollment limit' do
     assert_equal @sections.undergraduate_level.over_enrolled, [@section]
   end
-  
+
   test 'graduate_level and over_enrolled scopes should return graduate sections where actual enrollment is greater than the enrollment limit' do
     assert_equal @sections.graduate_level.over_enrolled, [@section_two]
   end

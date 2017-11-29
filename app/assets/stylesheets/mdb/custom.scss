@@ -86,6 +86,8 @@ label {font-weight: bold;}
 
 table.table-hover tbody tr:hover {background: #c4e3f3;}
 
+#section-table select[name="class-sections_length"] {height: auto;}
+
 @media (min-width: 992px) {
   .navbar-expand-lg {
     -webkit-box-orient: horizontal;
