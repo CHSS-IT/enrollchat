@@ -52,7 +52,6 @@ class SectionsController < ApplicationController
       @sections = Section.in_term(@term).by_department.by_section_and_number
       unless params[:section].blank?
         logger.debug('FILTERING')
-        @sections = Section.all
 
         unless params[:section][:department].blank?
           @department = params[:section][:department]
