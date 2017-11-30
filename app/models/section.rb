@@ -174,4 +174,12 @@ class Section < ApplicationRecord
     end
   end
 
+  def self.flagged_as_list
+    %w[long-waitlist under-enrolled]
+  end
+
+  def self.flagged_as?(flag)
+    all.select { |section| section.flagged_as == flag }
+  end
+
 end

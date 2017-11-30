@@ -8,7 +8,6 @@ class SectionsController < ApplicationController
   # GET /sections.json
 
   def index
-    @sections = @sections.in_term(@term).by_department.by_section_and_number
     @updated_at = Section.maximum(:updated_at)
   end
 
@@ -50,7 +49,7 @@ class SectionsController < ApplicationController
     end
 
     def filter
-      @sections = Section.not_canceled
+      @sections = Section.in_term(@term).by_department.by_section_and_number
       unless params[:section].blank?
         logger.debug('FILTERING')
         @sections = Section.all
@@ -69,6 +68,8 @@ class SectionsController < ApplicationController
           else
             @sections = @sections.in_status(@status)
           end
+        else
+          @sections = @sections.not_canceled
         end
 
         unless params[:section][:level].blank?
@@ -84,6 +85,14 @@ class SectionsController < ApplicationController
           end
         end
 
+        unless params[:section][:flagged].blank?
+          @flagged_as = params[:section][:flagged]
+          if Section.flagged_as_list.include?(@flagged_as)
+            @sections = @sections.flagged_as?(@flagged_as)
+          end
+        end
+      else
+        @sections = @sections.not_canceled
       end
     end
 
