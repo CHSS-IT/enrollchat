@@ -88,6 +88,11 @@ table.table-hover tbody tr:hover {background: #c4e3f3;}
 
 #section-table select[name="class-sections_length"] {height: auto;}
 
+.dropdown-menu-right {
+  right: 0;
+  left: auto; // Reset the default from `.dropdown-menu`
+}
+
 @media (min-width: 992px) {
   .navbar-expand-lg {
     -webkit-box-orient: horizontal;
