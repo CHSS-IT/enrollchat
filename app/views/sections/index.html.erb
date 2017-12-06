@@ -1,19 +1,19 @@
 <span id="alert-wrapper"></span>
 <div class="row">
   <div class="col-sm-12">
-    <div class="row">
-      <div class="col-sm-6">
+
+    <div class="row pt-4 px-4">
+      <div class="col-lg-10 col-sm-8 col-xs-6">
         <% if @sections.blank? %>
-          <h1 class="card-title">No data</h1>
+          <h1 class="card-title mr-2 mb-0 d-inline-block">No data</h1>
         <% else %>
           <h1 class="card-title mr-2 mb-0 d-inline-block"><%= term_in_words(@term) %> Sections</h1>
-          <small class="d-inline-block">Updated <%= basic_date(@updated_at) %></small>
+          <small class="d-inline-block pb-2">Updated <%= basic_date(@updated_at) %></small>
         <% end %>
       </div>
-
-      <div class="col-sm-6 justify-content-end d-flex">
+      <div class="col-lg-2 col-sm-4 col-xs-6">
         <div class="dropdown">
-          <button id="upload-sections" class="btn unique-color" type="button" data-toggle="collapse" data-target="#uploadSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button id="upload-sections" class="btn unique-color btn-block" type="button" data-toggle="collapse" data-target="#uploadSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             Upload <i class="fa fa-upload m1-1" aria-hidden="true"></i>
           </button>
           <div class="dropdown-menu dropdown-menu-right collapse animated fadeInUp" id="uploadSupportedContent">
@@ -34,42 +34,47 @@
           </div>
         </div>
       </div>
-    </div><!-- end 2nd row -->
+    </div><!-- end row -->
 
-    <div class="card mt-3">
-      <div class="card-header white py-4">
-        <%= form_tag sections_path, method: "get", id: "filter-form", class: "control label" do %>
-        <div class="row">
-            <div class="col-sm-3">
-              <%= label_tag 'department', 'Department' %>
-              <%= select "section", "department", options_for_select(Section.department_list, selected: @department), { prompt: 'ALL' }, { class: 'form-control' } %>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card mt-3">
+          <div class="card-header white py-4">
+            <%= form_tag sections_path, method: "get", id: "filter-form", class: "control label" do %>
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                  <%= label_tag 'department', 'Department' %>
+                  <%= select "section", "department", options_for_select(Section.department_list, selected: @department), { prompt: 'ALL' }, { class: 'form-control' } %>
+                </div>
+                <div class="col-md-2 col-sm-6">
+                  <%= label_tag 'status', 'Status' %>
+                  <%= select "section", "status", options_for_select(Section.status_list, selected: @status), { default: 'ACTIVE' }, { id: 'filter-status', class: 'form-control' } %>
+                </div>
+                <div class="col-md-2 col-sm-6">
+                  <%= label_tag 'Level', 'Level' %>
+                  <%= select "section", "level", options_for_select(Section.level_list, selected: @section_level), { prompt: 'ALL' }, { id: 'filter-status', class: 'form-control' } %>
+                </div>
+                <div class="col-md-2 col-sm-6">
+                  <%= label_tag 'flagged', 'Flagged As' %>
+                  <%= select "section", "flagged", options_for_select(Section.flagged_as_list, selected: @flagged_as), { prompt: 'ALL' }, { id: 'filter-status', class: 'form-control' } %>
+                </div>
+                <div class="col-md-3 col-xs-12 button-group pull-right">
+                  <% unless params[:section].blank? %>
+                    <%= link_to 'Clear Filters', sections_path, style: 'text-decoration: underline;' %><i class="fa fa-times pl-1" aria-hidden="true"></i>
+                  <% end %>
+                  <br>
+                  <a href="#" id="filter-submit" class="btn btn-sm btn-block deep-orange darken-2 mt-2">Filter</a>
+                </div>
             </div>
-            <div class="col-sm-2">
-              <%= label_tag 'status', 'Status' %>
-              <%= select "section", "status", options_for_select(Section.status_list, selected: @status), { default: 'ACTIVE' }, { id: 'filter-status', class: 'form-control' } %>
-            </div>
-            <div class="col-sm-2">
-              <%= label_tag 'Level', 'Level' %>
-              <%= select "section", "level", options_for_select(Section.level_list, selected: @section_level), { prompt: 'ALL' }, { id: 'filter-status', class: 'form-control' } %>
-            </div>
-            <div class="col-sm-2">
-              <%= label_tag 'flagged', 'Flagged As' %>
-              <%= select "section", "flagged", options_for_select(Section.flagged_as_list, selected: @flagged_as), { prompt: 'ALL' }, { id: 'filter-status', class: 'form-control' } %>
-            </div>
-            <div class="col-sm-3 button-group pull-right">
-              <% unless params[:section].blank? %>
-                <%= link_to 'Clear Filters', sections_path, style: 'text-decoration: underline;' %><i class="fa fa-times pl-1" aria-hidden="true"></i>
-              <% end %>
-              <br>
-              <a href="#" id="filter-submit" class="btn btn-sm btn-block deep-orange darken-2 mt-2">Filter</a>
-            </div>
+            <% end %>
+          </div>
+
+          <div class="card-content table-full-width" id="section-table">
+            <%= render 'section_table' %>
+          </div>
         </div>
-        <% end %>
       </div>
+    </div> <!-- end row -->
 
-      <div id="section-table" class="card-content table-full-width">
-        <%= render 'section_table' %>
-      </div>
-    </div>
   </div>
-</div>
+</div><!-- end row-->

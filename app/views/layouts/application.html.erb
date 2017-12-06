@@ -24,7 +24,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
+      <ul class="nav navbar-nav ml-auto">
         <li class="nav-item active">
           <%= link_to 'Home', sections_path, class: 'nav-link' %>
         </li>
@@ -59,7 +59,7 @@
   </nav>
   
 
-  <div class="container-fluid p-4">
+  <div class="container-fluid">
     <%= render partial: "/layouts/alert", flash: flash %>
     <%= yield %>
     <div class="modal fade" id="comments">
