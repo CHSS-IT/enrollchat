@@ -5,9 +5,9 @@
     <div class="row pt-4 px-4">
       <div class="col-lg-10 col-sm-8 col-xs-6">
         <% if @sections.blank? %>
-          <h1 class="card-title mr-2 mb-0 d-inline-block">No data</h1>
+          <h1 class="card-title d-inline-block">No data</h1>
         <% else %>
-          <h1 class="card-title mr-2 mb-0 d-inline-block"><%= term_in_words(@term) %> Sections</h1>
+          <h1 class="card-title d-inline-block"><%= term_in_words(@term) %> Sections</h1>
           <small class="d-inline-block pb-2">Updated <%= basic_date(@updated_at) %></small>
         <% end %>
       </div>

@@ -62,6 +62,11 @@ label {font-weight: bold;}
  	~ small {color: #616161;}
  }
 
+ h1 {
+ 	@extend .mr-2;
+ 	@extend .mb-0;
+ }
+
  .page-item.active .page-link {
  	background: #ff5722 !important;
  	a {}
