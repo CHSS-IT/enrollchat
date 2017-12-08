@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
   def index
-    @sections = Section.by_term(@term).order(:department)
+    @sections = Section.in_term(@term).order(:department)
     @max_date = @sections.maximum(:updated_at)
     @not_canceled = @sections.not_canceled.size
     @canceled = @sections.canceled.size
