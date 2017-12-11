@@ -10,7 +10,7 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'section number is formatted correctly' do
-    @section.section_number = 23
+    @section.section_number = '23'
     assert_equal @section.section_number_zeroed, '023'
   end
 

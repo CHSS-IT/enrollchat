@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113042206) do
+ActiveRecord::Schema.define(version: 20171208151004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20171113042206) do
     t.string "department"
     t.string "cross_list_group"
     t.string "course_description"
-    t.integer "section_number"
+    t.string "section_number"
     t.string "title"
     t.integer "credits"
     t.string "level"
