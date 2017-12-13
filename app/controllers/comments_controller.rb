@@ -41,6 +41,7 @@ class CommentsController < ApplicationController
                                     section_name: @comment.section.section_and_number,
                                     user: @comment.user.full_name,
                                     section_id: @comment.section.id,
+                                    comment_count: @comment.section.comments.size,
                                     date: @comment.created_at.strftime('%l:%M %P')
         format.html { redirect_to sections_url, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }

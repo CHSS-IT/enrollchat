@@ -2,6 +2,8 @@ $(document).ready ->
   $(".spinner").hide()
 
 $(document).ready ->
+  $("#update-form").on("submit", (e, data, status, xhr) ->
+    $("#upload-sections").trigger('click'))
   $("#update-form").on("ajax:beforeSend", (e, data, status, xhr) ->
     $('.spinner').show())
   $("#update-form").on("ajax:complete", (e, data, status, xhr) ->
