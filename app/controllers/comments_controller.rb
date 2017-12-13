@@ -1,11 +1,9 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: [:edit, :update, :destroy]
   before_action :set_user, only: [:create, :new]
   before_action :set_section
   before_action :authenticate_user!
 
-  # GET /comments
-  # GET /comments.json
   def index
     @comments = @section.comments.order(created_at: :desc)
     respond_to do |format|
@@ -13,11 +11,6 @@ class CommentsController < ApplicationController
       format.js { render layout: false }
     end
   end
-
-  # GET /comments/1
-  # GET /comments/1.json
-  # def show
-  # end
 
   # GET /comments/new
   def new

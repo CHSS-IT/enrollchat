@@ -24,11 +24,6 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to sections_url
   end
 
-  test "should show comment" do
-    get section_comment_url(@section, @comment)
-    assert_response :success
-  end
-
   test "should get edit" do
     get edit_section_comment_url(@section, @comment)
     assert_response :success

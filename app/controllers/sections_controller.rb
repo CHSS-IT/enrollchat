@@ -31,19 +31,13 @@ class SectionsController < ApplicationController
     end
   end
 
-  # GET /sections/1
-  # GET /sections/1.json
-  def show
-  end
-
   def delete_term
     @sections = Section.in_term(params[:term]).update_all(delete_at: DateTime.now().next_month)
     redirect_to sections_path, notice: "All sections and comments from term #{params[:term]} are marked for deletion."
   end
 
-
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_section
       @section = Section.find(params[:id])
     end
@@ -102,7 +96,6 @@ class SectionsController < ApplicationController
       end
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def section_params
       params.require(:section).permit(:owner, :term, :section_id, :department, :cross_list_group, :course_description, :section_number, :title, :credits, :level, :status, :enrollment_limit, :actual_enrollment, :cross_list_enrollment, :waitlist)
     end

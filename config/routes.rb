@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       post 'checked_activities'
     end
   end
-  resources :sections, only: [:index, :show] do
+  resources :sections, only: :index do
     resources :comments
   end
   post '/sections/import' => 'sections#import'
