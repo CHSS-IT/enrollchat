@@ -95,6 +95,10 @@ group :development do
   # Shiny error messages
   gem "better_errors"
   gem "binding_of_caller"
+  # N+1 finder
+  gem "bullet"
+  gem 'rack-mini-profiler'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -1,5 +1,4 @@
 class SectionsController < ApplicationController
-  before_action :set_section, only: :show
   before_action :ensure_admin!, only: [:import, :delete_term]
   before_action :authenticate_user!
   before_action :filter, only: :index
@@ -38,12 +37,8 @@ class SectionsController < ApplicationController
 
   private
 
-    def set_section
-      @section = Section.find(params[:id])
-    end
-
     def filter
-      @sections = Section.in_term(@term).by_department.by_section_and_number
+      @sections = Section.includes(:comments).in_term(@term).by_department.by_section_and_number
       unless params[:section].blank?
         logger.debug('FILTERING')
 
