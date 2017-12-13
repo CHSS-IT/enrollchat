@@ -49,19 +49,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_equal 'You do not have access to this page', flash[:notice]
   end
 
-  test "should GET show" do
-    login_as users(:one)
-    get user_url(@user)
-    assert_response :success
-  end
-
-  test "should not GET show with a non-admin user" do
-    login_as users(:two)
-    get user_url(@user)
-    assert_redirected_to sections_url
-    assert_equal 'You do not have access to this page', flash[:notice]
-  end
-
   test "should GET edit user" do
     login_as users(:one)
     get edit_user_url(@user)
