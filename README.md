@@ -21,7 +21,6 @@ Heroku will need these add-ons:
 * Herokupostgres
 * Redis To Go
 * Heroku Scheduler (to schedule feed ingestion and removal of deleted terms)
-*
 
 ## Scheduled Tasks
 
@@ -31,4 +30,4 @@ If you wish to ingest a feed automatically, you will need to set the ENROLLCHAT_
 
 ## Feed Format
 
-[details on feed format go here]
+Administrators may manually upload sections in an xlsx file using the upload button on sections#index. See the sample file in docs/test for an example of the format.
