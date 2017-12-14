@@ -14,4 +14,4 @@ App.room = App.cable.subscriptions.create "RoomChannel",
       $('#alerts-button').removeClass('unique-color-dark').addClass('rgba-lime-strong')
     $('button#alerts-button').effect("pulsate", {times:2}, 1000)
     dom_id = '#section_' + data.section_id + ' td a span.comment-count'
-    $(dom_id).html(data.comment_count)
+    $(dom_id).html(data.comment_count);
