@@ -4,6 +4,11 @@ Enrollchat accepts a feed of course section data and allows users to comment on 
 
 ## Dependencies
 
+* Ruby 2.4.2
+* PostgreSQL for the database
+* Yarn for JS package management
+* Redis server
+
 The app presumes Heroku hosting and some development decisions reflect that presumption.
 
 Both the manual upload and the feed are dependent on Amazon S3 file storage, managed through Carrierwave. Your development and production environments will need to store these environment variables for S3:
@@ -21,6 +26,15 @@ Heroku will need these add-ons:
 * Herokupostgres
 * Redis To Go
 * Heroku Scheduler (to schedule feed ingestion and removal of deleted terms)
+
+## Getting Started Locally
+* Clone the repository from Github and navigate into it.
+
+George Mason's CAS server is used for authentication. To set up an initial user, replace the generic information in db/seeds with the information for the user you would like to have access. Additional users can be added from within the application.
+
+* run `bin/setup`
+
+Both the rails server and redis server need to be running locally.
 
 ## Scheduled Tasks
 
