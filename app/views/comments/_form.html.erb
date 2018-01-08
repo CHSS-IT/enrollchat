@@ -18,5 +18,22 @@
     <%= form.label :body, "Comment on #{comment.section.section_and_number}" %>
     <%= form.text_area :body, id: :comment_body, class:"form-control" %>
   </div>
-    <%= form.submit class: "btn deep-orange darken-2 btn-sm btn-block" %>
+    <%= form.submit class: "btn deep-orange darken-2 btn-sm btn-block", id: 'submit' %>
 <% end %>
+
+<script type="application/javascript">
+  $(function() {
+    $('#submit').attr('disabled', 'disabled');
+  })
+
+  $(document).ready(function () {
+    $('#comment_body').on('input change', function () {
+      if ($(this).val() != '') {
+        $('#submit').prop('disabled', false);
+      }
+      else {
+        $('#submit').prop('disabled', true);
+      }
+    });
+  });
+</script>
