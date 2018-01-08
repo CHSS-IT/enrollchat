@@ -67,7 +67,7 @@ class CommentsController < ApplicationController
     @comment.destroy
     respond_to do |format|
       format.html { redirect_to section_comments_url, notice: 'Comment was successfully destroyed.' }
-      format.json { head :no_content }
+      format.js { flash.now[:notice] = 'Comment deleted.' }
     end
   end
 
