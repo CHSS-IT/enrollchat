@@ -9,6 +9,6 @@
     <hr>
     <p style="line-height: 1.3em"><%= comment.body %></p>
     <%#= link_to 'Edit', edit_section_comment_path(@section, comment) %>
-    <%= link_to '<i class="fa fa-trash mr-1"></i> Delete Comment'.html_safe, section_comment_path(@section, comment), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn btn-primary btn-sm" if @current_user.is_admin? %>
+    <%= link_to '<i class="fa fa-trash mr-1"></i> Delete Comment'.html_safe, section_comment_path(@section, comment), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn btn-primary btn-sm" if current_user.is_admin? %>
   </div>
 </div>
