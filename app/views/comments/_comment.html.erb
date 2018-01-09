@@ -1,7 +1,7 @@
  <div class="card mb-3 " id="<%= dom_id(comment) %>">
   <div class="card-body py-2">
     <span style="font-weight: 700; color: steelblue;">
-      <%= comment.user.email %>
+      <%= comment.user.full_name %>
     </span>
     <small class="text-muted" style="display: block;">
       <%= time_ago_in_words(comment.created_at) %> ago
