@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :ensure_admin!
+  before_action :ensure_admin!, except: :checked_activities
   before_action :set_user, only: [:edit, :update, :destroy, :checked_activities]
   before_action :authenticate_user!
 
