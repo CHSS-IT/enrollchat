@@ -1,7 +1,7 @@
 class Section < ApplicationRecord
   require 'roo'
 
-  has_many :comments, dependent: :destroy
+  has_many :comments, -> { order(created_at: :desc) }, dependent: :destroy
 
   default_scope  { where("delete_at is null") }
 
@@ -28,6 +28,10 @@ class Section < ApplicationRecord
 
   scope :marked_for_deletion, -> { unscoped.where("delete_at is not null") }
   scope :delete_now, -> { unscoped.where("delete_at is not null AND delete_at < ?", DateTime.now()) }
+
+  def most_recent_comment_date
+    comments.first.created_at
+  end
 
   def section_number_zeroed
     section_number.to_s.rjust(3, "0")
