@@ -32,11 +32,13 @@
           <li class="nav-item">
             <%= link_to 'Reports', reports_path, class: 'nav-link' %>
           </li>
-          <% if current_user.try(:admin?) %>
-            <li class="nav-item">
+          <li class="nav-item">
+            <% if current_user.try(:admin?) %>
               <%= link_to 'Users', users_path, class: 'nav-link' %>
-            </li>
+            <% else %>
+              <%= link_to 'Preferences', edit_user_path(current_user), class: 'nav-link' %>
           <% end %>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#termsemesters" data-toggle="dropdown">Terms</a>
             <ul class="dropdown-menu dropdown-menu-right animated fadeInUp" id="termsemesters">

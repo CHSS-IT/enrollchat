@@ -13,17 +13,45 @@ $(document).on 'turbolinks:load', ->
   $('#filter-submit').click ->
     $(this).parents('form').submit()
 
+
+
+
 $(document).on 'turbolinks:load', ->
+  $.fn.dataTable.moment( 'MMMM D, YYYY' );
+
+  jQuery.extend jQuery.fn.dataTableExt.oSort,
+    'dateNonStandard-asc': (a, b) ->
+      x = Date.parse(a)
+      y = Date.parse(b)
+      if x == y
+        return 0
+      if isNaN(x) or x < y
+        return 1
+      if isNaN(y) or x > y
+        return -1
+      return
+    'dateNonStandard-desc': (a, b) ->
+      x = Date.parse(a)
+      y = Date.parse(b)
+      if x == y
+        return 0
+      if isNaN(y) or x < y
+        return -1
+      if isNaN(x) or x > y
+        return 1
+      return
+
   $('#class-sections').DataTable
     responsive: true
     fixedHeader: true
     order: [[ 3, "asc" ]]
     columnDefs: [
+      { type: 'dateNonStandard', targets: 15 }
       {
         responsivePriority: 1
         targets: [
           4
-          15
+          16
         ]
       }
       {
@@ -37,6 +65,7 @@ $(document).on 'turbolinks:load', ->
           10
           11
           12
+          13
         ]
       }
     ]
