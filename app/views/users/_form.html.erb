@@ -68,6 +68,9 @@
               <%= f.label :email_preference, class: "col-sm-3 control-label" %>
               <div class="col-sm-9">
                 <%= select :user, :email_preference, User.email_options, {include_blank: false}, {class: 'selectpicker form-control'} %>
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                  Preferences for comment emails. (Coming soon.)
+                </small>
               </div>
             </div>
           </div>
