@@ -10,6 +10,7 @@ one:
   first_name: 'Jethro'
   last_name: 'Gibbs'
   admin: true
+  email_preference: 'All Comments'
 
 two:
   email: 'chssuser@email.com'
@@ -17,6 +18,7 @@ two:
   first_name: 'Anthony'
   last_name: 'DiNozzo'
   admin: false
+  email_preference: 'Daily Digest'
 
 three:
   email: 'testuser@email.com'
@@ -24,3 +26,4 @@ three:
   first_name: 'Timothy'
   last_name: 'McGee'
   admin: false
+  email_preference: 'No Emails'
