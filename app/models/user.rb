@@ -17,4 +17,7 @@ class User < ApplicationRecord
     update_column(:last_activity_check, DateTime.now())
   end
 
+  def self.email_options
+    ['All Comments', 'Daily Digest', 'Comments and Digest', 'No Emails']
+  end
 end

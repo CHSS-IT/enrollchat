@@ -30,7 +30,7 @@ class Section < ApplicationRecord
   scope :delete_now, -> { unscoped.where("delete_at is not null AND delete_at < ?", DateTime.now()) }
 
   def most_recent_comment_date
-    comments.first.created_at
+    comments.first.created_at unless comments.empty?
   end
 
   def section_number_zeroed
@@ -47,6 +47,10 @@ class Section < ApplicationRecord
 
   def self.delete_marked
     self.delete_now.destroy_all
+  end
+
+  def self.departments
+    all.collect { |s| s.department }.uniq
   end
 
   def self.status_list

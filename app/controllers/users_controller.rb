@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_action :ensure_admin!, except: :checked_activities
   before_action :set_user, only: [:edit, :update, :destroy, :checked_activities]
+  before_action :ensure_admin!, except: [:edit, :update, :checked_activities]
+  before_action :editable?, only: [:edit, :update]
   before_action :authenticate_user!
 
   def index
@@ -29,7 +30,11 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to users_url, notice: 'User was succesfully updated' }
+        if current_user.try(:admin?)
+          format.html { redirect_to users_url, notice: 'User was succesfully updated' }
+        else
+          format.html { redirect_to sections_url, notice: 'Preferences updated' }
+        end
       else
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -51,12 +56,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def editable?
+    unless current_user == @user || current_user.try(:admin?)
+      redirect_to sections_path, notice: 'You do not have access to this page'
+      return false
+    end
+  end
+
   def set_user
     @user = User.find(params[:id])
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :username, :admin)
+    params.require(:user).permit(:first_name, :last_name, :email, :username, :admin, :email_preference)
   end
 
 end

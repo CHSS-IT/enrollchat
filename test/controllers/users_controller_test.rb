@@ -49,33 +49,48 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_equal 'You do not have access to this page', flash[:notice]
   end
 
-  test "should GET edit user" do
+  test "should GET edit user for an admin user" do
     login_as users(:one)
     get edit_user_url(@user)
     assert_response :success
   end
 
-  test "should not GET edit user with a non-admin user" do
+  test "should not GET edit for a different user with a non-admin user" do
     login_as users(:two)
     get edit_user_url(@user)
     assert_redirected_to sections_url
     assert_equal 'You do not have access to this page', flash[:notice]
   end
 
-  test "should update user" do
+  test "should GET edit for a non-admin user editing themself" do
+    login_as users(:three)
+    get edit_user_url(@user)
+    assert_response :success
+  end
+
+  test "should update user for an admin user" do
     login_as users(:one)
     patch user_url(@user), params: { user: { first_name: 'New', last_name: 'Name' } }
     assert_redirected_to users_url
-    assert @user.first_name = 'New'
+    assert_equal @user.reload.first_name, 'New'
     assert_equal 'User was succesfully updated', flash[:notice]
   end
 
-  test "should not update user with a non-admin user" do
+  test "should not update a different user with a non-admin user" do
     login_as users(:two)
     patch user_url(@user), params: { user: { first_name: 'New', last_name: 'Name' } }
     assert_redirected_to sections_url
-    assert @user.first_name = 'Timothy'
+    assert_not_equal @user.reload.first_name, 'New'
     assert_equal 'You do not have access to this page', flash[:notice]
+  end
+
+  test "should update when a non-admin user edits themself" do
+    login_as users(:three)
+    patch user_url(@user), params: { user: { email_preference: 'No Emails', first_name: 'New'} }
+    assert_redirected_to sections_path
+    assert_equal @user.reload.email_preference, 'No Emails'
+    assert_equal @user.reload.first_name, 'New' #not available to the user through the UI
+    assert_equal 'Preferences updated', flash[:notice]
   end
 
 end

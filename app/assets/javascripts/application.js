@@ -15,6 +15,8 @@
 //= require tether
 //= require bootstrap/dist/js/bootstrap
 //= require DataTables/datatables.min
+//= require moment.min
+//= require datetime
 //= require rails-ujs
 //= require sections.coffee
 //= require cable
