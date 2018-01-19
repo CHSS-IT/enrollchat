@@ -13,9 +13,6 @@ $(document).on 'turbolinks:load', ->
   $('#filter-submit').click ->
     $(this).parents('form').submit()
 
-
-
-
 $(document).on 'turbolinks:load', ->
   $.fn.dataTable.moment( 'MMMM D, YYYY' );
 

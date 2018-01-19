@@ -44,7 +44,9 @@ gem 'airbrake', '~> 7.0'
 gem 'aws-sdk', '~> 2'
 
 # Responsive layout with bootstrap 4
-gem 'bootstrap', '~> 4.0.0.beta2.1'
+gem 'bootstrap', '~> 4.0.0'
+
+gem 'bootstrap-select-rails'
 
 # File uploads
 gem 'carrierwave', '~> 1.0'
