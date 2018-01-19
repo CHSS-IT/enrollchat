@@ -74,6 +74,20 @@
               </div>
             </div>
           </div>
+
+          <div class="form-group">
+            <div class="row">
+              <%= f.label :departments, class: "col-sm-3 control-label" %>
+              <div class="col-sm-9">
+                <%= f.select :departments, Section.department_list, {include_blank: false}, {multiple: 'true', class: 'form-control selectpicker'} %>
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                  Select one or more departments if you wish to limit your alerts and emails to comments to those that are relevant to you. (These are new features that are coming soon.) Use the command (Apple) or control (Windows) key to select multiple departments or to unselect a department.
+                </small>
+              </div>
+            </div>
+          </div>
+
+
           <% if current_user.try(:admin?) %>
             <div class="form-group">
               <div class="row">

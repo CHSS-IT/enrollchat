@@ -3,6 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :cas_authenticatable, :trackable
 
+  before_validation do |model|
+    model.departments.reject!(&:blank?) if model.departments
+  end
+
   validates_presence_of :first_name, :last_name, :username, :email
 
   def full_name

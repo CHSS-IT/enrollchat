@@ -42,7 +42,7 @@ class Section < ApplicationRecord
   end
 
   def self.department_list
-     self.all.map{|s| s.department}.sort.uniq
+     self.pluck('DISTINCT department').sort
   end
 
   def self.delete_marked
