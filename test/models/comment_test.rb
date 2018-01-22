@@ -20,7 +20,7 @@ class CommentTest < ActiveSupport::TestCase
   end
 
   test 'finds comments on a department' do
-    skip('TBD')
+    assert_includes Comment.for_department('BIS').to_a, @comment
   end
 
 end
