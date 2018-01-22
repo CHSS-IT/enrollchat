@@ -33,7 +33,7 @@
 
             <tbody>
               <% @users.each do |user| %>
-              <tr>
+              <tr class="<%= 'table-info' if user.admin %>">
                 <td><%= user.first_name %></td>
                 <td><%= user.last_name %></td>
                 <td><%= user.email %></td>
@@ -42,7 +42,7 @@
                 <% if current_user.is_admin? %>
                   <td><%= time_ago_in_words(user.comments.first.created_at) + ' ago' unless user.comments.blank? %></td>
                   <td><%= user.departments_of_interest.join(', ') %></td>
-                  <td><%= user.admin %></td>
+                  <td><%= user.admin ? "Admin" : nil %></td>
                   <td><%= link_to 'Edit', edit_user_path(user), class: 'btn btn-sm btn-outline-deep-orange-darken-2' %></td>
                 <% end %>
               </tr>
