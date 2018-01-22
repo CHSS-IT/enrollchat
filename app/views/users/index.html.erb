@@ -21,6 +21,7 @@
               <th>Last Name</th>
               <th>Email</th>
               <th>User Name</th>
+              <th>Departments</th>
               <% if current_user.is_admin? %>
                 <th>Admin</th>
                 <th>Edit</th>
@@ -35,6 +36,7 @@
                 <td><%= user.last_name %></td>
                 <td><%= user.email %></td>
                 <td><%= user.username %></td>
+                <td><%= user.departments.blank? ? "All" : user.departments.join(', ') %></td>
                 <% if current_user.is_admin? %>
                   <td><%= user.admin %></td>
                   <td><%= link_to 'Edit', edit_user_path(user), class: 'btn btn-sm btn-outline-deep-orange-darken-2' %></td>
