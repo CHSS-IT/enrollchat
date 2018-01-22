@@ -23,6 +23,8 @@
               <th>User Name</th>
               <th>Departments</th>
               <% if current_user.is_admin? %>
+                <th>Last Commented</th>
+                <th>Has Commented On</th>
                 <th>Admin</th>
                 <th>Edit</th>
               <% end %>
@@ -38,6 +40,8 @@
                 <td><%= user.username %></td>
                 <td><%= user.departments.blank? ? "All" : user.departments.join(', ') %></td>
                 <% if current_user.is_admin? %>
+                  <td><%= time_ago_in_words(user.comments.first.created_at) + ' ago' unless user.comments.blank? %></td>
+                  <td><%= user.departments_of_interest.join(', ') %></td>
                   <td><%= user.admin %></td>
                   <td><%= link_to 'Edit', edit_user_path(user), class: 'btn btn-sm btn-outline-deep-orange-darken-2' %></td>
                 <% end %>
