@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :cas_authenticatable, :trackable
-  has_many :comments
+  has_many :comments, -> { order 'created_at DESC'}
 
   before_validation do |model|
     model.departments.reject!(&:blank?) if model.departments
