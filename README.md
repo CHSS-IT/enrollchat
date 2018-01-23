@@ -45,3 +45,10 @@ If you wish to ingest a feed automatically, you will need to set the ENROLLCHAT_
 ## Feed Format
 
 Administrators may manually upload sections in an xlsx file using the upload button on sections#index. See the sample file in docs/test for an example of the format.
+
+## Testing
+
+The app uses Rails' built in testing mechanisms. System Tests are configured to inherit from Capybara and run Selenium with headless Chrome. The chromedriver is required to use this setup.
+
+To run tests: `bin/rails test`  
+To run system tests: `bin/rails test:system`
