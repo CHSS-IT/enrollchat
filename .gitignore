@@ -32,3 +32,5 @@ lib/seeds/.DS_Store
 
 # Ignore .env since it contains pass codes
 .env
+
+coverage
