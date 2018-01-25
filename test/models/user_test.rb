@@ -52,4 +52,8 @@ class UserTest < ActiveSupport::TestCase
     @user.admin = false
     assert_not @user.is_admin?
   end
+
+  test "should find users by department" do
+
+  end
 end
