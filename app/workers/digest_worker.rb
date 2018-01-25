@@ -24,7 +24,7 @@ class DigestWorker
 
   def build_report
     Section.department_list.each do |department|
-      comments = Comment.yesterday.for_department(department)
+      comments = Comment.yesterday.for_department(department).by_course
       if comments.present?
 
         # Add to list of departments (probably not necessary TBD: review and eliminate)
@@ -33,6 +33,7 @@ class DigestWorker
         # build email contents
         subject = "Daily Digest Email for #{department}"
         text = "<h2>#{subject} - #{basic_date(DateTime.yesterday)}</h2>"
+
         comments.group_by(&:section).sort.each do |section, c|
           text += "<p>#{ActionController::Base.helpers.link_to section.section_and_number, section_url(section, host: 'enrollchat.herokuapp.com')}" + ": #{c.size} comment#{'s' if c.size > 1}</p>"
         end
@@ -61,6 +62,7 @@ class DigestWorker
   def send_digest(recipient)
     # puts "#{recipient.full_name} wants reports on #{departments_with_comments(recipient)}"
     text = departments_with_comments(recipient).collect { |department| @report['departments'][department] }.join.html_safe
+    # puts text
     CommentsMailer.digest(text,'EnrollChat Comments Digest',recipient).deliver!
   end
 
