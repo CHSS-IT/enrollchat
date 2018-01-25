@@ -98,7 +98,11 @@
           <% end %>
           <div class="form-group">
             <%= submit_tag 'Save', class: 'btn btn-large deep-orange darken-2' %>
-            <%= link_to 'Cancel', users_path, class: 'btn btn-large stylish-color-dark' %>
+            <% if current_user.try(:admin?) %>
+              <%= link_to 'Cancel', users_path, class: 'btn btn-large stylish-color-dark' %>
+            <% else %>
+              <%= link_to 'Cancel', sections_path, class: 'btn btn-large stylish-color-dark' %>
+            <% end %>
           </div>
         </div>
       </div>
