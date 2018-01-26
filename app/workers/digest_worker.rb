@@ -31,7 +31,7 @@ class DigestWorker
         report_action('departments', 'list', department)
 
         # build email contents
-        subject = "Daily Digest Email for #{department}"
+        subject = "EnrollChat Digest Email for #{department}"
         text = "<h2>#{subject} - #{basic_date(DateTime.yesterday)}</h2>"
 
         comments.group_by(&:section).sort.each do |section, c|

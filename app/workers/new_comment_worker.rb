@@ -8,7 +8,7 @@ class NewCommentWorker
     @comment = Comment.find(comment_id)
     # A new comment has been created
     # Construct an email informing users of the new comment
-    subject = "New Comment on #{@comment.section.section_and_number}"
+    subject = "EnrollChat: Comment on #{@comment.section.section_and_number}"
     # Send that email to each user who
     # - Wants either comment emails or both comment and digest
     # - AND (has the comment's section's program selected OR has no programs selected)
