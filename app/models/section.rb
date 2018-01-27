@@ -12,12 +12,12 @@ class Section < ApplicationRecord
   scope :in_term, ->(term) { where(term: term) }
   scope :in_department, ->(department) { where(department: department) }
   scope :in_status, ->(status) { where(status: status) }
-  scope :full_or_over_enrolled, -> { where('actual_enrollment >= enrollment_limit') }
-  scope :full, -> { where('actual_enrollment = enrollment_limit') }
-  scope :over_enrolled, -> { where('actual_enrollment > enrollment_limit') }
-  scope :under_enrolled, -> { where('actual_enrollment < enrollment_limit') }
-  scope :graduate_under_enrolled, -> { where('actual_enrollment < 10 and cross_list_enrollment < 10') }
-  scope :undergraduate_under_enrolled, -> { where('actual_enrollment < 15 and cross_list_enrollment < 15')}
+  scope :full_or_over_enrolled, -> { not_canceled.where('actual_enrollment >= enrollment_limit') }
+  scope :full, -> { not_canceled.where('actual_enrollment = enrollment_limit') }
+  scope :over_enrolled, -> { not_canceled.where('actual_enrollment > enrollment_limit') }
+  scope :under_enrolled, -> { not_canceled.where('actual_enrollment < enrollment_limit') }
+  scope :graduate_under_enrolled, -> { not_canceled.where('actual_enrollment < 10 and cross_list_enrollment < 10') }
+  scope :undergraduate_under_enrolled, -> { not_canceled.where('actual_enrollment < 15 and cross_list_enrollment < 15')}
   scope :graduate_level, -> { where("level like 'Graduate -%'") }
   scope :undergraduate_level, -> { where("level like 'Undergraduate -%'") }
   scope :undergraduate_upper, -> { undergraduate_level.where("level like '%- Upper%'") }
@@ -31,6 +31,10 @@ class Section < ApplicationRecord
 
   def most_recent_comment_date
     comments.first.created_at unless comments.empty?
+  end
+
+  def self.total_under_enrolled
+    graduate_under_enrolled + undergraduate_under_enrolled
   end
 
   def section_number_zeroed

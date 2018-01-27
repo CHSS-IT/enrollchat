@@ -13,11 +13,11 @@
     <% @sections.each do |department, sections| %>
     <tr>
       <td><%= department %></td>
-      <td><%= Section.in_department(department).not_canceled.size %></td>
-      <td><%= Section.in_department(department).canceled.size %></td>
-      <td><%= Section.in_department(department).full.size %></td>
-      <td><%= Section.in_department(department).under_enrolled.size %></td>
-      <td><%= Section.in_department(department).over_enrolled.size %></td>
+      <td><%= Section.in_term(@term).in_department(department).not_canceled.size %></td>
+      <td><%= Section.in_term(@term).in_department(department).canceled.size %></td>
+      <td><%= Section.in_term(@term).in_department(department).full.size %></td>
+      <td><%= Section.in_term(@term).in_department(department).total_under_enrolled.size %></td>
+      <td><%= Section.in_term(@term).in_department(department).over_enrolled.size %></td>
     </tr>
     <% end %>
   </tbody>
