@@ -10,6 +10,10 @@ class SectionsController < ApplicationController
     @updated_at = Section.maximum(:updated_at)
   end
 
+  def show
+    @sections = Section.find(params[:id])
+  end
+
   def import
     if params[:file].nil?
       flash[:alert] = "Upload attempted but no file was attached!"

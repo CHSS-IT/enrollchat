@@ -26,7 +26,18 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  ActionMailer::Base.smtp_settings = {
+      :user_name => ENV["SENDGRID_USERNAME"],
+      :password => ENV["SENDGRID_PASSWORD"],
+      :domain => 'enrollchat.heroku.com',
+      :address => 'smtp.sendgrid.net',
+      :port => 587,
+      :authentication => :plain,
+      :enable_starttls_auto => true
+  }
+
+  ActionMailer::Base.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: ENV["ENROLLCHAT_HOST"] }
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false

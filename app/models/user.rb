@@ -4,6 +4,12 @@ class User < ApplicationRecord
   devise :cas_authenticatable, :trackable
   has_many :comments, -> { order 'created_at DESC'}
 
+  scope :in_department, ->(department) { where('? = ANY(departments) OR admin is TRUE', department) }
+
+  scope :wanting_digest, -> { where("email_preference in ('Daily Digest','Comments and Digest') or email_preference is null") }
+  scope :wanting_comment_emails, -> { where("email_preference in ('Comments','Comments and Digest')") }
+
+
   before_validation do |model|
     model.departments.reject!(&:blank?) if model.departments
   end
