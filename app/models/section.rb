@@ -33,9 +33,6 @@ class Section < ApplicationRecord
     comments.first.created_at unless comments.empty?
   end
 
-  def self.total_under_enrolled
-    graduate_under_enrolled + undergraduate_under_enrolled
-  end
 
   def section_number_zeroed
     section_number.to_s.rjust(3, "0")
