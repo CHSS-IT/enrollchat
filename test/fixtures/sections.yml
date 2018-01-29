@@ -21,9 +21,9 @@ two:
   owner: MyString
   term: 1
   section_id: 2
-  department: CLS
+  department: CRIM
   cross_list_group: MyString
-  course_description: MyString
+  course_description: Criminal Justice
   section_number: 1
   title: MyString
   credits: 1
@@ -40,7 +40,7 @@ three:
   section_id: 3
   department: SINT
   cross_list_group: MyString
-  course_description: MyString
+  course_description: Experiential Learning
   section_number: 1
   title: MyString
   credits: 1

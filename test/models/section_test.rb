@@ -21,7 +21,7 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'should create a list of all departments' do
-    assert_equal @sections.department_list, ["BIS", "CLS", "ENGL", "SINT"]
+    assert_equal @sections.department_list, ["BIS", "CRIM", "ENGL", "SINT"]
   end
 
   test 'should create a list of all available statuses including the manually added ALL and ACTIVE statuses' do
@@ -39,7 +39,7 @@ class SectionTest < ActiveSupport::TestCase
   # test scopes used in filter
 
   test 'by_department scope should properly filter sections by department' do
-    assert_equal @sections.in_department('CLS'), [@section_two]
+    assert_equal @sections.in_department('CRIM'), [@section_two]
   end
 
   test 'by_status scope should properly filter sections by section status' do

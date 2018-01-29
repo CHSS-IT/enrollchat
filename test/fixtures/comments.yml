@@ -9,23 +9,29 @@ one:
 two:
   user: two
   section: two
-  body: MyText2
+  body: MyText
   created_at: <%= Time.now %>
 
 three:
   user: one
   section: three
-  body: MyText5
+  body: MyText
+  created_at: <%= Time.now %>
+
+four:
+  user: one
+  section: four
+  body: MyText
   created_at: <%= Time.now %>
 
 yesterday:
   user: one
   section: one
-  body: MyText3
+  body: MyText
   created_at: <%= 1.day.ago %>
 
 old:
   user: one
   section: one
-  body: MyText4
+  body: MyText
   created_at: <%= 2.days.ago %>
