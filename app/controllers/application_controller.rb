@@ -25,8 +25,12 @@ class ApplicationController < ActionController::Base
   end
 
   def get_recent_comments
-    @recent_comments = Comment.recent_unread(current_user).limit(25) unless current_user.nil?
-    @recent_comments = Comment.recent if @recent_comments.blank?
+    # @recent_comments = Comment.recent_unread(current_user).limit(25) unless current_user.nil?
+    # @recent_comments = Comment.recent if @recent_comments.blank?
+    unless current_user.nil?
+      @recent_comments = Comment.recent_by_interest(current_user).unread(current_user).limit(25)
+      @recent_comments = Comment.recent_by_interest(current_user).limit(5) if @recent_comments.blank?
+    end
   end
 
   def get_recent_unread_comments

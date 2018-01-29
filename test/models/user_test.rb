@@ -3,6 +3,7 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 
   setup do
+    @admin = users(:one)
     @user = users(:two)
   end
 
@@ -54,6 +55,14 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "should find users by department" do
+    assert_equal User.in_department('PHIL'), [@admin, @user]
+  end
 
+  test "should find users wanting comment emails" do
+    assert_equal User.wanting_comment_emails.to_a, [@admin]
+  end
+
+  test "should find users wanting digest emails" do
+    assert_equal User.wanting_digest.to_a, [@user]
   end
 end

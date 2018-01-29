@@ -23,4 +23,24 @@ class CommentTest < ActiveSupport::TestCase
     assert_includes Comment.for_department('BIS').to_a, @comment
   end
 
+  test "finds comments for a user's selected departments and their departments of interest" do
+    @user = users(:two)
+    @comment_two = comments(:two)
+    @comment_three = comments(:three)
+    assert_equal Comment.recent_by_interest(@user), [@comment_two, @comment_three]
+  end
+
+  test 'finds unread comments based on a the last_activity_check of the user' do
+    @user = users(:two)
+    @comment_two = comments(:two)
+    @comment_three = comments(:three)
+    assert_equal Comment.unread(@user), [@comment, @comment_two, @comment_three]
+  end
+
+  test "finds unread comments for a user's selected departments and their departments of interest" do
+    @user = users(:two)
+    @comment_two = comments(:two)
+    @comment_three = comments(:three)
+    assert_equal Comment.recent_by_interest(@user).unread(@user), [@comment_two, @comment_three]
+  end
 end
