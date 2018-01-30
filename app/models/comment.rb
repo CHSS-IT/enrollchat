@@ -13,7 +13,7 @@ class Comment < ApplicationRecord
   scope :for_department, ->(department) { includes(:section).where('sections.department = ?', department).order('sections.course_description, comments.created_at') }
   scope :by_course, -> { includes(:section).order('sections.course_description') }#.group(:section)}
   scope :recent_by_interest, ->(current_user) { where('sections.department in (?) or sections.department in (?)', current_user.departments, current_user.departments_of_interest).order(created_at: :desc) }
-  scope :unread,  ->(current_user) { where('comments.created_at > ?', current_user.last_activity_check) }
+  scope :recent_unread_by_interest, ->(current_user) { where('sections.department in (?) or sections.department in (?)', current_user.departments, current_user.departments_of_interest).where('comments.created_at > ?', current_user.last_activity_check).order(created_at: :desc) }
 
   def noticed?(current_user)
     created_at < current_user.last_activity_check

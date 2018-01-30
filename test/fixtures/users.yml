@@ -11,8 +11,6 @@ one:
   last_name: 'Gibbs'
   admin: true
   email_preference: 'All Comments'
-  departments:
-    -
 
 two:
   email: 'chssuser@email.com'

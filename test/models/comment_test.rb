@@ -34,21 +34,6 @@ class CommentTest < ActiveSupport::TestCase
     @user = users(:two)
     @comment_two = comments(:two)
     @comment_three = comments(:three)
-    @comment_four = comments(:four)
-    assert_equal Comment.unread(@user), [@comment, @comment_two, @comment_three, @comment_four]
-  end
-
-  test "finds unread comments for a user's selected departments and their departments of interest" do
-    @user = users(:two)
-    @comment_two = comments(:two)
-    @comment_three = comments(:three)
-    assert_equal Comment.recent_by_interest(@user).unread(@user), [@comment_two, @comment_three]
-  end
-
-  test "finds all comments when selected departments are blank" do
-    @user = users(:one)
-    @comment_two = comments(:two)
-    @comment_three = comments(:three)
-    assert_equal Comment.recent_by_interest(@user), [@comment, @comment_two, @comment_three]
+    assert_equal Comment.recent_unread_by_interest(@user), [@comment_two, @comment_three]
   end
 end
