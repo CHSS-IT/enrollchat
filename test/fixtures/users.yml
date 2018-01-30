@@ -31,3 +31,4 @@ three:
   last_name: 'McGee'
   admin: false
   email_preference: 'No Emails'
+  last_activity_check: <%= 1.day.ago %>

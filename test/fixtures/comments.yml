@@ -32,6 +32,6 @@ yesterday:
 
 old:
   user: one
-  section: one
+  section: two
   body: MyText
   created_at: <%= 2.days.ago %>
