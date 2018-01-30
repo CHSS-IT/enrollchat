@@ -30,9 +30,6 @@
             <%= link_to 'Home', sections_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to 'Reports', reports_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
             <% if current_user.try(:admin?) %>
               <%= link_to 'Users', users_path, class: 'nav-link' %>
             <% else %>
@@ -61,7 +58,7 @@
       </div>
     </div>
   </nav>
-  
+
 
   <div class="container-fluid">
     <%= render partial: "/layouts/alert", flash: flash %>
@@ -86,7 +83,7 @@
   <footer class="page-footer unique-color-dark text-white center-on-small-only">
     <div class="footer-copyright">
       <div class="container-fluid">
-        A product of the <a href="mailto:chssweb@gmu.edu">CHSSWeb</a> Team&nbsp; • &nbsp; &copy; 2017 Copyright George Mason University 
+        A product of the <a href="mailto:chssweb@gmu.edu">CHSSWeb</a> Team&nbsp; • &nbsp; &copy; 2017 Copyright George Mason University
       </div>
     </div>
   </footer>
@@ -115,5 +112,3 @@
     });
   </script>
 </html>
-
-
