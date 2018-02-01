@@ -42,6 +42,8 @@ $(document).on 'turbolinks:load', ->
     responsive: true
     fixedHeader: true
     order: [[ 3, "asc" ]]
+    dom: 'Bfrtip'
+    buttons: [ 'print', 'excel', 'pdf' ]
     columnDefs: [
       { type: 'dateNonStandard', targets: 15 }
       {
