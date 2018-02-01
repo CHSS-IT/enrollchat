@@ -175,10 +175,10 @@ class Section < ApplicationRecord
     elsif waitlist > 5
       "long-waitlist"
     elsif graduate? # or state for undergraduate cross-listed with grad if possible
-      if actual_enrollment < 10 and cross_list_enrollment < 10
+      if (actual_enrollment < 10 and cross_list_enrollment < 10) and actual_enrollment < enrollment_limit
         "under-enrolled"
       end
-    elsif actual_enrollment < 15 and cross_list_enrollment < 15
+    elsif (actual_enrollment < 15 and cross_list_enrollment < 15) and actual_enrollment < enrollment_limit
       "under-enrolled"
     end
   end
