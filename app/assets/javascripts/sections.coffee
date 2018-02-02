@@ -38,11 +38,11 @@ $(document).on 'turbolinks:load', ->
         return 1
       return
 
-  $('#class-sections').DataTable
+  table = $('#class-sections').DataTable
+    buttons: [ 'copy', 'excel', 'pdf' ]
     responsive: true
     fixedHeader: true
     order: [[ 3, "asc" ]]
-    dom: 'Bfrtip'
     buttons: [ 'print', 'excel', 'pdf' ]
     columnDefs: [
       { type: 'dateNonStandard', targets: 15 }
@@ -69,6 +69,40 @@ $(document).on 'turbolinks:load', ->
       }
     ]
     stateSave: true
+  table.buttons().container().appendTo $('.col-md-6:eq(0)', table.table().container())
+
+
+#  $('#class-sections').DataTable
+#    responsive: true
+#    fixedHeader: true
+#    order: [[ 3, "asc" ]]
+#    dom: 'Bfrtip'
+#    buttons: [ 'print', 'excel', 'pdf' ]
+#    columnDefs: [
+#      { type: 'dateNonStandard', targets: 15 }
+#      {
+#        responsivePriority: 1
+#        targets: [
+#          4
+#          16
+#        ]
+#      }
+#      {
+#        responsivePriority: 2
+#        targets: [ 0 ]
+#      }
+#      {
+#        responsivePriority: 3
+#        targets: [
+#          9
+#          10
+#          11
+#          12
+#          13
+#        ]
+#      }
+#    ]
+#    stateSave: true
   $('#upload-sections').on 'click', ->
     $(this).toggleClass 'unique-color grey'
     return
