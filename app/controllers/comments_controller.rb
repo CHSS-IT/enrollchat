@@ -29,14 +29,15 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         NewCommentWorker.perform_async(@comment.id)
-        ActionCable.server.broadcast "department_channel_#{@comment.section.department.downcase}",
+        ActionCable.server.broadcast "department_channel_#{@comment.section.department}",
                                      message: "<a id='comment-notice-" + @comment.section.id.to_s + "' class='dropdown-item' data-toggle='modal' data-target='#comments' data-remote='true' href='/sections/" + @comment.section.id.to_s + "/comments'><i class='fa fa-circle text-info new-message-marker' aria-hidden='true'></i> ".html_safe + @comment.section.section_and_number + ": " + @comment.user.full_name + " at " + @comment.created_at.strftime('%l:%M %P') + ".</a>",
-                                    body:  @comment.body,
+                                    body: @comment.body,
                                     section_name: @comment.section.section_and_number,
                                     user: @comment.user.full_name,
                                     section_id: @comment.section.id,
                                     comment_count: @comment.section.comments.size,
-                                    date: @comment.created_at.strftime('%l:%M %P')
+                                    date: @comment.created_at.strftime('%l:%M %P'),
+                                    department: @comment.section.department
         ActionCable.server.broadcast "room_channel",
                                     section_id: @comment.section.id,
                                     comment_count: @comment.section.comments.size
