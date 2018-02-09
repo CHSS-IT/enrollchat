@@ -1,4 +1,4 @@
-App.department_sint = App.cable.subscriptions.create "DepartmentSintChannel",
+App.department = App.cable.subscriptions.create "DepartmentChannel"
   connected: ->
     # Called when the subscription is ready for use on the server
 

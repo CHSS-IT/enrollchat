@@ -1,4 +1,4 @@
-class DepartmentBisChannel < ApplicationCable::Channel
+class DepartmentChannel < ApplicationCable::Channel
   def subscribed
     if current_user.departments_of_interest.include?('BIS')
       stream_from "department_bis_channel"
