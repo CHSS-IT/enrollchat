@@ -35,4 +35,8 @@ class User < ApplicationRecord
   def self.email_options
     ['All Comments', 'Daily Digest', 'Comments and Digest', 'No Emails']
   end
+
+  def show_alerts(department)
+    departments.include?(department) || departments_of_interest.include?(department) || is_admin?
+  end
 end
