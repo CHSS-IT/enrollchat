@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
 
   def get_recent_comments
     unless current_user.nil?
-      if current_user.departments.present?
+      if current_user.departments.present? && !current_user.is_admin?
         @recent_comments = Comment.recent_unread_by_interest(current_user).limit(25)
         @recent_comments = Comment.recent_by_interest(current_user).limit(5) if @recent_comments.blank?
       else

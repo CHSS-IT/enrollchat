@@ -37,6 +37,6 @@ class User < ApplicationRecord
   end
 
   def show_alerts(department)
-    departments.include?(department) || departments_of_interest.include?(department) || is_admin?
+    departments.include?(department) || is_admin?
   end
 end

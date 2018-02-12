@@ -21,6 +21,7 @@ two:
   email_preference: 'Daily Digest'
   departments:
     - 'SINT'
+    - 'CRIM'
     - 'PHIL'
   last_activity_check: <%= 1.day.ago %>
 
