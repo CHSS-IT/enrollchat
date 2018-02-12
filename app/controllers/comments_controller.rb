@@ -70,6 +70,9 @@ class CommentsController < ApplicationController
   # DELETE /comments/1.json
   def destroy
     @comment.destroy
+    ActionCable.server.broadcast "room_channel",
+                                section_id: @comment.section.id,
+                                comment_count: @comment.section.comments.size
     respond_to do |format|
       format.html { redirect_to section_comments_url, notice: 'Comment was successfully destroyed.' }
       format.js { flash.now[:notice] = 'Comment deleted.' }
