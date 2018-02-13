@@ -1,4 +1,6 @@
-App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: 'BIS' },
+departments = ["BIS", "COMM", "CRIM", "CULT", "ECON", "ENGL", "HE", "HIST", "HNRS", "LA", "MAIS", "MCL", "PHIL", "PSYC", "RELI", "SINT", "SOAN", "WMST"]
+
+App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: departments[0] },
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -7,7 +9,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    if data.department == 'BIS'
+    if data.department == departments[0]
       $('#notifications').prepend data.message
       if $('#alerts-button').hasClass('unique-color-dark')
         $('#alerts-button').removeClass('unique-color-dark').addClass('rgba-lime-strong')
@@ -15,7 +17,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
       dom_id = '#section_' + data.section_id + ' td a span.comment-count'
       $(dom_id).html(data.comment_count);
 
-App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: 'COMM' },
+App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: departments[1] },
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -24,7 +26,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    if data.department == 'COMM'
+    if data.department == departments[1]
       $('#notifications').prepend data.message
       if $('#alerts-button').hasClass('unique-color-dark')
         $('#alerts-button').removeClass('unique-color-dark').addClass('rgba-lime-strong')
@@ -32,7 +34,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
       dom_id = '#section_' + data.section_id + ' td a span.comment-count'
       $(dom_id).html(data.comment_count);
 
-App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: 'CRIM' },
+App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: departments[2] },
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -41,7 +43,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    if data.department == 'CRIM'
+    if data.department == departments[2]
       $('#notifications').prepend data.message
       if $('#alerts-button').hasClass('unique-color-dark')
         $('#alerts-button').removeClass('unique-color-dark').addClass('rgba-lime-strong')
@@ -49,7 +51,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
       dom_id = '#section_' + data.section_id + ' td a span.comment-count'
       $(dom_id).html(data.comment_count);
 
-App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: 'CULT' },
+App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: departments[3] },
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -58,7 +60,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    if data.department == 'CULT'
+    if data.department == departments[3]
       $('#notifications').prepend data.message
       if $('#alerts-button').hasClass('unique-color-dark')
         $('#alerts-button').removeClass('unique-color-dark').addClass('rgba-lime-strong')
@@ -66,7 +68,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
       dom_id = '#section_' + data.section_id + ' td a span.comment-count'
       $(dom_id).html(data.comment_count);
 
-App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: 'ECON' },
+App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: departments[4] },
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -75,7 +77,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    if data.department == 'ECON'
+    if data.department == departments[4]
       $('#notifications').prepend data.message
       if $('#alerts-button').hasClass('unique-color-dark')
         $('#alerts-button').removeClass('unique-color-dark').addClass('rgba-lime-strong')
@@ -83,7 +85,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
       dom_id = '#section_' + data.section_id + ' td a span.comment-count'
       $(dom_id).html(data.comment_count);
 
-App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: 'ENGL' },
+App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: departments[5] },
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -92,7 +94,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    if data.department == 'ENGL'
+    if data.department == departments[5]
       $('#notifications').prepend data.message
       if $('#alerts-button').hasClass('unique-color-dark')
         $('#alerts-button').removeClass('unique-color-dark').addClass('rgba-lime-strong')
@@ -100,7 +102,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
       dom_id = '#section_' + data.section_id + ' td a span.comment-count'
       $(dom_id).html(data.comment_count);
 
-App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: 'HE' },
+App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: departments[6] },
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -109,7 +111,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    if data.department == 'HE'
+    if data.department == departments[6]
       $('#notifications').prepend data.message
       if $('#alerts-button').hasClass('unique-color-dark')
         $('#alerts-button').removeClass('unique-color-dark').addClass('rgba-lime-strong')
@@ -117,7 +119,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
       dom_id = '#section_' + data.section_id + ' td a span.comment-count'
       $(dom_id).html(data.comment_count);
 
-App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: 'HIST' },
+App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: departments[7] },
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -126,7 +128,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    if data.department == 'HIST'
+    if data.department == departments[7]
       $('#notifications').prepend data.message
       if $('#alerts-button').hasClass('unique-color-dark')
         $('#alerts-button').removeClass('unique-color-dark').addClass('rgba-lime-strong')
@@ -134,7 +136,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
       dom_id = '#section_' + data.section_id + ' td a span.comment-count'
       $(dom_id).html(data.comment_count);
 
-App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: 'HNRS' },
+App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: departments[8] },
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -143,7 +145,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    if data.department == 'HNRS'
+    if data.department == departments[8]
       $('#notifications').prepend data.message
       if $('#alerts-button').hasClass('unique-color-dark')
         $('#alerts-button').removeClass('unique-color-dark').addClass('rgba-lime-strong')
@@ -151,7 +153,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
       dom_id = '#section_' + data.section_id + ' td a span.comment-count'
       $(dom_id).html(data.comment_count);
 
-App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: 'LA' },
+App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: departments[9] },
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -160,7 +162,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    if data.department == 'LA'
+    if data.department == departments[9]
       $('#notifications').prepend data.message
       if $('#alerts-button').hasClass('unique-color-dark')
         $('#alerts-button').removeClass('unique-color-dark').addClass('rgba-lime-strong')
@@ -168,7 +170,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
       dom_id = '#section_' + data.section_id + ' td a span.comment-count'
       $(dom_id).html(data.comment_count);
 
-App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: 'MAIS' },
+App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: departments[10] },
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -177,7 +179,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    if data.department == 'MAIS'
+    if data.department == departments[10]
       $('#notifications').prepend data.message
       if $('#alerts-button').hasClass('unique-color-dark')
         $('#alerts-button').removeClass('unique-color-dark').addClass('rgba-lime-strong')
@@ -185,7 +187,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
       dom_id = '#section_' + data.section_id + ' td a span.comment-count'
       $(dom_id).html(data.comment_count);
 
-App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: 'MCL' },
+App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: departments[11] },
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -194,7 +196,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    if data.department == 'MCL'
+    if data.department == departments[11]
       $('#notifications').prepend data.message
       if $('#alerts-button').hasClass('unique-color-dark')
         $('#alerts-button').removeClass('unique-color-dark').addClass('rgba-lime-strong')
@@ -202,7 +204,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
       dom_id = '#section_' + data.section_id + ' td a span.comment-count'
       $(dom_id).html(data.comment_count);
 
-App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: 'PHIL' },
+App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: departments[12] },
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -211,7 +213,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    if data.department == 'PHIL'
+    if data.department == departments[12]
       $('#notifications').prepend data.message
       if $('#alerts-button').hasClass('unique-color-dark')
         $('#alerts-button').removeClass('unique-color-dark').addClass('rgba-lime-strong')
@@ -219,7 +221,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
       dom_id = '#section_' + data.section_id + ' td a span.comment-count'
       $(dom_id).html(data.comment_count);
 
-App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: 'PSYC' },
+App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: departments[13]},
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -228,7 +230,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    if data.department == 'PSYC'
+    if data.department == departments[13]
       $('#notifications').prepend data.message
       if $('#alerts-button').hasClass('unique-color-dark')
         $('#alerts-button').removeClass('unique-color-dark').addClass('rgba-lime-strong')
@@ -236,7 +238,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
       dom_id = '#section_' + data.section_id + ' td a span.comment-count'
       $(dom_id).html(data.comment_count);
 
-App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: 'RELI' },
+App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: departments[14] },
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -245,7 +247,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    if data.department == 'RELI'
+    if data.department == departments[14]
       $('#notifications').prepend data.message
       if $('#alerts-button').hasClass('unique-color-dark')
         $('#alerts-button').removeClass('unique-color-dark').addClass('rgba-lime-strong')
@@ -253,7 +255,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
       dom_id = '#section_' + data.section_id + ' td a span.comment-count'
       $(dom_id).html(data.comment_count);
 
-App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: 'SINT' },
+App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: departments[15] },
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -262,7 +264,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    if data.department == 'SINT'
+    if data.department == departments[15]
       $('#notifications').prepend data.message
       if $('#alerts-button').hasClass('unique-color-dark')
         $('#alerts-button').removeClass('unique-color-dark').addClass('rgba-lime-strong')
@@ -270,7 +272,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
       dom_id = '#section_' + data.section_id + ' td a span.comment-count'
       $(dom_id).html(data.comment_count);
 
-App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: 'SOAN' },
+App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: departments[16] },
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -279,7 +281,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    if data.department == 'SOAN'
+    if data.department == departments[16]
       $('#notifications').prepend data.message
       if $('#alerts-button').hasClass('unique-color-dark')
         $('#alerts-button').removeClass('unique-color-dark').addClass('rgba-lime-strong')
@@ -287,7 +289,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
       dom_id = '#section_' + data.section_id + ' td a span.comment-count'
       $(dom_id).html(data.comment_count);
 
-App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: 'WMST' },
+App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", room: departments[17] },
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -296,7 +298,7 @@ App.department = App.cable.subscriptions.create { channel: "DepartmentChannel", 
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    if data.department == 'WMST'
+    if data.department == departments[17]
       $('#notifications').prepend data.message
       if $('#alerts-button').hasClass('unique-color-dark')
         $('#alerts-button').removeClass('unique-color-dark').addClass('rgba-lime-strong')

@@ -37,7 +37,7 @@ class CommentTest < ActiveSupport::TestCase
     assert_not_includes Comment.recent_unread(@user).to_a, @old_comment
   end
 
-  test "finds comments for a user's selected departments and their departments of interest" do
+  test "finds comments for a user's selected departments" do
     @user = users(:two)
     @comment_two = comments(:two)
     @comment_three = comments(:three)
@@ -45,7 +45,7 @@ class CommentTest < ActiveSupport::TestCase
     assert_equal Comment.recent_by_interest(@user), [@comment_two, @comment_three, @old_comment]
   end
 
-  test "finds unread comments for a user's selected departments and their departments of interest" do
+  test "finds unread comments for a user's selected departments" do
     @user = users(:two)
     @comment_two = comments(:two)
     @comment_three = comments(:three)
