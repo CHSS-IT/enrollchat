@@ -19,6 +19,11 @@ two:
   last_name: 'DiNozzo'
   admin: false
   email_preference: 'Daily Digest'
+  departments:
+    - 'SINT'
+    - 'CRIM'
+    - 'PHIL'
+  last_activity_check: <%= 1.day.ago %>
 
 three:
   email: 'testuser@email.com'
@@ -27,3 +32,4 @@ three:
   last_name: 'McGee'
   admin: false
   email_preference: 'No Emails'
+  last_activity_check: <%= 1.day.ago %>

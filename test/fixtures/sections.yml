@@ -20,10 +20,10 @@ one:
 two:
   owner: MyString
   term: 1
-  section_id: 1
-  department: CLS
+  section_id: 2
+  department: CRIM
   cross_list_group: MyString
-  course_description: MyString
+  course_description: Criminal Justice
   section_number: 1
   title: MyString
   credits: 1
@@ -37,10 +37,10 @@ two:
 three:
   owner: MyString
   term: 1
-  section_id: 1
+  section_id: 3
   department: SINT
   cross_list_group: MyString
-  course_description: MyString
+  course_description: Experiential Learning
   section_number: 1
   title: MyString
   credits: 1
@@ -54,7 +54,7 @@ three:
 four:
   owner: MyString
   term: 1
-  section_id: 1
+  section_id: 4
   department: ENGL
   cross_list_group: MyString
   course_description: MyString

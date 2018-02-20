@@ -3,6 +3,7 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 
   setup do
+    @admin = users(:one)
     @user = users(:two)
   end
 
@@ -43,7 +44,7 @@ class UserTest < ActiveSupport::TestCase
   test "should create a full name for a user" do
     @user.first_name = 'Test'
     @user.last_name = 'User'
-    assert @user.full_name == 'Test User'
+    assert @user.full_name, 'Test User'
   end
 
   test "should determine if a user is an admin" do
@@ -54,6 +55,24 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "should find users by department" do
+    assert_equal User.in_department('PHIL'), [@admin, @user]
+  end
 
+  test "should find users wanting comment emails" do
+    assert_equal User.wanting_comment_emails.to_a, [@admin]
+  end
+
+  test "should find users wanting digest emails" do
+    assert_equal User.wanting_digest.to_a, [@user]
+  end
+
+  test "should determine if a user receives alerts for a department" do
+    assert @user.show_alerts('PHIL')
+  end
+
+  test "admin should receive alerts for all departments" do
+    assert @admin.show_alerts('SINT')
+    assert @admin.show_alerts('BIS')
+    assert @admin.show_alerts('PHIL')
   end
 end

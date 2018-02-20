@@ -18,7 +18,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create comment" do
-    assert_difference('Comment.count') do
+    assert_difference('Comment.count', 1) do
       post section_comments_url(@section), params: { comment: { body: @comment.body, section_id: @comment.section_id, user_id: @comment.user_id } }
     end
     assert_redirected_to sections_url
