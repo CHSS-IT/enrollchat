@@ -48,15 +48,15 @@
                 </div>
                 <div class="col-md-2 col-sm-6">
                   <%= label_tag 'status', 'Status' %>
-                  <%= select "section", "status", options_for_select(Section.status_list, selected: @status), { default: 'ACTIVE' }, { id: 'filter-status', class: 'form-control' } %>
+                  <%= select "section", "status", options_for_select(Section.status_list, selected: @status), { default: 'ACTIVE' }, { class: 'form-control' } %>
                 </div>
                 <div class="col-md-2 col-sm-6">
                   <%= label_tag 'Level', 'Level' %>
-                  <%= select "section", "level", options_for_select(Section.level_list, selected: @section_level), { prompt: 'ALL' }, { id: 'filter-status', class: 'form-control' } %>
+                  <%= select "section", "level", options_for_select(Section.level_list, selected: @section_level), { prompt: 'ALL' }, { class: 'form-control' } %>
                 </div>
                 <div class="col-md-2 col-sm-6">
                   <%= label_tag 'flagged', 'Flagged As' %>
-                  <%= select "section", "flagged", options_for_select(Section.flagged_as_list, selected: @flagged_as), { prompt: 'ALL' }, { id: 'filter-status', class: 'form-control' } %>
+                  <%= select "section", "flagged", options_for_select(Section.flagged_as_list, selected: @flagged_as), { prompt: 'ALL' }, { class: 'form-control' } %>
                 </div>
                 <div class="col-md-3 col-xs-12 button-group pull-right">
                   <% unless params[:section].blank? %>

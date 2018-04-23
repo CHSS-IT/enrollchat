@@ -52,3 +52,4 @@ The app uses Rails' built in testing mechanisms. System Tests are configured to 
 
 To run tests: `bin/rails test`  
 To run system tests: `bin/rails test:system`
+To run all tests: `bin/rails test:system test`
