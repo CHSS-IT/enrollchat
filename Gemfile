@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby "2.4.2"
+ruby "2.5.1"
 
 gem "rake"
 
@@ -53,7 +53,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'devise'
 
 # For using CAS authentication with Devise
-gem 'devise_cas_authenticatable', '~> 1.10.2'
+gem 'devise_cas_authenticatable', '~> 1.10.3'
 
 # carrierwave support for S3
 gem "fog-aws"

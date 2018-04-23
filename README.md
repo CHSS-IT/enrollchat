@@ -4,7 +4,7 @@ Enrollchat accepts a feed of course section data and allows users to comment on 
 
 ## Dependencies
 
-* Ruby 2.4.2
+* Ruby 2.5.1
 * PostgreSQL for the database
 * Yarn for JS package management
 * Redis server
