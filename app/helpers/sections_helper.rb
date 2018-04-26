@@ -5,7 +5,7 @@ module SectionsHelper
     case term
       when '10'
         then "Spring #{year}"
-      when '30'
+      when '40'
         then "Summer #{year}"
       when '70'
         then "Fall #{year}"
