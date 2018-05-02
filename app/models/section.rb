@@ -43,7 +43,7 @@ class Section < ApplicationRecord
   end
 
   def self.department_list
-     self.pluck('DISTINCT department').sort
+     self.pluck(:department).uniq.sort
   end
 
   def self.delete_marked
