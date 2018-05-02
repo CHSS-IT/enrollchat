@@ -5,9 +5,9 @@ class CommentsTest < ApplicationSystemTestCase
     login_as users(:two)
     visit sections_url
     click_button('Activity')
-    assert_text('Criminal Justice-001: Anthony DiNozzo less than a minute ago')
-    assert_text('Experiential Learning-001: Jethro Gibbs less than a minute ago')
-    refute_text('MyString-001: Jethro Gibbs less than a minute ago')
+    assert_text('Criminal Justice-001: Anthony DiNozzo 1 minute ago')
+    assert_text('Experiential Learning-001: Jethro Gibbs 1 minute ago')
+    refute_text('MyString-001: Jethro Gibbs 1 minute ago')
     refute_text('MyString-001: Jethro Gibbs 2 days ago')
   end
 
@@ -15,10 +15,10 @@ class CommentsTest < ApplicationSystemTestCase
     login_as users(:one)
     visit sections_url
     click_button('Activity')
-    assert_text('MyString-001: Jethro Gibbs less than a minute ago')
-    assert_text('Criminal Justice-001: Anthony DiNozzo less than a minute ago')
-    assert_text('Experiential Learning-001: Jethro Gibbs less than a minute ago')
-    assert_text('MyString-001: Jethro Gibbs less than a minute ago')
+    assert_text('MyString-001: Jethro Gibbs 1 minute ago')
+    assert_text('Criminal Justice-001: Anthony DiNozzo 1 minute ago')
+    assert_text('Experiential Learning-001: Jethro Gibbs 1 minute ago')
+    assert_text('MyString-001: Jethro Gibbs 1 minute ago')
     assert_text('MyString-001: Jethro Gibbs 1 day ago')
     refute_text('MyString-001: Jethro Gibbs 2 days ago')
   end

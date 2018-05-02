@@ -4,25 +4,25 @@ one:
   user: one
   section: one
   body: MyText
-  created_at: <%= Time.now %>
+  created_at: <%= 1.minute.ago %>
 
 two:
   user: two
   section: two
   body: MyText
-  created_at: <%= Time.now %>
+  created_at: <%= 1.minute.ago %>
 
 three:
   user: one
   section: three
   body: MyText
-  created_at: <%= Time.now %>
+  created_at: <%= 1.minute.ago %>
 
 four:
   user: one
   section: four
   body: MyText
-  created_at: <%= Time.now %>
+  created_at: <%= 1.minute.ago %>
 
 yesterday:
   user: one
