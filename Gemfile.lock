@@ -47,6 +47,8 @@ GEM
     airbrake (7.3.0)
       airbrake-ruby (~> 2.5)
     airbrake-ruby (2.9.0)
+    archive-zip (0.11.0)
+      io-like (~> 0.3.0)
     arel (9.0.0)
     autoprefixer-rails (8.4.1)
       execjs
@@ -89,6 +91,9 @@ GEM
       mime-types (>= 1.16)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
+    chromedriver-helper (1.2.0)
+      archive-zip (~> 0.10)
+      nokogiri (~> 1.8)
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -138,6 +143,7 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
+    io-like (0.3.0)
     ipaddress (0.8.3)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -308,6 +314,7 @@ DEPENDENCIES
   byebug
   capybara (~> 3.0.0)
   carrierwave (~> 1.0)
+  chromedriver-helper (~> 1.2)
   coffee-rails (~> 4.2)
   devise
   devise_cas_authenticatable (~> 1.10.3)
