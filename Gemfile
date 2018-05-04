@@ -66,7 +66,7 @@ gem 'jquery-ui-rails'
 
 
 # For processing excel files
-gem "roo", "2.6.0"
+gem "roo", "~> 2.7"
 
 # Email
 # gem 'sendgrid-ruby'
@@ -97,7 +97,7 @@ group :development do
   gem "binding_of_caller"
   # N+1 finder
   gem "bullet"
-  gem 'rack-mini-profiler', '~> 0.10.7'
+  gem 'rack-mini-profiler' #, '~> 0.10.7'
 end
 
 group :test do
