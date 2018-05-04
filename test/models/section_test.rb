@@ -20,7 +20,8 @@ class SectionTest < ActiveSupport::TestCase
     assert_equal @section.section_and_number, 'ABC 123-001'
   end
 
-  test 'should create a list of all departments' do
+  test 'should create a list of all unique departments' do
+    @section_five = sections(:four)
     assert_equal @sections.department_list, ["BIS", "CRIM", "ENGL", "SINT"]
   end
 
