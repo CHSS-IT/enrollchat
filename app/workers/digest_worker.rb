@@ -18,7 +18,7 @@ class DigestWorker
     # - Report ran
     # - Comments on [these] departments were sent to [count] users
     build_report
-    identify_and_send
+    identify_and_send unless @report.empty?
     report_complete
   end
 
@@ -26,7 +26,7 @@ class DigestWorker
     Section.department_list.each do |department|
       comments = Comment.yesterday.for_department(department).by_course
       if comments.present?
-
+        puts "Comments on #{department} present"
         # Add to list of departments (probably not necessary TBD: review and eliminate)
         report_action('departments', 'list', department)
 
@@ -47,13 +47,26 @@ class DigestWorker
   end
 
   def identify_and_send
-    recipients = User.wanting_digest # includes admins
+    recipients = User.wanting_digest
     if recipients.present?
       recipients.each do |recipient|
-        send_digest(recipient) if departments_with_comments(recipient).present?
+        puts "#{recipient.email} #{departments_with_comments(recipient).present?}"
+        if departments_with_comments(recipient).present?
+          send_digest(recipient)
+        end
       end
     end
   end
+
+  def report_complete
+    text = ''
+    text += '<h1>Departments With Comments</h1><p>' + @report['departments']['list'].join(', ') + '</p>' if @report['departments'].present?
+    text += '<h1>Digests Sent to</h1><p>' + @report['chssweb']['recipients'].join(', ') + '</p>' if @report['chssweb'].present?
+    text += '<p>No comment activity.</>' if @report['departments'].present? && !@report['chssweb'].present?
+    CommentsMailer.generic(text.html_safe, "EnrollChat Digest Task Executed", 'chssweb@gmu.edu').deliver! # TBD: move email recipient to setting
+    puts "Report ran fully."
+  end
+
 
   def departments_with_comments(recipient)
     @report['departments']['list'] & (recipient.departments.present? ? recipient.departments : Section.department_list)
@@ -64,13 +77,9 @@ class DigestWorker
     text = departments_with_comments(recipient).collect { |department| @report['departments'][department] }.join.html_safe
     # puts text
     CommentsMailer.digest(text,'EnrollChat Comments Digest',recipient).deliver!
+    report_action('chssweb','recipients',recipient.email)
   end
 
-  def report_complete
-
-    # CommentsMailer.generic(report.html_safe, "EnrollChat Digest Task Report", 'dcollie2@gmu.edu').deliver! # TBD: move email recipient to setting
-    puts "Report ran fully."
-  end
 
   def report_action(target, group, message)
     @report[target] ||= Hash.new
