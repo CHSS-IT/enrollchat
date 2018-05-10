@@ -15,6 +15,7 @@ class User < ApplicationRecord
   end
 
   validates_presence_of :first_name, :last_name, :username, :email
+  validates_uniqueness_of :email, :username
 
   def departments_of_interest
     comments.collect { |c| c.section.department }.uniq.sort
