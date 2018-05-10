@@ -2,33 +2,27 @@
   <thead>
     <tr class="stylish-color-dark text-white">
       <th>Department</th>
-      <th>Not Canceled</th>
-      <th>Canceled</th>
+      <th>Active Sections</th>
       <th>Under-Enrolled</th>
       <th>Full</th>
       <th>Over-Enrolled</th>
+      <th>Canceled Sections</th>
+      <th>Comments Since Yesterday</th>
+      <th>Most Recent Comment</th>
     </tr>
   </thead>
   <tbody>
-    <% @sections.each do |department, sections| %>
+    <% @current_user.reporting_departments.each do |department| %>
     <tr>
       <td><%= department %></td>
       <td><%= Section.in_term(@term).in_department(department).not_canceled.size %></td>
-      <td><%= Section.in_term(@term).in_department(department).canceled.size %></td>
-      <td><%= Section.in_term(@term).in_department(department).full.size %></td>
       <td><%= Section.in_term(@term).in_department(department).flagged_as?('under_enrolled').size %></td>
+      <td><%= Section.in_term(@term).in_department(department).full.size %></td>
       <td><%= Section.in_term(@term).in_department(department).flagged_as?('over-enrolled').size %></td>
+      <td><%= Section.in_term(@term).in_department(department).canceled.size %></td>
+      <td><%= Comment.for_department(department).in_past_day.size %></td>
+      <td><%= basic_datetime(Comment.for_department(department).most_recent) %></td>
     </tr>
     <% end %>
   </tbody>
-  <tfoot>
-    <tr class="table-info">
-      <td>TOTAL</td>
-      <td><%= @not_canceled %></td>
-      <td><%= @canceled %></td>
-      <td><%= @full %></td>
-      <td><%= @under_enrolled %></td>
-      <td><%= @over_enrolled %></td>
-    </tr>
-  </tfoot>
 </table>

@@ -20,6 +20,10 @@ class User < ApplicationRecord
     comments.collect { |c| c.section.department }.uniq.sort
   end
 
+  def reporting_departments
+    departments.empty? ? Section.all.pluck(:department).uniq.sort : departments
+  end
+
   def full_name
     "#{first_name} #{last_name}"
   end
