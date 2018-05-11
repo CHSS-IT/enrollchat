@@ -1,16 +1,17 @@
 <span id="alert-wrapper"></span>
+<div class="row">
+  <div class="col-sm-12">
 
 <div class="row py-4 px-2">
   <div class="col-lg-8 col-xs-12">
     <h1 class="card-title d-inline-block"><%= term_in_words(@term) %> Report</h1>
   </div>
 </div>
-
 <div class="row">
-  <div class="col-lg-8 col-xs-12">
+  <div class="col-md-12">
     <div class="card mt-3">
-      <div class="card-body">
-	    <div id="report-table" class="table-responsive">
+      <div class="card-header white py-4">
+	    <div id="report-table" class="card-content table-full-width">
 	      <%= render 'report_table' %>
 	    </div>
       </div>
@@ -18,3 +19,5 @@
 	</div>
 </div>
 
+  </div>
+</div>

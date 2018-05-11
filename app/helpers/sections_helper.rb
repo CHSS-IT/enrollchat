@@ -31,7 +31,13 @@ module SectionsHelper
   def yesterday_arrow(section, field)
     yesterday = section.show_yesterday(field)
     unless yesterday == 0 or section.updated_at < 1.day.ago
-      if yesterday.positive?
+      return arrow(yesterday)
+    end
+  end
+
+  def arrow(change)
+    unless change == 0
+      if change.positive?
         direction = 'up'
         color = 'success'
       else
@@ -39,7 +45,7 @@ module SectionsHelper
         color = 'danger'
       end
       text = '&nbsp;<span class="badge badge-pill badge-' + color + '">'
-      text += content_tag(:i, '', class: "fa fa-arrow-circle-#{direction} fa-inverse") + ' ' + yesterday.to_s
+      text += content_tag(:i, '', class: "fa fa-arrow-circle-#{direction} fa-inverse") + ' ' + change.to_s
       text += '</span>'
       return text.html_safe if text.present?
     end
