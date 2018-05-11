@@ -1,6 +1,8 @@
 class Section < ApplicationRecord
   require 'roo'
 
+  before_save :track_differences
+
   has_many :comments, -> { order(created_at: :desc) }, dependent: :destroy
 
   default_scope  { where("delete_at is null") }
@@ -95,6 +97,7 @@ class Section < ApplicationRecord
         puts "Skipping this row:"
       else
         section = Section.find_or_initialize_by(term: row["term"], section_id: row["section_id"])
+
         section.attributes = row.to_hash.slice(*header)
 
         #bulletproof numericals; this should be in the model
@@ -119,7 +122,9 @@ class Section < ApplicationRecord
           section.save!
           @updated_sections += 1
         else
-          (section.touch unless section.new_record?)
+          unless section.new_record?
+            section.updated_at <= 1.day.ago ? section.reset_yesterday : section.touch
+          end
         end
       end
       puts row
@@ -189,6 +194,27 @@ class Section < ApplicationRecord
 
   def self.flagged_as?(flag)
     all.select { |section| section.flagged_as == flag }
+  end
+
+  def show_yesterday(field)
+    self.send("#{field}_yesterday")
+  end
+
+  def reset_yesterday
+    self.update(enrollment_limit_yesterday: 0, actual_enrollment_yesterday: 0, cross_list_enrollment_yesterday: 0, waitlist_yesterday: 0)
+  end
+
+  private
+
+  def track_differences
+    # Dry it up
+    # Don't track differences unless a day has passed. This prevents overwriting all change values if we have to re-upload.
+    if updated_at <= 1.day.ago
+      self.enrollment_limit_yesterday = enrollment_limit_changed?  ? enrollment_limit - enrollment_limit_was : 0
+      self.actual_enrollment_yesterday = actual_enrollment_changed? ? actual_enrollment - actual_enrollment_was : 0
+      self.cross_list_enrollment_yesterday = cross_list_enrollment_changed? ? cross_list_enrollment - cross_list_enrollment_was : 0
+      self.waitlist_yesterday = waitlist_changed? ? waitlist - waitlist_was : 0
+    end
   end
 
 end

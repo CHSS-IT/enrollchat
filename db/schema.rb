@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180119034045) do
+ActiveRecord::Schema.define(version: 2018_05_11_044603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,10 @@ ActiveRecord::Schema.define(version: 20180119034045) do
     t.datetime "updated_at", null: false
     t.datetime "canceled_at"
     t.datetime "delete_at"
+    t.integer "enrollment_limit_yesterday", limit: 2, default: 0, null: false
+    t.integer "actual_enrollment_yesterday", limit: 2, default: 0, null: false
+    t.integer "cross_list_enrollment_yesterday", limit: 2, default: 0, null: false
+    t.integer "waitlist_yesterday", limit: 2, default: 0, null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -8,10 +8,10 @@
   <td><%= section.credits %></td>
   <td><%= section.level %></td>
   <td><%= section.status %></td>
-  <td><%= section.enrollment_limit %></td>
-  <td><%= section.actual_enrollment %></td>
-  <td><%= section.cross_list_enrollment %></td>
-  <td><%= section.waitlist %></td>
+  <td><%= section.enrollment_limit %><%= yesterday_arrow(section, 'enrollment_limit') %></td>
+  <td><%= section.actual_enrollment %><%= yesterday_arrow(section, 'actual_enrollment') %></td>
+  <td><%= section.cross_list_enrollment %><%= yesterday_arrow(section, 'cross_list_enrollment') %></td>
+  <td><%= section.waitlist %><%= yesterday_arrow(section, 'waitlist') %></td>
   <td><%= basic_date(section.created_at) %></td>
   <td><%= basic_date(section.canceled_at) unless section.canceled_at.blank? %></td>
   <td><%= basic_date(section.most_recent_comment_date) unless section.most_recent_comment_date.blank? %></td>
