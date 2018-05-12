@@ -208,13 +208,11 @@ class Section < ApplicationRecord
 
   def track_differences
     # Dry it up
-    # Don't track differences unless a day has passed. This prevents overwriting all change values if we have to re-upload.
-    if updated_at <= 1.day.ago
-      self.enrollment_limit_yesterday = enrollment_limit_changed?  ? enrollment_limit - enrollment_limit_was : 0
-      self.actual_enrollment_yesterday = actual_enrollment_changed? ? actual_enrollment - actual_enrollment_was : 0
-      self.cross_list_enrollment_yesterday = cross_list_enrollment_changed? ? cross_list_enrollment - cross_list_enrollment_was : 0
-      self.waitlist_yesterday = waitlist_changed? ? waitlist - waitlist_was : 0
-    end
+    # Differences since last file upload
+    self.enrollment_limit_yesterday = enrollment_limit_changed?  ? enrollment_limit - enrollment_limit_was : 0
+    self.actual_enrollment_yesterday = actual_enrollment_changed? ? actual_enrollment - actual_enrollment_was : 0
+    self.cross_list_enrollment_yesterday = cross_list_enrollment_changed? ? cross_list_enrollment - cross_list_enrollment_was : 0
+    self.waitlist_yesterday = waitlist_changed? ? waitlist - waitlist_was : 0
   end
 
 end
