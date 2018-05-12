@@ -30,7 +30,7 @@ module SectionsHelper
 
   def yesterday_arrow(section, field)
     yesterday = section.show_yesterday(field)
-    unless yesterday == 0 or section.updated_at < 1.day.ago
+    unless yesterday == 0
       return arrow(yesterday)
     end
   end
