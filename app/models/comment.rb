@@ -12,6 +12,7 @@ class Comment < ApplicationRecord
   scope :recent_unread, ->(current_user) { where('comments.created_at > ?', current_user.last_activity_check).order(created_at: :desc) }
   scope :yesterday, -> { where('comments.created_at >= ? and comments.created_at <= ?', 1.day.ago.beginning_of_day,  1.day.ago.end_of_day) }
   scope :for_department, ->(department) { includes(:section).where('sections.department = ?', department).order('sections.course_description, comments.created_at') }
+  scope :in_term, ->(term) { includes(:section).where('sections.term = ?', term) }
   scope :by_course, -> { includes(:section).order('sections.course_description') }#.group(:section)}
   scope :recent_by_interest, ->(current_user) { where('sections.department in (?)', current_user.departments).order(created_at: :desc) }
   scope :recent_unread_by_interest, ->(current_user) { where('sections.department in (?)', current_user.departments).where('comments.created_at > ?', current_user.last_activity_check).order(created_at: :desc) }

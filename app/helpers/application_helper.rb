@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def basic_datetime(date)
-    date.blank? ? nil : date < 1.year.ago ? date.strftime('%B %-d, %Y at %l:%M %P') : date.strftime('%B %-d at %l:%M %P')
+    date.blank? ? nil : date.year != Date.today.year ? date.strftime('%B %-d, %Y at %l:%M %P') : date.strftime('%B %-d at %l:%M %P')
   end
 
   def comment_alert_time(date)
