@@ -73,6 +73,7 @@ GEM
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
     bootstrap-select-rails (1.12.4)
+    brakeman (4.1.1)
     builder (3.2.3)
     bullet (5.7.5)
       activesupport (>= 3.0.0)
@@ -310,6 +311,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap (~> 4.1.0)
   bootstrap-select-rails
+  brakeman
   bullet
   byebug
   capybara (~> 3.0.0)
