@@ -3,7 +3,7 @@
   <h1 class="display-4 font-weight-bold d-inline-block">EnrollChat</h1>
   <div class="card">
     <div class="card-body">
-      <span>Welcome to EnrollChat, an application for discussing course section enrollment. Click the button below to sign in using your Mason NetID. To request access, please <%= link_to 'contact', 'mailto:chssweb@gmu.edu' %> the CHSS Dean's Office.</span>
+      <span>Welcome to EnrollChat, an application for discussing course section enrollment. Click the button below to sign in using your Mason NetID. To request access, please <%= link_to 'write the administrators', "mailto:#{ENV['ENROLLCHAT_ADMIN_EMAIL']}" %>.</span>
     </div>
   </div>
 

@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'chssweb@gmu.edu' # TBD: Base on variable
+  default from: ENV['ENROLLCHAT_ADMIN_EMAIL'] # TBD: Base on variable
   layout 'mailer'
 
   private
@@ -9,7 +9,7 @@ class ApplicationMailer < ActionMailer::Base
   end
 
   def to_switch(email)
-    Rails.env == "development" ? "chssweb@gmu.edu" : email # TBD: Base on variable/environment
+    Rails.env == "development" ? ENV['ENROLLCHAT_ADMIN_EMAIL'] : email # TBD: Base on variable/environment
   end
 
 end
