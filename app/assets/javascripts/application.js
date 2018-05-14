@@ -12,7 +12,6 @@
 //
 //= require jquery3
 //= require jquery-ui
-//= require tether
 //= require popper
 //= require bootstrap
 //= require DataTables/datatables.min
