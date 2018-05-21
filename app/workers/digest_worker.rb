@@ -63,7 +63,7 @@ class DigestWorker
     text += '<h1>Departments With Comments</h1><p>' + @report['departments']['list'].join(', ') + '</p>' if @report['departments'].present?
     text += '<h1>Digests Sent to</h1><p>' + @report['chssweb']['recipients'].join(', ') + '</p>' if @report['chssweb'].present?
     text += '<p>No comment activity.</>' if @report['departments'].present? && !@report['chssweb'].present?
-    CommentsMailer.generic(text.html_safe, "EnrollChat Digest Task Executed", 'chssweb@gmu.edu').deliver! # TBD: move email recipient to setting
+    CommentsMailer.generic(text.html_safe, "EnrollChat Digest Task Executed", ENV['ENROLLCHAT_ADMIN_EMAIL']).deliver! # TBD: move email recipient to setting
     puts "Report ran fully."
   end
 

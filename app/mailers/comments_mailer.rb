@@ -1,5 +1,4 @@
 class CommentsMailer < ApplicationMailer
-  # default from: 'chssweb@gmu.edu' # TBD: Base on variable
   helper :application
 
   def digest(message, subject, recipient)
