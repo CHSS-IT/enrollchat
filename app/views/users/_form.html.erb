@@ -69,7 +69,7 @@
               <div class="col-sm-9">
                 <%= select :user, :email_preference, User.email_options, {include_blank: false}, {class: 'selectpicker form-control'} %>
                 <small id="passwordHelpBlock" class="form-text text-muted">
-                  Preferences for comment emails. (Coming soon.)
+                  You may choose to receive an email each time a comment is posted on your program(s), a daily digest of comments, both, or neither.
                 </small>
               </div>
             </div>
@@ -87,6 +87,17 @@
             </div>
           </div>
 
+          <div class="form-group">
+            <div class="row">
+              <%= f.label :no_weekly_report, class: "col-sm-3 control-label" %>
+              <div class="col-sm-9">
+                <%= f.check_box :no_weekly_report  %>
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                  If you check this box you will not receive the weekly report on the status of your programs. (Coming soon.)
+                </small>
+              </div>
+            </div>
+          </div>
 
           <% if current_user.try(:admin?) %>
             <div class="form-group">

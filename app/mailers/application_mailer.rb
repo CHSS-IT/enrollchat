@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV['ENROLLCHAT_ADMIN_EMAIL'] # TBD: Base on variable
+  default from: ENV['ENROLLCHAT_ADMIN_EMAIL']
   layout 'mailer'
 
   private

@@ -23,6 +23,7 @@
               <th>User Name</th>
               <th>Departments</th>
               <th>Email Preference</th>
+              <th>Opt Out of Report</th>
               <% if current_user.is_admin? %>
                 <th>Last Commented</th>
                 <th>Has Commented On</th>
@@ -41,6 +42,7 @@
                 <td><%= user.username %></td>
                 <td><%= user.departments.blank? ? "All" : user.departments.join(', ') %></td>
                 <td><%= user.email_preference %></td>
+                <td><%= user.no_weekly_report %></td>
                 <% if current_user.is_admin? %>
                   <td><%= time_ago_in_words(user.comments.first.created_at) + ' ago' unless user.comments.blank? %></td>
                   <td><%= user.departments_of_interest.join(', ') %></td>

@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   scope :wanting_digest, -> { where("email_preference in ('Daily Digest','Comments and Digest') or email_preference is null") }
   scope :wanting_comment_emails, -> { where("email_preference in ('All Comments','Comments and Digest')") }
-
+  scope :wanting_report, -> { where(no_weekly_report: false) }
 
   before_validation do |model|
     model.departments.reject!(&:blank?) if model.departments

@@ -17,6 +17,15 @@ class CommentsMailer < ApplicationMailer
     mail(to: to, subject: @subject, comment: comment)
   end
 
+  def report(subject, recipient, report)
+    @term = Section.maximum(:term)
+    @recipient = recipient
+    @report = report
+    to = to_switch(recipient.email)
+    subject = "#{subject} #{development_text}"
+    mail(:to => to, :subject => subject)
+  end
+
   def generic(message, subject, address)
     @message = message
     to = to_switch(address)

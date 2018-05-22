@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_11_044603) do
+ActiveRecord::Schema.define(version: 2018_05_21_054105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2018_05_11_044603) do
     t.datetime "last_activity_check", default: -> { "now()" }
     t.string "email_preference"
     t.text "departments", default: [], array: true
+    t.boolean "no_weekly_report", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
