@@ -1,12 +1,11 @@
-<h1>EnrollChat Report</h1>
-<p>This report shows the enrollment state of your programs and a summary of recent comments.</p>
-<p>To change your preferences, log into EnrollChat and click <%= link_to "Preferences", edit_user_url(@recipient) %>.</p>
-<p>View the daily report <%= link_to "within EnrollChat", report_url %>.</p>
+<h1>EnrollChat Weekly Report</h1>
+<p>This report shows the enrollment state of your programs and a summary of recent comments. To change your email preferences, log into EnrollChat and click <%= link_to 'Preferences', edit_user_url(@recipient) %>.</p>
+<p>View the daily report <%= link_to 'within EnrollChat', reports_url %>.</p>
 
 <hr />
 
 <table cellspacing="0" cellpadding="4" rules="rows" style="color:#1f2240;background-color:#ffffff">
-  <thead style="100%;color:#ffffff;background-color:#1f2240;font-weight:bold">
+  <thead style="color:#ffffff;background-color:#1f2240;font-weight:bold">
   <tr>
     <th scope="col">Department</th>
     <th scope="col">Active Sections</th>
@@ -27,24 +26,30 @@
       <% sections = Section.in_term(@term).in_department(department) %>
       <tr>
         <td><%= department %></td>
-        <td style="text-align: right"><%= sections.not_canceled.size %></td>
-        <td style="text-align: right"><%= sections.flagged_as?('under_enrolled').size %></td>
-        <td style="text-align: right"><%= sections.full.size %></td>
-        <td style="text-align: right"><%= sections.flagged_as?('over-enrolled').size %></td>
-        <td style="text-align: right"><%= sections.canceled.size %></td>
-        <td style="text-align: right"><%= Comment.for_department(department).in_past_week.size %></td>
-        <td style="text-align: right"><%= basic_datetime(Comment.for_department(department).in_term(@term).most_recent) %></td>
-        <td style="text-align: right"><%= sections.not_canceled.sum(:enrollment_limit) %><%#= arrow(sections.not_canceled.sum(:enrollment_limit_yesterday)) %></td>
-        <td style="text-align: right"><%= sections.not_canceled.sum(:actual_enrollment) %><%#= arrow(sections.not_canceled.sum(:actual_enrollment_yesterday)) %></td>
-        <td style="text-align: right"><%= sections.not_canceled.sum(:cross_list_enrollment) %><%#= arrow(sections.not_canceled.sum(:cross_list_enrollment_yesterday)) %></td>
-        <td style="text-align: right"><%= sections.not_canceled.sum(:waitlist) %><%#= arrow(sections.not_canceled.sum(:waitlist_yesterday)) %></td>
+        <td><%= sections.not_canceled.size %></td>
+        <td><%= sections.flagged_as?('under_enrolled').size %></td>
+        <td><%= sections.full.size %></td>
+        <td><%= sections.flagged_as?('over-enrolled').size %></td>
+        <td><%= sections.canceled.size %></td>
+        <td><%= Comment.for_department(department).in_past_week.size %></td>
+        <td><%= basic_datetime(Comment.for_department(department).in_term(@term).most_recent) %></td>
+        <td><%= sections.not_canceled.sum(:enrollment_limit) %><%#= arrow(sections.not_canceled.sum(:enrollment_limit_yesterday)) %></td>
+        <td><%= sections.not_canceled.sum(:actual_enrollment) %><%#= arrow(sections.not_canceled.sum(:actual_enrollment_yesterday)) %></td>
+        <td><%= sections.not_canceled.sum(:cross_list_enrollment) %><%#= arrow(sections.not_canceled.sum(:cross_list_enrollment_yesterday)) %></td>
+        <td><%= sections.not_canceled.sum(:waitlist) %><%#= arrow(sections.not_canceled.sum(:waitlist_yesterday)) %></td>
       </tr>
   <% end %>
   </tbody>
 </table>
 
+<h2>Sections With Comments</h2>
+<%= @text.present? ? @text.html_safe : content_tag(:p, 'No recent comments.') %>
+
 
 <style>
+
+  td { text-align: right }
+
   /* Cells in even rows (2,4,6...) are one color */
   tr:nth-child(even) td { background: #F1F1F1; }
 

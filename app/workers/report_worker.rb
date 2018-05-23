@@ -18,15 +18,14 @@ class ReportWorker
 
   def build_comment_report
     Section.department_list.each do |department|
-      comments = Comment.yesterday.for_department(department).by_course
+      comments = Comment.in_past_week.for_department(department).by_course
       if comments.present?
         puts "Comments on #{department} present"
         # Add to list of departments (probably not necessary TBD: review and eliminate)
         report_action('departments', 'list', department)
 
         # build email contents
-        subject = "EnrollChat Digest Email for #{department}"
-        text = "<h2>#{subject} - #{basic_date(DateTime.yesterday)}</h2>"
+        text = "<h3>#{department}</h3>"
 
         comments.group_by(&:section).sort.each do |section, c|
           text += "<p>#{ActionController::Base.helpers.link_to section.section_and_number, section_url(section, host: 'enrollchat.herokuapp.com')}" + ": #{c.size} comment#{'s' if c.size > 1}</p>"
@@ -51,7 +50,12 @@ class ReportWorker
 
   def identify_and_send
     @recipients.each do |recipient|
-      send_report(recipient)
+      puts "Departments with comments present? #{departments_with_comments(recipient).present?}"
+      puts @report.pretty_inspect
+      puts "Report key #{@report.key?('departments')}"
+
+      text = departments_with_comments(recipient).present? ? departments_with_comments(recipient).collect { |department| @report['departments'][department] }.join.html_safe : ''
+      send_report(recipient, text)
     end
   end
 
@@ -66,10 +70,10 @@ class ReportWorker
 
 
   def departments_with_comments(recipient)
-    @report['departments']['list'] & (recipient.reporting_departments.present? ? recipient.reporting_departments : Section.department_list)
+    @report['departments']['list'] & recipient.reporting_departments if @report.key?('departments')
   end
 
-  def send_report(recipient)
+  def send_report(recipient, text)
 
     # puts @report['summaries']
     # puts "#{recipient.full_name} wants reports on #{departments_with_comments(recipient)}"
@@ -77,7 +81,7 @@ class ReportWorker
     # text += recipient.reporting_departments.collect { |department| @report['summaries'][department] }.join.html_safe
     # text += departments_with_comments(recipient).collect { |department| @report['departments'][department] }.join.html_safe
     # puts text
-    CommentsMailer.report('EnrollChat Report',recipient, @report).deliver!
+    CommentsMailer.report('EnrollChat Report',recipient, @report, text).deliver!
     report_action('chssweb','recipients',recipient.email)
   end
 
