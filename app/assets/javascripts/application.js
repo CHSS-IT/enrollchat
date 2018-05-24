@@ -19,6 +19,7 @@
 //= require datetime
 //= require rails-ujs
 //= require sections.coffee
+//= require users.coffee
 //= require cable
 //= require turbolinks
 //= require material-design/mdb.min
