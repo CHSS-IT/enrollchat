@@ -1,6 +1,10 @@
 # EnrollChat
 
-Enrollchat accepts a feed of course section data and allows users to comment on individual sections. The feed may be uploaded manually as a CSV or XSLT file or brought in via a scheduled rake task.
+Enrollchat accepts a feed of course section data and allows users to comment on individual sections. The feed may be uploaded manually as a CSV or XSLT file.
+
+## Roadmap
+
+Enrollchat was developed by the College of Humanities and Social Sciences at George Mason University. It is currently tied to Mason's CAS server and is otherwise set up in ways that may not be useful outside Mason. Our first priority is to develop an automated import process, which in our case will be coming from Banner. Beyond that, our priority is to loosen ties, remove dependencies, and make EnrollChat as configurable as possible.
 
 ## Dependencies
 
@@ -16,11 +20,17 @@ Both the manual upload and the feed are dependent on Amazon S3 file storage, man
 * AWS_ACCESS_KEY_ID
 * AWS_SECRET_ACCESS_KEY
 
+Emails are dependent on SendGrid, which needs these environment variables.
+* SENDGRID_USERNAME
+* SENDGRID_PASSWORD
+
 For the rake-based feed, you will need to have a CSV file delivered to a directory on a server you can access via SFTP. This is dependent on these environmental variables:
 * ENROLLCHAT_REMOTE: The server's address. E.g. "myserver.myhost.edu"
 * ENROLLCHAT_REMOTE_DIR: The directory on that server. That directory should also contain a subdirectory named "backup."
 * ENROLLCHAT_REMOTE_USER: Username.
 * ENROLLCHAT_REMOTE_PASS: Password.
+* ENROLLCHAT_ADMIN_EMAIL: The 'from' address for all emails.
+* ENROLLCHAT_HOST: Actionmailer default url host.
 
 Heroku will need these add-ons:
 * Herokupostgres
