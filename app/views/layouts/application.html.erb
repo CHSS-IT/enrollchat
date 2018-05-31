@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EnrollChat</title>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= action_cable_meta_tag %>
+    <meta name="turbolinks-cache-control" content="no-cache">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <%= favicon_link_tag(source="Favicon.ico") %>
+  </head>
+
+<body>
+
+  <nav class="navbar navbar-light bg-faded navbar-expand-lg white">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/sections">
+        <%= image_tag image_path("EnrollChatLogo.png"), height: 30, class: "d-inline-block align-top" %>
+        EnrollChat
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item <%= active_class(sections_path) %>">
+            <%= link_to 'Sections', sections_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item <%= active_class(reports_path) %>">
+            <%= link_to 'Summary', reports_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item <%= active_class(users_path) %>">
+            <% if current_user.try(:admin?) %>
+              <%= link_to 'Users', users_path, class: 'nav-link' %>
+            <% else %>
+              <%= link_to 'Preferences', edit_user_path(current_user), class: 'nav-link' %>
+          <% end %>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#termsemesters" data-toggle="dropdown">Terms</a>
+            <ul class="dropdown-menu dropdown-menu-right animated fadeInUp" id="termsemesters">
+              <% @terms.each do |term| %>
+                <li><%= link_to term_in_words(term.term), sections_url(term: term.term), class: 'dropdown-item' %></li>
+              <% end %>
+            </ul>
+          </li>
+          <li class="nav-item dropdown" id="activity-dropdown">
+            <button class="btn btn-outline unique-color-dark dropdown-toggle btn-sm" type="button" id="alerts-button" data-toggle="dropdown" href="#notifications" aria-expanded="false" aria-haspopup="true" aria-controls="notifications">Activity</button>
+            <div class="dropdown-menu dropdown-menu-right animated fadeInUp" aria-labelledy="alerts-button" id="notifications">
+              <%= render partial: 'comments/recent_comment', collection: @recent_comments %>
+              <%= link_to "Enrollchat Is Ready", '/sections', class: 'dropdown-item', remote: true if @recent_comments.empty? %>
+            </div>
+          </li>
+          <li class="nav-item my-lg-0">
+            <%= render 'devise/menu/login_items' %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container-fluid">
+    <%= render partial: "/layouts/alert", flash: flash %>
+    <%= yield %>
+    <div class="modal fade" id="comments">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Comments</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="comments-modal-content">
+            <p>Modal body text goes here.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer unique-color-dark text-white center-on-small-only">
+    <div class="footer-copyright">
+      <div class="container-fluid">
+        A product of the <a href="mailto:chssweb@gmu.edu">CHSSWeb</a> Team&nbsp; • &nbsp; &copy; <%= Time.now.year %> Copyright George Mason University
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+  <script type="application/javascript">
+    $(document).ready(function() {
+      var activityButton = $('#alerts-button');
+      var activityHolder = $('#activity-dropdown');
+      activityHolder.on('show.bs.dropdown', function () {
+        activityButton.toggleClass("unique-color grey");
+        if(activityButton.hasClass('rgba-lime-strong')) {
+          $(activityButton).toggleClass('rgba-lime-strong unique-color-dark')
+        };
+      });
+
+      $('#activity-dropdown').on('shown.bs.dropdown', function () {
+        $.post( "users/<%= current_user.id %>/checked_activities", function( data ) {
+      });
+
+      activityHolder.on('hidden.bs.dropdown', function () {
+        $('.new-message-marker').hide();
+        });
+      });
+    });
+  </script>
+</html>

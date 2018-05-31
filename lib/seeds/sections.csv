@@ -1,0 +1,1496 @@
+section_id,term,department,cross_list_group,course_description,section_number,title,credits,level,status,enrollment_limit,actual_enrollment,cross_list_enrollment,waitlist
+73026,201770,BIS,-,BIS 300,1,Understanding Interdis Studies,3,Undergraduate - Upper Division,CN,23,22,0,2
+71596,201770,BIS,-,BIS 300,3,Understanding Interdis Studies,3,Undergraduate - Upper Division,CN,20,20,0,0
+83044,201770,BIS,-,BIS 300,6,Understanding Interdis Studies,3,Undergraduate - Upper Division,CN,20,13,0,0
+83390,201770,BIS,-,BIS 300,7,Understanding Interdis Studies,3,Undergraduate - Upper Division,CN,20,6,0,0
+82695,201770,BIS,-,BIS 300,DL6,Understanding Interdis Studies,3,Undergraduate - Upper Division,CN,20,21,0,0
+75960,201770,BIS,-,BIS 390,1,The Research Process,3,Undergraduate - Upper Division,CN,20,21,0,0
+83465,201770,BIS,-,BIS 390,2,The Research Process,3,Undergraduate - Upper Division,CN,20,7,0,0
+79086,201770,BIS,-,BIS 490,1,RS: Bach Individual Study Proj,3,Undergraduate - Upper Division,CN,20,14,0,0
+79087,201770,BIS,-,BIS 490,3,RS: Bach Individual Study Proj,3,Undergraduate - Upper Division,CN,20,19,0,0
+73761,201770,BIS,-,BIS 491,1,Senior Project Presentation,1,Undergraduate - Upper Division,CN,15,8,0,0
+74215,201770,BIS,-,BIS 491,2,Senior Project Presentation,1,Undergraduate - Upper Division,CN,15,9,0,0
+79082,201770,BIS,-,BIS 491,3,Senior Project Presentation,1,Undergraduate - Upper Division,CN,15,15,0,1
+74164,201770,COMM,-,COMM 100,2,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+70162,201770,COMM,-,COMM 100,3,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+72988,201770,COMM,-,COMM 100,4,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+73574,201770,COMM,-,COMM 100,5,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+70150,201770,COMM,-,COMM 100,6,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+70152,201770,COMM,-,COMM 100,11,Public Speaking,3,Undergraduate - Lower Division,O,24,23,0,0
+70153,201770,COMM,-,COMM 100,12,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+70154,201770,COMM,-,COMM 100,13,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+70155,201770,COMM,-,COMM 100,14,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+74169,201770,COMM,-,COMM 100,15,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+70156,201770,COMM,-,COMM 100,16,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+72347,201770,COMM,-,COMM 100,17,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+74170,201770,COMM,-,COMM 100,18,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+75062,201770,COMM,-,COMM 100,19,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+70157,201770,COMM,EK,COMM 100,20,Public Speaking,3,Undergraduate - Lower Division,WL,24,24,26,0
+70158,201770,COMM,-,COMM 100,21,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+70159,201770,COMM,-,COMM 100,23,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+70160,201770,COMM,-,COMM 100,24,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+70161,201770,COMM,-,COMM 100,25,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+74904,201770,COMM,-,COMM 100,27,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+74168,201770,COMM,-,COMM 100,28,Public Speaking,3,Undergraduate - Lower Division,CL,20,20,0,0
+83180,201770,COMM,-,COMM 100,29,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+72674,201770,COMM,-,COMM 100,30,Public Speaking,3,Undergraduate - Lower Division,CL,20,20,0,0
+83206,201770,COMM,-,COMM 100,31,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+83207,201770,COMM,-,COMM 100,32,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+74326,201770,COMM,-,COMM 100,DL1,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+74327,201770,COMM,-,COMM 100,DL2,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+74328,201770,COMM,-,COMM 100,DL3,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+74329,201770,COMM,-,COMM 100,DL4,Public Speaking,3,Undergraduate - Lower Division,CL,24,24,0,0
+75065,201770,COMM,-,COMM 101,6,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+75080,201770,COMM,-,COMM 101,7,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+75063,201770,COMM,-,COMM 101,8,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+70164,201770,COMM,-,COMM 101,9,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+70165,201770,COMM,-,COMM 101,10,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+75066,201770,COMM,2H,COMM 101,11,Interperson and Group Interact,3,Undergraduate - Lower Division,O,24,24,24,0
+75067,201770,COMM,EJ,COMM 101,12,Interperson and Group Interact,3,Undergraduate - Lower Division,O,24,24,24,0
+70167,201770,COMM,-,COMM 101,13,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+70168,201770,COMM,EL,COMM 101,14,Interperson and Group Interact,3,Undergraduate - Lower Division,O,24,24,24,0
+75068,201770,COMM,-,COMM 101,15,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+75069,201770,COMM,-,COMM 101,16,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+70170,201770,COMM,-,COMM 101,17,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+70171,201770,COMM,-,COMM 101,18,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+75070,201770,COMM,-,COMM 101,19,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+75071,201770,COMM,-,COMM 101,20,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+70173,201770,COMM,-,COMM 101,21,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+70174,201770,COMM,-,COMM 101,22,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+73005,201770,COMM,-,COMM 101,23,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+75072,201770,COMM,-,COMM 101,24,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+75073,201770,COMM,-,COMM 101,25,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+70176,201770,COMM,EM,COMM 101,26,Interperson and Group Interact,3,Undergraduate - Lower Division,O,24,24,24,0
+70177,201770,COMM,-,COMM 101,27,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+73006,201770,COMM,-,COMM 101,28,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+75074,201770,COMM,-,COMM 101,29,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+75075,201770,COMM,EN,COMM 101,30,Interperson and Group Interact,3,Undergraduate - Lower Division,O,24,24,24,0
+70178,201770,COMM,-,COMM 101,31,Interperson and Group Interact,3,Undergraduate - Lower Division,O,24,23,0,0
+70179,201770,COMM,-,COMM 101,33,Interperson and Group Interact,3,Undergraduate - Lower Division,O,24,23,0,0
+75076,201770,COMM,-,COMM 101,34,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+70180,201770,COMM,-,COMM 101,36,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+70182,201770,COMM,-,COMM 101,37,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+75077,201770,COMM,-,COMM 101,38,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+75078,201770,COMM,-,COMM 101,39,Interperson and Group Interact,3,Undergraduate - Lower Division,O,24,23,0,0
+75081,201770,COMM,EO,COMM 101,40,Interperson and Group Interact,3,Undergraduate - Lower Division,WL,22,22,24,0
+70183,201770,COMM,-,COMM 101,41,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+80327,201770,COMM,EP,COMM 101,42,Interperson and Group Interact,3,Undergraduate - Lower Division,O,24,24,24,0
+80322,201770,COMM,EQ,COMM 101,43,Interperson and Group Interact,3,Undergraduate - Lower Division,O,24,24,24,0
+80326,201770,COMM,ER,COMM 101,44,Interperson and Group Interact,3,Undergraduate - Lower Division,O,24,24,24,0
+70199,201770,COMM,-,COMM 101,45,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+74944,201770,COMM,-,COMM 101,47,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+70186,201770,COMM,-,COMM 101,48,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+70188,201770,COMM,-,COMM 101,49,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+80325,201770,COMM,-,COMM 101,50,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+70189,201770,COMM,-,COMM 101,51,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+80324,201770,COMM,-,COMM 101,52,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+70191,201770,COMM,ES,COMM 101,53,Interperson and Group Interact,3,Undergraduate - Lower Division,WL,24,24,26,0
+70192,201770,COMM,ET,COMM 101,54,Interperson and Group Interact,3,Undergraduate - Lower Division,O,24,24,24,0
+80323,201770,COMM,-,COMM 101,55,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+70194,201770,COMM,-,COMM 101,56,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+74943,201770,COMM,EU,COMM 101,57,Interperson and Group Interact,3,Undergraduate - Lower Division,WL,24,24,26,0
+70193,201770,COMM,EV,COMM 101,58,Interperson and Group Interact,3,Undergraduate - Lower Division,O,24,24,24,0
+70195,201770,COMM,-,COMM 101,59,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+80321,201770,COMM,EW,COMM 101,60,Interperson and Group Interact,3,Undergraduate - Lower Division,WL,22,23,25,0
+70196,201770,COMM,EX,COMM 101,61,Interperson and Group Interact,3,Undergraduate - Lower Division,WL,22,22,24,0
+80320,201770,COMM,-,COMM 101,62,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+83353,201770,COMM,-,COMM 101,63,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+83354,201770,COMM,-,COMM 101,64,Interperson and Group Interact,3,Undergraduate - Lower Division,CL,24,24,0,0
+70204,201770,COMM,-,COMM 140,1,Forensic Seminar Creative Arts,1,Undergraduate - Lower Division,O,20,8,0,0
+70206,201770,COMM,-,COMM 141,1,Forensics Sem Re-Creative Arts,1,Undergraduate - Lower Division,O,20,2,0,0
+70207,201770,COMM,-,COMM 142,1,Foren Sem Deb: Aff Strategies,1,Undergraduate - Lower Division,O,40,1,0,0
+70208,201770,COMM,-,COMM 143,1,Foren Sem Deb: Neg Strategies,1,Undergraduate - Lower Division,O,40,2,0,0
+70209,201770,COMM,-,COMM 145,1,Newspaper Workshop,1,Undergraduate - Lower Division,O,12,10,0,0
+70210,201770,COMM,YH,COMM 148,1,Radio Workshop I,1,Undergraduate - Lower Division,O,12,11,11,0
+70211,201770,COMM,YG,COMM 148,2,Radio Workshop I,1,Undergraduate - Lower Division,O,12,10,11,0
+78110,201770,COMM,-,COMM 157,1,Digital Media Workshop,1,Undergraduate - Lower Division,O,24,20,0,0
+73571,201770,COMM,-,COMM 200,1,Communication Theory,3,Undergraduate - Lower Division,WL,35,35,0,0
+72515,201770,COMM,-,COMM 200,2,Communication Theory,3,Undergraduate - Lower Division,O,45,33,0,0
+72539,201770,COMM,-,COMM 200,3,Communication Theory,3,Undergraduate - Lower Division,O,45,38,0,0
+72516,201770,COMM,-,COMM 200,DL1,Communication Theory,3,Undergraduate - Lower Division,O,45,35,0,0
+70212,201770,COMM,-,COMM 202,1,Media and Society,3,Undergraduate - Lower Division,WL,40,40,0,4
+72838,201770,COMM,-,COMM 203,1,Introduction to Journalism,3,Undergraduate - Lower Division,WL,40,40,0,1
+74022,201770,COMM,-,COMM 204,1,Introduction Public Relations,3,Undergraduate - Lower Division,O,40,38,0,0
+74059,201770,COMM,-,COMM 204,2,Introduction Public Relations,3,Undergraduate - Lower Division,O,36,33,0,0
+81881,201770,COMM,-,COMM 208,1,Intro Media Production,3,Undergraduate - Lower Division,CL,22,22,0,0
+78111,201770,COMM,-,COMM 208,3,Intro Media Production,3,Undergraduate - Lower Division,WL,24,25,0,4
+71762,201770,COMM,-,COMM 210,1,Voice and Articulation,3,Undergraduate - Lower Division,WL,24,24,0,0
+71621,201770,COMM,-,COMM 260,1,Basic Debate Thry and Practice,3,Undergraduate - Lower Division,O,24,13,0,0
+70213,201770,COMM,-,COMM 300,1,Foundations Public Communicatn,3,Undergraduate - Upper Division,WL,30,30,0,0
+70214,201770,COMM,-,COMM 300,2,Foundations Public Communicatn,3,Undergraduate - Upper Division,WL,30,30,0,2
+73030,201770,COMM,-,COMM 300,3,Foundations Public Communicatn,3,Undergraduate - Upper Division,WL,30,30,0,0
+70215,201770,COMM,-,COMM 300,4,Foundations Public Communicatn,3,Undergraduate - Upper Division,O,30,29,0,0
+72547,201770,COMM,-,COMM 300,DL1,Foundations Public Communicatn,3,Undergraduate - Upper Division,WL,28,28,0,1
+81523,201770,COMM,-,COMM 301,1,Foundations Interpersonal Comm,3,Undergraduate - Upper Division,O,45,31,0,0
+70220,201770,COMM,-,COMM 302,1,Foundations of Media Theory,3,Undergraduate - Upper Division,WL,45,45,0,0
+70221,201770,COMM,-,COMM 302,2,Foundations of Media Theory,3,Undergraduate - Upper Division,O,45,41,0,0
+72538,201770,COMM,-,COMM 302,DL1,Foundations of Media Theory,3,Undergraduate - Upper Division,O,45,29,0,0
+70222,201770,COMM,-,COMM 303,1,Writing Across the Media,3,Undergraduate - Upper Division,WL,24,26,0,1
+70223,201770,COMM,-,COMM 303,2,Writing Across the Media,3,Undergraduate - Upper Division,WL,24,24,0,2
+70224,201770,COMM,-,COMM 303,3,Writing Across the Media,3,Undergraduate - Upper Division,WL,24,24,0,0
+72348,201770,COMM,-,COMM 303,4,Writing Across the Media,3,Undergraduate - Upper Division,WL,24,24,0,2
+74312,201770,COMM,-,COMM 304,1,Fnd Health Communication,3,Undergraduate - Upper Division,O,35,34,0,0
+70225,201770,COMM,-,COMM 305,1,Foundations Intercultural Comm,3,Undergraduate - Upper Division,WL,45,45,0,0
+70226,201770,COMM,G1,COMM 305,2,Foundations Intercultural Comm,3,Undergraduate - Upper Division,O,41,38,43,0
+70227,201770,COMM,-,COMM 305,3,Foundations Intercultural Comm,3,Undergraduate - Upper Division,WL,45,45,0,0
+72124,201770,COMM,Z1,COMM 305,DL1,Foundations Intercultural Comm,3,Undergraduate - Upper Division,WL,43,43,48,2
+70229,201770,COMM,-,COMM 320,1,Business and Professional Comm,3,Undergraduate - Upper Division,O,26,23,0,0
+70230,201770,COMM,-,COMM 320,2,Business and Professional Comm,3,Undergraduate - Upper Division,WL,26,26,0,0
+71781,201770,COMM,-,COMM 326,1,Rhet Soc Mvmts/Pol Contr,3,Undergraduate - Upper Division,O,40,39,0,0
+75616,201770,COMM,-,COMM 331,1,Adv Principles Public Relatns,3,Undergraduate - Upper Division,WL,27,27,0,5
+72836,201770,COMM,-,COMM 332,1,Nonverbal Communication,3,Undergraduate - Upper Division,WL,30,30,0,0
+73247,201770,COMM,-,COMM 334,1,Family/Health Communication,3,Undergraduate - Upper Division,WL,30,30,0,0
+70234,201770,COMM,-,COMM 335,1,Organizational Communication,3,Undergraduate - Upper Division,O,36,31,0,0
+70235,201770,COMM,-,COMM 335,2,Organizational Communication,3,Undergraduate - Upper Division,O,36,18,0,0
+70236,201770,COMM,-,COMM 340,1,Forensic Seminar Creative Arts,1,Undergraduate - Upper Division,O,20,5,0,0
+70238,201770,COMM,-,COMM 341,1,Forensics Sem Re-Creative Arts,1,Undergraduate - Upper Division,O,20,5,0,0
+70239,201770,COMM,-,COMM 342,1,Foren Sem Deb: Aff Strategies,1,Undergraduate - Upper Division,O,10,0,0,0
+70240,201770,COMM,-,COMM 343,1,Foren Sem Deb: Neg Strategies,1,Undergraduate - Upper Division,O,10,1,0,0
+70241,201770,COMM,-,COMM 345,1,Newspaper Workshop II,1,Undergraduate - Upper Division,O,12,3,0,0
+71536,201770,COMM,-,COMM 347,1,Cable TV Programming/Marketing,1,Undergraduate - Upper Division,O,10,6,0,0
+70243,201770,COMM,YI,COMM 348,1,Radio Workshop II,1,Undergraduate - Upper Division,O,12,3,4,0
+72349,201770,COMM,-,COMM 352,1,News Editing,3,Undergraduate - Upper Division,WL,24,26,0,1
+70247,201770,COMM,-,COMM 359,1,Media Management,3,Undergraduate - Upper Division,WL,28,28,0,0
+70248,201770,COMM,-,COMM 360,2,Digital Postproduction,3,Undergraduate - Upper Division,O,24,16,0,0
+74339,201770,COMM,-,COMM 361,DL1,Online Journalism,3,Undergraduate - Upper Division,WL,20,20,0,2
+70249,201770,COMM,-,COMM 362,1,Argument and Public Policy,3,Undergraduate - Upper Division,O,40,14,0,0
+72057,201770,COMM,-,COMM 362,2,Argument and Public Policy,3,Undergraduate - Upper Division,O,24,13,0,0
+75194,201770,COMM,-,COMM 364,1,Videography,3,Undergraduate - Upper Division,O,20,19,0,1
+81936,201770,COMM,0W,COMM 365,1,"Gender, Race & Class in Media",3,Undergraduate - Upper Division,O,20,20,32,0
+80328,201770,COMM,-,COMM 370,1,Feature Writing,3,Undergraduate - Upper Division,O,25,23,0,0
+70251,201770,COMM,-,COMM 375,1,Mass Comm Advert and Promotion,3,Undergraduate - Upper Division,O,42,30,0,0
+73399,201770,COMM,-,COMM 380,1,Media Criticism,3,Undergraduate - Upper Division,WL,40,42,0,1
+79530,201770,COMM,-,COMM 380,DL1,Media Criticism,3,Undergraduate - Upper Division,WL,20,20,0,5
+78235,201770,COMM,-,COMM 388,1,Contemporary PR & Social Media,3,Undergraduate - Upper Division,WL,30,30,0,2
+74172,201770,COMM,-,COMM 390,1,Issues in Public Relations,3,Undergraduate - Upper Division,O,35,17,0,0
+70253,201770,COMM,-,COMM 391,1,Writing for Public Relations,3,Undergraduate - Upper Division,O,25,15,0,0
+70255,201770,COMM,-,COMM 400,1,Research Methods in Comm,3,Undergraduate - Upper Division,WL,34,33,0,3
+71625,201770,COMM,-,COMM 400,2,Research Methods in Comm,3,Undergraduate - Upper Division,O,35,34,0,0
+71876,201770,COMM,-,COMM 400,3,Research Methods in Comm,3,Undergraduate - Upper Division,O,35,24,0,0
+75197,201770,COMM,-,COMM 400,4,Research Methods in Comm,3,Undergraduate - Upper Division,O,35,22,0,0
+72665,201770,COMM,-,COMM 430,1,Persuasion,3,Undergraduate - Upper Division,WL,30,30,0,5
+82071,201770,COMM,-,COMM 430,DL1,Persuasion,3,Undergraduate - Upper Division,CL,25,25,0,0
+83331,201770,COMM,-,COMM 430,DL2,Persuasion,3,Undergraduate - Upper Division,CL,25,25,0,0
+70257,201770,COMM,-,COMM 434,1,Interviewing,3,Undergraduate - Upper Division,O,24,19,0,0
+70258,201770,COMM,-,COMM 450,1,Internship in Communication,3,Undergraduate - Upper Division,O,45,19,0,0
+70260,201770,COMM,-,COMM 451,1,Facilitating Comm Education,3,Undergraduate - Upper Division,CN,12,3,0,0
+70261,201770,COMM,-,COMM 452,1,Media Production Practicum,3-Jan,Undergraduate - Upper Division,CN,12,0,0,0
+70263,201770,COMM,-,COMM 454,1,Free Speech and Ethics,3,Undergraduate - Upper Division,WL,40,40,0,0
+70264,201770,COMM,-,COMM 454,2,Free Speech and Ethics,3,Undergraduate - Upper Division,O,40,39,0,0
+70265,201770,COMM,-,COMM 475,1,Journalism Law,3,Undergraduate - Upper Division,O,35,28,0,0
+81396,201770,COMM,-,COMM 490,2,Honors Research Methods Comm,3,Undergraduate - Upper Division,CN,15,5,0,0
+80329,201770,COMM,BB,COMM 590,1,Appld Scientific Communication,3,Graduate - First,O,10,3,10,0
+70266,201770,COMM,-,COMM 600,1,Intro to Graduate Studies,3,Graduate - First,O,20,13,0,0
+80330,201770,COMM,-,COMM 635,1,Fndtns of Organizational Comm,3,Graduate - First,O,20,14,0,0
+80331,201770,COMM,-,COMM 637,1,Risk Communication,3,Graduate - First,O,20,19,0,0
+72541,201770,COMM,-,COMM 639,1,Science Communication,3,Graduate - First,O,20,10,0,0
+81626,201770,COMM,BB,COMM 641,1,Adv Communication Skills STEM,3,Graduate - First,O,10,7,10,0
+70268,201770,COMM,-,COMM 650,1,Research Methodologies-Comm,3,Graduate - First,O,20,16,0,0
+71740,201770,COMM,-,COMM 650,2,Research Methodologies-Comm,3,Graduate - First,O,20,5,0,0
+75217,201770,COMM,-,COMM 670,1,Social Marketing,3,Graduate - First,O,20,6,0,0
+73112,201770,COMM,-,COMM 700,1,Building Social Science Theory,3,Graduate - Advanced,O,12,9,0,0
+72550,201770,COMM,-,COMM 706,1,Strategic Communication,3,Graduate - Advanced,O,20,10,0,0
+80332,201770,COMM,-,COMM 720,1,Consumer-Provider Hlth Comm,3,Graduate - Advanced,O,20,11,0,0
+80333,201770,COMM,-,COMM 775,1,Media Content Analysis,3,Graduate - Advanced,O,20,16,0,0
+70270,201770,COMM,-,COMM 798,1,Communication Studies Project,3,Graduate - Advanced,O,20,6,0,0
+71720,201770,CRIM,-,CRIM 100,1,Introduct to Criminal Justice,3,Undergraduate - Lower Division,WL,145,144,0,2
+73256,201770,CRIM,FW,CRIM 100,2,Introduct to Criminal Justice,3,Undergraduate - Lower Division,WL,145,145,147,2
+74427,201770,CRIM,-,CRIM 100,3,Introduct to Criminal Justice,3,Undergraduate - Lower Division,WL,145,144,0,5
+74428,201770,CRIM,-,CRIM 210,1,Introduction to Criminology,3,Undergraduate - Lower Division,O,60,55,0,0
+72418,201770,CRIM,-,CRIM 220,1,Introduction Law and Society,3,Undergraduate - Lower Division,WL,60,60,0,0
+72040,201770,CRIM,-,CRIM 230,1,Introduction Homeland Security,3,Undergraduate - Lower Division,WL,60,60,0,0
+72940,201770,CRIM,-,CRIM 230,2,Introduction Homeland Security,3,Undergraduate - Lower Division,O,60,38,0,0
+75995,201770,CRIM,-,CRIM 230,3,Introduction Homeland Security,3,Undergraduate - Lower Division,O,60,18,0,0
+80340,201770,CRIM,-,CRIM 302,1,Deliquency,3,Undergraduate - Upper Division,O,45,35,0,0
+73884,201770,CRIM,-,CRIM 304,1,Computer Crime/Forens/Auditing,3,Undergraduate - Upper Division,WL,45,45,0,0
+73522,201770,CRIM,-,CRIM 305,1,Crime and Crime Policy,3,Undergraduate - Upper Division,O,45,39,0,0
+71721,201770,CRIM,-,CRIM 306,1,Criminal Justice Ethics,3,Undergraduate - Upper Division,O,45,33,0,0
+71722,201770,CRIM,-,CRIM 306,2,Criminal Justice Ethics,3,Undergraduate - Upper Division,O,45,27,0,0
+72374,201770,CRIM,-,CRIM 306,3,Criminal Justice Ethics,3,Undergraduate - Upper Division,WL,44,44,0,0
+72703,201770,CRIM,-,CRIM 306,4,Criminal Justice Ethics,3,Undergraduate - Upper Division,WL,36,36,0,0
+80341,201770,CRIM,-,CRIM 306,5,Criminal Justice Ethics,3,Undergraduate - Upper Division,WL,45,45,0,1
+80342,201770,CRIM,-,CRIM 306,6,Criminal Justice Ethics,3,Undergraduate - Upper Division,WL,45,45,0,0
+80344,201770,CRIM,-,CRIM 307,2,Social Inequality/Crime/Justic,3,Undergraduate - Upper Division,WL,45,45,0,0
+81712,201770,CRIM,-,CRIM 307,3,Social Inequality/Crime/Justic,3,Undergraduate - Upper Division,O,45,44,0,0
+81713,201770,CRIM,-,CRIM 308,2,Human Rights and Justice,3,Undergraduate - Upper Division,CL,45,45,0,0
+71895,201770,CRIM,-,CRIM 310,1,Intro Intelligence Community,3,Undergraduate - Upper Division,WL,45,44,0,3
+73408,201770,CRIM,-,CRIM 310,2,Intro Intelligence Community,3,Undergraduate - Upper Division,O,45,43,0,0
+75990,201770,CRIM,-,CRIM 310,3,Intro Intelligence Community,3,Undergraduate - Upper Division,WL,45,45,0,0
+79050,201770,CRIM,-,CRIM 310,6,Intro Intelligence Community,3,Undergraduate - Upper Division,WL,45,45,0,1
+72834,201770,CRIM,-,CRIM 312,1,Intelligence Analysis Techniqu,3,Undergraduate - Upper Division,WL,45,45,0,1
+73258,201770,CRIM,-,CRIM 312,2,Intelligence Analysis Techniqu,3,Undergraduate - Upper Division,WL,45,45,0,0
+80345,201770,CRIM,-,CRIM 312,3,Intelligence Analysis Techniqu,3,Undergraduate - Upper Division,O,45,20,0,0
+80346,201770,CRIM,-,CRIM 312,4,Intelligence Analysis Techniqu,3,Undergraduate - Upper Division,O,45,18,0,0
+72415,201770,CRIM,-,CRIM 315,1,Research Methods/Analysis Crim,3,Undergraduate - Upper Division,WL,45,44,0,3
+75996,201770,CRIM,-,CRIM 315,3,Research Methods/Analysis Crim,3,Undergraduate - Upper Division,WL,45,44,0,4
+80347,201770,CRIM,-,CRIM 315,4,Research Methods/Analysis Crim,3,Undergraduate - Upper Division,WL,45,46,0,5
+81717,201770,CRIM,-,CRIM 315,5,Research Methods/Analysis Crim,3,Undergraduate - Upper Division,CL,45,45,0,0
+73259,201770,CRIM,-,CRIM 320,1,Crime and Place,3,Undergraduate - Upper Division,WL,45,45,0,2
+80348,201770,CRIM,-,CRIM 350,1,Counterintelligence,3,Undergraduate - Upper Division,WL,45,45,0,7
+73260,201770,CRIM,-,CRIM 400,1,Applied Criminal Psychology,3,Undergraduate - Upper Division,WL,45,45,0,0
+73520,201770,CRIM,-,CRIM 400,2,Applied Criminal Psychology,3,Undergraduate - Upper Division,WL,45,45,0,13
+72989,201770,CRIM,-,CRIM 401,1,Policing in America,3,Undergraduate - Upper Division,WL,45,45,0,0
+78688,201770,CRIM,-,CRIM 401,3,Policing in America,3,Undergraduate - Upper Division,WL,45,45,0,1
+72704,201770,CRIM,-,CRIM 402,1,Punishment and Corrections,3,Undergraduate - Upper Division,WL,45,45,0,0
+80349,201770,CRIM,-,CRIM 403,1,Community Corrections,3,Undergraduate - Upper Division,O,45,19,0,0
+73886,201770,CRIM,-,CRIM 404,1,Crime Victims/Victimization,3,Undergraduate - Upper Division,WL,45,45,0,0
+78144,201770,CRIM,-,CRIM 404,3,Crime Victims/Victimization,3,Undergraduate - Upper Division,WL,45,45,0,0
+78143,201770,CRIM,-,CRIM 405,4,Law and Justice Around World,3,Undergraduate - Upper Division,O,45,44,0,0
+78680,201770,CRIM,-,CRIM 405,5,Law and Justice Around World,3,Undergraduate - Upper Division,O,45,43,0,2
+81714,201770,CRIM,-,CRIM 405,6,Law and Justice Around World,3,Undergraduate - Upper Division,CL,45,45,0,0
+81715,201770,CRIM,-,CRIM 405,7,Law and Justice Around World,3,Undergraduate - Upper Division,CL,45,45,0,0
+80350,201770,CRIM,-,CRIM 406,1,Family Law and Justice System,3,Undergraduate - Upper Division,O,45,31,0,0
+82419,201770,CRIM,-,CRIM 407,2,Adv Topics in Law and Society,3,Undergraduate - Upper Division,O,45,15,0,0
+71723,201770,CRIM,-,CRIM 408,1,Criminal Courts,3,Undergraduate - Upper Division,O,45,44,0,0
+71899,201770,CRIM,-,CRIM 409,1,Community Policing,3,Undergraduate - Upper Division,WL,45,45,0,0
+72793,201770,CRIM,-,CRIM 410,1,Criminal Investigations,3,Undergraduate - Upper Division,O,45,38,0,0
+80351,201770,CRIM,-,CRIM 410,3,Criminal Investigations,3,Undergraduate - Upper Division,WL,45,45,0,2
+72141,201770,CRIM,-,CRIM 424,2,Const Law-Criminal Proc/Rights,3,Undergraduate - Upper Division,WL,45,45,0,0
+72380,201770,CRIM,-,CRIM 424,3,Const Law-Criminal Proc/Rights,3,Undergraduate - Upper Division,WL,45,45,0,0
+74373,201770,CRIM,-,CRIM 424,4,Const Law-Criminal Proc/Rights,3,Undergraduate - Upper Division,O,45,41,0,0
+75260,201770,CRIM,-,CRIM 424,5,Const Law-Criminal Proc/Rights,3,Undergraduate - Upper Division,WL,45,45,0,0
+80352,201770,CRIM,-,CRIM 424,6,Const Law-Criminal Proc/Rights,3,Undergraduate - Upper Division,WL,45,45,0,0
+83042,201770,CRIM,-,CRIM 424,7,Const Law-Criminal Proc/Rights,3,Undergraduate - Upper Division,CL,25,25,0,0
+72706,201770,CRIM,-,CRIM 425,1,Criminal Justice Managment,3,Undergraduate - Upper Division,O,45,23,0,0
+72707,201770,CRIM,-,CRIM 460,1,Surv/Privacy-Contemp Society,3,Undergraduate - Upper Division,O,45,26,0,0
+80354,201770,CRIM,-,CRIM 460,2,Surv/Privacy-Contemp Society,3,Undergraduate - Upper Division,O,45,44,0,0
+72708,201770,CRIM,-,CRIM 462,1,Law Enforcement/Homeland Secur,3,Undergraduate - Upper Division,WL,45,45,0,0
+72381,201770,CRIM,-,CRIM 462,2,Law Enforcement/Homeland Secur,3,Undergraduate - Upper Division,WL,45,45,0,0
+80355,201770,CRIM,-,CRIM 471,1,Prevention and Deter of Crime,3,Undergraduate - Upper Division,WL,45,46,0,0
+72709,201770,CRIM,-,CRIM 475,1,Theory/Politics of Terrorism,3,Undergraduate - Upper Division,WL,45,45,0,0
+72705,201770,CRIM,-,CRIM 475,2,Theory/Politics of Terrorism,3,Undergraduate - Upper Division,O,45,39,0,0
+71725,201770,CRIM,-,CRIM 479,1,Preparation for Internship,3,Undergraduate - Upper Division,WL,45,45,0,1
+80356,201770,CRIM,-,CRIM 480,1,Internship,12-Jun,Undergraduate - Upper Division,CN,40,24,0,0
+71900,201770,CRIM,-,CRIM 490,1,Writing & Briefing Skill in IC,3,Undergraduate - Upper Division,O,34,24,0,0
+78684,201770,CRIM,-,CRIM 490,2,Writing & Briefing Skill in IC,3,Undergraduate - Upper Division,O,35,23,0,0
+75280,201770,CRIM,-,CRIM 490,7,Criminal Law,3,Undergraduate - Upper Division,O,45,33,0,0
+75281,201770,CRIM,-,CRIM 490,8,Health & Safety Of 1st Respond,3,Undergraduate - Upper Division,O,25,24,0,0
+75992,201770,CRIM,-,CRIM 490,9,Gang Crime,3,Undergraduate - Upper Division,O,45,43,0,0
+71726,201770,CRIM,-,CRIM 491,1,Honors Seminar I,3,Undergraduate - Upper Division,CN,12,5,0,0
+72035,201770,CRIM,-,CRIM 495,1,"Capstone in Crim, Law, Society",3,Undergraduate - Upper Division,CL,54,54,0,0
+72036,201770,CRIM,-,CRIM 495,2,"Capstone in Crim, Law, Society",3,Undergraduate - Upper Division,CL,54,54,0,0
+73888,201770,CRIM,-,CRIM 495,3,"Capstone in Crim, Law, Society",3,Undergraduate - Upper Division,WL,54,55,0,0
+80357,201770,CRIM,-,CRIM 495,4,"Capstone in Crim, Law, Society",3,Undergraduate - Upper Division,O,54,36,0,0
+73263,201770,CRIM,-,CRIM 700,1,Theories of Justice,3,Graduate - Advanced,O,25,8,0,0
+80362,201770,CRIM,-,CRIM 721,1,Constitution/Crim Proc/Secur,3,Graduate - Advanced,O,25,9,0,0
+80363,201770,CRIM,-,CRIM 740,1,Justice Organization and Admin,3,Graduate - Advanced,O,25,12,0,0
+72795,201770,CRIM,-,CRIM 742,1,Ldrshp/Justice/Security/Orgs,3,Graduate - Advanced,O,25,7,0,0
+80364,201770,CRIM,-,CRIM 761,1,Politics of Crime Policy,3,Graduate - Advanced,O,25,12,0,0
+72799,201770,CRIM,-,CRIM 780,1,Research Methods,3,Graduate - Advanced,O,25,13,0,0
+71727,201770,CRIM,-,CRIM 783,1,Statistics II,3,Graduate - Advanced,O,25,6,0,0
+80365,201770,CRIM,-,CRIM 784,1,Experimental Criminology,3,Graduate - Advanced,O,8,7,0,0
+83508,201770,CRIM,GK,CRIM 795,1,Police & Minority Communities,3,Graduate - Advanced,O,6,0,10,0
+70141,201770,CULT,-,CULT 320,1,Globalization and Culture,3,Undergraduate - Upper Division,O,25,19,0,0
+70142,201770,CULT,-,CULT 320,2,Globalization and Culture,3,Undergraduate - Upper Division,WL,25,24,0,6
+70143,201770,CULT,-,CULT 320,3,Globalization and Culture,3,Undergraduate - Upper Division,WL,25,25,0,0
+70144,201770,CULT,-,CULT 320,4,Globalization and Culture,3,Undergraduate - Upper Division,WL,25,25,0,0
+70147,201770,CULT,-,CULT 320,5,Globalization and Culture,3,Undergraduate - Upper Division,WL,25,25,0,0
+70145,201770,CULT,-,CULT 802,1,Histories Cult Studies,3,Graduate - Advanced,O,15,7,0,0
+70146,201770,CULT,-,CULT 806,1,Resrch Sem in Cult Stdy,3,Graduate - Advanced,O,12,8,0,0
+70148,201770,CULT,-,CULT 808,1,Student and Faculty Colloquium,1,Graduate - Advanced,O,20,14,0,0
+80366,201770,CULT,-,CULT 816,1,Science/Technology,3,Graduate - Advanced,O,12,8,0,0
+80367,201770,CULT,-,CULT 860,1,"Meth: Rdg Form, Rdg Politics",3,Graduate - Advanced,O,12,9,0,0
+73556,201770,CULT,-,CULT 860,2,Globalization/Deglobalization,3,Graduate - Advanced,O,12,11,0,0
+78765,201770,ECON,-,ECON 100,1,Economics for the Citizen,3,Undergraduate - Lower Division,WL,44,44,0,3
+70436,201770,ECON,6S,ECON 103,1,Microeconomic Principles,3,Undergraduate - Lower Division,WL,247,244,281,8
+70437,201770,ECON,-,ECON 103,2,Microeconomic Principles,3,Undergraduate - Lower Division,WL,315,300,0,17
+70438,201770,ECON,13,ECON 103,3,Microeconomic Principles,3,Undergraduate - Lower Division,O,267,263,264,6
+70439,201770,ECON,1F,ECON 103,4,Microeconomic Principles,3,Undergraduate - Lower Division,WL,290,288,308,16
+83513,201770,ECON,-,ECON 103,5,Microeconomic Principles,3,Undergraduate - Lower Division,CL,39,39,0,0
+82599,201770,ECON,6S,ECON 103,H01,Microeconomic Principles,3,Undergraduate - Lower Division,O,40,37,281,0
+71494,201770,ECON,-,ECON 104,1,Macroeconomic Principles,3,Undergraduate - Lower Division,O,155,105,0,0
+71495,201770,ECON,1K,ECON 104,2,Macroeconomic Principles,3,Undergraduate - Lower Division,O,290,274,274,0
+70440,201770,ECON,-,ECON 306,1,Intermediate Microeconomics,3,Undergraduate - Upper Division,O,42,37,0,0
+70442,201770,ECON,-,ECON 306,3,Intermediate Microeconomics,3,Undergraduate - Upper Division,WL,50,50,0,0
+72140,201770,ECON,-,ECON 306,5,Intermediate Microeconomics,3,Undergraduate - Upper Division,WL,50,50,0,0
+70445,201770,ECON,-,ECON 306,7,Intermediate Microeconomics,3,Undergraduate - Upper Division,O,30,11,0,0
+71525,201770,ECON,-,ECON 308,1,Managerial Economics/Strategy,3,Undergraduate - Upper Division,O,42,34,0,0
+70448,201770,ECON,-,ECON 309,2,Econ Problms and Publ Policies,3,Undergraduate - Upper Division,O,45,22,0,0
+72615,201770,ECON,-,ECON 309,3,Econ Problms and Publ Policies,3,Undergraduate - Upper Division,WL,45,45,0,2
+73252,201770,ECON,-,ECON 309,4,Econ Problms and Publ Policies,3,Undergraduate - Upper Division,O,39,34,0,0
+72685,201770,ECON,-,ECON 310,1,Money and Banking,3,Undergraduate - Upper Division,O,42,16,0,0
+70449,201770,ECON,-,ECON 310,2,Money and Banking,3,Undergraduate - Upper Division,O,30,19,0,0
+70450,201770,ECON,-,ECON 310,3,Money and Banking,3,Undergraduate - Upper Division,O,43,15,0,0
+70452,201770,ECON,-,ECON 310,4,Money and Banking,3,Undergraduate - Upper Division,O,42,30,0,0
+70455,201770,ECON,-,ECON 310,6,Money and Banking,3,Undergraduate - Upper Division,O,44,23,0,0
+72686,201770,ECON,-,ECON 311,1,Intermediate Macroeconomics,3,Undergraduate - Upper Division,WL,40,40,0,0
+70966,201770,ECON,-,ECON 311,2,Intermediate Macroeconomics,3,Undergraduate - Upper Division,O,40,39,0,0
+70967,201770,ECON,-,ECON 311,3,Intermediate Macroeconomics,3,Undergraduate - Upper Division,O,40,20,0,0
+71676,201770,ECON,-,ECON 321,1,Economics of Labor,3,Undergraduate - Upper Division,O,40,18,0,0
+72143,201770,ECON,-,ECON 330,1,Public Finance,3,Undergraduate - Upper Division,O,42,28,0,0
+70968,201770,ECON,-,ECON 335,1,Environmental Economics,3,Undergraduate - Upper Division,WL,50,50,0,0
+70969,201770,ECON,-,ECON 340,1,Introduction to Math Economics,3,Undergraduate - Upper Division,O,38,12,0,0
+72246,201770,ECON,-,ECON 345,1,Introduction to Econometrics,3,Undergraduate - Upper Division,O,35,12,0,0
+70970,201770,ECON,-,ECON 345,2,Introduction to Econometrics,3,Undergraduate - Upper Division,O,35,22,0,0
+70971,201770,ECON,-,ECON 360,1,Economics of Developing Areas,3,Undergraduate - Upper Division,WL,42,42,0,0
+72251,201770,ECON,-,ECON 360,2,Economics of Developing Areas,3,Undergraduate - Upper Division,WL,42,42,0,0
+73023,201770,ECON,-,ECON 360,3,Economics of Developing Areas,3,Undergraduate - Upper Division,O,42,17,0,0
+74779,201770,ECON,-,ECON 360,4,Economics of Developing Areas,3,Undergraduate - Upper Division,O,42,19,0,0
+70972,201770,ECON,-,ECON 361,1,Econ Develpmt Latin Amer,3,Undergraduate - Upper Division,O,42,26,0,0
+80508,201770,ECON,-,ECON 365,2,Topics in Economic History,3,Undergraduate - Upper Division,WL,32,32,0,0
+80509,201770,ECON,-,ECON 365,3,Topics in Economic History,3,Undergraduate - Upper Division,O,32,21,0,0
+75856,201770,ECON,4E,ECON 367,1,Money Markets Economic Policy,3,Undergraduate - Upper Division,O,15,14,59,0
+70974,201770,ECON,-,ECON 385,1,International Economic Policy,3,Undergraduate - Upper Division,O,45,22,0,0
+70975,201770,ECON,-,ECON 385,2,International Economic Policy,3,Undergraduate - Upper Division,WL,45,45,0,0
+70976,201770,ECON,-,ECON 385,3,International Economic Policy,3,Undergraduate - Upper Division,WL,45,45,0,0
+70977,201770,ECON,-,ECON 390,1,International Economics,3,Undergraduate - Upper Division,WL,42,41,0,3
+70978,201770,ECON,-,ECON 410,1,Public Choice,3,Undergraduate - Upper Division,O,55,15,0,0
+70979,201770,ECON,-,ECON 412,1,Game Theory and Econ of Insts,3,Undergraduate - Upper Division,WL,45,45,0,0
+73253,201770,ECON,-,ECON 412,2,Game Theory and Econ of Insts,3,Undergraduate - Upper Division,O,40,11,0,0
+74486,201770,ECON,-,ECON 415,1,Law and Economics,3,Undergraduate - Upper Division,O,42,29,0,0
+70980,201770,ECON,-,ECON 420,1,International Money/Finance,3,Undergraduate - Upper Division,O,45,24,0,0
+73533,201770,ECON,1P,ECON 445,1,Design and Analy of Experiment,3,Undergraduate - Upper Division,O,9,9,14,0
+71882,201770,ECON,1R,ECON 470,1,Economics of Regulation,3,Undergraduate - Upper Division,O,24,24,28,0
+82379,201770,ECON,DT,ECON 485,1,Smithian Political Economy I,3,Undergraduate - Upper Division,CN,10,1,7,0
+80510,201770,ECON,-,ECON 495,1,RS: Honors Thesis in Economics,3,Undergraduate - Upper Division,CN,15,8,0,0
+74809,201770,ECON,1V,ECON 496,5,Practical Computationl Methods,3,Undergraduate - Upper Division,O,25,5,11,0
+78245,201770,ECON,1X,ECON 496,6,David Hume's Hist of England,3,Undergraduate - Upper Division,CN,5,1,6,0
+80512,201770,ECON,DU,ECON 496,7,Economics of Education,3,Undergraduate - Upper Division,O,25,6,10,0
+81896,201770,ECON,0K,ECON 496,8,Airline Economics,3,Undergraduate - Upper Division,O,25,18,21,0
+71559,201770,ECON,-,ECON 498,1,Economics Internship,3,Undergraduate - Upper Division,CN,20,1,0,0
+81998,201770,ECON,-,ECON 498,2,Economics Internship,6,Undergraduate - Upper Division,CN,20,2,0,0
+72568,201770,ECON,-,ECON 611,1,Microeconomic Theory I,3,Graduate - First,CN,55,26,0,0
+70981,201770,ECON,-,ECON 623,1,American Economic History,3,Graduate - First,O,30,7,0,0
+72569,201770,ECON,-,ECON 630,1,Mathematical Economics I,3,Graduate - First,CN,55,24,0,0
+72962,201770,ECON,1R,ECON 695,1,Economics of Regulation,3,Graduate - First,O,12,4,28,0
+74440,201770,ECON,-,ECON 695,2,"States, Comm & Markets",3,Graduate - First,CN,30,29,0,0
+78764,201770,ECON,-,ECON 695,3,Economics & Policy Analysis I,3,Graduate - First,CN,16,16,0,0
+82959,201770,ECON,0K,ECON 695,4,Airline Economics,3,Graduate - First,O,3,3,21,0
+70982,201770,ECON,-,ECON 715,1,Macroeconomic Theory I,3,Graduate - Advanced,CN,45,37,0,0
+70984,201770,ECON,-,ECON 811,1,Microeconomic Theory I,3,Graduate - Advanced,CN,39,38,0,0
+70985,201770,ECON,-,ECON 817,1,Monetary Theory and Policy,3,Graduate - Advanced,O,22,11,0,0
+73255,201770,ECON,-,ECON 821,1,Hist Economic Thought II,3,Graduate - Advanced,O,20,12,0,0
+72870,201770,ECON,-,ECON 830,1,Mathematical Economics I,3,Graduate - Advanced,CN,39,36,0,0
+82030,201770,ECON,-,ECON 831,2,Mathematical Econ II,3,Graduate - Advanced,O,25,9,0,0
+73429,201770,ECON,1P,ECON 838,1,Econometrics II,3,Graduate - Advanced,O,14,5,14,0
+74526,201770,ECON,-,ECON 841,1,Law and Economics II,3,Graduate - Advanced,O,25,15,0,0
+82378,201770,ECON,DT,ECON 843,1,Smithian Political Economy I,3,Graduate - Advanced,O,14,6,7,0
+74530,201770,ECON,-,ECON 844,1,Ind Organiz/Publ Policy,3,Graduate - Advanced,WL,30,30,0,1
+72200,201770,ECON,-,ECON 852,1,Public Choice,3,Graduate - Advanced,O,24,10,0,0
+71677,201770,ECON,-,ECON 866,1,Economic Development,3,Graduate - Advanced,O,30,22,0,0
+72531,201770,ECON,-,ECON 880,1,Theory of Market Process I,3,Graduate - Advanced,WL,30,30,0,0
+78178,201770,ECON,-,ECON 895,5,Non-Market Workshop,3,Graduate - Advanced,CN,12,11,0,0
+78179,201770,ECON,-,ECON 895,6,Sptl Techniques-Empirical Econ,3,Graduate - Advanced,O,15,8,0,0
+78244,201770,ECON,1X,ECON 895,7,David Hume's Hist of England,3,Graduate - Advanced,O,14,5,6,0
+78517,201770,ECON,1D,ECON 895,9,Obj-Oriented Modeling Soc Sci,3,Graduate - Advanced,O,3,2,7,0
+80511,201770,ECON,1V,ECON 895,12,Practical Computationl Methods,3,Graduate - Advanced,O,10,6,11,0
+80506,201770,ECON,1M,ECON 895,14,Advanced Agent-based Modeling,3,Graduate - Advanced,O,5,5,9,0
+82434,201770,ECON,DU,ECON 895,15,Economics of Education,3,Graduate - Advanced,O,15,4,10,0
+82596,201770,ECON,-,ECON 895,16,Struct Models in Econometrics,3,Graduate - Advanced,O,15,8,0,0
+71052,201770,ENGL,-,ENGH 100,1,Composition Multilingl Writers,4,Undergraduate - Lower Division,O,19,16,0,0
+71053,201770,ENGL,-,ENGH 100,2,Composition Multilingl Writers,4,Undergraduate - Lower Division,O,19,17,0,0
+71054,201770,ENGL,-,ENGH 100,3,Composition Multilingl Writers,4,Undergraduate - Lower Division,O,19,14,0,1
+74844,201770,ENGL,-,ENGH 100,4,Composition Multilingl Writers,4,Undergraduate - Lower Division,O,19,18,0,0
+71055,201770,ENGL,-,ENGH 101,1,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+73147,201770,ENGL,-,ENGH 101,2,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71056,201770,ENGL,-,ENGH 101,3,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71057,201770,ENGL,-,ENGH 101,4,Composition,3,Undergraduate - Lower Division,O,19,18,0,0
+71601,201770,ENGL,-,ENGH 101,5,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71604,201770,ENGL,-,ENGH 101,6,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+74919,201770,ENGL,-,ENGH 101,7,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+74941,201770,ENGL,-,ENGH 101,8,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+74942,201770,ENGL,-,ENGH 101,9,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71800,201770,ENGL,-,ENGH 101,10,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71058,201770,ENGL,-,ENGH 101,11,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71059,201770,ENGL,-,ENGH 101,12,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71060,201770,ENGL,-,ENGH 101,13,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71061,201770,ENGL,-,ENGH 101,14,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71062,201770,ENGL,-,ENGH 101,15,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71585,201770,ENGL,-,ENGH 101,16,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71063,201770,ENGL,-,ENGH 101,18,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71064,201770,ENGL,-,ENGH 101,19,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71065,201770,ENGL,-,ENGH 101,20,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71584,201770,ENGL,-,ENGH 101,21,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71423,201770,ENGL,-,ENGH 101,22,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71422,201770,ENGL,-,ENGH 101,23,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71578,201770,ENGL,-,ENGH 101,24,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71066,201770,ENGL,-,ENGH 101,25,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71068,201770,ENGL,-,ENGH 101,27,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71069,201770,ENGL,-,ENGH 101,28,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71104,201770,ENGL,-,ENGH 101,29,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71070,201770,ENGL,-,ENGH 101,30,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71097,201770,ENGL,-,ENGH 101,31,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71071,201770,ENGL,-,ENGH 101,32,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71577,201770,ENGL,-,ENGH 101,33,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71072,201770,ENGL,-,ENGH 101,34,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71073,201770,ENGL,-,ENGH 101,35,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71074,201770,ENGL,-,ENGH 101,36,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71075,201770,ENGL,-,ENGH 101,37,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71076,201770,ENGL,-,ENGH 101,38,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71077,201770,ENGL,-,ENGH 101,39,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71078,201770,ENGL,-,ENGH 101,40,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71079,201770,ENGL,-,ENGH 101,41,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71081,201770,ENGL,-,ENGH 101,42,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71082,201770,ENGL,-,ENGH 101,43,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+79372,201770,ENGL,-,ENGH 101,46,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+79373,201770,ENGL,-,ENGH 101,47,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71085,201770,ENGL,-,ENGH 101,48,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71095,201770,ENGL,-,ENGH 101,51,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+79374,201770,ENGL,-,ENGH 101,52,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71569,201770,ENGL,-,ENGH 101,54,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71929,201770,ENGL,-,ENGH 101,55,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71087,201770,ENGL,-,ENGH 101,56,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71930,201770,ENGL,-,ENGH 101,57,Composition,3,Undergraduate - Lower Division,O,19,18,0,0
+71088,201770,ENGL,-,ENGH 101,58,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71089,201770,ENGL,-,ENGH 101,59,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71091,201770,ENGL,-,ENGH 101,62,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71092,201770,ENGL,-,ENGH 101,63,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71094,201770,ENGL,-,ENGH 101,65,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+72912,201770,ENGL,-,ENGH 101,66,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+72965,201770,ENGL,-,ENGH 101,67,Composition,3,Undergraduate - Lower Division,CL,18,18,0,0
+73009,201770,ENGL,-,ENGH 101,69,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+73012,201770,ENGL,-,ENGH 101,70,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+73013,201770,ENGL,-,ENGH 101,71,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+73149,201770,ENGL,-,ENGH 101,72,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+73150,201770,ENGL,-,ENGH 101,73,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+73152,201770,ENGL,-,ENGH 101,75,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+73153,201770,ENGL,-,ENGH 101,76,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+73154,201770,ENGL,-,ENGH 101,78,Composition,3,Undergraduate - Lower Division,O,19,18,0,0
+73155,201770,ENGL,-,ENGH 101,79,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+73156,201770,ENGL,-,ENGH 101,80,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+73157,201770,ENGL,-,ENGH 101,81,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+73158,201770,ENGL,-,ENGH 101,82,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+73159,201770,ENGL,-,ENGH 101,83,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+73160,201770,ENGL,-,ENGH 101,84,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+73454,201770,ENGL,-,ENGH 101,85,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+73542,201770,ENGL,-,ENGH 101,89,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+73581,201770,ENGL,-,ENGH 101,91,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+78392,201770,ENGL,-,ENGH 101,98,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+81886,201770,ENGL,-,ENGH 101,99,Composition,3,Undergraduate - Lower Division,CN,22,23,0,0
+81887,201770,ENGL,-,ENGH 101,100,Composition,3,Undergraduate - Lower Division,CN,22,22,0,0
+81888,201770,ENGL,-,ENGH 101,101,Composition,3,Undergraduate - Lower Division,CN,22,21,0,0
+82066,201770,ENGL,-,ENGH 101,102,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+82067,201770,ENGL,-,ENGH 101,103,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+82068,201770,ENGL,-,ENGH 101,104,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+83073,201770,ENGL,-,ENGH 101,105,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+83123,201770,ENGL,-,ENGH 101,106,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+83169,201770,ENGL,-,ENGH 101,107,Composition,3,Undergraduate - Lower Division,O,19,18,0,0
+83168,201770,ENGL,-,ENGH 101,108,Composition,3,Undergraduate - Lower Division,O,19,10,0,0
+83173,201770,ENGL,-,ENGH 101,109,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+83186,201770,ENGL,-,ENGH 101,110,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+83203,201770,ENGL,-,ENGH 101,111,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+83204,201770,ENGL,-,ENGH 101,112,Composition,3,Undergraduate - Lower Division,O,19,7,0,0
+83552,201770,ENGL,-,ENGH 101,113,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71084,201770,ENGL,-,ENGH 101,DL1,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71083,201770,ENGL,-,ENGH 101,DL2,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+73580,201770,ENGL,-,ENGH 101,DL3,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71067,201770,ENGL,-,ENGH 101,DL4,Composition,3,Undergraduate - Lower Division,CL,19,19,0,0
+71105,201770,ENGL,-,ENGH 201,1,Reading and Writng About Texts,3,Undergraduate - Lower Division,CL,26,26,0,0
+71108,201770,ENGL,-,ENGH 201,2,Reading and Writng About Texts,3,Undergraduate - Lower Division,O,26,25,0,0
+71106,201770,ENGL,-,ENGH 201,3,Reading and Writng About Texts,3,Undergraduate - Lower Division,CL,26,26,0,0
+71107,201770,ENGL,-,ENGH 201,5,Reading and Writng About Texts,3,Undergraduate - Lower Division,CL,26,26,0,0
+72203,201770,ENGL,-,ENGH 201,6,Reading and Writng About Texts,3,Undergraduate - Lower Division,CL,26,26,0,0
+73008,201770,ENGL,-,ENGH 201,10,Reading and Writng About Texts,3,Undergraduate - Lower Division,CL,26,26,0,0
+73014,201770,ENGL,-,ENGH 201,11,Reading and Writng About Texts,3,Undergraduate - Lower Division,CL,26,26,0,0
+79149,201770,ENGL,-,ENGH 201,12,Reading and Writng About Texts,3,Undergraduate - Lower Division,CL,26,26,0,0
+79152,201770,ENGL,-,ENGH 201,13,Reading and Writng About Texts,3,Undergraduate - Lower Division,CL,26,26,0,0
+72138,201770,ENGL,-,ENGH 201,DL1,Reading and Writng About Texts,3,Undergraduate - Lower Division,CL,26,26,0,0
+71109,201770,ENGL,-,ENGH 202,2,"Hemingway, Fitzgerald, & 1920s",3,Undergraduate - Lower Division,WL,40,40,0,9
+74684,201770,ENGL,-,ENGH 202,4,World Literature Since 1900,3,Undergraduate - Lower Division,WL,75,75,0,0
+72089,201770,ENGL,-,ENGH 202,5,Literature and Politics,3,Undergraduate - Lower Division,WL,40,40,0,2
+74439,201770,ENGL,-,ENGH 202,11,Sherlock,3,Undergraduate - Lower Division,WL,75,75,0,0
+78058,201770,ENGL,-,ENGH 202,12,War Stories,3,Undergraduate - Lower Division,WL,40,38,0,6
+81408,201770,ENGL,-,ENGH 202,14,Literature and Film of War,3,Undergraduate - Lower Division,WL,40,40,0,1
+81673,201770,ENGL,-,ENGH 202,15,Teen Cultures,3,Undergraduate - Lower Division,WL,39,39,0,5
+81729,201770,ENGL,-,ENGH 202,16,Science and Literature,3,Undergraduate - Lower Division,WL,40,40,0,1
+82999,201770,ENGL,-,ENGH 202,17,Recent Women Poets,3,Undergraduate - Lower Division,CL,27,27,0,0
+83266,201770,ENGL,-,ENGH 202,18,"Blcknss, Protst & Public Spher",3,Undergraduate - Lower Division,O,27,26,0,0
+74246,201770,ENGL,-,ENGH 301,1,The Fields of English,3,Undergraduate - Upper Division,O,150,132,0,0
+71110,201770,ENGL,-,ENGH 302,B01,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+71111,201770,ENGL,-,ENGH 302,B02,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+71112,201770,ENGL,-,ENGH 302,B03,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+71113,201770,ENGL,-,ENGH 302,B04,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+71114,201770,ENGL,-,ENGH 302,B05,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+71115,201770,ENGL,-,ENGH 302,B06,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+71116,201770,ENGL,-,ENGH 302,B07,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+71117,201770,ENGL,-,ENGH 302,B08,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+71118,201770,ENGL,-,ENGH 302,B09,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+71120,201770,ENGL,-,ENGH 302,B11,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+71121,201770,ENGL,-,ENGH 302,B12,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+71122,201770,ENGL,-,ENGH 302,B13,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+71123,201770,ENGL,-,ENGH 302,B14,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+71124,201770,ENGL,-,ENGH 302,B16,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+71125,201770,ENGL,-,ENGH 302,B17,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+71861,201770,ENGL,-,ENGH 302,B18,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+71126,201770,ENGL,-,ENGH 302,B19,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+71159,201770,ENGL,-,ENGH 302,B20,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+71161,201770,ENGL,-,ENGH 302,B22,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+71158,201770,ENGL,-,ENGH 302,B24,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+71496,201770,ENGL,-,ENGH 302,B25,Advanced Comp (Business),3,Undergraduate - Upper Division,O,22,21,0,0
+72522,201770,ENGL,-,ENGH 302,B26,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+72979,201770,ENGL,2F,ENGH 302,B27,Advanced Comp (Business),3,Undergraduate - Upper Division,WL,21,21,22,0
+72987,201770,ENGL,2S,ENGH 302,B28,Advanced Comp (Business),3,Undergraduate - Upper Division,WL,21,21,22,0
+73018,201770,ENGL,-,ENGH 302,B30,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+73541,201770,ENGL,31,ENGH 302,B31,Advanced Comp (Business),3,Undergraduate - Upper Division,WL,21,21,22,0
+73579,201770,ENGL,-,ENGH 302,B32,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+74720,201770,ENGL,-,ENGH 302,B34,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+74721,201770,ENGL,-,ENGH 302,B35,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+74874,201770,ENGL,-,ENGH 302,B36,Adv Composition (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+79299,201770,ENGL,-,ENGH 302,B37,Advanced Comp (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+83072,201770,ENGL,-,ENGH 302,B38,Adv Composition (Business),3,Undergraduate - Upper Division,CL,22,22,0,0
+71133,201770,ENGL,-,ENGH 302,H01,Advanced Comp (Humanities),3,Undergraduate - Upper Division,CL,22,22,0,0
+72247,201770,ENGL,-,ENGH 302,H02,Advanced Comp (Humanities),3,Undergraduate - Upper Division,CL,22,22,0,0
+71138,201770,ENGL,-,ENGH 302,H10,Advanced Comp (Humanities),3,Undergraduate - Upper Division,CL,22,22,0,0
+71139,201770,ENGL,-,ENGH 302,H11,Advanced Comp (Humanities),3,Undergraduate - Upper Division,CL,22,22,0,0
+71140,201770,ENGL,-,ENGH 302,H12,Advanced Comp (Humanities),3,Undergraduate - Upper Division,CL,22,22,0,0
+71879,201770,ENGL,-,ENGH 302,H13,Advanced Comp (Humanities),3,Undergraduate - Upper Division,CL,22,22,0,0
+73370,201770,ENGL,-,ENGH 302,H21,Advanced Comp (Humanities),3,Undergraduate - Upper Division,CL,22,22,0,0
+74304,201770,ENGL,-,ENGH 302,H24,Advanced Comp (Humanities),3,Undergraduate - Upper Division,CL,23,23,0,0
+74729,201770,ENGL,-,ENGH 302,H26,Advanced Comp (Humanities),3,Undergraduate - Upper Division,CL,22,22,0,0
+74730,201770,ENGL,-,ENGH 302,H27,Advanced Comp (Humanities),3,Undergraduate - Upper Division,CL,22,22,0,0
+74866,201770,ENGL,-,ENGH 302,H30,Advanced Comp (Humanities),3,Undergraduate - Upper Division,CL,22,22,0,0
+74938,201770,ENGL,-,ENGH 302,H31,Advanced Comp (Humanities),3,Undergraduate - Upper Division,CL,22,22,0,0
+79312,201770,ENGL,-,ENGH 302,H33,Advanced Com (Humanities),3,Undergraduate - Upper Division,CL,22,22,0,0
+72253,201770,ENGL,-,ENGH 302,M01,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+72255,201770,ENGL,-,ENGH 302,M02,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+72241,201770,ENGL,-,ENGH 302,M03,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+71156,201770,ENGL,-,ENGH 302,M04,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+72662,201770,ENGL,-,ENGH 302,M06,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+71864,201770,ENGL,-,ENGH 302,M07,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+71174,201770,ENGL,-,ENGH 302,M08,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,23,23,0,0
+71175,201770,ENGL,-,ENGH 302,M09,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+71960,201770,ENGL,-,ENGH 302,M10,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+72321,201770,ENGL,-,ENGH 302,M12,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+72322,201770,ENGL,-,ENGH 302,M13,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+81841,201770,ENGL,-,ENGH 302,M14,Advanced Comp (Mulit-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+72855,201770,ENGL,-,ENGH 302,M15,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+75904,201770,ENGL,-,ENGH 302,M16,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+73537,201770,ENGL,-,ENGH 302,M17,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+74931,201770,ENGL,-,ENGH 302,M18,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,23,23,0,0
+73591,201770,ENGL,-,ENGH 302,M19,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+73609,201770,ENGL,-,ENGH 302,M20,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,23,23,0,0
+73611,201770,ENGL,-,ENGH 302,M21,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+74580,201770,ENGL,-,ENGH 302,M22,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+74581,201770,ENGL,-,ENGH 302,M23,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,WL,22,22,0,2
+74582,201770,ENGL,-,ENGH 302,M24,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+74625,201770,ENGL,-,ENGH 302,M25,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+74626,201770,ENGL,-,ENGH 302,M26,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+74731,201770,ENGL,-,ENGH 302,M28,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+74804,201770,ENGL,-,ENGH 302,M29,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+71134,201770,ENGL,-,ENGH 302,M30,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+71135,201770,ENGL,-,ENGH 302,M31,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+71136,201770,ENGL,-,ENGH 302,M32,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,23,23,0,0
+71137,201770,ENGL,-,ENGH 302,M33,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+74774,201770,ENGL,-,ENGH 302,M34,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,23,23,0,0
+74775,201770,ENGL,-,ENGH 302,M35,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+78142,201770,ENGL,-,ENGH 302,M36,Advanced Comp (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+79115,201770,ENGL,-,ENGH 302,M38,Advanced Comp (Mulit-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+79315,201770,ENGL,-,ENGH 302,M39,Advanced Comp (Multi-discip),3,Undergraduate - Upper Division,CL,22,22,0,0
+79316,201770,ENGL,-,ENGH 302,M40,Advanced Comp (Multi-discip),3,Undergraduate - Upper Division,CL,22,22,0,0
+79317,201770,ENGL,-,ENGH 302,M41,Advanced Comp (Multi-discip),3,Undergraduate - Upper Division,CL,22,22,0,0
+79318,201770,ENGL,-,ENGH 302,M42,Advanced Comp (Multi-discip),3,Undergraduate - Upper Division,CL,22,22,0,0
+79353,201770,ENGL,-,ENGH 302,M43,Advanced Comp (Multi-discip),3,Undergraduate - Upper Division,CL,22,22,0,0
+79354,201770,ENGL,-,ENGH 302,M44,Advanced Comp (Mulit-discip),3,Undergraduate - Upper Division,CL,22,22,0,0
+72982,201770,ENGL,-,ENGH 302,M45,Adv Composition (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+71119,201770,ENGL,-,ENGH 302,M46,Advanced Comp (Mulit-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+81928,201770,ENGL,-,ENGH 302,M47,Adv Composition (Multi-Discp),3,Undergraduate - Upper Division,CL,18,18,0,0
+82952,201770,ENGL,-,ENGH 302,M48,Adv Composition (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+82956,201770,ENGL,-,ENGH 302,M49,Adv Composition (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+82971,201770,ENGL,-,ENGH 302,M50,Adv Composition (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+83018,201770,ENGL,-,ENGH 302,M51,Adv Composition (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+83019,201770,ENGL,-,ENGH 302,M52,Adv Composition (Multi-Discp),3,Undergraduate - Upper Division,CL,22,22,0,0
+83075,201770,ENGL,-,ENGH 302,M53,Adv Comp (Multidisciplinary),3,Undergraduate - Upper Division,CL,22,22,0,0
+83170,201770,ENGL,-,ENGH 302,M55,Adv Comp (Multidisciplinary),3,Undergraduate - Upper Division,CL,22,22,0,0
+83171,201770,ENGL,-,ENGH 302,M56,Adv Comp (Multidisciplinary),3,Undergraduate - Upper Division,CL,22,22,0,0
+83201,201770,ENGL,-,ENGH 302,M57,Adv Comp (Multidisciplinary),3,Undergraduate - Upper Division,O,22,20,0,0
+83202,201770,ENGL,-,ENGH 302,M58,Adv Comp (Multidisciplinary),3,Undergraduate - Upper Division,O,22,18,0,0
+83557,201770,ENGL,-,ENGH 302,M59,Adv Comp (Multidisciplinary),3,Undergraduate - Upper Division,CL,22,22,0,0
+83558,201770,ENGL,-,ENGH 302,M60,Adv Comp (Multidisciplinary),3,Undergraduate - Upper Division,O,22,8,0,0
+83579,201770,ENGL,-,ENGH 302,M61,Adv Comp (Multidisciplinary),3,Undergraduate - Upper Division,O,22,12,0,0
+71142,201770,ENGL,-,ENGH 302,N01,Advanced Comp (Natural Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+71143,201770,ENGL,-,ENGH 302,N02,Advanced Comp (Natural Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+71961,201770,ENGL,-,ENGH 302,N03,Advanced Comp (Natural Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+71144,201770,ENGL,-,ENGH 302,N04,Advanced Comp (Natural Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+71145,201770,ENGL,-,ENGH 302,N05,Advanced Comp (Natural Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+71962,201770,ENGL,-,ENGH 302,N06,Advanced Comp (Natural Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+71146,201770,ENGL,-,ENGH 302,N07,Advanced Comp (Natural Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+71148,201770,ENGL,-,ENGH 302,N10,Advanced Comp (Natural Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+71149,201770,ENGL,-,ENGH 302,N11,Advanced Comp (Natural Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+71150,201770,ENGL,-,ENGH 302,N12,Advanced Comp (Natural Sci),3,Undergraduate - Upper Division,O,22,21,0,0
+71153,201770,ENGL,-,ENGH 302,N13,Advanced Comp (Natural Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+71555,201770,ENGL,-,ENGH 302,N14,Advanced Comp (Natural Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+73543,201770,ENGL,-,ENGH 302,N16,Advanced Comp (Natural Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+74247,201770,ENGL,-,ENGH 302,N17,Advanced Comp (Natural Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+73602,201770,ENGL,-,ENGH 302,N18,Advanced Comp (Natural Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+73610,201770,ENGL,-,ENGH 302,N19,Advanced Comp (Natural Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+79310,201770,ENGL,-,ENGH 302,N21,Advanced Comp (Natural Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+72589,201770,ENGL,-,ENGH 302,N22,Advanced Comp (Natural Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+82922,201770,ENGL,-,ENGH 302,N23,Adv Composition (Natural Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+82923,201770,ENGL,-,ENGH 302,N24,Adv Composition (Natural Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+71497,201770,ENGL,-,ENGH 302,S01,Advanced Comp (Social Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+71164,201770,ENGL,-,ENGH 302,S02,Advanced Comp (Social Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+71165,201770,ENGL,-,ENGH 302,S03,Advanced Comp (Social Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+71166,201770,ENGL,-,ENGH 302,S04,Advanced Comp (Social Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+71167,201770,ENGL,-,ENGH 302,S05,Advanced Comp (Social Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+71173,201770,ENGL,-,ENGH 302,S06,Advanced Comp (Social Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+71168,201770,ENGL,-,ENGH 302,S07,Advanced Comp (Social Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+71169,201770,ENGL,-,ENGH 302,S08,Advanced Comp (Social Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+71170,201770,ENGL,-,ENGH 302,S09,Advanced Comp (Social Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+71171,201770,ENGL,-,ENGH 302,S10,Advanced Comp (Social Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+79357,201770,ENGL,-,ENGH 302,S11,Advanced Comp (Social Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+71172,201770,ENGL,-,ENGH 302,S13,Advanced Comp (Social Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+73587,201770,ENGL,0C,ENGH 302,S15,Advanced Comp (Social Sci),3,Undergraduate - Upper Division,WL,21,21,22,0
+74637,201770,ENGL,-,ENGH 302,S16,Advanced Comp (Social Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+83071,201770,ENGL,-,ENGH 302,S17,Adv Composition (Social Sci),3,Undergraduate - Upper Division,CL,22,22,0,0
+78146,201770,ENGL,8A,ENGH 303,1,Humanities College to Career,1,Undergraduate - Upper Division,O,9,3,7,0
+71932,201770,ENGL,-,ENGH 305,2,Dimensions Writing and Lit,3,Undergraduate - Upper Division,WL,27,27,0,1
+71933,201770,ENGL,-,ENGH 305,3,Dimensions Writing and Lit,3,Undergraduate - Upper Division,O,27,20,0,0
+78394,201770,ENGL,-,ENGH 305,5,Dimensions Writing and Lit,3,Undergraduate - Upper Division,WL,18,18,0,0
+81822,201770,ENGL,BO,ENGH 307,3,English Grammar,3,Undergraduate - Upper Division,O,9,9,16,0
+81823,201770,ENGL,BS,ENGH 307,4,English Grammar,3,Undergraduate - Upper Division,O,9,7,13,0
+72323,201770,ENGL,-,ENGH 308,1,Theory and Inquiry,3,Undergraduate - Upper Division,WL,27,27,0,2
+75531,201770,ENGL,-,ENGH 309,1,The Wilde Era,3,Undergraduate - Upper Division,WL,27,27,0,0
+75532,201770,ENGL,-,ENGH 309,2,21st-Century Teen Fiction,3,Undergraduate - Upper Division,WL,23,23,0,0
+78943,201770,ENGL,-,ENGH 315,2,Folklore and Folklife,3,Undergraduate - Upper Division,WL,27,27,0,0
+81740,201770,ENGL,-,ENGH 315,3,Folklore and Folklife,3,Undergraduate - Upper Division,CL,27,27,0,0
+81889,201770,ENGL,-,ENGH 315,4,Folklore and Folklife,3,Undergraduate - Upper Division,O,16,15,0,0
+80958,201770,ENGL,-,ENGH 324,1,Engl Renaissance Drama,3,Undergraduate - Upper Division,WL,27,29,0,1
+75534,201770,ENGL,-,ENGH 333,1,British Novel 18th Century,3,Undergraduate - Upper Division,WL,27,27,0,0
+72664,201770,ENGL,-,ENGH 352,1,Arab-American Literature,3,Undergraduate - Upper Division,O,27,16,0,0
+78393,201770,ENGL,-,ENGH 352,2,Native American Literature,3,Undergraduate - Upper Division,WL,27,27,0,0
+80959,201770,ENGL,-,ENGH 356,1,Recent American Poetry,3,Undergraduate - Upper Division,WL,18,17,0,2
+80960,201770,ENGL,-,ENGH 361,1,"Continental Fiction, 1880-1950",3,Undergraduate - Upper Division,O,27,26,0,0
+81776,201770,ENGL,-,ENGH 362,3,"Migration, Space, Place",3,Undergraduate - Upper Division,CL,27,27,0,0
+73709,201770,ENGL,-,ENGH 370,1,Introduction to Documentary,3,Undergraduate - Upper Division,O,27,20,0,0
+80961,201770,ENGL,-,ENGH 371,1,Television Studies,3,Undergraduate - Upper Division,WL,27,27,0,0
+75536,201770,ENGL,-,ENGH 372,1,Introduction to Film,3,Undergraduate - Upper Division,WL,32,31,0,5
+73710,201770,ENGL,-,ENGH 373,1,Film and Video Forms,3,Undergraduate - Upper Division,O,27,25,0,0
+75541,201770,ENGL,-,ENGH 377,1,Digital Creative Writng,3,Undergraduate - Upper Division,O,24,23,0,0
+77974,201770,ENGL,-,ENGH 380,2,Introduction Writing/Rhetoric,3,Undergraduate - Upper Division,WL,27,27,0,2
+72324,201770,ENGL,-,ENGH 382,1,Writing Nonfiction Genres,3,Undergraduate - Upper Division,O,22,13,0,0
+80962,201770,ENGL,-,ENGH 386,1,"Editing for Audi, Style/Voice",3,Undergraduate - Upper Division,WL,27,27,0,0
+71936,201770,ENGL,-,ENGH 388,1,Professional and Techn Writing,3,Undergraduate - Upper Division,WL,24,24,0,4
+75542,201770,ENGL,-,ENGH 388,2,Professional and Techn Writing,3,Undergraduate - Upper Division,WL,24,24,0,5
+73711,201770,ENGL,-,ENGH 391,1,Forms of Poetry,3,Undergraduate - Upper Division,O,22,15,0,0
+74274,201770,ENGL,-,ENGH 392,2,Forms of Fiction,3,Undergraduate - Upper Division,O,22,21,0,0
+78037,201770,ENGL,-,ENGH 393,1,Forms of Nonfiction,3,Undergraduate - Upper Division,O,15,14,0,0
+71176,201770,ENGL,-,ENGH 396,1,Intro: Creative Writing,3,Undergraduate - Upper Division,WL,22,22,0,0
+71177,201770,ENGL,-,ENGH 396,2,Intro: Creative Writing,3,Undergraduate - Upper Division,WL,18,18,0,0
+72821,201770,ENGL,-,ENGH 396,3,Intro: Creative Writing,3,Undergraduate - Upper Division,WL,22,22,0,0
+73472,201770,ENGL,-,ENGH 396,4,Intro: Creative Writing,3,Undergraduate - Upper Division,WL,22,22,0,0
+74860,201770,ENGL,-,ENGH 396,5,Intro: Creative Writing,3,Undergraduate - Upper Division,WL,22,22,0,0
+81511,201770,ENGL,-,ENGH 397,2,Poetry Writing,3,Undergraduate - Upper Division,O,18,16,0,0
+78691,201770,ENGL,-,ENGH 398,2,Fiction Writing,3,Undergraduate - Upper Division,WL,18,18,0,0
+81742,201770,ENGL,-,ENGH 398,3,Fiction Writing,3,Undergraduate - Upper Division,WL,18,18,0,0
+74363,201770,ENGL,-,ENGH 399,1,Creative Nonfiction Writ,3,Undergraduate - Upper Division,WL,22,22,0,0
+74635,201770,ENGL,-,ENGH 399,2,Creative Nonfiction Writ,3,Undergraduate - Upper Division,WL,22,22,0,0
+71937,201770,ENGL,-,ENGH 400,1,City of Dreadful Delights,3,Undergraduate - Upper Division,CN,15,17,0,0
+73712,201770,ENGL,66,ENGH 412,1,Mid. East/Cent. Asia Folklore,3,Undergraduate - Upper Division,O,15,15,21,2
+80963,201770,ENGL,-,ENGH 412,2,Digital Storytelling,3,Undergraduate - Upper Division,O,27,26,0,0
+80965,201770,ENGL,-,ENGH 421,1,Memory/Identity in Middle Ages,3,Undergraduate - Upper Division,O,27,24,0,0
+80968,201770,ENGL,-,ENGH 442,1,Post-Civl War American Lit,3,Undergraduate - Upper Division,O,27,16,0,0
+80969,201770,ENGL,-,ENGH 455,1,Post-Colonial Drama,3,Undergraduate - Upper Division,O,27,16,0,0
+80970,201770,ENGL,-,ENGH 458,1,RS:Age of Revoltn and Reform,3,Undergraduate - Upper Division,O,18,12,0,0
+71986,201770,ENGL,-,ENGH 459,1,Internship,3,Undergraduate - Upper Division,CN,10,4,0,0
+77976,201770,ENGL,-,ENGH 470,1,Science and Technoculture,3,Undergraduate - Upper Division,WL,18,18,0,0
+80972,201770,ENGL,A9,ENGH 483,1,Technical Editing,3,Undergraduate - Upper Division,O,15,12,22,0
+80976,201770,ENGL,6J,ENGH 488,2,"Writng, Rhetoric & Video Games",3,Undergraduate - Upper Division,WL,15,15,30,1
+80974,201770,ENGL,6F,ENGH 489,1,Proposal Writing/Development,3,Undergraduate - Upper Division,O,15,15,23,0
+72139,201770,ENGL,-,ENGH 492,1,Adv Fiction Writing Wkshp,3,Undergraduate - Upper Division,CN,18,16,0,0
+82330,201770,ENGL,-,ENGH 495,1,Capstone and Thesis,3,Undergraduate - Upper Division,CN,5,2,0,0
+71183,201770,ENGL,-,ENGH 501,1,Intro Profess Writing/Rhetoric,3,Graduate - First,O,18,13,0,0
+81063,201770,ENGL,A9,ENGH 503,1,Technical Editing,3,Graduate - First,O,12,10,22,0
+72254,201770,ENGL,-,ENGH 504,1,Internship,6-Jan,Graduate - First,CN,10,1,0,0
+80973,201770,ENGL,6F,ENGH 509,1,Proposal Writing and Developmt,3,Graduate - First,O,12,8,23,0
+75533,201770,ENGL,-,ENGH 513,2,American Environmental Lit,3,Graduate - First,O,18,13,0,0
+71184,201770,ENGL,-,ENGH 551,1,Introductn to Literary Theory,3,Graduate - First,WL,18,20,0,0
+78253,201770,ENGL,-,ENGH 564,2,Form of Poetry,3,Graduate - First,CN,15,10,0,0
+71186,201770,ENGL,-,ENGH 565,1,Forms of Nonfiction,3,Graduate - First,CN,15,15,0,0
+71187,201770,ENGL,-,ENGH 566,1,Forms of Fiction,3,Graduate - First,CN,15,16,0,0
+73715,201770,ENGL,66,ENGH 591,1,Mid. East/Cent. Asia Folklore,3,Graduate - First,O,11,6,21,0
+72328,201770,ENGL,-,ENGH 608,2,Continuum in Personal Narrativ,3,Graduate - First,WL,15,15,0,0
+78097,201770,ENGL,-,ENGH 608,4,In Character,3,Graduate - First,O,18,11,0,0
+78182,201770,ENGL,-,ENGH 608,7,Between the Lines,3,Graduate - First,O,15,13,0,0
+80975,201770,ENGL,6J,ENGH 611,1,"Writng, Rhetoric & Video Games",3,Graduate - First,WL,15,15,30,0
+79658,201770,ENGL,-,ENGH 614,1,Internshp: Teaching of Writing,3-Jan,Graduate - First,O,18,0,0,0
+71191,201770,ENGL,-,ENGH 615,1,Composition Instruction,3,Graduate - First,O,18,10,0,0
+78066,201770,ENGL,-,ENGH 617,3,Poetry Writing Workshop,6-Jan,Graduate - First,WL,15,15,0,1
+74930,201770,ENGL,-,ENGH 618,1,Fiction Writing Workshop,6-Jan,Graduate - First,O,15,13,0,0
+78091,201770,ENGL,-,ENGH 619,2,Structuring & Editing a Thesis,3,Graduate - First,CN,10,8,0,0
+78532,201770,ENGL,-,ENGH 619,4,The Art of the Scene,3,Graduate - First,O,15,14,0,0
+80978,201770,ENGL,-,ENGH 619,5,Home & Away: Cultural Heritage,3,Graduate - First,O,15,14,0,0
+80984,201770,ENGL,6M,ENGH 620,1,Teaching Tech Comm,3,Graduate - First,O,12,2,11,0
+73167,201770,ENGL,-,ENGH 665,1,Middle East Literature,3,Graduate - First,O,18,12,0,0
+80980,201770,ENGL,-,ENGH 681,1,Folklore and Folklife,3,Graduate - First,O,18,15,0,0
+74354,201770,ENGL,-,ENGH 684,1,Proseminar in Poetry,3,Graduate - First,O,15,7,0,0
+78166,201770,ENGL,-,ENGH 685,1,Short Story,3,Graduate - First,O,18,17,0,0
+81929,201770,ENGL,-,ENGH 699,5,Poetry,1,Graduate - First,WL,10,10,0,1
+81930,201770,ENGL,-,ENGH 699,6,Fiction,1,Graduate - First,WL,10,10,0,1
+81931,201770,ENGL,-,ENGH 699,7,Non Fiction,1,Graduate - First,O,10,9,0,0
+81932,201770,ENGL,-,ENGH 699,8,Lannan,1,Graduate - First,CN,10,0,0,0
+71197,201770,ENGL,-,ENGH 701,1,Research in English Studies,3,Graduate - Advanced,WL,18,18,0,0
+80981,201770,ENGL,-,ENGH 720,1,Hist Institutional Rhetorics,3,Graduate - Advanced,CN,18,16,0,0
+80982,201770,ENGL,-,ENGH 722,1,Cmp Pedagogy/Prog in Context,3,Graduate - Advanced,O,18,15,0,0
+83315,201770,ENGL,-,ENGH 750,3,Adv Wkshp Poetry Writing,3,Graduate - Advanced,O,10,9,0,0
+78039,201770,ENGL,-,ENGH 752,2,Adv Wkshp Nonfict Writng,6-Jan,Graduate - Advanced,O,18,10,0,0
+80983,201770,ENGL,6M,ENGH 824,1,Teaching Tech Comm,3,Graduate - Advanced,O,10,9,11,0
+72079,201770,ENGL,-,LING 306,1,General Linguistics,3,Undergraduate - Upper Division,O,50,38,0,0
+71910,201770,ENGL,BO,LING 307,1,English Grammar,3,Undergraduate - Upper Division,O,9,7,16,0
+71911,201770,ENGL,BS,LING 307,2,English Grammar,3,Undergraduate - Upper Division,O,9,6,13,0
+74306,201770,ENGL,6O,LING 480,3,First Language Acquisition,3,Undergraduate - Upper Division,O,12,8,21,0
+82997,201770,ENGL,CU,LING 490,3,Generative Phonology,3,Undergraduate - Upper Division,O,15,15,32,0
+73534,201770,ENGL,UX,LING 520,2,Introduction to Linguistics,3,Graduate - First,O,17,16,17,0
+73760,201770,ENGL,EF,LING 520,DL1,Introduction to Linguistics,3,Graduate - First,CN,18,2,5,0
+78165,201770,ENGL,-,LING 521,2,Applied Linguistics,3,Graduate - First,O,18,15,0,0
+74550,201770,ENGL,EE,LING 521,DL1,Applied Linguistics,3,Graduate - First,CN,18,8,10,0
+78164,201770,ENGL,-,LING 523,2,English Phonetics,3,Graduate - First,O,18,16,0,0
+74551,201770,ENGL,EG,LING 523,DL1,English Phonetics,3,Graduate - First,CN,18,3,5,0
+74307,201770,ENGL,6O,LING 580,3,First Language Acquisition,3,Graduate - First,O,15,13,21,0
+81781,201770,ENGL,CU,LING 690,2,Generative Phonology,3,Graduate - First,O,20,17,32,0
+80985,201770,ENGL,-,LING 770,1,Research Methods,3,Graduate - Advanced,O,15,4,0,0
+81358,201770,ENGL,-,LING 787,1,Syntax II,3,Graduate - Advanced,O,18,12,0,0
+80986,201770,ENGL,-,LING 788,1,Semantics/Pragmatics II,3,Graduate - Advanced,O,15,7,0,0
+80987,201770,ENGL,-,LING 890,1,Advanced Phonology Seminar,3,Graduate - Advanced,O,15,8,0,0
+80312,201770,HE,-,HE 602,1,College Teaching,3,Graduate - First,O,15,10,0,0
+80313,201770,HE,-,HE 603,1,Higher Education Digital Age,3,Graduate - First,O,15,11,0,0
+80314,201770,HE,-,HE 621,1,Higher Education in the U.S.,3,Graduate - First,WL,15,17,0,6
+80315,201770,HE,-,HE 644,1,Student Service in Higher Educ,3,Graduate - First,WL,15,14,0,2
+80316,201770,HE,-,HE 645,1,The Contemp College Student,3,Graduate - First,O,15,12,0,0
+71492,201770,HE,-,HE 685,1,Higher Education Practicum,3,Graduate - First,CN,15,3,0,0
+75387,201770,HE,-,HE 722,1,Organization/Admin Higher Ed,3,Graduate - Advanced,O,15,14,0,0
+80317,201770,HE,-,HE 792,1,Contemp & Criticl Soc Theories,3,Graduate - Advanced,O,15,10,0,0
+71491,201770,HE,-,HE 885,1,Internship College Teach/Admin,3,Graduate - Advanced,CN,15,0,0,0
+70132,201770,HIST,-,ARTH 101,1,Introduction to Visual Arts,3,Undergraduate - Lower Division,WL,60,58,0,6
+70133,201770,HIST,-,ARTH 101,2,Introduction to Visual Arts,3,Undergraduate - Lower Division,WL,60,60,0,7
+70134,201770,HIST,-,ARTH 102,1,Symbols/Stories in Western Art,3,Undergraduate - Lower Division,WL,60,60,0,0
+71773,201770,HIST,-,ARTH 102,2,Symbols/Stories in Western Art,3,Undergraduate - Lower Division,WL,60,60,0,1
+71896,201770,HIST,-,ARTH 103,1,Introduction to Architecture,3,Undergraduate - Lower Division,WL,60,58,0,7
+70136,201770,HIST,-,ARTH 200,2,History of Western Art I,3,Undergraduate - Lower Division,WL,60,60,0,3
+70137,201770,HIST,-,ARTH 201,1,History of Western Art II,3,Undergraduate - Lower Division,O,60,59,0,0
+73287,201770,HIST,-,ARTH 201,DL1,History of Western Art II,3,Undergraduate - Lower Division,O,40,34,0,0
+81406,201770,HIST,DM,ARTH 206,1,Survey of African Art,3,Undergraduate - Lower Division,O,39,38,60,0
+81037,201770,HIST,6T,ARTH 303,1,Contemp Chinese Film,3,Undergraduate - Upper Division,O,10,3,24,0
+80586,201770,HIST,2K,ARTH 303,DL1,Medieval Irish Art & Culture,3,Undergraduate - Upper Division,O,20,19,39,0
+81166,201770,HIST,7A,ARTH 315,1,Modern Architecture,3,Undergraduate - Upper Division,O,15,13,16,0
+81407,201770,HIST,-,ARTH 318,1,Art and Arch of Ancient Egypt,3,Undergraduate - Upper Division,O,39,34,0,0
+80587,201770,HIST,-,ARTH 322,1,Roman Art,3,Undergraduate - Upper Division,WL,40,40,0,1
+81334,201770,HIST,9X,ARTH 334,1,Western Medieval Art,3,Undergraduate - Upper Division,O,15,15,39,0
+80588,201770,HIST,-,ARTH 341,1,Northern Renaissance Art,3,Undergraduate - Upper Division,O,40,29,0,0
+74994,201770,HIST,FZ,ARTH 350,1,History of Photography,3,Undergraduate - Upper Division,O,25,12,14,0
+74995,201770,HIST,-,ARTH 362,1,20th Cent European Art,3,Undergraduate - Upper Division,O,40,27,0,0
+80589,201770,HIST,-,ARTH 370,1,Arts of the United States,3,Undergraduate - Upper Division,O,40,23,0,0
+70138,201770,HIST,-,ARTH 374,1,Art Now,3,Undergraduate - Upper Division,O,45,28,0,0
+70139,201770,HIST,-,ARTH 374,DL1,Art Now,3,Undergraduate - Upper Division,O,40,25,0,0
+80590,201770,HIST,-,ARTH 383,1,Arts of Southeast Asia,3,Undergraduate - Upper Division,O,40,19,0,0
+82896,201770,HIST,-,ARTH 393,1,Art History Internships,6-Mar,Undergraduate - Upper Division,CN,30,0,0,0
+80595,201770,HIST,34,ARTH 430,1,Ottoman Art,3,Undergraduate - Upper Division,O,8,8,14,0
+80597,201770,HIST,-,ARTH 440,1,Controversies Renaissance Art,3,Undergraduate - Upper Division,O,15,14,0,0
+80598,201770,HIST,38,ARTH 482,1,Art of British India,3,Undergraduate - Upper Division,WL,8,8,15,0
+82898,201770,HIST,-,ARTH 593,2,Intern Art History/Deco Arts,6-Mar,Graduate - First,CN,30,1,0,0
+72133,201770,HIST,38,ARTH 599,1,Art of British India,3,Graduate - First,WL,7,7,15,0
+80596,201770,HIST,34,ARTH 599,3,Ottoman Art,3,Graduate - First,O,7,6,14,0
+80594,201770,HIST,-,ARTH 600,1,Methods and Research in ARTH,3,Graduate - First,O,15,9,0,0
+81460,201770,HIST,-,ARTH 630,1,The Historic House Museum,3,Graduate - First,O,18,0,0,0
+81461,201770,HIST,-,ARTH 640,1,English Ceramics,3,Graduate - First,O,18,1,0,0
+81462,201770,HIST,-,ARTH 650,1,The Art of the Book,3,Graduate - First,O,4,0,0,0
+81463,201770,HIST,-,ARTH 660,1,Curatorial Praticum,3,Graduate - First,O,18,0,0,0
+81465,201770,HIST,-,ARTH 670,2,18thC American Furniture,3,Graduate - First,O,18,1,0,0
+81466,201770,HIST,-,ARTH 670,3,Topics in Modern Amer Textiles,3,Graduate - First,O,18,0,0,0
+82174,201770,HIST,-,ARTH 670,4,Fashion in the Age of Revolutn,3,Graduate - First,O,18,0,0,0
+70098,201770,HIST,G8,HIST 100,1,History of Western Civilizatin,3,Undergraduate - Lower Division,WL,53,52,52,4
+70099,201770,HIST,G9,HIST 100,2,History of Western Civilizatin,3,Undergraduate - Lower Division,WL,120,117,117,5
+70100,201770,HIST,-,HIST 100,3,History of Western Civilizatin,3,Undergraduate - Lower Division,O,130,123,0,7
+70101,201770,HIST,-,HIST 100,4,History of Western Civilizatin,3,Undergraduate - Lower Division,WL,55,55,0,0
+70102,201770,HIST,-,HIST 100,5,History of Western Civilizatin,3,Undergraduate - Lower Division,WL,55,55,0,0
+70103,201770,HIST,-,HIST 100,6,History of Western Civilizatin,3,Undergraduate - Lower Division,WL,48,48,0,6
+70104,201770,HIST,-,HIST 100,7,History of Western Civilizatin,3,Undergraduate - Lower Division,WL,55,53,0,4
+70105,201770,HIST,-,HIST 100,8,History of Western Civilizatin,3,Undergraduate - Lower Division,WL,55,55,0,0
+70106,201770,HIST,-,HIST 100,9,History of Western Civilizatin,3,Undergraduate - Lower Division,O,55,54,0,0
+70107,201770,HIST,-,HIST 100,10,History of Western Civilizatin,3,Undergraduate - Lower Division,WL,48,48,0,0
+70108,201770,HIST,-,HIST 100,11,History of Western Civilizatin,3,Undergraduate - Lower Division,WL,55,55,0,0
+70109,201770,HIST,-,HIST 100,12,History of Western Civilizatin,3,Undergraduate - Lower Division,WL,55,55,0,3
+70110,201770,HIST,-,HIST 100,13,History of Western Civilizatin,3,Undergraduate - Lower Division,WL,55,55,0,4
+80599,201770,HIST,-,HIST 100,23,History of Western Civilizatin,3,Undergraduate - Lower Division,WL,55,55,0,0
+70113,201770,HIST,H0,HIST 121,2,Formatn of Amer Republic,3,Undergraduate - Lower Division,O,45,33,34,0
+81593,201770,HIST,-,HIST 121,3,Formatn of Amer Republic,3,Undergraduate - Lower Division,O,45,26,0,0
+73143,201770,HIST,-,HIST 122,1,Development of Modern America,3,Undergraduate - Lower Division,O,45,35,0,0
+81594,201770,HIST,-,HIST 122,3,Development of Modern America,3,Undergraduate - Lower Division,WL,45,45,0,0
+72442,201770,HIST,-,HIST 125,1,Introduction to World History,3,Undergraduate - Lower Division,CL,120,120,0,0
+72443,201770,HIST,3C,HIST 125,2,Introduction to World History,3,Undergraduate - Lower Division,O,105,105,105,0
+71558,201770,HIST,-,HIST 125,3,Introduction to World History,3,Undergraduate - Lower Division,WL,55,55,0,0
+72805,201770,HIST,-,HIST 125,4,Introduction to World History,3,Undergraduate - Lower Division,WL,55,55,0,0
+72810,201770,HIST,-,HIST 125,5,Introduction to World History,3,Undergraduate - Lower Division,WL,55,55,0,0
+72831,201770,HIST,-,HIST 125,6,Introduction to World History,3,Undergraduate - Lower Division,WL,55,54,0,4
+72832,201770,HIST,-,HIST 125,7,Introduction to World History,3,Undergraduate - Lower Division,WL,55,55,0,0
+73298,201770,HIST,-,HIST 125,8,Introduction to World History,3,Undergraduate - Lower Division,WL,55,55,0,0
+74695,201770,HIST,-,HIST 125,10,Introduction to World History,3,Undergraduate - Lower Division,WL,55,55,0,0
+80600,201770,HIST,-,HIST 125,12,Introduction to World History,3,Undergraduate - Lower Division,WL,55,55,0,0
+80601,201770,HIST,-,HIST 125,13,Introduction to World History,3,Undergraduate - Lower Division,WL,55,55,0,0
+80602,201770,HIST,-,HIST 125,14,Introduction to World History,3,Undergraduate - Lower Division,WL,45,45,0,0
+80603,201770,HIST,-,HIST 125,15,Introduction to World History,3,Undergraduate - Lower Division,WL,55,55,0,0
+80604,201770,HIST,-,HIST 125,16,Introduction to World History,3,Undergraduate - Lower Division,O,55,40,0,0
+80605,201770,HIST,-,HIST 125,17,Introduction to World History,3,Undergraduate - Lower Division,WL,45,45,0,0
+80606,201770,HIST,-,HIST 125,18,Introduction to World History,3,Undergraduate - Lower Division,O,55,38,0,0
+80607,201770,HIST,-,HIST 125,19,Introduction to World History,3,Undergraduate - Lower Division,WL,55,55,0,0
+81692,201770,HIST,-,HIST 125,20,Introduction to World History,3,Undergraduate - Lower Division,WL,40,40,0,0
+81804,201770,HIST,-,HIST 125,21,Introduction to World History,3,Undergraduate - Lower Division,WL,55,55,0,0
+74609,201770,HIST,-,HIST 125,DL1,Introduction to World History,3,Undergraduate - Lower Division,WL,40,40,0,9
+74610,201770,HIST,-,HIST 125,DL2,Introduction to World History,3,Undergraduate - Lower Division,WL,40,40,0,4
+74364,201770,HIST,E5,HIST 202,1,Fresh/Soph Sem in Global Hist,3,Undergraduate - Lower Division,O,10,4,22,0
+70115,201770,HIST,-,HIST 271,1,Survey Latin Amer Hist,3,Undergraduate - Lower Division,O,45,44,0,0
+71782,201770,HIST,-,HIST 281,1,Surv of Middle Eastern Civiliz,3,Undergraduate - Lower Division,WL,45,45,0,0
+72494,201770,HIST,-,HIST 300,1,"Slavery,Abol,Undrgrnd Railroad",3,Undergraduate - Upper Division,WL,17,17,0,0
+71859,201770,HIST,-,HIST 300,2,Generatnl Divides in US/UK,3,Undergraduate - Upper Division,WL,17,17,0,0
+81699,201770,HIST,-,HIST 300,4,"Info Rev in America, 1750-1860",3,Undergraduate - Upper Division,WL,17,18,0,0
+71909,201770,HIST,-,HIST 329,1,Modern Russia and Soviet Union,3,Undergraduate - Upper Division,WL,45,43,0,4
+80614,201770,HIST,GA,HIST 335,1,African-Amer Exper in US,3,Undergraduate - Upper Division,O,45,22,23,0
+81398,201770,HIST,-,HIST 339,DL1,History of Baseball,3,Undergraduate - Upper Division,WL,45,45,0,0
+72935,201770,HIST,-,HIST 341,1,History of Sport United States,3,Undergraduate - Upper Division,O,45,30,0,0
+70116,201770,HIST,-,HIST 354,1,Modern China,3,Undergraduate - Upper Division,O,45,36,0,0
+80615,201770,HIST,-,HIST 357,1,Postwar Japan: 1945-Pres,3,Undergraduate - Upper Division,WL,45,45,0,0
+80616,201770,HIST,-,HIST 365,1,Conquest/Colonztn-Lat Am,3,Undergraduate - Upper Division,O,45,36,0,0
+75608,201770,HIST,-,HIST 373,1,The Civil War & Reconstruction,3,Undergraduate - Upper Division,WL,45,45,0,3
+83086,201770,HIST,8A,HIST 385,1,Humanities College to Career,1,Undergraduate - Upper Division,O,9,0,7,0
+72811,201770,HIST,-,HIST 387,1,Early Ancient China,3,Undergraduate - Upper Division,O,45,25,0,0
+74108,201770,HIST,3N,HIST 387,2,Organizing Culture Change,3,Undergraduate - Upper Division,O,25,25,44,1
+80622,201770,HIST,3R,HIST 387,9,Hiroshima and the Cold War,3,Undergraduate - Upper Division,O,30,23,35,0
+81403,201770,HIST,42,HIST 387,10,History at the Movies,6,Undergraduate - Upper Division,O,22,21,30,0
+81489,201770,HIST,4M,HIST 387,11,US & World Power,3,Undergraduate - Upper Division,O,15,15,37,0
+81674,201770,HIST,-,HIST 387,12,Islam and Sectarianism,3,Undergraduate - Upper Division,O,45,16,0,0
+71526,201770,HIST,9X,HIST 388,1,Western Medieval Art,3,Undergraduate - Upper Division,O,30,24,39,0
+72843,201770,HIST,7A,HIST 388,3,History of Modern Architecture,3,Undergraduate - Upper Division,O,30,3,16,0
+78758,201770,HIST,-,HIST 388,4,Medieval England 1066-1350,3,Undergraduate - Upper Division,WL,45,46,0,4
+80624,201770,HIST,-,HIST 388,5,Classical Greece,3,Undergraduate - Upper Division,O,45,17,0,0
+80625,201770,HIST,-,HIST 388,6,World War II in Europe,3,Undergraduate - Upper Division,O,45,36,0,0
+73692,201770,HIST,2K,HIST 388,DL1,Medieval Irish Art & Culture,3,Undergraduate - Upper Division,WL,20,20,39,1
+77943,201770,HIST,-,HIST 389,2,Intro Native American History,3,Undergraduate - Upper Division,O,45,24,0,0
+80470,201770,HIST,0G,HIST 389,3,Women During Enslavement Era,3,Undergraduate - Upper Division,O,8,2,25,0
+80626,201770,HIST,4M,HIST 389,4,US & World Power,3,Undergraduate - Upper Division,O,30,22,37,0
+80627,201770,HIST,-,HIST 389,5,History of Sexuality,3,Undergraduate - Upper Division,O,39,19,0,0
+81411,201770,HIST,D2,HIST 389,6,Black Bodies and Policing Race,3,Undergraduate - Upper Division,WL,10,10,25,0
+81845,201770,HIST,C3,HIST 389,7,Religion in America,3,Undergraduate - Upper Division,O,8,7,27,0
+83110,201770,HIST,FZ,HIST 389,9,History of Photography,3,Undergraduate - Upper Division,O,15,2,14,0
+71916,201770,HIST,-,HIST 390,1,The Digital Past,3,Undergraduate - Upper Division,WL,45,45,0,1
+74207,201770,HIST,-,HIST 390,2,The Digital Past,3,Undergraduate - Upper Division,WL,45,45,0,1
+72675,201770,HIST,-,HIST 390,3,The Digital Past,3,Undergraduate - Upper Division,WL,45,45,0,1
+78800,201770,HIST,-,HIST 390,4,The Digital Past,3,Undergraduate - Upper Division,O,45,44,0,0
+80623,201770,HIST,3R,HIST 393,2,Hiroshima and the Cold War,3,Undergraduate - Upper Division,O,15,12,35,0
+82823,201770,HIST,-,HIST 399,1,Internship,9-Jan,Undergraduate - Upper Division,CN,30,5,0,0
+80628,201770,HIST,-,HIST 403,1,Revolu Era Amer Hist 1763-1812,3,Undergraduate - Upper Division,O,45,26,0,0
+81399,201770,HIST,-,HIST 404,1,Jacksonian Am: 1812-1854,3,Undergraduate - Upper Division,O,45,15,0,0
+71779,201770,HIST,-,HIST 499,1,Revolutionary America,3,Undergraduate - Upper Division,WL,15,15,0,0
+72978,201770,HIST,-,HIST 499,3,War and Remembrance,3,Undergraduate - Upper Division,O,15,6,0,0
+78187,201770,HIST,-,HIST 499,4,The Long Cuban Missile Crisis,3,Undergraduate - Upper Division,O,15,7,0,0
+73367,201770,HIST,3T,HIST 535,1,US/South Africa Compared Hist,3,Graduate - First,O,8,7,13,0
+82479,201770,HIST,3J,HIST 535,2,Trans-Atlantic Slave Trade,3,Graduate - First,O,5,5,14,0
+70129,201770,HIST,-,HIST 610,1,Study and Writing of History,3,Graduate - First,O,18,16,0,0
+70130,201770,HIST,-,HIST 610,2,Study and Writing of History,3,Graduate - First,O,18,13,0,0
+82603,201770,HIST,-,HIST 610,3,Study and Writing of History,3,Graduate - First,O,18,17,0,0
+73283,201770,HIST,-,HIST 615,1,Civil/Military Relations,3,Graduate - First,O,18,17,0,0
+70131,201770,HIST,-,HIST 615,2,American Democracy,3,Graduate - First,WL,18,18,0,0
+74548,201770,HIST,D3,HIST 615,3,Decolonizing Museums,3,Graduate - First,WL,9,9,18,0
+80485,201770,HIST,16,HIST 615,7,"Gender,Race,Reform 1800-1920",3,Graduate - First,O,13,10,16,0
+80629,201770,HIST,3T,HIST 615,8,US/South Africa Compared Hist,3,Graduate - First,O,7,6,13,0
+82506,201770,HIST,3J,HIST 615,9,Trans-Atlantic Slave Trade,3,Graduate - First,O,5,5,14,0
+80630,201770,HIST,-,HIST 618,1,Age of Jackson: 1815-54,3,Graduate - First,O,18,16,0,0
+80631,201770,HIST,-,HIST 620,1,Devl Erly Rep: 1783-1815,3,Graduate - First,O,18,14,0,0
+72146,201770,HIST,-,HIST 635,1,"Mdrnity, Rev, Totalitarianism",3,Graduate - First,O,18,17,0,0
+73310,201770,HIST,7E,HIST 635,2,The First Global Wars,3,Graduate - First,WL,12,11,17,0
+82517,201770,HIST,3J,HIST 635,3,Trans-Atlantic Slave Trade,3,Graduate - First,O,5,4,14,0
+81419,201770,HIST,D3,HIST 685,1,Decolonizing Museums,3,Graduate - First,WL,9,9,18,1
+71546,201770,HIST,-,HIST 696,1,Clio Wired: Hist/New Med,3,Graduate - First,CN,18,15,0,0
+75857,201770,HIST,-,HIST 711,1,United States since 1877,3,Graduate - Advanced,O,15,14,0,0
+74375,201770,HIST,3V,HIST 711,2,Trials in History,3,Graduate - Advanced,O,8,7,7,0
+74376,201770,HIST,3V,HIST 731,1,Trials in History,3,Graduate - Advanced,O,7,0,7,0
+82899,201770,HIST,-,HIST 794,1,Internship Applied Hist,6-Jan,Graduate - Advanced,CN,30,0,0,0
+81700,201770,HIST,-,HIST 810,1,History Doctoral Colloquium,1,Graduate - Advanced,O,28,19,0,0
+76060,201770,HNRS,-,HNRS 108,1,Intro Research Methods I,3,Undergraduate - Lower Division,O,25,22,0,0
+71215,201770,HNRS,-,HNRS 110,1,Research Methods,4,Undergraduate - Lower Division,O,24,22,0,0
+71216,201770,HNRS,-,HNRS 110,2,Research Methods,4,Undergraduate - Lower Division,CL,24,24,0,0
+71217,201770,HNRS,-,HNRS 110,3,Research Methods,4,Undergraduate - Lower Division,CL,25,25,0,0
+72194,201770,HNRS,-,HNRS 110,4,Research Methods,4,Undergraduate - Lower Division,CL,25,25,0,0
+71560,201770,HNRS,-,HNRS 110,5,Research Methods,4,Undergraduate - Lower Division,CL,24,24,0,0
+71561,201770,HNRS,-,HNRS 110,6,Research Methods,4,Undergraduate - Lower Division,CL,25,25,0,0
+71562,201770,HNRS,-,HNRS 110,7,Research Methods,4,Undergraduate - Lower Division,O,25,24,0,0
+72496,201770,HNRS,-,HNRS 110,8,Research Methods,4,Undergraduate - Lower Division,CL,25,25,0,0
+72192,201770,HNRS,-,HNRS 110,9,Research Methods,4,Undergraduate - Lower Division,CL,25,25,0,0
+72905,201770,HNRS,-,HNRS 110,10,Research Methods,4,Undergraduate - Lower Division,O,25,23,0,0
+73248,201770,HNRS,-,HNRS 110,11,Research Methods,4,Undergraduate - Lower Division,CL,25,25,0,0
+74441,201770,HNRS,-,HNRS 110,13,Research Methods,4,Undergraduate - Lower Division,O,25,24,0,0
+74715,201770,HNRS,-,HNRS 110,14,Research Methods,4,Undergraduate - Lower Division,CL,25,25,0,0
+74716,201770,HNRS,-,HNRS 110,15,Research Methods,4,Undergraduate - Lower Division,CN,25,25,0,0
+75831,201770,HNRS,-,HNRS 110,16,Research Methods,4,Undergraduate - Lower Division,CN,25,17,0,0
+82042,201770,HNRS,-,HNRS 110,19,Research Methods,4,Undergraduate - Lower Division,CL,25,25,0,0
+82085,201770,HNRS,-,HNRS 110,22,Research Methods,4,No Value,CL,25,25,0,0
+82452,201770,HNRS,-,HNRS 110,24,Research Methods,4,Undergraduate - Lower Division,CL,25,25,0,0
+71218,201770,HNRS,-,HNRS 122,1,Excursions into Chinese Art,3,Undergraduate - Lower Division,WL,25,25,0,0
+71219,201770,HNRS,-,HNRS 122,2,Theater and Major Social Shfts,3,Undergraduate - Lower Division,WL,24,24,0,4
+72414,201770,HNRS,-,HNRS 122,3,Theater and Major Social Shfts,3,Undergraduate - Lower Division,WL,25,25,0,1
+78054,201770,HNRS,-,HNRS 122,4,Comm the Aesthetic Experience,3,Undergraduate - Lower Division,WL,25,25,0,0
+72212,201770,HNRS,-,HNRS 122,5,Pompeii:WndowAncRomLif&Art,3,Undergraduate - Lower Division,WL,25,25,0,1
+74492,201770,HNRS,-,HNRS 122,6,Contemporary American Drama,3,Undergraduate - Lower Division,WL,25,25,0,0
+78522,201770,HNRS,-,HNRS 122,7,Narrative Journalism,3,Undergraduate - Lower Division,WL,25,25,0,0
+78850,201770,HNRS,-,HNRS 122,8,Visualizing Modernity,3,Undergraduate - Lower Division,WL,25,25,0,1
+79125,201770,HNRS,-,HNRS 122,9,Rdng & Wrtng the Modern Essay,3,Undergraduate - Lower Division,WL,25,25,0,1
+81390,201770,HNRS,-,HNRS 130,2,Autobiography/Amer Identities,3,Undergraduate - Lower Division,O,25,23,0,0
+81391,201770,HNRS,-,HNRS 130,3,The European & American Self,3,Undergraduate - Lower Division,O,25,19,0,0
+78085,201770,HNRS,-,HNRS 131,1,CultEduc&CommEraofGloblztn,3,Undergraduate - Lower Division,O,25,24,0,0
+71858,201770,HNRS,-,HNRS 131,4,Radical Nationalist Movements,3,Undergraduate - Lower Division,WL,24,25,0,5
+72166,201770,HNRS,-,HNRS 131,6,Humor & Global Politics,3,Undergraduate - Lower Division,WL,25,25,0,4
+81599,201770,HNRS,-,HNRS 131,10,Culture/Ed/Comm in Era of Glob,3,Undergraduate - Lower Division,WL,25,25,0,0
+81695,201770,HNRS,-,HNRS 131,11,"Global/Impact on Inst,Soc,Indv",3,Undergraduate - Lower Division,WL,25,25,0,0
+82089,201770,HNRS,-,HNRS 131,13,Identities,3,No Value,WL,25,25,0,0
+82108,201770,HNRS,-,HNRS 131,14,"Religion, State and the Law",3,Undergraduate - Lower Division,O,25,18,0,0
+82272,201770,HNRS,DM,HNRS 131,15,African Art,3,No Value,O,20,20,60,0
+72934,201770,HNRS,-,HNRS 211,1,Mentorship Undergrad Research,0-2,Undergraduate - Lower Division,CN,15,10,0,0
+71220,201770,HNRS,-,HNRS 240,1,The History of Science,3,Undergraduate - Lower Division,WL,25,32,0,0
+71221,201770,HNRS,-,HNRS 240,2,History of the Family,3,Undergraduate - Lower Division,WL,25,25,0,8
+71222,201770,HNRS,-,HNRS 240,3,History of Emotions,3,Undergraduate - Lower Division,WL,24,26,0,1
+72408,201770,HNRS,-,HNRS 240,4,Roots of American Music,3,Undergraduate - Lower Division,WL,26,26,0,0
+72817,201770,HNRS,-,HNRS 240,6,Technology and Identity,3,Undergraduate - Lower Division,WL,25,25,0,0
+74627,201770,HNRS,-,HNRS 240,7,Elizabethan Politics and Prose,3,Undergraduate - Lower Division,O,25,24,0,0
+75832,201770,HNRS,-,HNRS 240,8,Elizabethan Politics and Prose,3,Undergraduate - Lower Division,O,25,24,0,0
+81394,201770,HNRS,-,HNRS 240,9,"HstryofNrml:Mnstrs,Frks&Crips",3,Undergraduate - Lower Division,O,25,24,0,0
+81696,201770,HNRS,-,HNRS 302,2,Research Methods II,3,Undergraduate - Upper Division,CN,25,12,0,0
+74190,201770,HNRS,-,HNRS 310,1,Honors College Connects I,0,Undergraduate - Upper Division,CN,20,0,0,0
+75926,201770,HNRS,-,HNRS 330,1,Research Tech Online Community,0-3,Undergraduate - Upper Division,O,15,3,0,0
+75833,201770,HNRS,-,HNRS 353,2,EffecRespnsCrime:Polcs&Strtgie,3,Undergraduate - Upper Division,WL,25,26,0,5
+81542,201770,HNRS,-,HNRS 353,4,Life in the Universe,3,Undergraduate - Upper Division,WL,25,25,0,1
+71342,201770,LA,-,AFAM 200,1,Intro African/American Studies,3,Undergraduate - Lower Division,O,44,43,0,1
+81410,201770,LA,0W,AFAM 390,6,"Race, Class, Gender, & Sports",3,Undergraduate - Upper Division,O,5,5,32,0
+81509,201770,LA,0G,AFAM 390,8,Women During Enslavement Era,3,Undergraduate - Upper Division,O,8,6,25,0
+82341,201770,LA,DM,AFAM 390,9,Survey of African Art,3,Undergraduate - Upper Division,O,5,2,60,0
+74656,201770,LA,-,CHSS 390,1,Peer Tutoring Writing,1,Undergraduate - Upper Division,CN,6,9,0,0
+70072,201770,LA,-,GLOA 101,1,Intro to Global Affairs,3,Undergraduate - Lower Division,WL,45,45,0,0
+70073,201770,LA,-,GLOA 101,2,Intro to Global Affairs,3,Undergraduate - Lower Division,WL,45,45,0,2
+70074,201770,LA,-,GLOA 101,3,Intro to Global Affairs,3,Undergraduate - Lower Division,WL,45,45,0,0
+70075,201770,LA,-,GLOA 101,4,Intro to Global Affairs,3,Undergraduate - Lower Division,O,45,44,0,0
+71836,201770,LA,-,GLOA 101,5,Intro to Global Affairs,3,Undergraduate - Lower Division,WL,45,43,0,7
+71593,201770,LA,-,GLOA 101,6,Intro to Global Affairs,3,Undergraduate - Lower Division,WL,45,44,0,2
+73933,201770,LA,-,GLOA 101,7,Intro to Global Affairs,3,Undergraduate - Lower Division,WL,45,45,0,0
+81344,201770,LA,-,GLOA 305,DL1,GLOA College-to-Career,1,Undergraduate - Upper Division,O,30,17,0,0
+75836,201770,LA,-,GLOA 400,2,Capstone: Global Crisis,3,Undergraduate - Upper Division,O,30,18,0,0
+81345,201770,LA,-,GLOA 400,3,Capstone:Globalization in Asia,3,Undergraduate - Upper Division,O,30,13,0,0
+75868,201770,LA,AF,GLOA 450,2,Globalization & Devel: MENA,3,Undergraduate - Upper Division,O,18,10,16,0
+75870,201770,LA,-,GLOA 450,3,Middle East Realities,3,Undergraduate - Upper Division,O,30,9,0,0
+81346,201770,LA,AD,GLOA 450,4,"Islamophbia,Antisemitsm,Questn",3,Undergraduate - Upper Division,O,30,6,16,0
+73438,201770,LA,-,GLOA 491,2,Hnrs Seminar in Global Affairs,3,Undergraduate - Upper Division,CN,16,15,0,0
+72932,201770,LA,-,GLOA 495,1,Global Experiental Lrng,3,Undergraduate - Upper Division,CN,30,9,0,0
+75229,201770,LA,-,GLOA 495,2,Global Experiental Lrng,3,Undergraduate - Upper Division,CN,30,8,0,0
+73527,201770,LA,-,GLOA 495,3,Global Experiental Lrng,3,Undergraduate - Upper Division,CN,10,1,0,0
+75230,201770,LA,-,GLOA 495,4,Global Experiental Lrng,3,Undergraduate - Upper Division,CN,10,0,0,0
+75231,201770,LA,-,GLOA 495,5,Global Experiental Lrng,3,Undergraduate - Upper Division,CN,10,0,0,0
+81349,201770,LA,AF,GLOA 599,2,Globalization & Devel: MENA,3,Graduate - First,O,18,6,16,0
+81347,201770,LA,AD,GLOA 599,4,"Islamophbia,Antisemitsm,Questn",3,Graduate - First,O,18,10,16,0
+71547,201770,LA,0Y,GLOA 600,1,Global Competencies,3,Graduate - First,CN,21,14,17,0
+81679,201770,LA,C8,GLOA 600,2,Global Competencies,3,Graduate - First,CN,21,12,15,0
+81348,201770,LA,-,GLOA 605,2,lnterdisciplnary Rsrch Methods,3,Graduate - First,CN,21,16,0,0
+81680,201770,LA,-,GLOA 605,3,lnterdisciplnary Rsrch Methods,3,Graduate - First,CN,21,15,0,0
+71554,201770,LA,15,GLOA 610,1,Econ Globalization/Development,3,Graduate - First,CN,18,13,13,0
+75232,201770,LA,-,GLOA 620,1,Human Systems,3,Graduate - First,CN,18,15,0,0
+72217,201770,LA,-,GLOA 720,1,Capstone Research Seminar,3,Graduate - Advanced,CN,20,8,0,0
+72778,201770,LA,-,MEIS 500,1,Critical Issues/Debates MEIS,3,Graduate - First,CN,25,11,0,0
+72745,201770,MAIS,-,MAIS 796,1,MAIS ProSeminar,1,Graduate - Advanced,CN,30,25,0,0
+72404,201770,MAIS,-,MAIS 797,1,Interdisciplinary Studies Prop,1,Graduate - Advanced,CN,25,10,0,0
+71854,201770,MCL,-,ARAB 110,1,Elementary Arabic,6,Undergraduate - Lower Division,WL,22,22,0,0
+70275,201770,MCL,-,ARAB 110,2,Elementary Arabic,6,Undergraduate - Lower Division,WL,22,22,0,0
+70276,201770,MCL,-,ARAB 110,3,Elementary Arabic,6,Undergraduate - Lower Division,WL,22,22,0,0
+70278,201770,MCL,-,ARAB 110,4,Elementary Arabic,6,Undergraduate - Lower Division,WL,22,22,0,0
+73485,201770,MCL,-,ARAB 110,5,Elementary Arabic,6,Undergraduate - Lower Division,O,22,15,0,0
+71626,201770,MCL,-,ARAB 210,2,Intermediate Arabic,3,Undergraduate - Lower Division,O,24,23,0,0
+81033,201770,MCL,-,ARAB 210,4,Intermediate Arabic,3,Undergraduate - Lower Division,O,25,14,0,0
+82211,201770,MCL,-,ARAB 210,5,Intermediate Arabic,3,Undergraduate - Lower Division,O,25,15,0,0
+70280,201770,MCL,-,ARAB 250,1,Gateway to Advanced Arabic,3,Undergraduate - Lower Division,O,25,19,0,0
+82643,201770,MCL,-,ARAB 325,1,Major Arabic Writers,3,Undergraduate - Upper Division,CL,25,25,0,0
+73489,201770,MCL,-,ARAB 330,1,Reading and Conversation I,3,Undergraduate - Upper Division,O,25,22,0,0
+75958,201770,MCL,-,ARAB 380,1,Arabic Dialects - Egyptian,3,Undergraduate - Upper Division,O,25,13,0,0
+73690,201770,MCL,-,ARAB 390,1,Translatn Meth: Arabic English,3,Undergraduate - Upper Division,O,25,12,0,0
+75152,201770,MCL,-,ARAB 420,1,Survey of Arabic Literature,3,Undergraduate - Upper Division,O,25,11,0,0
+70281,201770,MCL,-,CHIN 110,1,Elementary Chinese,6,Undergraduate - Lower Division,O,22,18,0,0
+70282,201770,MCL,-,CHIN 110,4,Elementary Chinese,6,Undergraduate - Lower Division,O,22,13,0,0
+73824,201770,MCL,-,CHIN 210,1,Intermediate Chinese,3,Undergraduate - Lower Division,O,25,14,0,0
+82212,201770,MCL,-,CHIN 210,3,Intermediate Chinese,3,Undergraduate - Lower Division,O,25,15,0,0
+70284,201770,MCL,-,CHIN 250,1,Gateway to Advanced Chinese,3,Undergraduate - Lower Division,O,18,14,0,0
+70285,201770,MCL,-,CHIN 300,1,Reading Skills Develop,3,Undergraduate - Upper Division,WL,25,25,0,0
+72289,201770,MCL,-,CHIN 301,1,Advanced Grammar and Syntax,3,Undergraduate - Upper Division,O,25,9,0,0
+81035,201770,MCL,-,CHIN 310,2,Survey of Chinese Literature,3,Undergraduate - Upper Division,WL,25,25,0,0
+73832,201770,MCL,-,CHIN 311,1,Modern Chinese Lit in Trans,3,Undergraduate - Upper Division,O,25,24,0,0
+72654,201770,MCL,-,CHIN 318,1,Introduction Classical Chinese,3,Undergraduate - Upper Division,O,25,14,0,0
+81036,201770,MCL,6T,CHIN 320,1,Contemp Chinese Film,3,Undergraduate - Upper Division,O,15,15,24,0
+73339,201770,MCL,-,CHIN 325,1,Major Chinese Writers,3,Undergraduate - Upper Division,O,25,24,0,0
+81039,201770,MCL,-,CHIN 328,1,Asian American Women Writers,3,Undergraduate - Upper Division,WL,25,25,0,0
+71623,201770,MCL,-,CHIN 365,1,Rdng Chin Fict after Mao,3,Undergraduate - Upper Division,O,25,16,0,0
+70287,201770,MCL,-,CHIN 480,1,Fourth Year Chinese I,3,Undergraduate - Upper Division,O,25,16,0,0
+81040,201770,MCL,-,CLAS 250,1,Classical Mythology,3,Undergraduate - Lower Division,WL,75,75,0,4
+83148,201770,MCL,-,CLAS 250,2,Classical Mythology,3,Undergraduate - Lower Division,CL,30,30,0,0
+70290,201770,MCL,-,CLAS 260,1,The Legacy of Greece and Rome,3,Undergraduate - Lower Division,WL,66,66,0,8
+83161,201770,MCL,-,CLAS 260,2,The Legacy of Greece and Rome,3,Undergraduate - Lower Division,O,12,11,0,0
+83149,201770,MCL,-,CLAS 260,3,The Legacy of Greece and Rome,3,Undergraduate - Lower Division,O,45,43,0,0
+75196,201770,MCL,-,CLAS 330,1,Roman Law and Society,3,Undergraduate - Upper Division,O,35,20,0,0
+73698,201770,MCL,-,CLAS 340,1,Greek and Roman Epic,3,Undergraduate - Upper Division,WL,35,35,0,0
+71624,201770,MCL,-,CLAS 360,1,Greek and Roman Comedy,3,Undergraduate - Upper Division,WL,36,37,0,1
+71736,201770,MCL,-,FREN 110,2,Elementary French,6,Undergraduate - Lower Division,WL,22,22,0,0
+70293,201770,MCL,-,FREN 110,3,Elementary French,6,Undergraduate - Lower Division,O,22,21,0,0
+70295,201770,MCL,-,FREN 110,5,Elementary French,6,Undergraduate - Lower Division,O,22,21,0,0
+70298,201770,MCL,-,FREN 110,6,Elementary French,6,Undergraduate - Lower Division,O,22,16,0,0
+71627,201770,MCL,-,FREN 115,1,Review of Elementary French,3,Undergraduate - Lower Division,WL,25,25,0,0
+70300,201770,MCL,-,FREN 210,2,Intermediate French,3,Undergraduate - Lower Division,O,25,14,0,0
+71544,201770,MCL,-,FREN 210,3,Intermediate French,3,Undergraduate - Lower Division,O,25,23,0,0
+70301,201770,MCL,-,FREN 210,4,Intermediate French,3,Undergraduate - Lower Division,O,25,15,0,0
+74208,201770,MCL,-,FREN 210,DL1,Intermediate French,3,Undergraduate - Lower Division,WL,25,25,0,0
+71888,201770,MCL,-,FREN 250,1,Gateway to Advanced French,3,Undergraduate - Lower Division,O,25,14,0,0
+70304,201770,MCL,-,FREN 309,1,Reading and Writing Skills Dev,6,Undergraduate - Upper Division,O,20,9,0,0
+81041,201770,MCL,-,FREN 310,1,Oral Proficiency in French,3,Undergraduate - Upper Division,O,25,19,0,0
+81043,201770,MCL,-,FREN 325,1,Franco Sub-Saharan Writers,3,Undergraduate - Upper Division,WL,25,25,0,1
+75086,201770,MCL,-,FREN 357,1,Intro to Translation,3,Undergraduate - Upper Division,O,25,11,0,0
+70305,201770,MCL,-,FREN 370,1,"Civ, Cult, and Lit to 1789",3,Undergraduate - Upper Division,O,25,19,0,0
+81044,201770,MCL,76,FREN 451,1,Top Sub-Saharan Franco Lit/Cul,3,Undergraduate - Upper Division,O,15,10,13,0
+81046,201770,MCL,7E,FREN 550,1,The First Global Wars,3,Graduate - First,WL,5,6,17,1
+81045,201770,MCL,76,FREN 551,1,Top Franco SubSaharan Lit/Cult,3,Graduate - First,O,10,3,13,0
+83221,201770,MCL,8A,FRLN 309,1,Humanities College to Career,1,Undergraduate - Upper Division,O,3,0,7,0
+81047,201770,MCL,-,FRLN 330,2,Childhood in World Literature,3,Undergraduate - Upper Division,O,25,24,0,0
+73876,201770,MCL,-,FRLN 331,1,War and Film,3,Undergraduate - Upper Division,O,25,20,0,0
+73877,201770,MCL,-,FRLN 331,2,International Mysteries,3,Undergraduate - Upper Division,O,25,15,0,0
+78172,201770,MCL,8O,FRLN 551,2,Heritage Language Education,3,Graduate - First,WL,7,4,15,0
+70306,201770,MCL,-,GERM 110,1,Elementary German,6,Undergraduate - Lower Division,O,22,20,0,0
+70307,201770,MCL,-,GERM 110,2,Elementary German,6,Undergraduate - Lower Division,WL,22,22,0,0
+70308,201770,MCL,-,GERM 110,3,Elementary German,6,Undergraduate - Lower Division,O,22,15,0,0
+70310,201770,MCL,-,GERM 210,1,Intermediate German,3,Undergraduate - Lower Division,O,25,15,0,0
+82213,201770,MCL,-,GERM 210,3,Intermediate German,3,Undergraduate - Lower Division,O,25,12,0,0
+70311,201770,MCL,-,GERM 250,1,Gateway to Advanced German,3,Undergraduate - Lower Division,O,25,13,0,0
+81048,201770,MCL,-,GERM 301,1,Culture and Civilization,3,Undergraduate - Upper Division,O,25,13,0,0
+81049,201770,MCL,-,GERM 415,1,Advanced Grammar,3,Undergraduate - Upper Division,O,25,12,0,0
+81903,201770,MCL,-,HEBR 101,V01,Elementary Hebrew I,3,Undergraduate - Lower Division,CL,8,8,0,0
+70313,201770,MCL,-,ITAL 110,1,Elementary Italian,6,Undergraduate - Lower Division,O,22,18,0,0
+82289,201770,MCL,-,ITAL 110,4,Elementary Italian,6,Undergraduate - Lower Division,O,22,14,0,0
+70315,201770,MCL,-,ITAL 210,1,Intermediate Italian,3,Undergraduate - Lower Division,O,20,15,0,0
+81958,201770,MCL,-,ITAL 250,2,Gateway to Advanced Italian,3,Undergraduate - Lower Division,O,12,8,0,0
+72656,201770,MCL,-,ITAL 320,1,Contemporay Italian Cinema,3,Undergraduate - Upper Division,O,35,32,0,0
+81784,201770,MCL,-,ITAL 360,1,Southern Italy,3,Undergraduate - Upper Division,O,25,19,0,0
+70317,201770,MCL,-,JAPA 110,1,Elementary Japanese,6,Undergraduate - Lower Division,WL,22,22,0,0
+70319,201770,MCL,-,JAPA 110,3,Elementary Japanese,6,Undergraduate - Lower Division,WL,22,22,0,1
+70320,201770,MCL,-,JAPA 210,1,Intermediate Japanese,3,Undergraduate - Lower Division,O,25,24,0,0
+70321,201770,MCL,-,JAPA 250,1,Gateway to Advanced Japanese,3,Undergraduate - Lower Division,O,25,19,0,0
+75135,201770,MCL,-,JAPA 310,1,Japanese Cult in a Global Wrld,3,Undergraduate - Upper Division,WL,26,26,0,1
+77933,201770,MCL,-,JAPA 320,2,Japanese Cinema,3,Undergraduate - Upper Division,O,25,13,0,0
+70322,201770,MCL,-,JAPA 330,1,Adv Reading/Speaking I,3,Undergraduate - Upper Division,O,25,19,0,0
+82015,201770,MCL,-,JAPA 360,2,Topics in Japanese Pop Culture,3,Undergraduate - Upper Division,O,25,22,0,0
+70323,201770,MCL,-,JAPA 440,1,Integr Study Japan Lang/Soc I,3,Undergraduate - Upper Division,O,25,12,0,0
+83550,201770,MCL,-,KORE 101,V01,Intro to the Korean Language,3,Undergraduate - Lower Division,CN,25,0,0,0
+70288,201770,MCL,-,KORE 110,1,Elementary Korean,6,Undergraduate - Lower Division,WL,22,23,0,0
+73338,201770,MCL,-,KORE 110,2,Elementary Korean,6,Undergraduate - Lower Division,O,22,18,0,0
+75115,201770,MCL,-,KORE 110,3,Elementary Korean,6,Undergraduate - Lower Division,O,22,16,0,0
+70289,201770,MCL,-,KORE 210,1,Intermediate Korean,3,Undergraduate - Lower Division,WL,25,26,0,0
+81052,201770,MCL,-,KORE 210,DL1,Intermediate Korean,3,Undergraduate - Lower Division,O,25,12,0,0
+72058,201770,MCL,-,KORE 250,1,Gateway Advanced Korean,3,Undergraduate - Lower Division,O,25,12,0,0
+81053,201770,MCL,-,KORE 305,1,Business Korean,3,Undergraduate - Upper Division,O,25,11,0,0
+82214,201770,MCL,-,KORE 310,2,Classical Korean Literature,3,Undergraduate - Upper Division,O,25,15,0,0
+82016,201770,MCL,-,KORE 320,1,Korean Pop Cult in Global Wrld,3,Undergraduate - Upper Division,O,25,18,0,0
+81054,201770,MCL,-,KORE 330,1,Adv Korean Language/Culture,3,Undergraduate - Upper Division,O,25,11,0,0
+70291,201770,MCL,-,LATN 101,1,Elementary Latin I,3,Undergraduate - Lower Division,O,45,26,0,0
+70292,201770,MCL,-,LATN 201,1,Intermediate Latin I,3,Undergraduate - Lower Division,O,25,9,0,0
+73469,201770,MCL,7M,LATN 351,1,Roman Historians,3,Undergraduate - Upper Division,O,15,3,7,0
+73470,201770,MCL,7M,LATN 451,1,Roman Historians,3,Undergraduate - Upper Division,O,10,4,7,0
+81808,201770,MCL,-,PERS 110,V02,Elementary Persian,6,Undergraduate - Lower Division,CL,12,12,0,0
+81809,201770,MCL,-,PERS 250,V01,Gateway to Advanced Persian,3,Undergraduate - Lower Division,O,12,1,0,0
+72158,201770,MCL,-,PORT 110,DL1,Elementary Portuguese,6,Undergraduate - Lower Division,O,22,19,0,0
+73065,201770,MCL,-,PORT 210,DL1,Intermediate Portuguese,3,Undergraduate - Lower Division,O,25,7,0,0
+70324,201770,MCL,-,RUSS 110,1,Elementary Russian,6,Undergraduate - Lower Division,WL,22,22,0,0
+70325,201770,MCL,-,RUSS 110,2,Elementary Russian,6,Undergraduate - Lower Division,WL,22,22,0,1
+70327,201770,MCL,-,RUSS 210,1,Intermediate Russian,3,Undergraduate - Lower Division,O,25,13,0,0
+70328,201770,MCL,-,RUSS 250,1,Gateway to Advanced Russian,3,Undergraduate - Lower Division,O,25,8,0,0
+71659,201770,MCL,-,RUSS 302,1,Russian Conversatn/Comp,3,Undergraduate - Upper Division,O,27,17,0,0
+81055,201770,MCL,-,RUSS 327,1,Survey of Russ Lit,3,Undergraduate - Upper Division,O,30,28,0,1
+70329,201770,MCL,-,RUSS 380,1,Advanced Russian,3,Undergraduate - Upper Division,O,25,13,0,0
+71808,201770,MCL,-,RUSS 480,1,Fourth Year Russian,3,Undergraduate - Upper Division,O,25,9,0,0
+72159,201770,MCL,-,SPAN 110,1,Elementary Spanish,6,Undergraduate - Lower Division,O,22,21,0,0
+70330,201770,MCL,-,SPAN 110,2,Elementary Spanish,6,Undergraduate - Lower Division,WL,22,22,0,0
+70332,201770,MCL,-,SPAN 110,4,Elementary Spanish,6,Undergraduate - Lower Division,WL,22,22,0,0
+70333,201770,MCL,-,SPAN 110,5,Elementary Spanish,6,Undergraduate - Lower Division,WL,22,22,0,0
+70334,201770,MCL,-,SPAN 110,7,Elementary Spanish,6,Undergraduate - Lower Division,WL,22,22,0,0
+70335,201770,MCL,5Y,SPAN 110,8,Elementary Spanish,6,Undergraduate - Lower Division,O,22,22,23,0
+70336,201770,MCL,-,SPAN 110,10,Elementary Spanish,6,Undergraduate - Lower Division,WL,22,22,0,0
+72061,201770,MCL,-,SPAN 110,13,Elementary Spanish,6,Undergraduate - Lower Division,WL,22,22,0,0
+70338,201770,MCL,-,SPAN 110,14,Elementary Spanish,6,Undergraduate - Lower Division,WL,22,22,0,0
+70339,201770,MCL,-,SPAN 110,15,Elementary Spanish,6,Undergraduate - Lower Division,O,22,19,0,0
+71662,201770,MCL,-,SPAN 115,1,Review of Elementary Spanish,3,Undergraduate - Lower Division,WL,25,25,0,0
+71663,201770,MCL,-,SPAN 115,2,Review of Elementary Spanish,3,Undergraduate - Lower Division,O,25,15,0,0
+71664,201770,MCL,-,SPAN 115,3,Review of Elementary Spanish,3,Undergraduate - Lower Division,O,25,18,0,0
+71661,201770,MCL,-,SPAN 115,DL1,Review of Elementary Spanish,3,Undergraduate - Lower Division,O,25,22,0,0
+70340,201770,MCL,-,SPAN 210,1,Intermediate Spanish,3,Undergraduate - Lower Division,WL,25,25,0,0
+70341,201770,MCL,-,SPAN 210,3,Intermediate Spanish,3,Undergraduate - Lower Division,WL,25,25,0,0
+70343,201770,MCL,-,SPAN 210,5,Intermediate Spanish,3,Undergraduate - Lower Division,WL,25,25,0,0
+70344,201770,MCL,-,SPAN 210,7,Intermediate Spanish,3,Undergraduate - Lower Division,WL,25,25,0,0
+70346,201770,MCL,-,SPAN 210,9,Intermediate Spanish,3,Undergraduate - Lower Division,WL,25,25,0,0
+73878,201770,MCL,-,SPAN 210,10,Intermediate Spanish,3,Undergraduate - Lower Division,WL,28,28,0,0
+82215,201770,MCL,-,SPAN 210,11,Intermediate Spanish,3,Undergraduate - Lower Division,O,25,24,0,0
+71597,201770,MCL,-,SPAN 210,DL1,Intermediate Spanish,3,Undergraduate - Lower Division,O,25,23,0,1
+72293,201770,MCL,-,SPAN 210,DL2,Intermediate Spanish,3,Undergraduate - Lower Division,O,25,24,0,0
+70347,201770,MCL,-,SPAN 250,1,Gateway to Advanced Spanish,3,Undergraduate - Lower Division,WL,25,25,0,0
+82216,201770,MCL,-,SPAN 250,3,Gateway to Advanced Spanish,3,Undergraduate - Lower Division,CL,25,25,0,0
+70350,201770,MCL,-,SPAN 305,1,Spanish in Context I,3,Undergraduate - Upper Division,WL,25,28,0,0
+73225,201770,MCL,-,SPAN 306,1,Spanish in Context II,3,Undergraduate - Upper Division,O,25,12,0,0
+70351,201770,MCL,-,SPAN 315,1,Spanish for Heritage Speakers,3,Undergraduate - Upper Division,O,25,19,0,0
+81056,201770,MCL,-,SPAN 325,1,Miguel de Cervantes,3,Undergraduate - Upper Division,WL,31,29,0,4
+81057,201770,MCL,-,SPAN 336,1,Spain,3,Undergraduate - Upper Division,WL,25,25,0,1
+70353,201770,MCL,-,SPAN 370,2,Spanish Writing and Stylistics,3,Undergraduate - Upper Division,O,25,20,0,0
+70352,201770,MCL,-,SPAN 370,DL1,Spanish Writing and Stylistics,3,Undergraduate - Upper Division,O,25,13,0,0
+70354,201770,MCL,-,SPAN 385,1,Intro to Spanish Linguistics,3,Undergraduate - Upper Division,O,25,21,0,0
+70355,201770,MCL,-,SPAN 388,1,Introducti to Latina/o Studies,3,Undergraduate - Upper Division,O,30,16,0,0
+70356,201770,MCL,-,SPAN 390,1,Intr Hispanic Lit Analys,3,Undergraduate - Upper Division,O,25,18,0,0
+81058,201770,MCL,-,SPAN 430,1,Spanish in the US,3,Undergraduate - Upper Division,WL,25,26,0,1
+81059,201770,MCL,-,SPAN 481,1,Immigration Narratives,3,Undergraduate - Upper Division,O,25,17,0,0
+70358,201770,MCL,-,SPAN 510,1,Method of Lit and Cult Studies,3,Graduate - First,WL,15,15,0,0
+81060,201770,MCL,8V,SPAN 530,1,Cervantes and the Modern Novel,3,Graduate - First,O,8,7,14,0
+73881,201770,MCL,8O,SPAN 551,3,Heritage Language Education,3,Graduate - First,WL,8,11,15,0
+81061,201770,MCL,8V,SPAN 635,1,Cervantes and the Modern Novel,3,Graduate - First,O,7,7,14,0
+74638,201770,MCL,-,TURK 110,2,Elementary Turkish,6,Undergraduate - Lower Division,O,22,5,0,0
+74682,201770,PHIL,-,PHIL 100,1,Introduction to Philosophy,3,Undergraduate - Lower Division,WL,45,45,0,0
+72187,201770,PHIL,-,PHIL 100,3,Introduction to Philosophy,3,Undergraduate - Lower Division,WL,45,45,0,0
+78745,201770,PHIL,-,PHIL 100,4,Introduction to Philosophy,3,Undergraduate - Lower Division,O,45,44,0,1
+78746,201770,PHIL,-,PHIL 100,7,Introduction to Philosophy,3,Undergraduate - Lower Division,WL,45,45,0,0
+81864,201770,PHIL,-,PHIL 112,DL5,Ethics and Cybersociety,1,Undergraduate - Lower Division,WL,45,45,0,0
+81865,201770,PHIL,-,PHIL 112,DL6,Ethics and Cybersociety,1,Undergraduate - Lower Division,WL,45,45,0,0
+81866,201770,PHIL,-,PHIL 112,DL7,Ethics and Cybersociety,1,Undergraduate - Lower Division,WL,45,45,0,0
+81867,201770,PHIL,-,PHIL 112,DL8,Ethics and Cybersociety,1,Undergraduate - Lower Division,O,45,27,0,0
+71039,201770,PHIL,-,PHIL 173,DL1,Logic and Critical Thinking,3,Undergraduate - Lower Division,WL,45,45,0,1
+72976,201770,PHIL,-,PHIL 173,DL2,Logic and Critical Thinking,3,Undergraduate - Lower Division,WL,45,44,0,2
+75893,201770,PHIL,-,PHIL 243,1,Global Environmental Ethics,3,Undergraduate - Lower Division,WL,36,36,0,0
+71040,201770,PHIL,-,PHIL 253,1,Philosophy and Literature,3,Undergraduate - Lower Division,WL,65,65,0,0
+71041,201770,PHIL,-,PHIL 253,2,Philosophy and Literature,3,Undergraduate - Lower Division,WL,45,45,0,0
+71042,201770,PHIL,-,PHIL 253,3,Philosophy and Literature,3,Undergraduate - Lower Division,WL,45,45,0,0
+72297,201770,PHIL,-,PHIL 253,4,Philosophy and Literature,3,Undergraduate - Lower Division,WL,45,45,0,1
+73431,201770,PHIL,-,PHIL 253,5,Philosophy and Literature,3,Undergraduate - Lower Division,WL,45,45,0,1
+81553,201770,PHIL,-,PHIL 253,6,Philosophy and Literature,3,Undergraduate - Lower Division,WL,45,45,0,0
+79157,201770,PHIL,-,PHIL 253,9,Philosophy and Literature,3,Undergraduate - Lower Division,WL,35,34,0,6
+81872,201770,PHIL,-,PHIL 253,10,Philosophy and Literature,3,Undergraduate - Lower Division,WL,35,35,0,0
+83230,201770,PHIL,-,PHIL 253,11,Philosophy and Literature,3,Undergraduate - Lower Division,WL,45,45,0,0
+71043,201770,PHIL,-,PHIL 301,1,Hist West Phil: Ancient,3,Undergraduate - Upper Division,WL,35,35,0,1
+79040,201770,PHIL,-,PHIL 306,1,Philosophy Internship,6-Mar,Undergraduate - Upper Division,CN,20,0,0,0
+71044,201770,PHIL,-,PHIL 309,1,Bioethics,3,Undergraduate - Upper Division,WL,35,35,0,1
+71045,201770,PHIL,-,PHIL 309,2,Bioethics,3,Undergraduate - Upper Division,WL,35,35,0,0
+71046,201770,PHIL,-,PHIL 309,3,Bioethics,3,Undergraduate - Upper Division,WL,35,35,0,0
+76085,201770,PHIL,-,PHIL 309,6,Bioethics,3,Undergraduate - Upper Division,O,18,12,0,0
+71047,201770,PHIL,-,PHIL 309,DL1,Bioethics,3,Undergraduate - Upper Division,WL,35,35,0,0
+75892,201770,PHIL,-,PHIL 309,DL2,Bioethics,3,Undergraduate - Upper Division,WL,35,34,0,2
+71412,201770,PHIL,-,PHIL 309,DL3,Bioethics,3,Undergraduate - Upper Division,WL,33,33,0,0
+71690,201770,PHIL,-,PHIL 311,1,Philosophy of Law,3,Undergraduate - Upper Division,O,35,29,0,0
+80770,201770,PHIL,3P,PHIL 323,1,Classical West Pol Thry,3,Undergraduate - Upper Division,WL,7,7,30,0
+80445,201770,PHIL,-,PHIL 325,1,Marx's Soc/Poli Thought,3,Undergraduate - Upper Division,O,35,28,0,0
+80771,201770,PHIL,48,PHIL 327,1,Contemp Western Pol Thry,3,Undergraduate - Upper Division,WL,7,7,29,2
+80446,201770,PHIL,-,PHIL 337,1,Cont Continent Thgt: Phenomen,3,Undergraduate - Upper Division,O,35,14,0,0
+78116,201770,PHIL,-,PHIL 344,1,Ethical Issues Global Health,3,Undergraduate - Upper Division,O,15,6,0,0
+80447,201770,PHIL,-,PHIL 371,1,Philosophy of Natural Sciences,3,Undergraduate - Upper Division,O,35,34,0,0
+78050,201770,PHIL,-,PHIL 376,1,Intro to Symbolic Logic,3,Undergraduate - Upper Division,O,35,29,0,0
+78148,201770,PHIL,8A,PHIL 393,1,Humanities College to Career,1,Undergraduate - Upper Division,O,4,4,7,0
+73875,201770,PHIL,3,PHIL 421,1,Method Dimension of Clim Sci,3,Undergraduate - Upper Division,O,20,4,7,0
+73340,201770,PHIL,3,PHIL 422,1,Method Dimension of Clim Sci,3,Undergraduate - Upper Division,CN,20,1,7,0
+72798,201770,PHIL,-,PHIL 600,1,Proseminar in Philosophy,1,Graduate - First,CN,30,2,0,0
+77950,201770,PHIL,3,PHIL 694,1,Method Dimensions of Clim Sci,3,Graduate - First,O,5,2,7,0
+78189,201770,PHIL,-,PHIL 694,2,Just War Theory,3,Graduate - First,O,12,8,0,0
+78734,201770,PHIL,-,PHIL 721,1,Kant's Critique of Judgment,3,Graduate - Advanced,O,20,9,0,0
+70572,201770,PSYC,AM,PSYC 100,1,Basic Concepts in Psychology,3,Undergraduate - Lower Division,O,305,305,314,1
+70573,201770,PSYC,-,PSYC 100,2,Basic Concepts in Psychology,3,Undergraduate - Lower Division,O,306,304,0,0
+75637,201770,PSYC,-,PSYC 100,DL1,Basic Concepts in Psychology,3,Undergraduate - Lower Division,O,120,117,0,3
+72753,201770,PSYC,-,PSYC 211,1,Developmental Psychology,3,Undergraduate - Lower Division,WL,40,40,0,5
+70575,201770,PSYC,-,PSYC 211,2,Developmental Psychology,3,Undergraduate - Lower Division,WL,40,40,0,7
+70576,201770,PSYC,HK,PSYC 211,3,Developmental Psychology,3,Undergraduate - Lower Division,WL,48,47,49,2
+70577,201770,PSYC,-,PSYC 211,35,Developmental Psychology,3,Undergraduate - Lower Division,WL,40,40,0,0
+74366,201770,PSYC,-,PSYC 211,DL1,Developmental Psychology,3,Undergraduate - Lower Division,WL,75,73,0,9
+82343,201770,PSYC,-,PSYC 211,DL2,Developmental Psychology,3,Undergraduate - Lower Division,CL,75,75,0,0
+70578,201770,PSYC,-,PSYC 231,1,Social Psychology,3,Undergraduate - Lower Division,WL,40,40,0,2
+75639,201770,PSYC,-,PSYC 231,2,Social Psychology,3,Undergraduate - Lower Division,WL,49,48,0,3
+70580,201770,PSYC,-,PSYC 231,3,Social Psychology,3,Undergraduate - Lower Division,O,40,39,0,0
+70581,201770,PSYC,-,PSYC 231,4,Social Psychology,3,Undergraduate - Lower Division,WL,40,40,0,4
+82852,201770,PSYC,-,PSYC 231,5,Social Psychology,3,Undergraduate - Lower Division,CL,30,30,0,0
+70579,201770,PSYC,-,PSYC 231,DL1,Social Psychology,3,Undergraduate - Lower Division,WL,60,60,0,4
+70583,201770,PSYC,-,PSYC 300,1,Statistics in Psychology,4,Undergraduate - Upper Division,CL,36,36,0,0
+70587,201770,PSYC,-,PSYC 300,2,Statistics in Psychology,4,Undergraduate - Upper Division,CL,36,36,0,0
+75640,201770,PSYC,-,PSYC 300,3,Statistics in Psychology,4,Undergraduate - Upper Division,O,34,32,0,0
+70591,201770,PSYC,-,PSYC 300,4,Statistics in Psychology,4,Undergraduate - Upper Division,O,34,33,0,0
+70596,201770,PSYC,-,PSYC 300,5,Statistics in Psychology,4,Undergraduate - Upper Division,O,34,31,0,0
+71682,201770,PSYC,-,PSYC 301,1,Research Methods in Psyc,4,Undergraduate - Upper Division,CL,34,34,0,0
+70601,201770,PSYC,-,PSYC 301,3,Research Methods in Psyc,4,Undergraduate - Upper Division,CL,34,34,0,0
+70602,201770,PSYC,-,PSYC 301,4,Research Methods in Psyc,4,Undergraduate - Upper Division,CL,34,34,0,0
+70603,201770,PSYC,-,PSYC 301,5,Research Methods in Psyc,4,Undergraduate - Upper Division,CL,34,34,0,0
+78105,201770,PSYC,-,PSYC 301,6,Research Methods in Psyc,4,Undergraduate - Upper Division,O,34,33,0,0
+71683,201770,PSYC,-,PSYC 304,1,Principles of Learning,4,Undergraduate - Upper Division,CL,34,34,0,0
+81545,201770,PSYC,-,PSYC 304,DL1,Principles of Learning,4,Undergraduate - Upper Division,CL,34,34,0,0
+71940,201770,PSYC,-,PSYC 309,1,Sens/Percept/Info Proc,4,Undergraduate - Upper Division,O,34,32,0,0
+75641,201770,PSYC,-,PSYC 312,1,Educational Psychology,3,Undergraduate - Upper Division,O,44,25,0,0
+70612,201770,PSYC,-,PSYC 313,1,Child Development,3,Undergraduate - Upper Division,WL,40,40,0,0
+70613,201770,PSYC,-,PSYC 313,2,Child Development,3,Undergraduate - Upper Division,O,50,48,0,0
+75642,201770,PSYC,2E,PSYC 313,DL1,Child Development,3,Undergraduate - Upper Division,WL,49,49,50,0
+70614,201770,PSYC,-,PSYC 314,1,Adolescent Development,3,Undergraduate - Upper Division,WL,50,50,0,0
+75643,201770,PSYC,-,PSYC 314,DL1,Adolescent Development,3,Undergraduate - Upper Division,WL,50,51,0,0
+70616,201770,PSYC,-,PSYC 317,1,Cognitive Psychology,3,Undergraduate - Upper Division,WL,50,50,0,0
+70617,201770,PSYC,-,PSYC 317,2,Cognitive Psychology,3,Undergraduate - Upper Division,WL,50,50,0,3
+72521,201770,PSYC,-,PSYC 317,3,Cognitive Psychology,3,Undergraduate - Upper Division,WL,50,50,0,0
+82105,201770,PSYC,-,PSYC 317,6,Cognitive Psychology,3,No Value,CL,40,40,0,0
+72197,201770,PSYC,-,PSYC 317,DL1,Cognitive Psychology,3,Undergraduate - Upper Division,O,60,58,0,0
+72790,201770,PSYC,-,PSYC 320,1,Psyc Tests and Measurement,4,Undergraduate - Upper Division,CL,34,34,0,0
+72104,201770,PSYC,-,PSYC 321,1,Clinical Psychology,3,Undergraduate - Upper Division,WL,40,40,0,0
+70619,201770,PSYC,-,PSYC 321,DL1,Clinical Psychology,3,Undergraduate - Upper Division,WL,40,39,0,4
+72755,201770,PSYC,-,PSYC 322,1,Behavior Modification,3,Undergraduate - Upper Division,O,30,22,0,0
+75645,201770,PSYC,-,PSYC 324,1,Personality Theory,3,Undergraduate - Upper Division,O,50,37,0,0
+75646,201770,PSYC,-,PSYC 324,DL1,Personality Theory,3,Undergraduate - Upper Division,O,50,44,0,0
+70622,201770,PSYC,-,PSYC 325,1,Abnormal Psychology,3,Undergraduate - Upper Division,WL,50,50,0,0
+70624,201770,PSYC,-,PSYC 325,3,Abnormal Psychology,3,Undergraduate - Upper Division,WL,50,51,0,1
+70626,201770,PSYC,-,PSYC 325,4,Abnormal Psychology,3,Undergraduate - Upper Division,O,50,49,0,0
+81546,201770,PSYC,-,PSYC 325,5,Abnormal Psychology,3,Undergraduate - Upper Division,WL,50,51,0,3
+75647,201770,PSYC,-,PSYC 325,DL1,Abnormal Psychology,3,Undergraduate - Upper Division,WL,60,60,0,0
+70627,201770,PSYC,-,PSYC 326,1,Therapeutic Communicat Skills,3,Undergraduate - Upper Division,WL,25,25,0,0
+70628,201770,PSYC,-,PSYC 327,1,Psychology in the Community,3,Undergraduate - Upper Division,O,30,23,0,0
+78875,201770,PSYC,-,PSYC 328,2,Psychology in the Community,1,Undergraduate - Upper Division,O,15,11,0,0
+81524,201770,PSYC,-,PSYC 333,1,Industrial/Organizational Psyc,3,Undergraduate - Upper Division,WL,40,40,0,0
+81525,201770,PSYC,-,PSYC 333,2,Industrial/Organizational Psyc,3,Undergraduate - Upper Division,WL,40,40,0,0
+82014,201770,PSYC,-,PSYC 335,DL1,Psychology Creativity/Innovatn,3,Undergraduate - Upper Division,O,40,39,0,0
+81547,201770,PSYC,-,PSYC 340,2,Human Factors Psychology,3,Undergraduate - Upper Division,WL,40,40,0,0
+74599,201770,PSYC,-,PSYC 362,DL1,Psychology of Gender,3,Undergraduate - Upper Division,O,50,23,0,0
+70631,201770,PSYC,-,PSYC 372,1,Physiological Psychology,3,Undergraduate - Upper Division,WL,50,50,0,0
+70632,201770,PSYC,-,PSYC 372,2,Physiological Psychology,3,Undergraduate - Upper Division,WL,48,48,0,0
+72756,201770,PSYC,-,PSYC 372,5,Physiological Psychology,3,Undergraduate - Upper Division,O,50,48,0,0
+73288,201770,PSYC,-,PSYC 372,DL1,Physiological Psychology,3,Undergraduate - Upper Division,O,50,49,0,0
+70637,201770,PSYC,-,PSYC 375,1,Brain and Sensory Processes,3,Undergraduate - Upper Division,WL,50,50,0,0
+81603,201770,PSYC,-,PSYC 375,DL1,Brain and Sensory Processes,3,Undergraduate - Upper Division,O,50,49,0,0
+81604,201770,PSYC,-,PSYC 376,DL1,Brain and Behavior,3,Undergraduate - Upper Division,WL,60,61,0,4
+71943,201770,PSYC,-,PSYC 379,1,Applied Cross-Cultur Psy,3,Undergraduate - Upper Division,O,50,48,0,1
+72317,201770,PSYC,-,PSYC 379,2,Applied Cross-Cultur Psy,3,Undergraduate - Upper Division,O,50,27,0,0
+73559,201770,PSYC,-,PSYC 379,DL1,Applied Cross-Cultur Psy,3,Undergraduate - Upper Division,WL,50,50,0,0
+81010,201770,PSYC,-,PSYC 380,1,Intro Forensic Psychology,3,Undergraduate - Upper Division,WL,50,50,0,0
+81011,201770,PSYC,-,PSYC 380,DL1,Intro Forensic Psychology,3,Undergraduate - Upper Division,WL,50,50,0,0
+81012,201770,PSYC,-,PSYC 380,DL2,Intro Forensic Psychology,3,Undergraduate - Upper Division,O,50,44,0,0
+81013,201770,PSYC,-,PSYC 381,1,Mental Illness/Criminal Justic,3,Undergraduate - Upper Division,WL,81,81,0,0
+81014,201770,PSYC,-,PSYC 382,1,Psychology of Crime Victims,3,Undergraduate - Upper Division,O,64,63,0,0
+81833,201770,PSYC,-,PSYC 399,2,Psychology: College to Career,3,Undergraduate - Upper Division,CL,35,35,0,0
+72148,201770,PSYC,-,PSYC 405,1,"Mystery, Madness, and Murder",3,Undergraduate - Upper Division,WL,39,39,0,1
+75658,201770,PSYC,-,PSYC 405,2,"Mystery, Madness, and Murder",3,Undergraduate - Upper Division,WL,40,40,0,1
+72201,201770,PSYC,-,PSYC 405,3,"Mystery, Madness, and Murder",3,Undergraduate - Upper Division,WL,40,40,0,1
+72318,201770,PSYC,-,PSYC 405,4,"Mystery, Madness, and Murder",3,Undergraduate - Upper Division,O,40,39,0,0
+74330,201770,PSYC,-,PSYC 405,DL1,"Mystery, Madness, and Murder",3,Undergraduate - Upper Division,WL,40,40,0,0
+82008,201770,PSYC,-,PSYC 408,DL1,Psychological Fitness,3,Undergraduate - Upper Division,O,40,36,0,0
+70638,201770,PSYC,-,PSYC 414,1,Behav Disords Childhood,3,Undergraduate - Upper Division,O,50,41,0,0
+78035,201770,PSYC,-,PSYC 415,DL1,Psyc Factors in Aging,3,Undergraduate - Upper Division,O,50,41,0,0
+82083,201770,PSYC,-,PSYC 417,DL1,Science of Well Being,3,Undergraduate - Upper Division,O,40,34,0,0
+78344,201770,PSYC,6X,PSYC 418,DL1,"Death, Dying, and Grieving",3,Undergraduate - Upper Division,WL,40,39,51,1
+81016,201770,PSYC,-,PSYC 427,3,Community Engagement,3,Undergraduate - Upper Division,WL,35,34,0,3
+78048,201770,PSYC,-,PSYC 435,DL1,Personnel Training and Dev,3,Undergraduate - Upper Division,O,50,22,0,0
+81726,201770,PSYC,-,PSYC 440,DL1,Forensic Psyc Scienc/Pseudosci,3,Undergraduate - Upper Division,O,40,30,0,0
+81017,201770,PSYC,-,PSYC 441,1,Criminal Behavior Psycho/Neuro,3,Undergraduate - Upper Division,WL,50,50,0,0
+72320,201770,PSYC,-,PSYC 461,1,Appl Developmental Research,3,Undergraduate - Upper Division,CN,50,35,0,0
+82169,201770,PSYC,-,PSYC 461,3,Applied Development Rsch,2,Undergraduate - Upper Division,CN,25,2,0,0
+80618,201770,PSYC,3N,PSYC 461,4,Organizing Culture Change,3,Undergraduate - Upper Division,O,7,6,44,0
+77980,201770,PSYC,71,PSYC 461,6,Brain in Books & Film,3,Undergraduate - Upper Division,O,20,9,14,0
+79181,201770,PSYC,-,PSYC 461,14,Undergrad Practicum in Psyc,3,Undergraduate - Upper Division,CN,17,17,0,0
+81526,201770,PSYC,DA,PSYC 461,17,Cognitive & Perceptual Develop,3,Undergraduate - Upper Division,O,10,4,13,0
+81527,201770,PSYC,-,PSYC 461,18,Drugs and the Brain,3,Undergraduate - Upper Division,O,40,23,0,0
+81844,201770,PSYC,-,PSYC 461,19,Appl Developmental Research,3,Undergraduate - Upper Division,CN,50,12,0,0
+83131,201770,PSYC,-,PSYC 461,23,Applied Developmental Research,1,Undergraduate - Upper Division,CN,25,1,0,0
+73734,201770,PSYC,DC,PSYC 461,DL1,Food: Choices & Consequences,3,Undergraduate - Upper Division,O,30,26,32,0
+78049,201770,PSYC,-,PSYC 467,DL1,Psyc Working-Grps/Teams,3,Undergraduate - Upper Division,O,40,20,0,0
+73173,201770,PSYC,74,PSYC 472,1,Neuronal Bases Lrng/Mem,3,Undergraduate - Upper Division,WL,8,8,20,1
+70655,201770,PSYC,-,PSYC 491,1,Psychology Honors II,3,Undergraduate - Upper Division,O,22,20,0,0
+78345,201770,PSYC,6X,PSYC 518,DL1,"Death, Dying, and Grieving",3,Graduate - First,WL,10,12,51,0
+82365,201770,PSYC,-,PSYC 530,2,Cog Eng:Cog Sci Appl-HF,3,Graduate - First,CL,18,18,0,0
+74410,201770,PSYC,-,PSYC 557,2,Psychometric Methods,3,Graduate - First,O,30,19,0,0
+73172,201770,PSYC,74,PSYC 558,1,Neuronal Bases Lrng/Mem,3,Graduate - First,WL,12,12,20,0
+81528,201770,PSYC,DA,PSYC 566,1,Cognitive/Perceptual Dvlpt,3,Graduate - First,O,10,9,13,0
+81020,201770,PSYC,-,PSYC 592,1,Cognitive Electrophysiology,3,Graduate - First,WL,16,16,0,0
+81670,201770,PSYC,7N,PSYC 592,7,Careers,3,Graduate - First,O,5,5,12,0
+81880,201770,PSYC,-,PSYC 592,8,Music and the Brain,3,Graduate - First,O,16,12,0,0
+81961,201770,PSYC,-,PSYC 592,9,Human Factors Practicum,3,Graduate - First,O,8,1,0,0
+82364,201770,PSYC,DC,PSYC 592,DL3,Food: Choices & Consequences,3,Graduate - First,O,10,6,32,0
+83029,201770,PSYC,FQ,PSYC 592,DL4,ABA: Empirical Bases,3,Graduate - First,O,2,1,26,0
+73594,201770,PSYC,78,PSYC 611,1,Adv Stat/Rsrch Meth PsyI,4,Graduate - First,O,39,39,42,0
+71835,201770,PSYC,-,PSYC 611,2,Adv Stat/Rsrch Meth PsyI,4,Graduate - First,CL,20,20,0,0
+81847,201770,PSYC,C4,PSYC 619,1,Princi/Proced/Phil App Bhv Ana,3,Graduate - First,O,3,0,11,0
+78473,201770,PSYC,-,PSYC 636,2,Survey of Industrial Psy,3,Graduate - First,O,20,15,0,0
+71944,201770,PSYC,7G,PSYC 639,1,Survey of Orgaztn Psyc,3,Graduate - First,O,20,14,15,0
+81021,201770,PSYC,-,PSYC 654,1,Naturalistic Methods in Psyc,3,Graduate - First,O,20,10,0,0
+73402,201770,PSYC,-,PSYC 704,1,Life-Span Development,3,Graduate - Advanced,O,20,18,0,0
+81023,201770,PSYC,7K,PSYC 734,2,Usability & Product Design,3,Graduate - Advanced,WL,6,7,13,2
+81024,201770,PSYC,7K,PSYC 737,1,Usability & Product Design,3,Graduate - Advanced,WL,6,6,13,2
+81025,201770,PSYC,-,PSYC 739,1,Leadership,3,Graduate - Advanced,O,20,15,0,0
+70710,201770,PSYC,-,PSYC 768,1,Individual Differences,3,Graduate - Advanced,O,12,11,0,0
+81027,201770,PSYC,-,PSYC 768,3,Human Performance,3,Graduate - Advanced,WL,12,12,0,0
+81028,201770,PSYC,-,PSYC 768,4,Affect & Performance,3,Graduate - Advanced,O,12,10,0,0
+81029,201770,PSYC,-,PSYC 780,1,Applied Dev Psychology,3,Graduate - Advanced,O,20,19,0,0
+74437,201770,PSYC,-,PSYC 790,1,School Psychology Internship,6-Mar,Graduate - Advanced,CL,10,10,0,0
+81030,201770,PSYC,-,PSYC 792,3,Appld Dvlpmt Psyc Practicum,6-Jan,Graduate - Advanced,O,20,5,0,0
+73512,201770,PSYC,-,PSYC 810,1,Psychological Assessment I,4,Graduate - Advanced,O,10,6,0,0
+73212,201770,PSYC,-,PSYC 822,1,Scientific Found Clin Psyc I,3,Graduate - Advanced,O,10,6,0,0
+72582,201770,PSYC,-,PSYC 850,1,Teaching Practicum in Psyc,1,Graduate - Advanced,O,30,12,0,0
+73477,201770,PSYC,-,PSYC 860,1,Intro Hlp Skill/Motiv Intrview,3,Graduate - Advanced,O,10,7,0,0
+82371,201770,PSYC,-,PSYC 861,2,Cognitive Behav Therapy Youth,3,Graduate - Advanced,O,10,7,0,0
+82340,201770,PSYC,-,PSYC 862,2,Cognitive Behav Therapy Adults,3,Graduate - Advanced,O,10,7,0,0
+81681,201770,PSYC,-,PSYC 881,2,Practicum in Clinical Psych,3,Graduate - Advanced,O,10,5,0,0
+74865,201770,PSYC,-,PSYC 885,1,Clinical Externship,0,Graduate - Advanced,O,10,7,0,0
+82050,201770,PSYC,-,PSYC 890,5,Sem in Professional Psyc,3-Jan,Graduate - Advanced,O,35,14,0,0
+81031,201770,PSYC,-,PSYC 892,3,Biological Bases of Psychology,3,Graduate - Advanced,WL,10,13,0,0
+81032,201770,PSYC,-,PSYC 892,5,IO Brownbag,1,Graduate - Advanced,O,30,19,0,0
+81669,201770,PSYC,7N,PSYC 892,6,Careers,3,Graduate - Advanced,O,10,7,12,0
+71048,201770,RELI,-,RELI 100,1,Human Relig Experience,3,Undergraduate - Lower Division,WL,50,50,0,0
+71049,201770,RELI,-,RELI 100,2,Human Relig Experience,3,Undergraduate - Lower Division,WL,50,50,0,0
+71410,201770,RELI,-,RELI 100,3,Human Relig Experience,3,Undergraduate - Lower Division,WL,50,50,0,0
+72583,201770,RELI,-,RELI 100,5,Human Relig Experience,3,Undergraduate - Lower Division,WL,50,50,0,0
+72497,201770,RELI,-,RELI 100,6,Human Relig Experience,3,Undergraduate - Lower Division,O,50,48,0,0
+73854,201770,RELI,-,RELI 100,DL1,Human Relig Experience,3,Undergraduate - Lower Division,WL,50,50,0,0
+71764,201770,RELI,-,RELI 211,1,Religions of the West,3,Undergraduate - Lower Division,WL,44,44,0,1
+71765,201770,RELI,-,RELI 211,2,Religions of the West,3,Undergraduate - Lower Division,WL,50,50,0,0
+71766,201770,RELI,-,RELI 212,2,Religions of Asia,3,Undergraduate - Lower Division,WL,36,36,0,0
+81873,201770,RELI,-,RELI 212,3,Religions of Asia,3,Undergraduate - Lower Division,O,39,38,0,0
+71901,201770,RELI,-,RELI 235,1,Religion and Literature,3,Undergraduate - Lower Division,WL,40,40,0,0
+72651,201770,RELI,-,RELI 235,2,Religion and Literature,3,Undergraduate - Lower Division,WL,40,40,0,0
+73182,201770,RELI,-,RELI 235,3,Religion and Literature,3,Undergraduate - Lower Division,WL,41,41,0,0
+81375,201770,RELI,-,RELI 235,4,Religion and Literature,3,Undergraduate - Lower Division,WL,40,40,0,1
+71411,201770,RELI,-,RELI 315,1,Buddhism,3,Undergraduate - Upper Division,WL,44,44,0,2
+80457,201770,RELI,-,RELI 317,1,Daoism,3,Undergraduate - Upper Division,O,40,18,0,0
+80458,201770,RELI,C3,RELI 331,1,Religion in America,3,Undergraduate - Upper Division,O,20,20,27,0
+81921,201770,RELI,CS,RELI 360,3,Religion and Politics,3,Undergraduate - Upper Division,WL,26,26,36,0
+80880,201770,RELI,4P,RELI 376,3,Sociology of Religion,3,Undergraduate - Upper Division,O,10,9,28,0
+74524,201770,RELI,0A,RELI 490,1,Compar Study of Religion,3,Undergraduate - Upper Division,O,20,20,21,0
+80461,201770,RELI,0A,RELI 631,1,Sacred as Secular in Mod Sprtu,3,Graduate - First,O,16,1,21,0
+73858,201770,RELI,-,RELI 644,1,Islamic Texts and Contexts,3,Graduate - First,O,15,13,0,0
+72272,201770,SINT,-,INTS 101,1,Narratives of Identity,6,Undergraduate - Lower Division,WL,26,26,0,0
+72274,201770,SINT,-,INTS 101,3,Narratives of Identity,6,Undergraduate - Lower Division,WL,26,26,0,0
+72275,201770,SINT,-,INTS 101,4,Narratives of Identity,6,Undergraduate - Lower Division,O,26,25,0,0
+83382,201770,SINT,HG,INTS 195,1,Scuba Diving-Basic,2,Undergraduate - Lower Division,O,5,2,12,0
+73031,201770,SINT,-,INTS 200,1,Visual Thnk/Creative Imp,4,Undergraduate - Lower Division,WL,25,25,0,0
+75872,201770,SINT,-,INTS 202,2,Public Speak/Crit Think Skills,4,Undergraduate - Lower Division,O,25,24,0,0
+72091,201770,SINT,-,INTS 204,1,Leadership Theory/Practice,3,Undergraduate - Lower Division,O,25,24,0,0
+75873,201770,SINT,-,INTS 204,DL1,Leadership Theory/Practice,3,Undergraduate - Lower Division,WL,40,40,0,0
+73931,201770,SINT,-,INTS 210,1,Sustainable World,4,Undergraduate - Lower Division,WL,32,32,0,2
+75294,201770,SINT,-,INTS 210,2,Sustainable World,4,Undergraduate - Lower Division,WL,30,30,0,1
+72921,201770,SINT,-,INTS 249,1,Digital Literacy,4,Undergraduate - Lower Division,WL,25,25,0,1
+82047,201770,SINT,CT,INTS 291,1,Ldrshp & Community Engagement,1,Undergraduate - Lower Division,O,32,29,40,0
+72828,201770,SINT,-,INTS 294,1,Alternative Break,1,Undergraduate - Lower Division,CN,20,0,0,0
+81573,201770,SINT,-,INTS 294,3,Mason Corps,15-Jan,Undergraduate - Lower Division,O,16,10,0,0
+81632,201770,SINT,BC,INTS 295,8,Leadership for Sustainability,1,Undergraduate - Lower Division,CN,15,9,16,0
+81671,201770,SINT,5N,INTS 295,9,Explorations of Mindful Living,1,Undergraduate - Lower Division,CN,20,20,37,0
+78064,201770,SINT,-,INTS 300,1,Law and Justice,3,Undergraduate - Upper Division,WL,25,25,0,0
+81600,201770,SINT,-,INTS 301,1,Science in the News,3,Undergraduate - Upper Division,WL,25,25,0,0
+73032,201770,SINT,-,INTS 311,1,Animal Migratn/Consrvatn,6,Undergraduate - Upper Division,O,25,19,0,0
+72820,201770,SINT,-,INTS 312,1,Images/Exp of Childhood,4,Undergraduate - Upper Division,WL,25,25,0,0
+80936,201770,SINT,-,INTS 312,3,Images/Exp of Childhood,4,Undergraduate - Upper Division,WL,25,25,0,0
+81944,201770,SINT,-,INTS 315,1,Spirituality/Confl Trans,6,Undergraduate - Upper Division,WL,25,25,0,1
+75295,201770,SINT,-,INTS 316,1,Intro to Childhood Studies,4,Undergraduate - Upper Division,WL,48,48,0,0
+80937,201770,SINT,-,INTS 316,2,Intro to Childhood Studies,4,Undergraduate - Upper Division,WL,25,25,0,1
+80938,201770,SINT,-,INTS 319,1,Contemporary Youth Studies,3,Undergraduate - Upper Division,WL,25,26,0,0
+81370,201770,SINT,-,INTS 321,1,Parent-Child Relations,3,Undergraduate - Upper Division,WL,25,25,0,3
+80939,201770,SINT,-,INTS 322,1,Teacher Historical Perspective,3,Undergraduate - Upper Division,WL,25,25,0,0
+74575,201770,SINT,-,INTS 331,5,The Nonprofit Sector,4,Undergraduate - Upper Division,WL,25,25,0,0
+82783,201770,SINT,-,INTS 331,6,The Nonprofit Sector,4,Undergraduate - Upper Division,O,25,19,0,0
+75297,201770,SINT,-,INTS 334,2,Environmental Justice,4,Undergraduate - Upper Division,O,40,39,0,1
+81956,201770,SINT,-,INTS 337,2,Social Justice Consciousness,3,Undergraduate - Upper Division,WL,25,27,0,0
+81665,201770,SINT,-,INTS 345,2,Introduction to Multimedia,5,Undergraduate - Upper Division,WL,25,25,0,0
+73033,201770,SINT,-,INTS 347,1,Gender Rep in Popular Culture,4,Undergraduate - Upper Division,WL,25,25,0,0
+74838,201770,SINT,-,INTS 347,2,Gender Rep in Popular Culture,4,Undergraduate - Upper Division,WL,25,25,0,0
+72270,201770,SINT,-,INTS 348,1,Digital Futures,3,Undergraduate - Upper Division,WL,25,25,0,0
+71728,201770,SINT,-,INTS 355,1,"Mindfulness,Meaning,Well-Being",3,Undergraduate - Upper Division,WL,25,27,0,1
+80941,201770,SINT,-,INTS 362,1,Social Justice/Human Rights,3,Undergraduate - Upper Division,WL,40,40,0,0
+82161,201770,SINT,-,INTS 365,1,Methods to Enhance Well-Being,3,Undergraduate - Upper Division,CN,6,4,0,0
+80942,201770,SINT,-,INTS 370,1,Sustainable Food Systems,6,Undergraduate - Upper Division,WL,25,25,0,0
+81672,201770,SINT,-,INTS 371,3,Food Systems and Policy,3,Undergraduate - Upper Division,WL,25,25,0,0
+72804,201770,SINT,-,INTS 375,3,Applied Leadership,4,Undergraduate - Upper Division,O,25,24,0,1
+80943,201770,SINT,D2,INTS 375,5,Black Bodies and Policing Race,4,Undergraduate - Upper Division,WL,15,15,25,0
+80944,201770,SINT,G2,INTS 375,6,AFAM Identities,4,Undergraduate - Upper Division,O,25,20,22,0
+81165,201770,SINT,42,INTS 375,7,History at the Movies,6,Undergraduate - Upper Division,O,10,9,30,0
+81666,201770,SINT,-,INTS 375,8,Social Justice & Literature,3,Undergraduate - Upper Division,O,25,24,0,0
+70989,201770,SINT,-,INTS 390,1,International Internship,6-Jan,Undergraduate - Upper Division,CN,99,0,0,0
+70987,201770,SINT,-,INTS 391,1,Intro Integrative Studies,3,Undergraduate - Upper Division,WL,25,25,0,0
+72621,201770,SINT,-,INTS 391,2,Intro Integrative Studies,3,Undergraduate - Upper Division,WL,25,25,0,1
+72564,201770,SINT,-,INTS 391,3,Intro Integrative Studies,3,Undergraduate - Upper Division,WL,25,25,0,0
+83040,201770,SINT,-,INTS 391,4,Intro Integrative Studies,3,Undergraduate - Upper Division,O,25,14,0,0
+73495,201770,SINT,-,INTS 395,3,Comm/Conflict/Mediation,3,Undergraduate - Upper Division,WL,16,16,0,0
+77979,201770,SINT,-,INTS 395,4,"Med, Mndfulness & Stress Mgmt",3,Undergraduate - Upper Division,WL,20,20,0,2
+74515,201770,SINT,5N,INTS 395,6,Explorations of Mindful Living,1,Undergraduate - Upper Division,CN,15,7,37,0
+75323,201770,SINT,-,INTS 395,8,Expl of Gender & Sexuality,3,Undergraduate - Upper Division,WL,25,25,0,0
+81832,201770,SINT,-,INTS 395,11,Compassion in the Workplace,3,Undergraduate - Upper Division,O,20,19,0,0
+81863,201770,SINT,BC,INTS 395,12,Sustainability Project Mgmnt,1,Undergraduate - Upper Division,CN,15,7,16,0
+82048,201770,SINT,CT,INTS 395,13,Ldrshp & Community Engagement,1,Undergraduate - Upper Division,O,12,11,40,0
+82430,201770,SINT,-,INTS 395,14,Events Management,3,Undergraduate - Upper Division,WL,25,25,0,0
+80948,201770,SINT,CQ,INTS 401,1,Conserv Bio-Fund 21 Cent,6,Undergraduate - Upper Division,O,20,10,11,0
+73360,201770,SINT,-,INTS 404,DL1,Ethics and Leadership,4,Undergraduate - Upper Division,WL,40,42,0,0
+80949,201770,SINT,-,INTS 405,1,Women and Leadership,4,Undergraduate - Upper Division,WL,25,26,0,0
+73405,201770,SINT,-,INTS 431,2,Prin Fundrais/Resrce Dev,4,Undergraduate - Upper Division,O,25,22,0,0
+76019,201770,SINT,-,INTS 435,4,Leadership in Changing Environ,4,Undergraduate - Upper Division,WL,25,25,0,0
+81554,201770,SINT,-,INTS 435,6,Leadership in Changing Environ,4,Undergraduate - Upper Division,WL,25,25,0,1
+82231,201770,SINT,-,INTS 465,1,Immigration Issues in NOVA,3,Undergraduate - Upper Division,CN,2,2,0,0
+72802,201770,SINT,-,INTS 475,2,Found Well-being & Resilience,3,Undergraduate - Upper Division,O,25,24,0,0
+80950,201770,SINT,-,INTS 475,9,Human Trafficking,3,Undergraduate - Upper Division,WL,25,25,0,2
+80951,201770,SINT,-,INTS 475,10,Global Leadership,3,Undergraduate - Upper Division,WL,25,26,0,0
+80952,201770,SINT,CY,INTS 475,11,Enterprising Black Women,4,Undergraduate - Upper Division,WL,15,15,20,0
+81667,201770,SINT,-,INTS 475,12,Personl/Organizatnl Well-Being,3,Undergraduate - Upper Division,O,25,23,0,0
+81947,201770,SINT,5X,INTS 475,13,Foundations of Social Innovati,3,Undergraduate - Upper Division,O,10,2,5,0
+70993,201770,SINT,-,INTS 490,1,Exper Learng/Internship,6-Jan,Undergraduate - Upper Division,CN,99,21,0,0
+76080,201770,SINT,5N,INTS 495,3,Explorations of Mindful Living,1,Undergraduate - Upper Division,CN,15,10,37,0
+81739,201770,SINT,60,INTS 495,5,Immigration Issues in NoVA,3,Undergraduate - Upper Division,O,20,17,18,0
+81574,201770,SINT,7,INTS 540,2,Contemp Issues Social Justice,3,Graduate - First,O,12,9,16,0
+81946,201770,SINT,5X,INTS 575,2,Foundations of Social Innovati,3,Graduate - First,O,10,3,5,0
+82103,201770,SINT,CY,INTS 575,3,Enterprising Black Women,4,Graduate - First,WL,5,5,20,0
+82162,201770,SINT,60,INTS 595,2,Immigration Issues in NoVA,3,Graduate - First,O,5,1,18,0
+70096,201770,SOAN,-,ANTH 114,1,Intro to Cultural Anthropology,3,Undergraduate - Lower Division,WL,50,48,0,4
+70095,201770,SOAN,-,ANTH 114,2,Intro to Cultural Anthropology,3,Undergraduate - Lower Division,WL,130,130,0,0
+72266,201770,SOAN,-,ANTH 114,3,Intro to Cultural Anthropology,3,Undergraduate - Lower Division,WL,50,50,0,1
+70094,201770,SOAN,-,ANTH 114,4,Intro to Cultural Anthropology,3,Undergraduate - Lower Division,WL,50,50,0,0
+72465,201770,SOAN,-,ANTH 120,1,Unearthng Past:Prehst Cult Evo,3,Undergraduate - Lower Division,WL,44,44,0,1
+72551,201770,SOAN,-,ANTH 135,1,Intro Biological Anthropology,3,Undergraduate - Lower Division,WL,44,43,0,8
+81445,201770,SOAN,-,ANTH 312,1,Political Anthropology,3,Undergraduate - Upper Division,O,46,29,0,0
+80866,201770,SOAN,-,ANTH 330,1,Peoples/Culture-Non-West,3,Undergraduate - Upper Division,O,40,37,0,0
+76042,201770,SOAN,-,ANTH 332,1,Cultures Comparative Perspectv,3,Undergraduate - Upper Division,WL,40,40,0,0
+81446,201770,SOAN,1E,ANTH 355,1,Human Origins,3,Undergraduate - Upper Division,O,24,24,33,0
+81447,201770,SOAN,77,ANTH 378,1,Humans and Animals,3,Undergraduate - Upper Division,O,40,25,32,0
+81449,201770,SOAN,0F,ANTH 388,1,Human Osteology,3,Undergraduate - Upper Division,O,24,12,22,0
+70097,201770,SOAN,-,ANTH 390,1,"Theories, Methds, Iss I",3,Undergraduate - Upper Division,O,40,12,0,0
+80869,201770,SOAN,-,ANTH 395,1,"Work, Tech and Society",3,Undergraduate - Upper Division,WL,44,44,0,0
+81876,201770,SOAN,-,ANTH 495,1,Internship,6-Jan,Undergraduate - Upper Division,O,10,0,0,0
+72463,201770,SOAN,-,ANTH 535,1,Anth/Human Condition: Sem I,3,Graduate - First,O,20,17,0,0
+81549,201770,SOAN,1E,ANTH 557,1,Human Origins,3,Graduate - First,O,20,9,33,0
+81448,201770,SOAN,77,ANTH 578,1,Humans and Animals,3,Graduate - First,O,20,7,32,0
+80870,201770,SOAN,0F,ANTH 582,1,Human Osteology,3,Graduate - First,O,20,10,22,0
+81877,201770,SOAN,-,ANTH 690,1,Internship,6-Mar,Graduate - First,O,10,0,0,0
+82565,201770,SOAN,2Y,ANTH 699,4,Human Dimen- Climate Chg,3,Graduate - First,O,6,3,9,0
+72268,201770,SOAN,-,SOCI 101,2,Introductory Sociology,3,Undergraduate - Lower Division,WL,50,50,0,0
+72625,201770,SOAN,-,SOCI 101,3,Introductory Sociology,3,Undergraduate - Lower Division,WL,50,50,0,0
+70118,201770,SOAN,-,SOCI 101,4,Introductory Sociology,3,Undergraduate - Lower Division,O,250,212,0,0
+74223,201770,SOAN,-,SOCI 101,6,Introductory Sociology,3,Undergraduate - Lower Division,WL,50,50,0,2
+81675,201770,SOAN,-,SOCI 101,9,Introductory Sociology,3,Undergraduate - Lower Division,CL,44,44,0,0
+82388,201770,SOAN,-,SOCI 101,DL2,Introductory Sociology,3,Undergraduate - Lower Division,O,60,42,0,0
+70119,201770,SOAN,-,SOCI 120,1,Globalization and Society,3,Undergraduate - Lower Division,O,50,49,0,0
+72462,201770,SOAN,-,SOCI 120,2,Globalization and Society,3,Undergraduate - Lower Division,WL,44,44,0,0
+81676,201770,SOAN,-,SOCI 302,6,Sociology of Delinquency,3,Undergraduate - Upper Division,O,40,38,0,0
+70122,201770,SOAN,-,SOCI 303,1,Methods and Logic of Inquiry,3,Undergraduate - Upper Division,O,30,29,0,0
+80876,201770,SOAN,-,SOCI 307,1,Soci Movements/Poli Protest,3,Undergraduate - Upper Division,WL,36,36,0,0
+81568,201770,SOAN,-,SOCI 308,2,Race/Ethnicity Changing World,3,Undergraduate - Upper Division,O,36,33,0,0
+70123,201770,SOAN,-,SOCI 309,1,"Marriage, Fam/Intimate Life",3,Undergraduate - Upper Division,O,50,29,0,0
+72789,201770,SOAN,-,SOCI 311,1,Classical Soci Theory,3,Undergraduate - Upper Division,WL,32,32,0,0
+70124,201770,SOAN,-,SOCI 313,1,Stat for Behavioral Sci,4,Undergraduate - Upper Division,WL,30,30,0,0
+70126,201770,SOAN,-,SOCI 313,2,Stat for Behavioral Sci,4,Undergraduate - Upper Division,O,30,29,0,0
+77919,201770,SOAN,-,SOCI 320,1,Social Structure and Globaliza,3,Undergraduate - Upper Division,O,50,49,0,0
+80878,201770,SOAN,-,SOCI 332,1,The Urban World,3,Undergraduate - Upper Division,O,50,34,0,0
+81569,201770,SOAN,-,SOCI 340,2,"Power, Politics and Society",3,Undergraduate - Upper Division,O,45,34,0,0
+81570,201770,SOAN,-,SOCI 352,2,Social Problems and Solutions,3,Undergraduate - Upper Division,O,30,27,0,0
+75779,201770,SOAN,4P,SOCI 385,1,Sociology of Religion,3,Undergraduate - Upper Division,O,50,19,28,0
+80881,201770,SOAN,-,SOCI 390,1,"Health, Illness and Disabi",3,Undergraduate - Upper Division,O,50,19,0,0
+80478,201770,SOAN,0W,SOCI 395,10,Race/Gndr/Class/Sports,3,Undergraduate - Upper Division,O,2,2,32,0
+80619,201770,SOAN,3N,SOCI 395,11,Organizing Culture Change,3,Undergraduate - Upper Division,O,7,3,44,0
+80486,201770,SOAN,18,SOCI 395,12,Feminist Appr to Social Resrch,3,Undergraduate - Upper Division,O,5,2,21,0
+80882,201770,SOAN,-,SOCI 412,1,Contemporary Soci Theory,3,Undergraduate - Upper Division,O,30,22,0,0
+81878,201770,SOAN,-,SOCI 416,1,Internship in Sociology,6-Jan,Undergraduate - Upper Division,O,10,1,0,0
+82285,201770,SOAN,DO,SOCI 481,1,RS: Honors Seminar in Soc II,3,Undergraduate - Upper Division,O,5,3,13,0
+75782,201770,SOAN,DO,SOCI 485,1,RS:Sociological Analysis/Pract,3,Undergraduate - Upper Division,O,35,10,13,0
+81879,201770,SOAN,-,SOCI 516,1,Internship in Sociology,6-Jan,Graduate - First,O,10,0,0,0
+74250,201770,SOAN,-,SOCI 601,1,Prosem Public/Applied Sociolgy,3,Graduate - First,O,20,12,0,0
+75784,201770,SOAN,-,SOCI 602,1,Wrting for Social Sciences,3,Graduate - First,O,20,17,0,0
+72117,201770,SOAN,-,SOCI 620,1,Methods/Logic Social Inquiry,3,Graduate - First,O,20,9,0,0
+81785,201770,SOAN,-,SOCI 631,2,Survey Research,3,Graduate - First,O,20,9,0,0
+77945,201770,SOAN,BM,SOCI 633,1,Political Sociology,3,Graduate - First,O,20,15,18,0
+81397,201770,SOAN,D1,SOCI 633,2,Feminist Theory,3,Graduate - First,O,20,7,13,0
+80487,201770,SOAN,18,SOCI 633,6,Feminist Appr to Social Resrch,3,Graduate - First,O,8,4,21,0
+70128,201770,SOAN,-,SOCI 711,1,Classical Sociological Thry,3,Graduate - Advanced,O,20,11,0,0
+81807,201770,SOAN,BM,SOCI 833,2,Special Topics in Sociology,3,Graduate - Advanced,O,16,3,18,0
+70473,201770,WMST,-,WMST 100,1,Representation of Women,3,Undergraduate - Lower Division,WL,42,42,0,0
+70474,201770,WMST,-,WMST 100,2,Representation of Women,3,Undergraduate - Lower Division,WL,44,44,0,0
+70475,201770,WMST,-,WMST 200,1,Intro to Women/Gender Studies,3,Undergraduate - Lower Division,WL,40,40,0,0
+71904,201770,WMST,-,WMST 308,1,Introduction to LGBTQ Studies,3,Undergraduate - Upper Division,O,30,27,0,0
+80469,201770,WMST,0G,WMST 315,1,Women During Enslavement Era,3,Undergraduate - Upper Division,O,4,4,25,0
+80471,201770,WMST,-,WMST 330,1,Theor Perspectvs Wmn/Gndr Stud,3,Undergraduate - Upper Division,O,30,13,0,0
+73192,201770,WMST,18,WMST 410,1,Feminist Appr to Social Resrch,3,Undergraduate - Upper Division,O,5,5,21,0
+80472,201770,WMST,0M,WMST 450,2,Gendr Sexuality & Human Rights,3,Undergraduate - Upper Division,O,6,4,24,0
+80477,201770,WMST,0W,WMST 450,6,Race/Gndr/Class/Sports,3,Undergraduate - Upper Division,O,3,2,32,0
+80473,201770,WMST,0M,WMST 550,4,Gendr Sexuality & Human Rights,3,Graduate - First,O,9,8,24,0
+80479,201770,WMST,0W,WMST 550,6,Race/Gndr/Class/Sports,3,Graduate - First,O,6,3,32,0
+74986,201770,WMST,16,WMST 600,1,"Gender,Race,Reform 1800-1920",3,Graduate - First,O,7,6,16,0
+82006,201770,WMST,7,WMST 600,3,Contemp Issues Social Justice,3,Graduate - First,O,8,7,16,0
+73333,201770,WMST,18,WMST 610,1,Feminist Appr to Social Resrch,3,Graduate - First,O,12,10,21,0
+81400,201770,WMST,D1,WMST 630,1,Feminist Thr Across Disc,3,Graduate - First,O,10,6,13,0

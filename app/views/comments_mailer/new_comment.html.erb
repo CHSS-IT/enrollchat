@@ -1,0 +1,8 @@
+<h1><%= @subject %>}</h1>
+<h2>by <%= @comment.user.full_name %> on <%= basic_datetime(@comment.created_at) %></h2>
+<p><%= @comment.body %></p>
+<p><%= link_to "View section >>", section_url(@comment.section) %></p>
+
+<hr />
+<p>EnrollChat allows you to choose to receive daily digests of comments or individual emails each time a comment is posted. You will be notified of comments relevant to your selected programs, or to all programs if you have not selected a department preference.</p>
+<p>To change your preferences, log into EnrollChat and click <%= link_to "Preferences", edit_user_url(@recipient) %>.</p>

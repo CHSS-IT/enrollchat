@@ -1,0 +1,64 @@
+<h1>EnrollChat Weekly Report</h1>
+<h2><%= basic_date(Date.today) %></h2>
+<p>EnrollChat provides you with up-to-date enrollment information for the current enrollment term. Log in to gather information on each class, including whether there has been an increase or decrease in enrollment over the previous reporting period. Both the Dean's Office and you have access to this data and should use EnrollChat to regularly communicate about specific courses.<p>
+<p>This report shows the enrollment state of your programs and a summary of recent comments. To change your email preferences, log into EnrollChat and click <%= link_to 'Preferences', edit_user_url(@recipient) %>.</p>
+<p>View the daily report <%= link_to 'within EnrollChat', reports_url %>.</p>
+
+<hr />
+
+<table cellspacing="0" cellpadding="4" rules="rows" style="color:#1f2240;background-color:#ffffff">
+  <thead style="color:#ffffff;background-color:#1f2240;font-weight:bold">
+  <tr>
+    <th scope="col">Department</th>
+    <th scope="col">Active Sections</th>
+    <th scope="col">Under-Enrolled</th>
+    <th scope="col">Full</th>
+    <th scope="col">Over-Enrolled</th>
+    <th scope="col">Canceled Sections</th>
+    <th scope="col">Comments This Week</th>
+    <th scope="col">Most Recent Comment</th>
+    <th scope="col">Enrollment Limit</th>
+    <th scope="col">Actual Enrollment</th>
+    <th scope="col">Cross-List Enrollment</th>
+    <th scope="col">Waitlist</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @recipient.reporting_departments.each do |department| %>
+      <% sections = Section.in_term(@term).in_department(department) %>
+      <tr>
+        <td><%= department %></td>
+        <td><%= sections.not_canceled.size %></td>
+        <td><%= sections.flagged_as?('under_enrolled').size %></td>
+        <td><%= sections.full.size %></td>
+        <td><%= sections.flagged_as?('over-enrolled').size %></td>
+        <td><%= sections.canceled.size %></td>
+        <td><%= Comment.for_department(department).in_past_week.size %></td>
+        <td><%= basic_datetime(Comment.for_department(department).in_term(@term).most_recent) %></td>
+        <td><%= sections.not_canceled.sum(:enrollment_limit) %><%#= arrow(sections.not_canceled.sum(:enrollment_limit_yesterday)) %></td>
+        <td><%= sections.not_canceled.sum(:actual_enrollment) %><%#= arrow(sections.not_canceled.sum(:actual_enrollment_yesterday)) %></td>
+        <td><%= sections.not_canceled.sum(:cross_list_enrollment) %><%#= arrow(sections.not_canceled.sum(:cross_list_enrollment_yesterday)) %></td>
+        <td><%= sections.not_canceled.sum(:waitlist) %><%#= arrow(sections.not_canceled.sum(:waitlist_yesterday)) %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<h2>Sections With Comments</h2>
+<%= @text.present? ? @text.html_safe : content_tag(:p, 'No recent comments.') %>
+
+
+<style>
+
+  td { text-align: right }
+
+  /* Cells in even rows (2,4,6...) are one color */
+  tr:nth-child(even) td { background: #F1F1F1; }
+
+  /* Cells in odd rows (1,3,5...) are another (excludes header cells)  */
+  tr:nth-child(odd) td { background: #FEFEFE; }
+
+  tr td:hover { background: #666; color: #FFF; }
+  /* Hover cell effect! */
+
+</style>
