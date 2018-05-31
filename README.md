@@ -1,6 +1,6 @@
 # EnrollChat
 
-Enrollchat accepts a feed of course section data and allows users to comment on individual sections. The feed may be uploaded manually as a CSV or XSLT file.
+EnrollChat was designed to help college and department administrators cooordinate their efforts during the enrollment process. It accepts a feed of course section data and allows users to discuss individual sections. Users may choose which departments are of interest and how often they wish to receive updates. They may choose to be notified as relevant comments are posted or in digest form each day. They may also chooose to receive a weekly enrollment report.
 
 ## Roadmap
 
