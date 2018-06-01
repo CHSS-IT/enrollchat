@@ -26,15 +26,15 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'should create a list of all available statuses including the manually added ALL and ACTIVE statuses' do
-    assert_equal @sections.status_list, ["ACTIVE", "ALL", "CL", "CN", "O", "WL"]
+    assert_equal @sections.status_list, ['ACTIVE', 'ALL', 'CL', 'CN', 'O', 'WL']
   end
 
   test 'should create a list of levels available for selection' do
-    assert_equal @sections.level_list, ["Undergraduate - Lower Division", "Undergraduate - Upper Division", "Graduate - First", "Graduate - Advanced"]
+    assert_equal @sections.level_list, ['Undergraduate - Lower Division', 'Undergraduate - Upper Division', 'Graduate - First', 'Graduate - Advanced']
   end
 
   test 'should create a list of enrollment statuses' do
-    assert_equal Section.enrollment_status_list, ["Undergraduate under-enrolled", "Undergraduate over-enrolled", "Graduate under-enrolled", "Graduate over-enrolled"]
+    assert_equal Section.enrollment_status_list, ['Undergraduate under-enrolled', 'Undergraduate over-enrolled', 'Graduate under-enrolled', 'Graduate over-enrolled']
   end
 
   # test scopes used in filter

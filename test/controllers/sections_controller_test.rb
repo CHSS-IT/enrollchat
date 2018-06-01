@@ -10,18 +10,18 @@ class SectionsControllerTest < ActionDispatch::IntegrationTest
     login_as users(:one)
   end
 
-  test "should GET index" do
+  test 'should GET index' do
     get sections_url
     assert_response :success
   end
 
-  test "should GET index with full collection of sections" do
+  test 'should GET index with full collection of sections' do
     get sections_url
     assert_response :success
     assert_equal @sections, [@section_one, @section_two, @section_three, @section_four]
   end
 
-  test "should not perform import for a non-admin user" do
+  test 'should not perform import for a non-admin user' do
     login_as users(:two)
     post sections_import_path
     assert_redirected_to sections_url

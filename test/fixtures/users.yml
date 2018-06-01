@@ -5,16 +5,16 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  email: 'chssadmin@email.com'
-  username: 'chssadmin'
+  email: 'admin@email.com'
+  username: 'admin'
   first_name: 'Jethro'
   last_name: 'Gibbs'
   admin: true
   email_preference: 'All Comments'
 
 two:
-  email: 'chssuser@email.com'
-  username: 'chssuser'
+  email: 'user@email.com'
+  username: 'user'
   first_name: 'Anthony'
   last_name: 'DiNozzo'
   admin: false

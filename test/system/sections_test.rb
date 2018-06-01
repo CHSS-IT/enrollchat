@@ -5,13 +5,13 @@ class SectionsTest < ApplicationSystemTestCase
     login_as users(:one)
   end
 
-  test "visiting the index" do
+  test 'visiting the index' do
     visit sections_url
-    assert_selector "h1", text: "Sections"
+    assert_selector 'h1', text: 'Sections'
     assert page.has_css?('table tbody tr', count: 4)
   end
 
-  test "filtering by department" do
+  test 'filtering by department' do
     visit sections_url
     assert_selector 'table tbody tr', count: 4
     select('BIS', from: 'section_department')
@@ -23,7 +23,7 @@ class SectionsTest < ApplicationSystemTestCase
     assert_selector 'table tbody tr td', text: 'Undergraduate - Lower Division'
   end
 
-  test "filtering by status" do
+  test 'filtering by status' do
     visit sections_url
     assert_selector 'table tbody tr', count: 4
     select('CL', from: 'section_status')
@@ -35,7 +35,7 @@ class SectionsTest < ApplicationSystemTestCase
     assert_selector 'table tbody tr td', text: 'Undergraduate - Upper Division'
   end
 
-  test "filtering by level" do
+  test 'filtering by level' do
     visit sections_url
     assert_selector 'table tbody tr', count: 4
     select('Graduate - First', from: 'section_level')
@@ -46,7 +46,7 @@ class SectionsTest < ApplicationSystemTestCase
     assert_selector 'table tbody tr td', text: 'Graduate - First'
   end
 
-  test "filtering by flagged as" do
+  test 'filtering by flagged as' do
     visit sections_url
     assert_selector 'table tbody tr', count: 4
     select('under-enrolled', from: 'section_flagged')
@@ -56,7 +56,7 @@ class SectionsTest < ApplicationSystemTestCase
     assert_selector 'table tbody tr td', text: 'ENGL'
   end
 
-  test "applying multiple filters" do
+  test 'applying multiple filters' do
     visit sections_url
     assert_selector 'table tbody tr', count: 4
     select('under-enrolled', from: 'section_flagged')
@@ -67,7 +67,7 @@ class SectionsTest < ApplicationSystemTestCase
     assert_selector 'table tbody tr td', text: '13'
   end
 
-  test "clearing filters" do
+  test 'clearing filters' do
     visit sections_url
     assert_selector 'table tbody tr', count: 4
     select('CRIM', from: 'section_department')

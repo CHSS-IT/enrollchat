@@ -30,13 +30,13 @@ class NavigationTest < ActionDispatch::IntegrationTest
     assert_select 'li', text: 'Preferences', count: 0
   end
 
-  test "File upload interface should be available for admins" do
+  test 'File upload interface should be available for admins' do
     login_as @admin
     get sections_url
     assert_select 'form', count: 2
   end
 
-  test "File upload interface should not be available for non-admins" do
+  test 'File upload interface should not be available for non-admins' do
     login_as @user
     get sections_url
     assert_select 'form', count: 1
