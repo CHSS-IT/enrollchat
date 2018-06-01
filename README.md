@@ -10,8 +10,7 @@ Enrollchat was developed by the College of Humanities and Social Sciences at Geo
 
 * Ruby 2.5.1
 * PostgreSQL for the database
-* Yarn for JS package management
-* Redis server
+* Redis server (and RedisToGo)
 
 The app presumes Heroku hosting and some development decisions reflect that presumption.
 
@@ -24,6 +23,9 @@ Emails are dependent on SendGrid, which needs these environment variables.
 * SENDGRID_USERNAME
 * SENDGRID_PASSWORD
 
+For Redis:
+* REDISTOGO_URL
+
 For the rake-based feed, you will need to have a CSV file delivered to a directory on a server you can access via SFTP. This is dependent on these environmental variables:
 * ENROLLCHAT_REMOTE: The server's address. E.g. "myserver.myhost.edu"
 * ENROLLCHAT_REMOTE_DIR: The directory on that server. That directory should also contain a subdirectory named "backup."
@@ -31,6 +33,10 @@ For the rake-based feed, you will need to have a CSV file delivered to a directo
 * ENROLLCHAT_REMOTE_PASS: Password.
 * ENROLLCHAT_ADMIN_EMAIL: The 'from' address for all emails.
 * ENROLLCHAT_HOST: Actionmailer default url host.
+
+We are tracking errors with AirBrake.
+* AIRBRAKE_PROJECT_ID
+* AIRBRAKE_PROJECT_KEY
 
 Heroku will need these add-ons:
 * Herokupostgres
