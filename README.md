@@ -58,7 +58,7 @@ Administrators may manually upload sections in an xlsx file using the upload but
 
 ## Testing
 
-The app uses Rails' built in testing mechanisms. System Tests are configured to inherit from Capybara and run Selenium with headless Chrome. The chromedriver is required to use this setup.
+The app uses Rails' built in testing mechanisms. System Tests are configured to inherit from Capybara and run Selenium with headless Chrome. Chromedriver is required to use this setup and is included in the Gemfile.
 
 To run tests: `bin/rails test`  
 To run system tests: `bin/rails test:system`
