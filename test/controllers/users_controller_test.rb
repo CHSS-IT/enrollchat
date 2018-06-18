@@ -70,10 +70,17 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test 'should update user for an admin user' do
     login_as users(:one)
-    patch user_url(@user), params: { user: { first_name: 'New', last_name: 'Name', admin: true } }
+    patch user_url(@user), params: { user: { first_name: 'New', last_name: 'Name' } }
     assert_redirected_to users_url
     assert_equal @user.reload.first_name, 'New'
     assert_equal @user.reload.last_name, 'Name'
+    assert_equal 'User was succesfully updated', flash[:notice]
+  end
+
+  test 'should update the admin parameter for admin users' do
+    login_as users(:one)
+    patch user_url(@user), params: { user: { admin: true } }
+    assert_redirected_to users_url
     assert_equal @user.reload.admin, true
     assert_equal 'User was succesfully updated', flash[:notice]
   end
