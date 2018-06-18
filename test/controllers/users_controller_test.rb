@@ -73,6 +73,15 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     patch user_url(@user), params: { user: { first_name: 'New', last_name: 'Name' } }
     assert_redirected_to users_url
     assert_equal @user.reload.first_name, 'New'
+    assert_equal @user.reload.last_name, 'Name'
+    assert_equal 'User was succesfully updated', flash[:notice]
+  end
+
+  test 'should update the admin parameter for admin users' do
+    login_as users(:one)
+    patch user_url(@user), params: { user: { admin: true } }
+    assert_redirected_to users_url
+    assert_equal @user.reload.admin, true
     assert_equal 'User was succesfully updated', flash[:notice]
   end
 
@@ -91,6 +100,13 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_equal @user.reload.email_preference, 'No Emails'
     assert_equal @user.reload.first_name, 'New' #not available to the user through the UI
     assert_equal 'Preferences updated', flash[:notice]
+  end
+
+  test 'should not UPDATE admin for a user editing themselves' do
+    login_as @user
+    patch user_url(@user), params: { user: { admin: true} }
+    assert_redirected_to sections_path
+    assert_equal @user.reload.admin, false
   end
 
 end
