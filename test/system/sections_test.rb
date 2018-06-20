@@ -44,6 +44,24 @@ class SectionsTest < ApplicationSystemTestCase
     assert_selector 'table tbody tr td', text: 'CRIM'
     assert_selector 'table tbody tr td', text: 'Criminal Justice'
     assert_selector 'table tbody tr td', text: 'Graduate - First'
+    select('Graduate - Advanced', from: 'section_level')
+    click_link('filter-submit')
+    assert_selector 'table tbody tr', count: 1
+    assert_selector 'table tbody tr td', text: 'SINT'
+    assert_selector 'table tbody tr td', text: 'Experiential Learning'
+    assert_selector 'table tbody tr td', text: 'Graduate - Advanced'
+    select('Undergraduate - Lower Division', from: 'section_level')
+    click_link('filter-submit')
+    assert_selector 'table tbody tr', count: 1
+    assert_selector 'table tbody tr td', text: 'BIS'
+    assert_selector 'table tbody tr td', text: 'MyString'
+    assert_selector 'table tbody tr td', text: 'Undergraduate - Lower Division'
+    select('Undergraduate - Upper Division', from: 'section_level')
+    click_link('filter-submit')
+    assert_selector 'table tbody tr', count: 1
+    assert_selector 'table tbody tr td', text: 'ENGL'
+    assert_selector 'table tbody tr td', text: 'MyString'
+    assert_selector 'table tbody tr td', text: 'Undergraduate - Upper Division'
   end
 
   test 'filtering by flagged as' do
@@ -54,6 +72,10 @@ class SectionsTest < ApplicationSystemTestCase
     assert_selector 'table tbody tr', count: 2
     assert_selector 'table tbody tr td', text: 'SINT'
     assert_selector 'table tbody tr td', text: 'ENGL'
+    select('long-waitlist', from: 'section_flagged')
+    click_link('filter-submit')
+    assert_selector 'table tbody tr', count: 1
+    assert_selector 'table tbody tr td', text: 'CRIM'
   end
 
   test 'applying multiple filters' do

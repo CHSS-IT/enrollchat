@@ -21,6 +21,11 @@ class SectionsControllerTest < ActionDispatch::IntegrationTest
     assert_equal @sections, [@section_one, @section_two, @section_three, @section_four]
   end
 
+  test 'should GET show for a section' do
+    get section_url(@section_one)
+    assert_response :success
+  end
+
   test 'should not perform import for a non-admin user' do
     login_as users(:two)
     post sections_import_path

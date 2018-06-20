@@ -25,6 +25,18 @@ class SectionTest < ActiveSupport::TestCase
     assert_equal @sections.department_list, ["BIS", "CRIM", "ENGL", "SINT"]
   end
 
+  test 'should destroy sections marked for deletion' do
+    @section.update_attribute(:delete_at, DateTime.now().next_month)
+    Section.delete_marked
+    assert_equal @sections, [@section_two, @section_three, @section_four]
+    assert_equal @sections.count, 3
+  end
+
+  test 'should return a unique, unsorted list of departments' do
+    @section_five = sections(:four)
+    assert_equal @sections.departments, ["BIS", "CRIM", "SINT", "ENGL"]
+  end
+
   test 'should create a list of all available statuses including the manually added ALL and ACTIVE statuses' do
     assert_equal @sections.status_list, ['ACTIVE', 'ALL', 'CL', 'CN', 'O', 'WL']
   end

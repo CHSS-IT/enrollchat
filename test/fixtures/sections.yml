@@ -30,9 +30,9 @@ two:
   level: Graduate - First
   status: WL
   enrollment_limit: 20
-  actual_enrollment: 21
+  actual_enrollment: 26
   cross_list_enrollment: 1
-  waitlist: 1
+  waitlist: 6
 
 three:
   owner: MyString
