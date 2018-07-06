@@ -13,11 +13,6 @@
           <div class="card-header white py-4">
             <div id="report-table" class="card-content table-full-width">
               <canvas id="lineChart" style="align: center"></canvas>
-              <% version_date_strings = @enrollments.collect { |x| x.created_at.strftime('%b %e') }.uniq.flatten #.flatten.uniq.to_json.html_safe  %>
-              <% waitlist_history = @enrollments.group_by(&:created_at).map{ |x, y| y.inject(0){ |sum, i| sum + i.waitlist } } %>
-              <% cross_list_enrollment_history = @enrollments.group_by(&:created_at).map{ |x, y| y.inject(0){ |sum, i| sum + i.cross_list_enrollment } } %>
-              <% actual_enrollment_history = @enrollments.group_by(&:created_at).map{ |x, y| y.inject(0){ |sum, i| sum + i.actual_enrollment } } %>
-              <% enrollment_limit_history = @enrollments.group_by(&:created_at).map{ |x, y| y.inject(0){ |sum, i| sum + i.enrollment_limit } } %>
             </div>
           </div>
         </div>
