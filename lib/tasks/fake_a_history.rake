@@ -17,7 +17,7 @@ namespace :fake_a_history do
     s.save!
     puts "History faked for section #{s.id}"
   end
-  
+
   def fun_random(value, start_num, end_num)
     result = value > end_num ? value + rand(start_num..end_num) : value + rand(0..end_num)
     result
