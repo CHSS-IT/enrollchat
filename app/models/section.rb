@@ -54,7 +54,7 @@ class Section < ApplicationRecord
   # end
 
   def history_dates
-    enrollments.pluck(:created_at)
+    enrollments.collect { |e| e.created_at }.to_a
   end
 
   def history_date_strings
@@ -62,11 +62,19 @@ class Section < ApplicationRecord
   end
 
   def enrollment_limit_history
-    enrollments.pluck(:enrollment_limit)
+    enrollments.collect { |e| e.enrollment_limit }
   end
 
   def actual_enrollment_history
-    enrollments.pluck(:actual_enrollment)
+    enrollments.collect { |e| e.actual_enrollment }
+  end
+
+  def cross_list_enrollment_history
+    enrollments.collect { |e| e.cross_list_enrollment }
+  end
+
+  def waitlist_history
+    enrollments.collect { |e| e.waitlist }
   end
 
   def section_number_zeroed
@@ -132,7 +140,7 @@ class Section < ApplicationRecord
         section = Section.find_or_initialize_by(term: row["term"], section_id: row["section_id"])
         section.attributes = row.to_hash.slice(*header)
         section.save! if section.new_record?
-        section.enrollments.create(department: section.department, enrollment_limit: section.enrollment_limit, actual_enrollment: section.actual_enrollment, cross_list_enrollment: section.cross_list_enrollment, waitlist: section.waitlist)
+        section.enrollments.create(department: section.department, term: section.term, enrollment_limit: section.enrollment_limit, actual_enrollment: section.actual_enrollment, cross_list_enrollment: section.cross_list_enrollment, waitlist: section.waitlist)
 
         report_action('New Sections', section.section_and_number) if section.new_record?
 

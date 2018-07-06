@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2018_07_04_112748) do
   create_table "enrollments", force: :cascade do |t|
     t.bigint "section_id"
     t.string "department"
+    t.integer "term"
     t.integer "enrollment_limit", default: 0
     t.integer "actual_enrollment", default: 0
     t.integer "cross_list_enrollment", default: 0

@@ -3,6 +3,9 @@ class Enrollment < ApplicationRecord
 
   before_save :null_to_zero
 
+  scope :in_term, ->(term) { where(term: term) }
+  scope :in_department, ->(department) { where(department: department) }
+
   private
 
   def null_to_zero
