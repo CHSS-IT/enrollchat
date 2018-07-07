@@ -4,6 +4,7 @@ class Section < ApplicationRecord
   before_save :track_differences
 
   has_many :comments, -> { order(created_at: :desc) }, dependent: :destroy
+  has_many :enrollments, -> { order(created_at: :desc) }, dependent: :destroy
 
   default_scope  { where("delete_at is null") }
 
@@ -35,6 +36,46 @@ class Section < ApplicationRecord
     comments.first.created_at unless comments.empty?
   end
 
+
+  # def current_enrollment_limit
+  #   enrollments.present? ? enrollments.last.enrollment_limit : 0
+  # end
+  #
+  # def current_actual_enrollment
+  #   enrollments.present? ? enrollments.last.actual_enrollment : 0
+  # end
+  #
+  # def current_cross_list_enrollment
+  #   enrollments.present? ? enrollments.last.cross_list_enrollment : 0
+  # end
+  #
+  # def current_waitlist
+  #   enrollments.present? ? enrollments.last.waitlist : 0
+  # end
+
+  def history_dates
+    enrollments.collect { |e| e.created_at }.to_a
+  end
+
+  def history_date_strings
+    history_dates.map { |d| d.strftime('%b %e') } << Time.now.strftime('%b %e')
+  end
+
+  def enrollment_limit_history
+    enrollments.collect { |e| e.enrollment_limit }
+  end
+
+  def actual_enrollment_history
+    enrollments.collect { |e| e.actual_enrollment }
+  end
+
+  def cross_list_enrollment_history
+    enrollments.collect { |e| e.cross_list_enrollment }
+  end
+
+  def waitlist_history
+    enrollments.collect { |e| e.waitlist }
+  end
 
   def section_number_zeroed
     section_number.to_s.rjust(3, "0")
@@ -97,14 +138,9 @@ class Section < ApplicationRecord
         puts "Skipping this row:"
       else
         section = Section.find_or_initialize_by(term: row["term"], section_id: row["section_id"])
-
         section.attributes = row.to_hash.slice(*header)
-
-        #bulletproof numericals; this should be in the model
-        section.enrollment_limit = 0 if section.enrollment_limit.nil?
-        section.actual_enrollment = 0 if section.actual_enrollment.nil?
-        section.cross_list_enrollment = 0 if section.cross_list_enrollment.nil?
-        section.waitlist = 0 if section.waitlist.nil?
+        section.save! if section.new_record?
+        section.enrollments.create(department: section.department, term: section.term, enrollment_limit: section.enrollment_limit, actual_enrollment: section.actual_enrollment, cross_list_enrollment: section.cross_list_enrollment, waitlist: section.waitlist)
 
         report_action('New Sections', section.section_and_number) if section.new_record?
 
@@ -118,7 +154,7 @@ class Section < ApplicationRecord
         end
 
         # Save if changed, touch if unchanged
-        if section.changed?
+        if section.changed? || section.enrollments.last.new_record?
           section.save!
           @updated_sections += 1
         else
@@ -214,5 +250,4 @@ class Section < ApplicationRecord
     self.cross_list_enrollment_yesterday = cross_list_enrollment_changed? ? cross_list_enrollment - cross_list_enrollment_was : 0
     self.waitlist_yesterday = waitlist_changed? ? waitlist - waitlist_was : 0
   end
-
 end

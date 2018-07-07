@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_21_054105) do
+ActiveRecord::Schema.define(version: 2018_07_04_112748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,19 @@ ActiveRecord::Schema.define(version: 2018_05_21_054105) do
     t.datetime "updated_at", null: false
     t.index ["section_id"], name: "index_comments_on_section_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "enrollments", force: :cascade do |t|
+    t.bigint "section_id"
+    t.string "department"
+    t.integer "term"
+    t.integer "enrollment_limit", default: 0
+    t.integer "actual_enrollment", default: 0
+    t.integer "cross_list_enrollment", default: 0
+    t.integer "waitlist", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["section_id"], name: "index_enrollments_on_section_id"
   end
 
   create_table "sections", force: :cascade do |t|

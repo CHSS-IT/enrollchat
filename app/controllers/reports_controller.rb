@@ -10,9 +10,9 @@ class ReportsController < ApplicationController
     @under_enrolled = @sections.in_term(@term).under_enrolled.size
     @over_enrolled = @sections.in_term(@term).over_enrolled.size
     @sections = @sections.in_term(@term).group_by { |s| s.department}
+  end
 
-
-
-
+  def show
+    @enrollments = Enrollment.in_term(@term).in_department(params[:id]).order(:created_at)
   end
 end
