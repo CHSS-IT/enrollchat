@@ -2,7 +2,7 @@ class Section < ApplicationRecord
   require 'roo'
 
   has_many :comments, -> { order(created_at: :desc) }, dependent: :destroy
-  has_many :enrollments, -> { order(created_at: :desc) }, dependent: :destroy
+  has_many :enrollments, -> { order(:created_at) }, dependent: :destroy
 
   default_scope  { where("delete_at is null") }
 
@@ -52,27 +52,27 @@ class Section < ApplicationRecord
   # end
 
   def history_dates
-    enrollments.order(:created_at).collect { |e| e.created_at }.to_a
+    enrollments.collect { |e| e.created_at }.to_a
   end
 
   def history_date_strings
-    history_dates.map { |d| d.strftime('%b %e') } << Time.now.strftime('%b %e')
+    history_dates.map { |d| d.strftime('%b %e') }
   end
 
   def enrollment_limit_history
-    enrollments.order(:created_at).collect { |e| e.enrollment_limit }
+    enrollments.collect { |e| e.enrollment_limit }
   end
 
   def actual_enrollment_history
-    enrollments.order(:created_at).collect { |e| e.actual_enrollment }
+    enrollments.map { |e| e.actual_enrollment }
   end
 
   def cross_list_enrollment_history
-    enrollments.order(:created_at).collect { |e| e.cross_list_enrollment }
+    enrollments.collect { |e| e.cross_list_enrollment }
   end
 
   def waitlist_history
-    enrollments.order(:created_at).collect { |e| e.waitlist }
+    enrollments.collect { |e| e.waitlist }
   end
 
   def section_number_zeroed
