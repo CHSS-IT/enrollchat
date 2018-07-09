@@ -1,8 +1,6 @@
 class Section < ApplicationRecord
   require 'roo'
 
-  before_save :track_differences
-
   has_many :comments, -> { order(created_at: :desc) }, dependent: :destroy
   has_many :enrollments, -> { order(created_at: :desc) }, dependent: :destroy
 
@@ -139,6 +137,7 @@ class Section < ApplicationRecord
       else
         section = Section.find_or_initialize_by(term: row["term"], section_id: row["section_id"])
         section.attributes = row.to_hash.slice(*header)
+        section.track_differences
         section.save! if section.new_record?
         section.enrollments.create(department: section.department, term: section.term, enrollment_limit: section.enrollment_limit, actual_enrollment: section.actual_enrollment, cross_list_enrollment: section.cross_list_enrollment, waitlist: section.waitlist)
 
@@ -240,8 +239,6 @@ class Section < ApplicationRecord
     self.update(enrollment_limit_yesterday: 0, actual_enrollment_yesterday: 0, cross_list_enrollment_yesterday: 0, waitlist_yesterday: 0)
   end
 
-  private
-
   def track_differences
     # Dry it up
     # Differences since last file upload
@@ -250,4 +247,7 @@ class Section < ApplicationRecord
     self.cross_list_enrollment_yesterday = cross_list_enrollment_changed? ? cross_list_enrollment - cross_list_enrollment_was : 0
     self.waitlist_yesterday = waitlist_changed? ? waitlist - waitlist_was : 0
   end
+
+  private
+
 end
