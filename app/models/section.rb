@@ -52,7 +52,7 @@ class Section < ApplicationRecord
   # end
 
   def history_dates
-    enrollments.collect { |e| e.created_at }.to_a
+    enrollments.order(:created_at).collect { |e| e.created_at }.to_a
   end
 
   def history_date_strings
@@ -60,19 +60,19 @@ class Section < ApplicationRecord
   end
 
   def enrollment_limit_history
-    enrollments.collect { |e| e.enrollment_limit }
+    enrollments.order(:created_at).collect { |e| e.enrollment_limit }
   end
 
   def actual_enrollment_history
-    enrollments.collect { |e| e.actual_enrollment }
+    enrollments.order(:created_at).collect { |e| e.actual_enrollment }
   end
 
   def cross_list_enrollment_history
-    enrollments.collect { |e| e.cross_list_enrollment }
+    enrollments.order(:created_at).collect { |e| e.cross_list_enrollment }
   end
 
   def waitlist_history
-    enrollments.collect { |e| e.waitlist }
+    enrollments.order(:created_at).collect { |e| e.waitlist }
   end
 
   def section_number_zeroed
