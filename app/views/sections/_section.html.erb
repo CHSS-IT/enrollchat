@@ -2,7 +2,7 @@
   <td><%= flagged_icon(section) %></td>
   <td><%= section.flagged_as %></td>
   <td><%= section.department %></td>
-  <td><%= section.cross_list_group %></td>
+  <td><%= section.cross_list_group unless section.cross_list_group == "'---" %></td>
   <td><%= section.section_and_number %></td>
   <td><%= section.title %></td>
   <td><%= section.credits %></td>
