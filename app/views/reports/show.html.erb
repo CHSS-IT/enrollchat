@@ -28,7 +28,7 @@
   var myLineChart = new Chart(ctxL, {
     type: 'line',
     data: {
-      labels: <%= version_date_strings.to_json.html_safe %>,
+      labels: <%= version_date_strings %>,
       datasets: [
         {
           label: "Waitlist",
