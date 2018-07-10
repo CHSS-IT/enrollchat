@@ -13,6 +13,6 @@ class ReportsController < ApplicationController
   end
 
   def show
-    @enrollments = Enrollment.in_term(@term).in_department(params[:id].upcase).order(:created_at)
+    @enrollments = Enrollment.in_term(@term).in_department(params[:id].upcase).order(:created_at).group_by { |e| e.created_at.strftime('%b %e') }
   end
 end
