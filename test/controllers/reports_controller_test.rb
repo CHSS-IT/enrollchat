@@ -6,4 +6,11 @@ class ReportsControllerTest < ActionDispatch::IntegrationTest
     get reports_url
     assert_response :success
   end
+
+  test 'should GET show' do
+    login_as users(:one) do
+      get report_url(sections(:two))
+      assert_response :success
+    end
+  end
 end
