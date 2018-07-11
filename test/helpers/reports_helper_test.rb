@@ -8,6 +8,7 @@ class ReportHelperTest < ActionView::TestCase
     @enrollment_three = enrollments(:three)
     @enrollment_four = enrollments(:four)
     @enrollment_five = enrollments(:five)
+    @enrollment_seven = enrollments(:seven)
     @enrollments = Enrollment.in_term(1).in_department("CRIM").order(:created_at).group_by { |e| e.created_at.strftime('%b %e') }
   end
 
@@ -28,6 +29,6 @@ class ReportHelperTest < ActionView::TestCase
   end
 
   test "calculates the enrollment_limit_history for a department's enrollments in a term" do
-    assert_equal enrollment_limit_history, [@enrollment_five.enrollment_limit, @enrollment_four.enrollment_limit, @enrollment_three.enrollment_limit, @enrollment_two.enrollment_limit, @enrollment_one.enrollment_limit]
+    assert_equal enrollment_limit_history, [@enrollment_five.enrollment_limit, @enrollment_four.enrollment_limit, @enrollment_three.enrollment_limit, @enrollment_two.enrollment_limit, (@enrollment_one.enrollment_limit + @enrollment_seven.enrollment_limit)]
   end
 end
