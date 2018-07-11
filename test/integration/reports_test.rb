@@ -52,8 +52,9 @@ class ReportsTest < ActionDispatch::IntegrationTest
     @enrollment_four = enrollments(:four)
     @enrollment_five = enrollments(:five)
     @enrollment_six = enrollments(:six)
+    @enrollment_seven = enrollments(:seven)
     @enrollments = Enrollment.all
     get report_url(sections(:two))
-    assert_equal @enrollments.in_term(1).in_department("CRIM"), [@enrollment_one, @enrollment_two, @enrollment_three, @enrollment_four, @enrollment_five]
+    assert_equal @enrollments.in_term(1).in_department("CRIM"), [@enrollment_one, @enrollment_two, @enrollment_three, @enrollment_four, @enrollment_five, @enrollment_seven]
   end
 end

@@ -6,6 +6,7 @@ class SectionsControllerTest < ActionDispatch::IntegrationTest
     @section_two = sections(:two)
     @section_three = sections(:three)
     @section_four = sections(:four)
+    @section_five = sections(:five)
     @sections = Section.all
     login_as users(:one)
   end
@@ -18,7 +19,7 @@ class SectionsControllerTest < ActionDispatch::IntegrationTest
   test 'should GET index with full collection of sections' do
     get sections_url
     assert_response :success
-    assert_equal @sections, [@section_one, @section_two, @section_three, @section_four]
+    assert_equal @sections, [@section_one, @section_two, @section_three, @section_four, @section_five]
   end
 
   test 'should GET show for a section' do

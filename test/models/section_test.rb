@@ -6,6 +6,7 @@ class SectionTest < ActiveSupport::TestCase
     @section_two = sections(:two)
     @section_three = sections(:three)
     @section_four = sections(:four)
+    @section_five = sections(:five)
     @sections = Section.all
     @enrollment_one = enrollments(:one)
     @enrollment_two = enrollments(:two)
@@ -57,8 +58,8 @@ class SectionTest < ActiveSupport::TestCase
   test 'should destroy sections marked for deletion' do
     @section.update_attribute(:delete_at, DateTime.now().next_month)
     Section.delete_marked
-    assert_equal @sections, [@section_two, @section_three, @section_four]
-    assert_equal @sections.count, 3
+    assert_equal @sections, [@section_two, @section_three, @section_four, @section_five]
+    assert_equal @sections.count, 4
   end
 
   test 'should return a unique, unsorted list of departments' do
@@ -67,7 +68,7 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'should create a list of all available statuses including the manually added ALL and ACTIVE statuses' do
-    assert_equal @sections.status_list, ['ACTIVE', 'ALL', 'CL', 'CN', 'O', 'WL']
+    assert_equal @sections.status_list, ["ACTIVE", "ALL", "C", "CL", "CN", "O", "WL"]
   end
 
   test 'should create a list of levels available for selection' do
@@ -81,7 +82,7 @@ class SectionTest < ActiveSupport::TestCase
   # test scopes used in filter
 
   test 'by_department scope should properly filter sections by department' do
-    assert_equal @sections.in_department('CRIM'), [@section_two]
+    assert_equal @sections.in_department('CRIM'), [@section_two, @section_five]
   end
 
   test 'by_status scope should properly filter sections by section status' do
@@ -93,7 +94,7 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'graduate_first scope should properly filter sections by level' do
-    assert_equal @sections.graduate_first, [@section_two]
+    assert_equal @sections.graduate_first, [@section_two, @section_five]
   end
 
   test 'undergraduate_upper scope should properly filter sections by level' do

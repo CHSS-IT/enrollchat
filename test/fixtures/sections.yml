@@ -67,3 +67,20 @@ four:
   actual_enrollment: 13
   cross_list_enrollment: 6
   waitlist: 0
+
+five:
+  owner: MyString
+  term: 1
+  section_id: 5
+  department: CRIM
+  cross_list_group: MyString
+  course_description: Advanced Criminal Justice
+  section_number: 2
+  title: MyString
+  credits: 1
+  level: Graduate - First
+  status: C
+  enrollment_limit: 20
+  actual_enrollment: 26
+  cross_list_enrollment: 2
+  waitlist: 7
