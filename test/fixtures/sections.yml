@@ -31,8 +31,8 @@ two:
   status: WL
   enrollment_limit: 20
   actual_enrollment: 26
-  cross_list_enrollment: 1
-  waitlist: 6
+  cross_list_enrollment: 2
+  waitlist: 7
 
 three:
   owner: MyString
@@ -46,10 +46,10 @@ three:
   credits: 1
   level: Graduate - Advanced
   status: O
-  enrollment_limit: 20
-  actual_enrollment: 6
+  enrollment_limit: 30
+  actual_enrollment: 9
   cross_list_enrollment: 5
-  waitlist: 1
+  waitlist: 2
 
 four:
   owner: MyString
@@ -63,7 +63,7 @@ four:
   credits: 1
   level: Undergraduate - Upper Division
   status: CL
-  enrollment_limit: 20
+  enrollment_limit: 25
   actual_enrollment: 13
   cross_list_enrollment: 6
-  waitlist: 1
+  waitlist: 0
