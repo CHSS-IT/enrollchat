@@ -7,6 +7,35 @@ class SectionTest < ActiveSupport::TestCase
     @section_three = sections(:three)
     @section_four = sections(:four)
     @sections = Section.all
+    @enrollment_one = enrollments(:one)
+    @enrollment_two = enrollments(:two)
+    @enrollment_three = enrollments(:three)
+    @enrollment_four = enrollments(:four)
+    @enrollment_five = enrollments(:five)
+  end
+
+  test 'should return an array of the enrollment history_dates for a section' do
+    assert_equal @section_two.history_dates, [@enrollment_five.created_at, @enrollment_four.created_at, @enrollment_three.created_at, @enrollment_two.created_at, @enrollment_one.created_at]
+  end
+
+  test 'should return the enrollment history_dates as string for a section' do
+    assert_equal @section_two.history_date_strings, ["#{@enrollment_five.created_at.strftime('%b %e')}", "#{@enrollment_four.created_at.strftime('%b %e')}", "#{@enrollment_three.created_at.strftime('%b %e')}", "#{@enrollment_two.created_at.strftime('%b %e')}", "#{@enrollment_one.created_at.strftime('%b %e')}"]
+  end
+
+  test 'should return the enrollment_limit_history for a section' do
+    assert_equal @section_two.enrollment_limit_history, [20, 20, 20, 20, 20]
+  end
+
+  test 'should return the actual_enrollment_history for a section' do
+    assert_equal @section_two.actual_enrollment_history, [12, 14, 17, 19, 19]
+  end
+
+  test 'should return the cross_list_enrollment_history for a section' do
+    assert_equal @section_two.cross_list_enrollment_history, [0, 0, 1, 1, 1]
+  end
+
+  test 'should return the waitlist_history for a section' do
+    assert_equal @section_two.waitlist_history, [0, 0, 0, 2, 6]
   end
 
   test 'section number is formatted correctly' do
