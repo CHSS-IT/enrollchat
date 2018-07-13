@@ -7,6 +7,7 @@ class EnrollmentTest < ActiveSupport::TestCase
     @enrollment_three = enrollments(:three)
     @enrollment_four = enrollments(:four)
     @enrollment_five = enrollments(:five)
+    @enrollment_six = enrollments(:six)
     @enrollment_seven = enrollments(:seven)
     @enrollments = Enrollment.all
   end
@@ -17,6 +18,10 @@ class EnrollmentTest < ActiveSupport::TestCase
 
   test 'returns all enrollments in a department' do
     assert_equal @enrollments.in_department('CRIM'), [@enrollment_one, @enrollment_two, @enrollment_three, @enrollment_four, @enrollment_five, @enrollment_seven]
+  end
+
+  test 'returns enrollments for only sections that are not canceled' do
+    assert_equal @enrollments.not_canceled, [@enrollment_one, @enrollment_two, @enrollment_three, @enrollment_four, @enrollment_five, @enrollment_six]
   end
 
   test 'changes null waitlist value to 0' do
