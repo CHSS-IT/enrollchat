@@ -5,6 +5,7 @@ class Enrollment < ApplicationRecord
 
   scope :in_term, ->(term) { where(term: term) }
   scope :in_department, ->(department) { where(department: department) }
+  scope :not_canceled, -> { joins(:section).where("status <> 'C'")}
 
   private
 
