@@ -44,6 +44,10 @@ class User < ApplicationRecord
     ['All Comments', 'Daily Digest', 'Comments and Digest', 'No Emails']
   end
 
+  def self.status_list
+    statuses.keys
+  end
+
   def show_alerts(department)
     departments.include?(department) || is_admin?
   end

@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
   before_action :set_user, only: [:create, :new]
   before_action :set_section
   before_action :authenticate_user!
+  before_action :permitted_to_comment, except: :index
 
   def index
     @comments = @section.comments.order(created_at: :desc)
@@ -91,6 +92,13 @@ class CommentsController < ApplicationController
 
     def set_section
       @section = Section.find(params[:section_id])
+    end
+
+    def permitted_to_comment
+      unless current_user.active? || current_user.try(:admin?)
+        redirect_to sections_path, notice: 'Unable to post comment. Please contact the administrators to activate your account.'
+        return false
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

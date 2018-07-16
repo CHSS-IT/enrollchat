@@ -76,6 +76,12 @@ class UserTest < ActiveSupport::TestCase
     assert @admin.show_alerts('PHIL')
   end
 
+  test 'updates the last_activity_check for a user' do
+    pervious_activity_check = @user.last_activity_check
+    @user.checked_activities!
+    assert_not_equal @user.reload.last_name, pervious_activity_check
+  end
+
   test 'user is invalid without a status' do
     @user.status = nil
     assert_not @user.valid?
@@ -88,6 +94,10 @@ class UserTest < ActiveSupport::TestCase
 
   test "status defaults to 'active' for a new user" do
     test_user = User.new(first_name: 'Test', last_name: 'User', email: 'test@mail.com', username: 'tuser')
-    assert test_user.status == 'active'
+    assert_equal test_user.status, 'active'
+  end
+
+  test 'returns a list of keys from the available statuses' do
+    assert_equal User.status_list, ['active', 'archived']
   end
 end

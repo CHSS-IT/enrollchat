@@ -109,6 +109,12 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_equal @user.reload.admin, false
   end
 
+  test 'should post to checked_activities' do
+    login_as @user
+    post checked_activities_user_url(@user)
+    assert_response :ok
+  end
+
   test 'should not get archive for a non-admin user' do
     login_as users(:two)
     get archive_user_url(@user)
@@ -120,6 +126,17 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     login_as users(:one)
     get archive_user_url(@user)
     assert_redirected_to users_url
+  end
+
+  test 'should not update user_attributes for a non-admin user trying to archive a user' do
+    login_as users(:two)
+    @user.departments << 'HIST'
+    @user.update_attributes(email_preference: 'Daily Digest')
+    get archive_user_url(@user)
+    assert_equal @user.reload.email_preference, 'Daily Digest'
+    assert_equal @user.reload.no_weekly_report, false
+    assert_equal @user.reload.status, 'active'
+    assert_equal @user.reload.departments, ['HIST']
   end
 
   test 'should update user attributes when user is archived' do

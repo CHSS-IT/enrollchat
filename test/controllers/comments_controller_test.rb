@@ -4,7 +4,8 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @section = sections(:one)
     @comment = comments(:one)
-    login_as users(:one)
+    @user = users(:two)
+    login_as @user
   end
 
   test 'should get index' do
@@ -22,6 +23,15 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
       post section_comments_url(@section), params: { comment: { body: @comment.body, section_id: @comment.section_id, user_id: @comment.user_id } }
     end
     assert_redirected_to sections_url
+  end
+
+  test 'should not create comment for an archived user' do
+    @user.status = 'archived'
+    assert_no_difference('Comment.count') do
+      post section_comments_url(@section), params: { comment: { body: @comment.body, section_id: @comment.section_id, user_id: @user.id } }
+    end
+    assert_redirected_to sections_url
+    assert_equal 'Unable to post comment. Please contact the administrators to activate your account.', flash[:notice]
   end
 
   test 'should get edit' do
