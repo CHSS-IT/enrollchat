@@ -114,6 +114,11 @@
             <% else %>
               <%= link_to 'Cancel', sections_path, class: 'btn btn-large stylish-color-dark' %>
             <% end %>
+            <% if current_user.try(:admin?) %>
+            <% unless @user.new_record? %>
+              <%= link_to 'Archive', archive_user_path(@user), data: { confirm: 'Are you sure you want to archive this user?'}, class: 'btn btn-large yellow darken-2' %>
+            <% end %>
+            <% end %>
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users do
     member do
       post 'checked_activities'
+      get 'archive'
     end
   end
   resources :sections, only: [:index, :show] do
@@ -21,7 +22,7 @@ Rails.application.routes.draw do
   authenticated :user do
     root 'sections#index', as: :authenticated_root
   end
-  
+
   root to: 'static_pages#home'
 
 

@@ -11,6 +11,7 @@ one:
   last_name: 'Gibbs'
   admin: true
   email_preference: 'All Comments'
+  status: 'active'
 
 two:
   email: 'user@email.com'
@@ -24,6 +25,7 @@ two:
     - 'CRIM'
     - 'PHIL'
   last_activity_check: <%= 1.day.ago %>
+  status: 'active'
 
 three:
   email: 'testuser@email.com'
@@ -33,3 +35,4 @@ three:
   admin: false
   email_preference: 'No Emails'
   last_activity_check: <%= 1.day.ago %>
+  status: 'active'

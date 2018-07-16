@@ -109,4 +109,34 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_equal @user.reload.admin, false
   end
 
+  test 'should not get archive for a non-admin user' do
+    login_as users(:two)
+    get archive_user_url(@user)
+    assert_redirected_to sections_url
+    assert_equal 'You do not have access to this page', flash[:notice]
+  end
+
+  test 'should get archive for an admin user' do
+    login_as users(:one)
+    get archive_user_url(@user)
+    assert_redirected_to users_url
+  end
+
+  test 'should update user attributes when user is archived' do
+    login_as users(:one)
+    @user.departments << 'HIST'
+    get archive_user_url(@user)
+    assert_equal @user.reload.email_preference, 'No Emails'
+    assert_equal @user.reload.no_weekly_report, true
+    assert_equal @user.reload.status, 'archived'
+    assert_equal @user.reload.departments, []
+  end
+
+  test 'should display the proper flash notice after archiving a user' do
+    login_as users(:one)
+    get archive_user_url(@user)
+    assert_redirected_to users_url
+    assert_equal 'User has been archived', flash[:notice]
+  end
+
 end

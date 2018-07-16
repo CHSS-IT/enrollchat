@@ -2,6 +2,9 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :cas_authenticatable, :trackable
+
+  enum status: [:active, :archived]
+
   has_many :comments, -> { order 'created_at DESC'}
 
   scope :in_department, ->(department) { where('? = ANY(departments) OR admin is TRUE', department) }
@@ -14,7 +17,7 @@ class User < ApplicationRecord
     model.departments.reject!(&:blank?) if model.departments
   end
 
-  validates_presence_of :first_name, :last_name, :username, :email
+  validates_presence_of :first_name, :last_name, :username, :email, :status
   validates_uniqueness_of :email, :username
 
   def departments_of_interest

@@ -75,4 +75,19 @@ class UserTest < ActiveSupport::TestCase
     assert @admin.show_alerts('BIS')
     assert @admin.show_alerts('PHIL')
   end
+
+  test 'user is invalid without a status' do
+    @user.status = nil
+    assert_not @user.valid?
+    assert_equal ["can't be blank"], @user.errors.messages[:status]
+  end
+
+  test 'returns valid statuses for a User' do
+    assert_equal User.statuses, {'active'=> 0, 'archived'=> 1}
+  end
+
+  test "status defaults to 'active' for a new user" do
+    test_user = User.new(first_name: 'Test', last_name: 'User', email: 'test@mail.com', username: 'tuser')
+    assert test_user.status == 'active'
+  end
 end
