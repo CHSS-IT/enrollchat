@@ -12,6 +12,8 @@ class SectionsController < ApplicationController
 
   def show
     @sections = Section.find(params[:id])
+    @section = @sections # Hacky to reuse section partial
+    @comments = @section.comments
   end
 
   def import
