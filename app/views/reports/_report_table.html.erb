@@ -13,6 +13,7 @@
       <th>Actual Enrollment</th>
       <th>Cross-List Enrollment</th>
       <th>Waitlist</th>
+      <th>Graph</th>
     </tr>
   </thead>
   <tbody>
@@ -31,6 +32,7 @@
       <td><%= sections.not_canceled.sum(:actual_enrollment) %><%= arrow(sections.not_canceled.sum(:actual_enrollment_yesterday)) %></td>
       <td><%= sections.not_canceled.sum(:cross_list_enrollment) %><%= arrow(sections.not_canceled.sum(:cross_list_enrollment_yesterday)) %></td>
       <td><%= sections.not_canceled.sum(:waitlist) %><%= arrow(sections.not_canceled.sum(:waitlist_yesterday)) %></td>
+      <td><%= link_to "<i class='fa fa-chart-line' aria-hidden='true'></i> Graph".html_safe, "reports/#{department}" %></td>
     </tr>
     <% end %>
   </tbody>
