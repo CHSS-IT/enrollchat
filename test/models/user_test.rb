@@ -77,9 +77,9 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'updates the last_activity_check for a user' do
-    pervious_activity_check = @user.last_activity_check
+    previous_activity_check = @user.last_activity_check
     @user.checked_activities!
-    assert_not_equal @user.reload.last_name, pervious_activity_check
+    assert_not_equal @user.reload.last_name, previous_activity_check
   end
 
   test 'user is invalid without a status' do
