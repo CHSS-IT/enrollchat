@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :cas_authenticatable, :trackable
 
-  enum status: [:active, :archived]
+  enum status: { active: 0, archived: 1 }
 
   has_many :comments, -> { order 'created_at DESC'}
 
