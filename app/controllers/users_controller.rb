@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   end
 
   def archive
-    @user.update_attributes(email_preference: 'No Emails', no_weekly_report: true, status: 'archived', departments: [])
+    @user.update_attributes(email_preference: 'No Emails', no_weekly_report: true, status: 'archived', admin: false, departments: [])
     respond_to do |format|
       format.html { redirect_to users_url, :notice => "User has been archived" }
     end

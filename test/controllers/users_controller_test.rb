@@ -149,6 +149,13 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_equal @user.reload.departments, []
   end
 
+  test 'should set remove admin status when archiving' do
+    login_as users(:one)
+    @user.admin = true
+    get archive_user_url(@user)
+    assert_equal @user.reload.admin, false
+  end
+
   test 'should display the proper flash notice after archiving a user' do
     login_as users(:one)
     get archive_user_url(@user)
