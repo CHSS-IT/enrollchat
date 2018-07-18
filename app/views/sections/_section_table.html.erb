@@ -18,8 +18,10 @@
     <th>Added</th>
     <th>Canceled</th>
     <th>Last Comment</th>
-    <th>Comments</th>
-    <th>Graph</th>
+    <% unless action_name == 'show' %>
+      <th>Comments</th>
+      <th>Graph</th>
+    <% end %>
   </tr>
   </thead>
 

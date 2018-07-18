@@ -15,6 +15,8 @@
   <td><%= basic_date(section.created_at) %></td>
   <td><%= basic_date(section.canceled_at) unless section.canceled_at.blank? %></td>
   <td><%= basic_date(section.most_recent_comment_date) unless section.most_recent_comment_date.blank? %></td>
-  <td><%= link_to "<i class='fa fa-comment' aria-hidden='true'></i> <span class='comment-count'>#{section.comments.size}".html_safe, section_comments_path(section), remote: true, data: { toggle: 'modal', target: '#comments' } %></td>
-  <td><%= link_to "<i class='fa fa-chart-line' aria-hidden='true'></i> Graph".html_safe, section %></td>
+  <% unless action_name == 'show' %>
+    <td><%= link_to "<i class='fa fa-comment' aria-hidden='true'></i> <span class='comment-count'>#{section.comments.size}".html_safe, section_comments_path(section), remote: true, data: { toggle: 'modal', target: '#comments' } %></td>
+    <td><%= link_to "<i class='fa fa-chart-line' aria-hidden='true'></i> Graph".html_safe, section %></td>
+  <% end %>
 </tr>

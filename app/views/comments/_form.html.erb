@@ -15,7 +15,7 @@
   <%= form.hidden_field :user_id, value: comment.user.id %>
 
   <div class="form-group">
-    <%= form.label :body, "Comment on #{comment.section.section_and_number}: #{comment.section.title}" %>
+    <%= form.label :body, "Comment on #{link_to_unless action_name == 'show', comment.section.section_and_number, comment.section}: #{comment.section.title}".html_safe %>
     <div class="section-info">
       <small class="text-muted">
         <%= "Enrollment Limit: #{comment.section.enrollment_limit}" %>
