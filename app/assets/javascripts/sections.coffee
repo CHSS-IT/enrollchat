@@ -51,6 +51,7 @@ $(document).on 'turbolinks:load', ->
         targets: [
           4
           16
+          17
         ]
       }
       {
@@ -71,38 +72,6 @@ $(document).on 'turbolinks:load', ->
     stateSave: true
   table.buttons().container().appendTo $('.col-md-6:eq(0)', table.table().container())
 
-
-#  $('#class-sections').DataTable
-#    responsive: true
-#    fixedHeader: true
-#    order: [[ 3, "asc" ]]
-#    dom: 'Bfrtip'
-#    buttons: [ 'print', 'excel', 'pdf' ]
-#    columnDefs: [
-#      { type: 'dateNonStandard', targets: 15 }
-#      {
-#        responsivePriority: 1
-#        targets: [
-#          4
-#          16
-#        ]
-#      }
-#      {
-#        responsivePriority: 2
-#        targets: [ 0 ]
-#      }
-#      {
-#        responsivePriority: 3
-#        targets: [
-#          9
-#          10
-#          11
-#          12
-#          13
-#        ]
-#      }
-#    ]
-#    stateSave: true
   $('#upload-sections').on 'click', ->
     $(this).toggleClass 'unique-color grey'
     return
