@@ -32,6 +32,7 @@
                       <th>Last Commented</th>
                       <th>Has Commented On</th>
                       <th>Admin</th>
+                      <th>Status</th>
                       <th>Edit</th>
                   <% end %>
                 </tr>
@@ -51,6 +52,7 @@
                           <td><%= basic_date(user.comments.first.created_at) unless user.comments.blank? %></td>
                           <td><%= user.departments_of_interest.join(', ') %></td>
                           <td><%= user.admin ? "Admin" : nil %></td>
+                          <th><%= user.status.capitalize %>
                           <td><%= link_to 'Edit', edit_user_path(user), class: 'btn btn-sm btn-outline-deep-orange-darken-2' %></td>
                       <% end %>
                     </tr>

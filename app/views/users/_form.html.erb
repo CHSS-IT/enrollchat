@@ -65,6 +65,18 @@
           </div>
           <div class="form-group">
             <div class="row">
+              <%= f.label :status, class: "col-sm-3 control-label" %>
+              <div class="col-sm-8">
+                <% if current_user.try(:admin?) %>
+                    <%= select :user, :status, User.status_list, {default: 'active'}, {class: 'selectpicker form-control'} %>
+                <% else %>
+                    <%= @user.status %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
               <%= f.label :email_preference, class: "col-sm-3 control-label" %>
               <div class="col-sm-9">
                 <%= select :user, :email_preference, User.email_options, {include_blank: false}, {class: 'selectpicker form-control'} %>
@@ -113,6 +125,11 @@
               <%= link_to 'Cancel', users_path, class: 'btn btn-large stylish-color-dark' %>
             <% else %>
               <%= link_to 'Cancel', sections_path, class: 'btn btn-large stylish-color-dark' %>
+            <% end %>
+            <% if current_user.try(:admin?) %>
+              <% unless @user.new_record? %>
+                <%= link_to 'Archive', archive_user_path(@user), data: { confirm: 'Are you sure you want to archive this user?'}, class: 'btn btn-large yellow darken-2' %>
+              <% end %>
             <% end %>
           </div>
         </div>
