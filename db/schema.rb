@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_16_153004) do
+ActiveRecord::Schema.define(version: 2018_08_09_154146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2018_07_16_153004) do
     t.integer "actual_enrollment_yesterday", limit: 2, default: 0, null: false
     t.integer "cross_list_enrollment_yesterday", limit: 2, default: 0, null: false
     t.integer "waitlist_yesterday", limit: 2, default: 0, null: false
+    t.boolean "resolved_section", default: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -16,6 +16,17 @@
 
   <div class="form-group">
     <%= form.label :body, "Comment on #{link_to_unless action_name == 'show', comment.section.section_and_number, comment.section}: #{comment.section.title}".html_safe %>
+    <% if current_user.is_admin?%>
+      <div class"section-info">
+        <small class="text-muted">
+          <% if comment.section.resolved_section %>
+            <%= link_to "Resolved", toggle_resolved_section_section_path(comment.section), class: "btn btn-primary btn-sm", id: "resolved-status", method: :patch, remote: :true %>
+          <% else %>
+            <%= link_to "Mark section as resolved", toggle_resolved_section_section_path(comment.section), class: "btn btn-primary btn-sm", method: :patch, remote: :true %>
+          <% end %>
+        </small>
+      </div>
+    <% end %>
     <div class="section-info">
       <small class="text-muted">
         <%= "Enrollment Limit: #{comment.section.enrollment_limit}" %>

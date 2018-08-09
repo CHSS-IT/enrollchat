@@ -16,6 +16,7 @@ one:
   actual_enrollment: 22
   cross_list_enrollment: 1
   waitlist: 1
+  resolved_section: false
 
 two:
   owner: MyString
@@ -33,6 +34,7 @@ two:
   actual_enrollment: 26
   cross_list_enrollment: 2
   waitlist: 7
+  resolved_section: false
 
 three:
   owner: MyString
@@ -50,6 +52,7 @@ three:
   actual_enrollment: 9
   cross_list_enrollment: 5
   waitlist: 2
+  resolved_section: false
 
 four:
   owner: MyString
@@ -67,6 +70,7 @@ four:
   actual_enrollment: 13
   cross_list_enrollment: 6
   waitlist: 0
+  resolved_section: false
 
 five:
   owner: MyString
@@ -84,3 +88,4 @@ five:
   actual_enrollment: 26
   cross_list_enrollment: 2
   waitlist: 7
+  resolved_section: false

@@ -27,6 +27,17 @@ class SectionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test 'should toggle_resolved_section for an admin' do
+    patch toggle_resolved_section_section_path(@section_one), params: { format: :js }
+    assert_equal @section_one.reload.resolved_section, true
+  end
+
+  test 'should not toggle_resolved_section for a non-admin user' do
+    login_as users(:two)
+    patch toggle_resolved_section_section_path(@section_one), params: { format: :js }
+    assert_equal @section_one.reload.resolved_section, false
+  end
+
   test 'should not perform import for a non-admin user' do
     login_as users(:two)
     post sections_import_path
