@@ -1,5 +1,6 @@
 <% if @section.resolved_section == true %>
   $("a#resolved-status").html('Resolved')
-<% else %>
+<% end %>
+<% if @section.resolved_section == false %>
   $("a#resolved-status").html('Mark section as resolved')
 <% end %>

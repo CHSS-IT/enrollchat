@@ -20,6 +20,8 @@
     <%= link_to "<i class='fa fa-comment' aria-hidden='true'></i> <span class='comment-count'>#{section.comments.size}".html_safe, section_comments_path(section), remote: true, data: { toggle: 'modal', target: '#comments' } %>
     <% if section.resolved_section && current_user.try(:admin?) %>
       <i class='fa fa-check' style="color:green;" aria-hidden='true' id="resolved">
+    <% else %>
+      <span id="resolved" style="color:green;"></span>
     <% end %>
     </td>
     <td><%= link_to "<i class='fa fa-chart-line' aria-hidden='true'></i> Graph".html_safe, section %></td>
