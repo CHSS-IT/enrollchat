@@ -1,5 +1,5 @@
 class SectionsController < ApplicationController
-  before_action :ensure_admin!, only: [:import, :delete_term]
+  before_action :ensure_admin!, only: [:import, :delete_term, :toggle_resolved_section]
   before_action :authenticate_user!
   before_action :filter, only: :index
 
@@ -14,6 +14,17 @@ class SectionsController < ApplicationController
     @sections = Section.find(params[:id])
     @section = @sections # Hacky to reuse section partial
     @comments = @section.comments
+  end
+
+  def toggle_resolved_section
+    @section = Section.find(params[:id])
+    @section.toggle!(:resolved_section)
+    ActionCable.server.broadcast "room_channel",
+                                section_id: @section.id,
+                                checkmark: @section.resolved_section
+    respond_to do |format|
+      format.js { render layout: false }
+    end
   end
 
   def import
@@ -98,6 +109,8 @@ class SectionsController < ApplicationController
     end
 
     def section_params
-      params.require(:section).permit(:owner, :term, :section_id, :department, :cross_list_group, :course_description, :section_number, :title, :credits, :level, :status, :enrollment_limit, :actual_enrollment, :cross_list_enrollment, :waitlist)
+      allowed_params = [:owner, :term, :section_id, :department, :cross_list_group, :course_description, :section_number, :title, :credits, :level, :status, :enrollment_limit, :actual_enrollment, :cross_list_enrollment, :waitlist]
+      allowed_params << :resolved_section if current_user.is_admin?
+      params.require(:section).permit(allowed_params)
     end
 end

@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     end
   end
   resources :sections, only: [:index, :show] do
+    member do
+      patch 'toggle_resolved_section'
+    end
     resources :comments
   end
   post '/sections/import' => 'sections#import'
