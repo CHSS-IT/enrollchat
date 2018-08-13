@@ -84,3 +84,7 @@ $(document).on 'turbolinks:load', ->
       $('button:submit').removeAttr 'disabled'
     return
   return
+
+$(document).on 'turbolinks:load', ->
+  $('[data-toggle="popover"]').popover()
+  return

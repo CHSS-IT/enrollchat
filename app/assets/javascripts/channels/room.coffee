@@ -13,6 +13,6 @@ App.room = App.cable.subscriptions.create "RoomChannel",
     $(dom_id).html(data.comment_count);
     dom_id = '#section_' + data.section_id + ' td #resolved'
     if data.checkmark == true
-      $('#resolved').addClass('fa fa-check')
+      $(dom_id).addClass('fa fa-check')
     if data.checkmark == false
-      $('#resolved').removeClass('fa fa-check')
+      $(dom_id).removeClass('fa fa-check')
