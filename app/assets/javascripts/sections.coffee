@@ -86,5 +86,5 @@ $(document).on 'turbolinks:load', ->
   return
 
 $(document).on 'turbolinks:load', ->
-  $('[data-toggle="popover"]').popover()
+  $('body').popover({selector: '[data-toggle="popover"]', trigger: 'hover'})
   return
