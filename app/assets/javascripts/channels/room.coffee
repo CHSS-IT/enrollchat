@@ -17,10 +17,10 @@ App.room = App.cable.subscriptions.create "RoomChannel",
     $(dom_id).attr('data-title', 'New comment by ' + data.user);
     dom_id = '#section_' + data.section_id + ' td .comment-hover'
     $(dom_id).attr('data-original-title', 'New comment by ' + data.user);
-    dom_id = '#section_' + data.section_id + ' td #preview-eye'
+    dom_id = '#section_' + data.section_id + ' td #preview-comment'
     if data.comment_count == 0
-      if $(dom_id).hasClass('fa fa-eye')
-        $(dom_id).removeClass('fa fa-eye')
+      if $(dom_id).hasClass('fa fa-info-circle')
+        $(dom_id).removeClass('fa fa-info-circle')
     dom_id = '#section_' + data.section_id + ' td #resolved'
     if data.checkmark == true
       $(dom_id).addClass('fa fa-check')
