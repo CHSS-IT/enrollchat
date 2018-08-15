@@ -11,6 +11,12 @@ App.room = App.cable.subscriptions.create "RoomChannel",
       location.reload()
     dom_id = '#section_' + data.section_id + ' td a span.comment-count'
     $(dom_id).html(data.comment_count);
+    dom_id = '#section_' + data.section_id + ' td .comment-hover'
+    $(dom_id).attr('data-content', data.body);
+    dom_id = '#section_' + data.section_id + ' td .comment-hover'
+    $(dom_id).attr('data-title', 'New comment by ' + data.user);
+    dom_id = '#section_' + data.section_id + ' td .comment-hover'
+    $(dom_id).attr('data-original-title', 'New comment by ' + data.user);
     dom_id = '#section_' + data.section_id + ' td #preview-eye'
     if data.comment_count == 0
       if $(dom_id).hasClass('fa fa-eye')

@@ -41,6 +41,8 @@ class CommentsController < ApplicationController
                                     department: @comment.section.department
         ActionCable.server.broadcast "room_channel",
                                     section_id: @comment.section.id,
+                                    body: @comment.body,
+                                    user: @comment.user.full_name,
                                     comment_count: @comment.section.comments.size
         format.html { redirect_to sections_url, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
