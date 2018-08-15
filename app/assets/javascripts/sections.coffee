@@ -84,3 +84,7 @@ $(document).on 'turbolinks:load', ->
       $('button:submit').removeAttr 'disabled'
     return
   return
+
+$(document).on 'turbolinks:load', ->
+  $('body').popover({selector: '[data-toggle="popover"]', trigger: 'hover'})
+  return
