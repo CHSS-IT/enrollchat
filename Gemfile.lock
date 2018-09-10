@@ -50,7 +50,7 @@ GEM
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
-    autoprefixer-rails (8.4.1)
+    autoprefixer-rails (9.1.4)
       execjs
     aws-sdk (2.11.41)
       aws-sdk-resources (= 2.11.41)
@@ -60,7 +60,7 @@ GEM
     aws-sdk-resources (2.11.41)
       aws-sdk-core (= 2.11.41)
     aws-sigv4 (1.0.2)
-    bcrypt (3.1.11)
+    bcrypt (3.1.12)
     better_errors (2.5.0)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
@@ -68,7 +68,7 @@ GEM
     bindex (0.5.0)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
-    bootstrap (4.1.1)
+    bootstrap (4.1.3)
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
@@ -107,7 +107,7 @@ GEM
     connection_pool (2.2.1)
     crass (1.0.4)
     debug_inspector (0.0.3)
-    devise (4.4.3)
+    devise (4.5.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 6.0)
@@ -185,7 +185,7 @@ GEM
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
     pg (1.0.0)
-    popper_js (1.12.9)
+    popper_js (1.14.3)
     public_suffix (3.0.3)
     puma (3.11.4)
     rack (2.0.5)
@@ -284,7 +284,7 @@ GEM
     uniform_notifier (1.11.0)
     warden (1.2.7)
       rack (>= 1.0)
-    web-console (3.6.2)
+    web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
@@ -303,7 +303,7 @@ DEPENDENCIES
   aws-sdk (~> 2)
   better_errors
   binding_of_caller
-  bootstrap (~> 4.1.0)
+  bootstrap (~> 4.1.3)
   bootstrap-select-rails
   brakeman
   bullet
@@ -339,7 +339,7 @@ DEPENDENCIES
   turbolinks (~> 5.2)
   tzinfo-data
   uglifier (~> 4.1, >= 4.1.10)
-  web-console (>= 3.3.0)
+  web-console (~> 3.7)
 
 RUBY VERSION
    ruby 2.5.1p57
