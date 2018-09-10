@@ -120,7 +120,7 @@ GEM
     erubi (1.7.1)
     excon (0.62.0)
     execjs (2.7.0)
-    ffi (1.9.23)
+    ffi (1.9.25)
     fog-aws (3.0.0)
       fog-core (~> 2.1)
       fog-json (~> 1.1)
@@ -233,7 +233,7 @@ GEM
     ruby_dep (1.5.0)
     rubycas-client (2.3.9)
       activesupport
-    rubyzip (1.2.1)
+    rubyzip (1.2.2)
     sass (3.5.6)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
