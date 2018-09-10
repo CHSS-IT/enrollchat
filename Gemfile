@@ -27,7 +27,7 @@ gem 'uglifier', '~> 4.1', '>= 4.1.10'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+gem 'turbolinks', '~> 5.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -36,7 +36,7 @@ gem 'redis', '~> 4.0.0'
 
 # Alphabetize non-core gems
 
-gem 'airbrake', '~> 7.0'
+gem 'airbrake', '~> 7.3', '>= 7.3.5'
 
 # For file storage on S3
 gem 'aws-sdk', '~> 2'
@@ -103,7 +103,7 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 3.0.0'
+  gem 'capybara', '~> 3.7', '>= 3.7.1'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper', '~> 1.2'
   gem 'simplecov', :require => false
