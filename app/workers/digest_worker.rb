@@ -35,7 +35,7 @@ class DigestWorker
         text = "<h2>#{subject} - #{basic_date(DateTime.yesterday)}</h2>"
 
         comments.group_by(&:section).sort.each do |section, c|
-          text += "<p>#{ActionController::Base.helpers.link_to section.section_and_number, section_url(section, host: 'enrollchat.herokuapp.com')}" + ": #{c.size} comment#{'s' if c.size > 1}</p>"
+          text += "<p>#{ActionController::Base.helpers.link_to section.section_and_number, section_url(section, host: ENV['enrollchat.herokuapp.com'])}" + ": #{c.size} comment#{'s' if c.size > 1}</p>"
         end
 
         # Add to report for department
