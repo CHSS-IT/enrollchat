@@ -7,9 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # require 'csv'
 #
-# CSV.foreach(Rails.root.join('lib', 'seeds', 'sections.csv'), :headers => true) do |row|
-#     Section.create!(row.to_hash)
-# end
 
 # Users
 admin = User.create!(email: 'admin@test.dev', username: 'admin', first_name: 'Admin', last_name: 'User', admin: true)
