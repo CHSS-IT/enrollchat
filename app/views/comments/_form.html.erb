@@ -1,0 +1,66 @@
+<%= form_with(model: [@section, comment]) do |form| %>
+  <% if comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :section_id, value: comment.section.id %>
+  <%= form.hidden_field :user_id, value: comment.user.id %>
+
+  <div class="form-group">
+    <%= form.label :body, "Comment on #{link_to_unless action_name == 'show', comment.section.section_and_number, comment.section}: #{comment.section.title}".html_safe %>
+    <% if current_user.is_admin? %>
+      <div class="section-info">
+        <small class="text-muted">
+          <% if comment.section.resolved_section %>
+            <%= link_to "Resolved", toggle_resolved_section_section_path(comment.section), class: "btn btn-success btn-sm", id: "resolved-status", method: :patch, remote: :true %>
+          <% else %>
+            <%= link_to "Mark section as resolved", toggle_resolved_section_section_path(comment.section), class: "btn btn-primary btn-sm", id: "resolved-status", method: :patch, remote: :true %>
+          <% end %>
+        </small>
+      </div>
+    <% end %>
+    <div class="section-info">
+      <small class="text-muted">
+        <%= "Enrollment Limit: #{comment.section.enrollment_limit}" %>
+      </small>
+      <small class="text-muted">
+        <%= "Cross List Enrollment: #{comment.section.cross_list_enrollment}" %>
+      </small>
+    </div>
+    <div class="section-info">
+      <small class="text-muted">
+        <%= "Actual Enrollment: #{comment.section.actual_enrollment}" %>
+      </small>
+      <small class="text-muted">
+        <%= "Waitlist: #{comment.section.waitlist}" %>
+      </small>
+    </div>
+    <%= form.text_area :body, id: :comment_body, class:"form-control" %>
+  </div>
+    <%= form.submit class: "btn deep-orange darken-2 btn-sm btn-block", id: 'submit' %>
+<% end %>
+
+<script type="application/javascript">
+  $(function() {
+    $('#submit').attr('disabled', 'disabled');
+  })
+
+  $(document).ready(function () {
+    $('#comment_body').on('input change', function () {
+      if ($(this).val() != '') {
+        $('#submit').prop('disabled', false);
+      }
+      else {
+        $('#submit').prop('disabled', true);
+      }
+    });
+  });
+</script>

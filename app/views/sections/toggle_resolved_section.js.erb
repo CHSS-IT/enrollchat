@@ -1,0 +1,7 @@
+<% if @section.resolved_section == true %>
+  $("a#resolved-status").html('Resolved')
+  $("a#resolved-status").removeClass('btn-primary').addClass('btn-success')
+<% else %>
+  $("a#resolved-status").html('Mark section as resolved')
+  $("a#resolved-status").removeClass('btn-success').addClass('btn-primary')
+<% end %>

@@ -1,0 +1,6 @@
+$('#comment_<%= @comment.id %>').remove();
+$("#notice").html("<%= flash[:notice] %>");
+$('#alert-wrapper').html("<%= escape_javascript(render 'layouts/alert') %>");
+$(".alert").fadeTo(2000, 500).slideUp(500, function(){
+  $(".alert").slideUp(500);
+});

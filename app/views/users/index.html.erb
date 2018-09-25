@@ -1,0 +1,68 @@
+<span id="notice"></span>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="row pt-4 px-4">
+      <div class="col-lg-10 col-sm-8 col-xs-6">
+        <h1 class="card-title d-inline-block">Users</h1>
+      </div>
+      <div class="col-lg-2 col-sm-4 col-xs-6">
+        <% if current_user.is_admin? %>
+            <%= link_to 'Create New User', new_user_path, class: 'btn unique-color d-inline-block float-right' %>
+        <% end %>
+      </div>
+    </div><!-- end row -->
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card mt-3">
+
+          <div class="card-content table-full-width" id="section-table">
+            <div class="card-body px-0 table-responsive">
+              <table id="user-list" class="table table-striped table-sm table-hover dataTable dtr-inline" cellspacing="0" width="100%">
+                <thead>
+                <tr class="stylish-color-dark text-white">
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Email</th>
+                  <th>User Name</th>
+                  <th>Departments</th>
+                  <th>Email Preference</th>
+                  <th>Opt Out of Report</th>
+                  <% if current_user.is_admin? %>
+                      <th>Last Commented</th>
+                      <th>Has Commented On</th>
+                      <th>Admin</th>
+                      <th>Status</th>
+                      <th>Edit</th>
+                  <% end %>
+                </tr>
+                </thead>
+
+                <tbody>
+                <% @users.each do |user| %>
+                    <tr class="<%= 'table-info' if user.admin %>">
+                      <td><%= user.first_name %></td>
+                      <td><%= user.last_name %></td>
+                      <td><%= user.email %></td>
+                      <td><%= user.username %></td>
+                      <td><%= user.departments.blank? ? "All" : user.departments.join(', ') %></td>
+                      <td><%= user.email_preference %></td>
+                      <td><%= user.no_weekly_report if user.no_weekly_report %></td>
+                      <% if current_user.is_admin? %>
+                          <td><%= basic_date(user.comments.first.created_at) unless user.comments.blank? %></td>
+                          <td><%= user.departments_of_interest.join(', ') %></td>
+                          <td><%= user.admin ? "Admin" : nil %></td>
+                          <th><%= user.status.capitalize %>
+                          <td><%= link_to 'Edit', edit_user_path(user), class: 'btn btn-sm btn-outline-deep-orange-darken-2' %></td>
+                      <% end %>
+                    </tr>
+                <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end row -->
+  </div>
+</div><!-- end row pt-4-->

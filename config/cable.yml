@@ -1,0 +1,10 @@
+development: &development
+  adapter: redis
+  url: redis://localhost:6379
+
+test:
+  adapter: async
+
+production:
+  adapter: redis
+  url: <%= ENV['REDISTOGO_URL'] %>

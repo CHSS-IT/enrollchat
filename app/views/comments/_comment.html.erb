@@ -1,0 +1,14 @@
+ <div class="card mb-3 " id="<%= dom_id(comment) %>">
+  <div class="card-body py-2">
+    <span style="font-weight: 700; color: steelblue;">
+      <%= comment.user.full_name %>
+    </span>
+    <small class="text-muted" style="display: block;">
+      <%= time_ago_in_words(comment.created_at) %> ago
+    </small>
+    <hr>
+    <p style="line-height: 1.3em"><%= comment.body %></p>
+    <%#= link_to 'Edit', edit_section_comment_path(@section, comment) %>
+    <%= link_to '<i class="fa fa-trash mr-1"></i> Delete Comment'.html_safe, section_comment_path(@section, comment), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn btn-primary btn-sm" if current_user.is_admin? %>
+  </div>
+</div>

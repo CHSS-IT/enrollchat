@@ -1,0 +1,91 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner: MyString
+  term: 1
+  section_id: 1
+  department: BIS
+  cross_list_group: MyString
+  course_description: MyString
+  section_number: 1
+  title: MyString
+  credits: 1
+  level: Undergraduate - Lower Division
+  status: CN
+  enrollment_limit: 20
+  actual_enrollment: 22
+  cross_list_enrollment: 1
+  waitlist: 1
+  resolved_section: false
+
+two:
+  owner: MyString
+  term: 1
+  section_id: 2
+  department: CRIM
+  cross_list_group: MyString
+  course_description: Criminal Justice
+  section_number: 1
+  title: MyString
+  credits: 1
+  level: Graduate - First
+  status: WL
+  enrollment_limit: 20
+  actual_enrollment: 26
+  cross_list_enrollment: 2
+  waitlist: 7
+  resolved_section: false
+
+three:
+  owner: MyString
+  term: 1
+  section_id: 3
+  department: SINT
+  cross_list_group: MyString
+  course_description: Experiential Learning
+  section_number: 1
+  title: MyString
+  credits: 1
+  level: Graduate - Advanced
+  status: O
+  enrollment_limit: 30
+  actual_enrollment: 9
+  cross_list_enrollment: 5
+  waitlist: 2
+  resolved_section: false
+
+four:
+  owner: MyString
+  term: 1
+  section_id: 4
+  department: ENGL
+  cross_list_group: MyString
+  course_description: MyString
+  section_number: 1
+  title: MyString
+  credits: 1
+  level: Undergraduate - Upper Division
+  status: CL
+  enrollment_limit: 25
+  actual_enrollment: 13
+  cross_list_enrollment: 6
+  waitlist: 0
+  resolved_section: false
+
+five:
+  owner: MyString
+  term: 1
+  section_id: 5
+  department: CRIM
+  cross_list_group: MyString
+  course_description: Advanced Criminal Justice
+  section_number: 2
+  title: MyString
+  credits: 1
+  level: Graduate - First
+  status: C
+  enrollment_limit: 20
+  actual_enrollment: 26
+  cross_list_enrollment: 2
+  waitlist: 7
+  resolved_section: false

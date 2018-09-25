@@ -1,0 +1,15 @@
+<div class="loginContainer">
+  <%= image_tag image_path("EnrollChatLogo.png"), height: 50, class: "d-inline-block float-left" %>
+  <h1 class="display-4 font-weight-bold d-inline-block">EnrollChat</h1>
+  <div class="card">
+    <div class="card-body">
+      <span>Welcome to EnrollChat, an application for discussing course section enrollment. Click the button below to sign in using your Mason NetID. To request access, please <%= link_to 'write the administrators', "mailto:#{ENV['ENROLLCHAT_ADMIN_EMAIL']}" %>.</span>
+    </div>
+  </div>
+
+  <%= link_to 'Login', sections_url, class: "btn deep-orange btn-block btn-lg" %>
+
+  <footer class="footer">
+    <p class="text-right">A product of the CHSSWeb team</p>
+  </footer>
+</div>
