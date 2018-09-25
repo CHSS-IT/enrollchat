@@ -6,7 +6,7 @@ EnrollChat was designed to help college and department administrators cooordinat
 
 Enrollchat was developed by the College of Humanities and Social Sciences at George Mason University. It is currently tied to Mason's CAS server and is otherwise set up in ways that may not be useful outside Mason. Our first priority is to develop an automated import process, which in our case will be coming from Banner. Beyond that, our priority is to loosen ties, remove dependencies, and make EnrollChat as configurable as possible.
 
-## Dependencies
+## Dependencies and Environment Variables
 
 * Ruby 2.5.1
 * PostgreSQL for the database
@@ -14,14 +14,21 @@ Enrollchat was developed by the College of Humanities and Social Sciences at Geo
 
 The app presumes Heroku hosting and some development decisions reflect that presumption.
 
+The app relies on environment variables for storing key configuration information.
+* ENROLLCHAT_HOST - The core host address for the site, e.g. 'myapp.heroku.com'
+
 Both the manual upload and the feed are dependent on Amazon S3 file storage, managed through Carrierwave. Your development and production environments will need to store these environment variables for S3:
 * S3_BUCKET_NAME
 * AWS_ACCESS_KEY_ID
 * AWS_SECRET_ACCESS_KEY
+* AWS_DEFAULT_REGION
 
 Emails are dependent on SendGrid, which needs these environment variables.
 * SENDGRID_USERNAME
 * SENDGRID_PASSWORD
+
+We are using CAS for logins.
+* CAS_BASE_URL
 
 For Redis:
 * REDISTOGO_URL
