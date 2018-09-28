@@ -86,28 +86,28 @@ class CommentsController < ApplicationController
 
   private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_comment
-      @comment = Comment.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
 
-    def set_user
-      @comment_user = current_user
-    end
+  def set_user
+    @comment_user = current_user
+  end
 
-    def set_section
-      @section = Section.find(params[:section_id])
-    end
+  def set_section
+    @section = Section.find(params[:section_id])
+  end
 
-    def permitted_to_comment
-      unless current_user.active? || current_user.try(:admin?)
-        redirect_to sections_path, notice: 'Unable to post comment. Please contact the administrators to activate your account.'
-        return false
-      end
+  def permitted_to_comment
+    unless current_user.active? || current_user.try(:admin?)
+      redirect_to sections_path, notice: 'Unable to post comment. Please contact the administrators to activate your account.'
+      return false
     end
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def comment_params
-      params.require(:comment).permit(:user_id, :section_id, :body, :section_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def comment_params
+    params.require(:comment).permit(:user_id, :section_id, :body, :section_id)
+  end
 end

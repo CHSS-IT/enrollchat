@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   enum status: { active: 0, archived: 1 }
 
-  has_many :comments, -> { order 'created_at DESC'}
+  has_many :comments, -> { order 'created_at DESC' }
 
   scope :in_department, ->(department) { where('? = ANY(departments) OR admin is TRUE', department) }
 

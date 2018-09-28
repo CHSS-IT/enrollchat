@@ -89,7 +89,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'returns valid statuses for a User' do
-    assert_equal User.statuses, {'active'=> 0, 'archived'=> 1}
+    assert_equal User.statuses, { 'active' => 0, 'archived' => 1 }
   end
 
   test "status defaults to 'active' for a new user" do

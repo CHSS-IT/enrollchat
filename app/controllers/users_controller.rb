@@ -75,7 +75,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    allowed_params = [:first_name, :last_name, :email, :username, :email_preference, :no_weekly_report, { departments: []}]
+    allowed_params = [:first_name, :last_name, :email, :username, :email_preference, :no_weekly_report, { departments: [] }]
     allowed_params += [:admin, :status] if current_user.is_admin?
     params.require(:user).permit(allowed_params)
   end

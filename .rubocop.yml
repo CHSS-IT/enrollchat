@@ -5,5 +5,7 @@ AllCops:
   Exclude:
     - 'db/**/*'
     - 'config/**/*'
+Layout/SpaceAfterComma:
+  Enabled: false
 Rails:
   Enabled: true

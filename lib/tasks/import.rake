@@ -18,7 +18,7 @@ namespace :import do
           if backup.present? && Rails.env == 'production' && 1 == 2 # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
             sftp.dir.glob("#{remote}/backup/","*.csv") do |file| # There's only one file so we don't really need this
               if file.name.include?(".csv")
-                sftp.remove("#{remote}/backup/#{file.name}") #remove backup of previous day's files
+                sftp.remove("#{remote}/backup/#{file.name}") # remove backup of previous day's files
               end
             end
             puts "Removed up old files."
@@ -34,13 +34,13 @@ namespace :import do
               @uploader = FeedUploader.new
               file = File.open("#{Rails.root}/tmp/#{new_name}", 'rb')
               @uploader.store!(file)
-              sftp.rename("#{remote}/#{file.name}", "#{remote}/backup/#{file.name}") if Rails.env == 'production' && 1 == 2 #back up today's files # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
+              sftp.rename("#{remote}/#{file.name}", "#{remote}/backup/#{file.name}") if Rails.env == 'production' && 1 == 2 # back up today's files # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
             end
           end
           puts "Downloaded new files."
           puts "Moved files to the backup directory." if Rails.env == 'production'
           ActionCable.server.broadcast 'room_channel',
-                                       message:  "<a href='/sections' class='dropdown-item'>Registration data import in process.</a>"
+                                       message: "<a href='/sections' class='dropdown-item'>Registration data import in process.</a>"
           path = "#{Rails.root}/tmp/SemesterEnrollments.csv"
 
           puts @uploader.url
@@ -64,7 +64,7 @@ namespace :import do
       puts new_contents
 
       # To write changes to the file, use:
-      File.open(f, "w") {|file| file.write new_contents }
+      File.open(f, "w") { |file| file.write new_contents }
 
       if new_contents != old_text
         report_action(chss,"CSV Correction","Bulletproof task made changes to #{f}.")

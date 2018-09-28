@@ -4,7 +4,7 @@ class Section < ApplicationRecord
   has_many :comments, -> { order(created_at: :desc) }, dependent: :destroy
   has_many :enrollments, -> { order(:created_at) }, dependent: :destroy
 
-  default_scope  { where("delete_at is null") }
+  default_scope { where("delete_at is null") }
 
   scope :by_department, -> { order(:department) }
   scope :by_section_and_number, -> { order(:course_description, :section_number) }
@@ -18,7 +18,7 @@ class Section < ApplicationRecord
   scope :over_enrolled, -> { not_canceled.where('actual_enrollment > enrollment_limit') }
   scope :under_enrolled, -> { not_canceled.where('actual_enrollment < enrollment_limit') }
   scope :graduate_under_enrolled, -> { not_canceled.where('actual_enrollment < 10 and cross_list_enrollment < 10') }
-  scope :undergraduate_under_enrolled, -> { not_canceled.where('actual_enrollment < 15 and cross_list_enrollment < 15')}
+  scope :undergraduate_under_enrolled, -> { not_canceled.where('actual_enrollment < 15 and cross_list_enrollment < 15') }
   scope :graduate_level, -> { where("level like 'Graduate -%'") }
   scope :undergraduate_level, -> { where("level like 'Undergraduate -%'") }
   scope :undergraduate_upper, -> { undergraduate_level.where("level like '%- Upper%'") }
@@ -83,7 +83,7 @@ class Section < ApplicationRecord
   end
 
   def self.department_list
-     self.pluck(:department).uniq.sort
+    self.pluck(:department).uniq.sort
   end
 
   def self.delete_marked
@@ -95,7 +95,7 @@ class Section < ApplicationRecord
   end
 
   def self.status_list
-    list = self.with_status.map{|s| s.status}
+    list = self.with_status.map { |s| s.status }
     list << 'ALL'
     list << 'ACTIVE'
     list.sort.uniq
@@ -240,7 +240,7 @@ class Section < ApplicationRecord
   def track_differences
     # Dry it up
     # Differences since last file upload
-    self.enrollment_limit_yesterday = enrollment_limit_changed?  ? enrollment_limit - enrollment_limit_was : 0
+    self.enrollment_limit_yesterday = enrollment_limit_changed? ? enrollment_limit - enrollment_limit_was : 0
     self.actual_enrollment_yesterday = actual_enrollment_changed? ? actual_enrollment - actual_enrollment_was : 0
     self.cross_list_enrollment_yesterday = cross_list_enrollment_changed? ? cross_list_enrollment - cross_list_enrollment_was : 0
     self.waitlist_yesterday = waitlist_changed? ? waitlist - waitlist_was : 0

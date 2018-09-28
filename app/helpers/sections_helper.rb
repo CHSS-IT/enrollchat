@@ -22,7 +22,7 @@ module SectionsHelper
                        when "under-enrolled"
                          'fa fa-level-down'
                        end
-      text = tag.i({class: icon_class, title: section.flagged_as.capitalize, alt: section.flagged_as.capitalize}) #+ section.flagged_as.capitalize
+      text = tag.i({ class: icon_class, title: section.flagged_as.capitalize, alt: section.flagged_as.capitalize }) #+ section.flagged_as.capitalize
     end
     return text.html_safe if text.present?
   end
