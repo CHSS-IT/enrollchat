@@ -3,12 +3,12 @@ module SectionsHelper
     year = term.to_s[0..3]
     term = term.to_s[4..5]
     case term
-      when '10'
-        then "Spring #{year}"
-      when '40'
-        then "Summer #{year}"
-      when '70'
-        then "Fall #{year}"
+    when '10'
+      then "Spring #{year}"
+    when '40'
+      then "Summer #{year}"
+    when '70'
+      then "Fall #{year}"
     end
   end
 
@@ -16,12 +16,12 @@ module SectionsHelper
   def flagged_icon(section)
     if section.flagged_as.present?
       icon_class =     case section.flagged_as
-                         when "canceled"
-                           'fa fa-ban'
-                         when "long-waitlist"
-                           'fa fa-list-ol'
-                         when "under-enrolled"
-                           'fa fa-level-down'
+                       when "canceled"
+                         'fa fa-ban'
+                       when "long-waitlist"
+                         'fa fa-list-ol'
+                       when "under-enrolled"
+                         'fa fa-level-down'
                        end
       text = tag.i({class: icon_class, title: section.flagged_as.capitalize, alt: section.flagged_as.capitalize}) #+ section.flagged_as.capitalize
     end
