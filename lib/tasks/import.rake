@@ -1,7 +1,5 @@
 namespace :import do
-
   include Rake::DSL
-
 
   task :retrieve_files => :environment do
     require 'net/ssh'
@@ -68,13 +66,10 @@ namespace :import do
       # To write changes to the file, use:
       File.open(f, "w") {|file| file.write new_contents }
 
-
       if new_contents != old_text
         report_action(chss,"CSV Correction","Bulletproof task made changes to #{f}.")
       end
     end
     puts "Finish"
   end
-
-
 end

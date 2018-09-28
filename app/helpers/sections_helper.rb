@@ -12,7 +12,6 @@ module SectionsHelper
     end
   end
 
-
   def flagged_icon(section)
     if section.flagged_as.present?
       icon_class =     case section.flagged_as
@@ -50,5 +49,4 @@ module SectionsHelper
       return text.html_safe if text.present?
     end
   end
-
 end

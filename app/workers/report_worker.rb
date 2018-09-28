@@ -45,7 +45,6 @@ class ReportWorker
       text = "Report for #{department} goes here.".html_safe
       # Add to report for department
       report_action('summaries',department,text)
-
     end
   end
 
@@ -65,7 +64,6 @@ class ReportWorker
     puts "Report ran fully."
   end
 
-
   def departments_with_comments(recipient)
     @report['departments']['list'] & recipient.reporting_departments if @report.key?('departments')
   end
@@ -74,7 +72,6 @@ class ReportWorker
     CommentsMailer.report('EnrollChat Report',recipient, @report, text).deliver!
     report_action('enrollchat','recipients',recipient.email)
   end
-
 
   def report_action(target, group, message)
     @report[target] ||= Hash.new

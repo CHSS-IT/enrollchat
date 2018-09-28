@@ -67,7 +67,6 @@ class DigestWorker
     puts "Report ran fully."
   end
 
-
   def departments_with_comments(recipient)
     @report['departments']['list'] & (recipient.departments.present? ? recipient.departments : Section.department_list)
   end
@@ -79,7 +78,6 @@ class DigestWorker
     CommentsMailer.digest(text,'EnrollChat Comments Digest',recipient).deliver!
     report_action('enrollchat','recipients',recipient.email)
   end
-
 
   def report_action(target, group, message)
     @report[target] ||= Hash.new

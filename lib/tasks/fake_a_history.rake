@@ -1,5 +1,4 @@
 namespace :fake_a_history do
-
   include Rake::DSL
 
   task :now => :environment do
@@ -32,5 +31,4 @@ namespace :fake_a_history do
     Section.destroy_all
     puts "Destroyed all sections and enrollments."
   end
-
 end

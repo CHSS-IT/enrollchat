@@ -34,7 +34,6 @@ class Section < ApplicationRecord
     comments.first.created_at unless comments.empty?
   end
 
-
   # def current_enrollment_limit
   #   enrollments.present? ? enrollments.last.enrollment_limit : 0
   # end
@@ -164,7 +163,6 @@ class Section < ApplicationRecord
       end
       puts row
     end
-
 
     # Used last_touched_at to determine which terms were updated
     touched = Section.where('updated_at > ?', last_touched_at)
