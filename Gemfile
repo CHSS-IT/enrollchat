@@ -99,6 +99,7 @@ group :development do
   gem "bullet"
   gem 'rack-mini-profiler' #, '~> 0.10.7'
   gem 'brakeman', :require => false
+  gem 'rubocop', '~> 0.59.2', require: false
 end
 
 group :test do
