@@ -25,6 +25,9 @@ Metrics/MethodLength:
   Enabled: false
 Metrics/LineLength:
   Max: 995
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'test/test_helper.rb'
 Style/Documentation:
   Enabled: false
 Style/EmptyMethod:
@@ -34,6 +37,10 @@ Style/SymbolArray:
 Style/SymbolProc:
   Enabled: false
 Style/ZeroLengthPredicate:
+  Enabled: false
+Style/NumericPredicate:
+  Enabled: false
+Style/IfUnlessModifier:
   Enabled: false
 Style/StringLiteralsInInterpolation:
   Exclude:
@@ -118,9 +125,6 @@ Rails/TimeZone:
     - 'app/models/section.rb'
     - 'app/models/user.rb'
     - 'test/models/section_test.rb'
-Style/ClassAndModuleChildren:
-  Exclude:
-    - 'test/test_helper.rb'
 Style/ConditionalAssignment:
   Exclude:
     - 'app/controllers/application_controller.rb'
@@ -133,8 +137,6 @@ Style/GuardClause:
     - 'app/helpers/sections_helper.rb'
     - 'app/workers/digest_worker.rb'
     - 'app/workers/new_comment_worker.rb'
-Style/IfUnlessModifier:
-  Enabled: false
 Style/MethodCallWithoutArgsParentheses:
   Exclude:
     - 'app/controllers/sections_controller.rb'
@@ -154,8 +156,6 @@ Style/Next:
   Exclude:
     - 'app/workers/digest_worker.rb'
     - 'app/workers/report_worker.rb'
-Style/NumericPredicate:
-  Enabled: false
 Style/PercentLiteralDelimiters:
   Exclude:
     - 'app/uploaders/feed_uploader.rb'
