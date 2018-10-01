@@ -5,6 +5,8 @@ AllCops:
   Exclude:
     - 'db/**/*'
     - 'config/**/*'
+Rails:
+  Enabled: true
 Lint/AssignmentInCondition:
   Exclude:
   - 'app/channels/application_cable/connection.rb'
@@ -15,5 +17,26 @@ Lint/UselessAssignment:
   - 'lib/tasks/import.rake'
 Layout/SpaceAfterComma:
   Enabled: false
-Rails:
-  Enabled: true
+Metrics/AbcSize:
+  Enabled: false
+Metrics/BlockLength:
+  Exclude:
+  - 'lib/tasks/*'
+  - 'app/models/section.rb'
+Metrics/BlockNesting:
+  Exclude:
+  - 'app/models/section.rb'
+Metrics/ClassLength:
+  Exclude:
+  - 'app/models/section.rb'
+  - 'test/controllers/users_controller_test.rb'
+Metrics/CyclomaticComplexity:
+  Exclude:
+  - 'app/controllers/sections_controller.rb'
+  - 'app/models/section.rb'
+Metrics/MethodLength:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Exclude:
+  - 'app/controllers/sections_controller.rb'
+  - 'app/models/section.rb'
