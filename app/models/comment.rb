@@ -22,5 +22,4 @@ class Comment < ApplicationRecord
   def noticed?(current_user)
     created_at < current_user.last_activity_check
   end
-
 end

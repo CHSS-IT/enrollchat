@@ -5,7 +5,7 @@ class DigestWorker
   sidekiq_options retry: false
 
   def initialize
-    @report = Hash.new
+    @report = {}
   end
 
   def perform
@@ -80,10 +80,9 @@ class DigestWorker
   end
 
   def report_action(target, group, message)
-    @report[target] ||= Hash.new
+    @report[target] ||= {}
     @report[target][group] ||= []
     @report[target][group] << message
     # puts target + " " + message
   end
-
 end

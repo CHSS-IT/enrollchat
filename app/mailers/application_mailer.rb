@@ -11,5 +11,4 @@ class ApplicationMailer < ActionMailer::Base
   def to_switch(email)
     Rails.env.development? ? ENV['ENROLLCHAT_ADMIN_EMAIL'] : email
   end
-
 end

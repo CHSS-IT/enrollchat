@@ -50,7 +50,7 @@ class UsersController < ApplicationController
   def archive
     @user.update(email_preference: 'No Emails', no_weekly_report: true, status: 'archived', admin: false, departments: [])
     respond_to do |format|
-      format.html { redirect_to users_url, :notice => "User has been archived" }
+      format.html { redirect_to users_url, notice: "User has been archived" }
     end
   end
 
@@ -79,5 +79,4 @@ class UsersController < ApplicationController
     allowed_params += [:admin, :status] if current_user.is_admin?
     params.require(:user).permit(allowed_params)
   end
-
 end

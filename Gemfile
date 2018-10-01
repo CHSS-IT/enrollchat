@@ -88,7 +88,7 @@ group :development do
   # Shiny error messages
   gem "better_errors"
   gem "binding_of_caller"
-  gem 'brakeman', :require => false
+  gem 'brakeman', require: false
   # N+1 finder
   gem "bullet"
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -106,7 +106,7 @@ group :test do
   gem 'capybara', '~> 3.7', '>= 3.7.1'
   gem 'chromedriver-helper', '~> 1.2'
   gem 'selenium-webdriver'
-  gem 'simplecov', :require => false
+  gem 'simplecov', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

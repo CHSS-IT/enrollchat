@@ -7,7 +7,7 @@ class ReportWorker
   sidekiq_options retry: false
 
   def initialize
-    @report = Hash.new
+    @report = {}
     @recipients = User.wanting_report
   end
 
@@ -74,9 +74,8 @@ class ReportWorker
   end
 
   def report_action(target, group, message)
-    @report[target] ||= Hash.new
+    @report[target] ||= {}
     @report[target][group] ||= []
     @report[target][group] << message
   end
-
 end

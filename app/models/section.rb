@@ -130,7 +130,7 @@ class Section < ApplicationRecord
     # We will skip the first three rows (non-spreadsheet message and headers) and the last two (blank line and disclaimer).
     (first_row..last_real_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
-      if row["term"].blank? or row["term"].to_i.to_s != row["term"]
+      if row["term"].blank? || row["term"].to_i.to_s != row["term"]
         # Hack to avoid blanks and headers when dealing with generated csv or xslt with dislaimer rows
         puts "Skipping this row:"
       else
@@ -190,7 +190,7 @@ class Section < ApplicationRecord
   end
 
   def self.report_action(subject, message)
-    @report ||= Hash.new
+    @report ||= {}
     @report[subject] ||= []
     @report[subject] << message
     puts message
@@ -205,7 +205,7 @@ class Section < ApplicationRecord
   end
 
   def flagged_as
-    # It would be nice to add highlights to low enrolled courses.  The rules for this are a bit complicated.  An undergraduate course would get a highlight if its actual enrolled were under 15 and its crosslist enrolled were also under 15 (e.g. a course with 7 actual enrolled and 16 crosslist enrolled should not be highlighted).  A graduate course would be highlighted if its actual enrolled were under 10 and its cross list enrolled were under 10.  One more wrinkle, that we could ignore.  An undergraduate course should be treated as if it were a graduate course viz. these minimums if it is linked to a grad course with a cross list code.  Again, this last rule could be disregarded if that kind of check is hard to program and/or would slow down the program considerably. (The logic here is that if a course is cross listed as a grad/undergrad course, I’ve given the benefit of the doubt at treated it as a grad course with the min. enrollment at 10--probably an overly generous policy.)
+    # It would be nice to add highlights to low enrolled courses.  The rules for this are a bit complicated.  An undergraduate course would get a highlight if its actual enrolled were under 15 and its crosslist enrolled were also under 15 (e.g. a course with 7 actual enrolled and 16 crosslist enrolled should not be highlighted).  A graduate course would be highlighted if its actual enrolled were under 10 and its cross list enrolled were under 10.  One more wrinkle, that we could ignore.  An undergraduate course should be treated as if it were a graduate course viz. these minimums if it is linked to a grad course with a cross list code.  Again, this last rule could be disregarded if that kind of check is hard to program and/or would slow down the program considerably. (The logic here is that if a course is cross listed as a grad/undergrad course, I have given the benefit of the doubt at treated it as a grad course with the min. enrollment at 10--probably an overly generous policy.)
     # The might also be a different highlight color for any course with a WL above 5.
 
     if status == 'C'
@@ -213,10 +213,10 @@ class Section < ApplicationRecord
     elsif waitlist > 5
       "long-waitlist"
     elsif graduate? # or state for undergraduate cross-listed with grad if possible
-      if (actual_enrollment < 10 and cross_list_enrollment < 10) and actual_enrollment < enrollment_limit
+      if (actual_enrollment < 10 && cross_list_enrollment < 10) && actual_enrollment < enrollment_limit
         "under-enrolled"
       end
-    elsif (actual_enrollment < 15 and cross_list_enrollment < 15) and actual_enrollment < enrollment_limit
+    elsif (actual_enrollment < 15 && cross_list_enrollment < 15) && actual_enrollment < enrollment_limit
       "under-enrolled"
     end
   end
@@ -245,5 +245,4 @@ class Section < ApplicationRecord
     self.cross_list_enrollment_yesterday = cross_list_enrollment_changed? ? cross_list_enrollment - cross_list_enrollment_was : 0
     self.waitlist_yesterday = waitlist_changed? ? waitlist - waitlist_was : 0
   end
-
 end

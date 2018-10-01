@@ -42,7 +42,7 @@ class SectionsController < ApplicationController
       puts "NEW URL:"
       puts uploader.url
 
-      ImportWorker.perform_async("#{uploader.url}")
+      ImportWorker.perform_async(uploader.url.to_s)
 
     end
   end
@@ -83,9 +83,9 @@ class SectionsController < ApplicationController
           @sections = @sections.graduate_first
         elsif @section_level == 'Graduate - Advanced'
           @sections = @sections.graduate_advanced
-        elsif @section_level == ('Undergraduate - Lower Division')
+        elsif @section_level == 'Undergraduate - Lower Division'
           @sections = @sections.undergraduate_lower
-        elsif @section_level == ('Undergraduate - Upper Division')
+        elsif @section_level == 'Undergraduate - Upper Division'
           @sections = @sections.undergraduate_upper
         end
       end

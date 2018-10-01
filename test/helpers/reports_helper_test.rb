@@ -1,7 +1,8 @@
 require 'test_helper'
-include ReportsHelper
 
 class ReportHelperTest < ActionView::TestCase
+  include ReportsHelper
+
   setup do
     @enrollment_one = enrollments(:one)
     @enrollment_two = enrollments(:two)

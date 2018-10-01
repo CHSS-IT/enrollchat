@@ -19,5 +19,4 @@ class NewCommentWorker
       end
     end
   end
-
 end

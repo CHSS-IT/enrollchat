@@ -162,5 +162,4 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to users_url
     assert_equal 'User has been archived', flash[:notice]
   end
-
 end

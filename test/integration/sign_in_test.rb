@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class SignInTest < ActionDispatch::IntegrationTest
-
   test 'should redirect users who are not signed in to login page' do
     get sections_url
     assert_redirected_to new_user_session_url

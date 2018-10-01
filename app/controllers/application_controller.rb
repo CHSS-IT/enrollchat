@@ -39,5 +39,4 @@ class ApplicationController < ActionController::Base
   def set_recent_unread_comments
     @recent_unread_comments = Comment.recent_unread(current_user)
   end
-
 end

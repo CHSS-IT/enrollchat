@@ -6,7 +6,7 @@ class CommentsMailer < ApplicationMailer
     @recipient = recipient
     to = to_switch(recipient.email)
     subject = "#{subject} #{development_text}"
-    mail(:to => to, :subject => subject)
+    mail(to: to, subject: subject)
   end
 
   def new_comment(comment, subject, recipient)
@@ -24,7 +24,7 @@ class CommentsMailer < ApplicationMailer
     @text = text
     to = to_switch(recipient.email)
     subject = "#{subject} #{development_text}"
-    mail(:to => to, :subject => subject)
+    mail(to: to, subject: subject)
   end
 
   def generic(message, subject, address)
@@ -33,5 +33,4 @@ class CommentsMailer < ApplicationMailer
     subject = "#{subject} #{development_text}"
     mail(to: to, subject: subject)
   end
-
 end

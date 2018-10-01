@@ -29,7 +29,7 @@ namespace :import do
             puts "Looking at #{file.name}"
             if file.name.include?(".csv")
               puts "Grabbing."
-              new_name = "#{file.name}"
+              new_name = file.name.to_s
               sftp.download!("#{remote}/#{file.name}", "#{Rails.root}/tmp/#{new_name}")
               @uploader = FeedUploader.new
               file = File.open("#{Rails.root}/tmp/#{new_name}", 'rb')
@@ -45,7 +45,7 @@ namespace :import do
 
           puts @uploader.url
 
-          ImportWorker.perform_async("#{@uploader.url}")
+          ImportWorker.perform_async(@uploader.url.to_s)
 
         else
           puts "No files present."
