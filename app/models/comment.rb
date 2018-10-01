@@ -2,7 +2,7 @@ class Comment < ApplicationRecord
   belongs_to :user, required: true
   belongs_to :section, required: true
 
-  validates_presence_of :body
+  validates :body, presence: true
 
   default_scope { joins(:section).where("sections.delete_at is null") }
 

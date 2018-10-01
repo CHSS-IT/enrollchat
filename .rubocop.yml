@@ -10,15 +10,19 @@ Rails:
 Lint/AssignmentInCondition:
   Exclude:
   - 'app/channels/application_cable/connection.rb'
+Layout/SpaceAfterComma:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/LineLength:
+  Enabled: false
 Lint/UselessAssignment:
   Exclude:
   - 'app/models/enrollment.rb'
   - 'app/workers/report_worker.rb'
   - 'lib/tasks/import.rake'
-Layout/SpaceAfterComma:
-  Enabled: false
-Metrics/AbcSize:
-  Enabled: false
 Metrics/BlockLength:
   Exclude:
   - 'lib/tasks/*'
@@ -34,8 +38,6 @@ Metrics/CyclomaticComplexity:
   Exclude:
   - 'app/controllers/sections_controller.rb'
   - 'app/models/section.rb'
-Metrics/MethodLength:
-  Enabled: false
 Metrics/PerceivedComplexity:
   Exclude:
   - 'app/controllers/sections_controller.rb'
@@ -43,5 +45,56 @@ Metrics/PerceivedComplexity:
 Naming/PredicateName:
   Exclude:
   - 'app/models/user.rb'
-Metrics/LineLength:
-  Enabled: false
+Performance/RedundantMatch:
+  Exclude:
+  - 'app/controllers/application_controller.rb'
+Performance/RegexpMatch:
+  Exclude:
+  - 'app/controllers/application_controller.rb'
+Rails/Blank:
+  Exclude:
+  - 'app/workers/digest_worker.rb'
+Rails/Date:
+  Exclude:
+  - 'app/helpers/application_helper.rb'
+  - 'lib/tasks/weekly_reports.rake'
+Rails/FilePath:
+  Exclude:
+  - 'lib/tasks/import.rake'
+Rails/InverseOf:
+  Exclude:
+  - 'app/models/section.rb'
+  - 'app/models/user.rb'
+Rails/Output:
+  Exclude:
+  - 'app/controllers/sections_controller.rb'
+  - 'app/models/section.rb'
+  - 'app/workers/digest_worker.rb'
+  - 'app/workers/import_worker.rb'
+  - 'app/workers/report_worker.rb'
+Rails/OutputSafety:
+  Exclude:
+  - 'app/controllers/comments_controller.rb'
+  - 'app/helpers/reports_helper.rb'
+  - 'app/helpers/sections_helper.rb'
+  - 'app/workers/digest_worker.rb'
+  - 'app/workers/report_worker.rb'
+Rails/Presence:
+  Exclude:
+  - 'app/workers/digest_worker.rb'
+Rails/Present:
+  Exclude:
+  - 'app/controllers/sections_controller.rb'
+Rails/SkipsModelValidations:
+  Exclude:
+  - 'app/controllers/sections_controller.rb'
+  - 'app/models/section.rb'
+  - 'app/models/user.rb'
+  - 'test/models/section_test.rb'
+Rails/TimeZone:
+  Exclude:
+  - 'app/controllers/sections_controller.rb'
+  - 'app/models/section.rb'
+  - 'app/models/user.rb'
+  - 'test/models/section_test.rb'
+

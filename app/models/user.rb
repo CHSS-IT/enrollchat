@@ -17,8 +17,8 @@ class User < ApplicationRecord
     model.departments.reject!(&:blank?) if model.departments
   end
 
-  validates_presence_of :first_name, :last_name, :username, :email, :status
-  validates_uniqueness_of :email, :username
+  validates :first_name, :last_name, :username, :email, :status, presence: true
+  validates :email, :username, uniqueness: true
 
   def departments_of_interest
     comments.collect { |c| c.section.department }.uniq.sort

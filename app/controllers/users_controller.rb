@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update, :destroy, :checked_activities, :archive]
+  before_action :set_user, only: [:edit, :update, :checked_activities, :archive]
   before_action :ensure_admin!, except: [:edit, :update, :checked_activities]
   before_action :editable?, only: [:edit, :update]
   before_action :authenticate_user!
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   end
 
   def archive
-    @user.update_attributes(email_preference: 'No Emails', no_weekly_report: true, status: 'archived', admin: false, departments: [])
+    @user.update(email_preference: 'No Emails', no_weekly_report: true, status: 'archived', admin: false, departments: [])
     respond_to do |format|
       format.html { redirect_to users_url, :notice => "User has been archived" }
     end

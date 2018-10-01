@@ -50,12 +50,12 @@ class SectionsTest < ApplicationSystemTestCase
     assert_selector 'table tbody tr td', text: 'SINT'
     assert_selector 'table tbody tr td', text: 'Experiential Learning'
     assert_selector 'table tbody tr td', text: 'Graduate - Advanced'
-    select('Undergraduate - Lower Division', from: 'section_level')
   end
 
   test 'filtering by undergraduate level' do
     visit sections_url
     assert_selector 'table tbody tr', count: 4
+    select('Undergraduate - Lower Division', from: 'section_level')
     click_link('filter-submit')
     assert_selector 'table tbody tr', count: 1
     assert_selector 'table tbody tr td', text: 'BIS'

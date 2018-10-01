@@ -131,7 +131,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test 'should not update user_attributes for a non-admin user trying to archive a user' do
     login_as users(:two)
     @user.departments << 'HIST'
-    @user.update_attributes(email_preference: 'Daily Digest')
+    @user.update(email_preference: 'Daily Digest')
     get archive_user_url(@user)
     assert_equal @user.reload.email_preference, 'Daily Digest'
     assert_equal @user.reload.no_weekly_report, false

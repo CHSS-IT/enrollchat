@@ -15,7 +15,7 @@ namespace :import do
         puts "Download running."
         if current_files.present?
           # only remove backup files if called from production
-          if backup.present? && Rails.env == 'production' && 1 == 2 # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
+          if backup.present? && Rails.env.production? && 1 == 2 # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
             sftp.dir.glob("#{remote}/backup/","*.csv") do |file| # There's only one file so we don't really need this
               if file.name.include?(".csv")
                 sftp.remove("#{remote}/backup/#{file.name}") # remove backup of previous day's files
@@ -34,11 +34,11 @@ namespace :import do
               @uploader = FeedUploader.new
               file = File.open("#{Rails.root}/tmp/#{new_name}", 'rb')
               @uploader.store!(file)
-              sftp.rename("#{remote}/#{file.name}", "#{remote}/backup/#{file.name}") if Rails.env == 'production' && 1 == 2 # back up today's files # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
+              sftp.rename("#{remote}/#{file.name}", "#{remote}/backup/#{file.name}") if Rails.env.production? && 1 == 2 # back up today's files # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
             end
           end
           puts "Downloaded new files."
-          puts "Moved files to the backup directory." if Rails.env == 'production'
+          puts "Moved files to the backup directory." if Rails.env.production?
           ActionCable.server.broadcast 'room_channel',
                                        message: "<a href='/sections' class='dropdown-item'>Registration data import in process.</a>"
           path = "#{Rails.root}/tmp/SemesterEnrollments.csv"
