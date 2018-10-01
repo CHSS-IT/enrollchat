@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   require 'csv'
 
-  before_action :set_terms, :set_term, :get_recent_comments
+  before_action :set_terms, :set_term, :set_recent_comments
 
   def set_terms
     @terms = Section.select(:term).distinct(:term).order(term: :desc)
@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
     cookies[:term] = @term unless cookies[:term] == @term
   end
 
-  def get_recent_comments
+  def set_recent_comments
     unless current_user.nil?
       if current_user.departments.present? && !current_user.is_admin?
         @recent_comments = Comment.recent_unread_by_interest(current_user).limit(25)
@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def get_recent_unread_comments
+  def set_recent_unread_comments
     @recent_unread_comments = Comment.recent_unread(current_user)
   end
 

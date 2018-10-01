@@ -40,3 +40,8 @@ Metrics/PerceivedComplexity:
   Exclude:
   - 'app/controllers/sections_controller.rb'
   - 'app/models/section.rb'
+Naming/PredicateName:
+  Exclude:
+  - 'app/models/user.rb'
+Metrics/LineLength:
+  Enabled: false
