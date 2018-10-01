@@ -44,5 +44,4 @@ class SectionsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to sections_url
     assert_equal 'You do not have access to this page', flash[:notice]
   end
-
 end

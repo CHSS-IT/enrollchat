@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-
   setup do
     @admin = users(:one)
     @user = users(:two)
@@ -89,7 +88,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'returns valid statuses for a User' do
-    assert_equal User.statuses, {'active'=> 0, 'archived'=> 1}
+    assert_equal User.statuses, 'active' => 0, 'archived' => 1
   end
 
   test "status defaults to 'active' for a new user" do
@@ -98,6 +97,6 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'returns a list of keys from the available statuses' do
-    assert_equal User.status_list, ['active', 'archived']
+    assert_equal User.status_list, %w[active archived]
   end
 end

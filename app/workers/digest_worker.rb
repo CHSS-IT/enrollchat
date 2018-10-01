@@ -5,7 +5,7 @@ class DigestWorker
   sidekiq_options retry: false
 
   def initialize
-    @report = Hash.new
+    @report = {}
   end
 
   def perform
@@ -67,7 +67,6 @@ class DigestWorker
     puts "Report ran fully."
   end
 
-
   def departments_with_comments(recipient)
     @report['departments']['list'] & (recipient.departments.present? ? recipient.departments : Section.department_list)
   end
@@ -80,12 +79,10 @@ class DigestWorker
     report_action('enrollchat','recipients',recipient.email)
   end
 
-
   def report_action(target, group, message)
-    @report[target] ||= Hash.new
+    @report[target] ||= {}
     @report[target][group] ||= []
     @report[target][group] << message
     # puts target + " " + message
   end
-
 end

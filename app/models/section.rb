@@ -4,7 +4,7 @@ class Section < ApplicationRecord
   has_many :comments, -> { order(created_at: :desc) }, dependent: :destroy
   has_many :enrollments, -> { order(:created_at) }, dependent: :destroy
 
-  default_scope  { where("delete_at is null") }
+  default_scope { where("delete_at is null") }
 
   scope :by_department, -> { order(:department) }
   scope :by_section_and_number, -> { order(:course_description, :section_number) }
@@ -18,7 +18,7 @@ class Section < ApplicationRecord
   scope :over_enrolled, -> { not_canceled.where('actual_enrollment > enrollment_limit') }
   scope :under_enrolled, -> { not_canceled.where('actual_enrollment < enrollment_limit') }
   scope :graduate_under_enrolled, -> { not_canceled.where('actual_enrollment < 10 and cross_list_enrollment < 10') }
-  scope :undergraduate_under_enrolled, -> { not_canceled.where('actual_enrollment < 15 and cross_list_enrollment < 15')}
+  scope :undergraduate_under_enrolled, -> { not_canceled.where('actual_enrollment < 15 and cross_list_enrollment < 15') }
   scope :graduate_level, -> { where("level like 'Graduate -%'") }
   scope :undergraduate_level, -> { where("level like 'Undergraduate -%'") }
   scope :undergraduate_upper, -> { undergraduate_level.where("level like '%- Upper%'") }
@@ -33,7 +33,6 @@ class Section < ApplicationRecord
   def most_recent_comment_date
     comments.first.created_at unless comments.empty?
   end
-
 
   # def current_enrollment_limit
   #   enrollments.present? ? enrollments.last.enrollment_limit : 0
@@ -84,7 +83,7 @@ class Section < ApplicationRecord
   end
 
   def self.department_list
-     self.pluck(:department).uniq.sort
+    self.pluck(:department).uniq.sort
   end
 
   def self.delete_marked
@@ -96,7 +95,7 @@ class Section < ApplicationRecord
   end
 
   def self.status_list
-    list = self.with_status.map{|s| s.status}
+    list = self.with_status.map { |s| s.status }
     list << 'ALL'
     list << 'ACTIVE'
     list.sort.uniq
@@ -131,7 +130,7 @@ class Section < ApplicationRecord
     # We will skip the first three rows (non-spreadsheet message and headers) and the last two (blank line and disclaimer).
     (first_row..last_real_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
-      if row["term"].blank? or row["term"].to_i.to_s != row["term"]
+      if row["term"].blank? || row["term"].to_i.to_s != row["term"]
         # Hack to avoid blanks and headers when dealing with generated csv or xslt with dislaimer rows
         puts "Skipping this row:"
       else
@@ -165,7 +164,6 @@ class Section < ApplicationRecord
       puts row
     end
 
-
     # Used last_touched_at to determine which terms were updated
     touched = Section.where('updated_at > ?', last_touched_at)
     created = Section.where('created_at > ?', last_touched_at)
@@ -177,7 +175,7 @@ class Section < ApplicationRecord
       report_action('Updated Sections', "<a href='/sections' class='dropdown-item'>The import file was empty.</a>")
     end
     # From those, gather the terms
-    touched_terms = touched.collect { |touched| touched.term }.uniq
+    touched_terms = touched.collect { |t| t.term }.uniq
     # Then find any untouched sections from those terms
     untouched = Section.where('updated_at <= ? and term in (?)', last_touched_at, touched_terms)
     if untouched.size > 0
@@ -192,7 +190,7 @@ class Section < ApplicationRecord
   end
 
   def self.report_action(subject, message)
-    @report ||= Hash.new
+    @report ||= {}
     @report[subject] ||= []
     @report[subject] << message
     puts message
@@ -207,7 +205,7 @@ class Section < ApplicationRecord
   end
 
   def flagged_as
-    # It would be nice to add highlights to low enrolled courses.  The rules for this are a bit complicated.  An undergraduate course would get a highlight if its actual enrolled were under 15 and its crosslist enrolled were also under 15 (e.g. a course with 7 actual enrolled and 16 crosslist enrolled should not be highlighted).  A graduate course would be highlighted if its actual enrolled were under 10 and its cross list enrolled were under 10.  One more wrinkle, that we could ignore.  An undergraduate course should be treated as if it were a graduate course viz. these minimums if it is linked to a grad course with a cross list code.  Again, this last rule could be disregarded if that kind of check is hard to program and/or would slow down the program considerably. (The logic here is that if a course is cross listed as a grad/undergrad course, I’ve given the benefit of the doubt at treated it as a grad course with the min. enrollment at 10--probably an overly generous policy.)
+    # It would be nice to add highlights to low enrolled courses.  The rules for this are a bit complicated.  An undergraduate course would get a highlight if its actual enrolled were under 15 and its crosslist enrolled were also under 15 (e.g. a course with 7 actual enrolled and 16 crosslist enrolled should not be highlighted).  A graduate course would be highlighted if its actual enrolled were under 10 and its cross list enrolled were under 10.  One more wrinkle, that we could ignore.  An undergraduate course should be treated as if it were a graduate course viz. these minimums if it is linked to a grad course with a cross list code.  Again, this last rule could be disregarded if that kind of check is hard to program and/or would slow down the program considerably. (The logic here is that if a course is cross listed as a grad/undergrad course, I have given the benefit of the doubt at treated it as a grad course with the min. enrollment at 10--probably an overly generous policy.)
     # The might also be a different highlight color for any course with a WL above 5.
 
     if status == 'C'
@@ -215,10 +213,10 @@ class Section < ApplicationRecord
     elsif waitlist > 5
       "long-waitlist"
     elsif graduate? # or state for undergraduate cross-listed with grad if possible
-      if (actual_enrollment < 10 and cross_list_enrollment < 10) and actual_enrollment < enrollment_limit
+      if (actual_enrollment < 10 && cross_list_enrollment < 10) && actual_enrollment < enrollment_limit
         "under-enrolled"
       end
-    elsif (actual_enrollment < 15 and cross_list_enrollment < 15) and actual_enrollment < enrollment_limit
+    elsif (actual_enrollment < 15 && cross_list_enrollment < 15) && actual_enrollment < enrollment_limit
       "under-enrolled"
     end
   end
@@ -242,12 +240,9 @@ class Section < ApplicationRecord
   def track_differences
     # Dry it up
     # Differences since last file upload
-    self.enrollment_limit_yesterday = enrollment_limit_changed?  ? enrollment_limit - enrollment_limit_was : 0
+    self.enrollment_limit_yesterday = enrollment_limit_changed? ? enrollment_limit - enrollment_limit_was : 0
     self.actual_enrollment_yesterday = actual_enrollment_changed? ? actual_enrollment - actual_enrollment_was : 0
     self.cross_list_enrollment_yesterday = cross_list_enrollment_changed? ? cross_list_enrollment - cross_list_enrollment_was : 0
     self.waitlist_yesterday = waitlist_changed? ? waitlist - waitlist_was : 0
   end
-
-  private
-
 end

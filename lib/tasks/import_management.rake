@@ -11,7 +11,7 @@ namespace :import_management do
     Net::SSH.start(ENV["ENROLLCHAT_REMOTE"], ENV["ENROLLCHAT_REMOTE_USER"], password: ENV["ENROLLCHAT_REMOTE_PASS"]) do |ssh|
       ssh.sftp.connect do |sftp|
         sftp.dir.glob(remote_home,"*.csv") do |file|
-          if file.name.include?("szpcsch_crse") && Rails.env == 'production'
+          if file.name.include?("szpcsch_crse") && Rails.env.production?
             sftp.rename("#{remote_home}/#{file.name}", "#{remote}/#{file.name}")
             file_count += 1
           end

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update, :destroy, :checked_activities, :archive]
+  before_action :set_user, only: [:edit, :update, :checked_activities, :archive]
   before_action :ensure_admin!, except: [:edit, :update, :checked_activities]
   before_action :editable?, only: [:edit, :update]
   before_action :authenticate_user!
@@ -48,9 +48,9 @@ class UsersController < ApplicationController
   end
 
   def archive
-    @user.update_attributes(email_preference: 'No Emails', no_weekly_report: true, status: 'archived', admin: false, departments: [])
+    @user.update(email_preference: 'No Emails', no_weekly_report: true, status: 'archived', admin: false, departments: [])
     respond_to do |format|
-      format.html { redirect_to users_url, :notice => "User has been archived" }
+      format.html { redirect_to users_url, notice: "User has been archived" }
     end
   end
 
@@ -75,9 +75,8 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    allowed_params = [:first_name, :last_name, :email, :username, :email_preference, :no_weekly_report, { departments: []}]
+    allowed_params = [:first_name, :last_name, :email, :username, :email_preference, :no_weekly_report, { departments: [] }]
     allowed_params += [:admin, :status] if current_user.is_admin?
     params.require(:user).permit(allowed_params)
   end
-
 end

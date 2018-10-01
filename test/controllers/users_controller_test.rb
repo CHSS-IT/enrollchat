@@ -95,16 +95,16 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test 'should update when a non-admin user edits themself' do
     login_as users(:three)
-    patch user_url(@user), params: { user: { email_preference: 'No Emails', first_name: 'New'} }
+    patch user_url(@user), params: { user: { email_preference: 'No Emails', first_name: 'New' } }
     assert_redirected_to sections_path
     assert_equal @user.reload.email_preference, 'No Emails'
-    assert_equal @user.reload.first_name, 'New' #not available to the user through the UI
+    assert_equal @user.reload.first_name, 'New' # not available to the user through the UI
     assert_equal 'Preferences updated', flash[:notice]
   end
 
   test 'should not UPDATE admin for a user editing themselves' do
     login_as @user
-    patch user_url(@user), params: { user: { admin: true} }
+    patch user_url(@user), params: { user: { admin: true } }
     assert_redirected_to sections_path
     assert_equal @user.reload.admin, false
   end
@@ -131,7 +131,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test 'should not update user_attributes for a non-admin user trying to archive a user' do
     login_as users(:two)
     @user.departments << 'HIST'
-    @user.update_attributes(email_preference: 'Daily Digest')
+    @user.update(email_preference: 'Daily Digest')
     get archive_user_url(@user)
     assert_equal @user.reload.email_preference, 'Daily Digest'
     assert_equal @user.reload.no_weekly_report, false
@@ -162,5 +162,4 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to users_url
     assert_equal 'User has been archived', flash[:notice]
   end
-
 end

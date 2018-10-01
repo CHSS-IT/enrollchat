@@ -20,7 +20,7 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'should return the enrollment history_dates as string for a section' do
-    assert_equal @section_two.history_date_strings, ["#{@enrollment_five.created_at.strftime('%b %e')}", "#{@enrollment_four.created_at.strftime('%b %e')}", "#{@enrollment_three.created_at.strftime('%b %e')}", "#{@enrollment_two.created_at.strftime('%b %e')}", "#{@enrollment_one.created_at.strftime('%b %e')}"]
+    assert_equal @section_two.history_date_strings, [@enrollment_five.created_at.strftime('%b %e').to_s, @enrollment_four.created_at.strftime('%b %e').to_s, @enrollment_three.created_at.strftime('%b %e').to_s, @enrollment_two.created_at.strftime('%b %e').to_s, @enrollment_one.created_at.strftime('%b %e').to_s]
   end
 
   test 'should return the enrollment_limit_history for a section' do
@@ -52,7 +52,7 @@ class SectionTest < ActiveSupport::TestCase
 
   test 'should create a list of all unique departments' do
     @section_five = sections(:four)
-    assert_equal @sections.department_list, ["BIS", "CRIM", "ENGL", "SINT"]
+    assert_equal @sections.department_list, %w[BIS CRIM ENGL SINT]
   end
 
   test 'should destroy sections marked for deletion' do
@@ -64,11 +64,11 @@ class SectionTest < ActiveSupport::TestCase
 
   test 'should return a unique, unsorted list of departments' do
     @section_five = sections(:four)
-    assert_equal @sections.departments, ["BIS", "CRIM", "SINT", "ENGL"]
+    assert_equal @sections.departments, %w[BIS CRIM SINT ENGL]
   end
 
   test 'should create a list of all available statuses including the manually added ALL and ACTIVE statuses' do
-    assert_equal @sections.status_list, ["ACTIVE", "ALL", "C", "CL", "CN", "O", "WL"]
+    assert_equal @sections.status_list, %w[ACTIVE ALL C CL CN O WL]
   end
 
   test 'should create a list of levels available for selection' do

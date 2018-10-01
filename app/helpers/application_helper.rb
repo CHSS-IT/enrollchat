@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   def basic_date(date)
     date.blank? ? nil : date.strftime('%B %-d, %Y')
   end
@@ -19,5 +18,4 @@ module ApplicationHelper
   def active_class(link_path)
     current_page?(link_path) ? 'active' : ""
   end
-
 end

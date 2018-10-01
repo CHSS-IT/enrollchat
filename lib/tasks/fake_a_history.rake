@@ -1,5 +1,4 @@
 namespace :fake_a_history do
-
   include Rake::DSL
 
   task :now => :environment do
@@ -9,13 +8,13 @@ namespace :fake_a_history do
     end
   end
 
-  def fake_history(s)
-    s.enrollments.build(department: s.department, term: s.term, enrollment_limit: 25, actual_enrollment: rand(0..15), cross_list_enrollment: rand(0..15), waitlist: rand(0..15), created_at: "2018/6/1", updated_at: "2018/6/1")
+  def fake_history(sect)
+    sect.enrollments.build(department: sect.department, term: sect.term, enrollment_limit: 25, actual_enrollment: rand(0..15), cross_list_enrollment: rand(0..15), waitlist: rand(0..15), created_at: "2018/6/1", updated_at: "2018/6/1")
     2.upto 30 do |day|
-      s.enrollments.build(department: s.department, term: s.term, enrollment_limit: 25, actual_enrollment: fun_random(s.actual_enrollment, -5, 10), cross_list_enrollment: fun_random(s.cross_list_enrollment, -2, 2), waitlist: fun_random(s.waitlist, -2, 2), created_at: "2018/6/#{day}", updated_at: "2018/6/#{day}")
+      sect.enrollments.build(department: sect.department, term: sect.term, enrollment_limit: 25, actual_enrollment: fun_random(sect.actual_enrollment, -5, 10), cross_list_enrollment: fun_random(sect.cross_list_enrollment, -2, 2), waitlist: fun_random(sect.waitlist, -2, 2), created_at: "2018/6/#{day}", updated_at: "2018/6/#{day}")
     end
-    s.save!
-    puts "History faked for section #{s.id}"
+    sect.save!
+    puts "History faked for section #{sect.id}"
   end
 
   def fun_random(value, start_num, end_num)
@@ -32,5 +31,4 @@ namespace :fake_a_history do
     Section.destroy_all
     puts "Destroyed all sections and enrollments."
   end
-
 end
