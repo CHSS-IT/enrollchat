@@ -175,7 +175,7 @@ class Section < ApplicationRecord
       report_action('Updated Sections', "<a href='/sections' class='dropdown-item'>The import file was empty.</a>")
     end
     # From those, gather the terms
-    touched_terms = touched.collect { |touched| touched.term }.uniq
+    touched_terms = touched.collect { |t| t.term }.uniq
     # Then find any untouched sections from those terms
     untouched = Section.where('updated_at <= ? and term in (?)', last_touched_at, touched_terms)
     if untouched.size > 0
@@ -245,7 +245,5 @@ class Section < ApplicationRecord
     self.cross_list_enrollment_yesterday = cross_list_enrollment_changed? ? cross_list_enrollment - cross_list_enrollment_was : 0
     self.waitlist_yesterday = waitlist_changed? ? waitlist - waitlist_was : 0
   end
-
-  private
 
 end

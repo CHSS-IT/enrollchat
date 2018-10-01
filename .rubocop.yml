@@ -5,6 +5,14 @@ AllCops:
   Exclude:
     - 'db/**/*'
     - 'config/**/*'
+Lint/AssignmentInCondition:
+  Exclude:
+  - 'app/channels/application_cable/connection.rb'
+Lint/UselessAssignment:
+  Exclude:
+  - 'app/models/enrollment.rb'
+  - 'app/workers/report_worker.rb'
+  - 'lib/tasks/import.rake'
 Layout/SpaceAfterComma:
   Enabled: false
 Rails:
