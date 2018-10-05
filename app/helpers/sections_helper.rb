@@ -49,4 +49,9 @@ module SectionsHelper
       return text.html_safe if text.present?
     end
   end
+
+  def level_label(level)
+    Section.level_list[Section.level_code_list.find_index(level)][0]
+  end
+
 end

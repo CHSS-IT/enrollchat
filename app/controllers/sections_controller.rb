@@ -78,16 +78,8 @@ class SectionsController < ApplicationController
       end
 
       unless params[:section][:level].blank?
-        @section_level = params[:section][:level]
-        if @section_level == 'Graduate - First'
-          @sections = @sections.graduate_first
-        elsif @section_level == 'Graduate - Advanced'
-          @sections = @sections.graduate_advanced
-        elsif @section_level == 'Undergraduate - Lower Division'
-          @sections = @sections.undergraduate_lower
-        elsif @section_level == 'Undergraduate - Upper Division'
-          @sections = @sections.undergraduate_upper
-        end
+        @section_level = params[:section][:level] if Section.level_code_list.include?(params[:section][:level])
+        @sections = @sections.send(@section_level) if @section_level.present?
       end
 
       unless params[:section][:flagged].blank?

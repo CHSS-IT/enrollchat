@@ -20,7 +20,7 @@ class Section < ApplicationRecord
   scope :graduate_under_enrolled, -> { not_canceled.where('actual_enrollment < 10 and cross_list_enrollment < 10') }
   scope :undergraduate_under_enrolled, -> { not_canceled.where('actual_enrollment < 15 and cross_list_enrollment < 15') }
   scope :graduate_level, -> { where("level like 'Graduate -%'") }
-  scope :undergraduate_level, -> { where("level like 'Undergraduate -%'") }
+  scope :undergraduate_level, -> { where(level: '') }
   scope :undergraduate_upper, -> { undergraduate_level.where("level like '%- Upper%'") }
   scope :undergraduate_lower, -> { undergraduate_level.where("level like '%- Lower%'") }
   scope :graduate_first, -> { graduate_level.where("level like '%- First%'") }
@@ -102,7 +102,15 @@ class Section < ApplicationRecord
   end
 
   def self.level_list
-    ['Undergraduate - Lower Division','Undergraduate - Upper Division','Graduate - First','Graduate - Advanced']
+    [['Undergraduate - Lower Division','UUL'],['Undergraduate - Upper Division','UUU'],['Graduate - First','UGF'],['Graduate - Advanced','UGA']]
+  end
+
+  def self.level_code_list
+    self.level_list.collect { |l| l[1]}
+  end
+
+  self.level_code_list.each do |level|
+    scope level.to_sym, -> { where(:level => level)}
   end
 
   def self.enrollment_status_list
@@ -136,6 +144,7 @@ class Section < ApplicationRecord
       else
         section = Section.find_or_initialize_by(term: row["term"], section_id: row["section_id"])
         section.attributes = row.to_hash.slice(*header)
+        section.level.map
         section.track_differences
         section.save! if section.new_record?
         section.enrollments.create(department: section.department, term: section.term, enrollment_limit: section.enrollment_limit, actual_enrollment: section.actual_enrollment, cross_list_enrollment: section.cross_list_enrollment, waitlist: section.waitlist)

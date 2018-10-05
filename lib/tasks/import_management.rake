@@ -45,7 +45,13 @@ namespace :import_management do
     if file_count == 0
       puts "Import file not present."
     else
-      puts "#{file_count} file downloaded."
+      puts "#{file_count} #{ActionController::Base.helpers.pluralize(file_count, 'file')} downloaded."
     end
   end
+
+  task :cleanup => :environment do
+    # Clear backup directory
+    # Move current file(s) to backup directory
+  end
+
 end
