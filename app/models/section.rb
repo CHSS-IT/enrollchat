@@ -252,9 +252,10 @@ class Section < ApplicationRecord
   def track_differences
     # Dry it up
     # Differences since last file upload
+    #
     self.enrollment_limit_yesterday = self.new_record? ? 0 : enrollment_limit_changed? ? enrollment_limit - enrollment_limit_was : 0
     self.actual_enrollment_yesterday = self.new_record? ? 0 : actual_enrollment_changed? ? actual_enrollment - actual_enrollment_was : 0
-    self.cross_list_enrollment_yesterday = self.new_record? ? 0 : cross_list_enrollment_changed? ? cross_list_enrollment - cross_list_enrollment_was : 0
+    self.cross_list_enrollment_yesterday = cross_list_enrollment_was.nil? ? 0 : cross_list_enrollment_changed? ? cross_list_enrollment - cross_list_enrollment_was : 0
     self.waitlist_yesterday = waitlist_changed? ? self.new_record? ? 0 : waitlist - waitlist_was : 0
   end
 end
