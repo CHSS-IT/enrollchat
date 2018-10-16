@@ -16,7 +16,6 @@ Rails.application.routes.draw do
     end
     resources :comments
   end
-  post '/sections/import' => 'sections#import'
 
   mount ActionCable.server, at: '/cable'
 

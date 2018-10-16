@@ -17,14 +17,10 @@ class Section < ApplicationRecord
   scope :full, -> { not_canceled.where('actual_enrollment = enrollment_limit') }
   scope :over_enrolled, -> { not_canceled.where('actual_enrollment > enrollment_limit') }
   scope :under_enrolled, -> { not_canceled.where('actual_enrollment < enrollment_limit') }
-  scope :graduate_under_enrolled, -> { not_canceled.where('actual_enrollment < 10 and cross_list_enrollment < 10') }
-  scope :undergraduate_under_enrolled, -> { not_canceled.where('actual_enrollment < 15 and cross_list_enrollment < 15') }
-  scope :graduate_level, -> { where("level like 'Graduate -%'") }
-  scope :undergraduate_level, -> { where(level: '') }
-  scope :undergraduate_upper, -> { undergraduate_level.where("level like '%- Upper%'") }
-  scope :undergraduate_lower, -> { undergraduate_level.where("level like '%- Lower%'") }
-  scope :graduate_first, -> { graduate_level.where("level like '%- First%'") }
-  scope :graduate_advanced, -> { graduate_level.where("level like '%- Advanced%'") }
+  scope :graduate_under_enrolled, -> { graduate_level.not_canceled.where('actual_enrollment < 10 and cross_list_enrollment < 10') }
+  scope :undergraduate_under_enrolled, -> { undergraduate_level.not_canceled.where('actual_enrollment < 15 and cross_list_enrollment < 15') }
+  scope :graduate_level, -> { where("level like 'UG%'") }
+  scope :undergraduate_level, -> { where("level like 'UU%'") }
   scope :with_status, -> { where("status is not null and status <> ' '") }
 
   scope :marked_for_deletion, -> { unscoped.where("delete_at is not null") }
@@ -110,7 +106,7 @@ class Section < ApplicationRecord
   end
 
   self.level_code_list.each do |level|
-    scope level.to_sym, -> { where(:level => level)}
+    scope level.downcase.to_sym, -> { where(:level => level)}
   end
 
   def self.enrollment_status_list

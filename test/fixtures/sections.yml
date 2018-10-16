@@ -10,7 +10,7 @@ one:
   section_number: 1
   title: MyString
   credits: 1
-  level: Undergraduate - Lower Division
+  level: UUL
   status: CN
   enrollment_limit: 20
   actual_enrollment: 22
@@ -28,7 +28,7 @@ two:
   section_number: 1
   title: MyString
   credits: 1
-  level: Graduate - First
+  level: UGF
   status: WL
   enrollment_limit: 20
   actual_enrollment: 26
@@ -46,7 +46,7 @@ three:
   section_number: 1
   title: MyString
   credits: 1
-  level: Graduate - Advanced
+  level: UGA
   status: O
   enrollment_limit: 30
   actual_enrollment: 9
@@ -64,7 +64,7 @@ four:
   section_number: 1
   title: MyString
   credits: 1
-  level: Undergraduate - Upper Division
+  level: UUU
   status: CL
   enrollment_limit: 25
   actual_enrollment: 13
@@ -82,7 +82,7 @@ five:
   section_number: 2
   title: MyString
   credits: 1
-  level: Graduate - First
+  level: UGF
   status: C
   enrollment_limit: 20
   actual_enrollment: 26
