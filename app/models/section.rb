@@ -120,9 +120,14 @@ class Section < ApplicationRecord
   def self.import(filepath)
     # Grab most recent update time
     last_touched_at = Section.maximum(:updated_at)
-    puts filepath
+    puts "Getting file from #{filepath}"
     # Open file using Roo.
-    spreadsheet = Roo::Spreadsheet.open(filepath)
+    file = open(filepath)
+    spreadsheet = Roo::Spreadsheet.open(file, extension: '.csv')
+
+
+    # spreadsheet = Roo::Spreadsheet.open(open(imported_file.file_url), extension: File.extname(imported_file.file_url).gsub('.','').to_sym) rescue nil
+
 
     # Left over from having to process spreadsheets with embedded text we had to ignore. Left in place as a possible future configurable setting.
     last_real_row = spreadsheet.last_row
@@ -253,9 +258,9 @@ class Section < ApplicationRecord
     # Dry it up
     # Differences since last file upload
     #
-    self.enrollment_limit_yesterday = self.new_record? ? 0 : enrollment_limit_changed? ? enrollment_limit - enrollment_limit_was : 0
-    self.actual_enrollment_yesterday = self.new_record? ? 0 : actual_enrollment_changed? ? actual_enrollment - actual_enrollment_was : 0
-    self.cross_list_enrollment_yesterday = cross_list_enrollment_was.nil? ? 0 : cross_list_enrollment_changed? ? cross_list_enrollment - cross_list_enrollment_was : 0
-    self.waitlist_yesterday = waitlist_changed? ? self.new_record? ? 0 : waitlist - waitlist_was : 0
+    self.enrollment_limit_yesterday = (self.new_record? || self.enrollment_limit_before_last_save.nil?) ? 0 : enrollment_limit_changed? ? enrollment_limit - enrollment_limit_before_last_save : 0
+    self.actual_enrollment_yesterday = (self.new_record? || self.actual_enrollment_before_last_save.nil?) ? 0 : actual_enrollment_changed? ? actual_enrollment - actual_enrollment_before_last_save : 0
+    self.cross_list_enrollment_yesterday = cross_list_enrollment_before_last_save.nil? ? 0 : cross_list_enrollment_changed? ? cross_list_enrollment - cross_list_enrollment_before_last_save : 0
+    self.waitlist_yesterday = waitlist_changed? ? self.new_record? ? 0 : waitlist - waitlist_before_last_save : 0
   end
 end
