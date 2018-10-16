@@ -98,7 +98,7 @@ class Section < ApplicationRecord
   end
 
   def self.level_list
-    [['Undergraduate - Lower Division','UUL'],['Undergraduate - Upper Division','UUU'],['Graduate - First','UGF'],['Graduate - Advanced','UGA']]
+    [['Undergraduate - Lower Division','uul'],['Undergraduate - Upper Division','uuu'],['Graduate - First','ugf'],['Graduate - Advanced','uga']]
   end
 
   def self.level_code_list
@@ -106,7 +106,7 @@ class Section < ApplicationRecord
   end
 
   self.level_code_list.each do |level|
-    scope level.downcase.to_sym, -> { where(:level => level)}
+    scope level.downcase.to_sym, -> { where(:level => level.upcase)}
   end
 
   def self.enrollment_status_list
