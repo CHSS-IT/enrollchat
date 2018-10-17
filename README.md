@@ -69,6 +69,13 @@ If you wish to ingest a feed automatically, you will need to set the ENROLLCHAT_
 
 Administrators may manually upload sections in an xlsx file using the upload button on sections#index. See the sample file in docs/test for an example of the format.
 
+## Email Delivery Configuration
+
+Digest and Report emails are sent to users based on their email preferences. These emails may only be relevant during specific times of the academic year. There are three configuration settings available to control the delivery of these emails:
+- :scheduled - emails will only be sent during predefined windows. These are set in `lib/delivery_windows.rb`
+- :on - emails will be sent on their regular schedule through the year
+- :off - emails will not be sent
+
 ## Testing
 
 The app uses Rails' built in testing mechanisms. System Tests are configured to inherit from Capybara and run Selenium with headless Chrome. Chromedriver is required to use this setup and is included in the Gemfile.
