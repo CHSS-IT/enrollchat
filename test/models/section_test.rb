@@ -72,7 +72,7 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'should create a list of level codes available for selection' do
-    assert_equal @sections.level_code_list, ['UUL', 'UUU', 'UGF', 'UGA']
+    assert_equal @sections.level_code_list, %w[uul uuu ugf uga]
   end
 
   test 'should create a list of enrollment statuses' do
@@ -119,5 +119,34 @@ class SectionTest < ActiveSupport::TestCase
 
   test 'graduate_level and over_enrolled scopes should return graduate sections where actual enrollment is greater than the enrollment limit' do
     assert_equal @sections.graduate_level.over_enrolled, [@section_two]
+  end
+
+  # import
+  test 'import updates attributes for existing sections' do
+    assert_equal @section.actual_enrollment, 22
+    assert_equal @section.cross_list_enrollment, 1
+    assert_equal @section.waitlist, 1
+    Section.import(file_fixture('test_crse.csv'))
+    @section.reload
+    assert_equal @section.actual_enrollment, 23
+    assert_equal @section.cross_list_enrollment, 2
+    assert_equal @section.waitlist, 0
+  end
+
+  # track_differences
+  test 'tracks differences in enrollment_limit' do
+    puts 'XXXXXXXX'
+    @section.save!
+    puts @section.enrollment_limit_yesterday
+    puts @section.enrollment_limit_before_last_save
+    assert_equal @section.enrollment_limit_yesterday, 0
+    Section.import(file_fixture('test_crse.csv'))
+    puts 'XXXXXX'
+    puts @section.reload.enrollment_limit_before_last_save
+    puts 'XXXXXXXX'
+    @section.reload
+    puts @section.enrollment_limit
+    puts @section.enrollment_limit_yesterday
+    assert_equal @section.enrollment_limit_yesterday, 1
   end
 end

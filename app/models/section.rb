@@ -257,6 +257,6 @@ class Section < ApplicationRecord
     self.enrollment_limit_yesterday = (self.new_record? || self.enrollment_limit_before_last_save.nil?) ? 0 : enrollment_limit_changed? ? enrollment_limit - enrollment_limit_before_last_save : 0
     self.actual_enrollment_yesterday = (self.new_record? || self.actual_enrollment_before_last_save.nil?) ? 0 : actual_enrollment_changed? ? actual_enrollment - actual_enrollment_before_last_save : 0
     self.cross_list_enrollment_yesterday = cross_list_enrollment_before_last_save.nil? ? 0 : cross_list_enrollment_changed? ? cross_list_enrollment - cross_list_enrollment_before_last_save : 0
-    self.waitlist_yesterday = waitlist_changed? ? self.new_record? ? 0 : waitlist - waitlist_before_last_save : 0
+    self.waitlist_yesterday = (self.new_record? || self.waitlist_before_last_save.nil?) ? 0 : waitlist_changed? ? waitlist - waitlist_before_last_save : 0
   end
 end
