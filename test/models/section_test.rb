@@ -128,25 +128,33 @@ class SectionTest < ActiveSupport::TestCase
     assert_equal @section.waitlist, 1
     Section.import(file_fixture('test_crse.csv'))
     @section.reload
-    assert_equal @section.actual_enrollment, 23
-    assert_equal @section.cross_list_enrollment, 2
+    assert_equal @section.actual_enrollment, 24
+    assert_equal @section.cross_list_enrollment, 3
     assert_equal @section.waitlist, 0
   end
 
   # track_differences
   test 'tracks differences in enrollment_limit' do
-    puts 'XXXXXXXX'
-    @section.save!
-    puts @section.enrollment_limit_yesterday
-    puts @section.enrollment_limit_before_last_save
     assert_equal @section.enrollment_limit_yesterday, 0
     Section.import(file_fixture('test_crse.csv'))
-    puts 'XXXXXX'
-    puts @section.reload.enrollment_limit_before_last_save
-    puts 'XXXXXXXX'
-    @section.reload
-    puts @section.enrollment_limit
-    puts @section.enrollment_limit_yesterday
-    assert_equal @section.enrollment_limit_yesterday, 1
+    assert_equal @section.reload.enrollment_limit_yesterday, 1
+  end
+
+  test 'tracks differences in actual_enrollment' do
+    assert_equal @section.actual_enrollment_yesterday, 0
+    Section.import(file_fixture('test_crse.csv'))
+    assert_equal @section.reload.actual_enrollment_yesterday, 2
+  end
+
+  test 'tracks differences in cross_list_enrollment' do
+    assert_equal @section.cross_list_enrollment_yesterday, 0
+    Section.import(file_fixture('test_crse.csv'))
+    assert_equal @section.reload.cross_list_enrollment_yesterday, 2
+  end
+
+  test 'tracks differences in waitlist' do
+    assert_equal @section.waitlist_yesterday, 0
+    Section.import(file_fixture('test_crse.csv'))
+    assert_equal @section.reload.waitlist_yesterday, -1
   end
 end
