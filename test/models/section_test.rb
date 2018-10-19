@@ -157,4 +157,41 @@ class SectionTest < ActiveSupport::TestCase
     Section.import(file_fixture('test_crse.csv'))
     assert_equal @section.reload.waitlist_yesterday, -1
   end
+
+  test 'sets change in enrollment limit to 0 if previous value was nil' do
+    @section.enrollment_limit = nil
+    @section.save!
+    Section.import(file_fixture('test_crse.csv'))
+    assert_equal @section.reload.enrollment_limit_yesterday, 0
+  end
+
+  test 'sets change in actual enrollment to 0 if previous value was nil' do
+    @section.actual_enrollment = nil
+    @section.save!
+    Section.import(file_fixture('test_crse.csv'))
+    assert_equal @section.reload.actual_enrollment_yesterday, 0
+  end
+
+  test 'sets change in cross_list_enrollment to 0 if previous value was nil' do
+    @section.cross_list_enrollment = nil
+    @section.save!
+    Section.import(file_fixture('test_crse.csv'))
+    assert_equal @section.reload.cross_list_enrollment_yesterday, 0
+  end
+
+  test 'sets change in waitlist to 0 if previous value was nil' do
+    @section.waitlist = nil
+    @section.save!
+    Section.import(file_fixture('test_crse.csv'))
+    assert_equal @section.reload.waitlist_yesterday, 0
+  end
+
+  test 'sets change in section attributes to 0 for a new record' do
+    Section.import(file_fixture('test_crse.csv'))
+    @new_section = Section.last
+    assert_equal @new_section.reload.enrollment_limit_yesterday, 0
+    assert_equal @new_section.reload.actual_enrollment_yesterday, 0
+    assert_equal @new_section.reload.cross_list_enrollment_yesterday, 0
+    assert_equal @new_section.reload.waitlist_yesterday, 0
+  end
 end
