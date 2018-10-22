@@ -17,7 +17,7 @@
   <td><%= basic_date(section.most_recent_comment_date) unless section.most_recent_comment_date.blank? %></td>
   <% if action_name != 'show' %>
     <td>
-      <%=  link_to "<i class='fa fa-comment' aria - hidden = 'true' > < /i> <span class='comment-count'>#{section.comments.size}".html_safe, section_comments_path(section), remote: true, data: { toggle: 'modal', target: '#comments' }  %>
+      <%=  link_to "<i class='fa fa-comment' aria-hidden = 'true'></i> <span class='comment-count'>#{section.comments.size}".html_safe, section_comments_path(section), remote: true, data: { toggle: 'modal', target: '#comments' }  %>
       <%  if section.comments.present?  %>
         <%=  content_tag(:span, "<i class='fa fa-info-circle' id='preview-comment' aria-hidden='true'></i>".html_safe, data: { toggle: 'popover', title: section.comments.first.user.full_name + " " + time_ago_in_words(section.comments.first.created_at) + " ago ", content: section.comments.first.body }, class: 'comment-hover' )  %>
       <%  end  %>
