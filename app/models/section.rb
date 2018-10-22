@@ -133,10 +133,8 @@ class Section < ApplicationRecord
     header = %w[section_id term department cross_list_group course_description section_number title credits level status enrollment_limit actual_enrollment cross_list_enrollment waitlist]
     # Parse spreadsheet.
     @updated_sections = 0
-    # We will skip the first three rows (non-spreadsheet message and headers) and the last two (blank line and disclaimer).
     (first_row..last_real_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
-      puts row
       if row["term"].blank? || row["term"].to_i.to_s != row["term"]
         # Hack to avoid blanks and headers when dealing with generated csv or xslt with dislaimer rows
         puts "Row fails reality check:"
@@ -148,7 +146,6 @@ class Section < ApplicationRecord
           section.cross_list_enrollment_yesterday = 0
         end
 
-        puts section.inspect
         section.track_differences
         section.save! if section.new_record?
         section.enrollments.create(department: section.department, term: section.term, enrollment_limit: section.enrollment_limit, actual_enrollment: section.actual_enrollment, cross_list_enrollment: section.cross_list_enrollment, waitlist: section.waitlist)
