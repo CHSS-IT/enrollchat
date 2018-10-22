@@ -101,6 +101,10 @@ class Section < ApplicationRecord
     [['Undergraduate - Lower Division','uul'],['Undergraduate - Upper Division','uuu'],['Graduate - First','ugf'],['Graduate - Advanced','uga']]
   end
 
+  def self.level_name_list
+    self.level_list.collect { |l| l[0]}
+  end
+
   def self.level_code_list
     self.level_list.collect { |l| l[1]}
   end

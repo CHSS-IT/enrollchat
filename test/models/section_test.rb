@@ -71,9 +71,14 @@ class SectionTest < ActiveSupport::TestCase
     assert_equal @sections.status_list, %w[ACTIVE ALL C CL CN O WL]
   end
 
+  test 'should create a list of level names available for selection' do
+    assert_equal @sections.level_name_list, ["Undergraduate - Lower Division", "Undergraduate - Upper Division", "Graduate - First", "Graduate - Advanced"]
+  end
+
   test 'should create a list of level codes available for selection' do
     assert_equal @sections.level_code_list, %w[uul uuu ugf uga]
   end
+
 
   test 'should create a list of enrollment statuses' do
     assert_equal Section.enrollment_status_list, ['Undergraduate under-enrolled', 'Undergraduate over-enrolled', 'Graduate under-enrolled', 'Graduate over-enrolled']
