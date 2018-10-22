@@ -23,3 +23,4 @@
 //= require cable
 //= require turbolinks
 //= require material-design/mdb.min
+//= require bootstrap-select.min
