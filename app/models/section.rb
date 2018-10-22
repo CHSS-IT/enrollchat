@@ -17,14 +17,10 @@ class Section < ApplicationRecord
   scope :full, -> { not_canceled.where('actual_enrollment = enrollment_limit') }
   scope :over_enrolled, -> { not_canceled.where('actual_enrollment > enrollment_limit') }
   scope :under_enrolled, -> { not_canceled.where('actual_enrollment < enrollment_limit') }
-  scope :graduate_under_enrolled, -> { not_canceled.where('actual_enrollment < 10 and cross_list_enrollment < 10') }
-  scope :undergraduate_under_enrolled, -> { not_canceled.where('actual_enrollment < 15 and cross_list_enrollment < 15') }
-  scope :graduate_level, -> { where("level like 'Graduate -%'") }
-  scope :undergraduate_level, -> { where("level like 'Undergraduate -%'") }
-  scope :undergraduate_upper, -> { undergraduate_level.where("level like '%- Upper%'") }
-  scope :undergraduate_lower, -> { undergraduate_level.where("level like '%- Lower%'") }
-  scope :graduate_first, -> { graduate_level.where("level like '%- First%'") }
-  scope :graduate_advanced, -> { graduate_level.where("level like '%- Advanced%'") }
+  scope :graduate_under_enrolled, -> { graduate_level.not_canceled.where('actual_enrollment < 10 and cross_list_enrollment < 10') }
+  scope :undergraduate_under_enrolled, -> { undergraduate_level.not_canceled.where('actual_enrollment < 15 and cross_list_enrollment < 15') }
+  scope :graduate_level, -> { where("level like 'UG%'") }
+  scope :undergraduate_level, -> { where("level like 'UU%'") }
   scope :with_status, -> { where("status is not null and status <> ' '") }
 
   scope :marked_for_deletion, -> { unscoped.where("delete_at is not null") }
@@ -102,7 +98,15 @@ class Section < ApplicationRecord
   end
 
   def self.level_list
-    ['Undergraduate - Lower Division','Undergraduate - Upper Division','Graduate - First','Graduate - Advanced']
+    [['Undergraduate - Lower Division','uul'],['Undergraduate - Upper Division','uuu'],['Graduate - First','ugf'],['Graduate - Advanced','uga']]
+  end
+
+  def self.level_code_list
+    self.level_list.collect { |l| l[1]}
+  end
+
+  self.level_code_list.each do |level|
+    scope level.downcase.to_sym, -> { where(:level => level.upcase)}
   end
 
   def self.enrollment_status_list
@@ -112,30 +116,36 @@ class Section < ApplicationRecord
   def self.import(filepath)
     # Grab most recent update time
     last_touched_at = Section.maximum(:updated_at)
-    puts filepath
+    puts "Getting file from #{filepath}"
     # Open file using Roo.
-    spreadsheet = Roo::Spreadsheet.open(filepath)
-    if filepath.to_s.include?('.xlsx')
-      last_real_row = spreadsheet.last_row - 2
-      first_row = 4
-    elsif filepath.to_s.include?('.csv')
-      last_real_row = spreadsheet.last_row
-      first_row = 4
-      # puts spreadsheet.inspect
-    end
+    file = open(filepath)
+    spreadsheet = Roo::Spreadsheet.open(file, extension: '.csv')
+
+
+    # spreadsheet = Roo::Spreadsheet.open(open(imported_file.file_url), extension: File.extname(imported_file.file_url).gsub('.','').to_sym) rescue nil
+
+
+    # Left over from having to process spreadsheets with embedded text we had to ignore. Left in place as a possible future configurable setting.
+    last_real_row = spreadsheet.last_row
+    first_row = 2
+
     # Use local names instead of names from file header
     header = %w[section_id term department cross_list_group course_description section_number title credits level status enrollment_limit actual_enrollment cross_list_enrollment waitlist]
     # Parse spreadsheet.
     @updated_sections = 0
-    # We will skip the first three rows (non-spreadsheet message and headers) and the last two (blank line and disclaimer).
     (first_row..last_real_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
       if row["term"].blank? || row["term"].to_i.to_s != row["term"]
         # Hack to avoid blanks and headers when dealing with generated csv or xslt with dislaimer rows
-        puts "Skipping this row:"
+        puts "Row fails reality check:"
       else
         section = Section.find_or_initialize_by(term: row["term"], section_id: row["section_id"])
         section.attributes = row.to_hash.slice(*header)
+        if section.cross_list_enrollment.nil?
+          section.cross_list_enrollment = 0
+          section.cross_list_enrollment_yesterday = 0
+        end
+
         section.track_differences
         section.save! if section.new_record?
         section.enrollments.create(department: section.department, term: section.term, enrollment_limit: section.enrollment_limit, actual_enrollment: section.actual_enrollment, cross_list_enrollment: section.cross_list_enrollment, waitlist: section.waitlist)
@@ -240,9 +250,10 @@ class Section < ApplicationRecord
   def track_differences
     # Dry it up
     # Differences since last file upload
-    self.enrollment_limit_yesterday = enrollment_limit_changed? ? enrollment_limit - enrollment_limit_was : 0
-    self.actual_enrollment_yesterday = actual_enrollment_changed? ? actual_enrollment - actual_enrollment_was : 0
-    self.cross_list_enrollment_yesterday = cross_list_enrollment_changed? ? cross_list_enrollment - cross_list_enrollment_was : 0
-    self.waitlist_yesterday = waitlist_changed? ? waitlist - waitlist_was : 0
+    #
+    self.enrollment_limit_yesterday = (self.new_record? || self.enrollment_limit_was.nil?) ? 0 : enrollment_limit_changed? ? enrollment_limit - enrollment_limit_was : 0
+    self.actual_enrollment_yesterday = (self.new_record? || self.actual_enrollment_was.nil?) ? 0 : actual_enrollment_changed? ? actual_enrollment - actual_enrollment_was : 0
+    self.cross_list_enrollment_yesterday = cross_list_enrollment_was.nil? ? 0 : cross_list_enrollment_changed? ? cross_list_enrollment - cross_list_enrollment_was : 0
+    self.waitlist_yesterday = (self.new_record? || self.waitlist_was.nil?) ? 0 : waitlist_changed? ? waitlist - waitlist_was : 0
   end
 end

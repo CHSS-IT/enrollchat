@@ -27,26 +27,6 @@ class SectionsController < ApplicationController
     end
   end
 
-  def import
-    if params[:file].nil?
-      flash[:alert] = "Upload attempted but no file was attached!"
-    else
-      ActionCable.server.broadcast 'room_channel',
-                                   message:  "Registration data import in process.",
-                                   user: "System"
-
-      feed = params[:file]
-
-      uploader = FeedUploader.new
-      uploader.store!(feed)
-      puts "NEW URL:"
-      puts uploader.url
-
-      ImportWorker.perform_async(uploader.url.to_s)
-
-    end
-  end
-
   def delete_term
     @sections = Section.in_term(params[:term]).update_all(delete_at: DateTime.now().next_month)
     redirect_to sections_path, notice: "All sections and comments from term #{params[:term]} are marked for deletion."
@@ -78,16 +58,8 @@ class SectionsController < ApplicationController
       end
 
       unless params[:section][:level].blank?
-        @section_level = params[:section][:level]
-        if @section_level == 'Graduate - First'
-          @sections = @sections.graduate_first
-        elsif @section_level == 'Graduate - Advanced'
-          @sections = @sections.graduate_advanced
-        elsif @section_level == 'Undergraduate - Lower Division'
-          @sections = @sections.undergraduate_lower
-        elsif @section_level == 'Undergraduate - Upper Division'
-          @sections = @sections.undergraduate_upper
-        end
+        @section_level = params[:section][:level] if Section.level_code_list.include?(params[:section][:level])
+        @sections = @sections.send(@section_level) if @section_level.present?
       end
 
       unless params[:section][:flagged].blank?

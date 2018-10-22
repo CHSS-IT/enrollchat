@@ -6,7 +6,7 @@
   <td><%= section.section_and_number %></td>
   <td><%= section.title %></td>
   <td><%= section.credits %></td>
-  <td><%= section.level %></td>
+  <td><%= level_label(section.level) %></td>
   <td><%= section.status %></td>
   <td><%= section.enrollment_limit %><%= yesterday_arrow(section, 'enrollment_limit') %></td>
   <td><%= section.actual_enrollment %><%= yesterday_arrow(section, 'actual_enrollment') %></td>
@@ -15,18 +15,18 @@
   <td><%= basic_date(section.created_at) %></td>
   <td><%= basic_date(section.canceled_at) unless section.canceled_at.blank? %></td>
   <td><%= basic_date(section.most_recent_comment_date) unless section.most_recent_comment_date.blank? %></td>
-  <% unless action_name == 'show' %>
+  <% if action_name != 'show' %>
     <td>
-      <%= link_to "<i class='fa fa-comment' aria-hidden='true'></i> <span class='comment-count'>#{section.comments.size}".html_safe, section_comments_path(section), remote: true, data: { toggle: 'modal', target: '#comments' } %>
-      <% if section.comments.present? %>
-        <%= content_tag(:span, "<i class='fa fa-info-circle' id='preview-comment' aria-hidden='true'></i>".html_safe, data: { toggle: 'popover', title: section.comments.first.user.full_name + " " + time_ago_in_words(section.comments.first.created_at) + " ago", content: section.comments.first.body }, class: 'comment-hover' ) %>
-      <% end %>
-      <% if section.resolved_section && current_user.is_admin? %>
-        <i class='fa fa-check' style="color: green;" aria-hidden='true' id="resolved">
-      <% else %>
+      <%=  link_to "<i class='fa fa-comment' aria - hidden = 'true' > < /i> <span class='comment-count'>#{section.comments.size}".html_safe, section_comments_path(section), remote: true, data: { toggle: 'modal', target: '#comments' }  %>
+      <%  if section.comments.present?  %>
+        <%=  content_tag(:span, "<i class='fa fa-info-circle' id='preview-comment' aria-hidden='true'></i>".html_safe, data: { toggle: 'popover', title: section.comments.first.user.full_name + " " + time_ago_in_words(section.comments.first.created_at) + " ago ", content: section.comments.first.body }, class: 'comment-hover' )  %>
+      <%  end  %>
+      <%  if section.resolved_section && current_user.is_admin?  %>
+        <i class='fa fa-check' style="color: green;" aria-hidden='true' id="resolved" />
+      <%  else  %>
         <div id="resolved" style="color: green;"></div>
-      <% end %>
+      <%  end %>
     </td>
-    <td><%= link_to "<i class='fa fa-chart-line' aria-hidden='true'></i> Graph".html_safe, section %></td>
+  <td><%=  link_to "<i class='fa fa-chart-line' aria-hidden='true' ></i> Graph".html_safe, section  %></td>
   <% end %>
 </tr>
