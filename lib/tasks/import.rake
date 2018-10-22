@@ -47,38 +47,16 @@ namespace :import do
             puts "Backing up files."
             current_files.each do |file|
               puts "Moving #{file.name}"
-             # sftp.rename!("#{remote}/#{file.name}", "#{remote}/backup/#{file.name}") #if Rails.env.production? && 1 == 2 # back up today's files # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
+             sftp.rename!("#{remote}/#{file.name}", "#{remote}/backup/#{file.name}") #if Rails.env.production? && 1 == 2 # back up today's files # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
             end
           end
 
           if @uploader.present?
             puts "Triggering import."
+            ActionCable.server.broadcast 'room_channel',
+                                         message: "<a href='/sections' class='dropdown-item'>Registration data import in process.</a>"
             ImportWorker.perform_async(@uploader.url.to_s)
           end
-
-          # Move all files to backup dir if we're on production
-
-          # current_files.each do |file|
-          #   puts "Looking at #{file.name}"
-          #   if file.name.include?(".csv")
-          #     puts "Grabbing."
-          #     new_name = file.name.to_s
-          #     sftp.download!("#{remote}/#{file.name}", "#{Rails.root}/tmp/#{new_name}")
-          #     @uploader = FeedUploader.new
-          #     file = File.open("#{Rails.root}/tmp/#{new_name}", 'rb')
-          #     @uploader.store!(file)
-          #     sftp.rename("#{remote}/#{file.name}", "#{remote}/backup/#{file.name}") #if Rails.env.production? && 1 == 2 # back up today's files # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
-          #   end
-          # end
-          # puts "Downloaded new files."
-          # puts "Moved files to the backup directory." if Rails.env.production?
-          # ActionCable.server.broadcast 'room_channel',
-          #                              message: "<a href='/sections' class='dropdown-item'>Registration data import in process.</a>"
-          # path = "#{Rails.root}/tmp/SemesterEnrollments.csv"
-          #
-          # puts @uploader.url
-          #
-          # ImportWorker.perform_async(@uploader.url.to_s)
 
         else
           puts "No files present."
