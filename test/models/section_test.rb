@@ -122,7 +122,7 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   # import
-  test 'import updates attributes for existing sections' do
+  test 'import updates attributes for the first existing section' do
     assert_equal @section.actual_enrollment, 22
     assert_equal @section.cross_list_enrollment, 1
     assert_equal @section.waitlist, 1
@@ -131,6 +131,72 @@ class SectionTest < ActiveSupport::TestCase
     assert_equal @section.actual_enrollment, 24
     assert_equal @section.cross_list_enrollment, 3
     assert_equal @section.waitlist, 0
+  end
+
+  test 'import updates attributes for the last existing section' do
+    assert_equal @section_five.actual_enrollment, 26
+    assert_equal @section_five.cross_list_enrollment, 2
+    assert_equal @section_five.waitlist, 7
+    Section.import(file_fixture('test_crse.csv'))
+    @section_five.reload
+    assert_equal @section_five.actual_enrollment, 27
+    assert_equal @section_five.cross_list_enrollment, 3
+    assert_equal @section_five.waitlist, 6
+  end
+
+  test 'import adds a new section' do
+    assert_equal @sections.count, 5
+    Section.import(file_fixture('test_crse.csv'))
+    assert_equal @sections.count, 6
+  end
+
+  test 'import correctly sets attributes for a new section' do
+    Section.import(file_fixture('test_crse.csv'))
+    @new_section = Section.last
+    assert_equal @new_section.term, 1
+    assert_equal @new_section.department, 'HIST'
+    assert_equal @new_section.course_description, 'HIST 100'
+    assert_equal @new_section.section_number, '002'
+    assert_equal @new_section.title, 'History of Western Civ'
+    assert_equal @new_section.credits, 3
+    assert_equal @new_section.level, 'UUL'
+    assert_equal @new_section.status, 'O'
+    assert_equal @new_section.enrollment_limit, 55
+    assert_equal @new_section.actual_enrollment, 54
+    assert_equal @new_section.cross_list_enrollment, 0
+    assert_equal @new_section.waitlist, 0
+    assert_equal @new_section.canceled_at, nil
+    assert_equal @new_section.delete_at, nil
+    assert_equal @new_section.enrollment_limit_yesterday, 0
+    assert_equal @new_section.actual_enrollment_yesterday, 0
+    assert_equal @new_section.cross_list_enrollment_yesterday, 0
+    assert_equal @new_section.waitlist_yesterday, 0
+  end
+
+  test 'import identifies newly canceled sections' do
+    assert_equal @section_three.status, 'O'
+    Section.import(file_fixture('test_crse.csv'))
+    @section_three.reload
+    assert_equal @section_three.status, 'C'
+    assert_not_nil @section_three.canceled_at
+  end
+
+  test 'import creates an enrollment for a section' do
+    assert_difference('@section.enrollments.count', + 1) do
+      Section.import(file_fixture('test_crse.csv'))
+    end
+  end
+
+  test 'import sets enrollment attributes for a section' do
+    Section.import(file_fixture('test_crse.csv'))
+    @section.reload
+    @new_enrollment = @section.enrollments.last
+    assert_equal @new_enrollment.department, @section.department
+    assert_equal @new_enrollment.term, @section.term
+    assert_equal @new_enrollment.enrollment_limit, @section.enrollment_limit
+    assert_equal @new_enrollment.actual_enrollment, @section.actual_enrollment
+    assert_equal @new_enrollment.cross_list_enrollment, @section.cross_list_enrollment
+    assert_equal @new_enrollment.waitlist, @section.waitlist
   end
 
   # track_differences

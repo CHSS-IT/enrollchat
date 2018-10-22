@@ -88,4 +88,5 @@ five:
   actual_enrollment: 26
   cross_list_enrollment: 2
   waitlist: 7
+  canceled_at: <%= 2.days.ago %>
   resolved_section: false
