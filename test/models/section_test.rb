@@ -170,8 +170,8 @@ class SectionTest < ActiveSupport::TestCase
     assert_equal @new_section.actual_enrollment, 54
     assert_equal @new_section.cross_list_enrollment, 0
     assert_equal @new_section.waitlist, 0
-    assert_equal @new_section.canceled_at, nil
-    assert_equal @new_section.delete_at, nil
+    assert_nil @new_section.canceled_at
+    assert_nil @new_section.delete_at
     assert_equal @new_section.enrollment_limit_yesterday, 0
     assert_equal @new_section.actual_enrollment_yesterday, 0
     assert_equal @new_section.cross_list_enrollment_yesterday, 0

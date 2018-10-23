@@ -120,7 +120,6 @@ class Section < ApplicationRecord
   def self.import(filepath)
     # Grab most recent update time
     last_touched_at = Section.maximum(:updated_at)
-    puts "Getting file from #{filepath}"
     # Open file using Roo.
     file = open(filepath)
     spreadsheet = Roo::Spreadsheet.open(file, extension: '.csv')
@@ -159,7 +158,6 @@ class Section < ApplicationRecord
         # TODO: do we have a flag for cancellation?
         if section.status == 'C'
           if section.status_changed? || section.canceled_at.blank?
-            puts "NEW CANCEL! - #{section.status_changed?} - #{section.canceled_at.blank?}"
             section.canceled_at = DateTime.now()
             report_action('Canceled Sections', section.section_and_number)
           end
@@ -175,7 +173,6 @@ class Section < ApplicationRecord
           end
         end
       end
-      puts row
     end
 
     # Used last_touched_at to determine which terms were updated
@@ -207,7 +204,6 @@ class Section < ApplicationRecord
     @report ||= {}
     @report[subject] ||= []
     @report[subject] << message
-    puts message
   end
 
   def graduate?
