@@ -17,7 +17,7 @@ namespace :import do
         puts "Download running."
         if current_files.present?
           # only remove backup files if called from production
-          if backup.present? #&& Rails.env.production? && 1 == 2 # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
+          if backup.present? # && Rails.env.production? && 1 == 2 # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
             backup.each do |file| # There's only one file so we don't really need this
               puts file.name
               sftp.remove!("#{remote}/backup/#{file.name}") do |response| # remove backup of previous day's files
@@ -47,7 +47,7 @@ namespace :import do
             puts "Backing up files."
             current_files.each do |file|
               puts "Moving #{file.name}"
-             sftp.rename!("#{remote}/#{file.name}", "#{remote}/backup/#{file.name}") #if Rails.env.production? && 1 == 2 # back up today's files # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
+              sftp.rename!("#{remote}/#{file.name}", "#{remote}/backup/#{file.name}") # if Rails.env.production? && 1 == 2 # back up today's files # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
             end
           end
 

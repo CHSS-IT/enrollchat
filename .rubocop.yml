@@ -61,6 +61,7 @@ Metrics/BlockNesting:
 Metrics/ClassLength:
   Exclude:
     - 'app/models/section.rb'
+    - 'test/models/section_test.rb'
     - 'test/controllers/users_controller_test.rb'
 Metrics/CyclomaticComplexity:
   Exclude:
@@ -148,6 +149,7 @@ Style/MethodCallWithoutArgsParentheses:
 Style/NestedTernaryOperator:
   Exclude:
     - 'app/helpers/application_helper.rb'
+    - 'app/models/section.rb'
 Style/Next:
   Exclude:
     - 'app/workers/digest_worker.rb'
@@ -177,3 +179,6 @@ Style/NilComparison:
 Style/UnlessElse:
   Exclude:
     - 'app/controllers/sections_controller.rb'
+Style/TernaryParentheses:
+  Exclude:
+    - 'app/models/section.rb'

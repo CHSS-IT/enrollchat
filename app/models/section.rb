@@ -102,15 +102,15 @@ class Section < ApplicationRecord
   end
 
   def self.level_name_list
-    self.level_list.collect { |l| l[0]}
+    self.level_list.collect { |l| l[0] }
   end
 
   def self.level_code_list
-    self.level_list.collect { |l| l[1]}
+    self.level_list.collect { |l| l[1] }
   end
 
   self.level_code_list.each do |level|
-    scope level.downcase.to_sym, -> { where(:level => level.upcase)}
+    scope level.downcase.to_sym, -> { where(level: level.upcase) }
   end
 
   def self.enrollment_status_list
@@ -124,9 +124,7 @@ class Section < ApplicationRecord
     file = open(filepath)
     spreadsheet = Roo::Spreadsheet.open(file, extension: '.csv')
 
-
     # spreadsheet = Roo::Spreadsheet.open(open(imported_file.file_url), extension: File.extname(imported_file.file_url).gsub('.','').to_sym) rescue nil
-
 
     # Left over from having to process spreadsheets with embedded text we had to ignore. Left in place as a possible future configurable setting.
     last_real_row = spreadsheet.last_row
