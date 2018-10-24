@@ -49,7 +49,7 @@ namespace :import do
           if current_files.present?
             report_action('Current File', 'Backups', "Backing up files.")
             current_files.each do |file|
-              sftp.rename!("#{remote}/#{file.name}", "#{remote}/backup/#{file.name}") #if Rails.env.production? && 1 == 2 # back up today's files # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
+              sftp.rename!("#{remote}/#{file.name}", "#{remote}/backup/#{file.name}") # if Rails.env.production? && 1 == 2 # back up today's files # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
               report_action('Current File', 'Download', "Moved #{file.name}.")
             end
           end
@@ -87,13 +87,10 @@ namespace :import do
     CommentsMailer.generic(email.html_safe, "Import Executed", ENV['ENROLLCHAT_ADMIN_EMAIL']).deliver!
   end
 
-
-
   # TODO: Code smell. Gemify reporting process.
   def report_action(target, group, message)
     @report[target] ||= {}
     @report[target][group] ||= []
     @report[target][group] << message
   end
-
 end
