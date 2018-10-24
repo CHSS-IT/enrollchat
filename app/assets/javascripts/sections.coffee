@@ -42,7 +42,7 @@ $(document).on 'turbolinks:load', ->
     buttons: [ 'copy', 'excel', 'pdf' ]
     responsive: true
     fixedHeader: true
-    order: [[ 3, "asc" ]]
+    order: [[ 4, "asc" ]]
     buttons: [ 'print', 'excel', 'pdf' ]
     columnDefs: [
       { type: 'dateNonStandard', targets: 15 }
