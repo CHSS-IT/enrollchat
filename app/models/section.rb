@@ -121,7 +121,7 @@ class Section < ApplicationRecord
     # Grab most recent update time
     last_touched_at = Section.maximum(:updated_at)
     # Open file using Roo.
-    file = open(filepath)
+    file = File.open(filepath)
     spreadsheet = Roo::Spreadsheet.open(file, extension: '.csv')
 
     # spreadsheet = Roo::Spreadsheet.open(open(imported_file.file_url), extension: File.extname(imported_file.file_url).gsub('.','').to_sym) rescue nil
