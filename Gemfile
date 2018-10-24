@@ -5,14 +5,14 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby "2.5.1"
+ruby "2.5.3"
 
 gem "rake"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.2.1'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 1.0.0'
+gem 'pg', '~> 1.1', '>= 1.1.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
@@ -36,7 +36,7 @@ gem 'redis', '~> 4.0', '>= 4.0.2'
 
 # Alphabetize non-core gems
 
-gem 'airbrake', '~> 7.3', '>= 7.3.5'
+gem 'airbrake', '~> 7.4'
 
 # For file storage on S3
 gem 'aws-sdk', '~> 2'
