@@ -21,21 +21,21 @@
           <div class="card-header white py-4">
             <%= form_tag sections_path, method: "get", id: "filter-form", class: "control label" do %>
             <div class="row">
-                <div class="col-md-3 col-sm-6">
-                  <%= label_tag 'department', 'Department' %>
-                  <%= select "section", "department", options_for_select(Section.department_list, selected: @department), { prompt: 'ALL' }, { class: 'form-control' } %>
+                <div class="col-md-3 col-sm-6 form-group">
+                  <%= label_tag 'section_department', 'Department' %>
+                  <%= select "section", "department", options_for_select(Section.department_list, selected: @department), { prompt: 'ALL' }, { class: 'selectpicker form-control input-sm' } %>
                 </div>
-                <div class="col-md-2 col-sm-6">
-                  <%= label_tag 'status', 'Status' %>
-                  <%= select "section", "status", options_for_select(Section.status_list, selected: @status), { default: 'ACTIVE' }, { class: 'form-control' } %>
+                <div class="col-md-2 col-sm-6 form-group">
+                  <%= label_tag 'section_status', 'Status' %>
+                  <%= select "section", "status", options_for_select(Section.status_list, selected: @status), { default: 'ACTIVE' }, { class: 'selectpicker form-control' } %>
                 </div>
-                <div class="col-md-2 col-sm-6">
-                  <%= label_tag 'Level', 'Level' %>
-                  <%= select "section", "level", options_for_select(Section.level_list, selected: @section_level), { prompt: 'ALL' }, { class: 'form-control' } %>
+                <div class="col-md-2 col-sm-6 form-group">
+                  <%= label_tag 'section_level', 'Level' %>
+                  <%= select "section", "level", options_for_select(Section.level_list, selected: @section_level), { prompt: 'ALL' }, { class: 'selectpicker form-control' } %>
                 </div>
-                <div class="col-md-2 col-sm-6">
-                  <%= label_tag 'flagged', 'Flagged As' %>
-                  <%= select "section", "flagged", options_for_select(Section.flagged_as_list, selected: @flagged_as), { prompt: 'ALL' }, { class: 'form-control' } %>
+                <div class="col-md-2 col-sm-6 form-group">
+                  <%= label_tag 'section_flagged', 'Flagged As' %>
+                  <%= select "section", "flagged", options_for_select(Section.flagged_as_list, selected: @flagged_as), { prompt: 'ALL' }, { class: 'selectpicker form-control' } %>
                 </div>
                 <div class="col-md-3 col-xs-12 button-group pull-right">
                   <% unless params[:section].blank? %>
