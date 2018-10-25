@@ -14,7 +14,7 @@ class UsersTest < ApplicationSystemTestCase
     assert page.has_css?('table tbody tr', count: 3)
   end
 
-  test "admin updates user's attributes" do
+  test "admin updates user's email preference" do
     assert_equal @user.email_preference, 'No Emails'
     login_as @admin
     visit edit_user_path(@user)
@@ -33,7 +33,7 @@ class UsersTest < ApplicationSystemTestCase
     assert_equal @user.reload.email_preference, 'Comments and Digest'
   end
 
-  test 'admin updates user departments' do
+  test "admin updates user's departments" do
     assert_equal @user.departments, []
     login_as @admin
     visit edit_user_path(@user)
@@ -43,7 +43,7 @@ class UsersTest < ApplicationSystemTestCase
     assert_equal @user.reload.departments, ['CRIM', 'SINT']
   end
 
-  test 'user updates their departments' do
+  test 'user updates their own departments' do
     assert_equal @user.departments, []
     login_as @user
     visit edit_user_path(@user)
