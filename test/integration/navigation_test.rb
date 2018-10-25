@@ -29,5 +29,4 @@ class NavigationTest < ActionDispatch::IntegrationTest
     get sections_path
     assert_select 'li', text: 'Preferences', count: 0
   end
-
 end

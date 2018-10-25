@@ -102,15 +102,15 @@ class Section < ApplicationRecord
   end
 
   def self.level_name_list
-    self.level_list.collect { |l| l[0]}
+    self.level_list.collect { |l| l[0] }
   end
 
   def self.level_code_list
-    self.level_list.collect { |l| l[1]}
+    self.level_list.collect { |l| l[1] }
   end
 
   self.level_code_list.each do |level|
-    scope level.downcase.to_sym, -> { where(:level => level.upcase)}
+    scope level.downcase.to_sym, -> { where(level: level.upcase) }
   end
 
   def self.enrollment_status_list
@@ -120,14 +120,11 @@ class Section < ApplicationRecord
   def self.import(filepath)
     # Grab most recent update time
     last_touched_at = Section.maximum(:updated_at)
-    puts "Getting file from #{filepath}"
     # Open file using Roo.
-    file = open(filepath)
+    file = File.open(filepath)
     spreadsheet = Roo::Spreadsheet.open(file, extension: '.csv')
 
-
     # spreadsheet = Roo::Spreadsheet.open(open(imported_file.file_url), extension: File.extname(imported_file.file_url).gsub('.','').to_sym) rescue nil
-
 
     # Left over from having to process spreadsheets with embedded text we had to ignore. Left in place as a possible future configurable setting.
     last_real_row = spreadsheet.last_row
@@ -159,7 +156,6 @@ class Section < ApplicationRecord
         # TODO: do we have a flag for cancellation?
         if section.status == 'C'
           if section.status_changed? || section.canceled_at.blank?
-            puts "NEW CANCEL! - #{section.status_changed?} - #{section.canceled_at.blank?}"
             section.canceled_at = DateTime.now()
             report_action('Canceled Sections', section.section_and_number)
           end
@@ -175,7 +171,6 @@ class Section < ApplicationRecord
           end
         end
       end
-      puts row
     end
 
     # Used last_touched_at to determine which terms were updated
@@ -207,7 +202,6 @@ class Section < ApplicationRecord
     @report ||= {}
     @report[subject] ||= []
     @report[subject] << message
-    puts message
   end
 
   def graduate?

@@ -57,5 +57,4 @@ module SectionsHelper
       Section.level_list[Section.level_code_list.find_index(level.downcase)][0]
     end
   end
-
 end

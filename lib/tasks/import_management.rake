@@ -53,5 +53,4 @@ namespace :import_management do
     # Clear backup directory
     # Move current file(s) to backup directory
   end
-
 end

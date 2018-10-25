@@ -37,5 +37,4 @@ class SectionsControllerTest < ActionDispatch::IntegrationTest
     patch toggle_resolved_section_section_path(@section_one), params: { format: :js }
     assert_equal @section_one.reload.resolved_section, false
   end
-
 end
