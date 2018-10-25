@@ -66,7 +66,7 @@
           <div class="form-group">
             <div class="row">
               <%= f.label :status, class: "col-sm-3 control-label" %>
-              <div class="col-sm-8">
+              <div class="col-sm-6">
                 <% if current_user.try(:admin?) %>
                     <%= select :user, :status, User.status_list, {default: 'active'}, {class: 'selectpicker form-control'} %>
                 <% else %>
@@ -78,7 +78,7 @@
           <div class="form-group">
             <div class="row">
               <%= f.label :email_preference, class: "col-sm-3 control-label" %>
-              <div class="col-sm-9">
+              <div class="col-sm-6">
                 <%= select :user, :email_preference, User.email_options, {include_blank: false}, {class: 'selectpicker form-control'} %>
                 <small id="passwordHelpBlock" class="form-text text-muted">
                   You may choose to receive an email each time a comment is posted on your program(s), a daily digest of comments, both, or neither.
@@ -90,10 +90,10 @@
           <div class="form-group">
             <div class="row">
               <%= f.label :departments, class: "col-sm-3 control-label" %>
-              <div class="col-sm-9">
+              <div class="col-sm-6">
                 <%= f.select :departments, Section.department_list, {include_blank: false}, {multiple: 'true', class: 'form-control selectpicker'} %>
                 <small id="passwordHelpBlock" class="form-text text-muted">
-                  Select one or more departments if you wish to limit your alerts and emails to comments to those that are relevant to you. (These are new features that are coming soon.) Use the command (Apple) or control (Windows) key to select multiple departments or to unselect a department.
+                  Select one or more departments if you wish to limit your alerts and emails to comments to those that are relevant to you.
                 </small>
               </div>
             </div>
@@ -105,7 +105,7 @@
               <div class="col-sm-9">
                 <%= f.check_box :no_weekly_report  %>
                 <small id="passwordHelpBlock" class="form-text text-muted">
-                  If you check this box you will not receive the weekly report on the status of your programs. (Coming soon.)
+                  If you check this box you will not receive the weekly report on the status of your programs.
                 </small>
               </div>
             </div>
@@ -115,7 +115,9 @@
             <div class="form-group">
               <div class="row">
                 <%= f.label :admin, class: "col-sm-3 control-label" %>
-                <%= f.check_box :admin %>
+                <div class="col-sm-9">
+                  <%= f.check_box :admin %>
+                </div>
               </div>
             </div>
           <% end %>

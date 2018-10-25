@@ -44,8 +44,6 @@ gem 'aws-sdk', '~> 2'
 # Responsive layout with bootstrap 4
 gem 'bootstrap', '~> 4.1.3'
 
-gem 'bootstrap-select-rails'
-
 # File uploads
 gem 'carrierwave', '~> 1.0'
 

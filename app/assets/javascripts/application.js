@@ -18,6 +18,7 @@
 //= require moment.min
 //= require datetime
 //= require rails-ujs
+//= require bootstrap-select.min
 //= require sections.coffee
 //= require users.coffee
 //= require cable

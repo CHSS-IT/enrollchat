@@ -7,3 +7,8 @@ $(document).on 'turbolinks:load', ->
     columnDefs: [
       { type: 'dateNonStandard', targets: 7 } ]
 
+document.addEventListener 'turbolinks:load',  ->
+  $(".selectpicker").selectpicker()
+
+document.addEventListener 'turbolinks:before-cache',  ->
+  $('.selectpicker').selectpicker('destroy').addClass('selectpicker')
