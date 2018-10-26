@@ -254,4 +254,19 @@ class Section < ApplicationRecord
     self.cross_list_enrollment_yesterday = cross_list_enrollment_was.nil? ? 0 : cross_list_enrollment_changed? ? cross_list_enrollment - cross_list_enrollment_was : 0
     self.waitlist_yesterday = (self.new_record? || self.waitlist_was.nil?) ? 0 : waitlist_changed? ? waitlist - waitlist_was : 0
   end
+
+  def self.terms
+    all.collect { |s| s.term }.uniq
+  end
+
+  def self.terms_to_delete
+    terms = self.terms
+    to_delete = []
+    terms.each do |t|
+      if t.to_s[0..3].to_i < Time.now.year - 3
+        to_delete << t
+      end
+    end
+    to_delete
+  end
 end
