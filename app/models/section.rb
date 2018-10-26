@@ -260,13 +260,6 @@ class Section < ApplicationRecord
   end
 
   def self.terms_to_delete
-    terms = self.terms
-    to_delete = []
-    terms.each do |t|
-      if t.to_s[0..3].to_i < Time.now.year - 3
-        to_delete << t
-      end
-    end
-    to_delete
+    terms.select { |t| t.to_s[0..3].to_i < Time.now.year - 3 }
   end
 end
