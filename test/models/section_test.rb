@@ -56,9 +56,9 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'should destroy sections marked for deletion' do
-    @section.update_attribute(:delete_at, DateTime.now().next_month)
+    @section.update_attribute(:delete_at, 1.day.ago)
     Section.delete_marked
-    assert_equal @sections, [@section_two, @section_three, @section_four, @section_five]
+    assert_equal @sections.unscoped, [@section_two, @section_three, @section_four, @section_five]
     assert_equal @sections.count, 4
   end
 
@@ -263,5 +263,37 @@ class SectionTest < ActiveSupport::TestCase
     assert_equal @new_section.reload.actual_enrollment_yesterday, 0
     assert_equal @new_section.reload.cross_list_enrollment_yesterday, 0
     assert_equal @new_section.reload.waitlist_yesterday, 0
+  end
+
+  test 'returns an array of unique terms' do
+    @section.update_attribute(:term, 201710)
+    @section_two.update_attribute(:term, 201710)
+    @section_three.update_attribute(:term, 201410)
+    @section_four.update_attribute(:term, 201540)
+    @section_five.update_attribute(:term, 201370)
+    assert_equal @sections.reload.terms, [201710, 201410, 201540, 201370]
+  end
+
+  test 'determines terms to delete based on their age' do
+    @section.update_attribute(:term, 201710)
+    @section_two.update_attribute(:term, 201770)
+    @section_three.update_attribute(:term, 201410)
+    @section_four.update_attribute(:term, 201540)
+    @section_five.update_attribute(:term, 201370)
+    assert_equal @sections.terms_to_delete, [201370, 201410]
+  end
+
+  test 'sets delete_at for terms that should be removed based on their age' do
+    @section.update_attribute(:term, 201710)
+    @section_two.update_attribute(:term, 201770)
+    @section_three.update_attribute(:term, 201410)
+    @section_four.update_attribute(:term, 201540)
+    @section_five.update_attribute(:term, 201370)
+    Section.mark_for_deletion
+    assert_nil @section.reload.delete_at
+    assert_nil @section_two.reload.delete_at
+    assert_not_nil @section_three.reload.delete_at
+    assert_nil @section_four.reload.delete_at
+    assert_not_nil @section_five.reload.delete_at
   end
 end

@@ -254,4 +254,18 @@ class Section < ApplicationRecord
     self.cross_list_enrollment_yesterday = cross_list_enrollment_was.nil? ? 0 : cross_list_enrollment_changed? ? cross_list_enrollment - cross_list_enrollment_was : 0
     self.waitlist_yesterday = (self.new_record? || self.waitlist_was.nil?) ? 0 : waitlist_changed? ? waitlist - waitlist_was : 0
   end
+
+  def self.terms
+    all.collect { |s| s.term }.uniq
+  end
+
+  def self.terms_to_delete
+    terms.select { |t| t.to_s[0..3].to_i < Time.now.year - 3 }.sort
+  end
+
+  def self.mark_for_deletion
+    self.terms_to_delete.each do |term|
+      Section.in_term(term).update_all(delete_at: Time.now.next_month)
+    end
+  end
 end
