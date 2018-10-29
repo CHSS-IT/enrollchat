@@ -260,7 +260,7 @@ class Section < ApplicationRecord
   end
 
   def self.terms_to_delete
-    terms.select { |t| t.to_s[0..3].to_i < Time.now.year - 3 }
+    terms.select { |t| t.to_s[0..3].to_i < Time.now.year - 3 }.sort
   end
 
   def self.mark_for_deletion
