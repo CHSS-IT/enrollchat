@@ -262,4 +262,10 @@ class Section < ApplicationRecord
   def self.terms_to_delete
     terms.select { |t| t.to_s[0..3].to_i < Time.now.year - 3 }
   end
+
+  def self.mark_for_deletion
+    self.terms_to_delete.each do |term|
+      Section.in_term(term).update_all(delete_at: Time.now.next_month)
+    end
+  end
 end
