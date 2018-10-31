@@ -1,14 +1,18 @@
+require 'reporting'
+
 namespace :import do
   include Rake::DSL
 
   # TODO: Code smell. Gemify reporting process.
   def initialize
     @report = {}
+    @subject = "Import Executed"
   end
 
   task :retrieve_files => :environment do
     require 'net/ssh'
     require 'net/sftp'
+    include Reporting
 
     initialize
 
@@ -69,28 +73,5 @@ namespace :import do
       end
     end
     send_report if @report.present?
-  end
-
-  # TODO: Code smell. Gemify reporting process.
-  def send_report
-    email = ''
-    subject = "Import Executed"
-    subject += " (TRIGGERED IN #{Rails.env})" if Rails.env != 'production'
-    @report.each do |target,groups|
-      groups.each do |group,messages|
-        email = email + "<h1>#{group.capitalize}</h1>"
-        messages.uniq.sort.each do |message|
-          email = email + message + '<br />'
-        end
-      end
-    end
-    CommentsMailer.generic(email.html_safe, "Import Executed", ENV['ENROLLCHAT_ADMIN_EMAIL']).deliver!
-  end
-
-  # TODO: Code smell. Gemify reporting process.
-  def report_action(target, group, message)
-    @report[target] ||= {}
-    @report[target][group] ||= []
-    @report[target][group] << message
   end
 end

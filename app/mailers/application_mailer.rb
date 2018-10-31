@@ -5,7 +5,7 @@ class ApplicationMailer < ActionMailer::Base
   private
 
   def development_text
-    "[Triggered in Development]" if Rails.env.development?
+    "(Triggered in #{Rails.env})" if !Rails.env.production?
   end
 
   def to_switch(email)
