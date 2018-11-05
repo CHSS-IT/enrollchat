@@ -4,6 +4,5 @@ class ImportWorker
 
   def perform(filepath)
     Section.import(filepath)
-    puts @report
   end
 end

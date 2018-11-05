@@ -28,6 +28,8 @@ namespace :import do
               end
               report_action('Backups','Cleanup', "#{file.name} deleted.")
             end
+          elsif Rails.env.production?
+            report_action('Current File', 'Cleanup', "Backups not cleared since this was called from #{Rails.env}.")
           else
             report_action('Backups','Cleanup', "There were no old backup files to remove.")
           end
@@ -40,27 +42,20 @@ namespace :import do
               @uploader = FeedUploader.new
               file = File.open("#{Rails.root}/tmp/#{new_name}", 'rb')
               @uploader.store!(file)
-              report_action('Current File', 'Download', "Downloaded #{current_file.name}.")
+              report_action('Current File', 'Download', "Stored #{current_file.name} at #{@uploader.url.to_s}.")
             else
               report_action('Current File', 'Download', "Not eligible for download: #{current_file.name}.")
             end
           end
 
-          if current_files.present?
+          if current_files.present? && Rails.env.production?
             report_action('Current File', 'Backups', "Backing up files.")
             current_files.each do |file|
               sftp.rename!("#{remote}/#{file.name}", "#{remote}/backup/#{file.name}") # if Rails.env.production? && 1 == 2 # back up today's files # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
               report_action('Current File', 'Download', "Moved #{file.name}.")
             end
-          end
-
-          if @uploader.present?
-            ActionCable.server.broadcast 'room_channel',
-                                         message: "<a href='/sections' class='dropdown-item'>Registration data import in process.</a>"
-            ImportWorker.perform_async(@uploader.url.to_s)
-            report_action('Current File', 'Import', "Import queued.")
-          else
-            report_action('Current File', 'Import', "Import not queued.")
+          elseif !Rails.env.production?
+            report_action('Current File', 'Download', "File not moved to backup since this was called from #{Rails.env}.")
           end
 
         else
