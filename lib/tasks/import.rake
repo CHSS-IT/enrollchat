@@ -58,7 +58,7 @@ namespace :import do
               sftp.rename!("#{remote}/#{file.name}", "#{remote}/backup/#{file.name}") # if Rails.env.production? && 1 == 2 # back up today's files # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
               report_action('Current File', 'Download', "Moved #{file.name}.")
             end
-          elseif !Rails.env.production?
+          elsif !Rails.env.production?
             report_action('Current File', 'Download', "File not moved to backup since this was called from #{Rails.env}.")
           end
 
