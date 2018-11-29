@@ -22,13 +22,13 @@ module ApplicationHelper
   def display_current_term
     html = '<span>'.html_safe
     if @current_term.present?
-      html << 'Current term is '
+      html << 'You are viewing sections outside the current term, which is '
       html << link_to_unless(@term == @current_term, term_in_words(@current_term), "/sections?term=#{@current_term}").html_safe
     else
       html << 'No current term selected.'
     end
     html << '</span>'.html_safe
-    html
+    html unless @current_term == @term
   end
 
 end
