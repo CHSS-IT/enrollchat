@@ -18,4 +18,17 @@ module ApplicationHelper
   def active_class(link_path)
     current_page?(link_path) ? 'active' : ""
   end
+
+  def display_current_term
+    html = '<span>'.html_safe
+    if @current_term.present?
+      html << 'Current term is '
+      html << link_to_unless(@term == @current_term, term_in_words(@current_term), "/sections?term=#{@current_term}").html_safe
+    else
+      html << 'No current term selected.'
+    end
+    html << '</span>'.html_safe
+    html
+  end
+
 end
