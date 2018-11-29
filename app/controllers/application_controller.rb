@@ -3,10 +3,14 @@ class ApplicationController < ActionController::Base
 
   require 'csv'
 
-  before_action :set_terms, :set_term, :set_recent_comments
+  before_action :set_terms, :set_current_term, :set_term, :set_recent_comments
 
   def set_terms
     @terms = Section.select(:term).distinct(:term).order(term: :desc)
+  end
+
+  def set_current_term
+    @current_term = '201910'
   end
 
   def set_term

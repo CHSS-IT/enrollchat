@@ -271,7 +271,7 @@ class SectionTest < ActiveSupport::TestCase
     @section_three.update_attribute(:term, 201410)
     @section_four.update_attribute(:term, 201540)
     @section_five.update_attribute(:term, 201370)
-    assert_equal @sections.reload.terms, [201710, 201410, 201540, 201370]
+    assert_equal @sections.reload.terms.sort, [201370, 201410, 201540, 201710]
   end
 
   test 'determines terms to delete based on their age' do
