@@ -73,13 +73,6 @@ class SectionsController < ApplicationController
     end
   end
 
-  def ensure_admin!
-    unless current_user.admin?
-      redirect_to sections_path, notice: 'You do not have access to this page'
-      return false
-    end
-  end
-
   def section_params
     allowed_params = [:owner, :term, :section_id, :department, :cross_list_group, :course_description, :section_number, :title, :credits, :level, :status, :enrollment_limit, :actual_enrollment, :cross_list_enrollment, :waitlist]
     allowed_params << :resolved_section if current_user.is_admin?

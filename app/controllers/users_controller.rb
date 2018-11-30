@@ -56,13 +56,6 @@ class UsersController < ApplicationController
 
   private
 
-  def ensure_admin!
-    unless current_user.try(:admin?)
-      redirect_to sections_path, notice: 'You do not have access to this page'
-      return false
-    end
-  end
-
   def editable?
     unless current_user == @user || current_user.try(:admin?)
       redirect_to sections_path, notice: 'You do not have access to this page'
