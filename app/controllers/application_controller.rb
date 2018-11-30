@@ -43,4 +43,13 @@ class ApplicationController < ActionController::Base
   def set_recent_unread_comments
     @recent_unread_comments = Comment.recent_unread(current_user)
   end
+
+  private
+
+  def ensure_admin!
+    unless current_user.try(:admin?)
+      redirect_to sections_path, notice: 'You do not have access to this page'
+      return false
+    end
+  end
 end
