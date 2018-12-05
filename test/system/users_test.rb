@@ -40,7 +40,7 @@ class UsersTest < ApplicationSystemTestCase
     bootstrap_multi_select('CRIM', 'SINT', from: 'user_departments')
     click_button 'Save'
     assert_selector 'table tbody tr td', text: 'CRIM, SINT'
-    assert_equal @user.reload.departments, ['CRIM', 'SINT']
+    assert_equal @user.reload.departments, %w[CRIM SINT]
   end
 
   test 'user updates their own departments' do
@@ -49,6 +49,6 @@ class UsersTest < ApplicationSystemTestCase
     visit edit_user_path(@user)
     bootstrap_multi_select('CRIM', 'SINT', from: 'user_departments')
     click_button 'Save'
-    assert_equal @user.reload.departments, ['CRIM', 'SINT']
+    assert_equal @user.reload.departments, %w[CRIM SINT]
   end
 end

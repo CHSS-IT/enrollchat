@@ -10,7 +10,7 @@ ruby "2.5.3"
 gem "rake"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.2.1'
+gem 'rails', '5.2.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1', '>= 1.1.3'
 # Use Puma as the app server
@@ -80,7 +80,7 @@ gem 'smarter_csv'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rubocop', '~> 0.59.2', require: false
+  gem 'rubocop', '~> 0.61.0', require: false
 end
 
 group :development do
@@ -101,9 +101,9 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 3.9'
+  gem 'capybara', '~> 3.12'
   gem 'chromedriver-helper', '~> 2.1'
-  gem 'selenium-webdriver', '~> 3.14', '>= 3.14.1'
+  gem 'selenium-webdriver', '~> 3.141'
   gem 'simplecov', require: false
 end
 

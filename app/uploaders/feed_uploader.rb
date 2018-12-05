@@ -1,5 +1,4 @@
 class FeedUploader < CarrierWave::Uploader::Base
-
   after :store, :perform_import
 
   def perform_import(file)
@@ -16,8 +15,6 @@ class FeedUploader < CarrierWave::Uploader::Base
   def store_dir
     nil
   end
-
-
   # Add a white list of extensions which are allowed to be uploaded.
   # Allow only Excel and CSV files:
   def extension_whitelist

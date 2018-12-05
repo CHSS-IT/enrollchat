@@ -201,9 +201,9 @@ class Section < ApplicationRecord
 
   # TODO: Code smell. Gemify reporting process.
   def self.send_report
-      email = ''
-      subject = "Import Processed"
-      subject += " (TRIGGERED IN #{Rails.env})" if Rails.env != 'production'
+    email = ''
+    subject = "Import Processed"
+    subject += " (TRIGGERED IN #{Rails.env})" if Rails.env != 'production'
     if @report.present?
       @report.each do |target,groups|
         if groups.present?
