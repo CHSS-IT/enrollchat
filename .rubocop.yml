@@ -182,3 +182,6 @@ Style/UnlessElse:
 Style/TernaryParentheses:
   Exclude:
     - 'app/models/section.rb'
+Style/NumericLiterals:
+  Exclude:
+    - 'test/models/section_test.rb'
