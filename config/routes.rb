@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :settings, only: [:index, :edit, :update]
   resources :reports
   get 'static_pages/home'
   get 'delete_term/:term', to: 'sections#delete_term'
