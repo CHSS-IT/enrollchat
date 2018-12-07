@@ -28,6 +28,11 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="nav navbar-nav ml-auto">
+          <% if current_user.try(:admin?) %>
+            <li class="nav-item %>">
+              <%= link_to 'Settings', settings_path, class: 'nav-link' %>
+            </li>
+          <% end %>
           <li class="nav-item <%= active_class(sections_path) %>">
             <%= link_to 'Sections', sections_path, class: 'nav-link' %>
           </li>
