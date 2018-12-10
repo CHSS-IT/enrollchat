@@ -26,12 +26,6 @@ ActiveRecord::Schema.define(version: 2018_11_30_152059) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "configurations", force: :cascade do |t|
-    t.integer "current_term"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "enrollments", force: :cascade do |t|
     t.bigint "section_id"
     t.string "department"
@@ -74,7 +68,7 @@ ActiveRecord::Schema.define(version: 2018_11_30_152059) do
 
   create_table "settings", force: :cascade do |t|
     t.integer "current_term"
-    t.integer "singleton_guard", default: 1
+    t.integer "singleton_guard", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["singleton_guard"], name: "index_settings_on_singleton_guard", unique: true

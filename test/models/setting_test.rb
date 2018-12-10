@@ -8,7 +8,7 @@ class SettingTest < ActiveSupport::TestCase
   test 'current term can be null' do
     @setting.current_term = nil
     @setting.save
-    assert_equal @setting.reload.current_term, nil
+    assert_nil @setting.reload.current_term
   end
 
   test 'current term must be a 6-digit number if present' do

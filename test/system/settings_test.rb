@@ -2,15 +2,18 @@ require "application_system_test_case"
 
 class SettingsTest < ApplicationSystemTestCase
   setup do
+    login_as users(:one)
     @setting = settings(:one)
   end
 
   test "visiting the index" do
+    skip
     visit settings_url
     assert_selector "h1", text: "Settings"
   end
 
   test "creating a Setting" do
+    skip
     visit settings_url
     click_on "New Setting"
 
@@ -22,6 +25,7 @@ class SettingsTest < ApplicationSystemTestCase
   end
 
   test "updating a Setting" do
+    skip
     visit settings_url
     click_on "Edit", match: :first
 
@@ -33,6 +37,7 @@ class SettingsTest < ApplicationSystemTestCase
   end
 
   test "destroying a Setting" do
+    skip
     visit settings_url
     page.accept_confirm do
       click_on "Destroy", match: :first
