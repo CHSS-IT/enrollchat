@@ -1,6 +1,8 @@
 class Section < ApplicationRecord
   require 'roo'
 
+  cattr_accessor :graduate_enrollment_threshold, :undergraduate_enrollment_threshold
+
   has_many :comments, -> { order(created_at: :desc) }, dependent: :destroy
   has_many :enrollments, -> { order(:created_at) }, dependent: :destroy
 
@@ -17,8 +19,8 @@ class Section < ApplicationRecord
   scope :full, -> { not_canceled.where('actual_enrollment = enrollment_limit') }
   scope :over_enrolled, -> { not_canceled.where('actual_enrollment > enrollment_limit') }
   scope :under_enrolled, -> { not_canceled.where('actual_enrollment < enrollment_limit') }
-  scope :graduate_under_enrolled, -> { graduate_level.not_canceled.where('actual_enrollment < 10 and cross_list_enrollment < 10') }
-  scope :undergraduate_under_enrolled, -> { undergraduate_level.not_canceled.where('actual_enrollment < 15 and cross_list_enrollment < 15') }
+  scope :graduate_under_enrolled, -> { graduate_level.not_canceled.where('actual_enrollment < ? and cross_list_enrollment < ?', graduate_enrollment_threshold, graduate_enrollment_threshold) }
+  scope :undergraduate_under_enrolled, -> { undergraduate_level.not_canceled.where('actual_enrollment < ? and cross_list_enrollment < ?', undergraduate_enrollment_threshold, undergraduate_enrollment_threshold) }
   scope :graduate_level, -> { where("level like 'UG%'") }
   scope :undergraduate_level, -> { where("level like 'UU%'") }
   scope :with_status, -> { where("status is not null and status <> ' '") }
@@ -29,22 +31,6 @@ class Section < ApplicationRecord
   def most_recent_comment_date
     comments.first.created_at unless comments.empty?
   end
-
-  # def current_enrollment_limit
-  #   enrollments.present? ? enrollments.last.enrollment_limit : 0
-  # end
-  #
-  # def current_actual_enrollment
-  #   enrollments.present? ? enrollments.last.actual_enrollment : 0
-  # end
-  #
-  # def current_cross_list_enrollment
-  #   enrollments.present? ? enrollments.last.cross_list_enrollment : 0
-  # end
-  #
-  # def current_waitlist
-  #   enrollments.present? ? enrollments.last.waitlist : 0
-  # end
 
   def history_dates
     enrollments.collect { |e| e.created_at }.to_a
@@ -253,10 +239,10 @@ class Section < ApplicationRecord
     elsif waitlist > 5
       "long-waitlist"
     elsif graduate? # or state for undergraduate cross-listed with grad if possible
-      if (actual_enrollment < 10 && cross_list_enrollment < 10) && actual_enrollment < enrollment_limit
+      if (actual_enrollment < graduate_enrollment_threshold && cross_list_enrollment < graduate_enrollment_threshold) && actual_enrollment < enrollment_limit
         "under-enrolled"
       end
-    elsif (actual_enrollment < 15 && cross_list_enrollment < 15) && actual_enrollment < enrollment_limit
+    elsif (actual_enrollment < undergraduate_enrollment_threshold && cross_list_enrollment < undergraduate_enrollment_threshold) && actual_enrollment < enrollment_limit
       "under-enrolled"
     end
   end

@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   require 'csv'
 
-  before_action :get_settings, :set_terms, :set_current_term, :set_term, :set_recent_comments
+  before_action :get_settings, :set_terms, :set_graduate_threshold, :set_undergraduate_threshold,:set_current_term, :set_term, :set_recent_comments
 
   def get_settings
     @settings = Setting.first_or_create!(singleton_guard: 0)
@@ -12,6 +12,15 @@ class ApplicationController < ActionController::Base
   def set_terms
     @terms = Section.select(:term).distinct(:term).order(term: :desc)
   end
+
+  def set_graduate_threshold
+    Section.graduate_enrollment_threshold = @settings.graduate_enrollment_threshold
+  end
+
+  def set_undergraduate_threshold
+    Section.undergraduate_enrollment_threshold = @settings.undergraduate_enrollment_threshold
+  end
+
 
   def set_current_term
     @current_term = @settings.current_term

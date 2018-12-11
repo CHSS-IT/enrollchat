@@ -31,6 +31,11 @@
             special characters,
             or emoji.
           </small>
+          <%= form.label :graduate_enrollment_threshold %>
+          <%= form.number_field :graduate_enrollment_threshold, class: 'form-control mb-2' %>
+
+          <%= form.label :undergraduate_enrollment_threshold %>
+          <%= form.number_field :undergraduate_enrollment_threshold, class: 'form-control mb-2', placeholder: "Current Term" %>
           <!-- Sign in button -->
           <%= submit_tag 'Save', class: 'btn btn-info btn-block' %>
           <%= link_to 'Cancel', sections_path, class: 'btn btn-outline-warning btn-block' %>
