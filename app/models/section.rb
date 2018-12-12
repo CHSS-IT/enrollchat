@@ -21,8 +21,8 @@ class Section < ApplicationRecord
   scope :under_enrolled, -> { not_canceled.where('actual_enrollment < enrollment_limit') }
   scope :graduate_under_enrolled, -> { graduate_level.not_canceled.where('actual_enrollment < ? and cross_list_enrollment < ?', graduate_enrollment_threshold, graduate_enrollment_threshold) }
   scope :undergraduate_under_enrolled, -> { undergraduate_level.not_canceled.where('actual_enrollment < ? and cross_list_enrollment < ?', undergraduate_enrollment_threshold, undergraduate_enrollment_threshold) }
-  scope :graduate_level, -> { where("level.downcase like 'ug%'") }
-  scope :undergraduate_level, -> { where("level.downcase like 'uu%'") }
+  scope :graduate_level, -> { where("lower(level) like 'ug%'") }
+  scope :undergraduate_level, -> { where("lower(level) like 'uu%'") }
   scope :with_status, -> { where("status is not null and status <> ' '") }
 
   scope :marked_for_deletion, -> { unscoped.where("delete_at is not null") }
