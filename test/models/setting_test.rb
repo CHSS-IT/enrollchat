@@ -22,4 +22,14 @@ class SettingTest < ActiveSupport::TestCase
     assert_not @setting.valid?
   end
 
+  test 'graduate enrollment threshold cannot be null' do
+    @setting.graduate_enrollment_threshold = nil
+    assert_not @setting.valid?
+  end
+
+  test 'undergraduate enrollment threshold cannot be null' do
+    @setting.undergraduate_enrollment_threshold = nil
+    assert_not @setting.valid?
+  end
+
 end

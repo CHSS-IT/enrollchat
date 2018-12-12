@@ -24,16 +24,20 @@ class SettingsTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "updating a Setting" do
-    skip
-    visit settings_url
-    click_on "Edit", match: :first
-
-    fill_in "Current Term", with: @setting.current_term
-    click_on "Update Setting"
-
+  test "updating the undergraduate_enrollment_threshold setting" do
+    visit edit_setting_url(@setting)
+    fill_in "setting[undergraduate_enrollment_threshold]", with: 5
+    click_on "Save"
     assert_text "Setting was successfully updated"
-    click_on "Back"
+    assert_equal Section.undergraduate_enrollment_threshold, 5
+  end
+
+  test "updating the graduate_enrollment_threshold setting" do
+    visit edit_setting_url(@setting)
+    fill_in "setting[graduate_enrollment_threshold]", with: 7
+    click_on "Save"
+    assert_text "Setting was successfully updated"
+    assert_equal Section.graduate_enrollment_threshold, 7
   end
 
   test "destroying a Setting" do
