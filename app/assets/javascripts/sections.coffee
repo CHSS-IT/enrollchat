@@ -46,6 +46,7 @@ $(document).on 'turbolinks:load', ->
     buttons: [ 'print', 'excel', 'pdf' ]
     columnDefs: [
       { type: 'dateNonStandard', targets: 15 }
+      { sortable: false, targets: 0 }
       {
         responsivePriority: 1
         targets: [
