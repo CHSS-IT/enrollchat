@@ -126,6 +126,8 @@ class Section < ApplicationRecord
       row = Hash[[header, spreadsheet.row(i)].transpose]
       if row["term"].blank? || row["term"].to_i.to_s != row["term"]
         # Hack to avoid blanks and headers when dealing with generated csv or xslt with dislaimer rows
+      elsif row["section_number"].include?('SA')
+        report_action('Executing Import', 'Skipped Sections', "Study abroad #{row['section_number']}")
       else
         section = Section.find_or_initialize_by(term: row["term"], section_id: row["section_id"])
         section.attributes = row.to_hash.slice(*header)
