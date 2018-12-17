@@ -20,7 +20,7 @@ module SectionsHelper
                        when "long-waitlist"
                          'fa fa-list-ol'
                        when "under-enrolled"
-                         'fa fa-level-down'
+                         'fa fa-level-down-alt'
                        end
       text = tag.i(class: icon_class, title: section.flagged_as.capitalize, alt: section.flagged_as.capitalize) #+ section.flagged_as.capitalize
     end
