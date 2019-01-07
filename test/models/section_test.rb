@@ -280,7 +280,7 @@ class SectionTest < ActiveSupport::TestCase
     @section_three.update_attribute(:term, 201410)
     @section_four.update_attribute(:term, 201540)
     @section_five.update_attribute(:term, 201370)
-    assert_equal @sections.terms_to_delete, [201370, 201410]
+    assert_equal @sections.terms_to_delete, [201370, 201410, 201540]
   end
 
   test 'sets delete_at for terms that should be removed based on their age' do
@@ -293,7 +293,7 @@ class SectionTest < ActiveSupport::TestCase
     assert_nil @section.reload.delete_at
     assert_nil @section_two.reload.delete_at
     assert_not_nil @section_three.reload.delete_at
-    assert_nil @section_four.reload.delete_at
+    assert_not_nil @section_four.reload.delete_at
     assert_not_nil @section_five.reload.delete_at
   end
 end

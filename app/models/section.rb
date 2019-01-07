@@ -146,7 +146,7 @@ class Section < ApplicationRecord
         if section.status == 'C'
           if section.status_changed? || section.canceled_at.blank?
             section.canceled_at = DateTime.now()
-            report_action('Executing Import', 'Canceled Sections', section.section_and_number)
+            report_action('Executing Import', 'Canceled Sections', "#{section.section_and_number}, #{section.term}")
           end
         end
 
@@ -156,7 +156,7 @@ class Section < ApplicationRecord
           @updated_sections += 1
         else
           unless section.new_record?
-            section.updated_at <= 1.day.ago ? section.reset_yesterday : section.touch
+            section.updated_at <= 1.day.ago ? (section.reset_yesterday && section.touch) : section.touch
           end
         end
       end
@@ -177,6 +177,12 @@ class Section < ApplicationRecord
     # Then find any untouched sections from those terms
     untouched = Section.where('updated_at <= ? and term in (?)', last_touched_at, touched_terms)
     if untouched.size > 0
+      untouched.each do |s|
+        s.status = 'C'
+        s.canceled_at = DateTime.now()
+        s.save!
+        report_action('Executing Import', 'Canceled Sections', "#{s.section_and_number} in #{s.term} was not touched by import and has been cancelled.")
+      end
       report_action('Executing Import', 'Updated Sections', "<a href='/sections' class='dropdown-item'>#{untouched.size} sections from terms contained in feed were not touched by import. It is possible that these were cancelled.</a>")
     else
       report_action('Executing Import', 'Updated Sections', "<a href='/sections' class='dropdown-item'>All sections were touched by the import process.</a>")
