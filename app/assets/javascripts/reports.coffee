@@ -1,4 +1,4 @@
-$(document).on 'turbolinks:load', ->
+$(document).ready ->
   table = $('#report').DataTable
     responsive: true
     fixedHeader: true
