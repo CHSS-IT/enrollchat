@@ -146,7 +146,7 @@ class Section < ApplicationRecord
         if section.status == 'C'
           if section.status_changed? || section.canceled_at.blank?
             section.canceled_at = DateTime.now()
-            report_action('Executing Import', 'Canceled Sections', "#{section.section_and_number}, #{section.term}")
+            report_action('Executing Import', 'Canceled Sections', "#{section.section_and_number} in #{section.term}")
           end
         end
 
