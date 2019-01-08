@@ -9,11 +9,11 @@ $(document).ready ->
   $("#update-form").on("ajax:complete", (e, data, status, xhr) ->
     $('.spinner').hide())
 
-$(document).on 'turbolinks:load', ->
+$(document).ready ->
   $('#filter-submit').click ->
     $(this).parents('form').submit()
 
-$(document).on 'turbolinks:load', ->
+$(document).ready ->
   $.fn.dataTable.moment( 'MMMM D, YYYY' );
 
   jQuery.extend jQuery.fn.dataTableExt.oSort,
@@ -86,6 +86,6 @@ $(document).on 'turbolinks:load', ->
     return
   return
 
-$(document).on 'turbolinks:load', ->
+$(document).ready ->
   $('body').popover({selector: '[data-toggle="popover"]', trigger: 'hover'})
   return

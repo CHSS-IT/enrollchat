@@ -24,7 +24,7 @@
       <td><%= sections.not_canceled.size %></td>
       <td><%= sections.flagged_as?('under-enrolled').size %></td>
       <td><%= sections.full.size %></td>
-      <td><%= sections.flagged_as?('over-enrolled').size %></td>
+      <td><%= sections.flagged_as?('long-waitlist').size %></td>
       <td><%= sections.canceled.size %></td>
       <td><%= Comment.for_department(department).in_past_day.size %></td>
       <td><%= basic_datetime(Comment.for_department(department).in_term(@term).most_recent) %></td>
