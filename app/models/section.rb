@@ -17,8 +17,8 @@ class Section < ApplicationRecord
   scope :in_status, ->(status) { where(status: status) }
   scope :full_or_over_enrolled, -> { not_canceled.where('actual_enrollment >= enrollment_limit or waitlist > 5') }
   scope :full, -> { not_canceled.where('actual_enrollment = enrollment_limit') }
+  scope :under_enrolled, -> { not_canceled.where('actual_enrollment < enrollment_limit and cross_list_enrollment < enrollment_limit') }
   scope :over_enrolled, -> { not_canceled.where('waitlist > 5') }
-  scope :under_enrolled, -> { not_canceled.where('actual_enrollment < enrollment_limit') }
   scope :graduate_under_enrolled, -> { graduate_level.not_canceled.where('actual_enrollment < ? and cross_list_enrollment < ?', graduate_enrollment_threshold, graduate_enrollment_threshold) }
   scope :undergraduate_under_enrolled, -> { undergraduate_level.not_canceled.where('actual_enrollment < ? and cross_list_enrollment < ?', undergraduate_enrollment_threshold, undergraduate_enrollment_threshold) }
   scope :graduate_level, -> { where("lower(level) like 'ug%'") }
