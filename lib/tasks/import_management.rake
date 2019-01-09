@@ -53,14 +53,14 @@ namespace :import_management do
     require 'net/ssh'
     require 'net/sftp'
 
-    remote = ENV["ENROLLCHAT_REMOTE_DIR"]
+    remote_backup = ENV["ENROLLCHAT_REMOTE_BACKUP_DIR"]
     file_count = 0
     Net::SSH.start(ENV["ENROLLCHAT_REMOTE"], ENV["ENROLLCHAT_REMOTE_USER"], password: ENV["ENROLLCHAT_REMOTE_PASS"]) do |ssh|
       ssh.sftp.connect do |sftp|
-        sftp.dir.glob("#{remote}/backup/","*.csv") do |file|
+        sftp.dir.glob(remote_backup,"*.csv") do |file|
           if file.name.include?("szpcsch_crse") && Rails.env != 'production'
             new_name = "#{file.name.split("_")[0]}_#{file.name.split("_")[1]}.csv"
-            sftp.download!("#{remote}/backup/#{file.name}", "#{Rails.root}/doc/#{new_name}")
+            sftp.download!("#{remote_backup}/#{file.name}", "#{Rails.root}/doc/#{new_name}")
             file_count += 1
           end
         end

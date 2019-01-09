@@ -177,7 +177,7 @@ class Section < ApplicationRecord
     # Then find any untouched sections from those terms
     untouched = Section.where('updated_at <= ? and term in (?)', last_touched_at, touched_terms)
     if untouched.size > 0
-      untouched.each do |s|
+      untouched.not_canceled.each do |s|
         s.status = 'C'
         s.canceled_at = DateTime.now()
         s.save!
