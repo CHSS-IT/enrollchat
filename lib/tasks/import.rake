@@ -1,7 +1,6 @@
-require 'report_action'
-
 namespace :import do
   include Rake::DSL
+  include ReportAction
 
   task :retrieve_files => :environment do
     require 'net/ssh'
@@ -25,7 +24,7 @@ namespace :import do
               end
               report_item('Import','Cleanup', "#{file.name} deleted.")
             end
-          elsif Rails.env.production?
+          elsif !Rails.env.production?
             report_item('Import', 'Cleanup', "Backups not cleared since this was called from #{Rails.env}.")
           else
             report_item('Import','Cleanup', "There were no old backup files to remove.")

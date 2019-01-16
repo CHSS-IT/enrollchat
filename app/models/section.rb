@@ -1,6 +1,5 @@
 class Section < ApplicationRecord
   require 'roo'
-  require 'report_action'
 
   cattr_accessor :graduate_enrollment_threshold, :undergraduate_enrollment_threshold
 
@@ -105,6 +104,7 @@ class Section < ApplicationRecord
   end
 
   def self.import(filepath)
+    extend ReportAction
     initialize_report_action
 
     # Grab most recent update time

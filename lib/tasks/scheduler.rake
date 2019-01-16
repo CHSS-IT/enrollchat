@@ -1,7 +1,6 @@
-require 'report_action'
-
 namespace :scheduler do
   include Rake::DSL
+  include ReportAction
 
   task :yearly => [:schedule_old_term_purge]
 
