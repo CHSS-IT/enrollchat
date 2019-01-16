@@ -1,5 +1,6 @@
 class Section < ApplicationRecord
   require 'roo'
+  require 'report_action'
 
   cattr_accessor :graduate_enrollment_threshold, :undergraduate_enrollment_threshold
 
@@ -104,7 +105,7 @@ class Section < ApplicationRecord
   end
 
   def self.import(filepath)
-    initialize_reporting
+    initialize_report_action
 
     # Grab most recent update time
     last_touched_at = Section.maximum(:updated_at)
@@ -127,7 +128,7 @@ class Section < ApplicationRecord
       if row["term"].blank? || row["term"].to_i.to_s != row["term"]
         # Hack to avoid blanks and headers when dealing with generated csv or xslt with dislaimer rows
       elsif row["section_number"].include?('SA')
-        report_action('Executing Import', 'Skipped Sections', "Study abroad #{row['section_number']}")
+        report_item('Executing Import', 'Skipped Sections', "Study abroad #{row['section_number']}")
       else
         section = Section.find_or_initialize_by(term: row["term"], section_id: row["section_id"])
         section.attributes = row.to_hash.slice(*header)
@@ -140,13 +141,12 @@ class Section < ApplicationRecord
         section.save! if section.new_record?
         section.enrollments.create(department: section.department, term: section.term, enrollment_limit: section.enrollment_limit, actual_enrollment: section.actual_enrollment, cross_list_enrollment: section.cross_list_enrollment, waitlist: section.waitlist)
 
-        report_action('Executing Import', 'New Sections', section.section_and_number) if section.new_record?
+        report_item('Executing Import', 'New Sections', section.section_and_number) if section.new_record?
 
-        # TODO: do we have a flag for cancellation?
         if section.status == 'C'
           if section.status_changed? || section.canceled_at.blank?
             section.canceled_at = DateTime.now()
-            report_action('Executing Import', 'Canceled Sections', "#{section.section_and_number} in #{section.term}")
+            report_item('Executing Import', 'Canceled Sections', "#{section.section_and_number} in #{section.term}")
           end
         end
 
@@ -168,9 +168,9 @@ class Section < ApplicationRecord
     @touched_sections = touched.size - created.size
     @new_sections = created.size
     if touched.size > 0
-      report_action('Executing Import', 'Updated Sections', "<a href='/sections' class='dropdown-item'>#{@updated_sections} sections were updated during the import process. #{@new_sections} sections were created.</a>")
+      report_item('Executing Import', 'Updated Sections', "<a href='/sections' class='dropdown-item'>#{@updated_sections} sections were updated during the import process. #{@new_sections} sections were created.</a>")
     else
-      report_action('Executing Import', 'Updated Sections', "<a href='/sections' class='dropdown-item'>The import file was empty.</a>")
+      report_item('Executing Import', 'Updated Sections', "<a href='/sections' class='dropdown-item'>The import file was empty.</a>")
     end
     # From those, gather the terms
     touched_terms = touched.collect { |t| t.term }.uniq
@@ -181,53 +181,22 @@ class Section < ApplicationRecord
         s.status = 'C'
         s.canceled_at = DateTime.now()
         s.save!
-        report_action('Executing Import', 'Canceled Sections', "#{s.section_and_number} in #{s.term} was not touched by import and has been cancelled.")
+        report_item('Executing Import', 'Canceled Sections', "#{s.section_and_number} in #{s.term} was not touched by import and has been cancelled.")
       end
-      report_action('Executing Import', 'Updated Sections', "<a href='/sections' class='dropdown-item'>#{untouched.size} sections from terms contained in feed were not touched by import. It is possible that these were cancelled.</a>")
+      report_item('Executing Import', 'Updated Sections', "<a href='/sections' class='dropdown-item'>#{untouched.size} sections from terms contained in feed were not touched by import. It is possible that these were cancelled.</a>")
     else
-      report_action('Executing Import', 'Updated Sections', "<a href='/sections' class='dropdown-item'>All sections were touched by the import process.</a>")
+      report_item('Executing Import', 'Updated Sections', "<a href='/sections' class='dropdown-item'>All sections were touched by the import process.</a>")
     end
     ActionCable.server.broadcast 'room_channel',
                                  message:  "<a href='/sections' class='dropdown-item'>Registration data import complete. #{@new_sections} added. #{@updated_sections} updated. Refreshing browser to show changes.</a>",
                                  trigger: 'Updated'
-    send_report if @report.present?
+    build_report('Executing Import')
+    send_report if @report_body.present?
   end
 
-  # TODO: Code smell. Gemify reporting process.
   def self.send_report
-    email = ''
     subject = "Import Processed"
-    subject += " (TRIGGERED IN #{Rails.env})" if Rails.env != 'production'
-    if @report.present?
-      @report.each do |target,groups|
-        if groups.present?
-          groups.each do |group,messages|
-            email = email + "<h1>#{group.capitalize}</h1>"
-            messages.uniq.sort.each do |message|
-              email = email + message + '<br />'
-            end
-          end
-        else
-          email = "Reporting group found but with no messages."
-        end
-      end
-    else
-      email = "No reporting information found."
-    end
-
-    CommentsMailer.generic(email.html_safe, subject, ENV['ENROLLCHAT_ADMIN_EMAIL']).deliver!
-  end
-
-  # TODO: Code smell. Gemify reporting process.
-  #
-  def self.initialize_reporting
-    @report = {}
-  end
-
-  def self.report_action(target, group, message)
-    @report[target] ||= {}
-    @report[target][group] ||= []
-    @report[target][group] << message
+    CommentsMailer.generic(@report_body.html_safe, subject, ENV['ENROLLCHAT_ADMIN_EMAIL']).deliver!
   end
 
   def graduate?

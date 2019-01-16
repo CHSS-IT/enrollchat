@@ -1,4 +1,4 @@
-require 'reporting'
+require 'report_action'
 
 namespace :scheduler do
   include Rake::DSL
@@ -7,15 +7,20 @@ namespace :scheduler do
 
   desc "Marks all sections for deletion in terms that are older than 3 years"
   task :schedule_old_term_purge => :environment do
-    include Reporting
+    initialize_report_action
+    subject = "Terms Marked for Deletion"
     if Time.now.month == 1 && Time.now.day == 10
-      @subject = "Terms Marked for Deletion"
-      @report = {}
+      to_delete = Section.terms_to_delete
       deleted_terms = Section.terms_to_delete.each { |term| puts term.to_s }.join("<br>")
       Section.mark_for_deletion
-      report_action("Yearly Term Purge", "Terms Marked for Deletion", "<br />All sections from these terms will be removed from the system in 30 days.")
-      report_action("Yearly Term Purge", "Terms Marked for Deletion", deleted_terms)
-      send_report if @report.present?
+      report_item("Yearly Term Purge", "Terms Marked for Deletion", "<br />All sections from these terms will be removed from the system in 30 days.")
+      if to_delete.empty?
+        report_item("Yearly Term Purge", "Terms Marked for Deletion", "There were no terms marked for deletion this year.")
+      else
+        report_item("Yearly Term Purge", "Terms Marked for Deletion", deleted_terms)
+      end
+      build_report('Yearly Term Purge')
+      CommentsMailer.generic(@report_body.html_safe, subject, ENV['ENROLLCHAT_ADMIN_EMAIL']).deliver!
     end
   end
 
