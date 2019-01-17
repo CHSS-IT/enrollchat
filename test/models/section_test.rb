@@ -118,6 +118,7 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'undergraduate_level and over_enrolled scopes should return undergraduate sections where actual enrollment is greater than the enrollment limit' do
+    @section.update_attributes(waitlist: 6)
     assert_equal @sections.undergraduate_level.over_enrolled, [@section]
   end
 
@@ -263,6 +264,13 @@ class SectionTest < ActiveSupport::TestCase
     assert_equal @new_section.reload.actual_enrollment_yesterday, 0
     assert_equal @new_section.reload.cross_list_enrollment_yesterday, 0
     assert_equal @new_section.reload.waitlist_yesterday, 0
+  end
+
+  test 'import cancels a section that no longer appears in the import file' do
+    @cancel = sections(:one)
+    @cancel.update_attributes(section_id: 7, status: 'CN')
+    Section.import(file_fixture('test_crse.csv'))
+    assert @cancel.status, 'C'
   end
 
   test 'returns an array of unique terms' do

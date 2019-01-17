@@ -61,6 +61,6 @@ namespace :import do
     end
     build_report('Import')
     subject = "Import Executed"
-    CommentsMailer.generic(@report_body.html_safe, subject, ENV['ENROLLCHAT_ADMIN_EMAIL']).deliver!
+    CommentsMailer.generic(@report_body.html_safe, subject, ENV['ENROLLCHAT_ADMIN_EMAIL']).deliver! if @report_body.present?
   end
 end

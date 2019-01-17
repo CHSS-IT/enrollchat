@@ -19,7 +19,7 @@ namespace :scheduler do
         report_item("Yearly Term Purge", "Terms Marked for Deletion", deleted_terms)
       end
       build_report('Yearly Term Purge')
-      CommentsMailer.generic(@report_body.html_safe, subject, ENV['ENROLLCHAT_ADMIN_EMAIL']).deliver!
+      CommentsMailer.generic(@report_body.html_safe, subject, ENV['ENROLLCHAT_ADMIN_EMAIL']).deliver! if @report_body.present?
     end
   end
 
