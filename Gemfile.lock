@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/CraigJZ/report_action.git
-  revision: 67b876939b640a6d35e7ba9d9b52a32baa3629fe
+  revision: 686d219dfc697cb05240aa4cb73b3daa5b1e9cc8
   specs:
     report_action (0.1.0)
 

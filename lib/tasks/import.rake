@@ -45,10 +45,10 @@ namespace :import do
           end
 
           if current_files.present? && Rails.env.production?
-            report_action('Import', 'Backups', "Backing up files.")
+            report_item('Import', 'Backups', "Backing up files.")
             current_files.each do |file|
               sftp.rename!("#{remote}/#{file.name}", "#{remote}/backup/#{file.name}") # if Rails.env.production? && 1 == 2 # back up today's files # TEMPORARILY DISABLING REMOVAL; TODO: Reactivate when feed is working
-              report_action('Import', 'Download', "Moved #{file.name}.")
+              report_item('Import', 'Download', "Moved #{file.name}.")
             end
           elsif !Rails.env.production?
             report_item('Import', 'Download', "File not moved to backup since this was called from #{Rails.env}.")

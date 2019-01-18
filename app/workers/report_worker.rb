@@ -4,10 +4,11 @@ class ReportWorker
   include Rails.application.routes.url_helpers
   include ActionView::Context
   include ApplicationHelper
+  include ReportAction
   sidekiq_options retry: false
 
   def initialize
-    @report = {}
+    initialize_report_action
     @recipients = User.wanting_report
   end
 
@@ -16,6 +17,7 @@ class ReportWorker
     build_summary_report
     identify_and_send unless @recipients.empty?
     report_complete
+    purge_report
   end
 
   def build_comment_report
@@ -23,7 +25,7 @@ class ReportWorker
       comments = Comment.in_past_week.for_department(department).by_course
       if comments.present?
         # Add to list of departments
-        report_action('departments', 'list', department)
+        report_item('departments', 'list', department)
 
         # build email contents
         text = "<h3>#{department}</h3>"
@@ -33,7 +35,7 @@ class ReportWorker
         end
 
         # Add to report for department
-        report_action('departments',department,text)
+        report_item('departments',department,text)
 
       end
     end
@@ -44,13 +46,13 @@ class ReportWorker
       sections = Section.in_term(@term).in_department(department)
       text = "Report for #{department} goes here.".html_safe
       # Add to report for department
-      report_action('summaries',department,text)
+      report_item('summaries',department,text)
     end
   end
 
   def identify_and_send
     @recipients.each do |recipient|
-      text = departments_with_comments(recipient).present? ? departments_with_comments(recipient).collect { |department| @report['departments'][department] }.join.html_safe : ''
+      text = departments_with_comments(recipient).present? ? departments_with_comments(recipient).collect { |department| @report_action['departments'][department] }.join.html_safe : ''
       send_report(recipient, text)
     end
   end
@@ -65,17 +67,11 @@ class ReportWorker
   end
 
   def departments_with_comments(recipient)
-    @report['departments']['list'] & recipient.reporting_departments if @report.key?('departments')
+    @report_action['departments']['list'] & recipient.reporting_departments if @report_action.key?('departments')
   end
 
   def send_report(recipient, text)
-    CommentsMailer.report('EnrollChat Report',recipient, @report, text).deliver!
-    report_action('enrollchat','recipients',recipient.email)
-  end
-
-  def report_action(target, group, message)
-    @report[target] ||= {}
-    @report[target][group] ||= []
-    @report[target][group] << message
+    CommentsMailer.report('EnrollChat Report',recipient, @report_action, text).deliver!
+    report_item('enrollchat','recipients',recipient.email)
   end
 end

@@ -10,9 +10,9 @@ namespace :scheduler do
     subject = "Terms Marked for Deletion"
     if Time.now.month == 1 && Time.now.day == 10
       to_delete = Section.terms_to_delete
-      deleted_terms = Section.terms_to_delete.each { |term| puts term.to_s }.join("<br>")
+      deleted_terms = Section.terms_to_delete.each { |term| term.to_s }.join("<br>")
       Section.mark_for_deletion
-      report_item("Yearly Term Purge", "Terms Marked for Deletion", "<br />All sections from these terms will be removed from the system in 30 days.")
+      report_item("Yearly Term Purge", "Terms Marked for Deletion", "All sections from these terms will be removed from the system in 30 days.")
       if to_delete.empty?
         report_item("Yearly Term Purge", "Terms Marked for Deletion", "There were no terms marked for deletion this year.")
       else
