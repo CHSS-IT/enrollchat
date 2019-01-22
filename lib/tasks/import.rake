@@ -30,7 +30,7 @@ namespace :import do
             report_item('Import','Cleanup', "There were no old backup files to remove.")
           end
 
-          if current_file.present?
+          if current_file.present? && Rails.env.production?
             report_item('Import', 'Download', "Looking at current file: #{current_file.name}.")
             if current_file.name.include?(".csv")
               new_name = current_file.name.to_s
@@ -42,6 +42,8 @@ namespace :import do
             else
               report_item('Import', 'Download', "Not eligible for download: #{current_file.name}.")
             end
+          elsif !Rails.env.production?
+            report_item('Import', 'Download', "File not stored to uploader since this was called from #{Rails.env}.")
           end
 
           if current_files.present? && Rails.env.production?
