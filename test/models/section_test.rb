@@ -109,16 +109,20 @@ class SectionTest < ActiveSupport::TestCase
     assert_equal @sections.uul, [@section]
   end
 
-  test 'graduate_under_enrolled and graduate_level scopes should return graduate sections where actual enrollment and cross list enrollment is less than 10' do
+  test 'graduate_under_enrolled and graduate_level scopes should return graduate sections where actual enrollment and cross list enrollment is less than the enrollment threshold' do
+    @section_three.update_attribute(:actual_enrollment, 7)
+    @section_three.update_attribute(:cross_list_enrollment, 2)
     assert_equal @sections.graduate_level.graduate_under_enrolled, [@section_three]
   end
 
-  test 'undergraduate_under_enrolled and undergraduate_level scopes should return undergraduate sections where actual and cross list enrollment is less than 15' do
+  test 'undergraduate_under_enrolled and undergraduate_level scopes should return undergraduate sections where actual and cross list enrollment is less than the enrollment threshold' do
+    @section_four.update_attribute(:actual_enrollment, 9)
+    @section_four.update_attribute(:cross_list_enrollment, 2)
     assert_equal @sections.undergraduate_level.undergraduate_under_enrolled, [@section_four]
   end
 
-  test 'undergraduate_level and over_enrolled scopes should return undergraduate sections where actual enrollment is greater than the enrollment limit' do
-    @section.update_attributes(waitlist: 6)
+  test 'undergraduate_level and over_enrolled scopes should return undergraduate sections where actual enrollment is at least 5 greater than the enrollment limit' do
+    @section.update(waitlist: 6)
     assert_equal @sections.undergraduate_level.over_enrolled, [@section]
   end
 
@@ -268,7 +272,7 @@ class SectionTest < ActiveSupport::TestCase
 
   test 'import cancels a section that no longer appears in the import file' do
     @cancel = sections(:one)
-    @cancel.update_attributes(section_id: 7, status: 'CN')
+    @cancel.update(section_id: 7, status: 'CN')
     Section.import(file_fixture('test_crse.csv'))
     assert @cancel.status, 'C'
   end

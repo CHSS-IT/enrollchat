@@ -91,7 +91,7 @@ class SectionsTest < ApplicationSystemTestCase
     click_link('filter-submit')
     assert_selector 'table tbody tr', count: 1
     assert_selector 'table tbody tr td', text: 'ENGL'
-    assert_selector 'table tbody tr td', text: '13'
+    assert_selector 'table tbody tr td', text: '11'
   end
 
   test 'clearing filters' do

@@ -2,6 +2,6 @@ CRN,TERM,DEPT,XLST_GROUP,CRSE,CRSE_SECT,TITLE,CREDITS,LVL_ATTR,STATUS,MAX_ENRL,S
 "00001","1","BIS","MyString","MyString","1","MyString","1","UUL","CN","21","24","3","0"
 "00002","1","CRIM","MyString","Criminal Justice","1","MyString","1","UGF","WL","20","26","2","7"
 "00003","1","SINT","MyString","Experiential Learning","1","MyString","1","UGA","C","30","9","5","2"
-"00004","1","ENGL","MyString","MyString","1","MyString","1","UUU","CL","25","13","6","0"
+"00004","1","ENGL","MyString","MyString","1","MyString","1","UUU","CL","25","11","6","0"
 "00005","1","CRIM","MyString","Advanced Criminal Justice","2","MyString","1","UGF","C","20","27","3","6"
 "00006","1","HIST","","HIST 100","002","History of Western Civ","3","UUL","O","55","54","","0"

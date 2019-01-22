@@ -67,7 +67,7 @@ four:
   level: UUU
   status: CL
   enrollment_limit: 25
-  actual_enrollment: 13
+  actual_enrollment: 11
   cross_list_enrollment: 6
   waitlist: 0
   resolved_section: false

@@ -3,5 +3,5 @@
 one:
   current_term: 201810
   singleton_guard: 0
-  undergraduate_enrollment_threshold: 15
+  undergraduate_enrollment_threshold: 12
   graduate_enrollment_threshold: 10
