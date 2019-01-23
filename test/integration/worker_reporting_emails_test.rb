@@ -14,6 +14,55 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
     Rake::Task.clear
   end
 
+  # Daily digest worker
+  test "Digest Executed email is generated" do
+    Rake::Task['daily_digests:send_emails'].invoke
+    Sidekiq::Worker.drain_all
+    assert_emails 1
+  end
+
+  test "Digest Executed email content" do
+    user = users(:two)
+    user.departments << 'BIS'
+    user.save
+    Rake::Task['daily_digests:send_emails'].invoke
+    Sidekiq::Worker.drain_all
+    email = ActionMailer::Base.deliveries.last
+    assert_equal [ENV['ENROLLCHAT_ADMIN_EMAIL']], email.from
+    assert_equal [ENV['ENROLLCHAT_ADMIN_EMAIL']], email.to
+    assert_equal 'EnrollChat Digest Task Executed (Triggered in test)', email.subject
+    assert email.body.to_s.include?("<h1>Departments With Comments</h1>")
+    assert email.body.to_s.include?("<p>BIS</p>")
+    assert email.body.to_s.include?("<h1>Digests Sent to</h1>")
+    assert email.body.to_s.include?("<p>user@email.com</p>")
+  end
+
+  test "Daily Digest email is generated" do
+    user = users(:two)
+    user.departments << 'BIS'
+    user.save
+    Rake::Task['daily_digests:send_emails'].invoke
+    Sidekiq::Worker.drain_all
+    assert_emails 2
+  end
+
+  test "Digest Digest email content" do
+    user = users(:two)
+    user.departments << 'BIS'
+    user.save
+    Rake::Task['daily_digests:send_emails'].invoke
+    Sidekiq::Worker.drain_all
+    email = ActionMailer::Base.deliveries.first
+    assert_equal [ENV['ENROLLCHAT_ADMIN_EMAIL']], email.from
+    assert_equal [ENV['ENROLLCHAT_ADMIN_EMAIL']], email.to
+    assert_equal 'EnrollChat Comments Digest (Triggered in test)', email.subject
+    assert email.body.to_s.include?("<h1>EnrollChat Daily Digest</h1>")
+    assert email.body.to_s.include?("<p>EnrollChat allows you to choose to receive daily digests of comments or individual emails each time a comment is posted. You will be notified of comments relevant to your selected programs, or to all programs if you have not selected a department preference.</p>")
+    assert email.body.to_s.include?("<h2>EnrollChat Digest Email for BIS")
+    assert email.body.to_s.include?(">MyString-001</a>: 1 comment</p>")
+  end
+
+  # Weekly report worker
   test "Weekly report emails is generated" do
     travel_to Time.zone.local(2018, 11, 15, 1, 4, 44) do
       Rake::Task['weekly_reports:send_emails'].invoke
@@ -54,6 +103,7 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
       end
     end
   end
+
   test "EnrollChat Report recipient specific content" do
     travel_to Time.zone.local(2018, 11, 15, 1, 4, 44) do
       Rake::Task['weekly_reports:send_emails'].invoke
@@ -63,24 +113,13 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
       assert emails[0].body.to_s.include?("<td>ENGL</td>")
       assert emails[0].body.to_s.include?("<td>SINT</td>")
       assert emails[0].body.to_s.include?("<td>CRIM</td>")
-      assert emails[0].body.to_s.include?("<p>BIS</p>")
-      assert emails[0].body.to_s.include?("<p>ENGL</p>")
-      assert emails[0].body.to_s.include?("<p>SINT</p>")
-      assert emails[0].body.to_s.include?("<p>CRIM</p>")
       assert emails[1].body.to_s.include?("<td>SINT</td>")
       assert emails[1].body.to_s.include?("<td>CRIM</td>")
       assert emails[1].body.to_s.include?("<td>PHIL</td>")
-      assert emails[1].body.to_s.include?("<p>SINT</p>")
-      assert emails[1].body.to_s.include?("<p>CRIM</p>")
-      assert emails[1].body.to_s.include?("<p>PHIL</p>")
       assert emails[2].body.to_s.include?("<td>BIS</td>")
       assert emails[2].body.to_s.include?("<td>ENGL</td>")
       assert emails[2].body.to_s.include?("<td>SINT</td>")
       assert emails[2].body.to_s.include?("<td>CRIM</td>")
-      assert emails[2].body.to_s.include?("<p>BIS</p>")
-      assert emails[2].body.to_s.include?("<p>ENGL</p>")
-      assert emails[2].body.to_s.include?("<p>SINT</p>")
-      assert emails[2].body.to_s.include?("<p>CRIM</p>")
     end
   end
 end

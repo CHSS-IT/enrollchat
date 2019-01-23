@@ -63,7 +63,7 @@ class ReportWorker
       @recipients.collect { |user| content_tag :li, "#{user.full_name} (#{user.email})" }.join.html_safe
     end
     CommentsMailer.generic(text.html_safe, "EnrollChat Report Task Executed", ENV['ENROLLCHAT_ADMIN_EMAIL']).deliver!
-    puts "Report ran fully."
+    # puts "Report ran fully."
   end
 
   def departments_with_comments(recipient)
