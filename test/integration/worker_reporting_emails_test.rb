@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'sidekiq/testing'
 
 class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
   include ActionMailer::TestHelper
