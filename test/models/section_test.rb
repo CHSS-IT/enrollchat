@@ -122,7 +122,7 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'undergraduate_level and over_enrolled scopes should return undergraduate sections where actual enrollment is at least 5 greater than the enrollment limit' do
-    @section.update(waitlist: 6)
+    @section.update_attribute(:waitlist, 6)
     assert_equal @sections.undergraduate_level.over_enrolled, [@section]
   end
 
@@ -234,29 +234,25 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'sets change in enrollment limit to 0 if previous value was nil' do
-    @section.enrollment_limit = nil
-    @section.save!
+    @section.update_attribute(:enrollment_limit, nil)
     Section.import(file_fixture('test_crse.csv'))
     assert_equal @section.reload.enrollment_limit_yesterday, 0
   end
 
   test 'sets change in actual enrollment to 0 if previous value was nil' do
-    @section.actual_enrollment = nil
-    @section.save!
+    @section.update_attribute(:actual_enrollment, nil)
     Section.import(file_fixture('test_crse.csv'))
     assert_equal @section.reload.actual_enrollment_yesterday, 0
   end
 
   test 'sets change in cross_list_enrollment to 0 if previous value was nil' do
-    @section.cross_list_enrollment = nil
-    @section.save!
+    @section.update_attribute(:cross_list_enrollment, nil)
     Section.import(file_fixture('test_crse.csv'))
     assert_equal @section.reload.cross_list_enrollment_yesterday, 0
   end
 
   test 'sets change in waitlist to 0 if previous value was nil' do
-    @section.waitlist = nil
-    @section.save!
+    @section.update_attribute(:waitlist, nil)
     Section.import(file_fixture('test_crse.csv'))
     assert_equal @section.reload.waitlist_yesterday, 0
   end

@@ -64,7 +64,7 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
   end
 
   # Weekly report worker
-  test "Weekly report emails is generated" do
+  test "Weekly report emails are generated" do
     travel_to Time.zone.local(2018, 11, 15, 1, 4, 44) do
       Rake::Task['weekly_reports:send_emails'].invoke
       Sidekiq::Worker.drain_all
@@ -72,7 +72,7 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "Weekly report executed email content" do
+  test "'Weekly Report Executed' email content" do
     recipient = users(:one)
     recipient_two = users(:two)
     recipient_three = users(:three)
