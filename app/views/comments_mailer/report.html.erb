@@ -1,10 +1,8 @@
 <h1>EnrollChat Weekly Report</h1>
 <h2><%= basic_date(Date.today) %></h2>
 <p>EnrollChat provides you with up-to-date enrollment information for the current enrollment term. Log in to gather information on each class, including whether there has been an increase or decrease in enrollment over the previous reporting period. Both the Dean's Office and you have access to this data and should use EnrollChat to regularly communicate about specific courses.<p>
-<% unless Rails.env.test? %>
-  <p>This report shows the enrollment state of your programs and a summary of recent comments. To change your email preferences, log into EnrollChat and click <%= link_to 'Preferences', edit_user_url(@recipient) %>.</p>
-  <p>View the daily report <%= link_to 'within EnrollChat', reports_url %>.</p>
-<% end %>
+<p>This report shows the enrollment state of your programs and a summary of recent comments. To change your email preferences, log into EnrollChat and click <%= link_to 'Preferences', edit_user_url(@recipient) %>.</p>
+<p>View the daily report <%= link_to 'within EnrollChat', reports_url %>.</p>
 
 <hr />
 
