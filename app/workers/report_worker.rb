@@ -7,7 +7,7 @@ class ReportWorker
   sidekiq_options retry: false
 
   def initialize
-    @report = {}
+    @report = ReportAction::Report.new
     @recipients = User.wanting_report
   end
 
@@ -23,7 +23,7 @@ class ReportWorker
       comments = Comment.in_past_week.for_department(department).by_course
       if comments.present?
         # Add to list of departments
-        report_action('departments', 'list', department)
+        @report.report_item('departments', 'list', department)
 
         # build email contents
         text = "<h3>#{department}</h3>"
@@ -33,7 +33,7 @@ class ReportWorker
         end
 
         # Add to report for department
-        report_action('departments',department,text)
+        @report.report_item('departments',department,text)
 
       end
     end
@@ -44,13 +44,14 @@ class ReportWorker
       sections = Section.in_term(@term).in_department(department)
       text = "Report for #{department} goes here.".html_safe
       # Add to report for department
-      report_action('summaries',department,text)
+      @report.report_item('summaries',department,text)
     end
   end
 
   def identify_and_send
+    report_content = @report.retrieve_report_structure
     @recipients.each do |recipient|
-      text = departments_with_comments(recipient).present? ? departments_with_comments(recipient).collect { |department| @report['departments'][department] }.join.html_safe : ''
+      text = departments_with_comments(recipient).present? ? departments_with_comments(recipient).collect { |department| report_content['departments'][department] }.join.html_safe : ''
       send_report(recipient, text)
     end
   end
@@ -61,21 +62,17 @@ class ReportWorker
       @recipients.collect { |user| content_tag :li, "#{user.full_name} (#{user.email})" }.join.html_safe
     end
     CommentsMailer.generic(text.html_safe, "EnrollChat Report Task Executed", ENV['ENROLLCHAT_ADMIN_EMAIL']).deliver!
-    puts "Report ran fully."
+    # puts "Report ran fully."
   end
 
   def departments_with_comments(recipient)
-    @report['departments']['list'] & recipient.reporting_departments if @report.key?('departments')
+    report_content = @report.retrieve_report_structure
+    report_content['departments']['list'] & recipient.reporting_departments if report_content.key?('departments')
   end
 
   def send_report(recipient, text)
-    CommentsMailer.report('EnrollChat Report',recipient, @report, text).deliver!
-    report_action('enrollchat','recipients',recipient.email)
-  end
-
-  def report_action(target, group, message)
-    @report[target] ||= {}
-    @report[target][group] ||= []
-    @report[target][group] << message
+    report_content = @report.retrieve_report_structure
+    CommentsMailer.report('EnrollChat Report',recipient, report_content, text).deliver!
+    @report.report_item('enrollchat','recipients',recipient.email)
   end
 end

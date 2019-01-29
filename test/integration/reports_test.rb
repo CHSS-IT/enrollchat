@@ -25,7 +25,7 @@ class ReportsTest < ActionDispatch::IntegrationTest
     get reports_path
     assert_select 'table tbody tr td', text: '22'
     assert_select 'table tbody tr td', text: '26'
-    assert_select 'table tbody tr td', text: '13'
+    assert_select 'table tbody tr td', text: '11'
     assert_select 'table tbody tr td', text: '9'
   end
 

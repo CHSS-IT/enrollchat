@@ -5,7 +5,7 @@ class DigestWorker
   sidekiq_options retry: false
 
   def initialize
-    @report = {}
+    @report = ReportAction::Report.new
   end
 
   def perform
@@ -18,7 +18,7 @@ class DigestWorker
     # - Report ran
     # - Comments on [these] departments were sent to [count] users
     build_report
-    identify_and_send unless @report.empty?
+    identify_and_send if @report.has_messages?('departments', 'list')
     report_complete
   end
 
@@ -26,9 +26,9 @@ class DigestWorker
     Section.department_list.each do |department|
       comments = Comment.yesterday.for_department(department).by_course
       if comments.present?
-        puts "Comments on #{department} present"
+        #puts "Comments on #{department} present"
         # Add to list of departments
-        report_action('departments', 'list', department)
+        @report.report_item('departments', 'list', department)
 
         # build email contents
         subject = "EnrollChat Digest Email for #{department}"
@@ -39,18 +39,17 @@ class DigestWorker
         end
 
         # Add to report for department
-        report_action('departments',department,text)
+        @report.report_item('departments',department,text)
 
       end
     end
-    puts @report.inspect
   end
 
   def identify_and_send
     recipients = User.wanting_digest
     if recipients.present?
       recipients.each do |recipient|
-        puts "#{recipient.email} #{departments_with_comments(recipient).present?}"
+        #puts "#{recipient.email} #{departments_with_comments(recipient).present?}"
         if departments_with_comments(recipient).present?
           send_digest(recipient)
         end
@@ -59,30 +58,24 @@ class DigestWorker
   end
 
   def report_complete
+    report_content = @report.retrieve_report_structure
     text = ''
-    text += '<h1>Departments With Comments</h1><p>' + @report['departments']['list'].join(', ') + '</p>' if @report['departments'].present?
-    text += '<h1>Digests Sent to</h1><p>' + @report['enrollchat']['recipients'].join(', ') + '</p>' if @report['enrollchat'].present?
-    text += '<p>No comment activity.</>' if @report['departments'].present? && !@report['enrollchat'].present?
+    text += '<h1>Departments With Comments</h1><p>' + report_content['departments']['list'].join(', ') + '</p>' if report_content['departments'].present?
+    text += '<h1>Digests Sent to</h1><p>' + report_content['enrollchat']['recipients'].join(', ') + '</p>' if report_content['enrollchat'].present?
+    text += '<p>No comment activity.</>' if report_content['departments'].present? && !report_content['enrollchat'].present?
     CommentsMailer.generic(text.html_safe, "EnrollChat Digest Task Executed", ENV['ENROLLCHAT_ADMIN_EMAIL']).deliver!
-    puts "Report ran fully."
+    #puts "Report ran fully."
   end
 
   def departments_with_comments(recipient)
-    @report['departments']['list'] & (recipient.departments.present? ? recipient.departments : Section.department_list)
+    report_content = @report.retrieve_report_structure
+    report_content['departments']['list'] & (recipient.departments.present? ? recipient.departments : Section.department_list)
   end
 
   def send_digest(recipient)
-    # puts "#{recipient.full_name} wants reports on #{departments_with_comments(recipient)}"
-    text = departments_with_comments(recipient).collect { |department| @report['departments'][department] }.join.html_safe
-    # puts text
+    report_content = @report.retrieve_report_structure
+    text = departments_with_comments(recipient).collect { |department| report_content['departments'][department] }.join.html_safe
     CommentsMailer.digest(text,'EnrollChat Comments Digest',recipient).deliver!
-    report_action('enrollchat','recipients',recipient.email)
-  end
-
-  def report_action(target, group, message)
-    @report[target] ||= {}
-    @report[target][group] ||= []
-    @report[target][group] << message
-    # puts target + " " + message
+    @report.report_item('enrollchat','recipients',recipient.email)
   end
 end

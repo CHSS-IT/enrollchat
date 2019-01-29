@@ -65,7 +65,7 @@ gem 'net-sftp'
 # SFTP for banner import
 gem 'net-ssh'
 # SSH for banner import
-
+gem 'report_action', git: "https://github.com/CraigJZ/report_action.git"
 # For processing excel files
 gem "roo", "~> 2.7"
 

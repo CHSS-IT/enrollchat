@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/CraigJZ/report_action.git
+  revision: 02a908085e424de7ac30e1355eaf5cfcb139489d
+  specs:
+    report_action (0.3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -341,6 +347,7 @@ DEPENDENCIES
   rails (= 5.2.2)
   rake
   redis (~> 4.0, >= 4.0.2)
+  report_action!
   roo (~> 2.7)
   rubocop (~> 0.61.0)
   sass-rails
@@ -358,4 +365,4 @@ RUBY VERSION
    ruby 2.5.3p105
 
 BUNDLED WITH
-   1.16.2
+   1.17.3
