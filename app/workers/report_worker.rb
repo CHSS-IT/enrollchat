@@ -9,6 +9,7 @@ class ReportWorker
   def initialize
     @report = ReportAction::Report.new
     @recipients = User.wanting_report
+    @report_term = Setting.first.current_term
   end
 
   def perform
@@ -41,7 +42,7 @@ class ReportWorker
 
   def build_summary_report
     Section.department_list.each do |department|
-      sections = Section.in_term(@term).in_department(department)
+      sections = Section.in_term(@report_term).in_department(department)
       text = "Report for #{department} goes here.".html_safe
       # Add to report for department
       @report.report_item('summaries',department,text)
@@ -72,7 +73,7 @@ class ReportWorker
 
   def send_report(recipient, text)
     report_content = @report.retrieve_report_structure
-    CommentsMailer.report('EnrollChat Report',recipient, report_content, text).deliver!
+    CommentsMailer.report('EnrollChat Report',recipient, report_content, text, @report_term).deliver!
     @report.report_item('enrollchat','recipients',recipient.email)
   end
 end
