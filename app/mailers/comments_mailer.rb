@@ -17,8 +17,8 @@ class CommentsMailer < ApplicationMailer
     mail(to: to, subject: @subject, comment: comment)
   end
 
-  def report(subject, recipient, report, text)
-    @term = Section.maximum(:term)
+  def report(subject, recipient, report, text, term)
+    @term = term
     @recipient = recipient
     @report = report
     @text = text
