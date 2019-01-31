@@ -51,7 +51,7 @@ class ReportWorker
 
   def identify_and_send
     report_content = @report.retrieve_report_structure
-    @recipients[0..3].each do |recipient|
+    @recipients.each do |recipient|
       text = departments_with_comments(recipient).present? ? departments_with_comments(recipient).collect { |department| report_content['departments'][department] }.join.html_safe : ''
       send_report(recipient, text)
     end
