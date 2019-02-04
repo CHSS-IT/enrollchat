@@ -1,9 +1,3 @@
-GIT
-  remote: https://github.com/CraigJZ/report_action.git
-  revision: 02a908085e424de7ac30e1355eaf5cfcb139489d
-  specs:
-    report_action (0.3.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -238,6 +232,7 @@ GEM
       ffi (>= 0.5.0, < 2)
     redis (4.0.2)
     regexp_parser (1.3.0)
+    report_action (0.3.0)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -347,7 +342,7 @@ DEPENDENCIES
   rails (= 5.2.2)
   rake
   redis (~> 4.0, >= 4.0.2)
-  report_action!
+  report_action (~> 0.3.0)
   roo (~> 2.7)
   rubocop (~> 0.61.0)
   sass-rails

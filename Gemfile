@@ -60,12 +60,12 @@ gem 'font-awesome-sass'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-
-gem 'net-sftp'
 # SFTP for banner import
-gem 'net-ssh'
+gem 'net-sftp'
 # SSH for banner import
-gem 'report_action', git: "https://github.com/CraigJZ/report_action.git"
+gem 'net-ssh'
+# simple reporting tools
+gem 'report_action', '~> 0.3.0'
 # For processing excel files
 gem "roo", "~> 2.7"
 
