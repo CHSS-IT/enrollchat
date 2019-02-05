@@ -35,6 +35,9 @@ class Setting < ApplicationRecord
   validates :graduate_enrollment_threshold, :undergraduate_enrollment_threshold, presence: true
   validates :email_delivery, presence: true
 
-    enum email_delivery: { scheduled: 0, off: 1, on: 2 }
+  enum email_delivery: { scheduled: 0, off: 1, on: 2 }
 
+  def self.delivery_options
+    email_deliveries.keys
+  end
 end

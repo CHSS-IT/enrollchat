@@ -8,6 +8,8 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
     Rake::Task.clear
     Sidekiq::Worker.clear_all
     Enrollchat::Application.load_tasks
+    @settings = settings(:one)
+    @settings.update(email_delivery: 'on')
   end
 
   teardown do

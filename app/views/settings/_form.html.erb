@@ -27,15 +27,19 @@
           <%= form.label :current_term %>
           <%= form.number_field :current_term, class: 'form-control mb-2', placeholder: "Current Term", 'aria-describedby': 'currentTermHelpBlock' %>
           <small id="currentTermHelpBlock" class="form-text text-muted mb-4">
-            Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces,
-            special characters,
-            or emoji.
+            Use the setting to define the current academic term.
           </small>
           <%= form.label :graduate_enrollment_threshold %>
           <%= form.number_field :graduate_enrollment_threshold, class: 'form-control mb-2' %>
 
           <%= form.label :undergraduate_enrollment_threshold %>
           <%= form.number_field :undergraduate_enrollment_threshold, class: 'form-control mb-2' %>
+
+          <%= form.label :email_delivery %>
+          <%= select :setting, :email_delivery, Setting.delivery_options, {default: 'scheduled'}, {class: 'form-control'} %>
+          <small class="form-text text-muted mb-4">
+            Use this setting to determine digest and report delivery. Options are "on", "off" and "scheduled". Scheduled is the default and uses the predefined delivery windows aligned with the University registration periods.
+          </small>
           <!-- Sign in button -->
           <%= submit_tag 'Save', class: 'btn btn-info btn-block' %>
           <%= link_to 'Cancel', sections_path, class: 'btn btn-outline-warning btn-block' %>
