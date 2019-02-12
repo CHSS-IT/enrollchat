@@ -5,3 +5,4 @@ one:
   singleton_guard: 0
   undergraduate_enrollment_threshold: 12
   graduate_enrollment_threshold: 10
+  email_delivery: 'scheduled'

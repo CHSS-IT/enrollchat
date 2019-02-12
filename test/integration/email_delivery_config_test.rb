@@ -10,6 +10,7 @@ class EmailDeliveryConfigTest < ActionDispatch::IntegrationTest
     Rake::Task.clear
     Sidekiq::Worker.clear_all
     Enrollchat::Application.load_tasks
+    @settings = settings(:one)
   end
 
   teardown do
@@ -18,19 +19,19 @@ class EmailDeliveryConfigTest < ActionDispatch::IntegrationTest
   end
 
   test "daily digest worker is performed if email delivery config is 'on'" do
-    Rails.configuration.email_delivery = :on
+    @settings.update(email_delivery: "on")
     Rake::Task['daily_digests:send_emails'].invoke
     assert_equal 1, DigestWorker.jobs.size
   end
 
   test "daily digest worker is not performed if email delivery config is 'off'" do
-    Rails.application.config.email_delivery = :off
+    @settings.update(email_delivery: "off")
     Rake::Task['daily_digests:send_emails'].invoke
     assert_equal 0, DigestWorker.jobs.size
   end
 
   test "daily digest worker is not performed if email delivery config is 'scheduled' and delivery_window is false" do
-    Rails.application.config.email_delivery = :scheduled
+    @settings.update(email_delivery: "scheduled")
     travel_to Time.zone.local(2018, 10, 15, 1, 4, 44) do
       Rake::Task['daily_digests:send_emails'].invoke
       assert_equal 0, DigestWorker.jobs.size
@@ -38,7 +39,7 @@ class EmailDeliveryConfigTest < ActionDispatch::IntegrationTest
   end
 
   test "daily digest worker is performed if email delivery config is 'scheduled' and delivery_window is true" do
-    Rails.application.config.email_delivery = :scheduled
+    @settings.update(email_delivery: "scheduled")
     travel_to Time.zone.local(2018, 4, 15, 1, 4, 44) do
       Rake::Task['daily_digests:send_emails'].invoke
       assert_equal 1, DigestWorker.jobs.size
@@ -46,7 +47,7 @@ class EmailDeliveryConfigTest < ActionDispatch::IntegrationTest
   end
 
   test "report worker is not performed if email delivery config is 'off'" do
-    Rails.application.config.email_delivery = :off
+    @settings.update(email_delivery: "off")
     travel_to Time.zone.local(2018, 8, 16, 1, 4, 44) do
       Rake::Task['weekly_reports:send_emails'].invoke
       assert_equal 0, ReportWorker.jobs.size
@@ -54,7 +55,7 @@ class EmailDeliveryConfigTest < ActionDispatch::IntegrationTest
   end
 
   test "report worker is performed if email delivery config is 'on' and it is Thursday" do
-    Rails.application.config.email_delivery = :on
+    @settings.update(email_delivery: "on")
     travel_to Time.zone.local(2018, 8, 16, 1, 4, 44) do
       Rake::Task['weekly_reports:send_emails'].invoke
       assert_equal 1, ReportWorker.jobs.size
@@ -62,7 +63,7 @@ class EmailDeliveryConfigTest < ActionDispatch::IntegrationTest
   end
 
   test "report worker is not performed if email delivery config is 'on' and it is not Thursday" do
-    Rails.application.config.email_delivery = :on
+    @settings.update(email_delivery: "on")
     travel_to Time.zone.local(2018, 10, 15, 1, 4, 44) do
       Rake::Task['weekly_reports:send_emails'].invoke
       assert_equal 0, ReportWorker.jobs.size
@@ -70,7 +71,7 @@ class EmailDeliveryConfigTest < ActionDispatch::IntegrationTest
   end
 
   test "report worker is performed if email delivery config is 'scheduled', it is Thursday and delivery window is true" do
-    Rails.application.config.email_delivery = :scheduled
+    @settings.update(email_delivery: "scheduled")
     travel_to Time.zone.local(2018, 11, 15, 1, 4, 44) do
       Rake::Task['weekly_reports:send_emails'].invoke
       assert_equal 1, ReportWorker.jobs.size
@@ -78,7 +79,7 @@ class EmailDeliveryConfigTest < ActionDispatch::IntegrationTest
   end
 
   test "report worker is not performed if email delivery config is 'scheduled' and delivery window is false" do
-    Rails.application.config.email_delivery = :scheduled
+    @settings.update(email_delivery: "scheduled")
     travel_to Time.zone.local(2018, 10, 18, 1, 4, 44) do
       Rake::Task['weekly_reports:send_emails'].invoke
       assert_equal 0, ReportWorker.jobs.size

@@ -32,4 +32,16 @@ class SettingTest < ActiveSupport::TestCase
     assert_not @setting.valid?
   end
 
+  test 'email delivery cannot be null' do
+    @setting.email_delivery = nil
+    assert_not @setting.valid?
+  end
+
+  test 'returns valid email delivery options' do
+    assert_equal Setting.email_deliveries, 'scheduled' => 0, 'off' => 1, 'on' => 2
+  end
+
+  test 'returns a list of keys from the available email delivery options' do
+    assert_equal Setting.delivery_options, %w[scheduled off on]
+  end
 end
