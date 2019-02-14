@@ -23,4 +23,3 @@
 //= require users.coffee
 //= require reports.coffee
 //= require cable
-//= require material-design/mdb.min
