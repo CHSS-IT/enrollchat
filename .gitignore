@@ -39,4 +39,7 @@ lib/seeds/.DS_Store
 # Ignore database dump files
 *.dump
 
+# Ignore AWS Config
+/.elasticbeanstalk
+
 coverage

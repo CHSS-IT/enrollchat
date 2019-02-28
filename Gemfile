@@ -35,7 +35,7 @@ gem 'redis', '~> 4.0', '>= 4.0.2'
 
 # Alphabetize non-core gems
 
-gem 'airbrake', '~> 7.4'
+# gem 'airbrake', '~> 7.4'
 
 # For file storage on S3
 gem 'aws-sdk', '~> 2'
