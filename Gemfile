@@ -41,7 +41,7 @@ gem 'redis', '~> 4.0', '>= 4.0.2'
 gem 'aws-sdk', '~> 2'
 
 # Responsive layout with bootstrap 4
-gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap', '~> 4.3.1'
 
 # File uploads
 gem 'carrierwave', '~> 1.0'
