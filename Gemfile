@@ -12,13 +12,13 @@ gem "rake"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.2.2.1'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 1.1', '>= 1.1.3'
+gem 'pg', '~> 1.1', '>= 1.1.4'
 # Use Puma as the app server
 gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '~> 4.1', '>= 4.1.10'
+gem 'uglifier', '~> 4.1', '>= 4.1.20'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 # gem 'webpacker'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -28,9 +28,9 @@ gem 'uglifier', '~> 4.1', '>= 4.1.10'
 gem 'coffee-rails', '~> 4.2'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder', '~> 2.8'
 # Use Redis adapter to run Action Cable in production
-gem 'redis', '~> 4.0', '>= 4.0.2'
+gem 'redis', '~> 4.1'
 # Use ActiveModel has_secure_password
 
 # Alphabetize non-core gems
@@ -42,16 +42,16 @@ gem 'aws-sdk', '~> 2'
 gem 'bootstrap', '~> 4.3.1'
 
 # File uploads
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 
 # Devise for authentication
-gem 'devise'
+gem 'devise', '~> 4.6', '>= 4.6.1'
 
 # For using CAS authentication with Devise
 gem 'devise_cas_authenticatable', '~> 1.10.3'
 
 # carrierwave support for S3
-gem "fog-aws"
+gem 'fog-aws', '~> 3.4'
 
 # font-awesome for iconography
 gem 'font-awesome-sass'
@@ -77,7 +77,7 @@ gem 'smarter_csv'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rubocop', '~> 0.61.0', require: false
+  gem 'rubocop', '~> 0.65.0', require: false
 end
 
 group :development do
@@ -98,7 +98,7 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 3.12'
+  gem 'capybara', '~> 3.14'
   gem 'chromedriver-helper', '~> 2.1'
   gem 'selenium-webdriver', '~> 3.141'
   gem 'simplecov', require: false
