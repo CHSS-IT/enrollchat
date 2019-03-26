@@ -5,6 +5,8 @@ namespace :import do
     require 'net/ssh'
     require 'net/sftp'
 
+    Rake::Task['alarm_clock:wakeup'].execute
+
     file_report = ReportAction::Report.new
 
     remote = ENV["ENROLLCHAT_REMOTE_DIR"]
