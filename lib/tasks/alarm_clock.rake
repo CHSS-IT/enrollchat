@@ -4,7 +4,7 @@ namespace :alarm_clock do
   task :wakeup => :environment do
     require 'net/http'
 
-    uri = URI.parse('https://enrollchat.herokuapp.com')
+    uri = URI.parse("https://#{ENV['ENROLLCHAT_HOST']}")
     Net::HTTP.get(uri)
   end
 end
