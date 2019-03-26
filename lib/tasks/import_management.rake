@@ -72,9 +72,4 @@ namespace :import_management do
       puts "#{ActionController::Base.helpers.pluralize(file_count, 'file')} downloaded."
     end
   end
-
-  task :cleanup => :environment do
-    # Clear backup directory
-    # Move current file(s) to backup directory
-  end
 end
