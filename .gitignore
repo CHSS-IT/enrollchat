@@ -43,7 +43,4 @@ lib/seeds/.DS_Store
 # Ignore AWS Config
 /.elasticbeanstalk
 
-# Ignore local env config
-/config/local_env.yml
-
 coverage
