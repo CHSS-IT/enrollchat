@@ -11,6 +11,27 @@ class SectionsTest < ApplicationSystemTestCase
     assert page.has_css?('table tbody tr', count: 4)
   end
 
+  test 'displays the term passed in as a parameter if one exists' do
+    @section = sections(:one)
+    @section.update(term: 202010)
+    visit sections_url(term: "202010")
+    assert_selector 'h1', text: 'Spring 2020 Sections'
+  end
+
+  test 'displays current term when a current term settings exists' do
+    visit sections_url
+    assert_selector 'h1', text: 'Spring 2018 Sections'
+  end
+
+  test 'displays the maximum term available when no current term setting exists.' do
+    @settings = settings(:one)
+    @settings.update(current_term: nil)
+    @section = sections(:one)
+    @section.update(term: 202010)
+    visit sections_url
+    assert_selector 'h1', text: 'Spring 2020 Sections'
+  end
+
   test 'filtering by department' do
     visit sections_url
     assert_selector 'table tbody tr', count: 4

@@ -162,7 +162,7 @@ class SectionTest < ActiveSupport::TestCase
   test 'import correctly sets attributes for a new section' do
     Section.import(file_fixture('test_crse.csv'))
     @new_section = Section.last
-    assert_equal @new_section.term, 1
+    assert_equal @new_section.term, 201810
     assert_equal @new_section.department, 'HIST'
     assert_equal @new_section.course_description, 'HIST 100'
     assert_equal @new_section.section_number, '002'
