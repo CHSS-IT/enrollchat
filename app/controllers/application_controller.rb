@@ -35,6 +35,8 @@ class ApplicationController < ActionController::Base
       @term = params[:term]
     elsif cookies[:term].present?
       @term = cookies[:term]
+    elsif @current_term
+      @term = @current_term
     else
       @term = Section.maximum(:term)
     end

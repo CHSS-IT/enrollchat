@@ -2,7 +2,7 @@
 
 one:
   owner: MyString
-  term: 1
+  term: 201810
   section_id: 1
   department: BIS
   cross_list_group: MyString
@@ -20,7 +20,7 @@ one:
 
 two:
   owner: MyString
-  term: 1
+  term: 201810
   section_id: 2
   department: CRIM
   cross_list_group: MyString
@@ -38,7 +38,7 @@ two:
 
 three:
   owner: MyString
-  term: 1
+  term: 201810
   section_id: 3
   department: SINT
   cross_list_group: MyString
@@ -56,7 +56,7 @@ three:
 
 four:
   owner: MyString
-  term: 1
+  term: 201810
   section_id: 4
   department: ENGL
   cross_list_group: MyString
@@ -74,7 +74,7 @@ four:
 
 five:
   owner: MyString
-  term: 1
+  term: 201810
   section_id: 5
   department: CRIM
   cross_list_group: MyString

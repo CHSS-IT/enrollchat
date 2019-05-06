@@ -17,7 +17,7 @@ class ImportReportingEmailsTest < ActionDispatch::IntegrationTest
     assert_equal [ENV['ENROLLCHAT_ADMIN_EMAIL']], email.to
     assert_equal 'Import Processed (Triggered in test)', email.subject
     assert email.body.to_s.include?("<h1>Canceled sections</h1>")
-    assert email.body.to_s.include?("<p>Experiential Learning-001 in 1</p>")
+    assert email.body.to_s.include?("<p>Experiential Learning-001 in 201810</p>")
     assert email.body.to_s.include?("<h1>Updated sections</h1>")
     assert email.body.to_s.include?("<p><a href='/sections' class='dropdown-item'>3 sections were updated during the import process. 1 sections were created.</a></p>")
     assert email.body.to_s.include?("<p><a href='/sections' class='dropdown-item'>All sections were touched by the import process.</a></p>")
