@@ -44,7 +44,7 @@ namespace :import do
             file_report.report_item('Import', 'Download', "File not stored to uploader since this was called from #{Rails.env}.")
             file_report.report_item('Import', 'Download', "File not moved to backup since this was called from #{Rails.env}.")
             File.delete("#{Rails.root}/tmp/#{new_name}")
-            file_report.report_item('Import', 'Download', "Local copy of download file removed from from #{Rails.env}.")
+            file_report.report_item('Import', 'Download', "Local copy of download file removed from #{Rails.env}.")
           end
         else
           file_report.report_item('Import', 'Download', "No files eligible for download.")
