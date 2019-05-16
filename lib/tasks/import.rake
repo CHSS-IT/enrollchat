@@ -2,8 +2,6 @@ namespace :import do
   include Rake::DSL
 
   task :retrieve_files => :environment do
-    # require 'net/ssh'
-    # require 'net/sftp'
     require 'aws-sdk'
 
     Rake::Task['alarm_clock:wakeup'].execute
