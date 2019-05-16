@@ -32,8 +32,8 @@ namespace :import do
           current_file.get(response_target: "#{Rails.root}/tmp/#{new_name}")
           if Rails.env.production?
             @uploader = FeedUploader.new
-            file = File.open("#{Rails.root}/tmp/#{new_name}", 'rb')
-            @uploader.store!(file)
+            upload_file = File.open("#{Rails.root}/tmp/#{new_name}", 'rb')
+            @uploader.store!(upload_file)
             file_report.report_item('Import', 'Download', "Stored #{new_name} at #{@uploader.url.to_s}.")
             current_file.copy_to(bucket.object("BACKUP-#{current_file.key}"))
             current_file.delete
