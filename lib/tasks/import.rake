@@ -27,7 +27,7 @@ namespace :import do
         end
       end
       current_files.each do |file|
-        if file.key.include?(ENV["ENROLLMENT_FILE_NAME"]) && file.key.to_s == last_file_name
+        if file.key.include?(ENV["ENROLLMENT_FILE_NAME"]) && (file.key.to_s == last_file_name)
           current_file = file
           new_name = current_file.key.to_s
           file_report.report_item('Import', 'Download', "Looking at current file: #{new_name}.")
@@ -46,7 +46,7 @@ namespace :import do
             File.delete("#{Rails.root}/tmp/#{new_name}")
             file_report.report_item('Import', 'Download', "Local copy of download file removed from #{Rails.env}.")
           end
-        elsif file.key.include?(ENV["ENROLLMENT_FILE_NAME"]) && file.key.to_s != last_file_name
+        elsif file.key.include?(ENV["ENROLLMENT_FILE_NAME"]) && (file.key.to_s != last_file_name)
           file_report.report_item('Import', 'Download', "Bucket contains multiple import files. Last file was used. Remove #{file.key}")
         else
           file_report.report_item('Import', 'Download', "No files eligible for download.")
