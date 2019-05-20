@@ -11,6 +11,8 @@ namespace :import do
     s3 = Aws::S3::Resource.new(region: ENV["AWS_DEFAULT_REGION"])
     bucket = s3.bucket(ENV["S3_JIJU_BUCKET_NAME"])
     current_files = bucket.objects
+    file_list = bucket.objects.collect(&:key)
+    last_file_name = file_list.last
     file_report.report_item('Import','Overall',"Download running.")
     if current_files.present?
       current_files.each do |file|
@@ -25,7 +27,7 @@ namespace :import do
         end
       end
       current_files.each do |file|
-        if file.key.include?(ENV["ENROLLMENT_FILE_NAME"])
+        if file.key.include?(ENV["ENROLLMENT_FILE_NAME"]) && (file.key.to_s == last_file_name)
           current_file = file
           new_name = current_file.key.to_s
           file_report.report_item('Import', 'Download', "Looking at current file: #{new_name}.")
@@ -44,6 +46,8 @@ namespace :import do
             File.delete("#{Rails.root}/tmp/#{new_name}")
             file_report.report_item('Import', 'Download', "Local copy of download file removed from #{Rails.env}.")
           end
+        elsif file.key.include?(ENV["ENROLLMENT_FILE_NAME"]) && (file.key.to_s != last_file_name)
+          file_report.report_item('Import', 'Download', "Bucket contains multiple import files. Last file was used. Remove #{file.key}")
         else
           file_report.report_item('Import', 'Download', "No files eligible for download.")
         end
