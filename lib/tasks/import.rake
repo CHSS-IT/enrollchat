@@ -23,7 +23,7 @@ namespace :import do
         elsif file.key.include?("BACKUP-") && !Rails.env.production?
           file_report.report_item('Import', 'Cleanup', "Backups not cleared since this was called from #{Rails.env}.")
         else
-          file_report.report_item('Import','Cleanup', "There were no old backup files to remove.")
+          file_report.report_item('Import','Cleanup', "There are no old backup files to remove.")
         end
       end
       current_files.each do |file|
@@ -39,7 +39,7 @@ namespace :import do
             file_report.report_item('Import', 'Download', "Stored #{new_name} at #{@uploader.url.to_s}.")
             current_file.copy_to(bucket.object("BACKUP-#{current_file.key}"))
             current_file.delete
-            file_report.report_item('Import', 'Download', "Moved #{new_name}.")
+            file_report.report_item('Import', 'Download', "Moved #{new_name} to backup.")
           else
             file_report.report_item('Import', 'Download', "File not stored to uploader since this was called from #{Rails.env}.")
             file_report.report_item('Import', 'Download', "File not moved to backup since this was called from #{Rails.env}.")
