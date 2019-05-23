@@ -1,5 +1,5 @@
 namespace :update_db do
-  desc "Creates a backup of the production database and uses it to update the local development database."
+  desc "Creates a backup of the production database and uses it to update the local development database. Requires Heroku CLI."
 
   task :dev => :environment do
     if Rails.env.development?
