@@ -41,6 +41,7 @@ class ImportReportingEmailsTest < ActionDispatch::IntegrationTest
     assert_equal [ENV['ENROLLCHAT_ADMIN_EMAIL']], email.to
     assert_equal 'Import Executed (Triggered in test)', email.subject
     assert email.body.to_s.include?("<h1>Overall</h1><p>Download running.</p>")
+    assert email.body.to_s.include?("<h1>Download</h1>")
     Rake::Task.clear
   end
 end
