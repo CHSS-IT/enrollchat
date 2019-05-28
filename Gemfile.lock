@@ -78,20 +78,20 @@ GEM
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
     byebug (11.0.0)
-    capybara (3.15.0)
+    capybara (3.21.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
-      regexp_parser (~> 1.2)
+      regexp_parser (~> 1.5)
       xpath (~> 3.2)
     carrierwave (1.3.1)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
-    childprocess (0.9.0)
-      ffi (~> 1.0, >= 1.0.11)
+    childprocess (1.0.1)
+      rake (< 13.0)
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -177,7 +177,6 @@ GEM
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (4.2.0)
-    net_http_ssl_fix (0.0.10)
     nio4r (2.3.1)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
@@ -189,7 +188,7 @@ GEM
     popper_js (1.14.5)
     powerpack (0.1.2)
     psych (3.1.0)
-    public_suffix (3.0.3)
+    public_suffix (3.1.0)
     puma (3.12.0)
     rack (2.0.7)
     rack-mini-profiler (1.0.2)
@@ -229,7 +228,7 @@ GEM
       ffi (>= 0.5.0, < 2)
     rbtree3 (0.5.0)
     redis (4.1.0)
-    regexp_parser (1.3.0)
+    regexp_parser (1.5.1)
     report_action (0.3.0)
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
@@ -271,8 +270,8 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    selenium-webdriver (3.141.0)
-      childprocess (~> 0.5)
+    selenium-webdriver (3.142.3)
+      childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
     sidekiq (5.2.5)
       connection_pool (~> 2.2, >= 2.2.2)
@@ -313,8 +312,7 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
-    webdrivers (3.7.1)
-      net_http_ssl_fix
+    webdrivers (3.9.4)
       nokogiri (~> 1.6)
       rubyzip (~> 1.0)
       selenium-webdriver (~> 3.0)
@@ -336,7 +334,7 @@ DEPENDENCIES
   brakeman
   bullet
   byebug
-  capybara (~> 3.15)
+  capybara (~> 3.21)
   carrierwave (~> 1.3, >= 1.3.1)
   coffee-rails (~> 4.2)
   devise (~> 4.6, >= 4.6.1)
@@ -359,7 +357,6 @@ DEPENDENCIES
   roo (~> 2.7)
   rubocop (~> 0.65.0)
   sass-rails
-  selenium-webdriver (~> 3.141)
   sidekiq
   simplecov
   smarter_csv
@@ -368,7 +365,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (~> 4.1, >= 4.1.20)
   web-console (~> 3.7)
-  webdrivers (~> 3.7, >= 3.7.1)
+  webdrivers (~> 3.9, >= 3.9.4)
 
 RUBY VERSION
    ruby 2.6.2p47
