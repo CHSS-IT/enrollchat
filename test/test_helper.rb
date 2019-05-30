@@ -5,9 +5,6 @@ puts "required simplecov"
 require File.expand_path('../config/environment', __dir__)
 require 'rails/test_help'
 
-# support for Webdrivers gem
-Webdrivers.cache_time = 0
-
 # silence Puma output in system tests
 Capybara.server = :puma, { Silent: true }
 

@@ -30,7 +30,7 @@ gem 'coffee-rails', '~> 5.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.9', '>= 2.9.1'
 # Use Redis adapter to run Action Cable in production
-gem 'redis', '~> 4.1', '>= 4.1.1'
+gem 'redis', '~> 4.1', '>= 4.1.2'
 # Use ActiveModel has_secure_password
 
 # Alphabetize non-core gems
@@ -76,7 +76,7 @@ gem 'smarter_csv'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rubocop', '~> 0.70.0', require: false
+  gem 'rubocop', '~> 0.71.0', require: false
 end
 
 group :development do
@@ -97,9 +97,9 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 3.21'
+  gem 'capybara', '~> 3.22'
   gem 'simplecov', require: false
-  gem 'webdrivers', '~> 3.9', '>= 3.9.4'
+  gem 'webdrivers', '~> 4.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
