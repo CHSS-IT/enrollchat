@@ -30,7 +30,7 @@ namespace :backup_db do
       file_count = bucket.objects.count
       all_files = bucket.objects
       if file_list.include?(file_name)
-        file_report.report_item("Secondary Backup","Task Progress","Backup file saved to secondary backup location.")
+        file_report.report_item("Secondary Backup","Task Progress","Backup file #{file_name} saved to secondary backup location.")
       else
         file_report.report_item("Secondary Backup","Task Progress","There may have been a problem saving the secondary backup. Check backup location.")
       end
@@ -45,7 +45,7 @@ namespace :backup_db do
       file_report.report_item("Secondary Backup","Task Progress","Removing local copy of database file.")
       system("rm latestbackup.sql")
       report_body = file_report.build_report("Secondary Backup")
-      subject = "Secondary Backup Executed"
+      subject = "EnrollChat Secondary Backup Executed"
       CommentsMailer.generic(report_body.html_safe, subject, ENV["ENROLLCHAT_ADMIN_EMAIL"]).deliver! if file_report.has_messages?("Secondary Backup", "Backup Task Running")
     end
   end
