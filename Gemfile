@@ -10,11 +10,11 @@ ruby "2.6.2"
 gem "rake"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.2.2.1'
+gem 'rails', '5.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1', '>= 1.1.4'
 # Use Puma as the app server
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 3.12', '>= 3.12.1'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -25,12 +25,12 @@ gem 'uglifier', '~> 4.1', '>= 4.1.20'
 # gem 'therubyracer', platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails', '~> 5.0'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.8'
+gem 'jbuilder', '~> 2.9', '>= 2.9.1'
 # Use Redis adapter to run Action Cable in production
-gem 'redis', '~> 4.1'
+gem 'redis', '~> 4.1', '>= 4.1.2'
 # Use ActiveModel has_secure_password
 
 # Alphabetize non-core gems
@@ -47,16 +47,16 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 
 # Devise for authentication
-gem 'devise', '~> 4.6', '>= 4.6.1'
+gem 'devise', '~> 4.6', '>= 4.6.2'
 
 # For using CAS authentication with Devise
-gem 'devise_cas_authenticatable', '~> 1.10.3'
+gem 'devise_cas_authenticatable', '~> 1.10', '>= 1.10.4'
 
 # carrierwave support for S3
-gem 'fog-aws', '~> 3.4'
+gem 'fog-aws', '~> 3.5'
 
 # font-awesome for iconography
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '~> 5.8', '>= 5.8.1'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -67,19 +67,16 @@ gem 'net-ssh'
 # simple reporting tools
 gem 'report_action', '~> 0.3.0'
 # For processing excel files
-gem "roo", "~> 2.7"
+gem 'roo', '~> 2.8', '>= 2.8.2'
 
-# Email
-# gem 'sendgrid-ruby'
-
-gem 'sidekiq'
+gem 'sidekiq', '~> 5.2', '>= 5.2.7'
 
 gem 'smarter_csv'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rubocop', '~> 0.65.0', require: false
+  gem 'rubocop', '~> 0.71.0', require: false
 end
 
 group :development do
@@ -100,10 +97,9 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 3.15'
-  gem 'selenium-webdriver', '~> 3.141'
+  gem 'capybara', '~> 3.22'
   gem 'simplecov', require: false
-  gem 'webdrivers', '~> 3.7', '>= 3.7.1'
+  gem 'webdrivers', '~> 4.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
