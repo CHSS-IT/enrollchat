@@ -181,7 +181,7 @@ class Section < ApplicationRecord
         s.status = 'C'
         s.canceled_at = DateTime.now()
         s.save!
-        @import_report.report_item('Executing Import', 'Canceled Sections', "#{s.section_and_number} in #{s.term} was not touched by import and has been cancelled.")
+        @import_report.report_item('Executing Import', 'Canceled Sections', "(ID: #{s.id}) #{s.section_and_number} in #{s.term} was not touched by import and has been canceled.")
       end
       @import_report.report_item('Executing Import', 'Updated Sections', "<a href='/sections' class='dropdown-item'>#{untouched.size} sections from terms contained in feed were not touched by import. It is possible that these were cancelled.</a>")
     else
