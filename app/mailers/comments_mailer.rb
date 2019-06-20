@@ -13,7 +13,7 @@ class CommentsMailer < ApplicationMailer
     @comment = comment
     @subject = "#{subject} #{development_text}"
     @recipient = recipient
-    to = to_switch(recipient)
+    to = to_switch(recipient.email)
     mail(to: to, subject: @subject, comment: comment)
   end
 
