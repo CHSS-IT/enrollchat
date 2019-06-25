@@ -23,27 +23,39 @@ Both the manual upload and the feed are dependent on Amazon S3 file storage, man
 * AWS_SECRET_ACCESS_KEY
 * AWS_DEFAULT_REGION
 
-Emails are dependent on SendGrid, which needs these environment variables.
+Emails are dependent on SendGrid, which needs these environment variables:
+* SENDGRID_API_KEY
 * SENDGRID_USERNAME
 * SENDGRID_PASSWORD
 
-We are using CAS for logins.
+We are using CAS for logins:
 * CAS_BASE_URL
 
 For Redis:
 * REDISTOGO_URL
 
-For the rake-based feed, you will need to have a CSV file delivered to a directory on a server you can access via SFTP. This is dependent on these environmental variables:
-* ENROLLCHAT_REMOTE: The server's address. E.g. "myserver.myhost.edu"
-* ENROLLCHAT_REMOTE_DIR: The directory on that server. That directory should also contain a subdirectory named "backup."
+For the rake-based feed, you will need to have a CSV file delivered to a location that you can access, such as a server you can reach via SFTP or an S3 bucket. The task is currently constructed to use an S3 bucket. This is dependent on these environmental variables:
+* ENROLLCHAT_REMOTE: The remote location's name or address. E.g. "myserver.myhost.edu" or "my_bucket"
 * ENROLLCHAT_REMOTE_USER: Username.
 * ENROLLCHAT_REMOTE_PASS: Password.
 * ENROLLCHAT_ADMIN_EMAIL: The 'from' address for all emails.
 * ENROLLCHAT_HOST: Actionmailer default url host.
+* ENROLLMENT_FILE_NAME: The name of the stored enrollment file.
+
+Additional environment variables can be added depending on your needs. E.g. server directory path
 
 We are tracking errors with AirBrake.
+* AIRBRAKE_API_KEY
 * AIRBRAKE_PROJECT_ID
 * AIRBRAKE_PROJECT_KEY
+
+We have a backup task that uses S3 storage:  
+(In addition to AWS_ variables described above)  
+* FILE_BACKUP_NAME  
+* S3_BACKUP_BUCKET_NAME
+
+We have a task for restoring the development database from production using Heroku's CLI commands:  
+* DATABASE_COMMAND
 
 Heroku will need these add-ons:
 * Herokupostgres
@@ -67,18 +79,18 @@ If you wish to ingest a feed automatically, you will need to set the ENROLLCHAT_
 
 ## Feed Format
 
-Administrators may manually upload sections in an xlsx file using the upload button on sections#index. See the sample file in docs/test for an example of the format.
+Administrators may manually upload sections in an xlsx file using the upload button on sections#index.
 
 ## Email Delivery Configuration
 
 Digest and Report emails are sent to users based on their email preferences. These emails may only be relevant during specific times of the academic year. There are three configuration settings available to control the delivery of these emails:
 - :scheduled - emails will only be sent during predefined windows. These are set in `lib/delivery_windows.rb`
-- :on - emails will be sent on their regular schedule through the year
+- :on - emails will be sent on their regular schedule throughout the year
 - :off - emails will not be sent
 
 ## Testing
 
-The app uses Rails' built in testing mechanisms. System Tests are configured to inherit from Capybara and run Selenium with headless Chrome. Chromedriver is required to use this setup and is included in the Gemfile.
+The app uses Rails' built in testing mechanisms. System Tests are configured to inherit from Capybara and run Selenium with headless Chrome. Chromedriver is required to use this setup. The webdrivers gem is included to provide installation and support for chromedriver.
 
 To run tests: `bin/rails test`  
 To run system tests: `bin/rails test:system`
