@@ -9,7 +9,7 @@ namespace :import do
     file_report = ReportAction::Report.new
 
     s3 = Aws::S3::Resource.new(region: ENV["AWS_DEFAULT_REGION"])
-    bucket = s3.bucket(ENV["S3_JIJU_BUCKET_NAME"])
+    bucket = s3.bucket(ENV["ENROLLCHAT_REMOTE"])
     current_files = bucket.objects
     file_list = bucket.objects.collect(&:key)
     last_file_name = file_list.last
@@ -64,7 +64,7 @@ namespace :import do
     require 'aws-sdk'
 
     s3 = Aws::S3::Resource.new(region: ENV["AWS_DEFAULT_REGION"])
-    bucket = s3.bucket(ENV["S3_JIJU_BUCKET_NAME"])
+    bucket = s3.bucket(ENV["ENROLLCHAT_REMOTE"])
     current_files = bucket.objects
     file_count = 0
     if current_files.present? && !Rails.env.production?
