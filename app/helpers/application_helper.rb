@@ -30,5 +30,4 @@ module ApplicationHelper
     html << '</span>'.html_safe
     html unless @current_term.to_i == @term.to_i
   end
-
 end

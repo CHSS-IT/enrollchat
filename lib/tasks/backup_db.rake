@@ -2,7 +2,6 @@ namespace :backup_db do
   desc "Creates and saves a secondary backup of the production database to an external location. Schedule weekly."
 
   task :secondary => :environment do
-
     file_report = ReportAction::Report.new
 
     if Date.today.wday == 4

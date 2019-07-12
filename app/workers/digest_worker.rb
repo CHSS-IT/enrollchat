@@ -26,7 +26,7 @@ class DigestWorker
     Section.department_list.each do |department|
       comments = Comment.yesterday.for_department(department).by_course
       if comments.present?
-        #puts "Comments on #{department} present"
+        # puts "Comments on #{department} present"
         # Add to list of departments
         @report.report_item('departments', 'list', department)
 
@@ -49,7 +49,7 @@ class DigestWorker
     recipients = User.wanting_digest
     if recipients.present?
       recipients.each do |recipient|
-        #puts "#{recipient.email} #{departments_with_comments(recipient).present?}"
+        # puts "#{recipient.email} #{departments_with_comments(recipient).present?}"
         if departments_with_comments(recipient).present?
           send_digest(recipient)
         end
@@ -64,7 +64,7 @@ class DigestWorker
     text += '<h1>Digests Sent to</h1><p>' + report_content['enrollchat']['recipients'].join(', ') + '</p>' if report_content['enrollchat'].present?
     text += '<p>No comment activity.</>' if report_content['departments'].present? && !report_content['enrollchat'].present?
     CommentsMailer.generic(text.html_safe, "EnrollChat Digest Task Executed", ENV['ENROLLCHAT_ADMIN_EMAIL']).deliver!
-    #puts "Report ran fully."
+    # puts "Report ran fully."
   end
 
   def departments_with_comments(recipient)

@@ -21,7 +21,6 @@ class ApplicationController < ActionController::Base
     Section.undergraduate_enrollment_threshold = @settings.undergraduate_enrollment_threshold
   end
 
-
   def set_current_term
     @current_term = @settings.current_term
   end

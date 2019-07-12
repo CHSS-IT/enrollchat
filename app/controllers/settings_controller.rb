@@ -25,15 +25,15 @@ class SettingsController < ApplicationController
     end
   end
 
-
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_setting
-      @setting = Setting.first
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def setting_params
-      params.require(:setting).permit(:current_term, :graduate_enrollment_threshold, :undergraduate_enrollment_threshold, :email_delivery)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_setting
+    @setting = Setting.first
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def setting_params
+    params.require(:setting).permit(:current_term, :graduate_enrollment_threshold, :undergraduate_enrollment_threshold, :email_delivery)
+  end
 end

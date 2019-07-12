@@ -85,7 +85,7 @@ group :development do
   gem "binding_of_caller"
   gem 'brakeman', require: false
   # N+1 finder
-  gem "bullet"
+  gem 'bullet', '~> 6.0', '>= 6.0.1'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rack-mini-profiler'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -97,9 +97,9 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 3.22'
-  gem 'simplecov', require: false
-  gem 'webdrivers', '~> 4.0'
+  gem 'capybara', '~> 3.25'
+  gem 'simplecov', '~> 0.17.0', require: false
+  gem 'webdrivers', '~> 4.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
