@@ -10,10 +10,10 @@ namespace :update_db do
         puts "Downloading latest dump of database locally."
         system("heroku pg:backups:download -o latest.dump #{app_flag}")
       end
-        puts "Working off local copy of database. Updating development..."
-        system("pg_restore --verbose #{ENV['DATABASE_COMMAND']} latest.dump")
-        puts "Complete. Removing local copy of database file."
-        File.delete("#{Rails.root}/latest.dump")
+      puts "Working off local copy of database. Updating development..."
+      system("pg_restore --verbose #{ENV['DATABASE_COMMAND']} latest.dump")
+      puts "Complete. Removing local copy of database file."
+      File.delete(Rails.root.join("latest.dump"))
     end
   end
 end

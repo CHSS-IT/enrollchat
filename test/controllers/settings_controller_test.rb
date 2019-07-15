@@ -4,7 +4,6 @@ class SettingsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @setting = settings(:one)
     login_as users(:one)
-
   end
 
   test "index should redirect to edit" do
@@ -21,5 +20,4 @@ class SettingsControllerTest < ActionDispatch::IntegrationTest
     patch setting_url(@setting), params: { setting: { current_term: @setting.current_term } }
     assert_redirected_to sections_url
   end
-
 end
