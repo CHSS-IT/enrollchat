@@ -104,6 +104,10 @@ class Section < ApplicationRecord
     ['Undergraduate under-enrolled','Undergraduate over-enrolled','Graduate under-enrolled','Graduate over-enrolled']
   end
 
+  def self.home_department_list
+    ["CULT", "COMM", "ENGL", "RELI", "MCL", "PSYC", "SINT", "CRIM", "HE", "SOAN", "GLOA", "HIST", "WMST", "PHIL", "ECON", "AFAM", "LA", "HNRS", "BIS", "MAIS", "MEIS"]
+  end
+
   def self.import(filepath)
     @import_report = ReportAction::Report.new
 
@@ -129,7 +133,7 @@ class Section < ApplicationRecord
         # Hack to avoid blanks and headers when dealing with generated csv or xslt with dislaimer rows
       elsif row["section_number"].include?('SA')
         @import_report.report_item('Executing Import', 'Skipped Sections', "Study abroad #{row['section_number']}")
-      else
+      elsif Section.home_department_list.include?(row["department"])
         section = Section.find_or_initialize_by(term: row["term"], section_id: row["section_id"])
         section.attributes = row.to_hash.slice(*header)
         if section.cross_list_enrollment.nil?
