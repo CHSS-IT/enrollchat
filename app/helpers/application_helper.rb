@@ -7,6 +7,10 @@ module ApplicationHelper
     date.blank? ? nil : date.year != Date.today.year ? date.strftime('%B %-d, %Y at %l:%M %P') : date.strftime('%B %-d at %l:%M %P')
   end
 
+  def basic_datetime_eastern(date)
+    date.blank? ? nil : date.year != Date.today.year ? date.in_time_zone('Eastern Time (US & Canada)').strftime('%B %-d, %Y at %l:%M %P') : date.in_time_zone('Eastern Time (US & Canada)').strftime('%B %-d at %l:%M %P')
+  end
+
   def comment_alert_time(date)
     if date.day == Date.today.day
       "at #{date.strftime('%l:%M %P')}"

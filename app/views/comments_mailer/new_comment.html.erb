@@ -1,5 +1,5 @@
 <h1><%= @subject %></h1>
-<h2>by <%= @comment.user.full_name %> on <%= basic_datetime(@comment.created_at) %></h2>
+<h2>by <%= @comment.user.full_name %> on <%= basic_datetime_eastern(@comment.created_at) %></h2>
 <p><%= @comment.body %></p>
 <p><%= link_to "View section >>", section_url(@comment.section) %></p>
 
