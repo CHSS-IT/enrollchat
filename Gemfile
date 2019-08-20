@@ -56,7 +56,7 @@ gem 'devise_cas_authenticatable', '~> 1.10', '>= 1.10.4'
 gem 'fog-aws', '~> 3.5'
 
 # font-awesome for iconography
-gem 'font-awesome-sass', '~> 5.8', '>= 5.8.1'
+gem 'font-awesome-sass', '~> 5.9'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
