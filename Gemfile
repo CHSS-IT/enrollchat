@@ -16,7 +16,7 @@ gem 'pg', '~> 1.1', '>= 1.1.4'
 # Use Puma as the app server
 gem 'puma', '~> 3.12', '>= 3.12.1'
 # Use SCSS for stylesheets
-gem 'sass-rails'
+gem 'sass-rails', '~> 6.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '~> 4.1', '>= 4.1.20'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
