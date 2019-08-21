@@ -51,8 +51,8 @@ $(document).ready ->
         responsivePriority: 1
         targets: [
           4
-          16
-          17
+          16 unless $('body').hasClass('sections') and $('body').hasClass('show')
+          17 unless $('body').hasClass('sections') and $('body').hasClass('show')
         ]
       }
       {
