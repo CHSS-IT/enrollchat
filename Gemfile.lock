@@ -352,7 +352,7 @@ DEPENDENCIES
   webdrivers (~> 4.1, >= 4.1.2)
 
 RUBY VERSION
-   ruby 2.6.3p62
+   ruby 2.6.4p104
 
 BUNDLED WITH
    1.17.3
