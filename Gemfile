@@ -47,7 +47,7 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 
 # Devise for authentication
-gem 'devise', '~> 4.6', '>= 4.6.2'
+gem 'devise', '~> 4.7', '>= 4.7.1'
 
 # For using CAS authentication with Devise
 gem 'devise_cas_authenticatable', '~> 1.10', '>= 1.10.4'
