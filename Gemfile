@@ -30,7 +30,7 @@ gem 'coffee-rails', '~> 5.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.9', '>= 2.9.1'
 # Use Redis adapter to run Action Cable in production
-gem 'redis', '~> 4.1', '>= 4.1.2'
+gem 'redis', '~> 4.1', '>= 4.1.3'
 # Use ActiveModel has_secure_password
 
 # Alphabetize non-core gems
@@ -53,10 +53,10 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'devise_cas_authenticatable', '~> 1.10', '>= 1.10.4'
 
 # carrierwave support for S3
-gem 'fog-aws', '~> 3.5'
+gem 'fog-aws', '~> 3.5', '>= 3.5.2'
 
 # font-awesome for iconography
-gem 'font-awesome-sass', '~> 5.9'
+gem 'font-awesome-sass', '~> 5.11', '>= 5.11.2'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
