@@ -30,7 +30,7 @@ gem 'coffee-rails', '~> 5.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.9', '>= 2.9.1'
 # Use Redis adapter to run Action Cable in production
-gem 'redis', '~> 4.1', '>= 4.1.2'
+gem 'redis', '~> 4.1', '>= 4.1.3'
 # Use ActiveModel has_secure_password
 
 # Alphabetize non-core gems
@@ -53,10 +53,10 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'devise_cas_authenticatable', '~> 1.10', '>= 1.10.4'
 
 # carrierwave support for S3
-gem 'fog-aws', '~> 3.5'
+gem 'fog-aws', '~> 3.5', '>= 3.5.2'
 
 # font-awesome for iconography
-gem 'font-awesome-sass', '~> 5.9'
+gem 'font-awesome-sass', '~> 5.11', '>= 5.11.2'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -85,8 +85,8 @@ group :development do
   gem "binding_of_caller"
   gem 'brakeman', require: false
   # N+1 finder
-  gem 'bullet', '~> 6.0', '>= 6.0.1'
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'bullet', '~> 6.0', '>= 6.0.2'
+  gem 'listen', '~> 3.2'
   gem 'rack-mini-profiler'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
@@ -97,8 +97,8 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 3.28'
-  gem 'simplecov', '~> 0.17.0', require: false
+  gem 'capybara', '~> 3.29'
+  gem 'simplecov', '~> 0.17.1', require: false
   gem 'webdrivers', '~> 4.1', '>= 4.1.2'
 end
 
