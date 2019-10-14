@@ -84,7 +84,12 @@ Administrators may manually upload sections in an xlsx file using the upload but
 ## Email Delivery Configuration
 
 Digest and Report emails are sent to users based on their email preferences. These emails may only be relevant during specific times of the academic year. There are three configuration settings available to control the delivery of these emails:
-- :scheduled - emails will only be sent during predefined windows. These are set in `lib/delivery_windows.rb`
+- :scheduled - emails will only be sent during predefined windows. The terms ranges for the scheduled windows can be set with the following environment variables:  
+    `term_one_start`  
+    `term_one_end`  
+    `term_two_start`  
+    `term_two_end`  
+Additional variables can be added to accommodate different academic calender structures.  
 - :on - emails will be sent on their regular schedule throughout the year
 - :off - emails will not be sent
 
