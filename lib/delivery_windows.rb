@@ -1,8 +1,8 @@
 module DeliveryWindows
   def delivery_window
     now = Time.zone.now
-    fall_reg_window = now.month > 3 && now.month < 10
-    spring_reg_window = now.month > 10 || now.month < 2
+    fall_reg_window = now.month >= ENV['TERM_ONE_START'].to_i && now.month <= ENV['TERM_ONE_END'].to_i
+    spring_reg_window = now.month >= ENV['TERM_TWO_START'].to_i || now.month <= ENV['TERM_TWO_END'].to_i
     if fall_reg_window
       true
     elsif spring_reg_window
