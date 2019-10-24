@@ -4,7 +4,7 @@ namespace :backup_db do
   task :secondary => :environment do
     file_report = ReportAction::Report.new
 
-    if Date.today.wday == 4
+    if Date.today.wday == 5
       file_report.report_item("Secondary Backup","Backup Task Running","Secondary backup task called from #{Rails.env}.")
       if Rails.env.development?
         app_flag = "--app #{Rails.application.class.parent_name.downcase}"
@@ -25,7 +25,7 @@ namespace :backup_db do
       obj = s3.bucket(ENV["S3_BACKUP_BUCKET_NAME"]).object(file_name)
       obj.upload_file("latestbackup.sql")
       file_list = bucket.objects.collect(&:key)
-      oldest_file_name = file_list.first
+      oldest_file_name = file_list.last
       file_count = bucket.objects.count
       all_files = bucket.objects
       if file_list.include?(file_name)
