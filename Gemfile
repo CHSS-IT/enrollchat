@@ -14,11 +14,11 @@ gem 'rails', '5.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1', '>= 1.1.4'
 # Use Puma as the app server
-gem 'puma', '~> 3.12', '>= 3.12.1'
+gem 'puma', '~> 4.3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 6.0'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '~> 4.1', '>= 4.1.20'
+gem 'uglifier', '~> 4.2.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 # gem 'webpacker'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -35,7 +35,7 @@ gem 'redis', '~> 4.1', '>= 4.1.3'
 
 # Alphabetize non-core gems
 
-gem 'airbrake'
+gem 'airbrake', '~> 9.5'
 
 # For file storage on S3
 gem 'aws-sdk', '~> 2'
@@ -44,7 +44,7 @@ gem 'aws-sdk', '~> 2'
 gem 'bootstrap', '~> 4.3.1'
 
 # File uploads
-gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+gem 'carrierwave', '~> 2.0', '>= 2.0.2'
 
 # Devise for authentication
 gem 'devise', '~> 4.7', '>= 4.7.1'
@@ -83,11 +83,11 @@ group :development do
   # Shiny error messages
   gem "better_errors"
   gem "binding_of_caller"
-  gem 'brakeman', require: false
+  gem 'brakeman', '~> 4.7', '>= 4.7.1', require: false
   # N+1 finder
   gem 'bullet', '~> 6.0', '>= 6.0.2'
   gem 'listen', '~> 3.2'
-  gem 'rack-mini-profiler'
+  gem 'rack-mini-profiler', '~> 1.1', '>= 1.1.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
