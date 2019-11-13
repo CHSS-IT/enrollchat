@@ -56,7 +56,7 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'should destroy sections marked for deletion' do
-    @section.update_attribute(:delete_at, 1.day.ago)
+    @section.update(delete_at: 1.day.ago)
     Section.delete_marked
     assert_equal @sections.unscoped, [@section_two, @section_three, @section_four, @section_five]
     assert_equal @sections.count, 4
@@ -110,19 +110,19 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'graduate_under_enrolled and graduate_level scopes should return graduate sections where actual enrollment and cross list enrollment is less than the enrollment threshold' do
-    @section_three.update_attribute(:actual_enrollment, 7)
-    @section_three.update_attribute(:cross_list_enrollment, 2)
+    @section_three.update(actual_enrollment: 7)
+    @section_three.update(cross_list_enrollment: 2)
     assert_equal @sections.graduate_level.graduate_under_enrolled, [@section_three]
   end
 
   test 'undergraduate_under_enrolled and undergraduate_level scopes should return undergraduate sections where actual and cross list enrollment is less than the enrollment threshold' do
-    @section_four.update_attribute(:actual_enrollment, 9)
-    @section_four.update_attribute(:cross_list_enrollment, 2)
+    @section_four.update(actual_enrollment: 9)
+    @section_four.update(cross_list_enrollment: 2)
     assert_equal @sections.undergraduate_level.undergraduate_under_enrolled, [@section_four]
   end
 
   test 'undergraduate_level and over_enrolled scopes should return undergraduate sections where actual enrollment is at least 5 greater than the enrollment limit' do
-    @section.update_attribute(:waitlist, 6)
+    @section.update(waitlist: 6)
     assert_equal @sections.undergraduate_level.over_enrolled, [@section]
   end
 
@@ -234,25 +234,25 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'sets change in enrollment limit to 0 if previous value was nil' do
-    @section.update_attribute(:enrollment_limit, nil)
+    @section.update(enrollment_limit: nil)
     Section.import(file_fixture('test_crse.csv'))
     assert_equal @section.reload.enrollment_limit_yesterday, 0
   end
 
   test 'sets change in actual enrollment to 0 if previous value was nil' do
-    @section.update_attribute(:actual_enrollment, nil)
+    @section.update(actual_enrollment: nil)
     Section.import(file_fixture('test_crse.csv'))
     assert_equal @section.reload.actual_enrollment_yesterday, 0
   end
 
   test 'sets change in cross_list_enrollment to 0 if previous value was nil' do
-    @section.update_attribute(:cross_list_enrollment, nil)
+    @section.update(cross_list_enrollment: nil)
     Section.import(file_fixture('test_crse.csv'))
     assert_equal @section.reload.cross_list_enrollment_yesterday, 0
   end
 
   test 'sets change in waitlist to 0 if previous value was nil' do
-    @section.update_attribute(:waitlist, nil)
+    @section.update(waitlist: nil)
     Section.import(file_fixture('test_crse.csv'))
     assert_equal @section.reload.waitlist_yesterday, 0
   end
@@ -274,29 +274,29 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'returns an array of unique terms' do
-    @section.update_attribute(:term, 201710)
-    @section_two.update_attribute(:term, 201710)
-    @section_three.update_attribute(:term, 201410)
-    @section_four.update_attribute(:term, 201540)
-    @section_five.update_attribute(:term, 201370)
+    @section.update(term: 201710)
+    @section_two.update(term: 201710)
+    @section_three.update(term: 201410)
+    @section_four.update(term: 201540)
+    @section_five.update(term: 201370)
     assert_equal @sections.reload.terms.sort, [201370, 201410, 201540, 201710]
   end
 
   test 'determines terms to delete based on their age' do
-    @section.update_attribute(:term, 201710)
-    @section_two.update_attribute(:term, 201770)
-    @section_three.update_attribute(:term, 201410)
-    @section_four.update_attribute(:term, 201540)
-    @section_five.update_attribute(:term, 201370)
+    @section.update(term: 201710)
+    @section_two.update(term: 201770)
+    @section_three.update(term: 201410)
+    @section_four.update(term: 201540)
+    @section_five.update(term: 201370)
     assert_equal @sections.terms_to_delete, [201370, 201410, 201540]
   end
 
   test 'sets delete_at for terms that should be removed based on their age' do
-    @section.update_attribute(:term, 201710)
-    @section_two.update_attribute(:term, 201770)
-    @section_three.update_attribute(:term, 201410)
-    @section_four.update_attribute(:term, 201540)
-    @section_five.update_attribute(:term, 201370)
+    @section.update(term: 201710)
+    @section_two.update(term: 201770)
+    @section_three.update(term: 201410)
+    @section_four.update(term: 201540)
+    @section_five.update(term: 201370)
     Section.mark_for_deletion
     assert_nil @section.reload.delete_at
     assert_nil @section_two.reload.delete_at

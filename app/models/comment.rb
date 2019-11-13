@@ -1,6 +1,6 @@
 class Comment < ApplicationRecord
-  belongs_to :user, required: true
-  belongs_to :section, required: true
+  belongs_to :user, optional: false
+  belongs_to :section, optional: false
 
   validates :body, presence: true
 

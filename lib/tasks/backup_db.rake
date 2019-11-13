@@ -4,7 +4,7 @@ namespace :backup_db do
   task :secondary => :environment do
     file_report = ReportAction::Report.new
 
-    if Date.today.wday == 5
+    if Time.zone.today.wday == 5
       file_report.report_item("Secondary Backup","Backup Task Running","Secondary backup task called from #{Rails.env}.")
       if Rails.env.development?
         app_flag = "--app #{Rails.application.class.parent_name.downcase}"
@@ -19,7 +19,7 @@ namespace :backup_db do
         system('pg_dump -Fc $DATABASE_URL > latestbackup.sql')
         file_report.report_item("Secondary Backup","Download Progress","Creating backup of production database and saving locally.")
       end
-      file_name = "#{ENV['FILE_BACKUP_NAME']}_#{Time.now.year}-#{Time.now.month}-#{Time.now.day}.sql"
+      file_name = "#{ENV['FILE_BACKUP_NAME']}_#{Time.zone.now.year}-#{Time.zone.now.month}-#{Time.zone.now.day}.sql"
       s3 = Aws::S3::Resource.new(region: ENV['AWS_DEFAULT_REGION'])
       bucket = s3.bucket(ENV["S3_BACKUP_BUCKET_NAME"])
       obj = s3.bucket(ENV["S3_BACKUP_BUCKET_NAME"]).object(file_name)

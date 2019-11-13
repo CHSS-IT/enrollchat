@@ -4,11 +4,11 @@ module SectionsHelper
     term = term.to_s[4..5]
     case term
     when '10'
-      then "Spring #{year}"
+      "Spring #{year}"
     when '40'
-      then "Summer #{year}"
+      "Summer #{year}"
     when '70'
-      then "Fall #{year}"
+      "Fall #{year}"
     end
   end
 
