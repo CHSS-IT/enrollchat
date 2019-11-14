@@ -51,7 +51,6 @@ Metrics/AbcSize:
     - 'app/workers/report_worker.rb'
     - 'lib/delivery_windows.rb'
     - 'lib/tasks/fake_a_history.rake'
-    -
 Style/ClassAndModuleChildren:
   Exclude:
     - 'test/test_helper.rb'
@@ -94,6 +93,18 @@ Style/StringLiteralsInInterpolation:
   Exclude:
     - 'lib/tasks/import_management.rake'
     - 'test/helpers/reports_helper_test.rb'
+Style/RedundantBegin:
+  Exclude:
+  - 'app/models/setting.rb'
+Style/MissingRespondToMissing:
+  Exclude:
+  - 'app/models/setting.rb'
+Lint/UnusedMethodArgument:
+  Exclude:
+    - 'app/uploaders/feed_uploader.rb'
+Lint/StringConversionInInterpolation:
+  Exclude:
+    - 'lib/tasks/import.rake'
 Lint/UselessAssignment:
   Exclude:
     - 'app/models/enrollment.rb'
@@ -204,6 +215,7 @@ Style/Next:
   Exclude:
     - 'app/workers/digest_worker.rb'
     - 'app/workers/report_worker.rb'
+    - 'lib/tasks/import.rake'
 Style/PercentLiteralDelimiters:
   Exclude:
     - 'app/uploaders/feed_uploader.rb'
@@ -216,6 +228,7 @@ Style/RedundantSelf:
   Exclude:
     - 'app/models/section.rb'
     - 'app/models/user.rb'
+    - 'app/uploaders/feed_uploader.rb'
 Style/SafeNavigation:
   Exclude:
     - 'app/models/user.rb'
