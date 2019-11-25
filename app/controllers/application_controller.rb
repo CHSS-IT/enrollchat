@@ -3,9 +3,9 @@ class ApplicationController < ActionController::Base
 
   require 'csv'
 
-  before_action :get_settings, :set_terms, :set_graduate_threshold, :set_undergraduate_threshold,:set_current_term, :set_term, :set_recent_comments
+  before_action :retrieve_settings, :set_terms, :set_graduate_threshold, :set_undergraduate_threshold,:set_current_term, :set_term, :set_recent_comments
 
-  def get_settings
+  def retrieve_settings
     @settings = Setting.first_or_create!(singleton_guard: 0)
   end
 
@@ -63,7 +63,6 @@ class ApplicationController < ActionController::Base
   def ensure_admin!
     unless current_user.try(:admin?)
       redirect_to sections_path, notice: 'You do not have access to this page'
-      return false
     end
   end
 end

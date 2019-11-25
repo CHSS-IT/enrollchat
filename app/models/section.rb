@@ -105,7 +105,7 @@ class Section < ApplicationRecord
   end
 
   def self.home_department_list
-    ["CULT", "COMM", "ENGL", "RELI", "MCL", "PSYC", "SINT", "CRIM", "HE", "SOAN", "GLOA", "HIST", "WMST", "PHIL", "ECON", "AFAM", "LA", "HNRS", "BIS", "MAIS", "MEIS"]
+    %w[CULT COMM ENGL RELI MCL PSYC SINT CRIM HE SOAN GLOA HIST WMST PHIL ECON AFAM LA HNRS BIS MAIS MEIS]
   end
 
   def self.import(filepath)

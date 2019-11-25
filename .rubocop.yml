@@ -1,51 +1,110 @@
+require: rubocop-rails
+
 AllCops:
   TargetRubyVersion: 2.6.5
   Exclude:
     - 'bin/**/*'
     - 'db/**/*'
     - 'config/**/*'
-Rails:
-  Enabled: true
-# Enable for upgrade to Ruby 3.0
+    - 'node_modules/**/*'
 Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Layout/SpaceAfterComma:
   Enabled: false
 Style/StringLiterals:
   Enabled: false
+Metrics/LineLength:
+  Max: 995
+
+Style/NumericLiterals:
+  Exclude:
+    - 'test/models/section_test.rb'
+    - 'test/models/setting_test.rb'
+    - 'test/system/sections_test.rb'
+Metrics/MethodLength:
+  Exclude:
+    - 'app/controllers/application_controller.rb'
+    - 'app/controllers/comments_controller.rb'
+    - 'app/controllers/sections_controller.rb'
+    - 'app/controllers/users_controller.rb'
+    - 'app/helpers/sections_helper.rb'
+    - 'app/models/section.rb'
+    - 'app/workers/digest_worker.rb'
+    - 'app/workers/report_worker.rb'
 Lint/AssignmentInCondition:
   Exclude:
     - 'app/channels/application_cable/connection.rb'
 Style/HashSyntax:
   Exclude:
     - 'lib/tasks/*'
-Layout/SpaceAfterComma:
-  Enabled: false
 Metrics/AbcSize:
-  Enabled: false
-Metrics/MethodLength:
-  Enabled: false
-Metrics/LineLength:
-  Max: 995
+  Exclude:
+    - 'app/controllers/application_controller.rb'
+    - 'app/controllers/comments_controller.rb'
+    - 'app/controllers/reports_controller.rb'
+    - 'app/controllers/sections_controller.rb'
+    - 'app/controllers/users_controller.rb'
+    - 'app/models/section.rb'
+    - 'app/workers/digest_worker.rb'
+    - 'app/workers/report_worker.rb'
+    - 'lib/delivery_windows.rb'
+    - 'lib/tasks/fake_a_history.rake'
 Style/ClassAndModuleChildren:
   Exclude:
     - 'test/test_helper.rb'
-Style/Documentation:
-  Enabled: false
 Style/EmptyMethod:
-  Enabled: false
+  Exclude:
+    - 'app/controllers/comments_controller.rb'
+    - 'app/controllers/settings_controller.rb'
+    - 'app/controllers/users_controller.rb'
 Style/SymbolArray:
-  Enabled: false
+  Exclude:
+    - 'Gemfile'
+    - 'app/controllers/comments_controller.rb'
+    - 'app/controllers/sections_controller.rb'
+    - 'app/controllers/users_controller.rb'
 Style/SymbolProc:
-  Enabled: false
+  Exclude:
+    - 'app/models/section.rb'
+    - 'app/controllers/reports_controller.rb'
+    - 'lib/tasks/scheduler.rake'
 Style/ZeroLengthPredicate:
-  Enabled: false
+  Exclude:
+    - 'app/models/section.rb'
 Style/NumericPredicate:
-  Enabled: false
+  Exclude:
+    - 'app/helpers/sections_helper.rb'
+    - 'app/models/section.rb'
+    - 'lib/tasks/import.rake'
 Style/IfUnlessModifier:
-  Enabled: false
+  Exclude:
+    - 'lib/tasks/weekly_reports.rake'
+    - 'lib/tasks/daily_digests.rake'
+    - 'app/workers/digest_worker.rb'
+    - 'app/models/section.rb'
+    - 'app/helpers/sections_helper.rb'
+    - 'app/helpers/application_helper.rb'
+    - 'app/controllers/sections_controller.rb'
+    - 'app/controllers/application_controller.rb'
+    - 'app/channels/department_channel.rb'
 Style/StringLiteralsInInterpolation:
   Exclude:
     - 'lib/tasks/import_management.rake'
     - 'test/helpers/reports_helper_test.rb'
+Style/RedundantBegin:
+  Exclude:
+  - 'app/models/setting.rb'
+Style/MissingRespondToMissing:
+  Exclude:
+  - 'app/models/setting.rb'
+Lint/UnusedMethodArgument:
+  Exclude:
+    - 'app/uploaders/feed_uploader.rb'
+Lint/StringConversionInInterpolation:
+  Exclude:
+    - 'lib/tasks/import.rake'
 Lint/UselessAssignment:
   Exclude:
     - 'app/models/enrollment.rb'
@@ -63,6 +122,9 @@ Metrics/ClassLength:
     - 'app/models/section.rb'
     - 'test/models/section_test.rb'
     - 'test/controllers/users_controller_test.rb'
+    - 'test/system/sections_test.rb'
+    - 'test/integration/import_reporting_emails_test.rb'
+    - 'test/integration/worker_reporting_emails_test.rb'
 Metrics/CyclomaticComplexity:
   Exclude:
     - 'app/controllers/sections_controller.rb'
@@ -98,10 +160,15 @@ Rails/Output:
 Rails/OutputSafety:
   Exclude:
     - 'app/controllers/comments_controller.rb'
+    - 'app/helpers/application_helper.rb'
     - 'app/helpers/reports_helper.rb'
     - 'app/helpers/sections_helper.rb'
+    - 'app/models/section.rb'
     - 'app/workers/digest_worker.rb'
     - 'app/workers/report_worker.rb'
+    - 'lib/tasks/scheduler.rake'
+    - 'lib/tasks/backup_db.rake'
+    - 'lib/tasks/import.rake'
 Rails/Presence:
   Exclude:
     - 'app/workers/digest_worker.rb'
@@ -148,6 +215,7 @@ Style/Next:
   Exclude:
     - 'app/workers/digest_worker.rb'
     - 'app/workers/report_worker.rb'
+    - 'lib/tasks/import.rake'
 Style/PercentLiteralDelimiters:
   Exclude:
     - 'app/uploaders/feed_uploader.rb'
@@ -160,6 +228,7 @@ Style/RedundantSelf:
   Exclude:
     - 'app/models/section.rb'
     - 'app/models/user.rb'
+    - 'app/uploaders/feed_uploader.rb'
 Style/SafeNavigation:
   Exclude:
     - 'app/models/user.rb'
@@ -172,6 +241,8 @@ Style/UnlessElse:
 Style/TernaryParentheses:
   Exclude:
     - 'app/models/section.rb'
-Style/NumericLiterals:
+Rails/HelperInstanceVariable:
   Exclude:
-    - 'test/models/section_test.rb'
+    - 'app/helpers/application_helper.rb'
+    - 'app/helpers/reports_helper.rb'
+
