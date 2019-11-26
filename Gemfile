@@ -44,7 +44,7 @@ gem 'aws-sdk', '~> 2'
 gem 'bootstrap', '~> 4.3.1'
 
 # File uploads
-gem 'carrierwave', '~> 2.0', '>= 2.0.2'
+gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 
 # Devise for authentication
 gem 'devise', '~> 4.7', '>= 4.7.1'
