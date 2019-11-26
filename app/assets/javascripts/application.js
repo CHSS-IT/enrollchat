@@ -19,7 +19,7 @@
 //= require datetime
 //= require rails-ujs
 //= require bootstrap-select.min
-//= require sections.coffee
-//= require users.coffee
-//= require reports.coffee
+//= require sections
+//= require users
+//= require reports
 //= require cable
