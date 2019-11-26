@@ -44,7 +44,7 @@ gem 'aws-sdk', '~> 2'
 gem 'bootstrap', '~> 4.3.1'
 
 # File uploads
-gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+gem 'carrierwave', '~> 2.0', '>= 2.0.2'
 
 # Devise for authentication
 gem 'devise', '~> 4.7', '>= 4.7.1'
@@ -69,7 +69,7 @@ gem 'report_action', '~> 0.3.0'
 # For processing excel files
 gem 'roo', '~> 2.8', '>= 2.8.2'
 
-gem 'sidekiq', '~> 6.0', '>= 6.0.3'
+gem 'sidekiq', '~> 5.2', '>= 5.2.7'
 
 gem 'smarter_csv'
 
