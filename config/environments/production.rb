@@ -49,7 +49,7 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   #config.active_storage.service = :local
 
-  # Mount Action Cable outside main process or domain
+  # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
   config.action_cable.url = "wss://#{ENV['ENROLLCHAT_HOST']}/cable"
   config.action_cable.allowed_request_origins = [ "https://#{ENV['ENROLLCHAT_HOST']}", "http://#{ENV['ENROLLCHAT_HOST']}" ]
