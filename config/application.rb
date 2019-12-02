@@ -24,5 +24,9 @@ module Enrollchat
         ENV[key.to_s] = value
       end if File.exist?(env_file)
     end
+
+    # remove after changing load_defaults to 6.0
+    # Uncomment when ready to test out zeitwerk loader
+    # config.autoloader = :zeitwerk
   end
 end
