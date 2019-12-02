@@ -35,7 +35,7 @@ gem 'redis', '~> 4.1', '>= 4.1.3'
 
 # Alphabetize non-core gems
 
-gem 'airbrake', '~> 9.5'
+gem 'airbrake', '~> 9.5', '>= 9.5.5'
 
 # For file storage on S3
 gem 'aws-sdk', '~> 2'
@@ -76,14 +76,14 @@ gem 'smarter_csv'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rubocop-rails'
+  gem 'rubocop-rails', '~> 2.4'
 end
 
 group :development do
   # Shiny error messages
   gem "better_errors"
   gem "binding_of_caller"
-  gem 'brakeman', '~> 4.7', '>= 4.7.1', require: false
+  gem 'brakeman', '~> 4.7', '>= 4.7.2', require: false
   # N+1 finder
   gem 'bullet', '~> 6.0', '>= 6.0.2'
   gem 'listen', '~> 3.2'

@@ -102,7 +102,7 @@ Style/MissingRespondToMissing:
 Lint/UnusedMethodArgument:
   Exclude:
     - 'app/uploaders/feed_uploader.rb'
-Lint/StringConversionInInterpolation:
+Lint/RedundantStringCoercion:
   Exclude:
     - 'lib/tasks/import.rake'
 Lint/UselessAssignment:
