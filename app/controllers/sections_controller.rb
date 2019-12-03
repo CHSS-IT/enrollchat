@@ -1,6 +1,6 @@
 class SectionsController < ApplicationController
   before_action :ensure_admin!, only: [:delete_term, :toggle_resolved_section]
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
   before_action :filter, only: :index
 
   # GET /sections

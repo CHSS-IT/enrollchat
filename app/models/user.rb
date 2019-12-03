@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :cas_authenticatable, :trackable
+  # devise :cas_authenticatable, :trackable
 
   enum status: { active: 0, archived: 1 }
 

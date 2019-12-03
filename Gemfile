@@ -47,10 +47,10 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'carrierwave', '~> 2.0', '>= 2.0.2'
 
 # Devise for authentication
-gem 'devise', '~> 4.7', '>= 4.7.1'
+#gem 'devise', '~> 4.7', '>= 4.7.1'
 
 # For using CAS authentication with Devise
-gem 'devise_cas_authenticatable', '~> 1.10', '>= 1.10.4'
+#gem 'devise_cas_authenticatable', '~> 1.10', '>= 1.10.4'
 
 # carrierwave support for S3
 gem 'fog-aws', '~> 3.5', '>= 3.5.2'
