@@ -2,6 +2,22 @@ require "test_helper"
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   driven_by :selenium, using: :headless_chrome, screen_size: [1400,1050]
+
+  def login_as(user)
+    visit login_path
+    fill_in 'username', with: user.username
+    fill_in 'password', with: 'any password'
+    click_button 'Login'
+  end
+
+  def login_path
+    ENV['TEST_LOGIN_PATH']
+  end
+
+  def logout
+    visit '/logout'
+  end
+
 end
 
 module BootstrapSelectHelper

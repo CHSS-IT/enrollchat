@@ -70,7 +70,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= get_current_user
-    return @current_user if defined?(@current_user)
+    @current_user if defined?(@current_user)
   end
 
   def get_current_user
@@ -83,7 +83,7 @@ class ApplicationController < ActionController::Base
     if session[:cas].nil?
       render status: 401, text: "Redirecting to login..."
     elsif session['cas']
-      unless User.find_by_username(session['cas']['user'].downcase)
+      unless User.find_by_username(session['cas']['user'].downcase.strip)
         redirect_to unregistered_path
       end
     end
