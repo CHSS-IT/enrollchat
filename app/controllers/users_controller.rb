@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_user, only: [:edit, :update, :checked_activities, :archive]
   before_action :ensure_admin!, except: [:edit, :update, :checked_activities]
   before_action :editable?, only: [:edit, :update]
-  before_action :authenticate_user!
+
 
   def index
     @users = User.all.order(last_name: :asc)
@@ -58,7 +59,7 @@ class UsersController < ApplicationController
 
   def editable?
     unless current_user == @user || current_user.try(:admin?)
-      redirect_to sections_path, notice: 'You do not have access to this page'
+      redirect_to sections_path, notice: 'You do not have access to this page.'
       return false
     end
   end

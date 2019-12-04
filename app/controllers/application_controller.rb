@@ -75,16 +75,16 @@ class ApplicationController < ActionController::Base
 
   def get_current_user
     if session['cas']
-      User.find_by_username(session['cas']['user'].downcase)
+      User.find_by_username(session['cas']['user'].downcase.strip)
     end
   end
 
   def authenticate_user!
-    if session[:cas].nil?
+    if session['cas'].nil?
       render status: 401, text: "Redirecting to login..."
     elsif session['cas']
       unless User.find_by_username(session['cas']['user'].downcase.strip)
-        redirect_to unregistered_path
+        redirect_to unregistered_path, notice: 'You are not registered to use this system.'
       end
     end
   end

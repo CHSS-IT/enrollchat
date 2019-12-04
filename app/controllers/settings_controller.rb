@@ -1,7 +1,7 @@
 class SettingsController < ApplicationController
   before_action :set_setting
-  before_action :ensure_admin!
   before_action :authenticate_user!
+  before_action :ensure_admin!
 
   def index
     redirect_to edit_setting_path(@setting)

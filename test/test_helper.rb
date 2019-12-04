@@ -16,9 +16,19 @@ class ActiveSupport::TestCase
   # teardown do
   #   Warden.test_reset!
   # end
+  #
 end
 
-# class ActionDispatch::IntegrationTest
-#   include Warden::Test::Helpers
-#   Warden.test_mode!
-# end
+class ActionDispatch::IntegrationTest
+  def login_as(user)
+    post login_path, params: { username: user.username, password: 'any password' }
+  end
+
+  def unregistered_login
+    post login_path, params: { username: 'unregistered', password: 'any password' }
+  end
+
+  def logout
+    get '/logout'
+  end
+end

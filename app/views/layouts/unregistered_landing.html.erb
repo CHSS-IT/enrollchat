@@ -10,11 +10,8 @@
   <%= favicon_link_tag(source="Favicon.ico") %>
 </head>
 <body>
-<!-- <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-
-</nav> -->
+  <%= render partial: "/layouts/alert", flash: flash %>
   <div class="chssLogin">
-    <%= render partial: "/layouts/alert", flash: flash %>
     <%= yield %>
   </div>
 </body>
