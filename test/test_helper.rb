@@ -13,12 +13,12 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
-  teardown do
-    Warden.test_reset!
-  end
+  # teardown do
+  #   Warden.test_reset!
+  # end
 end
 
-class ActionDispatch::IntegrationTest
-  include Warden::Test::Helpers
-  Warden.test_mode!
-end
+# class ActionDispatch::IntegrationTest
+#   include Warden::Test::Helpers
+#   Warden.test_mode!
+# end

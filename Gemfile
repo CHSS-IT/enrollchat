@@ -65,6 +65,9 @@ gem 'net-sftp'
 # SSH for banner import
 gem 'net-ssh'
 # simple reporting tools
+
+gem 'rack-cas', '~> 0.16.1'
+
 gem 'report_action', '~> 0.3.0'
 # For processing excel files
 gem 'roo', '~> 2.8', '>= 2.8.2'

@@ -23,5 +23,7 @@ module Enrollchat
         ENV[key.to_s] = value
       end if File.exist?(env_file)
     end
+
+    config.rack_cas.server_url = 'https://login.gmu.edu'
   end
 end

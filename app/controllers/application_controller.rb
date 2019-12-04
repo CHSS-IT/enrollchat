@@ -58,11 +58,34 @@ class ApplicationController < ActionController::Base
     @recent_unread_comments = Comment.recent_unread(current_user)
   end
 
+  helper_method :current_user
+
   private
 
   def ensure_admin!
     unless current_user.try(:admin?)
-      redirect_to sections_path, notice: 'You do not have access to this page'
+      redirect_to sections_path, notice: 'You do not have access to this page.'
+    end
+  end
+
+  def current_user
+    @current_user ||= get_current_user
+    return @current_user if defined?(@current_user)
+  end
+
+  def get_current_user
+    if session['cas']
+      User.find_by_username(session['cas']['user'].downcase)
+    end
+  end
+
+  def authenticate_user!
+    if session[:cas].nil?
+      render status: 401, text: "Redirecting to login..."
+    elsif session['cas']
+      unless User.find_by_username(session['cas']['user'].downcase)
+        redirect_to unregistered_path
+      end
     end
   end
 end

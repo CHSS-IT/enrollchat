@@ -2,8 +2,8 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:edit, :update, :destroy]
   before_action :set_user, only: [:create, :new]
   before_action :set_section
-  #before_action :authenticate_user!
   before_action :permitted_to_comment, except: :index
+  before_action :authenticate_user!
 
   def index
     @comments = @section.comments.order(created_at: :desc)

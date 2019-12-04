@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :settings, only: [:index, :edit, :update]
   resources :reports
-  get 'static_pages/home'
+  get 'home', to: 'static_pages#home'
+  get 'unregistered', to: 'static_pages#unregistered'
   get 'delete_term/:term', to: 'sections#delete_term'
 
   #devise_for :users, :path_prefix => 'app'
@@ -27,5 +28,7 @@ Rails.application.routes.draw do
   # end
 
   root to: 'static_pages#home'
+
+  get '/login', to: 'sections#index'
 
 end

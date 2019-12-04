@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :checked_activities, :archive]
   before_action :ensure_admin!, except: [:edit, :update, :checked_activities]
   before_action :editable?, only: [:edit, :update]
-  #before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def index
     @users = User.all.order(last_name: :asc)
