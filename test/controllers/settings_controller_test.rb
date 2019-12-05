@@ -5,6 +5,10 @@ class SettingsControllerTest < ActionDispatch::IntegrationTest
     @setting = settings(:one)
   end
 
+  teardown do
+    logout
+  end
+
   test "index should redirect to edit for admin" do
     login_as(users(:one))
     get settings_url

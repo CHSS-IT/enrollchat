@@ -10,6 +10,10 @@ class SectionsControllerTest < ActionDispatch::IntegrationTest
     @sections = Section.all
   end
 
+  teardown do
+    logout
+  end
+
   test 'should GET index' do
     login_as(users(:two))
     get sections_url
@@ -61,6 +65,5 @@ class SectionsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to unregistered_path
     assert_equal 'You are not registered to use this system.', flash[:notice]
     assert_equal @section_one.reload.resolved_section, false
-
   end
 end

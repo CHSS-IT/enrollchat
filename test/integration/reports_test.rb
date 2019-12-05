@@ -2,7 +2,11 @@ require 'test_helper'
 
 class ReportsTest < ActionDispatch::IntegrationTest
   setup do
-    login_as users(:one)
+    login_as(users(:one))
+  end
+
+  teardown do
+    logout
   end
 
   test 'should display a row for each department' do
