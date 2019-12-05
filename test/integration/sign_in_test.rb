@@ -1,17 +1,20 @@
 require 'test_helper'
 
 class SignInTest < ActionDispatch::IntegrationTest
-  # test 'should redirect users who are not signed in to login page' do
-  #   get sections_url
-  #   assert_redirected_to new_user_session_url
-  # end
-  #
-  # test 'should redirect users who are not signed in and try to access an admin only page to the login page' do
-  #   get users_url
-  #   follow_redirect!
-  #   assert_redirected_to new_user_session_url
-  # end
-  #
+  test 'should send users who are not signed in to login page' do
+    get sections_url
+    assert_response :success
+    assert_select "input#username"
+    assert_select "input#password"
+  end
+
+  test 'should send users who are not signed in and try to access an admin only page to the login page' do
+    get users_url
+    assert_response :success
+    assert_select "input#username"
+    assert_select "input#password"
+  end
+
   test 'should allow successfully signed in users to reach main sections page' do
     login_as(users(:two))
     get sections_url
