@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   require 'csv'
 
-  before_action :retrieve_settings, :set_terms, :set_graduate_threshold, :set_undergraduate_threshold,:set_current_term, :set_term, :set_recent_comments, :update_current_user_stats
+  before_action :retrieve_settings, :set_terms, :set_graduate_threshold, :set_undergraduate_threshold,:set_current_term, :set_term, :set_recent_comments
 
   def retrieve_settings
     @settings = Setting.first_or_create!(singleton_guard: 0)
@@ -56,25 +56,6 @@ class ApplicationController < ActionController::Base
 
   def set_recent_unread_comments
     @recent_unread_comments = Comment.recent_unread(current_user)
-  end
-
-  def update_current_user_stats
-    if @current_user
-      user = User.find(@current_user.id)
-      old_current = user.current_sign_in_at
-      new_current = Time.now.utc
-      user.last_sign_in_at     = old_current || new_current
-      user.current_sign_in_at  = new_current
-
-      user.sign_in_count += 1
-
-      old_ip = user.current_sign_in_ip
-      new_ip = request.remote_ip
-      user.last_sign_in_ip = old_ip || new_ip
-      user.current_sign_in_ip = new_ip
-
-      user.save!
-    end
   end
 
   helper_method :current_user
