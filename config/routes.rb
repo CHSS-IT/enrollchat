@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     member do
       post 'checked_activities'
       get 'archive'
+      get 'end_session'
     end
   end
   resources :sections, only: [:index, :show] do
@@ -23,12 +24,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.htm
 
-  # authenticated :user do
-  #   root 'sections#index', as: :authenticated_root
-  # end
-
   root to: 'static_pages#home'
 
   get '/login', to: 'sections#index'
-
 end

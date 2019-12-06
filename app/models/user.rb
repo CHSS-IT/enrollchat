@@ -66,6 +66,8 @@ class User < ApplicationRecord
     self.last_sign_in_ip = old_ip || new_ip
     self.current_sign_in_ip = new_ip
 
+    self.active_session = true
+
     self.save(touch: false)
   end
 end
