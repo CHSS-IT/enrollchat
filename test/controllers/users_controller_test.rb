@@ -55,7 +55,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       post users_path, params: { user: { first_name: 'Timothy', last_name: "McGee", email: 'tmcgee@test.com', username: 'tmcgee', admin: false } }
     end
     assert_redirected_to users_url
-    assert_equal 'User was succesfully created', flash[:notice]
+    assert_equal 'User was successfully created', flash[:notice]
   end
 
   test 'should not create a new user with non-admin user' do
@@ -116,7 +116,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     patch user_url(@user), params: { user: { admin: true } }
     assert_redirected_to users_url
     assert_equal @user.reload.admin, true
-    assert_equal 'User was succesfully updated', flash[:notice]
+    assert_equal 'User was successfully updated', flash[:notice]
   end
 
   test 'should not update a different user with a non-admin user' do
