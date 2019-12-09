@@ -49,7 +49,7 @@ class UsersController < ApplicationController
 
   def end_session
     @user.active_session = false
-    @user.save(touch: false)
+    @user.save!(touch: false)
     redirect_to '/logout'
   end
 

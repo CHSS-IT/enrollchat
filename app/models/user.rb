@@ -68,6 +68,6 @@ class User < ApplicationRecord
 
     self.active_session = true
 
-    self.save(touch: false)
+    self.save!(touch: false)
   end
 end

@@ -99,4 +99,23 @@ class UserTest < ActiveSupport::TestCase
   test 'returns a list of keys from the available statuses' do
     assert_equal User.status_list, %w[active archived]
   end
+
+  test 'updates user login status' do
+    @user.update(last_sign_in_at: "2018-10-15 01:00:00")
+    @user.update(current_sign_in_at: "2018-10-15 01:00:00")
+    @user.update(sign_in_count: 1)
+    old_updated_at = @user.updated_at
+    request = Minitest::Mock.new
+    request.expect :remote_ip, "127.0.0.1"
+    travel_to Time.zone.local(2019, 01, 15, 3, 0, 0) do
+      @user.update_login_stats!(request)
+      assert_equal @user.last_sign_in_at, "2018-10-15 01:00:00"
+      assert_equal @user.current_sign_in_at, "2019-01-15 03:00:00"
+      assert_equal @user.sign_in_count, 2
+      assert_includes @user.last_sign_in_ip, "127.0.0.1"
+      assert_includes @user.current_sign_in_ip, "127.0.0.1"
+      assert @user.active_session, true
+      assert_equal @user.updated_at, old_updated_at
+    end
+  end
 end

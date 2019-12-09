@@ -4,6 +4,7 @@ puts "required simplecov"
 
 require File.expand_path('../config/environment', __dir__)
 require 'rails/test_help'
+require 'minitest/autorun'
 
 # silence Puma output in system tests
 Capybara.server = :puma, { Silent: true }
