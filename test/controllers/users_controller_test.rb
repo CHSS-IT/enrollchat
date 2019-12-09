@@ -232,14 +232,4 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to users_url
     assert_equal 'User has been archived', flash[:notice]
   end
-
-  test 'should GET end_session for a logged in user' do
-    login_as(@user)
-    @user.update(active_session: true)
-    old_updated_at = @user.updated_at
-    get end_session_user_url(@user)
-    assert_equal @user.reload.active_session, false
-    assert_equal @user.reload.updated_at, old_updated_at
-    assert_redirected_to '/logout'
-  end
 end

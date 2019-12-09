@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: [:edit, :update, :checked_activities, :archive, :end_session]
-  before_action :ensure_admin!, except: [:edit, :update, :checked_activities, :end_session]
+  before_action :set_user, only: [:edit, :update, :checked_activities, :archive]
+  before_action :ensure_admin!, except: [:edit, :update, :checked_activities]
   before_action :editable?, only: [:edit, :update]
 
   def index
@@ -45,12 +45,6 @@ class UsersController < ApplicationController
   def checked_activities
     @user.checked_activities!
     head :ok, content_type: "text/html"
-  end
-
-  def end_session
-    @user.active_session = false
-    @user.save!(touch: false)
-    redirect_to '/logout'
   end
 
   def archive

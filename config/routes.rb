@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     member do
       post 'checked_activities'
       get 'archive'
-      get 'end_session'
     end
   end
   resources :sections, only: [:index, :show] do
@@ -27,4 +26,6 @@ Rails.application.routes.draw do
   root to: 'static_pages#home'
 
   get '/login', to: 'sections#index'
+
+  get 'exit', to: 'sessions#end_session', as: :logout
 end
