@@ -108,7 +108,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to users_url
     assert_equal @user.reload.first_name, 'New'
     assert_equal @user.reload.last_name, 'Name'
-    assert_equal 'User was succesfully updated', flash[:notice]
+    assert_equal 'User was successfully updated', flash[:notice]
   end
 
   test 'should update the admin parameter for admin users' do
