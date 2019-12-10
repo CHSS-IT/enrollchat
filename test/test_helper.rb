@@ -24,6 +24,6 @@ class ActionDispatch::IntegrationTest
   end
 
   def logout
-    get '/logout'
+    get logout_path
   end
 end

@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   require 'csv'
 
-  before_action :retrieve_settings, :set_terms, :set_graduate_threshold, :set_undergraduate_threshold,:set_current_term, :set_term, :set_recent_comments
+  before_action :retrieve_settings, :set_terms, :set_graduate_threshold, :set_undergraduate_threshold,:set_current_term, :set_term, :set_recent_comments, :set_current_user
 
   def retrieve_settings
     @settings = Setting.first_or_create!(singleton_guard: 0)
@@ -69,7 +69,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= set_current_user
+    @current_user ||= get_current_user
     @current_user if defined?(@current_user)
   end
 
@@ -85,9 +85,9 @@ class ApplicationController < ActionController::Base
       if user
         if !user.active_session
           user.update_login_stats!(request)
-          user
+          @current_user = user
         else
-          user
+          @current_user = user
         end
       end
     end

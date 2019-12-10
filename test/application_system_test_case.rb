@@ -15,7 +15,7 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   end
 
   def logout
-    visit '/logout'
+    visit logout_path
   end
 
 end
