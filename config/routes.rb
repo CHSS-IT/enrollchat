@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get 'unregistered', to: 'static_pages#unregistered'
   get 'delete_term/:term', to: 'sections#delete_term'
 
-  #devise_for :users, :path_prefix => 'app'
   resources :users do
     member do
       post 'checked_activities'
