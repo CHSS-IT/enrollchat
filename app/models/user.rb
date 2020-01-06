@@ -1,7 +1,4 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :cas_authenticatable, :trackable
 
   enum status: { active: 0, archived: 1 }
 
@@ -50,5 +47,24 @@ class User < ApplicationRecord
 
   def show_alerts(department)
     departments.include?(department) || is_admin?
+  end
+
+  def update_login_stats!(request)
+    return if new_record?
+    old_current = self.current_sign_in_at
+    new_current = Time.now.utc
+    self.last_sign_in_at = old_current || new_current
+    self.current_sign_in_at = new_current
+
+    self.sign_in_count += 1
+
+    old_ip = self.current_sign_in_ip
+    new_ip = request.remote_ip
+    self.last_sign_in_ip = old_ip || new_ip
+    self.current_sign_in_ip = new_ip
+
+    self.active_session = true
+
+    self.save!(touch: false)
   end
 end

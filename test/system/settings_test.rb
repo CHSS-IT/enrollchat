@@ -2,8 +2,12 @@ require "application_system_test_case"
 
 class SettingsTest < ApplicationSystemTestCase
   setup do
-    login_as users(:one)
+    login_as(users(:one))
     @setting = settings(:one)
+  end
+
+  teardown do
+    logout
   end
 
   test "updating the undergraduate_enrollment_threshold setting" do

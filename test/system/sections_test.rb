@@ -2,7 +2,11 @@ require "application_system_test_case"
 
 class SectionsTest < ApplicationSystemTestCase
   setup do
-    login_as users(:one)
+    login_as(users(:one))
+  end
+
+  teardown do
+    logout
   end
 
   test 'visiting the index' do
@@ -23,13 +27,16 @@ class SectionsTest < ApplicationSystemTestCase
     assert_selector 'h1', text: 'Spring 2018 Sections'
   end
 
-  test 'displays the maximum term available when no current term setting exists.' do
+  test 'displays the maximum term available when no current term setting or cookie exists.' do
     @settings = settings(:one)
     @settings.update(current_term: nil)
     @section = sections(:one)
     @section.update(term: 202010)
+    Capybara.current_session.driver.browser.manage.delete_cookie 'term'
     visit sections_url
     assert_selector 'h1', text: 'Spring 2020 Sections'
+    @section.update(term: 201810)
+    Capybara.current_session.driver.browser.manage.delete_cookie 'term'
   end
 
   test 'filtering by department' do
@@ -66,6 +73,7 @@ class SectionsTest < ApplicationSystemTestCase
     assert_selector 'table tbody tr td', text: 'Criminal Justice'
     assert_selector 'table tbody tr td', text: 'Graduate - First'
     select('Graduate - Advanced', from: 'section_level')
+    sleep 2
     click_link('filter-submit')
     assert_selector 'table tbody tr', count: 1
     assert_selector 'table tbody tr td', text: 'SINT'
@@ -83,6 +91,7 @@ class SectionsTest < ApplicationSystemTestCase
     assert_selector 'table tbody tr td', text: 'MyString'
     assert_selector 'table tbody tr td', text: 'Undergraduate - Lower Division'
     select('Undergraduate - Upper Division', from: 'section_level')
+    sleep 2
     click_link('filter-submit')
     assert_selector 'table tbody tr', count: 1
     assert_selector 'table tbody tr td', text: 'ENGL'
@@ -99,6 +108,7 @@ class SectionsTest < ApplicationSystemTestCase
     assert_selector 'table tbody tr td', text: 'SINT'
     assert_selector 'table tbody tr td', text: 'ENGL'
     select('long-waitlist', from: 'section_flagged')
+    sleep 2
     click_link('filter-submit')
     assert_selector 'table tbody tr', count: 1
     assert_selector 'table tbody tr td', text: 'CRIM'
@@ -121,6 +131,7 @@ class SectionsTest < ApplicationSystemTestCase
     select('CRIM', from: 'section_department')
     click_link('filter-submit')
     assert_selector 'table tbody tr', count: 1
+    sleep 2
     click_link('Clear Filters')
     assert_selector 'table tbody tr', count: 4
   end
