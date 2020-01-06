@@ -9,8 +9,12 @@ module ApplicationCable
     protected
 
     def find_verfied_user
-      if current_user = env['warden'].user
-        current_user
+      if request.session['cas']
+        if current_user = User.find_by(username: request.session['cas']['user'].downcase)
+          current_user
+        else
+          reject_unauthorized_connection
+        end
       else
         reject_unauthorized_connection
       end

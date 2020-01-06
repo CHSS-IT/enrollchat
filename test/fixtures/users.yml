@@ -26,6 +26,7 @@ two:
     - 'PHIL'
   last_activity_check: <%= 1.day.ago %>
   status: 'active'
+  active_session: false
 
 three:
   email: 'testuser@email.com'

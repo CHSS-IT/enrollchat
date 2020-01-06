@@ -14,7 +14,7 @@ gem 'rails', '6.0.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1', '>= 1.1.4'
 # Use Puma as the app server
-gem 'puma', '~> 4.3.0'
+gem 'puma', '~> 4.3.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 6.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -46,12 +46,6 @@ gem 'bootstrap', '~> 4.3.1'
 # File uploads
 gem 'carrierwave', '~> 2.0', '>= 2.0.2'
 
-# Devise for authentication
-gem 'devise', '~> 4.7', '>= 4.7.1'
-
-# For using CAS authentication with Devise
-gem 'devise_cas_authenticatable', '~> 1.10', '>= 1.10.4'
-
 # carrierwave support for S3
 gem 'fog-aws', '~> 3.5', '>= 3.5.2'
 
@@ -64,8 +58,13 @@ gem 'jquery-ui-rails'
 gem 'net-sftp'
 # SSH for banner import
 gem 'net-ssh'
+
+# For authentication
+gem 'rack-cas', '~> 0.16.1'
+
 # simple reporting tools
 gem 'report_action', '~> 0.3.0'
+
 # For processing excel files
 gem 'roo', '~> 2.8', '>= 2.8.2'
 

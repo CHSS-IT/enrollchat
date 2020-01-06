@@ -28,5 +28,7 @@ module Enrollchat
     # remove after changing load_defaults to 6.0
     # Uncomment when ready to test out zeitwerk loader
     # config.autoloader = :zeitwerk
+
+    config.rack_cas.server_url = ENV['CAS_BASE_URL']
   end
 end

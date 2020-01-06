@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   require 'csv'
 
-  before_action :retrieve_settings, :set_terms, :set_graduate_threshold, :set_undergraduate_threshold,:set_current_term, :set_term, :set_recent_comments
+  before_action :retrieve_settings, :set_terms, :set_graduate_threshold, :set_undergraduate_threshold,:set_current_term, :set_term, :set_recent_comments, :set_current_user
 
   def retrieve_settings
     @settings = Setting.first_or_create!(singleton_guard: 0)
@@ -58,11 +58,48 @@ class ApplicationController < ActionController::Base
     @recent_unread_comments = Comment.recent_unread(current_user)
   end
 
+  helper_method :current_user
+
   private
 
   def ensure_admin!
     unless current_user.try(:admin?)
-      redirect_to sections_path, notice: 'You do not have access to this page'
+      redirect_to sections_path, notice: 'You do not have access to this page.'
+    end
+  end
+
+  def current_user
+    @current_user ||= get_current_user
+    @current_user if defined?(@current_user)
+  end
+
+  def get_current_user
+    if session['cas']
+      User.find_by_username(session['cas']['user'].downcase.strip)
+    end
+  end
+
+  def set_current_user
+    if session['cas']
+      user = get_current_user
+      if user
+        if !user.active_session
+          user.update_login_stats!(request)
+          @current_user = user
+        else
+          @current_user = user
+        end
+      end
+    end
+  end
+
+  def authenticate_user!
+    if session['cas'].nil?
+      render status: 401, plain: "Redirecting to login..."
+    elsif session['cas']
+      unless User.find_by_username(session['cas']['user'].downcase.strip)
+        redirect_to unregistered_path, notice: 'You are not registered to use this system.'
+      end
     end
   end
 end
