@@ -3,14 +3,6 @@ require "test_helper"
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   driven_by :selenium, using: :headless_chrome, screen_size: [1400,1050]
 
-<<<<<<< HEAD
-  include Warden::Test::Helpers
-  Warden.test_mode!
-
-  teardown do
-    Warden.test_reset!
-  end
-=======
   def login_as(user)
     visit test_login_path
     fill_in 'username', with: user.username
@@ -25,8 +17,6 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   def logout
     visit logout_path
   end
-
->>>>>>> master
 end
 
 module BootstrapSelectHelper
