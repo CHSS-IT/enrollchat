@@ -3,7 +3,7 @@
   <h1 class="display-4 font-weight-bold d-inline-block">EnrollChat</h1>
   <div class="card">
     <div class="card-body">
-      <span>Based on the information you provided, it appears you are not registered to use this system. To request access, please <%= link_to 'write the administrators', "mailto:#{ENV['ENROLLCHAT_ADMIN_EMAIL']}" %>.</span>
+      <span>Based on the information you provided, it appears you are not registered to use this system. You may <%= link_to 'try again', logout_url %> or to request access, please <%= link_to 'write the administrators', "mailto:#{ENV['ENROLLCHAT_ADMIN_EMAIL']}" %>.</span>
     </div>
   </div>
   <footer class="footer">

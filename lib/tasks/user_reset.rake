@@ -4,12 +4,12 @@ namespace :user_reset do
 
   task :active_session => :environment do
     closed_session_report = ReportAction::Report.new
-    subject = "User Active Sessions Closed"
+    subject = "EnrollChat User Active Sessions Closed"
     closed_session_report.report_item('User Active Sessions', 'Closed Sessions', 'The Active Session attribute for these users has been reset to false.')
     closed_count = 0
     users = User.all
     users.each do |user|
-      if user.active_session
+      if user.active_session == true
         user.active_session = false
         user.save!(touch: false)
         closed_count += 1
