@@ -14,8 +14,8 @@ module Enrollchat
     config.load_defaults 5.2
 
     # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically after loading
+    # Application configuration can go into files in config/initializers
+    # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
     config.before_configuration do
