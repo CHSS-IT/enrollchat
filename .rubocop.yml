@@ -15,11 +15,12 @@ Layout/SpaceAfterComma:
   Enabled: false
 Style/StringLiterals:
   Enabled: false
-Metrics/LineLength:
+Layout/LineLength:
   Max: 995
 
 Style/NumericLiterals:
   Exclude:
+    - 'test/controllers/settings_controller_test.rb'
     - 'test/models/section_test.rb'
     - 'test/models/setting_test.rb'
     - 'test/system/sections_test.rb'
@@ -31,6 +32,7 @@ Metrics/MethodLength:
     - 'app/controllers/users_controller.rb'
     - 'app/helpers/sections_helper.rb'
     - 'app/models/section.rb'
+    - 'app/models/user.rb'
     - 'app/workers/digest_worker.rb'
     - 'app/workers/report_worker.rb'
 Lint/AssignmentInCondition:
@@ -78,6 +80,7 @@ Style/NumericPredicate:
     - 'app/helpers/sections_helper.rb'
     - 'app/models/section.rb'
     - 'lib/tasks/import.rake'
+    - 'lib/tasks/user_reset.rake'
 Style/IfUnlessModifier:
   Exclude:
     - 'lib/tasks/weekly_reports.rake'
@@ -121,6 +124,7 @@ Metrics/ClassLength:
   Exclude:
     - 'app/models/section.rb'
     - 'test/models/section_test.rb'
+    - 'test/controllers/comments_controller_test.rb'
     - 'test/controllers/users_controller_test.rb'
     - 'test/system/sections_test.rb'
     - 'test/integration/import_reporting_emails_test.rb'
@@ -169,6 +173,7 @@ Rails/OutputSafety:
     - 'lib/tasks/scheduler.rake'
     - 'lib/tasks/backup_db.rake'
     - 'lib/tasks/import.rake'
+    - 'lib/tasks/user_reset.rake'
 Rails/Presence:
   Exclude:
     - 'app/workers/digest_worker.rb'
@@ -216,6 +221,7 @@ Style/Next:
     - 'app/workers/digest_worker.rb'
     - 'app/workers/report_worker.rb'
     - 'lib/tasks/import.rake'
+    - 'lib/tasks/user_reset.rake'
 Style/PercentLiteralDelimiters:
   Exclude:
     - 'app/uploaders/feed_uploader.rb'

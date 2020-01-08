@@ -69,11 +69,11 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= get_current_user
+    @current_user ||= retrieve_current_user
     @current_user if defined?(@current_user)
   end
 
-  def get_current_user
+  def retrieve_current_user
     if session['cas']
       User.find_by_username(session['cas']['user'].downcase.strip)
     end
@@ -81,7 +81,7 @@ class ApplicationController < ActionController::Base
 
   def set_current_user
     if session['cas']
-      user = get_current_user
+      user = retrieve_current_user
       if user
         if !user.active_session
           user.update_login_stats!(request)

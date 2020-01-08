@@ -107,7 +107,7 @@ class UserTest < ActiveSupport::TestCase
     old_updated_at = @user.updated_at
     request = Minitest::Mock.new
     request.expect :remote_ip, "127.0.0.1"
-    travel_to Time.zone.local(2019, 01, 15, 3, 0, 0) do
+    travel_to Time.zone.local(2019, 1, 15, 3, 0, 0) do
       @user.update_login_stats!(request)
       assert_equal @user.last_sign_in_at, "2018-10-15 01:00:00"
       assert_equal @user.current_sign_in_at, "2019-01-15 03:00:00"

@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class SessionsControllerTest < ActionDispatch::IntegrationTest
-
   setup do
     @user = users(:three)
     login_as(users(:three))
@@ -25,4 +24,3 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_equal @user.reload.updated_at, old_updated_at
   end
 end
-

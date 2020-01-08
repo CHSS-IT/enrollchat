@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   before_action :find_user, only: :end_session
 
   def end_session

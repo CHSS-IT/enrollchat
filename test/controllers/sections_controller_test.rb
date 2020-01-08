@@ -27,7 +27,7 @@ class SectionsControllerTest < ActionDispatch::IntegrationTest
     assert_equal @sections, [@section_one, @section_two, @section_three, @section_four, @section_five]
   end
 
-  test'should not GET index for an unregistered user' do
+  test 'should not GET index for an unregistered user' do
     unregistered_login
     get sections_url
     assert_redirected_to unregistered_path

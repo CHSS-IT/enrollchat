@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-
   enum status: { active: 0, archived: 1 }
 
   has_many :comments, -> { order 'created_at DESC' }
@@ -51,6 +50,7 @@ class User < ApplicationRecord
 
   def update_login_stats!(request)
     return if new_record?
+
     old_current = self.current_sign_in_at
     new_current = Time.now.utc
     self.last_sign_in_at = old_current || new_current
