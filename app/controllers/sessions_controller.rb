@@ -5,10 +5,8 @@ class SessionsController < ApplicationController
     if @user
       @user.active_session = false
       @user.save!(touch: false)
-      redirect_to '/logout'
-    else
-      redirect_to '/logout'
     end
+    redirect_to '/logout'
   end
 
   private

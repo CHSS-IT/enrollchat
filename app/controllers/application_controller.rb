@@ -75,7 +75,7 @@ class ApplicationController < ActionController::Base
 
   def retrieve_current_user
     if session['cas']
-      User.find_by_username(session['cas']['user'].downcase.strip)
+      User.find_by(username: session['cas']['user'].downcase.strip)
     end
   end
 
@@ -83,21 +83,20 @@ class ApplicationController < ActionController::Base
     if session['cas']
       user = retrieve_current_user
       if user
-        if !user.active_session
+        unless user.active_session
           user.update_login_stats!(request)
-          @current_user = user
-        else
-          @current_user = user
         end
+        @current_user = user
+        logger.debug("@current_user set to #{@current_user.username}") if @current_user.present?
       end
     end
   end
 
   def authenticate_user!
     if session['cas'].nil?
-      render status: 401, plain: "Redirecting to login..."
+      render status: :unauthorized, plain: "Redirecting to login..."
     elsif session['cas']
-      unless User.find_by_username(session['cas']['user'].downcase.strip)
+      unless User.find_by(username: session['cas']['user'].downcase.strip)
         redirect_to unregistered_path, notice: 'You are not registered to use this system.'
       end
     end
