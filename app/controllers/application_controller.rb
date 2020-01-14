@@ -87,7 +87,6 @@ class ApplicationController < ActionController::Base
           user.update_login_stats!(request)
         end
         @current_user = user
-        logger.debug("@current_user set to #{@current_user.username}") if @current_user.present?
       end
     end
   end
