@@ -17,9 +17,9 @@
 //= require DataTables/datatables.min
 //= require moment.min
 //= require datetime
-//= require rails-ujs
+// require rails-ujs
 //= require bootstrap-select.min
-//= require sections
-//= require users
-//= require reports
+// require sections
+// require users
+// require reports
 //= require cable
