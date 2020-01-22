@@ -11,7 +11,7 @@ Bundler.require(*Rails.groups)
 module Enrollchat
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.2
+    config.load_defaults 6.0
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
@@ -24,10 +24,6 @@ module Enrollchat
         ENV[key.to_s] = value
       end if File.exist?(env_file)
     end
-
-    # remove after changing load_defaults to 6.0
-    # Uncomment when ready to test out zeitwerk loader
-    config.autoloader = :zeitwerk
 
     config.rack_cas.server_url = ENV['CAS_BASE_URL']
   end
