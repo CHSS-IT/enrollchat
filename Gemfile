@@ -20,7 +20,7 @@ gem 'sass-rails', '~> 6.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '~> 4.2.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-# gem 'webpacker'
+gem 'webpacker', '~> 4.2', '>= 4.2.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -52,7 +52,7 @@ gem 'fog-aws', '~> 3.5', '>= 3.5.2'
 # font-awesome for iconography
 gem 'font-awesome-sass', '~> 5.11', '>= 5.11.2'
 
-gem 'jquery-rails'
+#gem 'jquery-rails'
 gem 'jquery-ui-rails'
 # SFTP for banner import
 gem 'net-sftp'
