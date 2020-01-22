@@ -1,15 +1,12 @@
 class SessionsController < ApplicationController
-
   before_action :find_user, only: :end_session
 
   def end_session
     if @user
       @user.active_session = false
       @user.save!(touch: false)
-      redirect_to '/logout'
-    else
-      redirect_to '/logout'
     end
+    redirect_to '/logout'
   end
 
   private

@@ -10,7 +10,7 @@ ruby "2.6.5"
 gem "rake"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.2.3'
+gem 'rails', '6.0.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1', '>= 1.1.4'
 # Use Puma as the app server
@@ -35,7 +35,7 @@ gem 'redis', '~> 4.1', '>= 4.1.3'
 
 # Alphabetize non-core gems
 
-gem 'airbrake', '~> 9.5'
+gem 'airbrake', '~> 9.5', '>= 9.5.5'
 
 # For file storage on S3
 gem 'aws-sdk', '~> 2'
@@ -75,16 +75,16 @@ gem 'smarter_csv'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rubocop-rails'
+  gem 'rubocop-rails', '~> 2.4', '>= 2.4.1'
 end
 
 group :development do
   # Shiny error messages
   gem "better_errors"
   gem "binding_of_caller"
-  gem 'brakeman', '~> 4.7', '>= 4.7.1', require: false
+  gem 'brakeman', '~> 4.7', '>= 4.7.2', require: false
   # N+1 finder
-  gem 'bullet', '~> 6.0', '>= 6.0.2'
+  gem 'bullet', '~> 6.1.0'
   gem 'listen', '~> 3.2'
   gem 'rack-mini-profiler', '~> 1.1', '>= 1.1.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -96,9 +96,9 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 3.29'
+  gem 'capybara', '~> 3.30.0'
   gem 'simplecov', '~> 0.17.1', require: false
-  gem 'webdrivers', '~> 4.1', '>= 4.1.3'
+  gem 'webdrivers', '~> 4.2.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

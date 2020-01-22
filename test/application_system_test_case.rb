@@ -17,7 +17,6 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   def logout
     visit logout_path
   end
-
 end
 
 module BootstrapSelectHelper
