@@ -10,7 +10,7 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-require("@rails/ujs").start()
+//require('@rails/ujs').start()
 require('packs/reports')
 require('packs/sections')
 require('packs/users')
