@@ -10,7 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-// require jquery-ui
+//= require jquery-ui
 //= require DataTables/datatables.min
 //= require moment.min
 //= require datetime
