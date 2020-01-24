@@ -10,12 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery-ui
-//= require popper
-//= require bootstrap
+// require jquery-ui
 //= require DataTables/datatables.min
 //= require moment.min
 //= require datetime
-//= require rails-ujs
-//= require bootstrap-select.min
 //= require cable

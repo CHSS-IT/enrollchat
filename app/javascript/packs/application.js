@@ -10,10 +10,14 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-//require('@rails/ujs').start()
-require('packs/reports')
-require('packs/sections')
-require('packs/users')
+require('@rails/ujs').start();
+require('packs/reports');
+require('packs/sections');
+require('packs/users');
+require('vendor/bootstrap-select.min');
+
+import 'bootstrap';
+require('stylesheets/application');
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -22,6 +26,7 @@ require('packs/users')
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-$(function () {
-    console.log('Hello World from Webpacker');
-});
+console.log('Hello World from Webpacker');
+
+
+
