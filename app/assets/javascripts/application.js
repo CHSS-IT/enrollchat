@@ -11,7 +11,10 @@
 // about supported directives.
 //
 //= require jquery-ui
+//= require popper
+//= require bootstrap
 //= require DataTables/datatables.min
 //= require moment.min
 //= require datetime
+//= require bootstrap-select.min
 //= require cable
