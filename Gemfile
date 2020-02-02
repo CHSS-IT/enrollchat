@@ -40,9 +40,6 @@ gem 'airbrake', '~> 9.5', '>= 9.5.5'
 # For file storage on S3
 gem 'aws-sdk', '~> 2'
 
-# Responsive layout with bootstrap 4
-gem 'bootstrap', '~> 4.4.1'
-
 # File uploads
 gem 'carrierwave', '~> 2.0', '>= 2.0.2'
 
