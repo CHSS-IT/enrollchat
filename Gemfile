@@ -49,7 +49,6 @@ gem 'fog-aws', '~> 3.5', '>= 3.5.2'
 # font-awesome for iconography
 gem 'font-awesome-sass', '~> 5.11', '>= 5.11.2'
 
-gem 'jquery-ui-rails'
 # SFTP for banner import
 gem 'net-sftp'
 # SSH for banner import

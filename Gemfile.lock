@@ -150,8 +150,6 @@ GEM
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
     jmespath (1.4.0)
-    jquery-ui-rails (6.0.1)
-      railties (>= 3.2.16)
     json (2.2.0)
     listen (3.2.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -332,7 +330,6 @@ DEPENDENCIES
   fog-aws (~> 3.5, >= 3.5.2)
   font-awesome-sass (~> 5.11, >= 5.11.2)
   jbuilder (~> 2.9, >= 2.9.1)
-  jquery-ui-rails
   listen (~> 3.2)
   net-sftp
   net-ssh
