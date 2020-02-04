@@ -13,4 +13,3 @@
 //= require DataTables/datatables.min
 //= require moment.min
 //= require datetime
-//= require cable
