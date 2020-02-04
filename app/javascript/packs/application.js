@@ -17,13 +17,13 @@ window.$ = window.jQuery = jQuery;
 
 require('bootstrap');
 require('stylesheets/application');
-
 require('@rails/ujs').start();
+require("channels");
 require('packs/reports');
 require('packs/sections');
 require('packs/users');
 require('vendor/bootstrap-select.min');
-
+require('jquery-ui-dist/jquery-ui');
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -33,6 +33,3 @@ require('vendor/bootstrap-select.min');
 // const imagePath = (name) => images(name, true)
 
 console.log('Hello World from Webpacker');
-
-
-
