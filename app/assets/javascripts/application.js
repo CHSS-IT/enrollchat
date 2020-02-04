@@ -10,6 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require DataTables/datatables.min
-//= require moment.min
-//= require datetime
+//= require DataTables/datatables.min.js
+//= require moment.min.js
+//= require datetime.js
