@@ -10,8 +10,7 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-var jQuery = require("jquery");
-// import jQuery from "jquery";
+import jQuery from "jquery"
 global.$ = global.jQuery = jQuery;
 window.$ = window.jQuery = jQuery;
 
