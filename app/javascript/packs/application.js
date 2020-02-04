@@ -10,14 +10,20 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
+var jQuery = require("jquery");
+// import jQuery from "jquery";
+global.$ = global.jQuery = jQuery;
+window.$ = window.jQuery = jQuery;
+
+require('bootstrap');
+require('stylesheets/application');
+
 require('@rails/ujs').start();
 require('packs/reports');
 require('packs/sections');
 require('packs/users');
 require('vendor/bootstrap-select.min');
 
-import 'bootstrap';
-require('stylesheets/application');
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
