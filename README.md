@@ -98,5 +98,5 @@ Additional variables can be added to accommodate different academic calender str
 The app uses Rails' built in testing mechanisms. System Tests are configured to inherit from Capybara and run Selenium with headless Chrome. Chromedriver is required to use this setup. The webdrivers gem is included to provide installation and support for chromedriver.
 
 To run tests: `bin/rails test`  
-To run system tests: `bin/rails test:system`
+To run system tests: `bin/rails test:system`  
 To run all tests: `bin/rails test:system test`
