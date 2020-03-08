@@ -52,7 +52,7 @@ gem 'net-sftp'
 gem 'net-ssh'
 
 # For authentication
-gem 'rack-cas', '~> 0.16.1'
+gem 'rack-cas', git: 'https://github.com/CraigJZ/rack-cas.git'
 
 # simple reporting tools
 gem 'report_action', '~> 0.3.0'
