@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/CraigJZ/rack-cas.git
-  revision: bdaa27a045264a3e5798bdd4c90ab8a36842004d
+  revision: b01b2962619d72bdab553a897fe2668c2f5b680a
   specs:
     rack-cas (0.16.1)
       addressable (~> 2.3)
