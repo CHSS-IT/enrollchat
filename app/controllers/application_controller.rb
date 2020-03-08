@@ -93,10 +93,8 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     if session['cas'].nil?
-      logger.debug('No session')
       render status: :unauthorized, plain: "Redirecting to login..."
     elsif session['cas']
-      logger.debug("#{session['cas']}")
       unless User.find_by(username: session['cas']['user'].downcase.strip)
         redirect_to unregistered_path, notice: 'You are not registered to use this system.'
       end
