@@ -32,7 +32,7 @@ gem 'redis', '~> 4.1', '>= 4.1.3'
 
 # Alphabetize non-core gems
 
-gem 'airbrake', '~> 9.5', '>= 9.5.5'
+gem 'airbrake', '~> 10.0', '>= 10.0.1'
 
 # For file storage on S3
 gem 'aws-sdk', '~> 2'
@@ -60,21 +60,21 @@ gem 'report_action', '~> 0.3.0'
 # For processing excel files
 gem 'roo', '~> 2.8', '>= 2.8.2'
 
-gem 'sidekiq', '~> 5.2', '>= 5.2.7'
+gem 'sidekiq', '~> 6.0', '>= 6.0.5'
 
 gem 'smarter_csv'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rubocop-rails', '~> 2.4', '>= 2.4.1'
+  gem 'byebug', '~> 11.1', '>= 11.1.1', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rubocop-rails', '~> 2.4', '>= 2.4.2'
 end
 
 group :development do
   # Shiny error messages
-  gem "better_errors"
+  gem 'better_errors', '~> 2.6'
   gem "binding_of_caller"
-  gem 'brakeman', '~> 4.7', '>= 4.7.2', require: false
+  gem 'brakeman', '~> 4.8', require: false
   # N+1 finder
   gem 'bullet', '~> 6.1.0'
   gem 'listen', '~> 3.2'
@@ -88,8 +88,8 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 3.30.0'
-  gem 'simplecov', '~> 0.17.1', require: false
+  gem 'capybara', '~> 3.31'
+  gem 'simplecov', '~> 0.18.5', require: false
   gem 'webdrivers', '~> 4.2.0'
 end
 
