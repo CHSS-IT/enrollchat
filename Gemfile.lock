@@ -1,12 +1,3 @@
-GIT
-  remote: https://github.com/CraigJZ/rack-cas.git
-  revision: b01b2962619d72bdab553a897fe2668c2f5b680a
-  specs:
-    rack-cas (0.16.1)
-      addressable (~> 2.3)
-      nokogiri (~> 1.5)
-      rack (>= 1.3)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -186,6 +177,10 @@ GEM
     puma (4.3.3)
       nio4r (~> 2.0)
     rack (2.0.8)
+    rack-cas (0.16.1)
+      addressable (~> 2.3)
+      nokogiri (~> 1.5)
+      rack (>= 1.3)
     rack-mini-profiler (1.1.3)
       rack (>= 1.2.0)
     rack-protection (2.0.8.1)
@@ -332,7 +327,7 @@ DEPENDENCIES
   net-ssh
   pg (~> 1.1, >= 1.1.4)
   puma (~> 4.3.3)
-  rack-cas!
+  rack-cas (~> 0.16.1)
   rack-mini-profiler (~> 1.1, >= 1.1.3)
   rails (= 6.0.2.1)
   rake
