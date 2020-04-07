@@ -1,17 +1,4 @@
 module SectionsHelper
-  def term_in_words(term)
-    year = term.to_s[0..3]
-    term = term.to_s[4..5]
-    case term
-    when '10'
-      "Spring #{year}"
-    when '40'
-      "Summer #{year}"
-    when '70'
-      "Fall #{year}"
-    end
-  end
-
   def flagged_icon(section)
     if section.flagged_as.present?
       icon_class =     case section.flagged_as
