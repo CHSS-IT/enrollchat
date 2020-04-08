@@ -8,9 +8,9 @@ Enrollchat was developed by the College of Humanities and Social Sciences at Geo
 
 ## Dependencies and Environment Variables
 
-* Ruby 2.6.5
+* Ruby 2.6.6
 * PostgreSQL for the database
-* Redis server (and RedisToGo)
+* Redis server (and Heroku Redis)
 
 The app presumes Heroku hosting and some development decisions reflect that presumption.
 
@@ -32,7 +32,7 @@ We are using CAS for logins:
 * CAS_BASE_URL
 
 For Redis:
-* REDISTOGO_URL
+* REDIS_URL
 
 For the rake-based feed, you will need to have a CSV file delivered to a location that you can access, such as a server you can reach via SFTP or an S3 bucket. The task is currently constructed to use an S3 bucket. This is dependent on these environmental variables:
 * ENROLLCHAT_REMOTE: The remote location's name or address. E.g. "myserver.myhost.edu" or "my_bucket"
@@ -59,7 +59,7 @@ We have a task for restoring the development database from production using Hero
 
 Heroku will need these add-ons:
 * Herokupostgres
-* Redis To Go
+* Heroku Redis
 * Heroku Scheduler (to schedule feed ingestion and removal of deleted terms)
 
 ## Getting Started Locally
