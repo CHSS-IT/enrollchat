@@ -76,7 +76,6 @@ class ApplicationController < ActionController::Base
   def retrieve_current_user
     if Rails.env.development? && ENV['CAS_VALUE'].present?
       session['cas'] = { ENV['CAS_KEY'] => ENV['CAS_VALUE'] }
-      logger.debug(session['cas']['user'])
     end
     if session['cas']
       User.find_by(username: session['cas']['user'].downcase.strip)
@@ -98,12 +97,10 @@ class ApplicationController < ActionController::Base
   def authenticate_user!
     if Rails.env.development? && ENV['CAS_VALUE'].present?
       session['cas'] = { ENV['CAS_KEY'] => ENV['CAS_VALUE'] }
-      logger.debug(session['cas'])
     end
     if session['cas'].nil?
       render status: :unauthorized, plain: "Redirecting to login..."
     elsif session['cas']
-      logger.debug(session['cas']['user'])
       unless User.find_by(username: session['cas']['user'].downcase.strip)
         redirect_to unregistered_path, notice: 'You are not registered to use this system.'
       end
