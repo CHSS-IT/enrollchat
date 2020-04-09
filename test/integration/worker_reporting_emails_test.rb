@@ -3,6 +3,7 @@ require 'sidekiq/testing'
 
 class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
   include ActionMailer::TestHelper
+  include ApplicationHelper
 
   setup do
     Rake::Task.clear
@@ -92,6 +93,7 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
   end
 
   test "EnrollChat Report email standard content" do
+    term = @settings.current_term
     travel_to Time.zone.local(2018, 11, 15, 1, 4, 44) do
       Rake::Task['weekly_reports:send_emails'].invoke
       Sidekiq::Worker.drain_all
@@ -101,6 +103,7 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
         assert_equal [ENV['ENROLLCHAT_ADMIN_EMAIL']], email.to
         assert_equal 'EnrollChat Report (Triggered in test)', email.subject
         assert email.body.to_s.include?("<h1>EnrollChat Weekly Report</h1>")
+        assert email.body.to_s.include?("<h3>Information for #{term_in_words(term)}</h3>")
         assert email.body.to_s.include?("<p>EnrollChat provides you with up-to-date enrollment information for the current enrollment term. Log in to gather information on each class, including whether there has been an increase or decrease in enrollment over the previous reporting period. Both the Dean's Office and you have access to this data and should use EnrollChat to regularly communicate about specific courses.<p>")
         assert email.body.to_s.include?("<h2>Sections With Comments</h2>")
       end

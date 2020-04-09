@@ -34,4 +34,17 @@ module ApplicationHelper
     html << '</span>'.html_safe
     html unless @current_term.to_i == @term.to_i
   end
+
+  def term_in_words(term)
+    year = term.to_s[0..3]
+    term = term.to_s[4..5]
+    case term
+    when '10'
+      "Spring #{year}"
+    when '40'
+      "Summer #{year}"
+    when '70'
+      "Fall #{year}"
+    end
+  end
 end
