@@ -74,6 +74,9 @@ class ApplicationController < ActionController::Base
   end
 
   def retrieve_current_user
+    if Rails.env.development? && ENV['CAS_VALUE'].present?
+      session['cas'] = { ENV['CAS_KEY'] => ENV['CAS_VALUE'] }
+    end
     if session['cas']
       User.find_by(username: session['cas']['user'].downcase.strip)
     end
@@ -92,6 +95,9 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user!
+    if Rails.env.development? && ENV['CAS_VALUE'].present?
+      session['cas'] = { ENV['CAS_KEY'] => ENV['CAS_VALUE'] }
+    end
     if session['cas'].nil?
       render status: :unauthorized, plain: "Redirecting to login..."
     elsif session['cas']
