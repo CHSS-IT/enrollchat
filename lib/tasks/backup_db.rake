@@ -4,7 +4,7 @@ namespace :backup_db do
   task :secondary => :environment do
     file_report = ReportAction::Report.new
 
-    if Time.zone.today.wday == 2
+    if Time.zone.today.wday == 4
       file_report.report_item("Secondary Backup","Backup Task Running","Secondary backup task called from #{Rails.env}.")
       if Rails.env.development?
         app_flag = "--app #{Rails.application.class.parent_name.downcase}"
