@@ -21,7 +21,7 @@ class SectionsController < ApplicationController
     @section.toggle!(:resolved_section)
     ActionCable.server.broadcast "room_channel",
                                  { section_id: @section.id,
-                                  checkmark: @section.resolved_section }
+                                   checkmark: @section.resolved_section }
     respond_to do |format|
       format.js { render layout: false }
     end

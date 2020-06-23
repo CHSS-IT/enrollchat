@@ -193,7 +193,7 @@ class Section < ApplicationRecord
     end
     ActionCable.server.broadcast 'room_channel',
                                  { message: "<a href='/sections' class='dropdown-item'>Registration data import complete. #{@new_sections} added. #{@updated_sections} updated. Refreshing browser to show changes.</a>",
-                                  trigger: 'Updated' }
+                                   trigger: 'Updated' }
     send_report if @import_report.has_messages?('Executing Import', 'Updated Sections')
   end
 
