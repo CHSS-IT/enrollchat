@@ -8,7 +8,7 @@ namespace :backup_db do
       file_report.report_item("Secondary Backup","Backup Task Running","Secondary backup task called from #{Rails.env}.")
       if Rails.env.development?
         app_flag = "--app #{Rails.application.class.parent_name.downcase}"
-        Bundler.with_clean_env do
+        Bundler.with_unbundled_env do
           file_report.report_item("Secondary Backup","Download Progress","Creating backup of production database.")
           system("heroku pg:backups:capture #{app_flag}")
           file_report.report_item("Secondary Backup","Download Progress","Downloading latest dump of database locally.")

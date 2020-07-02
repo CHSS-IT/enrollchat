@@ -1,7 +1,8 @@
 require: rubocop-rails
 
 AllCops:
-  TargetRubyVersion: 2.6.6
+  TargetRubyVersion: 2.7.1
+  NewCops: enable
   Exclude:
     - 'bin/**/*'
     - 'db/**/*'
@@ -251,4 +252,6 @@ Rails/HelperInstanceVariable:
   Exclude:
     - 'app/helpers/application_helper.rb'
     - 'app/helpers/reports_helper.rb'
+Rails/ContentTag:
+  Enabled: false
 
