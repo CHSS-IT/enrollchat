@@ -2,7 +2,7 @@ namespace :import do
   include Rake::DSL
 
   task :retrieve_files => :environment do
-    require 'aws-sdk'
+    require 'aws-sdk-s3'
 
     Rake::Task['alarm_clock:wakeup'].execute
 
@@ -61,7 +61,7 @@ namespace :import do
   end
 
   task :local_download => :environment do
-    require 'aws-sdk'
+    require 'aws-sdk-s3'
 
     s3 = Aws::S3::Resource.new(region: ENV["AWS_DEFAULT_REGION"])
     bucket = s3.bucket(ENV["ENROLLCHAT_REMOTE"])
