@@ -24,9 +24,8 @@ Both the manual upload and the feed are dependent on Amazon S3 file storage, man
 * AWS_DEFAULT_REGION
 
 Emails are dependent on SendGrid, which needs these environment variables:
+* SENDGRID_API_USER
 * SENDGRID_API_KEY
-* SENDGRID_USERNAME
-* SENDGRID_PASSWORD
 
 We are using CAS for logins:
 * CAS_BASE_URL
