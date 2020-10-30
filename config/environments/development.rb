@@ -32,8 +32,8 @@ Rails.application.configure do
   # config.active_storage.service = :local
 
   ActionMailer::Base.smtp_settings = {
-      :user_name => ENV["SENDGRID_USERNAME"],
-      :password => ENV["SENDGRID_PASSWORD"],
+      :user_name => ENV["SENDGRID_API_USER"],
+      :password => ENV["SENDGRID_API_KEY"],
       :domain => 'enrollchat.heroku.com',
       :address => 'smtp.sendgrid.net',
       :port => 587,
