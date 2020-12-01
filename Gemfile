@@ -60,7 +60,7 @@ gem 'report_action', '~> 0.3.0'
 # For processing excel files
 gem 'roo', '~> 2.8', '>= 2.8.3'
 
-gem 'sidekiq', '~> 6.0', '>= 6.0.7'
+gem 'sidekiq', '~> 6.1'
 
 gem 'smarter_csv'
 
