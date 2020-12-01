@@ -67,7 +67,7 @@ gem 'smarter_csv'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', '~> 11.1', '>= 11.1.3', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rubocop-rails', '~> 2.6'
+  gem 'rubocop-rails', '~> 2.8'
 end
 
 group :development do
