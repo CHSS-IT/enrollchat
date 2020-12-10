@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@rails/actioncable": "^6.0.3-4",
+    "@rails/actioncable": "^6.1.0",
     "@rails/ujs": "^6.0.3-4",
     "@rails/webpacker": "^5.2.1",
     "bootstrap": "^4.5.3",
