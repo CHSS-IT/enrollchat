@@ -41,7 +41,7 @@ gem 'aws-sdk-s3', '~> 1.86'
 gem 'carrierwave', '~> 2.1'
 
 # carrierwave support for S3
-gem 'fog-aws', '~> 3.6', '>= 3.6.6'
+gem 'fog-aws', '~> 3.7'
 
 # font-awesome for iconography
 gem 'font-awesome-sass', '~> 5.15'
