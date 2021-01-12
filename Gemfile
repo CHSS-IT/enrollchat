@@ -35,7 +35,7 @@ gem 'redis', '~> 4.2'
 gem 'airbrake', '~> 11.0'
 
 # For file storage on S3
-gem 'aws-sdk-s3', '~> 1.86'
+gem 'aws-sdk-s3', '~> 1.87'
 
 # File uploads
 gem 'carrierwave', '~> 2.1'
@@ -77,8 +77,8 @@ group :development do
   gem 'brakeman', '~> 4.10', require: false
   # N+1 finder
   gem 'bullet', '~> 6.1.2'
-  gem 'listen', '~> 3.3'
-  gem 'rack-mini-profiler', '~> 2.2'
+  gem 'listen', '~> 3.4'
+  gem 'rack-mini-profiler', '~> 2.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -89,8 +89,8 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.34'
-  gem 'simplecov', '~> 0.20.0', require: false
-  gem 'webdrivers', '~> 4.4', '>= 4.4.1'
+  gem 'simplecov', '~> 0.21.2', require: false
+  gem 'webdrivers', '~> 4.4'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
