@@ -77,7 +77,7 @@ group :development do
   gem 'brakeman', '~> 4.10', require: false
   # N+1 finder
   gem 'bullet', '~> 6.1.2'
-  gem 'listen', '~> 3.3'
+  gem 'listen', '~> 3.4'
   gem 'rack-mini-profiler', '~> 2.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
