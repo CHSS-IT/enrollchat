@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV['ENROLLCHAT_ADMIN_EMAIL']
+  default from: Rails.env.test? ? 'test@example.com' : ENV['ENROLLCHAT_ADMIN_EMAIL']
   layout 'mailer'
 
   private
