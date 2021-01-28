@@ -55,7 +55,7 @@ gem 'net-ssh', '~> 6.1'
 gem 'rack-cas', '~> 0.16.1'
 
 # simple reporting tools
-gem 'report_action', '~> 0.3.0'
+gem 'report_action', '~> 0.3.1'
 
 # For processing excel files
 gem 'roo', '~> 2.8', '>= 2.8.3'
