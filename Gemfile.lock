@@ -228,7 +228,7 @@ GEM
     rbtree3 (0.6.0)
     redis (4.2.5)
     regexp_parser (2.0.3)
-    report_action (0.3.0)
+    report_action (0.3.1)
     rexml (3.2.4)
     roo (2.8.3)
       nokogiri (~> 1)
@@ -344,7 +344,7 @@ DEPENDENCIES
   rails (= 6.0.3.4)
   rake
   redis (~> 4.2)
-  report_action (~> 0.3.0)
+  report_action (~> 0.3.1)
   roo (~> 2.8, >= 2.8.3)
   rubocop-rails (~> 2.9)
   sass-rails (~> 6.0)
