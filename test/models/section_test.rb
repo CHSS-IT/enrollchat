@@ -304,4 +304,8 @@ class SectionTest < ActiveSupport::TestCase
     assert_not_nil @section_four.reload.delete_at
     assert_not_nil @section_five.reload.delete_at
   end
+
+  test 'returns sections by selected level for filtering' do
+    assert_equal @sections.selected_level('ugf'), [@section_two, @section_five]
+  end
 end

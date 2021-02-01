@@ -267,4 +267,8 @@ class Section < ApplicationRecord
       Section.in_term(term).update_all(delete_at: Time.now.next_month)
     end
   end
+
+  def self.selected_level(level)
+    all.select { |section| section.level.downcase == level.downcase }
+  end
 end

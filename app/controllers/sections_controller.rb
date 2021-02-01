@@ -58,8 +58,10 @@ class SectionsController < ApplicationController
       end
 
       unless params[:section][:level].blank?
-        @section_level = params[:section][:level] if Section.level_code_list.include?(params[:section][:level])
-        @sections = @sections.send(@section_level) if @section_level.present?
+        @section_level = params[:section][:level]
+        if Section.level_code_list.include?(params[:section][:level])
+          @sections = @sections.selected_level(@section_level) if @section_level.present?
+        end
       end
 
       unless params[:section][:flagged].blank?
