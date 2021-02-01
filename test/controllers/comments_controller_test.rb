@@ -2,6 +2,7 @@ require 'test_helper'
 
 class CommentsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    @setting = settings(:one)
     @section = sections(:one)
     @comment = comments(:one)
     @user = users(:two)

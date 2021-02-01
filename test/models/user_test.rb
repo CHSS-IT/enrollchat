@@ -2,6 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   setup do
+    @setting = settings(:one)
     @admin = users(:one)
     @user = users(:two)
   end

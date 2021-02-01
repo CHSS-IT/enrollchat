@@ -2,6 +2,7 @@ require 'test_helper'
 
 class EnrollmentTest < ActiveSupport::TestCase
   setup do
+    @setting = settings(:one)
     @enrollment_one = enrollments(:one)
     @enrollment_two = enrollments(:two)
     @enrollment_three = enrollments(:three)

@@ -2,6 +2,7 @@ require 'test_helper'
 
 class CommentTest < ActiveSupport::TestCase
   setup do
+    @setting = settings(:one)
     @comment = comments(:one)
   end
 

@@ -2,6 +2,7 @@ require 'test_helper'
 
 class SectionsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    @setting = settings(:one)
     @section_one = sections(:one)
     @section_two = sections(:two)
     @section_three = sections(:three)
