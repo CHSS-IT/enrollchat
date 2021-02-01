@@ -30,7 +30,7 @@ class Setting < ApplicationRecord
 
   # End Rails Singleton Model
 
-  validates :current_term, format: { with: /\d{6}/, message: 'must be blank or have exactly six numbers' }, allow_blank: true
+  validates :current_term, format: { with: /\A\d{6}\z/, message: 'must be blank or have exactly six numbers' }, allow_blank: true
   validates :graduate_enrollment_threshold, :undergraduate_enrollment_threshold, presence: true
   validates :email_delivery, presence: true
 
