@@ -2,7 +2,6 @@ require 'test_helper'
 
 class SectionTest < ActiveSupport::TestCase
   setup do
-    @setting = settings(:one)
     @section = sections(:one)
     @section_two = sections(:two)
     @section_three = sections(:three)

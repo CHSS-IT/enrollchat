@@ -1,10 +1,6 @@
 require 'test_helper'
 
 class ReportsControllerTest < ActionDispatch::IntegrationTest
-  setup do
-    @setting = settings(:one)
-  end
-
   test 'should GET index' do
     login_as(users(:two))
     get reports_url
