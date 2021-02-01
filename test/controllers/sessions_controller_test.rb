@@ -22,6 +22,6 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     @user.update(active_session: true)
     old_updated_at = @user.updated_at
     get logout_url
-    assert_equal @user.reload.updated_at, old_updated_at
+    assert_in_delta @user.reload.updated_at, old_updated_at, 1.second
   end
 end
