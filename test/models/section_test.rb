@@ -283,8 +283,8 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'determines terms to delete based on their age' do
-    @section.update(term: "#{Time.zone.now.year-2}10".to_i)
-    @section_two.update(term: "#{Time.zone.now.year-2}70".to_i)
+    @section.update(term: "#{Time.zone.now.year - 2}10".to_i)
+    @section_two.update(term: "#{Time.zone.now.year - 2}70".to_i)
     @section_three.update(term: 201410)
     @section_four.update(term: 201540)
     @section_five.update(term: 201370)
@@ -292,8 +292,8 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'sets delete_at for terms that should be removed based on their age' do
-    @section.update(term: "#{Time.zone.now.year-2}10".to_i)
-    @section_two.update(term: "#{Time.zone.now.year-2}70".to_i)
+    @section.update(term: "#{Time.zone.now.year - 2}10".to_i)
+    @section_two.update(term: "#{Time.zone.now.year - 2}70".to_i)
     @section_three.update(term: 201410)
     @section_four.update(term: 201540)
     @section_five.update(term: 201370)

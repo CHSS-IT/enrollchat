@@ -19,12 +19,6 @@ Style/StringLiterals:
 Layout/LineLength:
   Max: 995
 
-Style/NumericLiterals:
-  Exclude:
-    - 'test/controllers/settings_controller_test.rb'
-    - 'test/models/section_test.rb'
-    - 'test/models/setting_test.rb'
-    - 'test/system/sections_test.rb'
 Metrics/MethodLength:
   Exclude:
     - 'app/controllers/application_controller.rb'
@@ -54,55 +48,6 @@ Metrics/AbcSize:
     - 'app/workers/report_worker.rb'
     - 'lib/delivery_windows.rb'
     - 'lib/tasks/fake_a_history.rake'
-Style/ClassAndModuleChildren:
-  Exclude:
-    - 'test/test_helper.rb'
-Style/EmptyMethod:
-  Exclude:
-    - 'app/controllers/comments_controller.rb'
-    - 'app/controllers/settings_controller.rb'
-    - 'app/controllers/users_controller.rb'
-Style/SymbolArray:
-  Exclude:
-    - 'Gemfile'
-    - 'app/controllers/comments_controller.rb'
-    - 'app/controllers/sections_controller.rb'
-    - 'app/controllers/users_controller.rb'
-Style/SymbolProc:
-  Exclude:
-    - 'app/models/section.rb'
-    - 'app/controllers/reports_controller.rb'
-    - 'lib/tasks/scheduler.rake'
-Style/ZeroLengthPredicate:
-  Exclude:
-    - 'app/models/section.rb'
-Style/NumericPredicate:
-  Exclude:
-    - 'app/helpers/sections_helper.rb'
-    - 'app/models/section.rb'
-    - 'lib/tasks/import.rake'
-    - 'lib/tasks/user_reset.rake'
-Style/IfUnlessModifier:
-  Exclude:
-    - 'lib/tasks/weekly_reports.rake'
-    - 'lib/tasks/daily_digests.rake'
-    - 'app/workers/digest_worker.rb'
-    - 'app/models/section.rb'
-    - 'app/helpers/sections_helper.rb'
-    - 'app/helpers/application_helper.rb'
-    - 'app/controllers/sections_controller.rb'
-    - 'app/controllers/application_controller.rb'
-    - 'app/channels/department_channel.rb'
-Style/StringLiteralsInInterpolation:
-  Exclude:
-    - 'lib/tasks/import_management.rake'
-    - 'test/helpers/reports_helper_test.rb'
-Style/RedundantBegin:
-  Exclude:
-  - 'app/models/setting.rb'
-Style/MissingRespondToMissing:
-  Exclude:
-  - 'app/models/setting.rb'
 Lint/UnusedMethodArgument:
   Exclude:
     - 'app/uploaders/feed_uploader.rb'
@@ -193,6 +138,77 @@ Rails/TimeZone:
     - 'app/models/section.rb'
     - 'app/models/user.rb'
     - 'test/models/section_test.rb'
+Rails/HelperInstanceVariable:
+  Exclude:
+    - 'app/helpers/application_helper.rb'
+    - 'app/helpers/reports_helper.rb'
+Rails/ContentTag:
+  Enabled: false
+Rails/WhereNot:
+  Exclude:
+    - 'app/models/section.rb'
+Rails/WhereEquals:
+  Exclude:
+    - 'app/models/section.rb'
+    - 'app/models/comment.rb'
+Security/Open:
+  Exclude:
+    - 'app/models/section.rb'
+Style/NumericLiterals:
+  Exclude:
+    - 'test/controllers/settings_controller_test.rb'
+    - 'test/models/section_test.rb'
+    - 'test/models/setting_test.rb'
+    - 'test/system/sections_test.rb'
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'test/test_helper.rb'
+Style/EmptyMethod:
+  Exclude:
+    - 'app/controllers/comments_controller.rb'
+    - 'app/controllers/settings_controller.rb'
+    - 'app/controllers/users_controller.rb'
+Style/SymbolArray:
+  Exclude:
+    - 'Gemfile'
+    - 'app/controllers/comments_controller.rb'
+    - 'app/controllers/sections_controller.rb'
+    - 'app/controllers/users_controller.rb'
+Style/SymbolProc:
+  Exclude:
+    - 'app/models/section.rb'
+    - 'app/controllers/reports_controller.rb'
+    - 'lib/tasks/scheduler.rake'
+Style/ZeroLengthPredicate:
+  Exclude:
+    - 'app/models/section.rb'
+Style/NumericPredicate:
+  Exclude:
+    - 'app/helpers/sections_helper.rb'
+    - 'app/models/section.rb'
+    - 'lib/tasks/import.rake'
+    - 'lib/tasks/user_reset.rake'
+Style/IfUnlessModifier:
+  Exclude:
+    - 'lib/tasks/weekly_reports.rake'
+    - 'lib/tasks/daily_digests.rake'
+    - 'app/workers/digest_worker.rb'
+    - 'app/models/section.rb'
+    - 'app/helpers/sections_helper.rb'
+    - 'app/helpers/application_helper.rb'
+    - 'app/controllers/sections_controller.rb'
+    - 'app/controllers/application_controller.rb'
+    - 'app/channels/department_channel.rb'
+Style/StringLiteralsInInterpolation:
+  Exclude:
+    - 'lib/tasks/import_management.rake'
+    - 'test/helpers/reports_helper_test.rb'
+Style/RedundantBegin:
+  Exclude:
+    - 'app/models/setting.rb'
+Style/MissingRespondToMissing:
+  Exclude:
+    - 'app/models/setting.rb'
 Style/ConditionalAssignment:
   Exclude:
     - 'app/controllers/application_controller.rb'
@@ -248,10 +264,28 @@ Style/UnlessElse:
 Style/TernaryParentheses:
   Exclude:
     - 'app/models/section.rb'
-Rails/HelperInstanceVariable:
+Style/SoleNestedConditional:
+  Exclude:
+    - 'lib/tasks/weekly_reports.rake'
+    - 'lib/tasks/daily_digests.rake'
+    - 'app/models/section.rb'
+Style/CombinableLoops:
+  Exclude:
+    - 'lib/tasks/import.rake'
+Style/RedundantAssignment:
+  Exclude:
+    - 'lib/tasks/fake_a_history.rake'
+Style/StringConcatenation:
+  Exclude:
+    - 'app/workers/digest_worker.rb'
+    - 'app/helpers/sections_helper.rb'
+    - 'app/controllers/comments_controller.rb'
+Style/HashLikeCase:
+  Exclude:
+    - 'app/helpers/sections_helper.rb'
+Style/NegatedIfElseCondition:
   Exclude:
     - 'app/helpers/application_helper.rb'
-    - 'app/helpers/reports_helper.rb'
-Rails/ContentTag:
-  Enabled: false
-
+Style/CaseLikeIf:
+  Exclude:
+    - 'app/controllers/sections_controller.rb'
