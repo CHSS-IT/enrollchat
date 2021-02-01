@@ -8,6 +8,9 @@ AllCops:
     - 'db/**/*'
     - 'config/**/*'
     - 'node_modules/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - '.git/**/*'
 Style/FrozenStringLiteralComment:
   Enabled: false
 Style/Documentation:
