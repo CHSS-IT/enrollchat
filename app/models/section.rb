@@ -1,8 +1,8 @@
 class Section < ApplicationRecord
   require 'roo'
 
-  cattr_accessor :graduate_enrollment_threshold, default: Setting.first.graduate_enrollment_threshold
-  cattr_accessor :undergraduate_enrollment_threshold, default: Setting.first.undergraduate_enrollment_threshold
+  cattr_accessor :graduate_enrollment_threshold
+  cattr_accessor :undergraduate_enrollment_threshold
 
   has_many :comments, -> { order(created_at: :desc) }, dependent: :destroy
   has_many :enrollments, -> { order(:created_at) }, dependent: :destroy
@@ -25,6 +25,7 @@ class Section < ApplicationRecord
   scope :graduate_level, -> { where("lower(level) like 'ug%'") }
   scope :undergraduate_level, -> { where("lower(level) like 'uu%'") }
   scope :with_status, -> { where("status is not null and status <> ' '") }
+  scope :in_level, ->(level) { where("lower(level) = ?", level.downcase) }
 
   scope :marked_for_deletion, -> { unscoped.where("delete_at is not null") }
   scope :delete_now, -> { unscoped.where("delete_at is not null AND delete_at < ?", DateTime.now()) }
@@ -266,9 +267,5 @@ class Section < ApplicationRecord
     self.terms_to_delete.each do |term|
       Section.in_term(term).update_all(delete_at: Time.now.next_month)
     end
-  end
-
-  def self.selected_level(level)
-    all.select { |section| section.level.downcase == level.downcase }
   end
 end

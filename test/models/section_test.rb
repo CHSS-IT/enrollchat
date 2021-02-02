@@ -130,6 +130,11 @@ class SectionTest < ActiveSupport::TestCase
     assert_equal @sections.graduate_level.over_enrolled, [@section_two]
   end
 
+  test 'in_level scope should return sections in the provided level' do
+    level = 'ugf'
+    assert_equal @sections.in_level(level), [@section_two, @section_five]
+  end
+
   # import
   test 'import updates attributes for the first existing section' do
     assert_equal @section.actual_enrollment, 22
@@ -303,9 +308,5 @@ class SectionTest < ActiveSupport::TestCase
     assert_not_nil @section_three.reload.delete_at
     assert_not_nil @section_four.reload.delete_at
     assert_not_nil @section_five.reload.delete_at
-  end
-
-  test 'returns sections by selected level for filtering' do
-    assert_equal @sections.selected_level('ugf'), [@section_two, @section_five]
   end
 end

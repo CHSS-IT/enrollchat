@@ -114,7 +114,7 @@ class SectionsTest < ApplicationSystemTestCase
     assert_selector 'table tbody tr td', text: 'CRIM'
   end
 
-  test 'applying multiple filters' do
+  test 'applying flagged and department filters' do
     visit sections_url
     assert_selector 'table tbody tr', count: 4
     select('under-enrolled', from: 'section_flagged')
@@ -123,6 +123,19 @@ class SectionsTest < ApplicationSystemTestCase
     assert_selector 'table tbody tr', count: 1
     assert_selector 'table tbody tr td', text: 'ENGL'
     assert_selector 'table tbody tr td', text: '11'
+  end
+
+  test 'applying level and flagged filters' do
+    visit sections_url
+    assert_selector 'table tbody tr', count: 4
+    select('Graduate - Advanced', from: 'section_level')
+    select('under-enrolled', from: 'section_flagged')
+    sleep 2
+    click_link('filter-submit')
+    assert_selector 'table tbody tr', count: 1
+    assert_selector 'table tbody tr td', text: 'SINT'
+    assert_selector 'table tbody tr td', text: 'Experiential Learning'
+    assert_selector 'table tbody tr td', text: 'Graduate - Advanced'
   end
 
   test 'clearing filters' do
