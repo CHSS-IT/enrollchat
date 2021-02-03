@@ -37,6 +37,7 @@ lib/seeds/.DS_Store
 /.elasticbeanstalk
 
 coverage
+output.html
 
 /public/packs
 /public/packs-test

@@ -130,6 +130,11 @@ class SectionTest < ActiveSupport::TestCase
     assert_equal @sections.graduate_level.over_enrolled, [@section_two]
   end
 
+  test 'in_level scope should return sections in the provided level' do
+    level = 'ugf'
+    assert_equal @sections.in_level(level), [@section_two, @section_five]
+  end
+
   # import
   test 'import updates attributes for the first existing section' do
     assert_equal @section.actual_enrollment, 22
@@ -283,8 +288,8 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'determines terms to delete based on their age' do
-    @section.update(term: "#{Time.zone.now.year-2}10".to_i)
-    @section_two.update(term: "#{Time.zone.now.year-2}70".to_i)
+    @section.update(term: "#{Time.zone.now.year - 2}10".to_i)
+    @section_two.update(term: "#{Time.zone.now.year - 2}70".to_i)
     @section_three.update(term: 201410)
     @section_four.update(term: 201540)
     @section_five.update(term: 201370)
@@ -292,8 +297,8 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'sets delete_at for terms that should be removed based on their age' do
-    @section.update(term: "#{Time.zone.now.year-2}10".to_i)
-    @section_two.update(term: "#{Time.zone.now.year-2}70".to_i)
+    @section.update(term: "#{Time.zone.now.year - 2}10".to_i)
+    @section_two.update(term: "#{Time.zone.now.year - 2}70".to_i)
     @section_three.update(term: 201410)
     @section_four.update(term: 201540)
     @section_five.update(term: 201370)

@@ -11,7 +11,7 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   end
 
   def test_login_path
-    ENV['TEST_LOGIN_PATH']
+    '/fake_cas_login'
   end
 
   def logout

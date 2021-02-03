@@ -1,0 +1,81 @@
+name: test_suite
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '*.md'
+      - 'bin/*'
+  pull_request:
+    branches:
+      - master
+    paths-ignore:
+      - '*.md'
+      - 'bin/*'
+
+jobs:
+  test_suite:
+
+    runs-on: ubuntu-latest
+
+    services:
+      db:
+        image: postgres:12.3
+        env:
+          POSTGRES_PASSWORD: password
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Install PostgreSQL client
+        run: |
+          sudo apt-get -yqq install libpq-dev
+      - name: Build App
+        env:
+          POSTGRES_HOST: localhost
+          DATABASE_HOST: localhost
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: password
+          POSTGRES_HOST_AUTH_METHOD: trust
+          POSTGRES_PORT: 5432
+        run: |
+          yarn
+          bundle exec rake db:create
+          bundle exec rake db:schema:load
+          bundle exec rails webpacker:compile
+      - name: Run test suite
+        env:
+          POSTGRES_HOST: localhost
+          DATABASE_HOST: localhost
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: password
+          POSTGRES_HOST_AUTH_METHOD: trust
+          POSTGRES_PORT: 5432
+          PGHOST: localhost
+          PGUSER: postgres
+          ENROLLCHAT_HOST: ${{ secrets.ENROLLCHAT_HOST }}
+          ENROLLCHAT_ADMIN_EMAIL: ${{ secrets.ENROLLCHAT_ADMIN_EMAIL }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          ENROLLMENT_FILE_NAME: ${{ secrets.ENROLLMENT_FILE_NAME }}
+          ENROLLCHAT_REMOTE: ${{ secrets.ENROLLCHAT_REMOTE }}
+          TERM_ONE_START: ${{ secrets.TERM_ONE_START }}
+          TERM_ONE_END: ${{ secrets.TERM_ONE_END }}
+          TERM_TWO_START: ${{ secrets.TERM_TWO_START }}
+          TERM_TWO_END: ${{ secrets.TERM_TWO_END }}
+          RAILS_ENV: test
+        run: |
+          bin/rails test:system test
