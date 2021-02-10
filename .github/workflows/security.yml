@@ -3,13 +3,13 @@ name: brakeman
 on:
   push:
     branches:
-      - master
+      - main
     paths-ignore:
       - '*.md'
       - 'bin/*'
   pull_request:
     branches:
-      - master
+      - main
     paths-ignore:
       - '*.md'
       - 'bin/*'
