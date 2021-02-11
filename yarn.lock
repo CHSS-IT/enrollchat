@@ -920,10 +920,10 @@
   dependencies:
     mkdirp "^1.0.4"
 
-"@rails/actioncable@6.0.3-5":
-  version "6.0.3-5"
-  resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-6.0.3-5.tgz#1087e27d3e5b680cef2677f5d3203f4923c6e782"
-  integrity sha512-OVUWnnk/WkarX2xiyZ2IW544wZJE+yv9brkszRE0T9FgqpNVkYH9H5uOu1rYx6jrWPAsSC+jszGAx8XpUadang==
+"@rails/actioncable@6.1.2":
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-6.1.2.tgz#c2eb025afd3f97d2328aef5c647c1b44dcecb83c"
+  integrity sha512-KGl8Vd5MWAIE6X/QVr36y5LLkqNRgt8frflIUkuMm/zB/+vnL6vO8jXQgSzpmPHZ7+j7fJv4JmfL1jofKUDFdw==
 
 "@rails/ujs@^6.1.1":
   version "6.1.1"
