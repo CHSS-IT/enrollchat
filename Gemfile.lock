@@ -267,7 +267,7 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (2.3.0)
-    sidekiq (6.1.3)
+    sidekiq (6.2.0)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
@@ -350,7 +350,7 @@ DEPENDENCIES
   roo (~> 2.8, >= 2.8.3)
   rubocop-rails (~> 2.9)
   sass-rails (~> 6.0)
-  sidekiq (~> 6.1)
+  sidekiq (~> 6.2)
   simplecov (~> 0.21.2)
   smarter_csv
   spring
