@@ -7,7 +7,7 @@ namespace :backup_db do
     if Time.zone.today.wday == 4
       file_report.report_item("Secondary Backup","Backup Task Running","Secondary backup task called from #{Rails.env}.")
       if Rails.env.development?
-        app_flag = "--app #{Rails.application.class.parent_name.downcase}"
+        app_flag = "--app #{Rails.application.class.module_parent_name.downcase}"
         Bundler.with_unbundled_env do
           file_report.report_item("Secondary Backup","Download Progress","Creating backup of production database.")
           system("heroku pg:backups:capture #{app_flag}")
