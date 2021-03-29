@@ -35,7 +35,7 @@ gem 'redis', '~> 4.2'
 gem 'airbrake', '~> 11.0'
 
 # For file storage on S3
-gem 'aws-sdk-s3', '~> 1.92'
+gem 'aws-sdk-s3', '~> 1.93'
 
 # File uploads
 gem 'carrierwave', git: 'https://github.com/carrierwaveuploader/carrierwave.git'
