@@ -10,7 +10,7 @@ ruby "2.7.2"
 gem "rake"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '6.1.3'
+gem 'rails', '6.1.3.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.2', '>= 1.2.3'
 # Use Puma as the app server
@@ -38,7 +38,7 @@ gem 'airbrake', '~> 11.0'
 gem 'aws-sdk-s3', '~> 1.92'
 
 # File uploads
-gem 'carrierwave', '~> 2.2'
+gem 'carrierwave', git: 'https://github.com/carrierwaveuploader/carrierwave.git'
 
 # carrierwave support for S3
 gem 'fog-aws', '~> 3.10'
