@@ -1,8 +1,8 @@
 class Section < ApplicationRecord
   require 'roo'
 
-  cattr_accessor :graduate_enrollment_threshold
-  cattr_accessor :undergraduate_enrollment_threshold
+  cattr_accessor :graduate_enrollment_threshold, default: Setting.first.graduate_enrollment_threshold
+  cattr_accessor :undergraduate_enrollment_threshold, default: Setting.first.undergraduate_enrollment_threshold
 
   has_many :comments, -> { order(created_at: :desc) }, dependent: :destroy
   has_many :enrollments, -> { order(:created_at) }, dependent: :destroy
