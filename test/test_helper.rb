@@ -10,8 +10,19 @@ require 'minitest/autorun'
 Capybara.server = :puma, { Silent: true }
 
 class ActiveSupport::TestCase
+  parallelize_setup do |worker|
+    Setting.create!(current_term: 201810,
+    singleton_guard: 0,
+    undergraduate_enrollment_threshold: 12,
+    graduate_enrollment_threshold: 10,
+    email_delivery: 'scheduled')
+  end
+
+  parallelize_teardown do |worker|
+    Setting.first.destroy
+  end
   # Run tests in parallel with specified workers
-  # parallelize(workers: :number_of_processors)
+  parallelize(workers: :number_of_processors)
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 end
