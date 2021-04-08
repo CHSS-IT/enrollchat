@@ -163,6 +163,7 @@ Style/NumericLiterals:
     - 'test/models/section_test.rb'
     - 'test/models/setting_test.rb'
     - 'test/system/sections_test.rb'
+    - 'test/test_helper.rb'
 Style/ClassAndModuleChildren:
   Exclude:
     - 'test/test_helper.rb'
