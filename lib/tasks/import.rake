@@ -43,7 +43,7 @@ namespace :import do
           else
             file_report.report_item('Import', 'Download', "File not stored to uploader since this was called from #{Rails.env}.")
             file_report.report_item('Import', 'Download', "File not moved to backup since this was called from #{Rails.env}.")
-            File.delete("#{Rails.root}/tmp/#{new_name}") if File.exists?("#{Rails.root}/tmp/#{new_name}")
+            File.delete("#{Rails.root}/tmp/#{new_name}") if File.exist?("#{Rails.root}/tmp/#{new_name}")
             file_report.report_item('Import', 'Download', "Local copy of download file removed from #{Rails.env}.")
           end
         elsif file.key.include?(ENV["ENROLLMENT_FILE_NAME"]) && (file.key.to_s != last_file_name)
