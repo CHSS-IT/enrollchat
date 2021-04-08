@@ -69,6 +69,7 @@ Metrics/BlockLength:
 Metrics/BlockNesting:
   Exclude:
     - 'app/models/section.rb'
+    - 'lib/tasks/import.rake'
 Metrics/ClassLength:
   Exclude:
     - 'app/models/section.rb'
@@ -163,6 +164,7 @@ Style/NumericLiterals:
     - 'test/models/section_test.rb'
     - 'test/models/setting_test.rb'
     - 'test/system/sections_test.rb'
+    - 'test/test_helper.rb'
 Style/ClassAndModuleChildren:
   Exclude:
     - 'test/test_helper.rb'
