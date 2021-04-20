@@ -61,6 +61,17 @@ jobs:
           POSTGRES_PASSWORD: password
           POSTGRES_HOST_AUTH_METHOD: trust
           POSTGRES_PORT: 5432
+          ENROLLCHAT_HOST: ${{ secrets.ENROLLCHAT_HOST }}
+          ENROLLCHAT_ADMIN_EMAIL: ${{ secrets.ENROLLCHAT_ADMIN_EMAIL }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          ENROLLMENT_FILE_NAME: ${{ secrets.ENROLLMENT_FILE_NAME }}
+          ENROLLCHAT_REMOTE: ${{ secrets.ENROLLCHAT_REMOTE }}
+          TERM_ONE_START: ${{ secrets.TERM_ONE_START }}
+          TERM_ONE_END: ${{ secrets.TERM_ONE_END }}
+          TERM_TWO_START: ${{ secrets.TERM_TWO_START }}
+          TERM_TWO_END: ${{ secrets.TERM_TWO_END }}
         run: |
           yarn
           bundle exec rake db:create
@@ -76,6 +87,17 @@ jobs:
           POSTGRES_PORT: 5432
           PGHOST: localhost
           PGUSER: postgres
+          ENROLLCHAT_HOST: ${{ secrets.ENROLLCHAT_HOST }}
+          ENROLLCHAT_ADMIN_EMAIL: ${{ secrets.ENROLLCHAT_ADMIN_EMAIL }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          ENROLLMENT_FILE_NAME: ${{ secrets.ENROLLMENT_FILE_NAME }}
+          ENROLLCHAT_REMOTE: ${{ secrets.ENROLLCHAT_REMOTE }}
+          TERM_ONE_START: ${{ secrets.TERM_ONE_START }}
+          TERM_ONE_END: ${{ secrets.TERM_ONE_END }}
+          TERM_TWO_START: ${{ secrets.TERM_TWO_START }}
+          TERM_TWO_END: ${{ secrets.TERM_TWO_END }}
           RAILS_ENV: test
         run: |
           bin/rails test:system test
