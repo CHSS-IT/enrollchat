@@ -44,7 +44,6 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :test
 
   config.action_mailer.default_url_options = { host: ENV["ENROLLCHAT_HOST"] }
-  config.action_mailer.default_options = {from: ENV["ENROLLCHAT_ADMIN_EMAIL"] }
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
