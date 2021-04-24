@@ -32,7 +32,7 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
     Rake::Task['daily_digests:send_emails'].invoke
     Sidekiq::Worker.drain_all
     email = ActionMailer::Base.deliveries.last
-    assert_equal [ENV['ENROLLCHAT_ADMIN_EMAIL']], email.from
+    assert_equal ["no-reply@example.com"], email.from
     assert_equal [ENV['ENROLLCHAT_ADMIN_EMAIL']], email.to
     assert_equal 'EnrollChat Digest Task Executed (Triggered in test)', email.subject
     assert email.body.to_s.include?("<h1>Departments With Comments</h1>")
@@ -57,7 +57,7 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
     Rake::Task['daily_digests:send_emails'].invoke
     Sidekiq::Worker.drain_all
     email = ActionMailer::Base.deliveries.first
-    assert_equal [ENV['ENROLLCHAT_ADMIN_EMAIL']], email.from
+    assert_equal ["no-reply@example.com"], email.from
     assert_equal [ENV['ENROLLCHAT_ADMIN_EMAIL']], email.to
     assert_equal 'EnrollChat Comments Digest (Triggered in test)', email.subject
     assert email.body.to_s.include?("<h1>EnrollChat Daily Digest</h1>")
@@ -83,7 +83,7 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
       Rake::Task['weekly_reports:send_emails'].invoke
       Sidekiq::Worker.drain_all
       email = ActionMailer::Base.deliveries.last
-      assert_equal [ENV['ENROLLCHAT_ADMIN_EMAIL']], email.from
+      assert_equal ["no-reply@example.com"], email.from
       assert_equal [ENV['ENROLLCHAT_ADMIN_EMAIL']], email.to
       assert_equal 'EnrollChat Report Task Executed (Triggered in test)', email.subject
       assert email.body.to_s.include?("<h1>EnrollChat Weekly Report Sent</h1>")
@@ -99,7 +99,7 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
       Sidekiq::Worker.drain_all
       emails = ActionMailer::Base.deliveries[0..2]
       emails.each do |email|
-        assert_equal [ENV['ENROLLCHAT_ADMIN_EMAIL']], email.from
+        assert_equal ["no-reply@example.com"], email.from
         assert_equal [ENV['ENROLLCHAT_ADMIN_EMAIL']], email.to
         assert_equal 'EnrollChat Report (Triggered in test)', email.subject
         assert email.body.to_s.include?("<h1>EnrollChat Weekly Report</h1>")
