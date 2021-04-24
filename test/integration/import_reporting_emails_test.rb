@@ -14,7 +14,7 @@ class ImportReportingEmailsTest < ActionDispatch::IntegrationTest
     Section.import(file_fixture('test_crse.csv'))
     email = ActionMailer::Base.deliveries.last
     assert_equal ["no-reply@example.com"], email.from
-    assert_equal [ENV['ENROLLCHAT_ADMIN_EMAIL']], email.to
+    assert_equal ["recipient@example.com"], email.to
     assert_equal 'Import Processed (Triggered in test)', email.subject
     assert email.body.to_s.include?("<h1>Canceled sections</h1>")
     assert email.body.to_s.include?("<p>Experiential Learning-001 in 201810</p>")
@@ -38,7 +38,7 @@ class ImportReportingEmailsTest < ActionDispatch::IntegrationTest
     Rake::Task['import:retrieve_files'].invoke
     email = ActionMailer::Base.deliveries.last
     assert_equal ["no-reply@example.com"], email.from
-    assert_equal [ENV['ENROLLCHAT_ADMIN_EMAIL']], email.to
+    assert_equal ["recipient@example.com"], email.to
     assert_equal 'Import Executed (Triggered in test)', email.subject
     assert email.body.to_s.include?("<h1>Overall</h1><p>Download running.</p>")
     assert email.body.to_s.include?("<h1>Download</h1>")

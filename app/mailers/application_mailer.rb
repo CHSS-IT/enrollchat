@@ -9,6 +9,13 @@ class ApplicationMailer < ActionMailer::Base
   end
 
   def to_switch(email)
-    Rails.env.production? ? email : ENV['ENROLLCHAT_ADMIN_EMAIL']
+    case Rails.env
+    when "production"
+      email
+    when "development"
+      ENV['ENROLLCHAT_ADMIN_EMAIL']
+    when "test"
+      "recipient@example.com"
+    end
   end
 end

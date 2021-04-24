@@ -33,7 +33,7 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
     Sidekiq::Worker.drain_all
     email = ActionMailer::Base.deliveries.last
     assert_equal ["no-reply@example.com"], email.from
-    assert_equal [ENV['ENROLLCHAT_ADMIN_EMAIL']], email.to
+    assert_equal ["recipient@example.com"], email.to
     assert_equal 'EnrollChat Digest Task Executed (Triggered in test)', email.subject
     assert email.body.to_s.include?("<h1>Departments With Comments</h1>")
     assert email.body.to_s.include?("<p>BIS</p>")
@@ -58,7 +58,7 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
     Sidekiq::Worker.drain_all
     email = ActionMailer::Base.deliveries.first
     assert_equal ["no-reply@example.com"], email.from
-    assert_equal [ENV['ENROLLCHAT_ADMIN_EMAIL']], email.to
+    assert_equal ["recipient@example.com"], email.to
     assert_equal 'EnrollChat Comments Digest (Triggered in test)', email.subject
     assert email.body.to_s.include?("<h1>EnrollChat Daily Digest</h1>")
     assert email.body.to_s.include?("<p>EnrollChat allows you to choose to receive daily digests of comments or individual emails each time a comment is posted. You will be notified of comments relevant to your selected programs, or to all programs if you have not selected a department preference.</p>")
@@ -84,7 +84,7 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
       Sidekiq::Worker.drain_all
       email = ActionMailer::Base.deliveries.last
       assert_equal ["no-reply@example.com"], email.from
-      assert_equal [ENV['ENROLLCHAT_ADMIN_EMAIL']], email.to
+      assert_equal ["recipient@example.com"], email.to
       assert_equal 'EnrollChat Report Task Executed (Triggered in test)', email.subject
       assert email.body.to_s.include?("<h1>EnrollChat Weekly Report Sent</h1>")
       assert email.body.to_s.include?("<p>Reports sent to:</p>")
@@ -100,7 +100,7 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
       emails = ActionMailer::Base.deliveries[0..2]
       emails.each do |email|
         assert_equal ["no-reply@example.com"], email.from
-        assert_equal [ENV['ENROLLCHAT_ADMIN_EMAIL']], email.to
+        assert_equal ["recipient@example.com"], email.to
         assert_equal 'EnrollChat Report (Triggered in test)', email.subject
         assert email.body.to_s.include?("<h1>EnrollChat Weekly Report</h1>")
         assert email.body.to_s.include?("<h3>Information for #{term_in_words(term)}</h3>")
