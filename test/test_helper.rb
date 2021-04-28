@@ -37,4 +37,9 @@ class ActionDispatch::IntegrationTest
   def logout
     get logout_path
   end
+
+  ENV['TERM_ONE_START'] = '4'
+  ENV['TERM_ONE_END'] = '9'
+  ENV['TERM_TWO_START'] = '11'
+  ENV['TERM_TWO_END'] = '1'
 end
