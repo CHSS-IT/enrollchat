@@ -42,5 +42,4 @@ class ActionDispatch::IntegrationTest
   ENV['TERM_ONE_END'] = '9'
   ENV['TERM_TWO_START'] = '11'
   ENV['TERM_TWO_END'] = '1'
-  ENV["ENROLLMENT_FILE_NAME"] = 'test_crse.csv'
 end
