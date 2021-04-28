@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/carrierwaveuploader/carrierwave.git
-  revision: 3f809672dd2d18ee4398a7bba9d8f9effa05023e
+  revision: 1c7bdd2e329a2d24949dc8ac6c177d31e006ac47
   specs:
-    carrierwave (2.2.0)
+    carrierwave (2.2.1)
       activemodel (>= 5.0.0)
       activesupport (>= 5.0.0)
       addressable (~> 2.6)
@@ -149,7 +149,7 @@ GEM
     formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    i18n (1.8.9)
+    i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.1)
       mini_magick (>= 4.9.5, < 5)
@@ -166,7 +166,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
-    marcel (1.0.0)
+    marcel (1.0.1)
     method_source (1.0.0)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
