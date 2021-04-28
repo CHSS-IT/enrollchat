@@ -4,8 +4,6 @@ namespace :import do
   task :retrieve_files => :environment do
     require 'aws-sdk-s3'
 
-    Rake::Task['alarm_clock:wakeup'].execute
-
     file_report = ReportAction::Report.new
 
     s3 = Aws::S3::Resource.new(region: ENV["AWS_DEFAULT_REGION"])
