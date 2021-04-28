@@ -21,13 +21,6 @@ module Enrollchat
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    config.before_configuration do
-      env_file = File.join(Rails.root, 'config', 'local_env.yml')
-      YAML.load(File.open(env_file)).each do |key, value|
-        ENV[key.to_s] = value
-      end if File.exist?(env_file)
-    end
-
     config.rack_cas.server_url = ENV['CAS_BASE_URL']
   end
 end

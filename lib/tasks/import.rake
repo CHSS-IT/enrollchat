@@ -6,11 +6,13 @@ namespace :import do
 
     file_report = ReportAction::Report.new
 
-    s3 = Aws::S3::Resource.new(region: ENV["AWS_DEFAULT_REGION"])
-    bucket = s3.bucket(ENV["ENROLLCHAT_REMOTE"])
-    current_files = bucket.objects
-    file_list = bucket.objects.collect(&:key)
-    last_file_name = file_list.last
+    unless Rails.env.test?
+      s3 = Aws::S3::Resource.new(region: ENV["AWS_DEFAULT_REGION"])
+      bucket = s3.bucket(ENV["ENROLLCHAT_REMOTE"])
+      current_files = bucket.objects
+      file_list = bucket.objects.collect(&:key)
+      last_file_name = file_list.last
+    end
     file_report.report_item('Import','Overall',"Download running.")
     if current_files.present?
       current_files.each do |file|
