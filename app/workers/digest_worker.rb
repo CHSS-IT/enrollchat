@@ -23,6 +23,7 @@ class DigestWorker
   end
 
   def build_report
+    host = Rails.env.test? ? 'localhost' : ENV['ENROLLCHAT_HOST']
     Section.department_list.each do |department|
       comments = Comment.yesterday.for_department(department).by_course
       if comments.present?
@@ -35,7 +36,7 @@ class DigestWorker
         text = "<h2>#{subject} - #{basic_date(DateTime.yesterday)}</h2>"
 
         comments.group_by(&:section).sort.each do |section, c|
-          text += "<p>#{ActionController::Base.helpers.link_to section.section_and_number, section_url(section, host: ENV['ENROLLCHAT_HOST'])}" + ": #{c.size} comment#{'s' if c.size > 1}</p>"
+          text += "<p>#{ActionController::Base.helpers.link_to section.section_and_number, section_url(section, host: host)}" + ": #{c.size} comment#{'s' if c.size > 1}</p>"
         end
 
         # Add to report for department
