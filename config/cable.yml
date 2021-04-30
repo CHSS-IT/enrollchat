@@ -10,3 +10,6 @@ production:
   url: <%= ENV['REDIS_URL'] %>
   ssl_params:
     verify_mode: <%= OpenSSL::SSL::VERIFY_NONE %>
+
+# ssl_params setting added during redis adaptor upgrade
+# https://github.com/rails/rails/issues/42036#issuecomment-824613214
