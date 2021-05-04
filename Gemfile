@@ -38,7 +38,7 @@ gem 'airbrake', '~> 11.0'
 gem 'aws-sdk-s3', '~> 1.94'
 
 # File uploads
-gem 'carrierwave', git: 'https://github.com/carrierwaveuploader/carrierwave.git'
+gem 'carrierwave', '~> 2.2', '>= 2.2.1'
 
 # carrierwave support for S3
 gem 'fog-aws', '~> 3.10'
