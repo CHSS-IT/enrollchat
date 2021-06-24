@@ -294,3 +294,6 @@ Style/NegatedIfElseCondition:
 Style/CaseLikeIf:
   Exclude:
     - 'app/controllers/sections_controller.rb'
+Style/HashConversion:
+  Exclude:
+    - 'app/models/section.rb'
