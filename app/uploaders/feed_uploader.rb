@@ -16,7 +16,7 @@ class FeedUploader < CarrierWave::Uploader::Base
     nil
   end
 
-  # Add a white list of extensions which are allowed to be uploaded.
+  # Add an allow list of extensions which are allowed to be uploaded.
   # Allow only Excel and CSV files:
   def extension_allowlist
     %w(xlsx csv)
