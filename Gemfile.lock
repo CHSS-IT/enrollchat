@@ -229,7 +229,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rbtree3 (0.6.0)
-    redis (4.3.1)
+    redis (4.4.0)
     regexp_parser (2.1.1)
     report_action (0.4.0)
     rexml (3.2.5)
@@ -346,7 +346,7 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.3)
   rails (= 6.1.4)
   rake
-  redis (~> 4.3)
+  redis (~> 4.4)
   report_action (~> 0.4.0)
   roo (~> 2.8, >= 2.8.3)
   rubocop-rails (~> 2.11)
