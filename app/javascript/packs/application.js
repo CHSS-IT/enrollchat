@@ -22,9 +22,9 @@ require("channels");
 
 require('vendor/bootstrap-select.min');
 require('jquery-ui-dist/jquery-ui');
-require('packs/reports');
-require('packs/sections');
-require('packs/users');
+require('../src/reports');
+require('../src/sections');
+require('../src/users');
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
