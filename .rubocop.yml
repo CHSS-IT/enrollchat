@@ -148,6 +148,9 @@ Rails/HelperInstanceVariable:
     - 'app/helpers/reports_helper.rb'
 Rails/ContentTag:
   Enabled: false
+Rails/HasManyOrHasOneDependent:
+  Exclude:
+    - 'app/models/user.rb'
 Rails/WhereNot:
   Exclude:
     - 'app/models/section.rb'

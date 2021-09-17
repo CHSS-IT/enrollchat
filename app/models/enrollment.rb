@@ -10,6 +10,6 @@ class Enrollment < ApplicationRecord
   private
 
   def null_to_zero
-    waitlist = waitlist.nil? ? 0 : waitlist
+    waitlist = 0 if waitlist.nil?
   end
 end
