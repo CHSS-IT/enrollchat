@@ -90,7 +90,7 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.36'
   gem 'simplecov', '~> 0.21.2', require: false
-  gem 'webdrivers', '~> 4.6'
+  gem 'webdrivers', '~> 5.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
