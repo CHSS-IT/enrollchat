@@ -3,6 +3,12 @@ require "test_helper"
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   driven_by :selenium, using: :headless_chrome, screen_size: [1400,1050]
 
+  # Added to ignore the browser options deprecation warning in rails 6.1 after upgrading to the
+  # latest webdrivers gem using Selenium 4. Rails 7 fixes these but the patch will not be
+  # backported. See https://github.com/rails/rails/pull/43503.
+  # Remove this line when upgrading to Rails 7.
+  Selenium::WebDriver.logger.ignore(:browser_options)
+
   def login_as(user)
     visit test_login_path
     fill_in 'username', with: user.username
