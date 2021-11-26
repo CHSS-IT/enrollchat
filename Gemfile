@@ -58,7 +58,9 @@ gem 'rack-cas', '~> 0.16.1'
 gem 'report_action', '~> 0.4.0'
 
 # For processing excel files
-gem 'roo', '~> 2.8', '>= 2.8.3'
+# Until Roo releases a new version containing a fix for Ruby 3.0.1+ we need to pull directly
+# from the source.
+gem "roo", git: "https://github.com/roo-rb/roo.git"
 
 gem 'sidekiq', '~> 6.3'
 
