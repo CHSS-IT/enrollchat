@@ -59,7 +59,7 @@ gem 'report_action', '~> 0.4.0'
 
 # For processing excel files
 # Until Roo releases a new version containing a fix for Ruby 3.0.1+ we need to pull directly
-# from the source.
+# from the source. https://github.com/roo-rb/roo/issues/551
 gem "roo", git: "https://github.com/roo-rb/roo.git"
 
 gem 'sidekiq', '~> 6.3'
