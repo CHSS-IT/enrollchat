@@ -4,7 +4,7 @@ namespace :update_db do
   task :dev => :environment do
     if Rails.env.development?
       app_flag = "--app #{Rails.application.class.module_parent_name.downcase}"
-      Bundler.with_clean_env do
+      Bundler.with_unbundled_env do
         puts "Creating backup of production database"
         system("heroku pg:backups:capture #{app_flag}")
         puts "Downloading latest dump of database locally."

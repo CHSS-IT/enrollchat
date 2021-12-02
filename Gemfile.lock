@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/roo-rb/roo.git
+  revision: 709464c77623be2bc09b2103405d90ded7604a75
+  specs:
+    roo (2.8.3)
+      nokogiri (~> 1)
+      rubyzip (>= 1.3.0, < 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -235,9 +243,6 @@ GEM
     regexp_parser (2.1.1)
     report_action (0.4.0)
     rexml (3.2.5)
-    roo (2.8.3)
-      nokogiri (~> 1)
-      rubyzip (>= 1.3.0, < 3.0.0)
     rubocop (1.22.1)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
@@ -351,7 +356,7 @@ DEPENDENCIES
   rake
   redis (~> 4.5)
   report_action (~> 0.4.0)
-  roo (~> 2.8, >= 2.8.3)
+  roo!
   rubocop-rails (~> 2.12)
   sass-rails (~> 6.0)
   sidekiq (~> 6.3)
@@ -366,7 +371,7 @@ DEPENDENCIES
   webpacker (~> 5.4)
 
 RUBY VERSION
-   ruby 2.7.4p191
+   ruby 3.0.3p157
 
 BUNDLED WITH
-   2.1.4
+   2.2.32
