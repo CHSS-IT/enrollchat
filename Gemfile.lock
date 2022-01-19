@@ -70,9 +70,9 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
-    airbrake (12.0.0)
+    airbrake (13.0.0)
       airbrake-ruby (~> 6.0)
-    airbrake-ruby (6.0.0)
+    airbrake-ruby (6.0.2)
       rbtree3 (~> 0.5)
     ast (2.4.2)
     aws-eventstream (1.2.0)
@@ -239,7 +239,7 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    rbtree3 (0.6.0)
+    rbtree3 (0.7.0)
     redis (4.5.1)
     regexp_parser (2.1.1)
     report_action (0.4.0)
@@ -334,7 +334,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  airbrake (~> 12.0)
+  airbrake (~> 13.0)
   aws-sdk-s3 (~> 1.111)
   better_errors (~> 2.9)
   binding_of_caller
