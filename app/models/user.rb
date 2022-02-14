@@ -10,7 +10,7 @@ class User < ApplicationRecord
   scope :wanting_report, -> { where(no_weekly_report: false) }
 
   before_validation do |model|
-    model.departments.reject!(&:blank?) if model.departments
+    model.departments.compact_blank! if model.departments
   end
 
   validates :first_name, :last_name, :username, :email, :status, presence: true
