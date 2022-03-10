@@ -44,7 +44,7 @@ gem 'carrierwave', '~> 2.2'
 gem 'fog-aws', '~> 3.13'
 
 # font-awesome for iconography
-gem 'font-awesome-sass', '~> 5.15'
+gem 'font-awesome-sass', '~> 6.0'
 
 # SFTP for banner import
 gem 'net-sftp', '~> 3.0'
