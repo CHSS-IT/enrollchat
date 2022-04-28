@@ -1092,15 +1092,15 @@
   dependencies:
     mkdirp "^1.0.4"
 
-"@rails/actioncable@^6.1.5":
-  version "6.1.5"
-  resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-6.1.5.tgz#c24ec8123a8e7e239ceabda29078df9c93752394"
-  integrity sha512-bV4/Q7NweGFm7t3GvUFm19UF2WKmcvlOXy7AxMWEZCwDxQLagAXhUpKb1AJ6Rg88cPHqXSQHaGKr84lIMd607A==
+"@rails/actioncable@^7.0.2-4":
+  version "7.0.2-4"
+  resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-7.0.2-4.tgz#24a31bde761ee7652b2567d267699c17c7e725a6"
+  integrity sha512-EPTZ0U/KBlaJKPAyLuvPBSZMojyHVgCqwMDkwTfm4TDPyp5f0hTBsOsolQxqeOJmoTafK+7pJi7hO9eCjBEhTA==
 
-"@rails/ujs@^6.1.5":
-  version "6.1.5"
-  resolved "https://registry.yarnpkg.com/@rails/ujs/-/ujs-6.1.5.tgz#bb1afddd0d771f00924f44b21634969e329532e1"
-  integrity sha512-Ir4yd2fdDldWIghavPr874copVKf6OOoecKHZiFRlPtm38tFvhyxr+ywzNieXGwolF9JQe3D5GrM8ejkzUgh5Q==
+"@rails/ujs@^7.0.2-4":
+  version "7.0.2-4"
+  resolved "https://registry.yarnpkg.com/@rails/ujs/-/ujs-7.0.2-4.tgz#199b071e9f07c5a341006c368f7adc764dc0a3d9"
+  integrity sha512-P5DGRBx0bP/VDqKCWYHNAQQrRuyQ4QXgFwfMPyboBjKyZiaicotm2CYyTLxYX6vbB4RAd33jUaddeeDq8Q/0CA==
 
 "@rails/webpacker@^5.4.3":
   version "5.4.3"
