@@ -1,6 +1,5 @@
-import consumer from "./consumer"
-
-consumer.subscriptions.create({ channel: "DepartmentChannel" }, {
+App.department = App.cable.subscriptions.create({
+    channel: "DepartmentChannel"}, {
     received(data) {
         $('#notifications').prepend(data.message);
         if ($('#alerts-button').hasClass('unique-color-dark')) {

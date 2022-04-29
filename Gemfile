@@ -15,20 +15,14 @@ gem 'rails', '7.0.2.4'
 gem 'pg', '~> 1.3'
 # Use Puma as the app server
 gem 'puma', '~> 5.6.4'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 6.0'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '~> 4.2.0'
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 5.4'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.11'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.6'
-# Use ActiveModel has_secure_password
 
 # Alphabetize non-core gems
 
@@ -36,6 +30,8 @@ gem 'airbrake', '~> 13.0'
 
 # For file storage on S3
 gem 'aws-sdk-s3', '~> 1.113'
+
+gem 'bootstrap', '~> 4.6', '>= 4.6.1'
 
 # File uploads
 gem 'carrierwave', '~> 2.2'
@@ -45,6 +41,9 @@ gem 'fog-aws', '~> 3.13'
 
 # font-awesome for iconography
 gem 'font-awesome-sass', '~> 6.1.1'
+
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # SFTP for banner import
 gem 'net-sftp', '~> 3.0'
@@ -61,6 +60,9 @@ gem 'report_action', '~> 0.4.0'
 # Until Roo releases a new version containing a fix for Ruby 3.0.1+ we need to pull directly
 # from the source. https://github.com/roo-rb/roo/issues/551
 gem 'roo', '~> 2.9'
+
+# Use SCSS for stylesheets
+gem 'sassc-rails'
 
 gem 'sidekiq', '~> 6.4'
 

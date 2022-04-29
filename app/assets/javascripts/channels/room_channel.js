@@ -1,6 +1,5 @@
-import consumer from "./consumer"
-
-consumer.subscriptions.create({ channel: "RoomChannel" }, {
+App.room = App.cable.subscriptions.create({
+    channel: "RoomChannel"}, {
     received(data) {
         if (data.trigger === 'Updated') {
             location.reload();
