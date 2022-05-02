@@ -10,15 +10,10 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-// require jquery3
-// require jquery-ui
-// require popper
-// require bootstrap
 //= require DataTables/datatables.min.js
-// require moment.min.js
-// require datetime.js
+//= require moment.min.js
+//= require datetime.js
 //= require rails-ujs
-// require bootstrap-select.min
 //= require sections
 //= require users
 //= require reports
