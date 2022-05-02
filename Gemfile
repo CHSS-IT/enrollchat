@@ -31,6 +31,7 @@ gem 'airbrake', '~> 13.0'
 # For file storage on S3
 gem 'aws-sdk-s3', '~> 1.113'
 
+# should match the js version used in import map
 gem 'bootstrap', '~> 4.6', '>= 4.6.1'
 
 # File uploads
@@ -41,9 +42,6 @@ gem 'fog-aws', '~> 3.13'
 
 # font-awesome for iconography
 gem 'font-awesome-sass', '~> 6.1.1'
-
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
 
 # SFTP for banner import
 gem 'net-sftp', '~> 3.0'
