@@ -43,6 +43,8 @@ gem 'fog-aws', '~> 3.13'
 # font-awesome for iconography
 gem 'font-awesome-sass', '~> 6.1.1'
 
+gem "importmap-rails", "~> 1.0"
+
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
@@ -96,5 +98,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem "importmap-rails", "~> 1.0"
