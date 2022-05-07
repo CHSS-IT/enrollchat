@@ -2,8 +2,9 @@ require 'simplecov'
 SimpleCov.start 'rails'
 puts "required simplecov"
 
-require File.expand_path('../config/environment', __dir__)
-require 'rails/test_help'
+ENV["RAILS_ENV"] ||= "test"
+require_relative "../config/environment"
+require "rails/test_help"
 require 'minitest/autorun'
 
 # silence Puma output in system tests
@@ -21,6 +22,7 @@ class ActiveSupport::TestCase
   end
   # Run tests in parallel with specified workers
   parallelize(workers: :number_of_processors)
+  parallelize threshold: 1
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 end
