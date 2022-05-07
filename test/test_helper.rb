@@ -42,8 +42,4 @@ class ActionDispatch::IntegrationTest
   ENV['TERM_ONE_END'] = '9'
   ENV['TERM_TWO_START'] = '11'
   ENV['TERM_TWO_END'] = '1'
-  # For fog config check
-  ENV['AWS_ACCESS_KEY_ID'] = '12345'
-  ENV['AWS_SECRET_ACCESS_KEY'] = '12345'
-  ENV['S3_BUCKET_NAME'] = 'example'
 end
