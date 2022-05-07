@@ -22,9 +22,11 @@ class ActiveSupport::TestCase
   end
   # Run tests in parallel with specified workers
   parallelize(workers: :number_of_processors)
-  parallelize threshold: 1
+  # Forces all tests to run in parallel. This ensures a Setting
+  # is created when the tests run in the CI.
+  # parallelize threshold: 1
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
-  fixtures :all
+  fixtures %w[settings users sections comments enrollments]
 end
 
 class ActionDispatch::IntegrationTest
