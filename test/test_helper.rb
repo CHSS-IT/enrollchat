@@ -11,22 +11,35 @@ require 'minitest/autorun'
 Capybara.server = :puma, { Silent: true }
 
 class ActiveSupport::TestCase
+  setup do
+    unless Setting.first
+      Setting.create!(current_term: 201810, singleton_guard: 0, undergraduate_enrollment_threshold: 12, graduate_enrollment_threshold: 10, email_delivery: 'scheduled')
+    end
+  end
+
+  teardown do
+    if Setting.first
+      Setting.first.destroy
+    end
+  end
+
   parallelize_setup do |worker|
-    Setting.create!(current_term: 201810, singleton_guard: 0, undergraduate_enrollment_threshold: 12, graduate_enrollment_threshold: 10, email_delivery: 'scheduled')
+    unless Setting.first
+      Setting.create!(current_term: 201810, singleton_guard: 0, undergraduate_enrollment_threshold: 12, graduate_enrollment_threshold: 10, email_delivery: 'scheduled')
+    end
     SimpleCov.command_name "#{SimpleCov.command_name}-#{worker}"
   end
 
   parallelize_teardown do
-    Setting.first.destroy
+    if Setting.first
+      Setting.first.destroy
+    end
     SimpleCov.result
   end
   # Run tests in parallel with specified workers
   parallelize(workers: :number_of_processors)
-  # Forces all tests to run in parallel. This ensures a Setting
-  # is created when the tests run in the CI.
-  # parallelize threshold: 1
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
-  fixtures %w[settings users sections comments enrollments]
+  fixtures :all
 end
 
 class ActionDispatch::IntegrationTest
