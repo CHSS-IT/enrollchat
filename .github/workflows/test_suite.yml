@@ -54,8 +54,6 @@ jobs:
           bundle exec rake db:schema:load
       - name: Run test suite
         env:
-          AWS_ACCESS_KEY_ID: xxxxxxx
-          AWS_SECRET_ACCESS_KEY: xxxxxxx
           POSTGRES_HOST: localhost
           DATABASE_HOST: localhost
           POSTGRES_USER: postgres

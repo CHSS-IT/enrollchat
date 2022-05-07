@@ -2,9 +2,8 @@ require 'simplecov'
 SimpleCov.start 'rails'
 puts "required simplecov"
 
-ENV["RAILS_ENV"] ||= "test"
-require_relative "../config/environment"
-require "rails/test_help"
+require File.expand_path('../config/environment', __dir__)
+require 'rails/test_help'
 require 'minitest/autorun'
 
 # silence Puma output in system tests
