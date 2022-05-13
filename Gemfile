@@ -10,25 +10,20 @@ ruby "3.0.4"
 gem "rake"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '6.1.5.1'
+gem 'rails', '7.0.2.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.3'
 # Use Puma as the app server
 gem 'puma', '~> 5.6.4'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 6.0'
+gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '~> 4.2.0'
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 5.4'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.11'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.6'
-# Use ActiveModel has_secure_password
 
 # Alphabetize non-core gems
 
@@ -36,6 +31,8 @@ gem 'airbrake', '~> 13.0'
 
 # For file storage on S3
 gem 'aws-sdk-s3', '~> 1.113'
+
+gem 'bootstrap', '~> 4.6', '>= 4.6.1'
 
 # File uploads
 gem 'carrierwave', '~> 2.2'
@@ -45,6 +42,11 @@ gem 'fog-aws', '~> 3.13'
 
 # font-awesome for iconography
 gem 'font-awesome-sass', '~> 6.1.1'
+
+gem "importmap-rails", "~> 1.0"
+
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # SFTP for banner import
 gem 'net-sftp', '~> 3.0'
@@ -66,9 +68,11 @@ gem 'sidekiq', '~> 6.4'
 
 gem 'smarter_csv'
 
+gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'
+
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', '~> 11.1', '>= 11.1.3', platforms: [:mri, :mingw, :x64_mingw]
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "debug", platforms: %i[mri mingw x64_mingw]
   gem 'rubocop-rails', '~> 2.13'
 end
 
@@ -82,8 +86,7 @@ group :development do
   gem 'listen', '~> 3.7'
   gem 'rack-mini-profiler', '~> 3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  # gem 'spring'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '~> 4.2'
 end
