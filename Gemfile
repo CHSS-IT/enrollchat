@@ -18,7 +18,8 @@ gem 'puma', '~> 5.6.4'
 # Use SCSS for stylesheets
 gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '~> 4.2.0'
+# gem 'uglifier', '~> 4.2.0'
+gem 'terser'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.11'

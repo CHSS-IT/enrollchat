@@ -330,13 +330,13 @@ GEM
       sprockets (>= 3.0.0)
     ssrf_filter (1.0.7)
     strscan (3.0.1)
+    terser (1.1.9)
+      execjs (>= 0.3.0, < 3)
     thor (1.2.1)
     tilt (2.0.9)
     timeout (0.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    uglifier (4.2.0)
-      execjs (>= 0.3.0, < 3)
     unicode-display_width (2.1.0)
     uniform_notifier (1.14.2)
     web-console (4.2.0)
@@ -393,8 +393,8 @@ DEPENDENCIES
   simplecov (~> 0.21.2)
   smarter_csv
   sprockets-rails (~> 3.4, >= 3.4.2)
+  terser
   tzinfo-data
-  uglifier (~> 4.2.0)
   web-console (~> 4.2)
   webdrivers (~> 5.0)
 
