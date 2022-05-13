@@ -38,7 +38,7 @@ gem 'bootstrap', '~> 4.6', '>= 4.6.1'
 gem 'carrierwave', '~> 2.2'
 
 # carrierwave support for S3
-gem 'fog-aws', '~> 3.13'
+gem 'fog-aws', '~> 3.14'
 
 # font-awesome for iconography
 gem 'font-awesome-sass', '~> 6.1.1'
