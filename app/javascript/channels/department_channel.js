@@ -1,4 +1,4 @@
-import consumer from "./consumer"
+import consumer from "channels/consumer"
 
 consumer.subscriptions.create({ channel: "DepartmentChannel" }, {
     received(data) {
