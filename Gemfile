@@ -94,7 +94,7 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 3.36'
+  gem 'capybara', '~> 3.37'
   gem 'simplecov', '~> 0.21.2', require: false
   gem 'webdrivers', '~> 5.0'
 end
