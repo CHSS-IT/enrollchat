@@ -10,17 +10,15 @@ ruby "3.0.4"
 gem "rake"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '7.0.2.4'
+gem 'rails', '7.0.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.3'
 # Use Puma as the app server
 gem 'puma', '~> 5.6.4'
 # Use SCSS for stylesheets
 gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
-# Use Uglifier as compressor for JavaScript assets
-# gem 'uglifier', '~> 4.2.0'
-gem 'terser'
-
+# Use Terser as compressor for JavaScript assets
+gem 'terser', '~> 1.1', '>= 1.1.9'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.11'
 # Use Redis adapter to run Action Cable in production
