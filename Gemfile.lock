@@ -310,7 +310,7 @@ GEM
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
-    sidekiq (6.4.2)
+    sidekiq (6.5.0)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
@@ -389,7 +389,7 @@ DEPENDENCIES
   roo (~> 2.9)
   rubocop-rails (~> 2.13)
   sassc-rails (~> 2.1, >= 2.1.2)
-  sidekiq (~> 6.4)
+  sidekiq (~> 6.5)
   simplecov (~> 0.21.2)
   smarter_csv
   sprockets-rails (~> 3.4, >= 3.4.2)
