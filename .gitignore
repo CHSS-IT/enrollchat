@@ -45,3 +45,6 @@ output.html
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+config/credentials.yml.enc
+config/master.key

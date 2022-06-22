@@ -46,6 +46,23 @@
     <%= form.text_area :body, id: :comment_body, class:"form-control" %>
   </div>
     <%= form.submit class: "btn deep-orange darken-2 btn-sm btn-block", id: 'submit' %>
+  <% observers = User.active.in_department(comment.section.department) %>
+  <p>
+    <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+      <%= observers.size %> users are observing this department.
+    </a>
+  </p>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      <ul>
+        <% observers.each do |observer| %>
+          <li><%= observer.full_name %> (<%= observer.email_preference %>)</li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+
 <% end %>
 
 <script type="application/javascript">
