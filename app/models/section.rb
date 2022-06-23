@@ -255,6 +255,10 @@ class Section < ApplicationRecord
     self.waitlist_yesterday = (self.new_record? || self.waitlist_was.nil?) ? 0 : waitlist_changed? ? waitlist - waitlist_was : 0
   end
 
+  def title_changed
+    title != chssweb_title
+  end
+
   def self.terms
     all.collect { |s| s.term }.uniq
   end
