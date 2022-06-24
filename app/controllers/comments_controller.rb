@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  include ActionView::Helpers::DateHelper
+
   before_action :authenticate_user!
   before_action :set_comment, only: [:edit, :update, :destroy]
   before_action :set_user, only: [:create, :new]
@@ -32,7 +34,7 @@ class CommentsController < ApplicationController
       if @comment.save
         NewCommentWorker.perform_async(@comment.id)
         ActionCable.server.broadcast "department_channel_#{@comment.section.department}",
-                                     { message: "<a id='comment-notice-" + @comment.section.id.to_s + "' class='dropdown-item' data-toggle='modal' data-target='#comments' data-remote='true' href='/sections/" + @comment.section.id.to_s + "/comments'><i class='fa fa-circle text-info new-message-marker' aria-hidden='true'></i> ".html_safe + @comment.section.section_and_number + ": " + @comment.user.full_name + " at " + @comment.created_at.strftime('%l:%M %P') + ".</a>",
+                                     { message: "<a id='comment-notice-" + @comment.section.id.to_s + "' class='dropdown-item' data-toggle='modal' data-target='#comments' data-remote='true' href='/sections/" + @comment.section.id.to_s + "/comments'><i class='fa fa-circle text-info new-message-marker' aria-hidden='true'></i> ".html_safe + @comment.section.section_and_number + ": " + @comment.user.full_name + " " + time_ago_in_words(@comment.created_at) + "</a>",
                                        body: @comment.body,
                                        section_name: @comment.section.section_and_number,
                                        user: @comment.user.full_name,
