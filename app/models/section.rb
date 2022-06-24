@@ -14,6 +14,7 @@ class Section < ApplicationRecord
   scope :canceled, -> { where(status: 'C') }
   scope :not_canceled, -> { where("status <> 'C'") }
   scope :in_term, ->(term) { where(term: term) }
+  scope :upcoming, ->(term) { where('term >= ?', term)}
   scope :in_department, ->(department) { where(department: department) }
   scope :in_status, ->(status) { where(status: status) }
   scope :full_or_over_enrolled, -> { not_canceled.where('actual_enrollment >= enrollment_limit or waitlist > 5') }
@@ -83,6 +84,19 @@ class Section < ApplicationRecord
     list << 'ALL'
     list << 'ACTIVE'
     list.sort.uniq
+  end
+
+  def self.upcoming_terms(term)
+    self.upcoming(term).pluck(:term).uniq
+  end
+
+  def course_code
+    course_description.split(' ')[0]
+  end
+
+  def self.course_codes_in_term(term)
+    sections = self.in_term(term)
+    sections.collect { |section| section.course_code }.uniq.sort
   end
 
   def self.level_list
