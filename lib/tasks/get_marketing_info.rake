@@ -33,9 +33,15 @@ namespace :marketing_info do
         chssweb_sections.each do |chssweb_section|
           #### for each section in response
           #### find it in enrollchat
-          section = Section.unscoped.where(section_id: chssweb_section['crn'].to_i, term: term)
+          section = Section.unscoped.where(section_id: chssweb_section['crn'].to_i, term: term).first
           puts "#{chssweb_section['id']} - #{section.present?}"
-          #### if any of the marketing info has changed, update it
+          if section.present?
+            section.assign_attributes(chssweb_title: chssweb_section['title'], image_present: chssweb_section['has_image?'], description_present: chssweb_section['has_description?'], youtube_present: chssweb_section['has_youtube?'] )
+            #### if any of the marketing info has changed, update it
+            section.save if section.changed?
+          else
+            puts "#{chssweb_section['crn']} not found in #{term}"
+          end
         end
       end
     end
