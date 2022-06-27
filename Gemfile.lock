@@ -270,7 +270,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rbtree3 (0.7.0)
-    redis (4.6.0)
+    redis (4.7.0)
     regexp_parser (2.4.0)
     reline (0.3.1)
       io-console (~> 0.5)
@@ -384,7 +384,7 @@ DEPENDENCIES
   rack-mini-profiler (~> 3.0)
   rails (= 7.0.3)
   rake
-  redis (~> 4.6)
+  redis (~> 4.7)
   report_action (~> 0.4.0)
   roo (~> 2.9)
   rubocop-rails (~> 2.13)
