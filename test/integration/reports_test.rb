@@ -33,7 +33,7 @@ class ReportsTest < ActionDispatch::IntegrationTest
     assert_select 'table tbody tr td', text: '9'
   end
 
-  test 'should display the total cross-list enrollment for each deparment' do
+  test 'should display the total cross-list enrollment for each department' do
     get reports_path
     assert_select 'table tbody tr td', text: '1'
     assert_select 'table tbody tr td', text: '2'
