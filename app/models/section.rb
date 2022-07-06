@@ -14,7 +14,7 @@ class Section < ApplicationRecord
   scope :canceled, -> { where(status: 'C') }
   scope :not_canceled, -> { where("status <> 'C'") }
   scope :in_term, ->(term) { where(term: term) }
-  scope :upcoming, ->(term) { where('term >= ?', term)}
+  scope :upcoming, ->(term) { where('term >= ?', term) }
   scope :in_department, ->(department) { where(department: department) }
   scope :in_status, ->(status) { where(status: status) }
   scope :full_or_over_enrolled, -> { not_canceled.where('actual_enrollment >= enrollment_limit or waitlist > 5') }
@@ -91,7 +91,7 @@ class Section < ApplicationRecord
   end
 
   def course_code
-    course_description.split(' ')[0]
+    course_description.split[0]
   end
 
   def self.course_codes_in_term(term)
@@ -270,9 +270,7 @@ class Section < ApplicationRecord
   end
 
   def title_changed?
-    if chssweb_title.present?
-      title != chssweb_title
-    end
+    return title != chssweb_title if chssweb_title.present?
   end
 
   def self.terms

@@ -2,9 +2,7 @@ namespace :marketing_info do
   include Rake::DSL
 
   task :update => :environment do
-
     # considering the time this consumes, once it's functioning it needs to go into a worker and be run in the background
-
     require 'open-uri'
     puts "Current term setting = #{@current_term}"
     # determine relevant semesters - Can I presume the current term setting exists? If so, current term and all future terms that are present
@@ -36,7 +34,7 @@ namespace :marketing_info do
           section = Section.unscoped.where(section_id: chssweb_section['crn'].to_i, term: term).first
           puts "#{chssweb_section['id']} - #{section.present?}"
           if section.present?
-            section.assign_attributes(chssweb_title: chssweb_section['title'], image_present: chssweb_section['has_image?'], description_present: chssweb_section['has_description?'], youtube_present: chssweb_section['has_youtube?'] )
+            section.assign_attributes(chssweb_title: chssweb_section['title'], image_present: chssweb_section['has_image?'], description_present: chssweb_section['has_description?'], youtube_present: chssweb_section['has_youtube?'])
             #### if any of the marketing info has changed, update it
             section.save if section.changed?
           else
