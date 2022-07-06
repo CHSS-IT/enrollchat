@@ -44,4 +44,8 @@ module SectionsHelper
       Section.level_list[Section.level_code_list.find_index(level.downcase)][0]
     end
   end
+
+  def truthiness_indicator(value)
+    tag.i class: 'fa-solid fa-circle-check fa-large fa-xl' if value
+  end
 end

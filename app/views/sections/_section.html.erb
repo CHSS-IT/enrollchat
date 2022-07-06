@@ -28,5 +28,10 @@
       <%  end %>
     </td>
   <td><%=  link_to "<i class='fa fa-chart-line' aria-hidden='true' ></i> Graph".html_safe, section  %></td>
+  <td class="text-center text-success"><%= truthiness_indicator(section.title_changed?) %></td>
+  <td class="text-center text-success"><%= truthiness_indicator(section.description_present) %></td>
+  <td class="text-center text-success"><%= truthiness_indicator(section.syllabus_present) %></td>
+  <td class="text-center text-success"><%= truthiness_indicator(section.image_present) %></td>
+  <td class="text-center text-success"><%= truthiness_indicator(section.youtube_present) %></td>
   <% end %>
 </tr>
