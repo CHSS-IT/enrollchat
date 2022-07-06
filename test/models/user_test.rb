@@ -40,6 +40,10 @@ class UserTest < ActiveSupport::TestCase
     assert_not test_user.is_admin?
   end
 
+  test 'returns departments of interest based on past comments' do
+    assert_equal @user.departments_of_interest, %w[CRIM]
+  end
+
   test 'should create a full name for a user' do
     @user.first_name = 'Test'
     @user.last_name = 'User'
@@ -67,12 +71,11 @@ class UserTest < ActiveSupport::TestCase
 
   test 'should determine if a user receives alerts for a department' do
     assert @user.show_alerts('PHIL')
+    assert_not @user.show_alerts('ENGL')
   end
 
-  test 'admin should receive alerts for all departments' do
-    assert @admin.show_alerts('SINT')
-    assert @admin.show_alerts('BIS')
-    assert @admin.show_alerts('PHIL')
+  test 'returns reporting departments' do
+    assert_equal @user.reporting_departments, %w[SINT CRIM PHIL]
   end
 
   test 'updates the last_activity_check for a user' do
@@ -94,6 +97,10 @@ class UserTest < ActiveSupport::TestCase
   test "status defaults to 'active' for a new user" do
     test_user = User.new(first_name: 'Test', last_name: 'User', email: 'test@mail.com', username: 'tuser')
     assert_equal test_user.status, 'active'
+  end
+
+  test 'returns valid email options' do
+    assert_equal User.email_options, ['All Comments', 'Daily Digest', 'Comments and Digest', 'No Emails']
   end
 
   test 'returns a list of keys from the available statuses' do

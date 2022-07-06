@@ -122,10 +122,10 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
       assert emails[1].body.to_s.include?("<td>SINT</td>")
       assert emails[1].body.to_s.include?("<td>CRIM</td>")
       assert emails[1].body.to_s.include?("<td>PHIL</td>")
-      refute emails[2].body.to_s.include?("<td>BIS</td>")
-      refute emails[2].body.to_s.include?("<td>ENGL</td>")
-      refute emails[2].body.to_s.include?("<td>SINT</td>")
-      refute emails[2].body.to_s.include?("<td>CRIM</td>")
+      assert_not emails[2].body.to_s.include?("<td>BIS</td>")
+      assert_not emails[2].body.to_s.include?("<td>ENGL</td>")
+      assert_not emails[2].body.to_s.include?("<td>SINT</td>")
+      assert_not emails[2].body.to_s.include?("<td>CRIM</td>")
     end
   end
 end

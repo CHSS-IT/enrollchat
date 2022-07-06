@@ -45,7 +45,7 @@ class User < ApplicationRecord
   end
 
   def show_alerts(department)
-    departments.include?(department) || is_admin?
+    departments.include?(department)
   end
 
   def update_login_stats!(request)
