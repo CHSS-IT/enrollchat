@@ -12,7 +12,7 @@ class NewCommentWorker
     # Send that email to each user who
     # - Wants either comment emails or both comment and digest
     # - AND (has the comment's section's program selected OR has no programs selected)
-    recipients = User.in_department(@comment.section.department).wanting_comment_emails # includes admins
+    recipients = User.active.in_department(@comment.section.department).wanting_comment_emails
     if recipients.present?
       recipients.each do |recipient|
         CommentsMailer.new_comment(@comment, subject, recipient).deliver!

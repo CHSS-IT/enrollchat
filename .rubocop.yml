@@ -74,6 +74,7 @@ Metrics/ClassLength:
   Exclude:
     - 'app/models/section.rb'
     - 'test/models/section_test.rb'
+    - 'test/models/user_test.rb'
     - 'test/controllers/comments_controller_test.rb'
     - 'test/controllers/users_controller_test.rb'
     - 'test/system/sections_test.rb'

@@ -11,6 +11,28 @@ one:
   last_name: 'Gibbs'
   admin: true
   email_preference: 'All Comments'
+  departments:
+    - 'AFAM'
+    - 'BIS'
+    - 'COMM'
+    - 'CRIM'
+    - 'CULT'
+    - 'ECON'
+    - 'ENGL'
+    - 'GLOA'
+    - 'HE'
+    - 'HIST'
+    - 'HNRS'
+    - 'LA'
+    - 'MAIS'
+    - 'MCL'
+    - 'MEIS'
+    - 'PHIL'
+    - 'PSYC'
+    - 'RELI'
+    - 'SINT'
+    - 'SOAN'
+    - 'WMST'
   status: 'active'
 
 two:

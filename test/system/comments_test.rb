@@ -12,7 +12,7 @@ class CommentsTest < ApplicationSystemTestCase
     logout
   end
 
-  test 'comment activity feed displays the five most recent notifications for a user when there are no unread notifications and the user has no departments selected' do
+  test 'comment activity feed displays the five most recent notifications for a user when there are no unread notifications' do
     login_as(users(:one))
     visit sections_url
     click_button('Activity')
