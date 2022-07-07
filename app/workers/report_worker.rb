@@ -20,7 +20,7 @@ class ReportWorker
   end
 
   def build_comment_report
-    host = Rails.env.test? ? 'localhost' : ENV['ENROLLCHAT_HOST']
+    host = Rails.env.test? ? 'localhost' : ENV.fetch('ENROLLCHAT_HOST', nil)
     Section.department_list.each do |department|
       comments = Comment.in_past_week.for_department(department).by_course
       if comments.present?
@@ -63,7 +63,7 @@ class ReportWorker
     text += content_tag :ul do
       @recipients.collect { |user| content_tag :li, "#{user.full_name} (#{user.email})" }.join.html_safe
     end
-    CommentsMailer.generic(text.html_safe, "EnrollChat Report Task Executed", ENV['ENROLLCHAT_ADMIN_EMAIL']).deliver!
+    CommentsMailer.generic(text.html_safe, "EnrollChat Report Task Executed", ENV.fetch('ENROLLCHAT_ADMIN_EMAIL', nil)).deliver!
     # puts "Report ran fully."
   end
 

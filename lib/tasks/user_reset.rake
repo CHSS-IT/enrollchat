@@ -18,7 +18,7 @@ namespace :user_reset do
     end
     if closed_count > 0
       email = closed_session_report.build_report('User Active Sessions')
-      CommentsMailer.generic(email.html_safe, subject, ENV['ENROLLCHAT_ADMIN_EMAIL']).deliver! if closed_session_report.has_messages?('User Active Sessions', 'Closed Sessions')
+      CommentsMailer.generic(email.html_safe, subject, ENV.fetch('ENROLLCHAT_ADMIN_EMAIL', nil)).deliver! if closed_session_report.has_messages?('User Active Sessions', 'Closed Sessions')
     end
   end
 end

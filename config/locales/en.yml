@@ -30,4 +30,31 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  application:
+    ensure_admin!:
+      unauthorized: 'You do not have access to this page.'
+    authenticate_user!:
+      unregistered: 'You are not registered to use this system.'
+  comments:
+    create:
+      success: 'Comment was successfully created.'
+    update:
+      success: 'Comment was successfully updated.'
+    destroy:
+      success: 'Comment was successfully destroyed.'
+    permitted_to_comment:
+      inactive: 'Unable to post comment. Please contact the administrators to activate your account.'
+  settings:
+    update:
+      success: 'Setting was successfully updated.'
+  users:
+    create:
+      success: 'User was successfully created'
+    update:
+      success: 'User was successfully updated'
+      preferences: 'Preferences updated'
+    archive:
+      success: 'User has been archived'
+    editable?:
+      unauthorized: 'You do not have access to this page.'
+

@@ -64,7 +64,7 @@ class ApplicationController < ActionController::Base
 
   def ensure_admin!
     unless current_user.try(:admin?)
-      redirect_to sections_path, notice: 'You do not have access to this page.'
+      redirect_to sections_path, notice: t("application.ensure_admin!.unauthorized")
     end
   end
 
@@ -75,7 +75,7 @@ class ApplicationController < ActionController::Base
 
   def retrieve_current_user
     if Rails.env.development? && ENV['CAS_VALUE'].present?
-      session['cas'] = { ENV['CAS_KEY'] => ENV['CAS_VALUE'] }
+      session['cas'] = { ENV.fetch('CAS_KEY', nil) => ENV.fetch('CAS_VALUE', nil) }
     end
     if session['cas']
       User.find_by(username: session['cas']['user'].downcase.strip)
@@ -96,13 +96,13 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     if Rails.env.development? && ENV['CAS_VALUE'].present?
-      session['cas'] = { ENV['CAS_KEY'] => ENV['CAS_VALUE'] }
+      session['cas'] = { ENV.fetch('CAS_KEY', nil) => ENV.fetch('CAS_VALUE', nil) }
     end
     if session['cas'].nil?
       render status: :unauthorized, plain: "Redirecting to login..."
     elsif session['cas']
       unless User.find_by(username: session['cas']['user'].downcase.strip)
-        redirect_to unregistered_path, notice: 'You are not registered to use this system.'
+        redirect_to unregistered_path, notice: t("application.authenticate_user!.unregistered")
       end
     end
   end

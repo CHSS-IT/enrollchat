@@ -7,8 +7,8 @@ namespace :import do
     file_report = ReportAction::Report.new
 
     unless Rails.env.test?
-      s3 = Aws::S3::Resource.new(region: ENV["AWS_DEFAULT_REGION"])
-      bucket = s3.bucket(ENV["ENROLLCHAT_REMOTE"])
+      s3 = Aws::S3::Resource.new(region: ENV.fetch("AWS_DEFAULT_REGION", nil))
+      bucket = s3.bucket(ENV.fetch("ENROLLCHAT_REMOTE", nil))
       current_files = bucket.objects
       file_list = bucket.objects.collect(&:key)
       last_file_name = file_list.last
@@ -27,7 +27,7 @@ namespace :import do
         end
       end
       current_files.each do |file|
-        if file.key.include?(ENV["ENROLLMENT_FILE_NAME"]) && (file.key.to_s == last_file_name)
+        if file.key.include?(ENV.fetch("ENROLLMENT_FILE_NAME", nil)) && (file.key.to_s == last_file_name)
           current_file = file
           new_name = current_file.key.to_s
           file_report.report_item('Import', 'Download', "Looking at current file: #{new_name}.")
@@ -46,7 +46,7 @@ namespace :import do
             File.delete("#{Rails.root}/tmp/#{new_name}") if File.exist?("#{Rails.root}/tmp/#{new_name}")
             file_report.report_item('Import', 'Download', "Local copy of download file removed from #{Rails.env}.")
           end
-        elsif file.key.include?(ENV["ENROLLMENT_FILE_NAME"]) && (file.key.to_s != last_file_name)
+        elsif file.key.include?(ENV.fetch("ENROLLMENT_FILE_NAME", nil)) && (file.key.to_s != last_file_name)
           file_report.report_item('Import', 'Download', "Bucket contains multiple import files. Last file was used. Remove #{file.key}")
         else
           file_report.report_item('Import', 'Download', "No files eligible for download.")
@@ -57,19 +57,19 @@ namespace :import do
     end
     email = file_report.build_report('Import')
     subject = "Import Executed"
-    CommentsMailer.generic(email.html_safe, subject, ENV['ENROLLCHAT_ADMIN_EMAIL']).deliver! if file_report.has_messages?('Import', 'Overall')
+    CommentsMailer.generic(email.html_safe, subject, ENV.fetch('ENROLLCHAT_ADMIN_EMAIL', nil)).deliver! if file_report.has_messages?('Import', 'Overall')
   end
 
   task :local_download => :environment do
     require 'aws-sdk-s3'
 
-    s3 = Aws::S3::Resource.new(region: ENV["AWS_DEFAULT_REGION"])
-    bucket = s3.bucket(ENV["ENROLLCHAT_REMOTE"])
+    s3 = Aws::S3::Resource.new(region: ENV.fetch("AWS_DEFAULT_REGION", nil))
+    bucket = s3.bucket(ENV.fetch("ENROLLCHAT_REMOTE", nil))
     current_files = bucket.objects
     file_count = 0
     if current_files.present? && !Rails.env.production?
       current_files.each do |file|
-        if file.key.include?(ENV["ENROLLMENT_FILE_NAME"]) || file.key.include?("BACKUP-")
+        if file.key.include?(ENV.fetch("ENROLLMENT_FILE_NAME", nil)) || file.key.include?("BACKUP-")
           new_name = file.key.to_s
           file.get(response_target: "#{Rails.root}/doc/#{new_name}")
           file_count += 1

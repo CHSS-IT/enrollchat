@@ -19,10 +19,10 @@ namespace :backup_db do
         system('pg_dump -Fc $DATABASE_URL > latestbackup.sql')
         file_report.report_item("Secondary Backup","Download Progress","Creating backup of production database and saving locally.")
       end
-      file_name = "#{ENV['FILE_BACKUP_NAME']}_#{Time.zone.now.year}-#{Time.zone.now.month}-#{Time.zone.now.day}.sql"
-      s3 = Aws::S3::Resource.new(region: ENV['AWS_DEFAULT_REGION'])
-      bucket = s3.bucket(ENV["S3_BACKUP_BUCKET_NAME"])
-      obj = s3.bucket(ENV["S3_BACKUP_BUCKET_NAME"]).object(file_name)
+      file_name = "#{ENV.fetch('FILE_BACKUP_NAME', nil)}_#{Time.zone.now.year}-#{Time.zone.now.month}-#{Time.zone.now.day}.sql"
+      s3 = Aws::S3::Resource.new(region: ENV.fetch('AWS_DEFAULT_REGION', nil))
+      bucket = s3.bucket(ENV.fetch("S3_BACKUP_BUCKET_NAME", nil))
+      obj = s3.bucket(ENV.fetch("S3_BACKUP_BUCKET_NAME", nil)).object(file_name)
       obj.upload_file("latestbackup.sql")
       file_list = bucket.objects.sort_by(&:last_modified).collect(&:key)
       oldest_file_name = file_list.first
@@ -45,7 +45,7 @@ namespace :backup_db do
       system("rm latestbackup.sql")
       report_body = file_report.build_report("Secondary Backup")
       subject = "EnrollChat Secondary Backup Executed"
-      CommentsMailer.generic(report_body.html_safe, subject, ENV["ENROLLCHAT_ADMIN_EMAIL"]).deliver! if file_report.has_messages?("Secondary Backup", "Backup Task Running")
+      CommentsMailer.generic(report_body.html_safe, subject, ENV.fetch("ENROLLCHAT_ADMIN_EMAIL", nil)).deliver! if file_report.has_messages?("Secondary Backup", "Backup Task Running")
     end
   end
 end
