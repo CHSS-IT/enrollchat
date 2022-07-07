@@ -18,7 +18,7 @@ namespace :scheduler do
         scheduler_report.report_item("Yearly Term Purge", "Terms Marked for Deletion", deleted_terms)
       end
       email = scheduler_report.build_report('Yearly Term Purge')
-      CommentsMailer.generic(email.html_safe, subject, ENV['ENROLLCHAT_ADMIN_EMAIL']).deliver! if scheduler_report.has_messages?("Yearly Term Purge", "Terms Marked for Deletion")
+      CommentsMailer.generic(email.html_safe, subject, ENV.fetch('ENROLLCHAT_ADMIN_EMAIL', nil)).deliver! if scheduler_report.has_messages?("Yearly Term Purge", "Terms Marked for Deletion")
     end
   end
 

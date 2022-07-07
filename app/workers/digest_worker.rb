@@ -23,7 +23,7 @@ class DigestWorker
   end
 
   def build_report
-    host = Rails.env.test? ? 'localhost' : ENV['ENROLLCHAT_HOST']
+    host = Rails.env.test? ? 'localhost' : ENV.fetch('ENROLLCHAT_HOST', nil)
     Section.department_list.each do |department|
       comments = Comment.yesterday.for_department(department).by_course
       if comments.present?
@@ -64,7 +64,7 @@ class DigestWorker
     text += '<h1>Departments With Comments</h1><p>' + report_content['departments']['list'].join(', ') + '</p>' if report_content['departments'].present?
     text += '<h1>Digests Sent to</h1><p>' + report_content['enrollchat']['recipients'].join(', ') + '</p>' if report_content['enrollchat'].present?
     text += '<p>No comment activity.</>' if report_content['departments'].present? && !report_content['enrollchat'].present?
-    CommentsMailer.generic(text.html_safe, "EnrollChat Digest Task Executed", ENV['ENROLLCHAT_ADMIN_EMAIL']).deliver!
+    CommentsMailer.generic(text.html_safe, "EnrollChat Digest Task Executed", ENV.fetch('ENROLLCHAT_ADMIN_EMAIL', nil)).deliver!
     # puts "Report ran fully."
   end
 

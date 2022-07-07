@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: Rails.env.test? ? "no-reply@example.com" : ENV['ENROLLCHAT_ADMIN_EMAIL']
+  default from: Rails.env.test? ? "no-reply@example.com" : ENV.fetch('ENROLLCHAT_ADMIN_EMAIL', nil)
   layout 'mailer'
 
   private
@@ -13,7 +13,7 @@ class ApplicationMailer < ActionMailer::Base
     when "production"
       email
     when "development"
-      ENV['ENROLLCHAT_ADMIN_EMAIL']
+      ENV.fetch('ENROLLCHAT_ADMIN_EMAIL', nil)
     when "test"
       "recipient@example.com"
     end

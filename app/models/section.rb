@@ -215,7 +215,7 @@ class Section < ApplicationRecord
   def self.send_report
     subject = "Import Processed"
     email = @import_report.build_report('Executing Import')
-    CommentsMailer.generic(email.html_safe, subject, ENV['ENROLLCHAT_ADMIN_EMAIL']).deliver!
+    CommentsMailer.generic(email.html_safe, subject, ENV.fetch('ENROLLCHAT_ADMIN_EMAIL', nil)).deliver!
   end
 
   def graduate?

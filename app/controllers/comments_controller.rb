@@ -48,7 +48,7 @@ class CommentsController < ApplicationController
                                        user: @comment.user.full_name,
                                        comment_count: @comment.section.comments.size,
                                        trigger: 'Refresh' }
-        format.html { redirect_to sections_url, notice: 'Comment was successfully created.' }
+        format.html { redirect_to sections_url, notice: t(".success") }
         format.json { render :show, status: :created, location: @comment }
         format.js { flash.now[:notice] = 'Comment was successfully created.' }
       else
@@ -64,7 +64,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to section_comment_url, notice: 'Comment was successfully updated.' }
+        format.html { redirect_to section_comment_url, notice: t(".success") }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit }
@@ -82,7 +82,7 @@ class CommentsController < ApplicationController
                                    comment_count: @comment.section.comments.size,
                                    trigger: 'Remove' }
     respond_to do |format|
-      format.html { redirect_to section_comments_url, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to section_comments_url, notice: t(".success") }
       format.js { flash.now[:notice] = 'Comment deleted.' }
     end
   end
@@ -104,7 +104,7 @@ class CommentsController < ApplicationController
 
   def permitted_to_comment
     unless current_user.active? || current_user.try(:admin?)
-      redirect_to sections_path, notice: 'Unable to post comment. Please contact the administrators to activate your account.'
+      redirect_to sections_path, notice: t(".permitted_to_comment.inactive")
       return false
     end
   end

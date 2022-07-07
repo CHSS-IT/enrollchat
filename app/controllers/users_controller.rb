@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        format.html { redirect_to users_url, notice: 'User was successfully created' }
+        format.html { redirect_to users_url, notice: t(".success") }
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -31,9 +31,9 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update(user_params)
         if current_user.try(:admin?)
-          format.html { redirect_to users_url, notice: 'User was successfully updated' }
+          format.html { redirect_to users_url, notice: t(".success") }
         else
-          format.html { redirect_to sections_url, notice: 'Preferences updated' }
+          format.html { redirect_to sections_url, notice: t(".preferences") }
         end
       else
         format.html { render :edit }
@@ -50,7 +50,7 @@ class UsersController < ApplicationController
   def archive
     @user.update(email_preference: 'No Emails', no_weekly_report: true, status: 'archived', admin: false, departments: [])
     respond_to do |format|
-      format.html { redirect_to users_url, notice: "User has been archived" }
+      format.html { redirect_to users_url, notice: t(".success") }
     end
   end
 
@@ -58,7 +58,7 @@ class UsersController < ApplicationController
 
   def editable?
     unless current_user == @user || current_user.try(:admin?)
-      redirect_to sections_path, notice: 'You do not have access to this page.'
+      redirect_to sections_path, notice: t(".editable?.unauthorized")
       return false
     end
   end
