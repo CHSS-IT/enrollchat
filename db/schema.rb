@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_06_151846) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_02_183902) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
   enable_extension "plpgsql"
@@ -68,6 +68,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_06_151846) do
     t.boolean "syllabus_present"
     t.boolean "image_present"
     t.boolean "youtube_present"
+    t.string "modality"
+    t.string "modality_description"
+    t.string "print_flag"
   end
 
   create_table "settings", force: :cascade do |t|
