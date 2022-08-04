@@ -17,6 +17,9 @@ one:
   cross_list_enrollment: 1
   waitlist: 1
   resolved_section: false
+  modality: ''
+  modality_description: ''
+  print_flag: ''
 
 two:
   owner: MyString
@@ -35,6 +38,9 @@ two:
   cross_list_enrollment: 2
   waitlist: 7
   resolved_section: false
+  modality: ''
+  modality_description: ''
+  print_flag: ''
 
 three:
   owner: MyString
@@ -53,6 +59,9 @@ three:
   cross_list_enrollment: 5
   waitlist: 2
   resolved_section: false
+  modality: ''
+  modality_description: ''
+  print_flag: ''
 
 four:
   owner: MyString
@@ -71,6 +80,9 @@ four:
   cross_list_enrollment: 6
   waitlist: 0
   resolved_section: false
+  modality: ''
+  modality_description: ''
+  print_flag: ''
 
 five:
   owner: MyString
@@ -90,3 +102,6 @@ five:
   waitlist: 7
   canceled_at: <%= 2.days.ago %>
   resolved_section: false
+  modality: ''
+  modality_description: ''
+  print_flag: ''
