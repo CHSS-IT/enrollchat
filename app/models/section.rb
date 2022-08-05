@@ -139,13 +139,17 @@ class Section < ApplicationRecord
     first_row = 2
 
     # Use local names instead of names from file header
-    header = %w[section_id term department cross_list_group course_description section_number title credits level status enrollment_limit actual_enrollment cross_list_enrollment waitlist]
+    header = %w[section_id term department cross_list_group course_description section_number title credits level status enrollment_limit actual_enrollment cross_list_enrollment waitlist modality modality_description print_flag]
     # Parse spreadsheet.
     @updated_sections = 0
     (first_row..last_real_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
+      # Hack to avoid blanks and headers when dealing with generated csv or xslt with disclaimer rows
       if row["term"].blank? || row["term"].to_i.to_s != row["term"]
-        # Hack to avoid blanks and headers when dealing with generated csv or xslt with dislaimer rows
+      # Temporarily exclude sections where the print_flag is set to no.
+      # This is to limit disruptions when the enhanced data feed is first implemented.
+      elsif row["print_flag"] == 'N'
+        @import_report.report_item('Executing Import', 'Skipped Sections', "No Print Flag: #{row['department']} #{row['section_number']}")
       elsif row["section_number"].include?('SA')
         @import_report.report_item('Executing Import', 'Skipped Sections', "Study abroad #{row['section_number']}")
       elsif Section.home_department_list.include?(row["department"])
@@ -197,9 +201,9 @@ class Section < ApplicationRecord
     untouched = Section.where('updated_at <= ? and term in (?)', last_touched_at, touched_terms)
     if untouched.size > 0
       untouched.not_canceled.each do |s|
-        s.status = 'C'
-        s.canceled_at = DateTime.now()
-        s.save!
+        # s.status = 'C'
+        # s.canceled_at = DateTime.now()
+        # s.save!
         @import_report.report_item('Executing Import', 'Canceled Sections', "(ID: #{s.id}) #{s.section_and_number} in #{s.term} was not touched by import and has been canceled.")
       end
       @import_report.report_item('Executing Import', 'Updated Sections', "<a href='/sections' class='dropdown-item'>#{untouched.size} sections from terms contained in feed were not touched by import. It is possible that these were cancelled.</a>")
