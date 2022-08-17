@@ -135,6 +135,23 @@ class SectionTest < ActiveSupport::TestCase
     assert_equal @sections.in_level(level), [@section_two, @section_five]
   end
 
+  test 'face_to_face scope should return sections whose modality matches _A_.' do
+    @section.update(modality: 'XAX')
+    assert_equal @sections.face_to_face, [@section]
+  end
+
+  test 'fully_remote scope should return sections whose modality matches _C_.' do
+    @section.update(modality: 'XCX')
+    assert_equal @sections.fully_remote, [@section]
+  end
+
+  test 'hybrid scope should return sections which have a modality and whose modality is not _A_ or _C_.' do
+    @section.update(modality: 'XXX')
+    @section_two.update(modality: 'XAX')
+    @section_three.update(modality: 'XCX')
+    assert_equal @sections.hybrid, [@section]
+  end
+
   # import
   test 'import updates attributes for the first existing section' do
     assert_equal @section.actual_enrollment, 22

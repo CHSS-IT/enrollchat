@@ -30,7 +30,7 @@ class Section < ApplicationRecord
 
   scope :face_to_face, -> { where("modality like '_A_'") }
   scope :fully_remote, -> { where("modality like '_C_'") }
-  scope :hybrid, -> { where.not("modality like '_C_'").where.not("modality like '_A_'") }
+  scope :hybrid, -> { where.not("modality like '_C_'").where.not("modality like '_A_'").where.not(modality: [nil, '']) }
 
   scope :marked_for_deletion, -> { unscoped.where("delete_at is not null") }
   scope :delete_now, -> { unscoped.where("delete_at is not null AND delete_at < ?", DateTime.now()) }
