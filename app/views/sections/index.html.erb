@@ -34,6 +34,10 @@
                   <%= select "section", "level", options_for_select(Section.level_list, selected: @section_level), { prompt: 'ALL' }, { class: 'form-control' } %>
                 </div>
                 <div class="col-md-2 col-sm-6 form-group">
+                  <%= label_tag 'modality', 'Modality' %>
+                  <%= select "section", "modality", options_for_select(Section.modality_list, selected: @modality), { prompt: 'ALL' }, { class: 'form-control' } %>
+                </div>
+                <div class="col-md-2 col-sm-6 form-group">
                   <%= label_tag 'section_flagged', 'Flagged As' %>
                   <%= select "section", "flagged", options_for_select(Section.flagged_as_list, selected: @flagged_as), { prompt: 'ALL' }, { class: 'form-control' } %>
                 </div>
