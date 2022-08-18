@@ -104,7 +104,8 @@ class Section < ApplicationRecord
   end
 
   def self.modality_list
-    [['Face to Face','face_to_face'],['Hybrid','hybrid'],['Fully Remote','fully_remote']]
+    %w[face_to_face hybrid fully_remote]
+    # [['Face to Face','face_to_face'],%w[Hybrid,hybrid],['Fully Remote','fully_remote']]
   end
 
   def self.level_list
@@ -119,8 +120,8 @@ class Section < ApplicationRecord
     self.level_list.collect { |l| l[1] }
   end
 
-  def self.modality_code_list
-    self.modality_list.collect { |l| l[1] }
+  def self.modality_list_with_labels
+    self.modality_list.map { |l| [l.humanize,l] }
   end
 
   self.level_code_list.each do |level|

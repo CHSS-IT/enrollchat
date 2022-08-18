@@ -64,7 +64,7 @@ class SectionsController < ApplicationController
 
       unless params[:section][:modality].blank?
         logger.debug("MODALITY SELECTED: #{params[:section][:modality]}")
-        @modality = params[:section][:modality] if Section.modality_code_list.include?(params[:section][:modality])
+        @modality = params[:section][:modality] if Section.modality_list.include?(params[:section][:modality])
         @sections = @sections.send(@modality) if @modality.present?
       end
 

@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-md-2 col-sm-6 form-group">
                   <%= label_tag 'modality', 'Modality' %>
-                  <%= select "section", "modality", options_for_select(Section.modality_list, selected: @modality), { prompt: 'ALL' }, { class: 'form-control' } %>
+                  <%= select "section", "modality", options_for_select(Section.modality_list_with_labels, selected: @modality), { prompt: 'ALL' }, { class: 'form-control' } %>
                 </div>
                 <div class="col-md-2 col-sm-6 form-group">
                   <%= label_tag 'section_flagged', 'Flagged As' %>
