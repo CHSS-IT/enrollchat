@@ -1,0 +1,26 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Dangerous Send",
+      "warning_code": 23,
+      "fingerprint": "dbdbeb8831c45c8077cec5cd8fdab908c3f6db4dbf57e4e97cf28d24c4f0b6eb",
+      "check_name": "Send",
+      "message": "User controlled method execution",
+      "file": "app/controllers/sections_controller.rb",
+      "line": 68,
+      "link": "https://brakemanscanner.org/docs/warning_types/dangerous_send/",
+      "code": "Section.includes(:comments).in_term((params[:term] or (cookies[:term] or (Setting.first_or_create!(:singleton_guard => 0).current_term or Section.maximum(:term))))).by_department.by_section_and_number.not_canceled.in_department(params[:section][:department]).not_canceled.not_canceled.in_status(params[:section][:status]).in_level(params[:section][:level]).send(params[:section][:modality])",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "SectionsController",
+        "method": "filter"
+      },
+      "user_input": "params[:section][:modality]",
+      "confidence": "High",
+      "note": ""
+    }
+  ],
+  "updated": "2022-08-18 08:19:41 -0400",
+  "brakeman_version": "5.2.3"
+}

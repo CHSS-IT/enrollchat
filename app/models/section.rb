@@ -107,7 +107,6 @@ class Section < ApplicationRecord
     [['Face to Face','face_to_face'],['Hybrid','hybrid'],['Fully Remote','fully_remote']]
   end
 
-
   def self.level_list
     [['Undergraduate - Lower Division','uul'],['Undergraduate - Upper Division','uuu'],['Graduate - First','ugf'],['Graduate - Advanced','uga']]
   end
