@@ -59,7 +59,13 @@ class SectionsController < ApplicationController
 
       unless params[:section][:level].blank?
         @section_level = params[:section][:level] if Section.level_code_list.include?(params[:section][:level])
-        @sections = @sections.in_level(@section_level)
+        @sections = @sections.in_level(@section_level) if @section_level.present?
+      end
+
+      unless params[:section][:modality].blank?
+        logger.debug("MODALITY SELECTED: #{params[:section][:modality]}")
+        @modality = params[:section][:modality] if Section.modality_list.include?(params[:section][:modality])
+        @sections = @sections.send(@modality) if @modality.present?
       end
 
       unless params[:section][:flagged].blank?

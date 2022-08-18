@@ -28,6 +28,10 @@ class Section < ApplicationRecord
   scope :with_status, -> { where("status is not null and status <> ' '") }
   scope :in_level, ->(level) { where("lower(level) = ?", level.downcase) }
 
+  scope :face_to_face, -> { where("modality like '_A_'") }
+  scope :fully_remote, -> { where("modality like '_C_'") }
+  scope :hybrid, -> { where.not("modality like '_C_'").where.not("modality like '_A_'").where.not(modality: [nil, '']) }
+
   scope :marked_for_deletion, -> { unscoped.where("delete_at is not null") }
   scope :delete_now, -> { unscoped.where("delete_at is not null AND delete_at < ?", DateTime.now()) }
 
@@ -99,6 +103,11 @@ class Section < ApplicationRecord
     sections.collect { |section| section.course_code }.uniq.sort
   end
 
+  def self.modality_list
+    %w[face_to_face hybrid fully_remote]
+    # [['Face to Face','face_to_face'],%w[Hybrid,hybrid],['Fully Remote','fully_remote']]
+  end
+
   def self.level_list
     [['Undergraduate - Lower Division','uul'],['Undergraduate - Upper Division','uuu'],['Graduate - First','ugf'],['Graduate - Advanced','uga']]
   end
@@ -109,6 +118,10 @@ class Section < ApplicationRecord
 
   def self.level_code_list
     self.level_list.collect { |l| l[1] }
+  end
+
+  def self.modality_list_with_labels
+    self.modality_list.map { |l| [l.humanize,l] }
   end
 
   self.level_code_list.each do |level|
