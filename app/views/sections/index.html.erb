@@ -41,10 +41,6 @@
                   <%= label_tag 'section_flagged', 'Flagged As' %>
                   <%= select "section", "flagged", options_for_select(Section.flagged_as_list, selected: @flagged_as), { prompt: 'ALL' }, { class: 'form-control' } %>
                 </div>
-                <div class="col-md-2 col-sm-6 form-group">
-                  <%= label_tag 'only_waitlisted', 'Limit to waitlisted sections' %>
-                  <%= check_box "section", "only_waitlisted", { class: 'form-control' }, 1, @only_waitlisted.present? %>
-                </div>
                 <div class="col-md-3 col-xs-12 button-group pull-right">
                   <% unless params[:section].blank? %>
                     <%= link_to 'Clear Filters', sections_path, style: 'text-decoration: underline;' %><i class="fa fa-times pl-1" aria-hidden="true"></i>

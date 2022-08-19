@@ -18,7 +18,7 @@ class Section < ApplicationRecord
   scope :in_department, ->(department) { where(department: department) }
   scope :in_status, ->(status) { where(status: status) }
   scope :full_or_over_enrolled, -> { not_canceled.where('actual_enrollment >= enrollment_limit or waitlist > 5') }
-  scope :only_waitlisted, -> { not_canceled.where('waitlist > 0') }
+  scope :all_waitlists, -> { not_canceled.where('waitlist > 0') }
   scope :full, -> { not_canceled.where('actual_enrollment = enrollment_limit') }
   scope :under_enrolled, -> { not_canceled.where('actual_enrollment < enrollment_limit and cross_list_enrollment < enrollment_limit') }
   scope :over_enrolled, -> { not_canceled.where('waitlist > 5') }
@@ -262,7 +262,7 @@ class Section < ApplicationRecord
   end
 
   def self.flagged_as_list
-    %w[long-waitlist under-enrolled]
+    %w[waitlisted long-waitlist under-enrolled]
   end
 
   def self.flagged_as?(flag)
