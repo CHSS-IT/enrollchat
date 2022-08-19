@@ -74,6 +74,11 @@ class SectionsController < ApplicationController
           @sections = @sections.flagged_as?(@flagged_as)
         end
       end
+
+      if params[:section][:only_waitlisted].present?
+        @only_waitlisted = true
+        @sections = @sections.only_waitlisted
+      end
     else
       @sections = @sections.not_canceled
     end
