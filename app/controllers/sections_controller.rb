@@ -70,12 +70,11 @@ class SectionsController < ApplicationController
 
       unless params[:section][:flagged].blank?
         @flagged_as = params[:section][:flagged]
-        if Section.flagged_as_list.include?(@flagged_as)
-          if @flagged_as == 'waitlisted'
-            @sections = @sections.all_waitlists
-          else
-            @sections = @sections.flagged_as?(@flagged_as)
-          end
+        case @flagged_as
+        when 'waitlisted'
+          @sections = @sections.all_waitlists
+        when 'long-waitlist', 'under-enrolled'
+          @sections = @sections.flagged_as?(@flagged_as)
         end
       end
 
