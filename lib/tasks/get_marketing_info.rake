@@ -38,7 +38,7 @@ namespace :marketing_info do
             section = Section.unscoped.where(section_id: chssweb_section['crn'].to_i, term: term).first
             puts "#{chssweb_section['id']} - #{section.present?}"
             if section.present?
-              section.assign_attributes(chssweb_title: chssweb_section['title'], image_present: chssweb_section['has_image?'], description_present: chssweb_section['has_description?'], youtube_present: chssweb_section['has_youtube?'])
+              section.assign_attributes(chssweb_title: chssweb_section['title'], image_present: chssweb_section['has_image?'], description_present: chssweb_section['has_description?'], youtube_present: chssweb_section['has_youtube?'], instructor_name: chssweb_section['instructor_name'], second_instructor_name: chssweb_section['second_instructor_name'])
               #### if any of the marketing info has changed, update it
               section.save if section.changed?
             else
