@@ -78,8 +78,8 @@ $(document).ready(function() {
             },
             { responsivePriority: 1, targets: [
                     4,
-                    !$('body').hasClass('sections') || !$('body').hasClass('show') ? 16 : undefined,
-                    !$('body').hasClass('sections') || !$('body').hasClass('show') ? 17 : undefined
+                    !$('body').hasClass('sections') || !$('body').hasClass('show') ? 17 : undefined,
+                    !$('body').hasClass('sections') || !$('body').hasClass('show') ? 18 : undefined
                 ]
             },
             { responsivePriority: 2, targets: [
@@ -87,11 +87,11 @@ $(document).ready(function() {
                 ]
             },
             { responsivePriority: 3, targets: [
-                    9,
                     10,
                     11,
                     12,
-                    13
+                    13,
+                    14
                 ]
             }
         ],
