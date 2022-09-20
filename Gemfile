@@ -14,7 +14,7 @@ gem 'rails', '7.0.3.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.4'
 # Use Puma as the app server
-gem 'puma', '~> 5.6.4'
+gem 'puma', '~> 5.6.5'
 # Use SCSS for stylesheets
 gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
 # Use Terser as compressor for JavaScript assets
@@ -94,7 +94,7 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.37'
   gem 'simplecov', '~> 0.21.2', require: false
-  gem 'webdrivers', '~> 5.0'
+  gem 'webdrivers', '~> 5.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
