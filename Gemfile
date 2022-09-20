@@ -65,7 +65,7 @@ gem 'roo', '~> 2.9'
 
 gem 'sidekiq', '~> 6.5'
 
-gem 'smarter_csv', '~> 1.7', '>= 1.7.1'
+gem 'smarter_csv', '~> 1.7'
 
 gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'
 
