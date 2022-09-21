@@ -13,7 +13,7 @@ namespace :update_db do
       puts "Working off local copy of database. Updating development..."
       system("pg_restore --verbose #{ENV.fetch('DATABASE_COMMAND', nil)} latest.dump")
       puts "Complete. Removing local copy of database file."
-      File.delete(Rails.root.join("latest.dump"))
+      Rails.root.join("latest.dump").delete
     end
   end
 end
