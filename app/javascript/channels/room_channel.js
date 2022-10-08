@@ -23,13 +23,5 @@ consumer.subscriptions.create({ channel: "RoomChannel" }, {
                 }
             }
         }
-        if (data.checkmark === true) {
-            dom_id = '#section_' + data.section_id + ' td #resolved';
-            $(dom_id).addClass('fa fa-check');
-        }
-        if (data.checkmark === false) {
-            dom_id = '#section_' + data.section_id + ' td #resolved';
-            $(dom_id).removeClass('fa fa-check');
-        }
     }
 });

@@ -1,0 +1,4 @@
+<%= turbo_stream.update "toggle_resolved" do %>
+  <%= render partial: "comments/resolve_button", locals: { section: @section} %>
+<% end %>
+

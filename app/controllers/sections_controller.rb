@@ -19,11 +19,9 @@ class SectionsController < ApplicationController
   def toggle_resolved_section
     @section = Section.find(params[:id])
     @section.toggle!(:resolved_section)
-    ActionCable.server.broadcast "room_channel",
-                                 { section_id: @section.id,
-                                   checkmark: @section.resolved_section }
+    @section.broadcast_update_later_to("resolved_section_indicator", target: "resolved_#{@section.id}", partial: "sections/toggle_resolved_section", locals: { section: @section })
     respond_to do |format|
-      format.js { render layout: false }
+      format.turbo_stream
     end
   end
 
