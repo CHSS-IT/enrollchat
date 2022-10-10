@@ -6,6 +6,23 @@ class Comment < ApplicationRecord
 
   default_scope { joins(:section).where("sections.delete_at is null") }
 
+  after_create_commit -> {
+    broadcast_update_later_to "comment_count",
+                              target: "#{self.section.id}_comment_count",
+                              html: self.section.comments.size
+    broadcast_update_later_to "comment_preview",
+                              target: "most_recent_comment_#{self.section.id}",
+                              partial: "sections/comment_preview",
+                              locals: { section: self.section }
+  }
+
+  after_destroy_commit -> {
+    broadcast_update_later_to "comment_count",
+                              target: "#{self.section.id}_comment_count",
+                              html: self.section.comments.size,
+                              locals: { comment: nil }
+  }
+
   # Behavior is a tad arbitrary. Most recent five comments.
   scope :recent, -> { order(created_at: :desc).limit(5) }
   scope :in_past_day, -> { where('comments.created_at > ?', 1.day.ago) }

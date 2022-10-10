@@ -42,12 +42,12 @@ class CommentsController < ApplicationController
                                        comment_count: @comment.section.comments.size,
                                        date: @comment.created_at.strftime('%l:%M %P'),
                                        department: @comment.section.department }
-        ActionCable.server.broadcast "room_channel",
-                                     { section_id: @comment.section.id,
-                                       body: @comment.body,
-                                       user: @comment.user.full_name,
-                                       comment_count: @comment.section.comments.size,
-                                       trigger: 'Refresh' }
+        # ActionCable.server.broadcast "room_channel",
+        #                              { section_id: @comment.section.id,
+        #                                body: @comment.body,
+        #                                user: @comment.user.full_name,
+        #                                comment_count: @comment.section.comments.size,
+        #                                trigger: 'Refresh' }
         format.html { redirect_to sections_url, notice: t(".success") }
         format.json { render :show, status: :created, location: @comment }
         format.js { flash.now[:notice] = 'Comment was successfully created.' }
@@ -77,10 +77,7 @@ class CommentsController < ApplicationController
   # DELETE /comments/1.json
   def destroy
     @comment.destroy
-    ActionCable.server.broadcast "room_channel",
-                                 { section_id: @comment.section.id,
-                                   comment_count: @comment.section.comments.size,
-                                   trigger: 'Remove' }
+    @section.broadcast_update_later_to("comment_preview", target: "most_recent_comment_#{@section.id}", partial: "sections/comment_preview", locals: { section: @section })
     respond_to do |format|
       format.html { redirect_to section_comments_url, notice: t(".success") }
       format.js { flash.now[:notice] = 'Comment deleted.' }
