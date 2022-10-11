@@ -6,5 +6,4 @@
 //= link channels/consumer.js
 //= link channels/index.js
 //= link channels/room_channel.js
-//= link channels/department_channel.js
 

@@ -36,15 +36,6 @@ class CommentsController < ApplicationController
         if current_user.show_alerts(@comment.section.department)
           @comment.broadcast_prepend_later_to("new_comment_notification", target: "notifications", partial: "comments/recent_comment", locals: { recent_comment: @comment, current_user: current_user })
         end
-        ActionCable.server.broadcast "department_channel_#{@comment.section.department}", {
-                                     # { message: "<a id='comment-notice-" + @comment.section.id.to_s + "' class='dropdown-item' data-toggle='modal' data-target='#comments' data-remote='true' href='/sections/" + @comment.section.id.to_s + "/comments'><i class='fa fa-circle text-info new-message-marker' aria-hidden='true'></i> ".html_safe + @comment.section.section_and_number + ": " + @comment.user.full_name + " " + time_ago_in_words(@comment.created_at) + "</a>",
-                                       body: @comment.body,
-                                       section_name: @comment.section.section_and_number,
-                                       user: @comment.user.full_name,
-                                       section_id: @comment.section.id,
-                                       comment_count: @comment.section.comments.size,
-                                       date: @comment.created_at.strftime('%l:%M %P'),
-                                       department: @comment.section.department }
         format.html { redirect_to sections_url, notice: t(".success") }
         format.json { render :show, status: :created, location: @comment }
         format.js { flash.now[:notice] = 'Comment was successfully created.' }
