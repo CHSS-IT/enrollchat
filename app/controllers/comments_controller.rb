@@ -42,12 +42,6 @@ class CommentsController < ApplicationController
                                        comment_count: @comment.section.comments.size,
                                        date: @comment.created_at.strftime('%l:%M %P'),
                                        department: @comment.section.department }
-        # ActionCable.server.broadcast "room_channel",
-        #                              { section_id: @comment.section.id,
-        #                                body: @comment.body,
-        #                                user: @comment.user.full_name,
-        #                                comment_count: @comment.section.comments.size,
-        #                                trigger: 'Refresh' }
         format.html { redirect_to sections_url, notice: t(".success") }
         format.json { render :show, status: :created, location: @comment }
         format.js { flash.now[:notice] = 'Comment was successfully created.' }
