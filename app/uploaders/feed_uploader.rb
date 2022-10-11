@@ -2,8 +2,6 @@ class FeedUploader < CarrierWave::Uploader::Base
   after :store, :perform_import
 
   def perform_import(file)
-    ActionCable.server.broadcast 'room_channel',
-                                 { message: "<a href='/sections' class='dropdown-item'>Registration data import in process.</a>" }
     ImportWorker.perform_async(self.url.to_s)
   end
 
