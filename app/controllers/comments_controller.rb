@@ -33,8 +33,10 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         NewCommentWorker.perform_async(@comment.id)
-        if current_user.show_alerts(@comment.section.department)
-          @comment.broadcast_prepend_later_to("new_comment_notification", target: "notifications", partial: "comments/recent_comment", locals: { recent_comment: @comment, current_user: current_user })
+        User.active.each do |user|
+          if user.show_alerts(@comment.section.department)
+            @comment.broadcast_prepend_later_to("new_comment_#{user.id}_notification", target: "notifications", partial: "comments/recent_comment", locals: { recent_comment: @comment, current_user: current_user })
+          end
         end
         format.html { redirect_to sections_url, notice: t(".success") }
         format.json { render :show, status: :created, location: @comment }

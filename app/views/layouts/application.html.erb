@@ -56,7 +56,7 @@
               </ul>
             </li>
             <li class="nav-item dropdown" id="activity-dropdown">
-              <%= turbo_stream_from "new_comment_notification" %>
+              <%= turbo_stream_from "new_comment_#{current_user.id}_notification" %>
               <button class="btn btn-outline unique-color-dark dropdown-toggle btn-sm" type="button" id="alerts-button" data-toggle="dropdown" href="#notifications" aria-expanded="false" aria-haspopup="true" aria-controls="notifications">Activity</button>
               <div class="dropdown-menu dropdown-menu-right animated fadeInUp" aria-labelledy="alerts-button" id="notifications">
                 <%= render partial: 'comments/recent_comment', collection: @recent_comments %>
