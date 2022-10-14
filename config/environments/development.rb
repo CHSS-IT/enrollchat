@@ -88,6 +88,4 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { host: ENV["ENROLLCHAT_HOST"] }
-
-  config.action_cable.url = "ws://localhost:3000/cable"
 end

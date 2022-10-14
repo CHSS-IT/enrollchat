@@ -225,9 +225,6 @@ class Section < ApplicationRecord
       @import_report.report_item('Executing Import', 'Updated Sections', "<a href='/sections' class='dropdown-item'>All sections were touched by the import process.</a>")
     end
     Turbo::StreamsChannel.broadcast_prepend_later_to("new_data_notification", target: "new-data-available", partial: "sections/new_data_message", locals: { new_sections: @new_sections, updated_sections: @updated_sections })
-    # ActionCable.server.broadcast 'room_channel',
-    #                              { message: "<a href='/sections' class='dropdown-item'>Registration data import complete. #{@new_sections} added. #{@updated_sections} updated. Refreshing browser to show changes.</a>",
-    #                                trigger: 'Updated' }
     send_report if @import_report.has_messages?('Executing Import', 'Updated Sections')
   end
 
