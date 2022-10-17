@@ -6,20 +6,20 @@ class Comment < ApplicationRecord
 
   default_scope { joins(:section).where("sections.delete_at is null") }
 
-  after_create_commit -> {
+  after_create_commit lambda {
     broadcast_update_later_to "comment_count",
-                              target: "#{self.section.id}_comment_count",
-                              html: self.section.comments.size
+                              target: "#{section.id}_comment_count",
+                              html: section.comments.size
     broadcast_update_later_to "comment_preview",
-                              target: "most_recent_comment_#{self.section.id}",
+                              target: "most_recent_comment_#{section.id}",
                               partial: "sections/comment_preview",
-                              locals: { section: self.section }
+                              locals: { section: section }
   }
 
-  after_destroy_commit -> {
+  after_destroy_commit lambda {
     broadcast_update_later_to "comment_count",
-                              target: "#{self.section.id}_comment_count",
-                              html: self.section.comments.size,
+                              target: "#{section.id}_comment_count",
+                              html: section.comments.size,
                               locals: { comment: nil }
   }
 
