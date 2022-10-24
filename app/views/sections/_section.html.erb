@@ -19,15 +19,18 @@
   <td><%= basic_date(section.most_recent_comment_date) unless section.most_recent_comment_date.blank? %></td>
   <% if action_name != 'show' %>
     <td>
-      <%=  link_to "<i class='fa fa-comment' aria-hidden = 'true'></i> <span class='comment-count'>#{section.comments.size}".html_safe, section_comments_path(section), remote: true, data: { toggle: 'modal', target: '#comments' }  %>
-      <%  if section.comments.present?  %>
-        <%=  content_tag(:span, "<i class='fa fa-info-circle' id='preview-comment' aria-hidden='true'></i>".html_safe, data: { toggle: 'popover', title: section.comments.first.user.full_name + " " + time_ago_in_words(section.comments.first.created_at) + " ago ", content: section.comments.first.body }, class: 'comment-hover' )  %>
-      <%  end  %>
-      <%  if section.resolved_section && current_user.is_admin?  %>
-        <i class='fa fa-check' style="color: green;" aria-hidden='true' id="resolved" />
-      <%  else  %>
-        <div id="resolved" style="color: green;"></div>
-      <%  end %>
+      <%= turbo_stream_from "comment_count" %>
+      <%=  link_to "<i class='fa fa-comment' aria-hidden = 'true'></i> <span id='#{section.id}_comment_count'>#{section.comments.size}</span>".html_safe, section_comments_path(section), remote: true, data: { toggle: 'modal', target: '#comments' }  %>
+      <%= turbo_stream_from "comment_preview" %>
+      <span id=<%= "most_recent_comment_#{section.id}" %>>
+        <%= render partial: "comment_preview", locals: { section: section } %>
+      </span>
+      <% if current_user.is_admin? %>
+        <%= turbo_stream_from "resolved_section_indicator" %>
+        <span id=<%= "resolved_#{section.id}" %>>
+          <%= render partial: "toggle_resolved_section", locals: { section: section } %>
+        </span>
+      <% end %>
     </td>
   <td><%=  link_to "<i class='fa fa-chart-line' aria-hidden='true' ></i> Graph".html_safe, section  %></td>
   <td class="text-center text-success"><%= truthiness_indicator(section.title_changed?) %></td>

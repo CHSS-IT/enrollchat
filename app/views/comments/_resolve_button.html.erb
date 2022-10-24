@@ -1,0 +1,5 @@
+<% if section.resolved_section %>
+  <%= link_to "Resolved", toggle_resolved_section_section_path(section), class: "btn btn-success btn-sm", data: { turbo: true, turbo_method: :patch } %>
+<% else %>
+  <%= link_to "Mark section as resolved", toggle_resolved_section_section_path(section), class: "btn btn-primary btn-sm", data: { turbo: true, turbo_method: :patch } %>
+<% end %>

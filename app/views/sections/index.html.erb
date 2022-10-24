@@ -10,6 +10,8 @@
           <h1 class="card-title d-inline-block"><%= term_in_words(@term) %> Sections</h1>
           <small class="d-inline-block pb-2">Updated <%= basic_date(@updated_at) %></small>
         <% end %>
+        <%= turbo_stream_from "new_data_notification" %>
+        <div id="new-data-available"></div>
       </div>
       <div class="col-lg-2 col-sm-4 col-xs-6">
       </div>

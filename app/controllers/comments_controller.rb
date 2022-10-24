@@ -33,21 +33,9 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         NewCommentWorker.perform_async(@comment.id)
-        ActionCable.server.broadcast "department_channel_#{@comment.section.department}",
-                                     { message: "<a id='comment-notice-" + @comment.section.id.to_s + "' class='dropdown-item' data-toggle='modal' data-target='#comments' data-remote='true' href='/sections/" + @comment.section.id.to_s + "/comments'><i class='fa fa-circle text-info new-message-marker' aria-hidden='true'></i> ".html_safe + @comment.section.section_and_number + ": " + @comment.user.full_name + " " + time_ago_in_words(@comment.created_at) + "</a>",
-                                       body: @comment.body,
-                                       section_name: @comment.section.section_and_number,
-                                       user: @comment.user.full_name,
-                                       section_id: @comment.section.id,
-                                       comment_count: @comment.section.comments.size,
-                                       date: @comment.created_at.strftime('%l:%M %P'),
-                                       department: @comment.section.department }
-        ActionCable.server.broadcast "room_channel",
-                                     { section_id: @comment.section.id,
-                                       body: @comment.body,
-                                       user: @comment.user.full_name,
-                                       comment_count: @comment.section.comments.size,
-                                       trigger: 'Refresh' }
+        User.active.each do |user|
+          @comment.broadcast_prepend_later_to("new_comment_#{user.id}_notification", target: "notifications", partial: "comments/recent_comment", locals: { recent_comment: @comment, current_user: current_user }) if user.show_alerts(@comment.section.department)
+        end
         format.html { redirect_to sections_url, notice: t(".success") }
         format.json { render :show, status: :created, location: @comment }
         format.js { flash.now[:notice] = 'Comment was successfully created.' }
@@ -77,10 +65,7 @@ class CommentsController < ApplicationController
   # DELETE /comments/1.json
   def destroy
     @comment.destroy
-    ActionCable.server.broadcast "room_channel",
-                                 { section_id: @comment.section.id,
-                                   comment_count: @comment.section.comments.size,
-                                   trigger: 'Remove' }
+    @section.broadcast_update_later_to("comment_preview", target: "most_recent_comment_#{@section.id}", partial: "sections/comment_preview", locals: { section: @section })
     respond_to do |format|
       format.html { redirect_to section_comments_url, notice: t(".success") }
       format.js { flash.now[:notice] = 'Comment deleted.' }

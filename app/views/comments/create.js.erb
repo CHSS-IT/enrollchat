@@ -5,3 +5,10 @@ $('#alert-wrapper').html("<%= escape_javascript(render 'layouts/alert') %>");
 $(".alert").fadeTo(2000, 500).slideUp(500, function(){
   $(".alert").slideUp(500);
 });
+
+<% if current_user.show_alerts(@comment.section.department) %>
+  if ($('#alerts-button').hasClass('unique-color-dark')) {
+      $('#alerts-button').removeClass('unique-color-dark').addClass('rgba-lime-strong');
+  }
+  $('button#alerts-button').effect("pulsate", {times:2}, 1000);
+<% end %>
