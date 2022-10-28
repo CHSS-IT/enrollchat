@@ -63,7 +63,7 @@ gem 'report_action', '~> 0.5.0'
 # from the source. https://github.com/roo-rb/roo/issues/551
 gem 'roo', '~> 2.9'
 
-gem 'sidekiq', '~> 6.5', '>= 6.5.7'
+gem 'sidekiq', '~> 7.0'
 
 gem 'smarter_csv', '~> 1.7'
 
