@@ -20,7 +20,7 @@
       <div class="section-info">
         <small class="text-muted">
           <%= turbo_frame_tag "toggle_resolved" do %>
-            <%= render partial: "resolve_button", locals: { section: comment.section} %>
+            <%= render partial: "comments/resolve_button", locals: { section: comment.section} %>
           <% end %>
         </small>
       </div>
