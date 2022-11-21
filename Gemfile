@@ -85,7 +85,7 @@ group :development do
   # Shiny error messages
   gem 'better_errors', '~> 2.9'
   gem "binding_of_caller"
-  gem 'brakeman', '~> 5.3', require: false
+  gem 'brakeman', '~> 5.4', require: false
   # N+1 finder
   gem 'bullet', '~> 7.0.3'
   gem 'listen', '~> 3.7'
