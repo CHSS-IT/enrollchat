@@ -87,9 +87,18 @@ $(document).ready(function() {
                 ]
             },
             { responsivePriority: 3, targets: [
+                    5,
+                    9,
+                    12
+                ]
+
+            },
+            { responsivePriority: 4, targets: [
+                    6,
+                    7,
+                    8,
                     10,
                     11,
-                    12,
                     13,
                     14
                 ]
