@@ -3,8 +3,8 @@ class Enrollment < ApplicationRecord
 
   before_save :null_to_zero
 
-  scope :in_term, ->(term) { where(term: term) }
-  scope :in_department, ->(department) { where(department: department) }
+  scope :in_term, ->(term) { where(term:) }
+  scope :in_department, ->(department) { where(department:) }
   scope :not_canceled, -> { joins(:section).where("status <> 'C'") }
 
   private

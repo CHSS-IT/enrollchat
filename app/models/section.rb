@@ -13,10 +13,10 @@ class Section < ApplicationRecord
   scope :by_section_and_number, -> { order(:course_description, :section_number) }
   scope :canceled, -> { where(status: 'C') }
   scope :not_canceled, -> { where("status <> 'C'") }
-  scope :in_term, ->(term) { where(term: term) }
+  scope :in_term, ->(term) { where(term:) }
   scope :upcoming, ->(term) { where('term >= ?', term) }
-  scope :in_department, ->(department) { where(department: department) }
-  scope :in_status, ->(status) { where(status: status) }
+  scope :in_department, ->(department) { where(department:) }
+  scope :in_status, ->(status) { where(status:) }
   scope :full_or_over_enrolled, -> { not_canceled.where('actual_enrollment >= enrollment_limit or waitlist > 5') }
   scope :all_waitlists, -> { not_canceled.where('waitlist > 0') }
   scope :full, -> { not_canceled.where('actual_enrollment = enrollment_limit') }
