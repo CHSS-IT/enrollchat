@@ -27,7 +27,7 @@
       <td><%= sections.flagged_as?('long-waitlist').size %></td>
       <td><%= sections.canceled.size %></td>
       <td><%= Comment.for_department(department).in_past_day.size %></td>
-      <td><%= basic_datetime(Comment.for_department(department).in_term(@term).most_recent) %></td>
+      <td><%= basic_datetime_eastern(Comment.for_department(department).in_term(@term).most_recent) %></td>
       <td><%= sections.not_canceled.sum(:enrollment_limit) %><%= arrow(sections.not_canceled.sum(:enrollment_limit_yesterday)) %></td>
       <td><%= sections.not_canceled.sum(:actual_enrollment) %><%= arrow(sections.not_canceled.sum(:actual_enrollment_yesterday)) %></td>
       <td><%= sections.not_canceled.sum(:cross_list_enrollment) %><%= arrow(sections.not_canceled.sum(:cross_list_enrollment_yesterday)) %></td>
