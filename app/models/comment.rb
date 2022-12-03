@@ -13,7 +13,7 @@ class Comment < ApplicationRecord
     broadcast_update_later_to "comment_preview",
                               target: "most_recent_comment_#{section.id}",
                               partial: "sections/comment_preview",
-                              locals: { section: section }
+                              locals: { section: }
   }
 
   after_destroy_commit lambda {
