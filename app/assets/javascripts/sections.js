@@ -88,8 +88,8 @@ $(document).ready(function() {
             },
             { responsivePriority: 3, targets: [
                     5,
-                    9,
-                    12
+                    11,
+                    14
                 ]
 
             },
@@ -97,10 +97,10 @@ $(document).ready(function() {
                     6,
                     7,
                     8,
-                    10,
-                    11,
+                    12,
                     13,
-                    14
+                    15,
+                    16
                 ]
             }
         ],

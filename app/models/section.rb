@@ -306,4 +306,33 @@ class Section < ApplicationRecord
       Section.in_term(term).update_all(delete_at: Time.now.next_month)
     end
   end
+
+  def formatted_time(time)
+    time.to_datetime.strftime("%-I:%M%p") if time
+  end
+
+  def campus_label
+    case campus_code
+    when 'KOR'
+      'Mason Korea Campus'
+    when 'AR'
+      'Arlington Campus'
+    when 'FX'
+      'Fairfax Campus'
+    when 'FR'
+      'Front Royal'
+    when 'SA'
+      'Study Abroad'
+    when 'NE', 'MOL'
+      'Mason Online'
+    when 'OC', 'OCB'
+      'Off Campus'
+    when 'LC'
+      'Loudon Campus'
+    when 'PW'
+      'Science and Technology Campus'
+    else
+      campus_code
+    end
+  end
 end
