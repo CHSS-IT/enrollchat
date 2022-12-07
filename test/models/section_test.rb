@@ -337,8 +337,8 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'returns the label for a known campus code' do
-    @section.update(campus_code: 'LC')
-    assert_equal @section.campus_label, 'Loudon Campus'
+    @section.update(campus_code: 'VA')
+    assert_equal @section.campus_label, 'Virginia Campus'
   end
 
   test 'returns the campus code for an known campus code' do

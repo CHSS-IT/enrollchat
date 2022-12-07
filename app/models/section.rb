@@ -313,24 +313,24 @@ class Section < ApplicationRecord
 
   def campus_label
     case campus_code
-    when 'KOR'
-      'Mason Korea Campus'
-    when 'AR'
-      'Arlington Campus'
-    when 'FX'
-      'Fairfax Campus'
-    when 'FR'
-      'Front Royal'
-    when 'SA'
-      'Study Abroad'
-    when 'NE', 'MOL'
-      'Mason Online'
-    when 'OC', 'OCB'
-      'Off Campus'
-    when 'LC'
-      'Loudon Campus'
-    when 'PW'
-      'Science and Technology Campus'
+    when ENV.fetch('CAMPUS_CODE_ONE', nil)
+      ENV.fetch('CAMPUS_LABEL_ONE', nil)
+    when ENV.fetch('CAMPUS_CODE_TWO', nil)
+      ENV.fetch('CAMPUS_LABEL_TWO', nil)
+    when ENV.fetch('CAMPUS_CODE_THREE', nil)
+      ENV.fetch('CAMPUS_LABEL_THREE', nil)
+    when ENV.fetch('CAMPUS_CODE_FOUR', nil)
+      ENV.fetch('CAMPUS_LABEL_FOUR', nil)
+    when ENV.fetch('CAMPUS_CODE_FIVE', nil)
+      ENV.fetch('CAMPUS_LABEL_FIVE', nil)
+    when ENV.fetch('CAMPUS_CODE_SIX', nil), ENV.fetch('CAMPUS_CODE_TEN', nil)
+      ENV.fetch('CAMPUS_LABEL_SIX', nil)
+    when ENV.fetch('CAMPUS_CODE_SEVEN', nil), ENV.fetch('CAMPUS_CODE_ELEVEN', nil)
+      ENV.fetch('CAMPUS_LABEL_SEVEN', nil)
+    when ENV.fetch('CAMPUS_CODE_EIGHT', nil)
+      ENV.fetch('CAMPUS_LABEL_EIGHT', nil)
+    when ENV.fetch('CAMPUS_CODE_NINE', nil)
+      ENV.fetch('CAMPUS_LABEL_NINE', nil)
     else
       campus_code
     end
