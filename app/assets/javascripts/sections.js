@@ -78,8 +78,8 @@ $(document).ready(function() {
             },
             { responsivePriority: 1, targets: [
                     4,
-                    !$('body').hasClass('sections') || !$('body').hasClass('show') ? 17 : undefined,
-                    !$('body').hasClass('sections') || !$('body').hasClass('show') ? 18 : undefined
+                    !$('body').hasClass('sections') || !$('body').hasClass('show') ? 20 : undefined,
+                    !$('body').hasClass('sections') || !$('body').hasClass('show') ? 21 : undefined
                 ]
             },
             { responsivePriority: 2, targets: [
