@@ -48,7 +48,8 @@ namespace :marketing_info do
                 days: chssweb_section['days'],
                 start_time: chssweb_section['start_time'],
                 end_time: chssweb_section['end_time'],
-                campus_code: chssweb_section['campus_code'])
+                campus_code: chssweb_section['campus_code']
+              )
               section.second_instructor_name = nil if section.instructor_name == section.second_instructor_name
               #### if any of the marketing info has changed, update it
               section.save if section.changed?

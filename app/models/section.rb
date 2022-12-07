@@ -308,7 +308,7 @@ class Section < ApplicationRecord
   end
 
   def formatted_time(time)
-    time.to_datetime.strftime("%-I:%M%p") if time
+    time&.to_datetime&.strftime("%-I:%M%p")
   end
 
   def campus_label

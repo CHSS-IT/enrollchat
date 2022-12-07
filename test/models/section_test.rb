@@ -332,6 +332,10 @@ class SectionTest < ActiveSupport::TestCase
     assert_equal @section.formatted_time(@section.start_time), "4:30PM"
   end
 
+  test 'returns nil if no time' do
+    assert_nil @section.formatted_time(@section.start_time)
+  end
+
   test 'returns the label for a known campus code' do
     @section.update(campus_code: 'LC')
     assert_equal @section.campus_label, 'Loudon Campus'
