@@ -48,4 +48,8 @@ module SectionsHelper
   def truthiness_indicator(value)
     tag.i class: 'fa-solid fa-circle-check fa-large fa-xl' if value
   end
+
+  def day_and_time(section)
+    "#{section.days} #{section.formatted_time(section.start_time)}-#{section.formatted_time(section.end_time)}"
+  end
 end

@@ -8,6 +8,8 @@
   <td><%= section.credits %></td>
   <td><%= level_label(section.level) %></td>
   <td><%= section.modality_description %></td>
+  <td><%= day_and_time(section) %></td>
+  <td><%= section.campus_label %></td>
   <td><%= section.instructor_names %></td>
   <td><%= section.status %></td>
   <td><%= section.enrollment_limit %><%= yesterday_arrow(section, 'enrollment_limit') %></td>

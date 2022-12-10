@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_20_203515) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_06_162054) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
   enable_extension "plpgsql"
@@ -73,6 +73,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_20_203515) do
     t.string "print_flag"
     t.string "instructor_name"
     t.string "second_instructor_name"
+    t.string "days"
+    t.string "start_time"
+    t.string "end_time"
+    t.string "campus_code"
   end
 
   create_table "settings", force: :cascade do |t|

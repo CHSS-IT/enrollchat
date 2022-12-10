@@ -306,4 +306,33 @@ class Section < ApplicationRecord
       Section.in_term(term).update_all(delete_at: Time.now.next_month)
     end
   end
+
+  def formatted_time(time)
+    time&.to_datetime&.strftime("%-I:%M%p")
+  end
+
+  def campus_label
+    case campus_code
+    when ENV.fetch('CAMPUS_CODE_ONE', nil)
+      ENV.fetch('CAMPUS_LABEL_ONE', nil)
+    when ENV.fetch('CAMPUS_CODE_TWO', nil)
+      ENV.fetch('CAMPUS_LABEL_TWO', nil)
+    when ENV.fetch('CAMPUS_CODE_THREE', nil)
+      ENV.fetch('CAMPUS_LABEL_THREE', nil)
+    when ENV.fetch('CAMPUS_CODE_FOUR', nil)
+      ENV.fetch('CAMPUS_LABEL_FOUR', nil)
+    when ENV.fetch('CAMPUS_CODE_FIVE', nil)
+      ENV.fetch('CAMPUS_LABEL_FIVE', nil)
+    when ENV.fetch('CAMPUS_CODE_SIX', nil), ENV.fetch('CAMPUS_CODE_TEN', nil)
+      ENV.fetch('CAMPUS_LABEL_SIX', nil)
+    when ENV.fetch('CAMPUS_CODE_SEVEN', nil), ENV.fetch('CAMPUS_CODE_ELEVEN', nil)
+      ENV.fetch('CAMPUS_LABEL_SEVEN', nil)
+    when ENV.fetch('CAMPUS_CODE_EIGHT', nil)
+      ENV.fetch('CAMPUS_LABEL_EIGHT', nil)
+    when ENV.fetch('CAMPUS_CODE_NINE', nil)
+      ENV.fetch('CAMPUS_LABEL_NINE', nil)
+    else
+      campus_code
+    end
+  end
 end

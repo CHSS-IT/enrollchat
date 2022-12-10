@@ -94,10 +94,20 @@ Additional variables can be added to accommodate different academic calender str
 - :on - emails will be sent on their regular schedule throughout the year
 - :off - emails will not be sent
 
+## Marketing Feed
+
+An optional feed of marketing related data can be configured. The application settings allows the configuration of a data feed uri. This uri is used in the `marketing_info` rake task. This task is fairly specific but could be modified to work with specific data feeds and formats. One of the attributes it currently injests are campus codes. If there is a need to display specific labels for campus codes, those can be configured using the following environment variable pattern:
+    `CAMPUS_CODE_ONE`
+    `CAMPUS_LABEL_ONE`
+    `CAMPUS_CODE_TWO`
+    `CAMPUS_LABEL_TWO`
+
+These apply specifically to the `campus_label` method in the Section model. Currently, up to 11 codes and 9 labels can be used.
+
 ## Testing
 
 The app uses Rails' built in testing mechanisms. System Tests are configured to inherit from Capybara and run Selenium with headless Chrome. Chromedriver is required to use this setup. The webdrivers gem is included to provide installation and support for chromedriver.
 
 To run tests: `bin/rails test`  
 To run system tests: `bin/rails test:system`  
-To run all tests: `bin/rails test:system test`
+To run all tests: `bin/rails test:all`

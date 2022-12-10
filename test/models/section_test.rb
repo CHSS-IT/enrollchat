@@ -326,4 +326,23 @@ class SectionTest < ActiveSupport::TestCase
     assert_not_nil @section_four.reload.delete_at
     assert_not_nil @section_five.reload.delete_at
   end
+
+  test 'translates 24-hour time string into formatted 12-hour time' do
+    @section.update(start_time: "16:30")
+    assert_equal @section.formatted_time(@section.start_time), "4:30PM"
+  end
+
+  test 'returns nil if no time' do
+    assert_nil @section.formatted_time(@section.start_time)
+  end
+
+  test 'returns the label for a known campus code' do
+    @section.update(campus_code: 'VA')
+    assert_equal @section.campus_label, 'Virginia Campus'
+  end
+
+  test 'returns the campus code for an known campus code' do
+    @section.update(campus_code: 'ABC')
+    assert_equal @section.campus_label, 'ABC'
+  end
 end
