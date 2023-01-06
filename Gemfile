@@ -48,7 +48,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 # SFTP for banner import
-gem 'net-sftp', '~> 3.0'
+gem 'net-sftp', '~> 4.0'
 # SSH for banner import
 gem 'net-ssh', '~> 6.1'
 
