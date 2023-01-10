@@ -33,4 +33,15 @@ class SettingsTest < ApplicationSystemTestCase
     assert_text "Setting was successfully updated"
     assert_equal @setting.reload.email_delivery, 'on'
   end
+
+  test "documentation link is optional" do
+    visit sections_url
+    refute_text "EnrollChat Information and Updates"
+  end
+
+  test "display documentation link when it is set" do
+    @setting.update(documentation_url: "https://testdoclink.com")
+    visit sections_url
+    assert_text 'EnrollChat Information and Updates'
+  end
 end
