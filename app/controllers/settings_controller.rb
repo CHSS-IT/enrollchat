@@ -34,6 +34,6 @@ class SettingsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the permit list through.
   def setting_params
-    params.require(:setting).permit(:current_term, :graduate_enrollment_threshold, :undergraduate_enrollment_threshold, :email_delivery, :data_feed_uri)
+    params.require(:setting).permit(:current_term, :graduate_enrollment_threshold, :undergraduate_enrollment_threshold, :email_delivery, :data_feed_uri, :documentation_url)
   end
 end
