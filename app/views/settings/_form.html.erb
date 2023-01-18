@@ -46,6 +46,12 @@
           <small class="form-text text-muted mb-4">
             Use this optional setting to set the URL for a data feed URL to be used in a rake task.
           </small>
+
+          <%= form.label :documentation_url %>
+          <%= form.text_field :documentation_url, class: 'form-control mb-2' %>
+          <small class="form-text text-muted mb-4">
+            Use this optional setting to set the URL for online documentation resources.
+          </small>
           <%= submit_tag 'Save', class: 'btn btn-large deep-orange darken-2' %>
           <%= link_to 'Cancel', sections_path, class: 'btn btn-large yellow darken-2' %>
         <% end %>

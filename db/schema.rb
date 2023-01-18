@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_06_162054) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_10_211101) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
   enable_extension "plpgsql"
@@ -88,6 +88,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_162054) do
     t.integer "undergraduate_enrollment_threshold", default: 15
     t.integer "email_delivery", default: 0
     t.string "data_feed_uri"
+    t.string "documentation_url"
     t.index ["singleton_guard"], name: "index_settings_on_singleton_guard", unique: true
   end
 
