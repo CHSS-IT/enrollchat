@@ -114,11 +114,11 @@ class Section < ApplicationRecord
   end
 
   def self.level_name_list
-    self.level_list.collect { |l| l[0] }
+    self.level_list.pluck(0)
   end
 
   def self.level_code_list
-    self.level_list.collect { |l| l[1] }
+    self.level_list.pluck(1)
   end
 
   def self.modality_list_with_labels
