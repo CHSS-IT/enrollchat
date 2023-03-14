@@ -63,7 +63,7 @@ class DigestWorker
     text = ''
     text += '<h1>Departments With Comments</h1><p>' + report_content['departments']['list'].join(', ') + '</p>' if report_content['departments'].present?
     text += '<h1>Digests Sent to</h1><p>' + report_content['enrollchat']['recipients'].join(', ') + '</p>' if report_content['enrollchat'].present?
-    text += '<p>No comment activity.</>' if report_content['departments'].present? && !report_content['enrollchat'].present?
+    text += '<p>No comment activity.</>' if report_content['departments'].present? && report_content['enrollchat'].blank?
     CommentsMailer.generic(text.html_safe, "EnrollChat Digest Task Executed", ENV.fetch('ENROLLCHAT_ADMIN_EMAIL', nil)).deliver!
     # puts "Report ran fully."
   end
