@@ -50,7 +50,7 @@ gem 'jquery-ui-rails'
 # SFTP for banner import
 gem 'net-sftp', '~> 4.0'
 # SSH for banner import
-gem 'net-ssh', '~> 7.0'
+gem 'net-ssh', '~> 7.1'
 
 # For authentication
 gem 'rack-cas', '~> 0.16.1'
