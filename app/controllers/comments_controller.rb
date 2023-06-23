@@ -38,7 +38,7 @@ class CommentsController < ApplicationController
         end
         format.html { redirect_to sections_url, notice: t(".success") }
         format.json { render :show, status: :created, location: @comment }
-        format.js { flash.now[:notice] = 'Comment was successfully created.' }
+        format.js { flash.now[:notice] = t(".success") }
       else
         format.html { render :new }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
@@ -68,7 +68,7 @@ class CommentsController < ApplicationController
     @section.broadcast_update_later_to("comment_preview", target: "most_recent_comment_#{@section.id}", partial: "sections/comment_preview", locals: { section: @section })
     respond_to do |format|
       format.html { redirect_to section_comments_url, notice: t(".success") }
-      format.js { flash.now[:notice] = 'Comment deleted.' }
+      format.js { flash.now[:notice] = t(".success") }
     end
   end
 
