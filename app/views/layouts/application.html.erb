@@ -3,11 +3,11 @@
   <head>
     <title>EnrollChat</title>
     <%= csrf_meta_tags %>
+    <%= javascript_importmap_tags %>
     <%= javascript_include_tag 'application_1' %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <%= favicon_link_tag(source="Favicon.ico") %>
-    <%= javascript_importmap_tags %>
   </head>
 
 <body class = "<%= controller_name %> <%= action_name %>">
