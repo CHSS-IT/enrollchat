@@ -34,7 +34,7 @@ gem 'aws-sdk-s3', '~> 1.132'
 gem 'bootstrap', '~> 4.6', '>= 4.6.1'
 
 # File uploads
-gem 'carrierwave', '~> 2.2'
+gem 'carrierwave', '~> 3.0'
 
 # carrierwave support for S3
 gem 'fog-aws', '~> 3.19'
