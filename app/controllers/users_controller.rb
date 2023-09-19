@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :editable?, only: [:edit, :update]
 
   def index
-    @users = User.all.order(last_name: :asc)
+    @users = User.order(last_name: :asc)
   end
 
   def new
