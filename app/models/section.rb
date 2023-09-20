@@ -268,7 +268,7 @@ class Section < ApplicationRecord
   end
 
   def self.flagged_as?(flag)
-    all.select { |section| section.flagged_as == flag }
+    select { |section| section.flagged_as == flag }
   end
 
   def show_yesterday(field)
