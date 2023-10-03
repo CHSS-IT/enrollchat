@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require jquery3
-//= require jquery-ui
 //= require popper
 //= require bootstrap
 //= require DataTables/datatables.min.js

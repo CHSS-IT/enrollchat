@@ -45,7 +45,6 @@ gem 'font-awesome-sass', '~> 6.4.2'
 gem "importmap-rails", "~> 1.2"
 
 gem 'jquery-rails'
-gem 'jquery-ui-rails'
 
 # SFTP for banner import
 gem 'net-sftp', '~> 4.0'
