@@ -12,9 +12,9 @@ gem "rake"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '7.0.8'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 1.4'
+gem 'pg', '~> 1.5', '>= 1.5.4'
 # Use Puma as the app server
-gem 'puma', '~> 6.3.1'
+gem 'puma', '~> 6.4'
 # Use SCSS for stylesheets
 gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
 # Use Terser as compressor for JavaScript assets
@@ -34,7 +34,7 @@ gem 'aws-sdk-s3', '~> 1.136'
 gem 'bootstrap', '~> 4.6', '>= 4.6.1'
 
 # File uploads
-gem 'carrierwave', '~> 2.2'
+gem 'carrierwave', '~> 3.0', '>= 3.0.4'
 
 # carrierwave support for S3
 gem 'fog-aws', '~> 3.21'
@@ -66,7 +66,7 @@ gem 'scout_apm', '~> 5.3'
 
 gem 'sidekiq', '~> 7.1'
 
-gem 'smarter_csv', '~> 1.8'
+gem 'smarter_csv', '~> 1.9'
 
 gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'
 
@@ -79,7 +79,7 @@ gem 'turbo-rails', '~> 1.4'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
-  gem 'rubocop-rails', '~> 2.20'
+  gem 'rubocop-rails', '~> 2.21', '>= 2.21.2'
 end
 
 group :development do
