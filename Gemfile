@@ -34,7 +34,7 @@ gem 'aws-sdk-s3', '~> 1.136'
 gem 'bootstrap', '~> 4.6', '>= 4.6.1'
 
 # File uploads
-gem 'carrierwave', '~> 2.2'
+gem 'carrierwave', '~> 3.0', '>= 3.0.4'
 
 # carrierwave support for S3
 gem 'fog-aws', '~> 3.21'
@@ -66,7 +66,7 @@ gem 'scout_apm', '~> 5.3'
 
 gem 'sidekiq', '~> 7.1'
 
-gem 'smarter_csv', '~> 1.8'
+gem 'smarter_csv', '~> 1.9'
 
 gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'
 
