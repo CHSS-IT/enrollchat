@@ -290,7 +290,7 @@ class Section < ApplicationRecord
   end
 
   def title_changed?
-    return title != chssweb_title if chssweb_title.present?
+    title != chssweb_title if chssweb_title.present?
   end
 
   def self.terms

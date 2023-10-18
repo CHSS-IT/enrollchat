@@ -9,9 +9,9 @@ module SectionsHelper
                        when "under-enrolled"
                          'fa fa-level-down-alt'
                        end
-      text = tag.i(class: icon_class, title: section.flagged_as.capitalize, alt: section.flagged_as.capitalize) #+ section.flagged_as.capitalize
+      text = tag.i(class: icon_class, title: section.flagged_as.capitalize, alt: section.flagged_as.capitalize) # + section.flagged_as.capitalize
     end
-    return text.html_safe if text.present?
+    text.html_safe if text.present?
   end
 
   def yesterday_arrow(section, field)
@@ -33,7 +33,7 @@ module SectionsHelper
       text = '&nbsp;<span class="badge badge-pill badge-' + color + '">'
       text += content_tag(:i, '', class: "fa fa-arrow-circle-#{direction} fa-inverse") + ' ' + change.to_s
       text += '</span>'
-      return text.html_safe if text.present?
+      text.html_safe if text.present?
     end
   end
 
