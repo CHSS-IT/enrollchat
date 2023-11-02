@@ -71,7 +71,7 @@ gem 'smarter_csv', '~> 1.9'
 gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem 'stimulus-rails', '~> 1.2'
+gem 'stimulus-rails', '~> 1.3'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'turbo-rails', '~> 1.4'
