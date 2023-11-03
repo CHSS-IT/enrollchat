@@ -64,7 +64,7 @@ gem 'roo', '~> 2.10'
 
 gem 'scout_apm', '~> 5.3'
 
-gem 'sidekiq', '~> 7.1'
+gem 'sidekiq', '~> 7.2'
 
 gem 'smarter_csv', '~> 1.9'
 
