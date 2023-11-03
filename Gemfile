@@ -42,7 +42,7 @@ gem 'fog-aws', '~> 3.21'
 # font-awesome for iconography
 gem 'font-awesome-sass', '~> 6.4.2'
 
-gem "importmap-rails", "~> 1.2"
+gem 'importmap-rails', '~> 1.2', '>= 1.2.3'
 
 gem 'jquery-rails'
 
