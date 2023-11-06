@@ -42,7 +42,7 @@ gem 'fog-aws', '~> 3.21'
 # font-awesome for iconography
 gem 'font-awesome-sass', '~> 6.4.2'
 
-gem "importmap-rails", "~> 1.2"
+gem 'importmap-rails', '~> 1.2', '>= 1.2.3'
 
 gem 'jquery-rails'
 
@@ -71,10 +71,10 @@ gem 'smarter_csv', '~> 1.9'
 gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem 'stimulus-rails', '~> 1.2'
+gem 'stimulus-rails', '~> 1.3'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem 'turbo-rails', '~> 1.4'
+gem 'turbo-rails', '~> 1.5'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
