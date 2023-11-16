@@ -79,6 +79,16 @@ class SectionsTest < ApplicationSystemTestCase
     assert_selector 'table tbody tr td', text: 'SINT'
     assert_selector 'table tbody tr td', text: 'Experiential Learning'
     assert_selector 'table tbody tr td', text: 'Graduate - Advanced'
+    select('Graduate - All')
+    sleep 2
+    click_link('filter-submit')
+    assert_selector 'table tbody tr', count: 2
+    assert_selector 'table tbody tr td', text: 'CRIM'
+    assert_selector 'table tbody tr td', text: 'Criminal Justice'
+    assert_selector 'table tbody tr td', text: 'Graduate - First'
+    assert_selector 'table tbody tr td', text: 'SINT'
+    assert_selector 'table tbody tr td', text: 'Experiential Learning'
+    assert_selector 'table tbody tr td', text: 'Graduate - Advanced'
   end
 
   test 'filtering by undergraduate level' do
@@ -97,6 +107,16 @@ class SectionsTest < ApplicationSystemTestCase
     assert_selector 'table tbody tr td', text: 'ENGL'
     assert_selector 'table tbody tr td', text: 'MyString'
     assert_selector 'table tbody tr td', text: 'Undergraduate - Upper Division'
+    select('Undergraduate - All', from: 'section_level')
+    sleep 2
+    click_link('filter-submit')
+    assert_selector 'table tbody tr', count: 2
+    assert_selector 'table tbody tr td', text: 'ENGL'
+    assert_selector 'table tbody tr td', text: 'MyString'
+    assert_selector 'table tbody tr td', text: 'Undergraduate - Upper Division'
+    assert_selector 'table tbody tr td', text: 'BIS'
+    assert_selector 'table tbody tr td', text: 'MyString'
+    assert_selector 'table tbody tr td', text: 'Undergraduate - Lower Division'
   end
 
   test 'filtering by flagged as' do
