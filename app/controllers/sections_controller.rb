@@ -57,16 +57,13 @@ class SectionsController < ApplicationController
 
       unless params[:section][:level].blank?
         @section_level = params[:section][:level] if Section.level_code_list.include?(params[:section][:level])
-        if @section_level.present?
-          logger.debug("#{@section_level}")
-          if @section_level == 'uuall'
-            @sections = @sections.all_undergraduate
-          elsif @section_level == 'ugall'
-            @sections = @sections.all_graduate
-          else
-            @sections = @sections.in_level(@section_level)
-          end
-        end
+        @sections = if @section_level == 'uuall'
+                      @sections.all_undergraduate
+                    elsif @section_level == 'ugall'
+                      @sections.all_graduate
+                    else
+                      @sections.in_level(@section_level)
+                    end
       end
 
       unless params[:section][:modality].blank?
