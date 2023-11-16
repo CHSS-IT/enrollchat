@@ -57,6 +57,8 @@ class SectionsController < ApplicationController
 
       unless params[:section][:level].blank?
         @section_level = params[:section][:level] if Section.level_code_list.include?(params[:section][:level])
+        return if @section_level.blank?
+
         @sections = if @section_level == 'uuall'
                       @sections.all_undergraduate
                     elsif @section_level == 'ugall'
