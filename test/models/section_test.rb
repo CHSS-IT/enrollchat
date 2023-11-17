@@ -72,11 +72,11 @@ class SectionTest < ActiveSupport::TestCase
   end
 
   test 'should create a list of level names available for selection' do
-    assert_equal @sections.level_name_list, ["Undergraduate - Lower Division", "Undergraduate - Upper Division", "Graduate - First", "Graduate - Advanced"]
+    assert_equal @sections.level_name_list, ["Undergraduate - Lower Division", "Undergraduate - Upper Division", "Undergraduate - All", "Graduate - First", "Graduate - Advanced", "Graduate - All"]
   end
 
   test 'should create a list of level codes available for selection' do
-    assert_equal @sections.level_code_list, %w[uul uuu ugf uga]
+    assert_equal @sections.level_code_list, %w[uul uuu uuall ugf uga ugall]
   end
 
   test 'should create a list of enrollment statuses' do
@@ -107,6 +107,14 @@ class SectionTest < ActiveSupport::TestCase
 
   test 'undergraduate_lower scope should properly filter sections by level' do
     assert_equal @sections.uul, [@section]
+  end
+
+  test 'all_graduate scope should properly filter sections by level' do
+    assert_equal @sections.all_graduate, [@section_two, @section_three, @section_five]
+  end
+
+  test 'all_undergraduate scope should properly filter sections by level' do
+    assert_equal @sections.all_undergraduate, [@section, @section_four]
   end
 
   test 'graduate_under_enrolled and graduate_level scopes should return graduate sections where actual enrollment and cross list enrollment is less than the enrollment threshold' do
