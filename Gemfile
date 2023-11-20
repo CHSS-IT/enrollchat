@@ -88,7 +88,7 @@ group :development do
   gem "binding_of_caller"
   gem 'brakeman', '~> 6.0', require: false
   # N+1 finder
-  gem 'bullet', '~> 7.1.3'
+  gem 'bullet', '~> 7.1.4'
   gem 'listen', '~> 3.8'
   gem 'rack-mini-profiler', '~> 3.1'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
