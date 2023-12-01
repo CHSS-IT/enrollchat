@@ -40,7 +40,7 @@ gem 'carrierwave', '~> 3.0', '>= 3.0.4'
 gem 'fog-aws', '~> 3.21'
 
 # font-awesome for iconography
-gem 'font-awesome-sass', '~> 6.4.2'
+gem 'font-awesome-sass', '~> 6.5.1'
 
 gem 'importmap-rails', '~> 1.2', '>= 1.2.3'
 
