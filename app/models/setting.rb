@@ -20,9 +20,9 @@ class Setting < ApplicationRecord
     end
   end
 
-  def self.method_missing(method, *args)
+  def self.method_missing(method, *)
     if Setting.instance.methods.include?(method)
-      Setting.instance.send(method, *args)
+      Setting.instance.send(method, *)
     else
       super
     end
