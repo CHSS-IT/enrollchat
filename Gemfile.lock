@@ -231,7 +231,7 @@ GEM
     puma (6.4.2)
       nio4r (~> 2.0)
     racc (1.7.3)
-    rack (2.2.8)
+    rack (2.2.8.1)
     rack-cas (0.16.1)
       addressable (~> 2.3)
       nokogiri (~> 1.5)
