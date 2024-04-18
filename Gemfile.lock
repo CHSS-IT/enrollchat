@@ -153,7 +153,7 @@ GEM
     fog-xml (0.1.4)
       fog-core
       nokogiri (>= 1.5.11, < 2.0.0)
-    font-awesome-sass (6.5.1)
+    font-awesome-sass (6.5.2)
       sassc (~> 2.0)
     formatador (1.1.0)
     globalid (1.2.1)
@@ -390,7 +390,7 @@ DEPENDENCIES
   carrierwave (~> 3.0)
   debug
   fog-aws (~> 3.22)
-  font-awesome-sass (~> 6.5.1)
+  font-awesome-sass (~> 6.5.2)
   importmap-rails (~> 1.2, >= 1.2.3)
   jbuilder (~> 2.11)
   jquery-rails
