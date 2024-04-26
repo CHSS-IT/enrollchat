@@ -29,7 +29,7 @@ gem 'redis', '~> 5.0'
 gem 'airbrake', '~> 13.0'
 
 # For file storage on S3
-gem 'aws-sdk-s3', '~> 1.146'
+gem 'aws-sdk-s3', '~> 1.148'
 
 gem 'bootstrap', '~> 4.6', '>= 4.6.1'
 
