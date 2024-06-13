@@ -10,7 +10,7 @@ ruby "3.2.4"
 gem "rake"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '7.0.8.1'
+gem 'rails', '7.0.8.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.5', '>= 1.5.4'
 # Use Puma as the app server
@@ -79,7 +79,7 @@ gem 'turbo-rails', '~> 1.5'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
-  gem 'rubocop-rails', '~> 2.24'
+  gem 'rubocop-rails', '2.24.1'
 end
 
 group :development do
