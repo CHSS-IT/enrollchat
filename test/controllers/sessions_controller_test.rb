@@ -26,6 +26,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'destroy action redirects to the root path' do
-
+    get '/logout'
+    assert_redirected_to root_path
   end
 end
