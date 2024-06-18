@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    redirect_to root_path
+    redirect_to root_path, notice: t(".success")
   end
 
   private
