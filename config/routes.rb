@@ -25,4 +25,6 @@ Rails.application.routes.draw do
   get '/login', to: 'sections#index'
 
   get 'exit', to: 'sessions#end_session', as: :logout
+
+  get '/logout', to: 'sessions#destroy'
 end
