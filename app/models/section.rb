@@ -14,7 +14,7 @@ class Section < ApplicationRecord
   scope :canceled, -> { where(status: 'C') }
   scope :not_canceled, -> { where("status <> 'C'") }
   scope :in_term, ->(term) { where(term:) }
-  scope :upcoming, ->(term) { where('term >= ?', term) }
+  scope :upcoming, ->(term) { where(term: term..) }
   scope :in_department, ->(department) { where(department:) }
   scope :in_status, ->(status) { where(status:) }
   scope :full_or_over_enrolled, -> { not_canceled.where('actual_enrollment >= enrollment_limit or waitlist > 5') }
