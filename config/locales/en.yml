@@ -47,6 +47,9 @@ en:
   settings:
     update:
       success: 'Setting was successfully updated.'
+  sessions:
+    destroy:
+      success: 'You have logged out successfully.'
   users:
     create:
       success: 'User was successfully created'

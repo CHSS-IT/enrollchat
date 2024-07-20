@@ -24,4 +24,9 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     get logout_url
     assert_in_delta @user.reload.updated_at, old_updated_at, 1.second
   end
+
+  test 'destroy action redirects to the root path' do
+    get '/logout'
+    assert_redirected_to root_path
+  end
 end

@@ -5,14 +5,14 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby "3.1.4"
+ruby "3.3.4"
 
 gem "rake"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '7.0.8'
+gem 'rails', '7.0.8.4'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 1.5', '>= 1.5.4'
+gem 'pg', '~> 1.5'
 # Use Puma as the app server
 gem 'puma', '~> 6.4'
 # Use SCSS for stylesheets
@@ -22,14 +22,14 @@ gem 'terser', '~> 1.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.11'
 # Use Redis adapter to run Action Cable in production
-gem 'redis', '~> 5.0'
+gem 'redis', '~> 5.2'
 
 # Alphabetize non-core gems
 
 gem 'airbrake', '~> 13.0'
 
 # For file storage on S3
-gem 'aws-sdk-s3', '~> 1.136'
+gem 'aws-sdk-s3', '~> 1.156'
 
 gem 'bootstrap', '~> 4.6', '>= 4.6.1'
 
@@ -37,10 +37,10 @@ gem 'bootstrap', '~> 4.6', '>= 4.6.1'
 gem 'carrierwave', '~> 3.0'
 
 # carrierwave support for S3
-gem 'fog-aws', '~> 3.21'
+gem 'fog-aws', '~> 3.22'
 
 # font-awesome for iconography
-gem 'font-awesome-sass', '~> 6.5.1'
+gem 'font-awesome-sass', '~> 6.5.2'
 
 gem 'importmap-rails', '~> 1.2', '>= 1.2.3'
 
@@ -79,7 +79,7 @@ gem 'turbo-rails', '~> 1.5'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
-  gem 'rubocop-rails', '~> 2.23'
+  gem 'rubocop-rails', '2.25.1'
 end
 
 group :development do
@@ -89,7 +89,7 @@ group :development do
   gem 'brakeman', '~> 6.1', require: false
   # N+1 finder
   gem 'bullet', '~> 7.1.6'
-  gem 'listen', '~> 3.8'
+  gem 'listen', '~> 3.9'
   gem 'rack-mini-profiler', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   # gem 'spring'
@@ -99,8 +99,8 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 3.39'
-  gem 'selenium-webdriver', '~> 4.17'
+  gem 'capybara', '~> 3.40'
+  gem 'selenium-webdriver', '~> 4.21'
   gem 'simplecov', '~> 0.22.0', require: false
 end
 
