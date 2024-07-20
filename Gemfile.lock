@@ -274,8 +274,8 @@ GEM
     rbtree3 (0.7.1)
     rdoc (6.6.3.1)
       psych (>= 4.0.0)
-    redis (5.0.8)
-      redis-client (>= 0.17.0)
+    redis (5.2.0)
+      redis-client (>= 0.22.0)
     redis-client (0.22.1)
       connection_pool
     regexp_parser (2.9.0)
@@ -403,7 +403,7 @@ DEPENDENCIES
   rack-mini-profiler (~> 3.3)
   rails (= 7.0.8.4)
   rake
-  redis (~> 5.0)
+  redis (~> 5.2)
   report_action (~> 0.6.0)
   roo (~> 2.10)
   rubocop-rails (= 2.25.1)
