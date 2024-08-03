@@ -285,7 +285,7 @@ GEM
     reline (0.5.0)
       io-console (~> 0.5)
     report_action (0.6.0)
-    rexml (3.3.3)
+    rexml (3.3.4)
       strscan
     roo (2.10.1)
       nokogiri (~> 1)
@@ -323,8 +323,9 @@ GEM
       tilt
     scout_apm (5.3.8)
       parser
-    selenium-webdriver (4.21.1)
+    selenium-webdriver (4.23.0)
       base64 (~> 0.2)
+      logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
@@ -371,7 +372,7 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    websocket (1.2.10)
+    websocket (1.2.11)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -414,7 +415,7 @@ DEPENDENCIES
   rubocop-rails (= 2.25.1)
   sassc-rails (~> 2.1, >= 2.1.2)
   scout_apm (~> 5.3)
-  selenium-webdriver (~> 4.21)
+  selenium-webdriver (~> 4.23)
   sidekiq (~> 7.3)
   simplecov (~> 0.22.0)
   smarter_csv (~> 1.9)
