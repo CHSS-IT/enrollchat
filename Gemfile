@@ -68,7 +68,7 @@ gem 'sidekiq', '~> 7.3'
 
 gem 'smarter_csv', '~> 1.9'
 
-gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'
+gem 'sprockets-rails', '~> 3.5'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails', '~> 1.3'
