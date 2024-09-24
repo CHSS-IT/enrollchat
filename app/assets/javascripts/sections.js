@@ -66,7 +66,18 @@ $(document).ready(function() {
         responsive: true,
         fixedHeader: true,
         order: [[ 4, "asc" ]],
-        buttons: [ 'print', 'excel', 'pdf' ],
+        layout: {
+            top2Start: {
+                pageLength: {
+                    menu: [10, 25, 50, 100]
+                }
+            },
+            topStart: {
+                buttons: [
+                'print', 'excel', 'pdf'
+            ]
+            }
+        },
         columnDefs: [
             { type: 'dateNonStandard', targets: [
                     15
