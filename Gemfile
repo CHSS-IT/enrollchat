@@ -16,7 +16,7 @@ gem 'pg', '~> 1.5'
 # Use Puma as the app server
 gem 'puma', '~> 6.4'
 # Use SCSS for stylesheets
-gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
+gem "dartsass-rails", "~> 0.5.1"
 # Use Terser as compressor for JavaScript assets
 gem 'terser', '~> 1.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -38,9 +38,6 @@ gem 'carrierwave', '~> 3.0'
 
 # carrierwave support for S3
 gem 'fog-aws', '~> 3.24'
-
-# font-awesome for iconography
-gem 'font-awesome-sass', '~> 6.5.2'
 
 gem 'importmap-rails', '~> 1.2', '>= 1.2.3'
 
