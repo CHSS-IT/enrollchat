@@ -64,6 +64,6 @@ jobs:
           PGUSER: postgres
           RAILS_ENV: test
         run: |
-          bundle exec rake assets:precompile
+          bin/rails assets:precompile
           bin/rails test:all
-          bundle exec rake assets:clobber
+          bin/rails assets:clobber
