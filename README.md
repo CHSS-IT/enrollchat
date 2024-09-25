@@ -1,6 +1,6 @@
 # EnrollChat
 
-![tests](https://github.com/dcollie2/enrollchat/workflows/test_suite/badge.svg) ![rubocop](https://github.com/dcollie2/enrollchat/workflows/rubocop/badge.svg) ![security](https://github.com/dcollie2/enrollchat/workflows/brakeman/badge.svg)
+![tests](https://github.com/chss-it/enrollchat/workflows/test_suite/badge.svg) ![rubocop](https://github.com/chss-it/enrollchat/workflows/rubocop/badge.svg) ![security](https://github.com/chss-it/enrollchat/workflows/brakeman/badge.svg)
 
 EnrollChat was designed to help college and department administrators cooordinate their efforts during the enrollment process. It accepts a feed of course section data and allows users to discuss individual sections. Users may choose which departments are of interest and how often they wish to receive updates. They may choose to be notified as relevant comments are posted or in digest form each day. They may also chooose to receive a weekly enrollment report.
 

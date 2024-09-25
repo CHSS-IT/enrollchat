@@ -64,4 +64,5 @@ jobs:
           PGUSER: postgres
           RAILS_ENV: test
         run: |
+          bundle exec rails dartsass:build
           bin/rails test:all
