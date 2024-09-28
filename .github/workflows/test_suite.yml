@@ -52,8 +52,7 @@ jobs:
         run: |
           bundle exec rake db:create
           bundle exec rake db:schema:load
-      - name: assets precompile
-        run: bundle exec rake assets:precompile --trace
+
       - name: Run test suite
         env:
           POSTGRES_HOST: localhost

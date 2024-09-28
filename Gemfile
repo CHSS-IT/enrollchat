@@ -31,7 +31,7 @@ gem 'airbrake', '~> 13.0'
 # For file storage on S3
 gem 'aws-sdk-s3', '~> 1.156'
 
-gem 'bootstrap', '~> 4.6', '>= 4.6.1'
+gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem.git', branch: '4.6-stable'
 
 # File uploads
 gem 'carrierwave', '~> 3.0'
