@@ -20,7 +20,7 @@ gem "dartsass-rails", "~> 0.5.1"
 # Use Terser as compressor for JavaScript assets
 gem 'terser', '~> 1.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.11'
+gem 'jbuilder', '~> 2.13'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 5.2'
 
