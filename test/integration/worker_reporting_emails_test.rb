@@ -11,11 +11,13 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
     Enrollchat::Application.load_tasks
     @settings = settings(:one)
     @settings.update(email_delivery: 'on')
+    Time.zone = "Eastern Time (US & Canada)"
   end
 
   teardown do
     Sidekiq::Worker.clear_all
     Rake::Task.clear
+    Time.zone = "UTC"
   end
 
   # Daily digest worker
@@ -68,7 +70,7 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
 
   # Weekly report worker
   test "Weekly report emails are generated" do
-    travel_to Time.new(2018, 11, 15, 1, 4, 44) do
+    travel_to Time.zone.local(2018, 11, 15, 1, 4, 44) do
       Rake::Task['weekly_reports:send_emails'].invoke
       Sidekiq::Worker.drain_all
       assert_emails User.wanting_report.count + 1
@@ -94,7 +96,7 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
 
   test "EnrollChat Report email standard content" do
     term = @settings.current_term
-    travel_to Time.new(2018, 11, 15, 1, 4, 44) do
+    travel_to Time.zone.local(2018, 11, 15, 1, 4, 44) do
       Rake::Task['weekly_reports:send_emails'].invoke
       Sidekiq::Worker.drain_all
       emails = ActionMailer::Base.deliveries[0..2]
@@ -111,7 +113,7 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
   end
 
   test "EnrollChat Report recipient specific content" do
-    travel_to Time.new(2018, 11, 15, 1, 4, 44) do
+    travel_to Time.zone.local(2018, 11, 15, 1, 4, 44) do
       Rake::Task['weekly_reports:send_emails'].invoke
       Sidekiq::Worker.drain_all
       emails = ActionMailer::Base.deliveries[0..2]

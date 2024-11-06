@@ -6,15 +6,17 @@ class SchedulerReportingEmailsTest < ActionDispatch::IntegrationTest
   setup do
     Rake::Task.clear
     Enrollchat::Application.load_tasks
+    Time.zone = "Eastern Time (US & Canada)"
   end
 
   teardown do
     Rake::Task.clear
+    Time.zone = "UTC"
   end
 
   # schedule old term purge rake task
   test "schedule old term purge email is generated" do
-    travel_to Time.new(2022, 1, 10, 10, 4, 44) do
+    travel_to Time.zone.local(2022, 1, 10, 10, 4, 44) do
       assert_emails 1 do
         Rake::Task['scheduler:schedule_old_term_purge'].invoke
       end
@@ -22,7 +24,7 @@ class SchedulerReportingEmailsTest < ActionDispatch::IntegrationTest
   end
 
   test "schedule old term purge email content" do
-    travel_to Time.new(2022, 1, 10, 10, 4, 44) do
+    travel_to Time.zone.local(2022, 1, 10, 10, 4, 44) do
       Rake::Task['scheduler:schedule_old_term_purge'].invoke
     end
     email = ActionMailer::Base.deliveries.last
