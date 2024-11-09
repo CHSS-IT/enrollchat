@@ -10,11 +10,11 @@ ruby "3.3.5"
 gem "rake"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '7.0.8.4'
+gem 'rails', '7.1.5'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.5'
 # Use Puma as the app server
-gem 'puma', '~> 6.4'
+gem 'puma', git: 'https://github.com/puma/puma.git', branch: 'master'
 # Use SCSS for stylesheets
 gem "dartsass-rails", "~> 0.5.1"
 # Use Terser as compressor for JavaScript assets

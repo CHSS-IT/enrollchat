@@ -83,6 +83,7 @@ Metrics/ClassLength:
     - 'test/system/sections_test.rb'
     - 'test/integration/import_reporting_emails_test.rb'
     - 'test/integration/worker_reporting_emails_test.rb'
+    - 'test/integration/email_delivery_config_test.rb'
 Metrics/CyclomaticComplexity:
   Exclude:
     - 'app/controllers/sections_controller.rb'
