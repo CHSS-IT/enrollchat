@@ -39,7 +39,7 @@ gem 'carrierwave', '~> 3.0'
 # carrierwave support for S3
 gem 'fog-aws', '~> 3.24'
 
-gem 'importmap-rails', '~> 1.2', '>= 1.2.3'
+gem 'importmap-rails', '~> 2.0'
 
 gem 'jquery-rails'
 
