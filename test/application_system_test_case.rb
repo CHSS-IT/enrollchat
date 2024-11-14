@@ -10,13 +10,13 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   Selenium::WebDriver.logger.ignore(:browser_options)
 
   def login_as(user)
-    visit test_login_path
+    visit cas_login_path
     fill_in 'username', with: user.username
     fill_in 'password', with: 'any password'
     click_button 'Login'
   end
 
-  def test_login_path
+  def cas_login_path
     '/fake_cas_login'
   end
 
