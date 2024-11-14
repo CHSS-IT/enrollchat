@@ -172,8 +172,10 @@ class SectionsTest < ApplicationSystemTestCase
   test 'display data refresh message after import' do
     visit sections_url
     Section.import(file_fixture('test_crse.csv'))
+    sleep 20
     assert_selector "p", text: "New data has been imported and is available. 1 added. 3 updated.", count: 1
     assert_selector "a", text: "Click here to refresh", count: 1
+    sleep 20
     visit sections_url
     assert_selector "p", text: "New data has been imported and is available. 1 added. 3 updated.", count: 0
     assert_selector "a", text: "Click here to refresh", count: 0
