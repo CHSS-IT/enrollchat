@@ -127,7 +127,7 @@ GEM
     brakeman (6.2.2)
       racc
     builder (3.3.0)
-    bullet (7.2.0)
+    bullet (8.0.0)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
     capybara (3.40.0)
@@ -418,7 +418,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap!
   brakeman (~> 6.2, >= 6.2.2)
-  bullet (~> 7.2.0)
+  bullet (~> 8.0)
   capybara (~> 3.40)
   carrierwave (~> 3.0)
   dartsass-rails (~> 0.5.1)
