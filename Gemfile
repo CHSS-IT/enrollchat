@@ -18,7 +18,7 @@ gem 'puma', git: 'https://github.com/puma/puma.git', branch: 'master'
 # Use SCSS for stylesheets
 gem "dartsass-rails", "~> 0.5.1"
 # Use Terser as compressor for JavaScript assets
-gem 'terser', '~> 1.2'
+gem 'terser', '~> 1.2', '>= 1.2.4'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.11'
 # Use Redis adapter to run Action Cable in production
