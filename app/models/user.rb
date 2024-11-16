@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  enum status: { active: 0, archived: 1 }
+  enum :status, { active: 0, archived: 1 }
 
   has_many :comments, -> { order 'created_at DESC' }
 

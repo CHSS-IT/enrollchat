@@ -10,7 +10,7 @@ ruby "3.3.5"
 gem "rake"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '7.1.5'
+gem 'rails', '7.2.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.5'
 # Use Puma as the app server
@@ -18,9 +18,9 @@ gem 'puma', git: 'https://github.com/puma/puma.git', branch: 'master'
 # Use SCSS for stylesheets
 gem "dartsass-rails", "~> 0.5.1"
 # Use Terser as compressor for JavaScript assets
-gem 'terser', '~> 1.2'
+gem 'terser', '~> 1.2', '>= 1.2.4'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.11'
+gem 'jbuilder', '~> 2.13'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 5.2'
 
@@ -61,14 +61,14 @@ gem 'roo', '~> 2.10'
 
 gem 'scout_apm', '~> 5.3'
 
-gem 'sidekiq', '~> 7.3'
+gem 'sidekiq', '~> 7.3', '>= 7.3.5'
 
 gem 'smarter_csv', '~> 1.9'
 
-gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'
+gem 'sprockets-rails', '~> 3.5', '>= 3.5.2'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem 'stimulus-rails', '~> 1.3'
+gem 'stimulus-rails', '~> 1.3', '>= 1.3.4'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'turbo-rails', '~> 1.5'
@@ -76,16 +76,16 @@ gem 'turbo-rails', '~> 1.5'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
-  gem 'rubocop-rails', '2.25.1'
+  gem 'rubocop-rails', '~> 2.27'
 end
 
 group :development do
   # Shiny error messages
   gem 'better_errors', '~> 2.10'
   gem "binding_of_caller"
-  gem 'brakeman', '~> 6.1', require: false
+  gem 'brakeman', '~> 6.2', '>= 6.2.2', require: false
   # N+1 finder
-  gem 'bullet', '~> 7.2.0'
+  gem 'bullet', '~> 8.0'
   gem 'listen', '~> 3.9'
   gem 'rack-mini-profiler', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -97,7 +97,7 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.40'
-  gem 'selenium-webdriver', '~> 4.23'
+  gem 'selenium-webdriver', '~> 4.26'
   gem 'simplecov', '~> 0.22.0', require: false
 end
 

@@ -226,7 +226,7 @@ class Section < ApplicationRecord
     else
       @import_report.report_item('Executing Import', 'Updated Sections', "<a href='/sections' class='dropdown-item'>All sections were touched by the import process.</a>")
     end
-    Turbo::StreamsChannel.broadcast_update_later_to("new_data_notification", target: "new-data-available", partial: "sections/new_data_message", locals: { new_sections: @new_sections, updated_sections: @updated_sections })
+    Turbo::StreamsChannel.broadcast_update_to("new_data_notification", target: "new-data-available", partial: "sections/new_data_message", locals: { new_sections: @new_sections, updated_sections: @updated_sections })
     send_report if @import_report.has_messages?('Executing Import', 'Updated Sections')
   end
 
