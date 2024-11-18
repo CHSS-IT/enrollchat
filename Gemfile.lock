@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/puma/puma.git
-  revision: 6f4142625f1808d6fcc45dcc80ac0bb66f83b7b8
+  revision: fba741b91780224a1db1c456645335b2dd7f27dd
   branch: master
   specs:
     puma (6.4.3)
