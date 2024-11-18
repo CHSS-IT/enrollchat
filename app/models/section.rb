@@ -158,6 +158,7 @@ class Section < ApplicationRecord
     header = %w[section_id term department cross_list_group course_description section_number title credits level status enrollment_limit actual_enrollment cross_list_enrollment waitlist modality modality_description print_flag]
     # Parse spreadsheet.
     @updated_sections = 0
+    @uncanceled_sections = 0
     (first_row..last_real_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
       # Hack to avoid blanks and headers when dealing with generated csv or xslt with disclaimer rows
@@ -192,6 +193,7 @@ class Section < ApplicationRecord
         if section.status != 'C'
           if section.status_changed? || !section.canceled_at.blank?
             section.canceled_at = nil
+            @uncanceled_sections += 1
             @import_report.report_item('Executing Import', 'Uncanceled Sections', "#{section.section_and_number} in #{section.term}")
           end
         end
@@ -215,6 +217,7 @@ class Section < ApplicationRecord
     @new_sections = created.size
     if touched.size > 0
       @import_report.report_item('Executing Import', 'Updated Sections', "<a href='/sections' class='dropdown-item'>#{@updated_sections} sections were updated during the import process. #{@new_sections} sections were created.</a>")
+      @import_report.report_item('Executing Import', 'Uncanceled Sections', "#{@uncanceled_sections} sections where uncanceled")
     else
       @import_report.report_item('Executing Import', 'Updated Sections', "<a href='/sections' class='dropdown-item'>The import file was empty.</a>")
     end
