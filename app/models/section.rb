@@ -189,6 +189,13 @@ class Section < ApplicationRecord
           end
         end
 
+        if section.status != 'C'
+          if section.status_changed? || !section.canceled_at.blank?
+            section.canceled_at = nil
+            @import_report.report_item('Executing Import', 'Uncanceled Sections', "#{section.section_and_number} in #{section.term}")
+          end
+        end
+
         # Save if changed, touch if unchanged
         if section.changed? || section.enrollments.last.new_record?
           section.save!
