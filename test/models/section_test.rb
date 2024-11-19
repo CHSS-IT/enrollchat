@@ -220,6 +220,17 @@ class SectionTest < ActiveSupport::TestCase
     assert_not_nil @section_three.canceled_at
   end
 
+  test 'import identifies uncanceled sections' do
+    assert_equal @section.status, 'CN'
+    @section.update(status: 'C', canceled_at: Time.now)
+    assert_equal @section.status, 'C'
+    assert_not_nil @section.canceled_at
+    Section.import(file_fixture('test_crse.csv'))
+    @section.reload
+    assert_equal @section.status, 'CN'
+    assert_nil @section.canceled_at
+  end
+
   test 'import creates an enrollment for a section' do
     assert_difference('@section.enrollments.count', + 1) do
       Section.import(file_fixture('test_crse.csv'))
