@@ -191,7 +191,7 @@ class Section < ApplicationRecord
         end
 
         if section.status != 'C'
-          if section.status_changed? || section.canceled_at.present?
+          if section.status_changed? && section.canceled_at.present?
             section.canceled_at = nil
             @uncanceled_sections += 1
             @import_report.report_item('Executing Import', 'Uncanceled Sections', "#{section.section_and_number} in #{section.term}")

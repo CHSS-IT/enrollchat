@@ -46,7 +46,7 @@ module SectionsHelper
   end
 
   def truthiness_indicator(value)
-    tag.i class: 'fa-solid fa-circle-check fa-large fa-xl' if value
+    tag.i class: 'fa-solid fa-circle-check fa-lg fa-xl' if value
   end
 
   def day_and_time(section)
