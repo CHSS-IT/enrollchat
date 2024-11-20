@@ -59,7 +59,7 @@ gem 'report_action', '~> 0.6.0'
 # from the source. https://github.com/roo-rb/roo/issues/551
 gem 'roo', '~> 2.10'
 
-gem 'scout_apm', '~> 5.3'
+gem 'scout_apm', '~> 5.4'
 
 gem 'sidekiq', '~> 7.3', '>= 7.3.5'
 
