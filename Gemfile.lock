@@ -357,7 +357,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sidekiq (7.3.5)
+    sidekiq (7.3.6)
       connection_pool (>= 2.3.0)
       logger
       rack (>= 2.2.4)
@@ -442,7 +442,7 @@ DEPENDENCIES
   rubocop-rails (~> 2.27)
   scout_apm (~> 5.4)
   selenium-webdriver (~> 4.26)
-  sidekiq (~> 7.3, >= 7.3.5)
+  sidekiq (~> 7.3)
   simplecov (~> 0.22.0)
   smarter_csv (~> 1.9)
   sprockets-rails (~> 3.5, >= 3.5.2)
