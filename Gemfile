@@ -22,7 +22,7 @@ gem 'terser', '~> 1.2', '>= 1.2.4'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.13'
 # Use Redis adapter to run Action Cable in production
-gem 'redis', '~> 5.2'
+gem 'redis', '~> 5.3'
 
 # Alphabetize non-core gems
 
@@ -97,7 +97,7 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.40'
-  gem 'selenium-webdriver', '~> 4.26'
+  gem 'selenium-webdriver', '~> 4.27'
   gem 'simplecov', '~> 0.22.0', require: false
 end
 
