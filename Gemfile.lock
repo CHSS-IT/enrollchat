@@ -145,7 +145,7 @@ GEM
       railties (>= 6.0.0)
       sass-embedded (~> 1.63)
     date (3.4.1)
-    debug (1.9.2)
+    debug (1.10.0)
       irb (~> 1.10)
       reline (>= 0.3.8)
     debug_inspector (1.2.0)
@@ -189,7 +189,7 @@ GEM
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
     io-console (0.8.0)
-    irb (1.14.2)
+    irb (1.14.3)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     jbuilder (2.13.0)
@@ -246,7 +246,7 @@ GEM
       racc
     pg (1.5.9)
     popper_js (1.16.1)
-    psych (5.2.1)
+    psych (5.2.2)
       date
       stringio
     public_suffix (5.0.4)
@@ -301,7 +301,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rbtree3 (0.7.1)
-    rdoc (6.9.1)
+    rdoc (6.10.0)
       psych (>= 4.0.0)
     redis (5.3.0)
       redis-client (>= 0.22.0)
