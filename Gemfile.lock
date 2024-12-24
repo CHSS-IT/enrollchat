@@ -310,7 +310,7 @@ GEM
     regexp_parser (2.9.0)
     reline (0.6.0)
       io-console (~> 0.5)
-    report_action (0.6.0)
+    report_action (1.0.0)
     rexml (3.4.0)
     roo (2.10.1)
       nokogiri (~> 1)
@@ -430,7 +430,7 @@ DEPENDENCIES
   rails (= 7.2.2.1)
   rake
   redis (~> 5.3)
-  report_action (~> 0.6.0)
+  report_action (~> 1.0.0)
   roo (~> 2.10)
   rubocop-rails (~> 2.27)
   scout_apm (~> 5.4)
