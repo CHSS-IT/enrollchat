@@ -116,7 +116,7 @@ GEM
     bindex (0.8.1)
     binding_of_caller (1.0.1)
       debug_inspector (>= 1.2.0)
-    brakeman (6.2.2)
+    brakeman (7.0.0)
       racc
     builder (3.3.0)
     bullet (8.0.0)
@@ -410,7 +410,7 @@ DEPENDENCIES
   better_errors (~> 2.10)
   binding_of_caller
   bootstrap!
-  brakeman (~> 6.2, >= 6.2.2)
+  brakeman (~> 7.0)
   bullet (~> 8.0)
   capybara (~> 3.40)
   carrierwave (~> 3.0)
