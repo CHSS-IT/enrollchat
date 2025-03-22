@@ -22,22 +22,12 @@ class ActiveSupport::TestCase
   end
   # Run tests in parallel with specified workers
   parallelize(workers: :number_of_processors)
-  
+
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 end
 
 class ActionDispatch::IntegrationTest
-  setup do
-    @setting = settings(:one)
-    @section = sections(:one) unless Section.first
-  end
-
-  teardown do
-    Setting.first.destroy
-    Section.first&.destroy
-  end
-
   def login_as(user)
     post login_path, params: { username: user.username, password: 'any password' }
   end
