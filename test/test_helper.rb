@@ -12,11 +12,33 @@ Capybara.server = :puma, { Silent: true }
 
 class ActiveSupport::TestCase
   parallelize_setup do |worker|
+    Section.create!(
+      owner: 'MyString',
+      term: 201810,
+      section_id: 1,
+      department: 'BIS',
+      cross_list_group: 'MyString',
+      course_description: 'MyString',
+      section_number: 1,
+      title: 'MyString',
+      credits: 1,
+      level: 'UUL',
+      status: 'CN',
+      enrollment_limit: 20,
+      actual_enrollment: 22,
+      cross_list_enrollment: 1,
+      waitlist: 1,
+      resolved_section: false,
+      modality: '',
+      modality_description: '',
+      print_flag: ''
+    ) unless Section.first
     Setting.create!(current_term: 201810, singleton_guard: 0, undergraduate_enrollment_threshold: 12, graduate_enrollment_threshold: 10, email_delivery: 'scheduled')
     SimpleCov.command_name "#{SimpleCov.command_name}-#{worker}"
   end
 
   parallelize_teardown do
+    Section.first.destroy
     Setting.first.destroy
     SimpleCov.result
   end
