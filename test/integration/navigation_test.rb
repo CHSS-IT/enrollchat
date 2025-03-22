@@ -17,6 +17,7 @@ class NavigationTest < ActionDispatch::IntegrationTest
   end
 
   test 'Users navigation link should not be available for non-admins' do
+    @section = sections(:one)
     login_as(@user)
     get sections_url
     assert_select 'li', text: 'Users', count: 0
