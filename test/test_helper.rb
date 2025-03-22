@@ -23,7 +23,7 @@ class ActiveSupport::TestCase
   # Run tests in parallel with specified workers
   parallelize(workers: 1)
 
-  # parallelize threshold: 0 if ENV["CI"].present?
+  parallelize threshold: 0 if ENV["CI"].present?
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
