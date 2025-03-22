@@ -10,14 +10,6 @@ require 'minitest/autorun'
 # silence Puma output in system tests
 Capybara.server = :puma, { Silent: true }
 
-setup do
-  Setting.create!(current_term: 201810, singleton_guard: 0, undergraduate_enrollment_threshold: 12, graduate_enrollment_threshold: 10, email_delivery: 'scheduled') unless Setting.first
-end
-
-teardown do
-  Setting.first&.destroy
-end
-
 class ActiveSupport::TestCase
   # parallelize_setup do |worker|
   #   Setting.create!(current_term: 201810, singleton_guard: 0, undergraduate_enrollment_threshold: 12, graduate_enrollment_threshold: 10, email_delivery: 'scheduled')
@@ -34,6 +26,14 @@ class ActiveSupport::TestCase
   # parallelize threshold: 0 if ENV["CI"].present?
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
+
+  setup do
+    Setting.create!(current_term: 201810, singleton_guard: 0, undergraduate_enrollment_threshold: 12, graduate_enrollment_threshold: 10, email_delivery: 'scheduled') unless Setting.first
+  end
+
+  teardown do
+    Setting.first&.destroy
+  end
 end
 
 class ActionDispatch::IntegrationTest
@@ -55,4 +55,12 @@ class ActionDispatch::IntegrationTest
   ENV['TERM_TWO_END'] = '1'
   ENV['CAMPUS_CODE_ONE'] = 'VA'
   ENV['CAMPUS_LABEL_ONE'] = 'Virginia Campus'
+
+  setup do
+    Setting.create!(current_term: 201810, singleton_guard: 0, undergraduate_enrollment_threshold: 12, graduate_enrollment_threshold: 10, email_delivery: 'scheduled') unless Setting.first
+  end
+
+  teardown do
+    Setting.first&.destroy
+  end
 end
