@@ -7,6 +7,14 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   # Switched to Firefox temporarily on 3/13/25. Since Chrome 133,
   # we have been seeing race condition failures in our system specs.
 
+  setup do
+    Setting.create!(current_term: 201810, singleton_guard: 0, undergraduate_enrollment_threshold: 12, graduate_enrollment_threshold: 10, email_delivery: 'scheduled')
+  end
+
+  teardown do
+    Setting.first.destroy
+  end
+
   def login_as(user)
     visit cas_login_path
     fill_in 'username', with: user.username

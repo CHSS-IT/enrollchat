@@ -27,9 +27,24 @@ class ActiveSupport::TestCase
 
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
+
+  setup do
+    Setting.create!(current_term: 201810, singleton_guard: 0, undergraduate_enrollment_threshold: 12, graduate_enrollment_threshold: 10, email_delivery: 'scheduled')
+  end
+
+  teardown do
+    Setting.first.destroy
+  end
 end
 
 class ActionDispatch::IntegrationTest
+  setup do
+    Setting.create!(current_term: 201810, singleton_guard: 0, undergraduate_enrollment_threshold: 12, graduate_enrollment_threshold: 10, email_delivery: 'scheduled')
+  end
+
+  teardown do
+    Setting.first.destroy
+  end
   def login_as(user)
     post login_path, params: { username: user.username, password: 'any password' }
   end
