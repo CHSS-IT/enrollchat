@@ -4,6 +4,7 @@ class NavigationTest < ActionDispatch::IntegrationTest
   setup do
     @admin = users(:one)
     @user = users(:two)
+    @section = sections(:one)
   end
 
   teardown do
