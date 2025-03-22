@@ -25,6 +25,18 @@ class ActiveSupport::TestCase
 
   # parallelize threshold: 0 if ENV["CI"].present?
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
+  setup do
+    unless Setting.first
+      Setting.create!(current_term: 201810, singleton_guard: 0, undergraduate_enrollment_threshold: 12, graduate_enrollment_threshold: 10, email_delivery: 'scheduled')
+    end
+  end
+
+  teardown do
+    if Setting.first
+      Setting.first.destroy
+    end
+  end
+
   fixtures :all
 end
 
