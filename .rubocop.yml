@@ -176,6 +176,7 @@ Style/NumericLiterals:
     - 'test/models/setting_test.rb'
     - 'test/system/sections_test.rb'
     - 'test/test_helper.rb'
+    - test/application_system_test_case.rb
 Style/ClassAndModuleChildren:
   Exclude:
     - 'test/test_helper.rb'
