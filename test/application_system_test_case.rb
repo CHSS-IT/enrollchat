@@ -1,13 +1,11 @@
 require "test_helper"
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
-  driven_by :selenium, using: :headless_chrome, screen_size: [1920,1080]
+  Selenium::WebDriver.logger.ignore(:clear_local_storage, :clear_session_storage) # Silence deprecation warnings until upstream Capybara version is updated https://github.com/teamcapybara/capybara/issues/2779
 
-  # Added to ignore the browser options deprecation warning in rails 6.1 after upgrading to the
-  # latest webdrivers gem using Selenium 4. Rails 7 fixes these but the patch will not be
-  # backported. See https://github.com/rails/rails/pull/43503.
-  # Remove this line when upgrading to Rails 7.
-  Selenium::WebDriver.logger.ignore(:browser_options)
+  driven_by :selenium, using: :headless_firefox, screen_size: [1920, 1080]
+  # Switched to Firefox temporarily on 3/13/25. Since Chrome 133,
+  # we have been seeing race condition failures in our system specs.
 
   def login_as(user)
     visit cas_login_path
