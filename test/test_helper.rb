@@ -21,7 +21,7 @@ class ActiveSupport::TestCase
     SimpleCov.result
   end
   # Run tests in parallel with specified workers
-  parallelize(workers: :number_of_processors)
+  parallelize(workers: 1)
 
   parallelize threshold: 0 if ENV["CI"].present?
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
