@@ -19,7 +19,7 @@ class ActiveSupport::TestCase
 
   parallelize_teardown do
     Setting.first.destroy
-    Section.first.destroy
+    Section.first.destroy if Section.first
     SimpleCov.result
   end
   # Run tests in parallel with specified workers
@@ -38,7 +38,7 @@ class ActionDispatch::IntegrationTest
 
   teardown do
     Setting.first.destroy
-    Section.first.destroy
+    Section.first.destroy if Section.first
   end
 
   def login_as(user)
