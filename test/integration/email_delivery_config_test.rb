@@ -10,6 +10,7 @@ class EmailDeliveryConfigTest < ActionDispatch::IntegrationTest
     Rake::Task.clear
     Sidekiq::Worker.clear_all
     Enrollchat::Application.load_tasks
+    @section = sections(:one)
     @settings = settings(:one)
   end
 

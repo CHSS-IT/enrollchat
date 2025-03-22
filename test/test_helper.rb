@@ -13,16 +13,9 @@ Capybara.server = :puma, { Silent: true }
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
-
-  setup do
-    @section = sections(:one)
-  end
 end
 
 class ActionDispatch::IntegrationTest
-  setup do
-    @section = sections(:one)
-  end
   def login_as(user)
     post login_path, params: { username: user.username, password: 'any password' }
   end

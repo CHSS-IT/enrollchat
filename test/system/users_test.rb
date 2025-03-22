@@ -5,6 +5,7 @@ class UsersTest < ApplicationSystemTestCase
   setup do
     @admin = users(:one)
     @user = users(:three)
+    @section = sections(:one)
   end
 
   teardown do
