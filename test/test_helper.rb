@@ -20,7 +20,6 @@ class ActiveSupport::TestCase
 end
 
 class ActionDispatch::IntegrationTest
-
   setup do
     @section = sections(:one)
   end
