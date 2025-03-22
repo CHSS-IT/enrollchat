@@ -5,19 +5,15 @@ class Section < ApplicationRecord
   cattr_accessor :undergraduate_enrollment_threshold, default: Setting.first.undergraduate_enrollment_threshold
 
   def self.set_graduate_enrollment_threshold
-    if Setting.first.exists?
-      self.graduate_enrollment_threshold = Setting.first.graduate_enrollment_threshold
-    else
-      self.graduate_enrollment_threshold = nil
-    end
+    self.graduate_enrollment_threshold = if Setting.first.exists?
+                                           Setting.first.graduate_enrollment_threshold
+                                         end
   end
 
   def self.set_undergraduate_enrollment_threshold
-    if Setting.first.exists?
-      self.undergraduate_enrollment_threshold = Setting.first.undergraduate_enrollment_threshold
-    else
-      self.undergraduate_enrollment_threshold = nil
-    end
+    self.undergraduate_enrollment_threshold = if Setting.first.exists?
+                                                Setting.first.undergraduate_enrollment_threshold
+                                              end
   end
 
   # Call the method to set the attribute
@@ -25,8 +21,6 @@ class Section < ApplicationRecord
 
   # Call the method to set the attribute
   set_graduate_enrollment_threshold
-
-
 
   has_many :comments, -> { order(created_at: :desc) }, dependent: :destroy
   has_many :enrollments, -> { order(:created_at) }, dependent: :destroy
