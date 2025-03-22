@@ -7,7 +7,6 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   # Switched to Firefox temporarily on 3/13/25. Since Chrome 133,
   # we have been seeing race condition failures in our system specs.
 
-
   def login_as(user)
     visit cas_login_path
     fill_in 'username', with: user.username

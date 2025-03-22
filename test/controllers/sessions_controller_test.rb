@@ -2,6 +2,7 @@ require 'test_helper'
 
 class SessionsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    @section = sections(:one)
     login_as(users(:three))
   end
 
