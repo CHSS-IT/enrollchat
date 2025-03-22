@@ -31,7 +31,7 @@ class ActiveSupport::TestCase
 end
 
 class ActionDispatch::IntegrationTest
-  setup do |worker|
+  setup do
     @setting = settings(:one)
     @section = sections(:one) unless Section.first
   end
