@@ -4,6 +4,7 @@ class SchedulerReportingEmailsTest < ActionDispatch::IntegrationTest
   include ActionMailer::TestHelper
 
   setup do
+    @section = sections(:one)
     Rake::Task.clear
     Enrollchat::Application.load_tasks
   end
