@@ -31,6 +31,16 @@ class ActiveSupport::TestCase
 end
 
 class ActionDispatch::IntegrationTest
+  setup do |worker|
+    @setting = settings(:one)
+    @section = sections(:one) unless Section.first
+  end
+
+  teardown do
+    Setting.first.destroy
+    Section.first.destroy
+  end
+
   def login_as(user)
     post login_path, params: { username: user.username, password: 'any password' }
   end
