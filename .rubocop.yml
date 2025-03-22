@@ -228,7 +228,6 @@ Style/MissingRespondToMissing:
 Style/ConditionalAssignment:
   Exclude:
     - 'app/controllers/application_controller.rb'
-    - 'app/models/section.rb'
 Style/GuardClause:
   Exclude:
     - 'app/controllers/application_controller.rb'
