@@ -21,14 +21,6 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   def logout
     visit logout_path
   end
-
-  setup do
-    Setting.create!(current_term: 201810, singleton_guard: 0, undergraduate_enrollment_threshold: 12, graduate_enrollment_threshold: 10, email_delivery: 'scheduled') unless Setting.first
-  end
-
-  teardown do
-    Setting.first&.destroy
-  end
 end
 
 module BootstrapSelectHelper

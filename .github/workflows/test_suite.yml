@@ -65,4 +65,4 @@ jobs:
           PGUSER: postgres
           RAILS_ENV: test
         run: |
-          bin/rails test:all
+          PARALLEL_WORKERS=1 bin/rails test:all
