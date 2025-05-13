@@ -31,7 +31,7 @@ gem 'airbrake', '~> 13.0'
 # For file storage on S3
 gem 'aws-sdk-s3', '~> 1.172'
 
-gem 'bootstrap', '~> 5.3.5'
+gem 'bootstrap', '5.3.5'
 
 # File uploads
 gem 'carrierwave', '~> 3.0'

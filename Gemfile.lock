@@ -401,7 +401,7 @@ DEPENDENCIES
   aws-sdk-s3 (~> 1.172)
   better_errors (~> 2.10)
   binding_of_caller
-  bootstrap (~> 5.3.5)
+  bootstrap (= 5.3.5)
   brakeman (~> 6.2, >= 6.2.2)
   bullet (~> 8.0)
   capybara (~> 3.40)
