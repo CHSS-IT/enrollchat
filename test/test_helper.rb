@@ -11,16 +11,13 @@ require 'minitest/autorun'
 Capybara.server = :puma, { Silent: true }
 
 class ActiveSupport::TestCase
-
   setup do
-
     Setting.find_or_create_by(singleton_guard: 0) do |setting|
       setting.current_term = 201810
       setting.undergraduate_enrollment_threshold = 12
       setting.graduate_enrollment_threshold = 10
       setting.email_delivery = 'scheduled'
     end
-
   end
 
   teardown do
