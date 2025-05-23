@@ -11,19 +11,22 @@ require 'minitest/autorun'
 Capybara.server = :puma, { Silent: true }
 
 class ActiveSupport::TestCase
-  # parallelize_setup do |worker|
-  #   Setting.create!(current_term: 201810, singleton_guard: 0, undergraduate_enrollment_threshold: 12, graduate_enrollment_threshold: 10, email_delivery: 'scheduled')
-  #   SimpleCov.command_name "#{SimpleCov.command_name}-#{worker}"
-  # end
-  #
-  # parallelize_teardown do
-  #   Setting.first.destroy
-  #   SimpleCov.result
-  # end
-  # # Run tests in parallel with specified workers
-  # parallelize(workers: :number_of_processors)
-  #
-  # parallelize threshold: 0 if ENV["CI"].present?
+  if ENV["CI"].present?
+    parallelize_setup do |worker|
+      Setting.create!(current_term: 201810, singleton_guard: 0, undergraduate_enrollment_threshold: 12, graduate_enrollment_threshold: 10, email_delivery: 'scheduled')
+      SimpleCov.command_name "#{SimpleCov.command_name}-#{worker}"
+    end
+
+    parallelize_teardown do
+      Setting.first.destroy
+      SimpleCov.result
+    end
+    # Run tests in parallel with specified workers
+    parallelize(workers: :number_of_processors)
+
+    parallelize threshold: 0
+  end
+
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 end
