@@ -29,6 +29,12 @@ class ActiveSupport::TestCase
 end
 
 class ActionDispatch::IntegrationTest
+  Setting.find_or_create_by(singleton_guard: 0) do |setting|
+    setting.current_term = 201810
+    setting.undergraduate_enrollment_threshold = 12
+    setting.graduate_enrollment_threshold = 10
+    setting.email_delivery = 'scheduled'
+  end
   def login_as(user)
     post login_path, params: { username: user.username, password: 'any password' }
   end
