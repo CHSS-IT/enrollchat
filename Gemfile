@@ -18,7 +18,7 @@ gem 'puma', '~> 6.5'
 # Use SCSS for stylesheets
 gem "dartsass-rails", "~> 0.5.1"
 # Use Terser as compressor for JavaScript assets
-gem 'terser', '~> 1.2', '>= 1.2.4'
+gem 'terser', '~> 1.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.13'
 # Use Redis adapter to run Action Cable in production
