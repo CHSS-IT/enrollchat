@@ -52,7 +52,7 @@ gem 'net-ssh', '~> 7.2'
 gem 'rack-cas', '~> 0.16.1'
 
 # simple reporting tools
-gem 'report_action', '~> 1.0.0'
+gem 'report_action', '~> 1.1.0'
 
 # For processing excel files
 # Until Roo releases a new version containing a fix for Ruby 3.0.1+ we need to pull directly
