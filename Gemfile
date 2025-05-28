@@ -37,7 +37,7 @@ gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem.git', branch: '
 gem 'carrierwave', '~> 3.0'
 
 # carrierwave support for S3
-gem 'fog-aws', '~> 3.31'
+gem 'fog-aws', '~> 3.32'
 
 gem 'importmap-rails', '~> 1.2', '>= 1.2.3'
 
