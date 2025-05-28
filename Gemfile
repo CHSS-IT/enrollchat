@@ -26,12 +26,12 @@ gem 'redis', '~> 5.3'
 
 # Alphabetize non-core gems
 
-gem 'airbrake', '~> 13.0'
-
 # For file storage on S3
 gem 'aws-sdk-s3', '~> 1.172'
 
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem.git', branch: '4.6-stable'
+
+gem 'bugsnag', '~> 6.27', '>= 6.27.1'
 
 # File uploads
 gem 'carrierwave', '~> 3.0'
