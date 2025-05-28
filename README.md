@@ -45,10 +45,8 @@ For the rake-based feed, you will need to have a CSV file delivered to a locatio
 
 Additional environment variables can be added depending on your needs. E.g. server directory path
 
-We are tracking errors with AirBrake.
-* AIRBRAKE_API_KEY
-* AIRBRAKE_PROJECT_ID
-* AIRBRAKE_PROJECT_KEY
+We are tracking errors with Insight Hub (formerly Bugsnag).
+* BUGSNAG_API_KEY
 
 We have a backup task that uses S3 storage:  
 (In addition to AWS_ variables described above)  

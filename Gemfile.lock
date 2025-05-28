@@ -83,10 +83,6 @@ GEM
       tzinfo (~> 2.0, >= 2.0.5)
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
-    airbrake (13.0.5)
-      airbrake-ruby (~> 6.0)
-    airbrake-ruby (6.2.2)
-      rbtree3 (~> 0.6)
     ast (2.4.3)
     autoprefixer-rails (10.4.19.0)
       execjs (~> 2)
@@ -118,6 +114,8 @@ GEM
       debug_inspector (>= 1.2.0)
     brakeman (7.0.2)
       racc
+    bugsnag (6.27.1)
+      concurrent-ruby (~> 1.0)
     builder (3.3.0)
     bullet (8.0.0)
       activesupport (>= 3.0.0)
@@ -304,7 +302,6 @@ GEM
     rb-fsevent (0.11.2)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    rbtree3 (0.7.1)
     rdoc (6.10.0)
       psych (>= 4.0.0)
     redis (5.3.0)
@@ -410,12 +407,12 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  airbrake (~> 13.0)
   aws-sdk-s3 (~> 1.172)
   better_errors (~> 2.10)
   binding_of_caller
   bootstrap!
   brakeman (~> 7.0)
+  bugsnag (~> 6.27, >= 6.27.1)
   bullet (~> 8.0)
   capybara (~> 3.40)
   carrierwave (~> 3.0)
