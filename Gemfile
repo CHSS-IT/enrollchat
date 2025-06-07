@@ -63,7 +63,7 @@ gem 'scout_apm', '~> 5.6'
 
 gem 'sidekiq', '~> 7.3'
 
-gem 'smarter_csv', '~> 1.9'
+gem 'smarter_csv', '~> 1.14'
 
 gem 'sprockets-rails', '~> 3.5', '>= 3.5.2'
 
