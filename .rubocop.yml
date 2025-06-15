@@ -92,7 +92,11 @@ Metrics/PerceivedComplexity:
   Exclude:
     - 'app/controllers/sections_controller.rb'
     - 'app/models/section.rb'
-Naming/PredicateName:
+Naming/PredicateMethod:
+  Exclude:
+    - 'app/controllers/comments_controller.rb'
+    - 'lib/delivery_windows.rb'
+Naming/PredicatePrefix:
   Exclude:
     - 'app/models/user.rb'
 Rails/Blank:
