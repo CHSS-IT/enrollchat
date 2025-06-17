@@ -58,7 +58,7 @@ label {font-weight: bold;}
  }
 
  h1 {
- 	@extend .mr-2;
+ 	@extend .me-2 !optional;
  	@extend .mb-0;
  }
 
