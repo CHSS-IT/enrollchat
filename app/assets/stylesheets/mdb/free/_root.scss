@@ -1,0 +1,34 @@
+//
+// Root and body
+//
+
+:root,
+[data-mdb-theme='light'] {
+  --mdb-font-roboto: #{inspect($font-family-roboto)};
+  --mdb-bg-opacity: 1;
+  --mdb-text-hover-opacity: 0.8;
+
+  --#{$prefix}surface-color: #{$surface-color};
+  --#{$prefix}surface-color-rgb: #{to-rgb($surface-color)};
+  --#{$prefix}surface-bg: #{$surface-bg};
+  --#{$prefix}surface-inverted-color: #{$surface-inverted-color};
+  --#{$prefix}surface-inverted-color-rgb: #{to-rgb($surface-inverted-color)};
+  --#{$prefix}surface-inverted-bg: #{$surface-inverted-bg};
+  --#{$prefix}divider-color: #{$divider-color};
+  --#{$prefix}divider-blurry-color: #{$divider-blurry-color};
+  --#{$prefix}highlight-bg-color: #{$highlight-bg-color};
+  --#{$prefix}scrollbar-rail-bg: #{$scrollbar-rail-bg};
+  --#{$prefix}scrollbar-thumb-bg: #{$scrollbar-thumb-bg};
+  --#{$prefix}picker-header-bg: #{$picker-header-bg};
+  --#{$prefix}timepicker-clock-face-bg: #{$timepicker-clock-face-bg};
+  --#{$prefix}sidenav-backdrop-opacity: #{$sidenav-backdrop-opacity};
+  --#{$prefix}input-focus-border-color: var(--#{$prefix}primary);
+  --#{$prefix}input-focus-label-color: var(--#{$prefix}primary);
+  --#{$prefix}form-control-border-color: #{$form-control-border-color};
+  --#{$prefix}form-control-label-color: #{$form-control-label-color};
+  --#{$prefix}form-control-disabled-bg: #{$form-control-disabled-bg};
+  --#{$prefix}box-shadow-color: #{$box-shadow-color};
+  --#{$prefix}box-shadow-color-rgb: #{to-rgb($box-shadow-color)};
+  --#{$prefix}stepper-mobile-bg: #{$stepper-mobile-bg};
+  --#{$prefix}datepicker-cell-in-range-background-color: #{$datepicker-cell-in-range-background-color};
+}
