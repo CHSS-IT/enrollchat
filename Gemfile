@@ -27,7 +27,7 @@ gem 'redis', '~> 5.3'
 # Alphabetize non-core gems
 
 # For file storage on S3
-gem 'aws-sdk-s3', '~> 1.172'
+gem 'aws-sdk-s3', '~> 1.190'
 
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem.git', branch: '4.6-stable'
 
