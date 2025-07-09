@@ -116,7 +116,7 @@ GEM
       debug_inspector (>= 1.2.0)
     brakeman (7.0.2)
       racc
-    bugsnag (6.27.1)
+    bugsnag (6.28.0)
       concurrent-ruby (~> 1.0)
     builder (3.3.0)
     bullet (8.0.8)
@@ -432,7 +432,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap!
   brakeman (~> 7.0)
-  bugsnag (~> 6.27, >= 6.27.1)
+  bugsnag (~> 6.28)
   bullet (~> 8.0)
   capybara (~> 3.40)
   carrierwave (~> 3.0)

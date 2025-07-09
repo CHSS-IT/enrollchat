@@ -31,7 +31,7 @@ gem 'aws-sdk-s3', '~> 1.191'
 
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem.git', branch: '4.6-stable'
 
-gem 'bugsnag', '~> 6.27', '>= 6.27.1'
+gem 'bugsnag', '~> 6.28'
 
 # File uploads
 gem 'carrierwave', '~> 3.0'
