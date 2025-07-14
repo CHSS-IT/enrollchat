@@ -397,10 +397,9 @@ GEM
       execjs (>= 0.3.0, < 3)
     thor (1.3.2)
     timeout (0.4.3)
-    turbo-rails (1.5.0)
-      actionpack (>= 6.0.0)
-      activejob (>= 6.0.0)
-      railties (>= 6.0.0)
+    turbo-rails (2.0.16)
+      actionpack (>= 7.1.0)
+      railties (>= 7.1.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (3.1.4)
@@ -463,7 +462,7 @@ DEPENDENCIES
   sprockets-rails (~> 3.5, >= 3.5.2)
   stimulus-rails (~> 1.3, >= 1.3.4)
   terser (~> 1.2)
-  turbo-rails (~> 1.5)
+  turbo-rails (~> 2.0)
   tzinfo-data
   web-console (~> 4.2)
 
