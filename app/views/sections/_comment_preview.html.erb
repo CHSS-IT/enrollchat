@@ -1,3 +1,3 @@
 <% if section.comments.present? %>
-  <%= content_tag(:span, "<i class='fa fa-info-circle' aria-hidden='true'></i>".html_safe, data: { toggle: 'popover', title: section.comments.first.user.full_name + " " + time_ago_in_words(section.comments.first.created_at) + " ago ", content: section.comments.first.body }) %>
+  <%= content_tag(:span, "<i class='fa fa-info-circle' aria-hidden='true'></i>".html_safe, data: { bs_toggle: 'popover', title: section.comments.first.user.full_name + " " + time_ago_in_words(section.comments.first.created_at) + " ago ", content: section.comments.first.body }) %>
 <% end %>

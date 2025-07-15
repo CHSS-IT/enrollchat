@@ -12,7 +12,7 @@
 
 <body class = "<%= controller_name %> <%= action_name %>">
 
-  <nav class="navbar navbar-light bg-faded navbar-expand-lg white">
+  <nav class="navbar navbar-light bg-light navbar-expand-lg white">
     <div class="container-fluid">
       <a class="navbar-brand" href="/sections">
         <%= image_tag image_path("EnrollChatLogo.png"), height: 30, class: "d-inline-block align-top" %>
@@ -21,49 +21,49 @@
 
       <%= display_current_term %>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="nav navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto">
           <% if current_user.try(:admin?) %>
-            <li class="nav-item %>">
+            <li class="nav-item m-auto">
               <%= link_to 'Settings', settings_path, class: 'nav-link' %>
             </li>
           <% end %>
           <% if current_user.present? %>
-            <li class="nav-item <%= active_class(sections_path) %>">
+            <li class="nav-item m-auto <%= active_class(sections_path) %>">
               <%= link_to 'Sections', sections_path, class: 'nav-link' %>
             </li>
-            <li class="nav-item <%= active_class(reports_path) %>">
+            <li class="nav-item m-auto <%= active_class(reports_path) %>">
               <%= link_to 'Summary', reports_path, class: 'nav-link' %>
             </li>
-            <li class="nav-item <%= active_class(users_path) %>">
+            <li class="nav-item m-auto <%= active_class(users_path) %>">
               <% if current_user.try(:admin?) %>
                 <%= link_to 'Users', users_path, class: 'nav-link' %>
               <% else %>
                 <%= link_to 'Preferences', edit_user_path(current_user), class: 'nav-link' %>
             <% end %>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#termsemesters" data-toggle="dropdown">Terms</a>
-              <ul class="dropdown-menu dropdown-menu-right animated fadeInUp" id="termsemesters">
+            <li class="nav-item dropdown m-auto">
+              <a class="nav-link dropdown-toggle" href="#termsemesters" data-bs-toggle="dropdown">Terms</a>
+              <ul class="dropdown-menu dropdown-menu-end animated fadeInUp" id="termsemesters">
                 <% @terms.each do |term| %>
                   <li><%= link_to term_in_words(term.term), sections_url(term: term.term), class: 'dropdown-item' %></li>
                 <% end %>
               </ul>
             </li>
-            <li class="nav-item dropdown" id="activity-dropdown">
+            <li class="nav-item dropdown m-auto" id="activity-dropdown">
               <%= turbo_stream_from "new_comment_#{current_user.id}_notification" %>
-              <button class="btn btn-outline unique-color-dark dropdown-toggle btn-sm" type="button" id="alerts-button" data-toggle="dropdown" href="#notifications" aria-expanded="false" aria-haspopup="true" aria-controls="notifications">Activity</button>
-              <div class="dropdown-menu dropdown-menu-right animated fadeInUp" aria-labelledy="alerts-button" id="notifications">
+              <button class="btn button-activity dropdown-toggle btn-sm text-white me-2" type="button" id="alerts-button" data-bs-toggle="dropdown" href="#notifications" aria-expanded="false" aria-haspopup="true" aria-controls="notifications">Activity</button>
+              <div class="dropdown-menu dropdown-activity dropdown-menu-end animated fadeInUp" aria-labelledby="alerts-button" id="notifications">
                 <%= render partial: 'comments/recent_comment', collection: @recent_comments %>
                 <%= link_to "Enrollchat Is Ready", '/sections', class: 'dropdown-item', remote: true if @recent_comments.empty? %>
               </div>
             </li>
           <% end %>
-          <li class="nav-item my-lg-0">
+          <li class="nav-item m-auto">
             <%= render '/layouts/login_menu' %>
           </li>
         </ul>
@@ -80,9 +80,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">Comments</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body" id="comments-modal-content">
             <p>Modal body text goes here.</p>
