@@ -26,7 +26,7 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="nav navbar-nav ml-auto">
+        <ul class="nav navbar-nav ms-auto">
           <% if current_user.try(:admin?) %>
             <li class="nav-item %>">
               <%= link_to 'Settings', settings_path, class: 'nav-link' %>
