@@ -27,12 +27,12 @@ module BootstrapSelectHelper
   # Modified version of helper by victorhazbun
   # https://gist.github.com/victorhazbun/ab703e8bc195924853e9ccfd683f9055
   def bootstrap_select(value, attrs)
-    find(".bootstrap-select .dropdown-bs-toggle[data-id='#{attrs[:from]}']").click
+    find(".bootstrap-select .dropdown-toggle[data-bs-id='#{attrs[:from]}']").click
     find("ul.inner li a span", text: value).click
   end
 
   def bootstrap_multi_select(value1, value2, attrs)
-    find(".bootstrap-select .dropdown-bs-toggle[data-id='#{attrs[:from]}']").click
+    find(".bootstrap-select .dropdown-toggle[data-bs-id='#{attrs[:from]}']").click
     find("ul.inner li a span", text: value1).click
     find("ul.inner li a span", text: value2).click
   end
