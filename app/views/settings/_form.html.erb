@@ -22,38 +22,53 @@
             </div>
 
           <% end %>
+            <div class="mb-3">
+                <%= form.label :current_term %>
+                <%= form.number_field :current_term, class: 'form-control', placeholder: "Current Term", 'aria-describedby': 'currentTermHelpBlock' %>
+                <small id="currentTermHelpBlock" class="form-text text-muted mb-4">
+                    Use the setting to define the current academic term.
+                </small>
+            </div>
 
+            <div class="mb-3">
+                <%= form.label :graduate_enrollment_threshold %>
+                <%= form.number_field :graduate_enrollment_threshold, class: 'form-control mb-2' %>
+            </div>
+            
+            <div class="mb-3">
+                <%= form.label :undergraduate_enrollment_threshold %>
+                <%= form.number_field :undergraduate_enrollment_threshold, class: 'form-control mb-2' %>
+            </div>
 
-          <%= form.label :current_term %>
-          <%= form.number_field :current_term, class: 'form-control mb-2', placeholder: "Current Term", 'aria-describedby': 'currentTermHelpBlock' %>
-          <small id="currentTermHelpBlock" class="form-text text-muted mb-4">
-            Use the setting to define the current academic term.
-          </small>
-          <%= form.label :graduate_enrollment_threshold %>
-          <%= form.number_field :graduate_enrollment_threshold, class: 'form-control mb-2' %>
+            <div class="mb-3">
+                <%= form.label :email_delivery %>
+                <%= select :setting, :email_delivery, Setting.delivery_options, {default: 'scheduled'}, {class: 'form-control'} %>
+                <small class="form-text text-muted mb-4">
+                    Use this setting to determine digest and report delivery. Options are "on", "off" and "scheduled". Scheduled is the default and uses the predefined delivery windows aligned with the University registration periods.
+                </small>
+            </div>
 
-          <%= form.label :undergraduate_enrollment_threshold %>
-          <%= form.number_field :undergraduate_enrollment_threshold, class: 'form-control mb-2' %>
+            <div class="mb-3">
+                <%= form.label :data_feed_uri %>
+                <%= form.text_field :data_feed_uri, class: 'form-control mb-2' %>
+                <small class="form-text text-muted mb-4">
+                    Use this optional setting to set the URL for a data feed URL to be used in a rake task.
+                </small>
+            </div>
 
-          <%= form.label :email_delivery %>
-          <%= select :setting, :email_delivery, Setting.delivery_options, {default: 'scheduled'}, {class: 'form-control'} %>
-          <small class="form-text text-muted mb-4">
-            Use this setting to determine digest and report delivery. Options are "on", "off" and "scheduled". Scheduled is the default and uses the predefined delivery windows aligned with the University registration periods.
-          </small>
+            <div class="mb-3">
+                <%= form.label :documentation_url %>
+                <%= form.text_field :documentation_url, class: 'form-control mb-2' %>
+                <small class="form-text text-muted mb-4">
+                    Use this optional setting to set the URL for online documentation resources.
+                </small>
+            </div>
 
-          <%= form.label :data_feed_uri %>
-          <%= form.text_field :data_feed_uri, class: 'form-control mb-2' %>
-          <small class="form-text text-muted mb-4">
-            Use this optional setting to set the URL for a data feed URL to be used in a rake task.
-          </small>
-
-          <%= form.label :documentation_url %>
-          <%= form.text_field :documentation_url, class: 'form-control mb-2' %>
-          <small class="form-text text-muted mb-4">
-            Use this optional setting to set the URL for online documentation resources.
-          </small>
-          <%= submit_tag 'Save', class: 'btn btn-large deep-orange darken-2' %>
-          <%= link_to 'Cancel', sections_path, class: 'btn btn-large yellow darken-2' %>
+            <div class="mb-3 d-flex">
+                <%= submit_tag 'Save', class: 'btn btn-sm deep-orange darken-2' %>
+                <%= link_to 'Cancel', sections_path, class: 'btn btn-sm yellow darken-2 ms-2' %>
+            </div>
+            
         <% end %>
         <!-- Form -->
         </div>
