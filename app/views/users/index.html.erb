@@ -5,9 +5,9 @@
       <div class="col-lg-10 col-sm-8 col-xs-6">
         <h1 class="card-title d-inline-block">Users</h1>
       </div>
-      <div class="col-lg-2 col-sm-4 col-xs-6">
+      <div class="col-lg-2 col-sm-4 col-xs-6 text-end">
         <% if current_user.is_admin? %>
-            <%= link_to 'Create New User', new_user_path, class: 'btn unique-color d-inline-block float-right' %>
+            <%= link_to 'Create New User', new_user_path, class: 'btn btn-primary btn-lg d-inline-block', type: 'button' %>
         <% end %>
       </div>
     </div><!-- end row -->

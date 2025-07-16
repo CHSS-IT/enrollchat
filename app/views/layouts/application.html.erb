@@ -33,8 +33,8 @@
             </li>
           <% end %>
           <% if current_user.present? %>
-            <li class="nav-item m-auto <%= active_class(sections_path) %>">
-              <%= link_to 'Sections', sections_path, class: 'nav-link' %>
+            <li class="nav-item m-auto">
+              <%= link_to 'Sections', sections_path, class: 'nav-link <%= active_class(sections_path) %>' %>
             </li>
             <li class="nav-item m-auto <%= active_class(reports_path) %>">
               <%= link_to 'Summary', reports_path, class: 'nav-link' %>
@@ -47,8 +47,8 @@
             <% end %>
             </li>
             <li class="nav-item dropdown m-auto">
-              <a class="nav-link dropdown-toggle" href="#termsemesters" data-bs-toggle="dropdown">Terms</a>
-              <ul class="dropdown-menu dropdown-menu-end animated fadeInUp" id="termsemesters">
+              <a class="nav-link dropdown-toggle" type="button" href="#termsemesters" data-bs-toggle="dropdown" aria-expanded="false">Terms</a>
+              <ul class="dropdown-menu dropdown-menu-end" id="termsemesters">
                 <% @terms.each do |term| %>
                   <li><%= link_to term_in_words(term.term), sections_url(term: term.term), class: 'dropdown-item' %></li>
                 <% end %>
@@ -90,13 +90,13 @@
     </div>
   </div>
 
-  <footer class="page-footer unique-color-dark text-white center-on-small-only">
-    <div class="footer-copyright">
-      <div class="container-fluid">
-        A product of the <a href="mailto:chssweb@gmu.edu">CHSSWeb</a> Team&nbsp; • &nbsp; &copy; <%= Time.now.year %> Copyright George Mason University <% if Setting.first.documentation_url.present? %>&nbsp; • &nbsp;<a href="<%= Setting.first.documentation_url %>" target="_blank">EnrollChat Information and Updates</a><% end %>
-      </div>
+<footer class="page-footer bg-dark text-white text-center py-4">
+  <div class="footer-copyright">
+    <div class="container-fluid">
+      A product of the <a href="mailto:chssweb@gmu.edu" class="text-white">CHSSWeb</a> Team&nbsp; • &nbsp; &copy; <%= Time.now.year %> Copyright George Mason University <% if Setting.first.documentation_url.present? %>&nbsp; • &nbsp;<a href="<%= Setting.first.documentation_url %>" target="_blank" class="text-white">EnrollChat Information and Updates</a><% end %>
     </div>
-  </footer>
+  </div>
+</footer>
   <%= javascript_include_tag 'material-design/mdb.min' %>
 </body>
 
@@ -119,6 +119,10 @@
         $('.new-message-marker').hide();
         });
       });
+    });
+
+    document.querySelectorAll('.waves-effect').forEach(function(element) {
+    element.classList.remove('waves-effect');
     });
   </script>
 </html>

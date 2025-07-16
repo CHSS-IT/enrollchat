@@ -4,6 +4,7 @@ html, body {height: 100%;width: 100}
 
 body {
 	font-family: 'Muli', sans-serif;
+    font-size: 0.9rem; /* Reduce all text by ~12.5% */
 	width: 100%;
 	height: 100%;
 	background: #f2f6f9 url('class_32063.jpg') no-repeat fixed center center;
@@ -22,6 +23,33 @@ body {
 	    -webkit-filter: blur(70px) grayscale(78%);
 	    z-index: -1;
 	}
+}
+
+
+html {
+  font-size: 14px;
+}
+
+table, th, td {
+  font-size: 0.9rem;
+}
+
+
+input, select, textarea, button {
+  font-size: 0.9rem; 
+}
+
+.btn, .btn-sm {
+  font-size: 0.9rem; 
+  padding: 0.4rem 0.8rem; 
+}
+
+.form-control {
+  font-size: 0.9rem;
+}
+
+.text-sm {
+  font-size: 0.9rem !important;
 }
 
 .chssLogin { 
