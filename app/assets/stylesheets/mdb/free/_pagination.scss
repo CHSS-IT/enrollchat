@@ -1,86 +1,97 @@
+//
+// Pagination styles
+//
+
 .pagination {
-    .page-link {
-        background-color: transparent;
-        font-size: 0.8rem;
-    }
-    .active .page-link {
-        border-radius: 2px;
-        transition: all 0.2s linear;
-        @extend.z-depth-1;
-        &:hover {
-            color: #fff;
-        }
-    }
+  // scss-docs-start pagination-css-vars
+  --#{$prefix}pagination-border-radius: #{$pagination-border-radius};
+  --#{$prefix}pagination-active-transition: #{$pagination-active-transition};
+  --#{$prefix}pagination-active-font-weight: #{$pagination-active-font-weight};
+  --#{$prefix}pagination-circle-border-radius: #{$pagination-circle-border-radius};
+  --#{$prefix}pagination-circle-padding-x: #{$pagination-circle-padding-x};
+  --#{$prefix}pagination-circle-padding-l-lg: #{$pagination-circle-lg-padding-left};
+  --#{$prefix}pagination-circle-padding-r-lg: #{$pagination-circle-lg-padding-right};
+  --#{$prefix}pagination-circle-padding-l-sm: #{$pagination-circle-sm-padding-left};
+  --#{$prefix}pagination-circle-padding-r-sm: #{$pagination-circle-sm-padding-right};
+  // scss-docs-end pagination-css-vars
 }
 
-// Circle pagination
-.pagination {
-    &.pagination-circle {
-        .page-link {
-            border-radius: 50%;
-            margin-left: 2px;
-            margin-right: 2px;
-            &:hover {
-                border-radius: 50%;
-            }
-        }
-        .active .page-link {
-            border-radius: 50%;
-        }
-    }
-}
+.page-link {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  border-radius: var(--#{$prefix}pagination-border-radius);
 
-.pagination .page-link {
+  &:focus {
+    box-shadow: none;
+  }
+
+  &.active,
+  .active > & {
     border: 0;
-    transition: all 0.3s linear;
-    &:hover {
-        transition: all 0.3s linear;
-        background-color: #eee;
-    }
-    &:focus {
-        background-color: transparent;
-    }
+    transition: var(--#{$prefix}pagination-active-transition);
+    font-weight: var(--#{$prefix}pagination-active-font-weight);
+  }
 }
 
-.pagination {
-    &.pg-blue {
-        .active .page-link {
-            background-color: $primary-color;
-        }
+.page-item {
+  &:not(:first-child) {
+    .page-link {
+      margin-left: 0;
     }
-    &.pg-red {
-        .active .page-link {
-            background-color: $danger-color;
-        }
+  }
+
+  &:first-child {
+    .page-link {
+      border-top-left-radius: var(--#{$prefix}pagination-border-radius);
+      border-bottom-left-radius: var(--#{$prefix}pagination-border-radius);
     }
-    &.pg-teal {
-        .active .page-link {
-            background-color: $default-color;
-        }
+  }
+
+  &:last-child {
+    .page-link {
+      border-top-right-radius: var(--#{$prefix}pagination-border-radius);
+      border-bottom-right-radius: var(--#{$prefix}pagination-border-radius);
     }
-    &.pg-darkgrey {
-        .active .page-link {
-            background-color: $special-color;
-        }
+  }
+}
+
+//
+// Pagination circle option
+//
+
+.pagination-circle {
+  .page-item {
+    &:first-child {
+      .page-link {
+        border-radius: var(--#{$prefix}pagination-circle-border-radius);
+      }
     }
-    &.pg-dark {
-        .active .page-link {
-            background-color: $elegant-color;
-        }
+
+    &:last-child {
+      .page-link {
+        border-radius: var(--#{$prefix}pagination-circle-border-radius);
+      }
     }
-    &.pg-bluegrey {
-        .active .page-link {
-            background-color: #3F729B;
-        }
+  }
+
+  .page-link {
+    border-radius: var(--#{$prefix}pagination-circle-border-radius);
+    padding-left: var(--#{$prefix}pagination-circle-padding-x);
+    padding-right: var(--#{$prefix}pagination-circle-padding-x);
+  }
+
+  &.pagination-lg {
+    .page-link {
+      padding-left: var(--#{$prefix}pagination-circle-padding-l-lg);
+      padding-right: var(--#{$prefix}pagination-circle-padding-r-lg);
     }
-    &.pg-amber {
-        .active .page-link {
-            background-color: #ff6f00;
-        }
+  }
+
+  &.pagination-sm {
+    .page-link {
+      padding-left: var(--#{$prefix}pagination-circle-padding-l-sm);
+      padding-right: var(--#{$prefix}pagination-circle-padding-r-sm);
     }
-    &.pg-purple {
-        .active .page-link {
-            background-color: #5e35b1;
-        }
-    }
+  }
 }
