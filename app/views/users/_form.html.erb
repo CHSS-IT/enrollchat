@@ -118,7 +118,7 @@
             <% end %>
             <% if current_user.try(:admin?) %>
             <% unless @user.new_record? %>
-                <%= link_to 'Archive', archive_user_path(@user), data: { confirm: 'Are you sure you want to archive this user?'}, class: 'btn btn-lg btn-warning' %>
+                <%= link_to 'Archive', archive_user_path(@user), data: { confirm: 'Are you sure you want to archive this user?'}, class: 'btn btn-lg btn-warning ms-2' %>
             <% end %>
             <% end %>
         </div>

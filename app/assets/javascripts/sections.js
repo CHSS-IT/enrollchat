@@ -122,6 +122,6 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $('body').popover({
-        selector: '[data-toggle="popover"]', trigger: 'hover'
+        selector: '[data-bs-toggle="popover"]', trigger: 'hover'
     });
 });

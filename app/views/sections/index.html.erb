@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="col-md-3 col-sm-6 md-3">
                   <%= label_tag 'section_department', 'Department' %>
-                  <%= select "section", "department", options_for_select(Section.department_list, selected: @department), { prompt: 'ALL' }, { class: 'form-control form-control-sm' } %>
+                  <%= select "section", "department", options_for_select(Section.department_list, selected: @department), { prompt: 'ALL' }, { class: 'form-control' } %>
                 </div>
                 <div class="col-md-2 col-sm-6 md-3">
                   <%= label_tag 'section_status', 'Status' %>
