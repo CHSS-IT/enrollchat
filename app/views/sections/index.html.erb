@@ -23,32 +23,32 @@
           <div class="card-header white py-4">
             <%= form_tag sections_path, method: "get", id: "filter-form", class: "control label" do %>
             <div class="row">
-                <div class="col-md-3 col-sm-6 form-group">
+                <div class="col-md-3 col-sm-6 md-3">
                   <%= label_tag 'section_department', 'Department' %>
-                  <%= select "section", "department", options_for_select(Section.department_list, selected: @department), { prompt: 'ALL' }, { class: 'form-control input-sm' } %>
+                  <%= select "section", "department", options_for_select(Section.department_list, selected: @department), { prompt: 'ALL' }, { class: 'form-control' } %>
                 </div>
-                <div class="col-md-2 col-sm-6 form-group">
+                <div class="col-md-2 col-sm-6 md-3">
                   <%= label_tag 'section_status', 'Status' %>
                   <%= select "section", "status", options_for_select(Section.status_list, selected: @status), { default: 'ACTIVE' }, { class: 'form-control' } %>
                 </div>
-                <div class="col-md-2 col-sm-6 form-group">
+                <div class="col-md-2 col-sm-6 md-3">
                   <%= label_tag 'section_level', 'Level' %>
                   <%= select "section", "level", options_for_select(Section.level_list, selected: @section_level), { prompt: 'ALL' }, { class: 'form-control' } %>
                 </div>
-                <div class="col-md-2 col-sm-6 form-group">
+                <div class="col-md-2 col-sm-6 md-3">
                   <%= label_tag 'modality', 'Modality' %>
                   <%= select "section", "modality", options_for_select(Section.modality_list_with_labels, selected: @modality), { prompt: 'ALL' }, { class: 'form-control' } %>
                 </div>
-                <div class="col-md-2 col-sm-6 form-group">
+                <div class="col-md-2 col-sm-6 md-3">
                   <%= label_tag 'section_flagged', 'Flagged As' %>
                   <%= select "section", "flagged", options_for_select(Section.flagged_as_list, selected: @flagged_as), { prompt: 'ALL' }, { class: 'form-control' } %>
                 </div>
-                <div class="col-md-3 col-xs-12 button-group pull-right">
+                <div class="col-md-3 col-xs-12 button-group float-end">
                   <% unless params[:section].blank? %>
                     <%= link_to 'Clear Filters', sections_path, style: 'text-decoration: underline;' %><i class="fa fa-times pl-1" aria-hidden="true"></i>
                   <% end %>
                   <br>
-                  <a href="#" id="filter-submit" class="btn btn-sm btn-block deep-orange darken-2 mt-2">Filter</a>
+                  <a href="#" id="filter-submit" class="btn btn-sm d-grid deep-orange darken-2 mt-2">Filter</a>
                 </div>
             </div>
             <% end %>

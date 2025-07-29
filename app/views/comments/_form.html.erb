@@ -14,7 +14,7 @@
   <%= form.hidden_field :section_id, value: comment.section.id %>
   <%= form.hidden_field :user_id, value: comment.user.id %>
 
-  <div class="form-group">
+  <div class="mb-3">
     <%= form.label :body, "Comment on #{link_to_unless action_name == 'show', comment.section.section_and_number, comment.section}: #{comment.section.title}".html_safe %>
     <% if current_user.is_admin? %>
       <div class="section-info">
@@ -43,10 +43,10 @@
     </div>
     <%= form.text_area :body, id: :comment_body, class:"form-control" %>
   </div>
-    <%= form.submit class: "btn deep-orange darken-2 btn-sm btn-block", id: 'submit' %>
+    <%= form.submit class: "btn deep-orange darken-2 btn-sm w-100 text-white", id: 'submit' %>
   <% observers = User.active.in_department(comment.section.department) %>
   <p>
-    <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
       <%= observers.size %> users are observing this department.
     </a>
   </p>
