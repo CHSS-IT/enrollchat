@@ -22,7 +22,8 @@ class UsersTest < ApplicationSystemTestCase
     assert_equal @user.email_preference, 'No Emails'
     login_as(@admin)
     visit edit_user_url(@user)
-    bootstrap_select('Comments and Digest', from: 'user_email_preference')
+    # bootstrap_select('Comments and Digest', from: 'user_email_preference')
+    select 'Comments and Digest', from: 'user_email_preference'
     click_button 'Save'
     assert_selector 'table tbody tr td', text: 'Comments and Digest'
     assert_equal @user.reload.email_preference, 'Comments and Digest'
@@ -32,7 +33,8 @@ class UsersTest < ApplicationSystemTestCase
     assert_equal @user.email_preference, 'No Emails'
     login_as(@user)
     visit edit_user_url(@user)
-    bootstrap_select('Comments and Digest', from: 'user_email_preference')
+    # bootstrap_select('Comments and Digest', from: 'user_email_preference')
+    select 'Comments and Digest', from: 'user_email_preference'
     click_button 'Save'
     assert_equal @user.reload.email_preference, 'Comments and Digest'
   end
@@ -41,7 +43,9 @@ class UsersTest < ApplicationSystemTestCase
     assert_equal @user.departments, []
     login_as(@admin)
     visit edit_user_url(@user)
-    bootstrap_multi_select('CRIM', 'SINT', from: 'user_departments')
+    # bootstrap_multi_select('CRIM', 'SINT', from: 'user_departments')
+    select 'CRIM', from: 'user_departments'
+    select 'SINT', from: 'user_departments'
     click_button 'Save'
     assert_selector 'table tbody tr td', text: 'CRIM, SINT'
     assert_equal @user.reload.departments, %w[CRIM SINT]
@@ -51,7 +55,9 @@ class UsersTest < ApplicationSystemTestCase
     assert_equal @user.departments, []
     login_as(@user)
     visit edit_user_url(@user)
-    bootstrap_multi_select('CRIM', 'SINT', from: 'user_departments')
+    # bootstrap_multi_select('CRIM', 'SINT', from: 'user_departments')
+    select 'CRIM', from: 'user_departments'
+    select 'SINT', from: 'user_departments'
     click_button 'Save'
     assert_equal @user.reload.departments, %w[CRIM SINT]
   end

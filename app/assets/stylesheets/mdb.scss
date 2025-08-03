@@ -1,65 +1,83 @@
 /*!
- * Material Design for Bootstrap 4
- * Version: MDB Free 4.4.0
- *
- *
- * Copyright: Material Design for Bootstrap
- * http://mdbootstrap.com/
- *
- * Read the license: http://mdbootstrap.com/license/
- *
- *
- * Documentation: http://mdbootstrap.com/
- *
- * Getting started: http://mdbootstrap.com/getting-started/
- *
- * Tutorials: http://mdbootstrap.com/bootstrap-tutorial/
- *
- * Templates: http://mdbootstrap.com/templates/
- *
- * Support: http://mdbootstrap.com/forums/forum/support/
- *
- * Contact: office@mdbootstrap.com 
- *
- * Atribution: Animate CSS, Twitter Bootstrap, Materialize CSS, Normalize CSS, Waves JS, WOW JS, Toastr, Chart.js , Hammer.js
- *
- */
+* MDB5
+* Version: FREE 9.0.0
+*
+*
+* Copyright: Material Design for Bootstrap
+* https://mdbootstrap.com/
+*
+* Read the license: https://mdbootstrap.com/general/license/
+*
+* Documentation: https://mdbootstrap.com/docs/standard/
+*
+* Support: https://mdbootstrap.com/support/
+*
+* Contact: contact@mdbootstrap.com
+**
+* Getting started: http://mdbootstrap.com/getting-started/
+*
+* Tutorials: http://mdbootstrap.com/bootstrap-tutorial/
+*
+* Templates: http://mdbootstrap.com/templates/
+*
+* Contact: office@mdbootstrap.com 
+*
+* Atribution: Animate CSS, Twitter Bootstrap, Materialize CSS, Normalize CSS, Waves JS, WOW JS, Toastr, Chart.js , Hammer.js
+*
+*/
 
 @charset "UTF-8";
 
-// Bootstrap //
+// CORE FUNCTIONS
+@import 'mdb/free/functions';
 
-@import "mdb/free/data/functions";
-@import "mdb/free/data/variables-b4";
+// CORE VARIABLES
+@import 'mdb/free/variables';
+@import 'mdb/free/variables-dark';
 
-// MDB Framework //
-@import "mdb/free/data/prefixer";
-@import "mdb/free/data/mixins";
-@import "mdb/free/data/colors";
-@import "mdb/free/data/variables";
-@import "mdb/free/global";
-@import "mdb/free/animations";
-@import "mdb/free/helpers";
-@import "mdb/free/typography";
-@import "mdb/free/buttons";
-@import "mdb/free/cards-basic";
-@import "mdb/free/dropdowns";
-@import "mdb/free/navbar";
-@import "mdb/free/pagination";
-@import "mdb/free/badge";
-@import "mdb/free/breadcrumb";
-@import "mdb/free/modals";
-@import "mdb/free/progress";
-@import "mdb/free/carousel-basic";
-@import "mdb/free/collapse";
-@import "mdb/free/jumbotron";
-@import "mdb/free/masks";
-@import "mdb/free/waves";
-@import "mdb/free/forms-basic";
-@import "mdb/free/msc";
-@import "mdb/free/footer";
-@import "mdb/free/list-group";
-@import "mdb/free/tables";
+
+// MDB CORE
+@import 'mdb/free/mixins';
+
+// MDB CORE COMPONENTS
+@import 'mdb/free/root';
+@import 'mdb/free/reboot';
+@import 'mdb/free/type';
+@import 'mdb/free/colors';
+@import 'mdb/free/shadows';
+@import 'mdb/free/flag';
+@import 'mdb/free/images';
+
+// MDB FORMS
+@import 'mdb/free/forms/form-control';
+@import 'mdb/free/forms/form-select';
+@import 'mdb/free/forms/form-check';
+@import 'mdb/free/forms/form-file';
+@import 'mdb/free/forms/input-group';
+@import 'mdb/free/forms/form-range';
+
+// MDB COMPONENTS
+@import 'mdb/free/deprecated';
+@import 'mdb/free/dropdown';
+@import 'mdb/free/button-group';
+@import 'mdb/free/nav';
+@import 'mdb/free/navbar';
+@import 'mdb/free/card';
+@import 'mdb/free/breadcrumb';
+@import 'mdb/free/pagination';
+@import 'mdb/free/badge';
+@import 'mdb/free/alert';
+@import 'mdb/free/progress';
+@import 'mdb/free/list-group';
+@import 'mdb/free/close';
+@import 'mdb/free/modal';
+@import 'mdb/free/toasts';
+@import 'mdb/free/tooltip';
+@import 'mdb/free/popover';
+@import 'mdb/free/scrollspy';
+@import 'mdb/free/range';
+@import 'mdb/free/accordion';
+@import 'mdb/free/carousel';
 
 // Custom Sass
 @import "mdb/custom";

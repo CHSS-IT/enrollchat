@@ -29,7 +29,7 @@ gem 'redis', '~> 5.3'
 # For file storage on S3
 gem 'aws-sdk-s3', '~> 1.192'
 
-gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem.git', branch: '4.6-stable'
+gem 'bootstrap', '~> 5.3.5'
 
 gem 'bugsnag', '~> 6.27', '>= 6.27.1'
 
