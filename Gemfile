@@ -12,7 +12,7 @@ gem "rake"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '7.2.2.2'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 1.5'
+gem 'pg', '~> 1.6'
 # Use Puma as the app server
 gem 'puma', '~> 6.6'
 # Use SCSS for stylesheets
