@@ -353,11 +353,11 @@ GEM
     scout_apm (5.6.4)
       parser
     securerandom (0.4.1)
-    selenium-webdriver (4.34.0)
+    selenium-webdriver (4.35.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
-      rubyzip (>= 1.2.2, < 3.0)
+      rubyzip (>= 1.2.2, < 4.0)
       websocket (~> 1.0)
     sidekiq (7.3.9)
       base64
@@ -447,7 +447,7 @@ DEPENDENCIES
   roo (~> 2.10)
   rubocop-rails (~> 2.29)
   scout_apm (~> 5.6)
-  selenium-webdriver (~> 4.34)
+  selenium-webdriver (~> 4.35)
   sidekiq (~> 7.3)
   simplecov (~> 0.22.0)
   smarter_csv (~> 1.9)
