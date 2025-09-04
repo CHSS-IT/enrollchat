@@ -1,7 +1,6 @@
 require "application_system_test_case"
 
 class UsersTest < ApplicationSystemTestCase
-
   setup do
     @admin = users(:one)
     @user = users(:three)
