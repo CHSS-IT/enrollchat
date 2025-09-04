@@ -17,7 +17,6 @@
 //= require moment.min.js
 //= require datetime.js
 //= require rails-ujs
-//= require bootstrap-select.min
 //= require sections
 //= require users
 //= require reports
