@@ -254,7 +254,7 @@ GEM
       date
       stringio
     public_suffix (6.0.2)
-    puma (6.6.0)
+    puma (7.0.1)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.1.16)
@@ -437,7 +437,7 @@ DEPENDENCIES
   net-sftp (~> 4.0)
   net-ssh (~> 7.2)
   pg (~> 1.5)
-  puma (~> 6.6)
+  puma (~> 7.0)
   rack-cas (~> 0.16.1)
   rack-mini-profiler (~> 3.3)
   rails (= 7.2.2.2)
