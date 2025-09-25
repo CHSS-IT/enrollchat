@@ -22,7 +22,7 @@ gem 'terser', '~> 1.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.13'
 # Use Redis adapter to run Action Cable in production
-gem 'redis', '~> 5.3'
+gem 'redis', '~> 5.4'
 
 # Alphabetize non-core gems
 
