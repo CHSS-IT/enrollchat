@@ -106,7 +106,7 @@ GEM
       debug_inspector (>= 1.2.0)
     bootstrap (5.3.5)
       popper_js (>= 2.11.8, < 3)
-    brakeman (7.0.2)
+    brakeman (7.1.0)
       racc
     bugsnag (6.28.0)
       concurrent-ruby (~> 1.0)
@@ -424,7 +424,7 @@ DEPENDENCIES
   better_errors (~> 2.10)
   binding_of_caller
   bootstrap (~> 5.3.5)
-  brakeman (~> 7.0)
+  brakeman (~> 7.1)
   bugsnag (~> 6.28)
   bullet (~> 8.0)
   capybara (~> 3.40)
