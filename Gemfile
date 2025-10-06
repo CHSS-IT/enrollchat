@@ -20,14 +20,14 @@ gem "dartsass-rails", "~> 0.5.1"
 # Use Terser as compressor for JavaScript assets
 gem 'terser', '~> 1.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.13'
+gem 'jbuilder', '~> 2.14'
 # Use Redis adapter to run Action Cable in production
-gem 'redis', '~> 5.3'
+gem 'redis', '~> 5.4'
 
 # Alphabetize non-core gems
 
 # For file storage on S3
-gem 'aws-sdk-s3', '~> 1.192'
+gem 'aws-sdk-s3', '~> 1.199'
 
 gem 'bootstrap', '~> 5.3.5'
 
@@ -59,7 +59,7 @@ gem 'report_action', '~> 1.1.0'
 # from the source. https://github.com/roo-rb/roo/issues/551
 gem 'roo', '~> 2.10'
 
-gem 'scout_apm', '~> 5.6'
+gem 'scout_apm', '~> 5.7'
 
 gem 'sidekiq', '~> 7.3'
 
@@ -83,7 +83,7 @@ group :development do
   # Shiny error messages
   gem 'better_errors', '~> 2.10'
   gem "binding_of_caller"
-  gem 'brakeman', '~> 7.0', require: false
+  gem 'brakeman', '~> 7.1', require: false
   # N+1 finder
   gem 'bullet', '~> 8.0'
   gem 'listen', '~> 3.9'
