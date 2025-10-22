@@ -27,7 +27,7 @@ gem 'redis', '~> 5.4'
 # Alphabetize non-core gems
 
 # For file storage on S3
-gem 'aws-sdk-s3', '~> 1.199'
+gem 'aws-sdk-s3', '~> 1.201'
 
 gem 'bootstrap', '~> 5.3.5'
 
