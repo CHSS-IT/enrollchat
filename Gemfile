@@ -60,7 +60,6 @@ gem 'report_action', '~> 1.1.0'
 gem 'roo', '~> 2.10'
 
 gem 'scout_apm', '~> 5.8'
-gem 'scout_apm_logging', '~> 2.1'
 
 gem 'sidekiq', '~> 7.3'
 
