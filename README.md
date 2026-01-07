@@ -10,7 +10,7 @@ Enrollchat was developed by the College of Humanities and Social Sciences at Geo
 
 ## Dependencies and Environment Variables
 
-* Ruby 3.3.9
+* Ruby 3.3.10
 * PostgreSQL for the database
 * Redis server (and Heroku Redis)
 
