@@ -37,7 +37,7 @@ gem 'bugsnag', '~> 6.28'
 gem 'carrierwave', '~> 3.0'
 
 # carrierwave support for S3
-gem 'fog-aws', '~> 3.32'
+gem 'fog-aws', '~> 3.33'
 
 gem 'importmap-rails', '~> 1.2', '>= 1.2.3'
 
