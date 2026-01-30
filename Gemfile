@@ -10,7 +10,7 @@ ruby "3.3.10"
 gem "rake"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '7.2.2.2'
+gem 'rails', '7.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.6'
 # Use Puma as the app server
@@ -61,7 +61,7 @@ gem 'roo', '~> 2.10'
 
 gem 'scout_apm', '~> 5.8'
 
-gem 'sidekiq', '~> 7.3'
+gem 'sidekiq', '~> 8.1'
 
 gem 'smarter_csv', '~> 1.9'
 
@@ -97,6 +97,7 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.40'
+  gem 'minitest', '~> 5.27'
   gem 'selenium-webdriver', '~> 4.40'
   gem 'simplecov', '~> 0.22.0', require: false
 end
