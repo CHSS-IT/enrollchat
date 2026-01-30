@@ -84,6 +84,19 @@ class SectionsController < ApplicationController
         end
       end
 
+      unless params[:section][:print_flag].blank?
+        @print_flag = params[:section][:print_flag]
+        if @print_flag == 'Yes'
+          @sections = @sections.print_schedule
+        elsif @print_flag == 'No'
+          @sections = @sections.no_print
+        elsif @print_flag == 'All'
+          @sections
+        end
+      else
+        @sections = @sections.not_canceled
+      end
+
     else
       @sections = @sections.not_canceled
     end

@@ -35,6 +35,9 @@ class Section < ApplicationRecord
   scope :fully_remote, -> { where("modality like '_C_'") }
   scope :hybrid, -> { where.not("modality like '_C_'").where.not("modality like '_A_'").where.not(modality: [nil, '']) }
 
+  scope :print_schedule, -> { where(print_flag: 'Y') }
+  scope :no_print, -> { where(print_flag: 'N') }
+
   scope :marked_for_deletion, -> { unscoped.where("delete_at is not null") }
   scope :delete_now, -> { unscoped.where("delete_at is not null AND delete_at < ?", DateTime.now()) }
 
@@ -137,6 +140,10 @@ class Section < ApplicationRecord
 
   def self.home_department_list
     %w[CULT COMM ENGL RELI MCL PSYC SINT CRIM HE SOAN GLOA HIST WMST PHIL ECON AFAM LA HNRS BIS MAIS MEIS]
+  end
+
+  def self.schedule_print_list
+    %w[Yes No All]
   end
 
   def self.import(filepath)

@@ -23,7 +23,7 @@
           <div class="card-header white py-4">
             <%= form_tag sections_path, method: "get", id: "filter-form", class: "control label" do %>
             <div class="row">
-                <div class="col-md-3 col-sm-6 md-3">
+                <div class="col-md-2 col-sm-6 md-3">
                   <%= label_tag 'section_department', 'Department' %>
                   <%= select "section", "department", options_for_select(Section.department_list, selected: @department), { prompt: 'ALL' }, { class: 'form-control' } %>
                 </div>
@@ -42,6 +42,10 @@
                 <div class="col-md-2 col-sm-6 md-3">
                   <%= label_tag 'section_flagged', 'Flagged As' %>
                   <%= select "section", "flagged", options_for_select(Section.flagged_as_list, selected: @flagged_as), { prompt: 'ALL' }, { class: 'form-control' } %>
+                </div>
+                <div class="col-md-2 col-sm-6 md-3">
+                  <%= label_tag 'section_print_flag', 'Schedule Print' %>
+                  <%= select "section", "print_flag", options_for_select(Section.schedule_print_list, selected: @print_flag), { default: 'Yes' }, { class: 'form-control' } %>
                 </div>
                 <div class="col-md-3 col-xs-12 button-group float-end">
                   <% unless params[:section].blank? %>
