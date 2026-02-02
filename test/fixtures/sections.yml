@@ -19,7 +19,7 @@ one:
   resolved_section: false
   modality: ''
   modality_description: ''
-  print_flag: ''
+  print_flag: 'Y'
 
 two:
   owner: MyString
@@ -40,7 +40,7 @@ two:
   resolved_section: false
   modality: ''
   modality_description: ''
-  print_flag: ''
+  print_flag: 'Y'
 
 three:
   owner: MyString
@@ -61,7 +61,7 @@ three:
   resolved_section: false
   modality: ''
   modality_description: ''
-  print_flag: ''
+  print_flag: 'Y'
 
 four:
   owner: MyString
@@ -82,7 +82,7 @@ four:
   resolved_section: false
   modality: ''
   modality_description: ''
-  print_flag: ''
+  print_flag: 'Y'
 
 five:
   owner: MyString
@@ -104,4 +104,4 @@ five:
   resolved_section: false
   modality: ''
   modality_description: ''
-  print_flag: ''
+  print_flag: 'Y'

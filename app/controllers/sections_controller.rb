@@ -74,16 +74,6 @@ class SectionsController < ApplicationController
         @sections = @sections.send(@modality) if @modality.present?
       end
 
-      unless params[:section][:flagged].blank?
-        @flagged_as = params[:section][:flagged]
-        case @flagged_as
-        when 'waitlisted'
-          @sections = @sections.all_waitlists
-        when 'long-waitlist', 'under-enrolled'
-          @sections = @sections.flagged_as?(@flagged_as)
-        end
-      end
-
       unless params[:section][:print_flag].blank?
         @print_flag = params[:section][:print_flag]
         if @print_flag == 'Yes'
@@ -94,7 +84,17 @@ class SectionsController < ApplicationController
           @sections
         end
       else
-        @sections = @sections.not_canceled
+        @sections = @sections.not_canceled.print_schedule
+      end
+
+      unless params[:section][:flagged].blank?
+        @flagged_as = params[:section][:flagged]
+        case @flagged_as
+        when 'waitlisted'
+          @sections = @sections.all_waitlists
+        when 'long-waitlist', 'under-enrolled'
+          @sections = @sections.flagged_as?(@flagged_as)
+        end
       end
 
     else

@@ -168,12 +168,8 @@ class Section < ApplicationRecord
     @uncanceled_sections = 0
     (first_row..last_real_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
-      # Hack to avoid blanks and headers when dealing with generated csv or xslt with disclaimer rows
       if row["term"].blank? || row["term"].to_i.to_s != row["term"]
-      # Temporarily exclude sections where the print_flag is set to no.
-      # This is to limit disruptions when the enhanced data feed is first implemented.
-      elsif row["print_flag"] == 'N'
-        @import_report.report_item('Executing Import', 'Skipped Sections', "No Print Flag: #{row['department']} #{row['section_number']}")
+        # Hack to avoid blanks and headers when dealing with generated csv or xslt with disclaimer rows
       elsif row["section_number"].include?('SA')
         @import_report.report_item('Executing Import', 'Skipped Sections', "Study abroad #{row['section_number']}")
       elsif Section.home_department_list.include?(row["department"])
