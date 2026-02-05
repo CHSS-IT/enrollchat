@@ -35,6 +35,9 @@ class Section < ApplicationRecord
   scope :fully_remote, -> { where("modality like '_C_'") }
   scope :hybrid, -> { where.not("modality like '_C_'").where.not("modality like '_A_'").where.not(modality: [nil, '']) }
 
+  scope :print_schedule, -> { where(print_flag: 'Y') }
+  scope :no_print, -> { where(print_flag: 'N') }
+
   scope :marked_for_deletion, -> { unscoped.where("delete_at is not null") }
   scope :delete_now, -> { unscoped.where("delete_at is not null AND delete_at < ?", DateTime.now()) }
 
@@ -139,6 +142,10 @@ class Section < ApplicationRecord
     %w[CULT COMM ENGL RELI MCL PSYC SINT CRIM HE SOAN GLOA HIST WMST PHIL ECON AFAM LA HNRS BIS MAIS MEIS]
   end
 
+  def self.schedule_print_list
+    %w[Yes No All]
+  end
+
   def self.import(filepath)
     @import_report = ReportAction::Report.new
 
@@ -161,12 +168,8 @@ class Section < ApplicationRecord
     @uncanceled_sections = 0
     (first_row..last_real_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
-      # Hack to avoid blanks and headers when dealing with generated csv or xslt with disclaimer rows
       if row["term"].blank? || row["term"].to_i.to_s != row["term"]
-      # Temporarily exclude sections where the print_flag is set to no.
-      # This is to limit disruptions when the enhanced data feed is first implemented.
-      elsif row["print_flag"] == 'N'
-        @import_report.report_item('Executing Import', 'Skipped Sections', "No Print Flag: #{row['department']} #{row['section_number']}")
+        # Hack to avoid blanks and headers when dealing with generated csv or xslt with disclaimer rows
       elsif row["section_number"].include?('SA')
         @import_report.report_item('Executing Import', 'Skipped Sections', "Study abroad #{row['section_number']}")
       elsif Section.home_department_list.include?(row["department"])

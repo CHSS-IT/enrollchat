@@ -83,6 +83,10 @@ class SectionTest < ActiveSupport::TestCase
     assert_equal Section.enrollment_status_list, ['Undergraduate under-enrolled', 'Undergraduate over-enrolled', 'Graduate under-enrolled', 'Graduate over-enrolled']
   end
 
+  test 'should define a list of print schedule options' do
+    assert_equal Section.schedule_print_list, %w[Yes No All]
+  end
+
   # test scopes used in filter
 
   test 'by_department scope should properly filter sections by department' do
@@ -158,6 +162,16 @@ class SectionTest < ActiveSupport::TestCase
     @section_two.update(modality: 'XAX')
     @section_three.update(modality: 'XCX')
     assert_equal @sections.hybrid, [@section]
+  end
+
+  test 'no_print should return sections where the print_flag is No' do
+    @section.update(print_flag: 'N')
+    assert_equal @sections.no_print, [@section]
+  end
+
+  test 'print_schedule should return sections where the print_flag is Yes' do
+    @section.update(print_flag: 'N')
+    assert_equal @sections.print_schedule, [@section_two, @section_three, @section_four, @section_five]
   end
 
   # import

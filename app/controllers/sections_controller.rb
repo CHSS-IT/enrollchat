@@ -74,6 +74,19 @@ class SectionsController < ApplicationController
         @sections = @sections.send(@modality) if @modality.present?
       end
 
+      unless params[:section][:print_flag].blank?
+        @print_flag = params[:section][:print_flag]
+        if @print_flag == 'Yes'
+          @sections = @sections.print_schedule
+        elsif @print_flag == 'No'
+          @sections = @sections.no_print
+        elsif @print_flag == 'All'
+          @sections
+        end
+      else
+        @sections = @sections.not_canceled.print_schedule
+      end
+
       unless params[:section][:flagged].blank?
         @flagged_as = params[:section][:flagged]
         case @flagged_as
@@ -85,7 +98,7 @@ class SectionsController < ApplicationController
       end
 
     else
-      @sections = @sections.not_canceled
+      @sections = @sections.not_canceled.print_schedule
     end
   end
 
