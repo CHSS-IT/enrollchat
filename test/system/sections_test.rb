@@ -134,6 +134,30 @@ class SectionsTest < ApplicationSystemTestCase
     assert_selector 'table tbody tr td', text: 'CRIM'
   end
 
+  test 'filtering by print flag' do
+    @section_three = sections(:three)
+    @section_three.update(print_flag: 'N')
+    visit sections_url
+    sleep 20
+    assert_selector 'table tbody tr', count: 3
+    select('No', from: 'section_print_flag')
+    click_link('filter-submit')
+    assert_selector 'table tbody tr', count: 1
+    assert_selector 'table tbody tr td', text: 'SINT'
+    select('All', from: 'section_print_flag')
+    sleep 2
+    click_link('filter-submit')
+    assert_selector 'table tbody tr', count: 4
+    assert_selector 'table tbody tr td', text: 'SINT'
+    assert_selector 'table tbody tr td', text: 'ENGL'
+    assert_selector 'table tbody tr td', text: 'CRIM'
+    assert_selector 'table tbody tr td', text: 'BIS'
+    sleep 2
+    select('ALL', from: 'section_status')
+    click_link('filter-submit')
+    assert_selector 'table tbody tr', count: 5
+  end
+
   test 'applying flagged and department filters' do
     visit sections_url
     assert_selector 'table tbody tr', count: 4

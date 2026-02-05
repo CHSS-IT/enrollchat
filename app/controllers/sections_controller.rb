@@ -98,7 +98,7 @@ class SectionsController < ApplicationController
       end
 
     else
-      @sections = @sections.not_canceled
+      @sections = @sections.not_canceled.print_schedule
     end
   end
 
