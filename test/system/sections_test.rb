@@ -138,7 +138,6 @@ class SectionsTest < ApplicationSystemTestCase
     @section_three = sections(:three)
     @section_three.update(print_flag: 'N')
     visit sections_url
-    sleep 20
     assert_selector 'table tbody tr', count: 3
     select('No', from: 'section_print_flag')
     click_link('filter-submit')
