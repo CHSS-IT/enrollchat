@@ -21,19 +21,20 @@
       <% sections = Section.in_term(@term).in_department(department) %>
     <tr>
       <td><%= department %></td>
-      <td><%= sections.not_canceled.size %></td>
-      <td><%= sections.flagged_as?('under-enrolled').size %></td>
-      <td><%= sections.full.size %></td>
-      <td><%= sections.flagged_as?('long-waitlist').size %></td>
-      <td><%= sections.canceled.size %></td>
+      <td><%= sections.not_canceled.print_schedule.size %></td>
+      <td><%= sections.print_schedule.flagged_as?('under-enrolled').size %></td>
+      <td><%= sections.full.print_schedule.size %></td>
+      <td><%= sections.print_schedule.flagged_as?('long-waitlist').size %></td>
+      <td><%= sections.canceled.print_schedule.size %></td>
       <td><%= Comment.for_department(department).in_past_day.size %></td>
       <td><%= basic_datetime_eastern(Comment.for_department(department).in_term(@term).most_recent) %></td>
-      <td><%= sections.not_canceled.sum(:enrollment_limit) %><%= arrow(sections.not_canceled.sum(:enrollment_limit_yesterday)) %></td>
-      <td><%= sections.not_canceled.sum(:actual_enrollment) %><%= arrow(sections.not_canceled.sum(:actual_enrollment_yesterday)) %></td>
-      <td><%= sections.not_canceled.sum(:cross_list_enrollment) %><%= arrow(sections.not_canceled.sum(:cross_list_enrollment_yesterday)) %></td>
-      <td><%= sections.not_canceled.sum(:waitlist) %><%= arrow(sections.not_canceled.sum(:waitlist_yesterday)) %></td>
+      <td><%= sections.not_canceled.print_schedule.sum(:enrollment_limit) %><%= arrow(sections.not_canceled.print_schedule.sum(:enrollment_limit_yesterday)) %></td>
+      <td><%= sections.not_canceled.print_schedule.sum(:actual_enrollment) %><%= arrow(sections.not_canceled.print_schedule.sum(:actual_enrollment_yesterday)) %></td>
+      <td><%= sections.not_canceled.print_schedule.sum(:cross_list_enrollment) %><%= arrow(sections.not_canceled.print_schedule.sum(:cross_list_enrollment_yesterday)) %></td>
+      <td><%= sections.not_canceled.print_schedule.sum(:waitlist) %><%= arrow(sections.not_canceled.print_schedule.sum(:waitlist_yesterday)) %></td>
       <td><%= link_to "<i class='fa fa-chart-line' aria-hidden='true'></i> Graph".html_safe, "reports/#{department}" %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
+
