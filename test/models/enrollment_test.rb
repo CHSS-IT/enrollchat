@@ -28,4 +28,16 @@ class EnrollmentTest < ActiveSupport::TestCase
     @enrollment_one.waitlist = nil
     assert_equal(@enrollment_one.send(:null_to_zero), 0)
   end
+
+  test 'returns enrollments for print courses' do
+    section = @enrollment_one.section
+    section.update(print_flag: 'N')
+    assert_equal @enrollments.print_schedule, [@enrollment_six, @enrollment_seven]
+  end
+
+  test 'returns enrollments for no print courses' do
+    section = @enrollment_one.section
+    section.update(print_flag: 'N')
+    assert_equal @enrollments.no_print, [@enrollment_one, @enrollment_two, @enrollment_three, @enrollment_four, @enrollment_five]
+  end
 end
