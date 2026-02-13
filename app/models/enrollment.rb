@@ -9,7 +9,6 @@ class Enrollment < ApplicationRecord
   scope :print_schedule, -> { joins(:section).where(sections: { print_flag: 'Y' }) }
   scope :no_print, -> { joins(:section).where(sections: { print_flag: 'N' }) }
 
-
   private
 
   def null_to_zero
