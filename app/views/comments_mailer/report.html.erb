@@ -29,17 +29,17 @@
       <% sections = Section.in_term(@term).in_department(department) %>
       <tr>
         <td><%= department %></td>
-        <td><%= sections.not_canceled.size %></td>
-        <td><%= sections.flagged_as?('under-enrolled').size %></td>
-        <td><%= sections.full.size %></td>
-        <td><%= sections.flagged_as?('over-enrolled').size %></td>
-        <td><%= sections.canceled.size %></td>
+        <td><%= sections.not_canceled.print_schedule.size %></td>
+        <td><%= sections.print_schedule.flagged_as?('under-enrolled').size %></td>
+        <td><%= sections.full.print_schedule.size %></td>
+        <td><%= sections.print_schedule.flagged_as?('over-enrolled').size %></td>
+        <td><%= sections.canceled.print_schedule.size %></td>
         <td><%= Comment.for_department(department).in_past_week.size %></td>
         <td><%= basic_datetime(Comment.for_department(department).in_term(@term).most_recent) %></td>
-        <td><%= sections.not_canceled.sum(:enrollment_limit) %><%#= arrow(sections.not_canceled.sum(:enrollment_limit_yesterday)) %></td>
-        <td><%= sections.not_canceled.sum(:actual_enrollment) %><%#= arrow(sections.not_canceled.sum(:actual_enrollment_yesterday)) %></td>
-        <td><%= sections.not_canceled.sum(:cross_list_enrollment) %><%#= arrow(sections.not_canceled.sum(:cross_list_enrollment_yesterday)) %></td>
-        <td><%= sections.not_canceled.sum(:waitlist) %><%#= arrow(sections.not_canceled.sum(:waitlist_yesterday)) %></td>
+        <td><%= sections.not_canceled.print_schedule.sum(:enrollment_limit) %></td>
+        <td><%= sections.not_canceled.print_schedule.sum(:actual_enrollment) %></td>
+        <td><%= sections.not_canceled.print_schedule.sum(:cross_list_enrollment) %></td>
+        <td><%= sections.not_canceled.print_schedule.sum(:waitlist) %></td>
       </tr>
   <% end %>
   </tbody>
