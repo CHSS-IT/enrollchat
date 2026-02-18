@@ -48,7 +48,6 @@ gem 'net-sftp', '~> 4.0'
 # SSH for banner import
 gem 'net-ssh', '~> 7.2'
 
-gem 'rack', '~> 3.2.5'
 # For authentication
 gem 'rack-cas', '~> 0.16.1'
 
