@@ -31,7 +31,7 @@ gem 'aws-sdk-s3', '~> 1.213'
 
 gem 'bootstrap', '~> 5.3.5'
 
-gem 'bugsnag', '~> 6.28'
+gem 'bugsnag', '~> 6.29'
 
 # File uploads
 gem 'carrierwave', '~> 3.0'
