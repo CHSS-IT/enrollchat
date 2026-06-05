@@ -34,7 +34,7 @@ gem 'bootstrap', '~> 5.3.5'
 gem 'bugsnag', '~> 6.29'
 
 # File uploads
-gem 'carrierwave', '~> 3.0'
+gem 'carrierwave', '~> 3.1'
 
 # carrierwave support for S3
 gem 'fog-aws', '~> 3.33'
