@@ -6,16 +6,15 @@ class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
   include ApplicationHelper
 
   setup do
-    Rake::Task.clear
     Sidekiq::Worker.clear_all
-    Enrollchat::Application.load_tasks
+    Rake::Task["daily_digests:send_emails"].reenable
+    Rake::Task["weekly_reports:send_emails"].reenable
     @settings = settings(:one)
     @settings.update(email_delivery: 'on')
   end
 
   teardown do
     Sidekiq::Worker.clear_all
-    Rake::Task.clear
   end
 
   # Daily digest worker
