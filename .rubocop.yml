@@ -170,6 +170,10 @@ Rails/WhereEquals:
   Exclude:
     - 'app/models/section.rb'
     - 'app/models/comment.rb'
+Rails/StrongParametersExpect:
+  Exclude:
+    - 'app/controllers/sections_controller.rb'
+    - 'app/controllers/users_controller.rb'
 Security/Open:
   Exclude:
     - 'app/models/section.rb'
