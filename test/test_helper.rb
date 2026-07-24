@@ -7,6 +7,13 @@ require_relative "../config/environment"
 require "rails/test_help"
 require 'minitest/autorun'
 
+# Load rake tasks so they are available in tests
+require "rake"
+Rake::Task.define_task(:environment)
+Rails.root.glob("lib/tasks/**/*.rake").sort.each do |task_file|
+  load task_file
+end
+
 # silence Puma output in system tests
 Capybara.server = :puma, { Silent: true }
 

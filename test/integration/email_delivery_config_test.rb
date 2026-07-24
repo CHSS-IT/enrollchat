@@ -7,15 +7,14 @@ class EmailDeliveryConfigTest < ActionDispatch::IntegrationTest
   include DeliveryWindows
 
   setup do
-    Rake::Task.clear
     Sidekiq::Worker.clear_all
-    Enrollchat::Application.load_tasks
+    Rake::Task["daily_digests:send_emails"].reenable
+    Rake::Task["weekly_reports:send_emails"].reenable
     @settings = settings(:one)
   end
 
   teardown do
     Sidekiq::Worker.clear_all
-    Rake::Task.clear
   end
 
   test "daily digest worker is performed if email delivery config is 'on'" do

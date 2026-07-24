@@ -4,12 +4,7 @@ class SchedulerReportingEmailsTest < ActionDispatch::IntegrationTest
   include ActionMailer::TestHelper
 
   setup do
-    Rake::Task.clear
-    Enrollchat::Application.load_tasks
-  end
-
-  teardown do
-    Rake::Task.clear
+    Rake::Task["scheduler:schedule_old_term_purge"].reenable
   end
 
   # schedule old term purge rake task
