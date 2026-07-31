@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby "3.3.10"
+ruby "3.4.10"
 
 gem "rake"
 
