@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby "3.3.10"
+ruby "3.4.10"
 
 gem "rake"
 
@@ -35,6 +35,8 @@ gem 'bugsnag', '~> 6.29'
 
 # File uploads
 gem 'carrierwave', '~> 3.1'
+
+gem 'csv', '>= 3.3.6'
 
 # carrierwave support for S3
 gem 'fog-aws', '~> 3.33'
