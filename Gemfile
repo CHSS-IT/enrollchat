@@ -36,6 +36,8 @@ gem 'bugsnag', '~> 6.29'
 # File uploads
 gem 'carrierwave', '~> 3.1'
 
+gem 'csv', '>= 3.3.6'
+
 # carrierwave support for S3
 gem 'fog-aws', '~> 3.33'
 
