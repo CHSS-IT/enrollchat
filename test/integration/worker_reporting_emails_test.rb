@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'sidekiq/testing'
+Sidekiq.testing!(:fake)
 
 class WorkerReportingEmailsTest < ActionDispatch::IntegrationTest
   include ActionMailer::TestHelper
