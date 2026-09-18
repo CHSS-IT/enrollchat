@@ -89,7 +89,7 @@ group :development do
   # N+1 finder
   gem 'bullet', '~> 8.1'
   gem 'listen', '~> 3.9'
-  gem 'rack-mini-profiler', '~> 3.3'
+  gem 'rack-mini-profiler', '>= 5.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   # gem 'spring'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
