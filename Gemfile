@@ -61,9 +61,9 @@ gem 'report_action', '~> 1.1.0'
 # from the source. https://github.com/roo-rb/roo/issues/551
 gem 'roo', '~> 2.10'
 
-gem 'scout_apm', '~> 5.8'
+gem 'scout_apm', '>= 6.3'
 
-gem 'sidekiq', '~> 8.1'
+gem 'sidekiq', '>= 8.1.7'
 
 gem 'smarter_csv', '~> 1.9'
 
@@ -85,11 +85,11 @@ group :development do
   # Shiny error messages
   gem 'better_errors', '~> 2.10'
   gem "binding_of_caller"
-  gem 'brakeman', '~> 8.0', require: false
+  gem 'brakeman', '>= 8.0.6', require: false
   # N+1 finder
   gem 'bullet', '~> 8.1'
   gem 'listen', '~> 3.9'
-  gem 'rack-mini-profiler', '~> 3.3'
+  gem 'rack-mini-profiler', '>= 5.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   # gem 'spring'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
@@ -101,7 +101,7 @@ group :test do
   gem 'capybara', '~> 3.40'
   gem 'minitest', '~> 5.27'
   gem 'selenium-webdriver', '~> 4.40'
-  gem 'simplecov', '~> 0.22.0', require: false
+  gem 'simplecov', '>= 1.3', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
