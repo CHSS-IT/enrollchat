@@ -1,5 +1,6 @@
 require "test_helper"
 require "capybara/cuprite"
+require "turbo/system_test_helper"
 
 Capybara.register_driver :cuprite do |app|
   Capybara::Cuprite::Driver.new(
@@ -9,6 +10,7 @@ Capybara.register_driver :cuprite do |app|
 end
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
+  include Turbo::SystemTestHelper
   driven_by :cuprite
 
   def login_as(user)
