@@ -1,9 +1,15 @@
 require "test_helper"
+require "capybara/cuprite"
+
+Capybara.register_driver :cuprite do |app|
+  Capybara::Cuprite::Driver.new(
+    app,
+    window_size: [1400, 1050]
+  )
+end
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
-  # Silence deprecation warnings until upstream Capybara version is updated
-  Selenium::WebDriver.logger.ignore(:clear_local_storage, :clear_session_storage)
-  driven_by :selenium, using: :headless_firefox, screen_size: [1400,1050]
+  driven_by :cuprite
 
   def login_as(user)
     visit cas_login_path

@@ -99,8 +99,9 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.40'
+  gem "cuprite"
   gem 'minitest', '~> 5.27'
-  gem 'selenium-webdriver', '~> 4.40'
+  #gem 'selenium-webdriver', '~> 4.40'
   gem 'simplecov', '>= 1.3', require: false
 end
 
