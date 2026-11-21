@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby "3.4.12"
+ruby "3.4.13"
 
 gem "rake"
 
@@ -73,7 +73,7 @@ gem 'sprockets-rails', '~> 3.5', '>= 3.5.2'
 gem 'stimulus-rails', '~> 1.3', '>= 1.3.4'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem 'turbo-rails', '~> 1.5'
+gem 'turbo-rails', '~> 2.0.23'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -99,8 +99,8 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.40'
+  gem "cuprite"
   gem 'minitest', '~> 5.27'
-  gem 'selenium-webdriver', '~> 4.40'
   gem 'simplecov', '>= 1.3', require: false
 end
 

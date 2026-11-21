@@ -32,11 +32,11 @@ class SectionsTest < ApplicationSystemTestCase
     @settings.update(current_term: nil)
     @section = sections(:one)
     @section.update(term: 202010)
-    Capybara.current_session.driver.browser.manage.delete_cookie 'term'
+    page.driver.browser.cookies.remove(name: "term")
     visit sections_url
     assert_selector 'h1', text: 'Spring 2020 Sections'
     @section.update(term: 201810)
-    Capybara.current_session.driver.browser.manage.delete_cookie 'term'
+    page.driver.browser.cookies.remove(name: "term")
   end
 
   test 'filtering by department' do
@@ -194,6 +194,7 @@ class SectionsTest < ApplicationSystemTestCase
 
   test 'display data refresh message after import' do
     visit sections_url
+    connect_turbo_cable_stream_sources
     Section.import(file_fixture('test_crse.csv'))
     assert_selector "p", text: "New data has been imported and is available. 1 added. 3 updated.", count: 1
     assert_selector "a", text: "Click here to refresh", count: 1
